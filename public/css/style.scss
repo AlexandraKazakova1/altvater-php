@@ -31,6 +31,7 @@ body {
     scroll-behavior: smooth;
     text-rendering: optimizeSpeed;
     line-height: 1.5;
+    font-family: 'Fira Sans';
 }
 
 ul[class],
@@ -140,6 +141,394 @@ select {
     font-display: swap;
 }
 
+.container {
+    max-width: 1170px;
+    margin: auto;
+}
+button {
+    outline: none;
+    border: none;
+}
+a {
+    text-decoration: none;
+}
+button:hover {
+    cursor: pointer;
+}
+.btn-red {
+    background: #F2664F;
+}
+.section-title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 50px;
+    color: #2C2C2C;
+}
+.subTitle21 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 21px;
+    line-height: 30px;
+    color: #000000;
+}
+
 header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
     background-image: url(/public/img/banner.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 39.583vw;
+    ::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 17, 23, 0.3);
+        z-index: -1;
+    }
+    .header-nav {
+        margin: 0 auto;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: flex-end;
+        .header-nav__logo img {
+            width: 100%;
+        }
+        .header-nav__list {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            grid-column-gap: 37px;
+            margin-bottom: 12px;
+            .header-nav__list__item{
+                a {
+                    text-decoration: none;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 14px;
+                    line-height: 0px;
+                    color: #BFBEBE;
+                    white-space: nowrap;
+                }
+                a:hover {
+                    color: #FFFFFF;
+                }
+            }
+        }
+        .header-nav__btn-group {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            grid-column-gap: 23px;
+            .btn-logIn {
+                font-family: Fira Sans;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 0px;
+                color: #FFFFFF;
+                background: transparent
+            }
+            .btn-reg {
+                color: #FFFFFF;
+                padding: 12px 38px;
+                border-radius: 90px;
+            }
+        }
+    }
+    .header-banner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        grid-row-gap: 16px;
+        .header-banner__title,
+        .header-banner__descrption, 
+        .header-banner__link {
+            color: #E5E5E5;
+            text-align: center;
+        }
+        .header-banner__title {
+            font-style: normal;
+            font-weight: bold;
+            font-size: 45px;
+            line-height: 55px;
+        }
+        .header-banner__descrption {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 21px;
+            line-height: 30px;
+        }
+        .header-banner__link {
+            text-decoration: none;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 17px;
+            padding: 18px 26px;
+            border-radius: 99px;
+            margin-top: 28px;
+        }
+    }
+}
+.services-wrapper {
+    .services {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+        grid-row-gap: 40px;
+        margin-top: 80px;
+        .services__list {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+            grid-row-gap: 48px;
+            grid-column-gap: 30px;
+            .services__item {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                width: 100%;
+                max-width: 370px;
+                min-width: 310px;
+                border-radius: 0px 45px;
+                background: #31B5CF;
+                overflow: hidden;
+                .services__photo-link {
+                    position: relative;
+                    width: 100%;
+                    background: #FFFFFF;
+                }
+                .services__photo-link::after {
+                    content: '';
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    position: absolute;
+                    z-index: 2;
+                    width: 109px;
+                    height: 109px;
+                    background: url(/public/img/recycling.svg) center no-repeat;
+                }
+                .services__text {
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 21px;
+                    line-height: 30px;
+                    text-align: center;
+                    white-space: pre-wrap;
+                    padding: 57px;
+                    color: #FFFFFF;
+                    width: 100%;
+                    margin-top: 4px;
+                    position: relative;
+                }
+                .services__text::before {
+                    content: '';
+                    position: absolute;
+                    top: -6px;
+                    width: 133px;
+                    height: 31px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background: url(/public/img/maskWhite.png);
+                }
+                .services__text::after {
+                    content: '';
+                    width: 100%;
+                    height: 4px;
+                    left: 0;
+                    top: -5px;
+                    position: absolute;
+                    background: #FFFFFF;
+                }
+                .services__link {
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    grid-column-gap: 12px;
+                    text-decoration: none;
+                    height: 66px;
+                    width: 100%;
+                    background-image: url('/public/img/Vector\ 1.png');
+                    span {
+                        font-style: normal;
+                        font-weight: bold;
+                        font-size: 16px;
+                        line-height: 19px;
+                        text-transform: uppercase;
+                        color: #FFFFFF;
+                    }
+                }
+            }
+        }
+    }
+}
+.about-wrapper {
+    margin-top: 72px;
+    background: rgba (234, 233, 233, 0.2);
+    .about {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        grid-row-gap: 45px;
+        padding-top: 63px;
+        padding-bottom: 83px;
+        width: 100%;
+    }
+    .about-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        width: 100%;
+        grid-row-gap: 40px;
+        .description-group {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            grid-column-gap: 33px;
+        }
+        .goal {
+            background: #F2F2F2;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            grid-row-gap: 20px;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding: 30px 48px;
+            .goal__text {
+                color: rgba(44, 44, 44, 0.8);
+            }
+        }
+        .our-photo {
+            position: relative;
+        }
+        .our-photo::after {
+            content: '';
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            z-index: 2;
+            width: 192px;
+            height: 192px;
+            background: url(/public/img/recycling-big.svg) center no-repeat;
+        }
+    }
+}
+.news-wrapper {
+    .news {
+        padding-top: 76px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        grid-row-gap: 50px;
+        .news__list {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+            grid-row-gap: 48px;
+            grid-column-gap: 30px;
+            .news__item {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                width: 100%;
+                max-width: 370px;
+                min-width: 310px;
+                border-radius: 0px 45px;
+                background: #F2F2F2;
+                overflow: hidden;
+                .news__photo-link {
+                    position: relative;
+                }
+                .news__photo-link::after {
+                    content: '';
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    position: absolute;
+                    z-index: 2;
+                    width: 109px;
+                    height: 109px;
+                    background: url(/public/img/recycling.svg) center no-repeat;
+                }
+                .news__text {
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 21px;
+                    line-height: 30px;
+                    text-align: center;
+                    white-space: pre-wrap;
+                    padding: 57px;
+                    color: #3E3B4A;
+                    width: 100%;
+                }
+                .news__link {
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    grid-column-gap: 12px;
+                    text-decoration: none;
+                    height: 66px;
+                    width: 100%;
+                    background-image: url('/public/img/Vector2.png');
+                    span {
+                        font-style: normal;
+                        font-weight: bold;
+                        font-size: 16px;
+                        line-height: 19px;
+                        text-transform: uppercase;
+                        color: #2C2C2C;
+                    }
+                }
+            }
+        }
+    }
+}
+.response-wrapper {
+    .response {
+        padding-top: 76px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        grid-row-gap: 50px;
+    }
 }

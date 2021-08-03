@@ -4,57 +4,238 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Veolia</title>
-    <link rel="stylesheet" as="style" href="public/css/style.css">
+    <link rel="stylesheet" href="/public/css/slick.css">
+    <link rel="stylesheet" href="/public/css/slick-theme.css">
+    <link rel="stylesheet" as="style" href="/public/css/style.css">
 </head>
 <body>
     <header>
-        <nav class="header-nav">
-            <div class="header-nav__logo">
+        <nav class="header-nav container">
+            <a href="#" class="header-nav__logo">
                 <img src="/public/img/logo.png" alt="Veolia">
-            </div>
+            </a>
             <ul class="header-nav__list">
                 <li class="header-nav__list__item">
-                    Головна
+                    <a href="#">Головна</a>
                 </li>
                 <li class="header-nav__list__item">
-                    Послуги
+                    <a href="#">Послуги</a>
                 </li>
                 <li class="header-nav__list__item">
-                    Про компанію
+                    <a href="#">Про компанію</a>
                 </li>
                 <li class="header-nav__list__item">
-                    Новини
+                    <a href="#">Новини</a>
                 </li>
                 <li class="header-nav__list__item">
-                    Контакти
+                    <a href="#">Контакти</a>
                 </li>
             </ul>
             <div class="header-nav__btn-group">
-                <button class="btn-logIn">
+                <a href="#" class="btn-logIn">
                     Вхід
-                </button>
-                <button class="btn-reg btn-red">
+                </a>
+                <a href="#" class="btn-reg btn-red">
                     Реєстрація
-                </button>
+                </a>
             </div>
         </nav>
-        <div class="header-banner">
+        <div class="header-banner container">
             <div class="header-banner__title">
-                <span>ТОВ "Альтфатер Київ" представляє собою сучасну компанію</span>
+                ТОВ "Альтфатер Київ"<br>представляє собою сучасну компанію
             </div>
             <div class="header-banner__descrption">
-                <span>Ваш надійний партнер у сфері поводження з відходами!</span>
+                Ваш надійний партнер у сфері поводження з відходами!
             </div>
             <a href="#" class="header-banner__link btn-red">
-                <span>Отримати консультацію</span>
+                Отримати консультацію
             </a>
         </div>
     </header>
     <main>
-
+        <section class="services-wrapper">
+            <div class="services container">
+                <span class="section-title">Наші послуги</span>
+                <ul class="services__list">
+                    <li class="services__item">
+                        <a class="services__photo-link" href="#"><img class="services__photo" src="/public/img/services1.png" alt="services"></a>
+                        <span class="services__text">Вивіз твердих<br>побутових відходів</span>
+                        <a class="services__link" href="#">
+                            <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M23.8643 14.1685L5.73926 14.1685" stroke="white" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16.5537 6.88903L23.8641 14.168L16.5537 21.4482" stroke="white" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Детальніше</span>
+                        </a>
+                    </li>
+                    <li class="services__item">
+                        <a class="services__photo-link" href="#"><img class="services__photo" src="/public/img/services2.png" alt="services"></a>
+                        <span class="services__text">Вивезення побутових<br>відходів та сміття</span>
+                        <a class="services__link" href="#">
+                            <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M23.8643 14.1685L5.73926 14.1685" stroke="white" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16.5537 6.88903L23.8641 14.168L16.5537 21.4482" stroke="white" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Детальніше</span>
+                        </a>
+                    </li>
+                    <li class="services__item">
+                        <a class="services__photo-link" href="#"><img class="services__photo" src="/public/img/services3.png" alt="services"></a>
+                        <span class="services__text">Вивіз будівельного<br>сміття</span>
+                        <a class="services__link" href="#">
+                            <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M23.8643 14.1685L5.73926 14.1685" stroke="white" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16.5537 6.88903L23.8641 14.168L16.5537 21.4482" stroke="white" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Детальніше</span>
+                        </a>
+                    </li>
+                    <li class="services__item">
+                        <a class="services__photo-link" href="#"><img class="services__photo" src="/public/img/services4.png" alt="services"></a>
+                        <span class="services__text">Вивіз старих меблів</span>
+                        <a class="services__link" href="#">
+                            <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M23.8643 14.1685L5.73926 14.1685" stroke="white" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16.5537 6.88903L23.8641 14.168L16.5537 21.4482" stroke="white" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Детальніше</span>
+                        </a>
+                    </li>
+                    <li class="services__item">
+                        <a class="services__photo-link" href="#"><img class="services__photo" src="/public/img/services5.png" alt="services"></a>
+                        <span class="services__text">Утилізація відходів</span>
+                        <a class="services__link" href="#">
+                            <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M23.8643 14.1685L5.73926 14.1685" stroke="white" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16.5537 6.88903L23.8641 14.168L16.5537 21.4482" stroke="white" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Детальніше</span>
+                        </a>
+                    </li>
+                    <li class="services__item">
+                        <a class="services__photo-link" href="#"><img class="services__photo" src="/public/img/services6.png" alt="services"></a>
+                        <span class="services__text">Вивіз землі</span>
+                        <a class="services__link" href="#">
+                            <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M23.8643 14.1685L5.73926 14.1685" stroke="white" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16.5537 6.88903L23.8641 14.168L16.5537 21.4482" stroke="white" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Детальніше</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="about-wrapper">
+            <div class="about container">
+                <span class="section-title">Про нашу компанію</span>
+                <div class="about-content">
+                    <div class="description-group">
+                        <span class="text">ТОВ «Альтфатер Київ» входить в групу Веолія, яка протягом багатьох років працює в багатьох країнах світу в сфері очищення стічних вод, поводження з відходами тощо. Якісний вивіз сміття можна замовити максимально швидко і просто, якщо звернутися до перевірених професіоналів.<br>Маючи більш ніж 20-ти річний досвід роботи у галузі поводження з відходами в Україні, ми пропонуємо найбільш оптимальні рішення щодо ефективного використання ресурсів, їх збереження та відновлення, сприяючи таким чином розвитку циркулярної економіки.</span>
+                        <span class="text">Мета Veolia була розроблена завдяки тривалому процесу роботи та безпрецедентному співробітництву, в якому брали участь органи управління компанією, співробітники, Комітет критичних друзів (зовнішні експерти), клієнти, панелі людей тощо.<br>Мета Veolia була прийнята її Радою директорів та представлена ​​на щорічних зборах акціонерів 18 квітня 2019 року.</span>
+                    </div>
+                    <div class="goal">
+                        <span class="goal__title subTitle21">Мета Веолії - це не просто гасло, воно виражене у повному тексті</span>
+                        <span class="goal__text">Мета Veolia - сприяти людському прогресу, твердо дотримуючись цілей сталого розвитку, визначених ООН для досягнення кращого та більш сталого майбутнього для всіх. Саме з цією метою Veolia ставить перед собою завдання «ресурси світу» за допомогою свого бізнесу з питань екологічних послуг.</span>
+                    </div>
+                    <div class="our-photo"><img src="/public/img/aboutBanner.png" alt="Veolia"></div>
+                </div>
+            </div>
+        </section>
+        <section class="news-wrapper">
+            <div class="news container">
+                <span class="section-title">Новини нашої компанії</span>
+                <ul class="news__list">
+                    <li class="news__item">
+                        <a class="news__photo-link" href="#"><img class="news__photo" src="/public/img/news1.png" alt="news"></a>
+                        <span class="news__text">Вивіз твердих<br>побутових відходів</span>
+                        <a class="news__link" href="#">
+                            <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M23.8643 14.1685L5.73926 14.1685" stroke="#2C2C2C" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16.5537 6.88903L23.8641 14.168L16.5537 21.4482" stroke="#2C2C2C" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Детальніше</span>
+                        </a>
+                    </li>
+                    <li class="news__item">
+                        <a class="news__photo-link" href="#"><img class="news__photo" src="/public/img/news2.png" alt="news"></a>
+                        <span class="news__text">Вивіз твердих<br>побутових відходів</span>
+                        <a class="news__link" href="#">
+                            <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M23.8643 14.1685L5.73926 14.1685" stroke="#2C2C2C" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16.5537 6.88903L23.8641 14.168L16.5537 21.4482" stroke="#2C2C2C" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Детальніше</span>
+                        </a>
+                    </li>
+                    <li class="news__item">
+                        <a class="news__photo-link" href="#"><img class="news__photo" src="/public/img/news3.png" alt="news"></a>
+                        <span class="news__text">Вивіз твердих<br>побутових відходів</span>
+                        <a class="news__link" href="#">
+                            <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M23.8643 14.1685L5.73926 14.1685" stroke="#2C2C2C" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16.5537 6.88903L23.8641 14.168L16.5537 21.4482" stroke="#2C2C2C" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Детальніше</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="response-wrapper">
+            <div class="response container">
+                <span class="section-title">Відгуки наших клієнтів</span>
+                <div class="response__slider slider">
+                    <div>
+                        <div class="response__photo"><img src="/public/img/slick/Rectangle1.png"></div>
+                        <div class="response__body">
+                            <div class="quotes">
+                                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g opacity="0.2" clip-path="url(#clip0)">
+                                        <path d="M0 32V59.4286H27.4286V32H9.14292C9.14292 21.9175 17.3461 13.7143 27.4286 13.7143V4.57142C12.3036 4.57142 0 16.875 0 32Z" fill="#7ABCCE"/>
+                                        <path d="M64.0009 13.7143V4.57142C48.8758 4.57142 36.5723 16.875 36.5723 32V59.4286H64.0009V32H45.7152C45.7152 21.9175 53.9184 13.7143 64.0009 13.7143Z" fill="#7ABCCE"/>
+                                    </g>
+                                </svg>
+                            </div>
+                            <span class="response__text">Хороші молоді хлопці. Ціна була прийнятна. Домовився з адміністратором порталу про прийняття замовлення без передоплати, чим дуже допоміг мені. (Не було під рукою карти) Водій приїхав точно до терміну, навіть трохи раніше. Як і обіцяв з вантажником. Сам так же допомагав вантажити. Обсяг був пристойний. Все дуже культурно і професійно. Дуже задоволений їх роботою. Обов'язково в разі потреби звернуся до них.</span>
+                            <span class="responser__name">ПРИВАТНЕ АКЦІОНЕРНЕ ТОВАРИСТВО<br>«ГОТЕЛЬ «ПРЕМ’ЄР ПАЛАЦ»</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="response__photo"><img src="/public/img/slick/Rectangle1.png"></div>
+                        <div class="response__body">
+                            <div class="quotes">
+                                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g opacity="0.2" clip-path="url(#clip0)">
+                                        <path d="M0 32V59.4286H27.4286V32H9.14292C9.14292 21.9175 17.3461 13.7143 27.4286 13.7143V4.57142C12.3036 4.57142 0 16.875 0 32Z" fill="#7ABCCE"/>
+                                        <path d="M64.0009 13.7143V4.57142C48.8758 4.57142 36.5723 16.875 36.5723 32V59.4286H64.0009V32H45.7152C45.7152 21.9175 53.9184 13.7143 64.0009 13.7143Z" fill="#7ABCCE"/>
+                                    </g>
+                                </svg>
+                            </div>
+                            <span class="response__text">Хороші молоді хлопці. Ціна була прийнятна. Домовився з адміністратором порталу про прийняття замовлення без передоплати, чим дуже допоміг мені. (Не було під рукою карти) Водій приїхав точно до терміну, навіть трохи раніше. Як і обіцяв з вантажником. Сам так же допомагав вантажити. Обсяг був пристойний. Все дуже культурно і професійно. Дуже задоволений їх роботою. Обов'язково в разі потреби звернуся до них.</span>
+                            <span class="responser__name">ПРИВАТНЕ АКЦІОНЕРНЕ ТОВАРИСТВО<br>«ГОТЕЛЬ «ПРЕМ’ЄР ПАЛАЦ»</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <footer>
 
     </footer>
+    <script src="/public/js/jquery-3.6.0.min.js"></script>
+    <script src="/public/js/slick.min.js"></script>
+    <script src="/public/js/main.js"></script>
+    <script>
+        $(document).on('ready', function() {
+            $(".response__slider").slick({
+                dots: false,
+                vertical: true,
+                centerMode: true,
+                slidesToShow: 1,
+                slidesToScroll: 1
+            });
+        });
+    </script>
 </body>
 </html>
