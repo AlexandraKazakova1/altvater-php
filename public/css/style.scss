@@ -73,7 +73,7 @@ select {
     font-style: normal;
     font-weight: 100;
     src: local('Fira Sans Thin'), local('FiraSans-Thin'),
-        url('/public/fonts/FiraSans-Thin.ttf') format('truetype');
+        url('../fonts/FiraSans-Thin.ttf') format('truetype');
     font-display: swap;
 }
 @font-face {
@@ -81,7 +81,7 @@ select {
     font-style: normal;
     font-weight: 200;
     src: local('Fira Sans ExtraLight'), local('FiraSans-ExtraLight'),
-        url('/public/fonts/FiraSans-ExtraLight.ttf') format('truetype');
+        url('../fonts/FiraSans-ExtraLight.ttf') format('truetype');
     font-display: swap;
 }
 @font-face {
@@ -89,7 +89,7 @@ select {
     font-style: normal;
     font-weight: 300;
     src: local('Fira Sans Light'), local('FiraSans-Light'),
-        url('/public/fonts/FiraSans-Light.ttf') format('truetype');
+        url('../fonts/FiraSans-Light.ttf') format('truetype');
     font-display: swap;
 }
 @font-face {
@@ -97,7 +97,7 @@ select {
     font-style: normal;
     font-weight: 400;
     src: local('Fira Sans Regular'), local('FiraSans-Regular'),
-        url('/public/fonts/FiraSans-Regular.ttf') format('truetype');
+        url('../fonts/FiraSans-Regular.ttf') format('truetype');
     font-display: swap;
 }
 @font-face {
@@ -105,7 +105,7 @@ select {
     font-style: normal;
     font-weight: 500;
     src: local('Fira Sans Medium'), local('FiraSans-Medium'),
-        url('/public/fonts/FiraSans-Medium.ttf') format('truetype');
+        url('../fonts/FiraSans-Medium.ttf') format('truetype');
     font-display: swap;
 }
 @font-face {
@@ -113,7 +113,7 @@ select {
     font-style: normal;
     font-weight: 600;
     src: local('Fira Sans SemiBold'), local('FiraSans-SemiBold'),
-        url('/public/fonts/FiraSans-SemiBold.ttf') format('truetype');
+        url('../fonts/FiraSans-SemiBold.ttf') format('truetype');
     font-display: swap;
 }
 @font-face {
@@ -121,7 +121,7 @@ select {
     font-style: normal;
     font-weight: 700;
     src: local('Fira Sans Bold'), local('FiraSans-Bold'),
-        url('/public/fonts/FiraSans-Bold.ttf') format('truetype');
+        url('../fonts/FiraSans-Bold.ttf') format('truetype');
     font-display: swap;
 }
 @font-face {
@@ -129,7 +129,7 @@ select {
     font-style: normal;
     font-weight: 800;
     src: local('Fira Sans ExtraBold'), local('FiraSans-ExtraBold'),
-        url('/public/fonts/FiraSans-ExtraBold.ttf') format('truetype');
+        url('../fonts/FiraSans-ExtraBold.ttf') format('truetype');
     font-display: swap;
 }
 @font-face {
@@ -137,7 +137,7 @@ select {
     font-style: normal;
     font-weight: 900;
     src: local('Fira Sans Black'), local('FiraSans-Black'),
-        url('/public/fonts/FiraSans-Black.ttf') format('truetype');
+        url('../fonts/FiraSans-Black.ttf') format('truetype');
     font-display: swap;
 }
 
@@ -178,7 +178,7 @@ header {
     flex-direction: column;
     justify-content: space-around;
     position: relative;
-    background-image: url(/public/img/banner.png);
+    background-image: url(../img/banner.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -327,7 +327,7 @@ header {
                     z-index: 2;
                     width: 109px;
                     height: 109px;
-                    background: url(/public/img/recycling.svg) center no-repeat;
+                    background: url(../img/recycling.svg) center no-repeat;
                 }
                 .services__text {
                     font-style: normal;
@@ -350,7 +350,7 @@ header {
                     height: 31px;
                     left: 50%;
                     transform: translateX(-50%);
-                    background: url(/public/img/maskWhite.png);
+                    background: url(../img/maskWhite.png);
                 }
                 .services__text::after {
                     content: '';
@@ -372,7 +372,7 @@ header {
                     text-decoration: none;
                     height: 66px;
                     width: 100%;
-                    background-image: url('/public/img/Vector\ 1.png');
+                    background-image: url('../img/Vector\ 1.png');
                     span {
                         font-style: normal;
                         font-weight: bold;
@@ -440,7 +440,7 @@ header {
             z-index: 2;
             width: 192px;
             height: 192px;
-            background: url(/public/img/recycling-big.svg) center no-repeat;
+            background: url(../img/recycling-big.svg) center no-repeat;
         }
     }
 }
@@ -484,7 +484,7 @@ header {
                     z-index: 2;
                     width: 109px;
                     height: 109px;
-                    background: url(/public/img/recycling.svg) center no-repeat;
+                    background: url(../img/recycling.svg) center no-repeat;
                 }
                 .news__text {
                     font-style: normal;
@@ -508,7 +508,7 @@ header {
                     text-decoration: none;
                     height: 66px;
                     width: 100%;
-                    background-image: url('/public/img/Vector2.png');
+                    background-image: url('../img/Vector2.png');
                     span {
                         font-style: normal;
                         font-weight: bold;
