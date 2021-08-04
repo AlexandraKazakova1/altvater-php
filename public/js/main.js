@@ -1,5 +1,5 @@
 $(document).on('ready', function() {
-    $(".response__slider").slick({
+    $('.response__slider').slick({
         dots: false,
         vertical: true,
         centerMode: true,
