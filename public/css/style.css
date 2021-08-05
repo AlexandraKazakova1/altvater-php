@@ -1044,11 +1044,8 @@ header .header-banner .header-banner__link {
   width: 100%;
 }
 
-.faq__wrapper .faq .faq__question__list .faq__question {
-  cursor: pointer;
-}
-
 .faq__wrapper .faq .faq__question__list .faq__question .question {
+  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
