@@ -1201,6 +1201,84 @@ footer {
         }
     }
 }
+.topNews-wrapper {
+    padding: 25px 0;
+    .topNews {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        grid-column-gap: 30px;
+        .pubdate {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: center;
+            grid-column-gap: 10px;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 15px;
+            line-height: 28px;
+        }
+        .topNews__link {
+            position: relative;
+            flex: 0.6;
+            .link__body {
+                position: absolute;
+                left: 4.444vw;
+                bottom: 4.444vw;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                justify-content: flex-end;
+                align-items: flex-start;
+                grid-row-gap: 12px;
+                .link__title {
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 34px;
+                    line-height: 45px;
+                    color: #FFFFFF;
+                }
+                .pubdate {
+                    color: #FFFFFF;
+                }
+            }
+        }
+        .popular__news__list {
+            flex: 0.4;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            padding: 30px 40px;
+            background: #FFFFFF;
+            box-shadow: 0px 4px 56px rgba(22, 22, 22, 0.1);
+            border-radius: 25px;
+            grid-row-gap: 20px;
+            .subTitle21 {
+                color: #00B7CE;
+            }
+            .popular__news__item {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                padding-bottom: 19px;
+                border-bottom: 1px solid #E5E5E5;
+                .news__title {
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 16px;
+                    line-height: 21px;
+                    color: #2C2C2C;
+                }
+                .pubdate {
+                    color: #a8a8a8;
+                }
+            }
+        }
+    }
+}
+
 
 .wrapper__gray {
     background: #EAE9E9;
