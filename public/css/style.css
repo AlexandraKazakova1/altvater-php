@@ -935,6 +935,7 @@ header .header-banner .header-banner__link {
       -ms-flex-direction: column;
           flex-direction: column;
   grid-row-gap: 50px;
+  width: 100%;
 }
 
 .faq__wrapper .faq .faq__question__list {
@@ -948,6 +949,7 @@ header .header-banner .header-banner__link {
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   grid-row-gap: 20px;
+  width: 100%;
 }
 
 .faq__wrapper .faq .faq__question__list .faq__question .question {
@@ -973,7 +975,19 @@ header .header-banner .header-banner__link {
   color: #FFFFFF;
   background: #00B7CE;
   border-radius: 8px;
-  padding: 16px 25px;
+  padding: 28px 30px;
+}
+
+.faq__wrapper .faq .faq__question__list .faq__question .question .arrow {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.faq__wrapper .faq .faq__question__list .faq__question .question.active .arrow {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 .faq__wrapper .faq .faq__question__list .faq__question .reply {
