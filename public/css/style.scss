@@ -1084,7 +1084,102 @@ footer {
                     display: flex;
                     flex-direction: column;
                     flex-wrap: nowrap;
-
+                    grid-row-gap: 10px;
+                    span {
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 12px;
+                        line-height: 16px;
+                        color: #2C2C2C;
+                        letter-spacing: 1.1px;
+                    }
+                    textarea {
+                        resize: none;
+                    }
+                    input,
+                    textarea {
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 16px;
+                        line-height: 26px;
+                        color: #57585A;
+                        border: none;
+                        outline: none;
+                        padding: 8px 0;
+                        transition: all 0.3s;
+                        border-bottom: 3px solid rgba(189, 200, 214, 0.3);
+                    }
+                    textarea:focus,
+                    textarea:hover,
+                    input:focus,
+                    input:hover {
+                        transition: all 0.3s;
+                        border-bottom: 3px solid #00B7CE;
+                    }
+                    input::placeholder,
+                    textarea::placeholder {
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 16px;
+                        line-height: 26px;
+                        color: rgba(87, 88, 90, 0.3);
+                    }
+                    .checkbox-text {
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 14px;
+                        line-height: 21px;
+                        color: #57585A;
+                        white-space: pre-wrap;
+                    }
+                }
+                .checkbox__label {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    grid-column-gap: 13px;
+                    .input-checkbox {
+                        display: none;
+                        visibility: hidden;
+                        opacity: 0;
+                    }
+                    .custom-checkbox {
+                        width: 35px;
+                        position: relative;
+                    }
+                    .custom-checkbox::before {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 23px;
+                        height: 23px;
+                        border: 1px solid rgba(44, 44, 44, 0.3);
+                        border-radius: 2px;
+                        transition: all 0.3s;
+                    }
+                    .custom-checkbox::after {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 24px;
+                        height: 24px;
+                        background: url(../img/contact-icons/tick-checkbox.svg);
+                        opacity: 0;
+                        transition: all 0.3s;
+                    }
+                    .input-checkbox:checked + .custom-checkbox::before {
+                        width: 24px;
+                        height: 24px;
+                        background: #00B7CE;
+                        border: none;
+                        transition: all 0.3s;
+                    }
+                    .input-checkbox:checked + .custom-checkbox::after {
+                        opacity: 1;
+                        transition: all 0.3s;
+                    }
                 }
                 .btn-submit {
                     font-style: normal;
@@ -1096,6 +1191,11 @@ footer {
                     padding: 16px;
                     background: #F2664F;
                     border-radius: 30px;
+                    transition: all 0.3s;
+                }
+                .btn-submit:hover {
+                    transition: all 0.3s;
+                    background: #1EBCD4;
                 }
             }
         }
