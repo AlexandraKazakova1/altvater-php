@@ -1458,6 +1458,29 @@ footer {
     background: url(../img/wrapper-mask.png) center no-repeat;
 }
 
+@media (max-width:1440px) {
+    .response-wrapper {
+        .response {
+            .slick-prev {
+              left: 20px;
+              z-index: 3;
+            }
+            [dir="rtl"] .slick-prev {
+              left: auto;
+              right: 20px;
+            }
+            .slick-next {
+              right: 20px;
+              transform: rotate(180deg);
+              z-index: 3;
+            }
+            [dir="rtl"] .slick-next {
+              left: 20px;
+              right: auto;
+            }
+        }
+    }
+}
 @media (max-width:1280px) {
     .container {
         max-width: 100%;
