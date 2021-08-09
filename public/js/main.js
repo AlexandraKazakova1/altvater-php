@@ -2,7 +2,16 @@ $(document).ready (function() {
     $('.response__slider').slick({
         dots: false,
         slidesToShow: 1,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    dots: true,
+                    arrows: false
+                }
+            }
+        ]
     });
     $('.last-work__slider').slick({
         dots: false,
