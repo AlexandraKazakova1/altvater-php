@@ -188,7 +188,6 @@ button:hover {
             flex-direction: row;
             justify-content: flex-start;
             align-items: center;
-            // grid-column-gap: 10px;
             padding: 13px 0;
             li {
                 position: relative;
@@ -204,10 +203,16 @@ button:hover {
                 color: #858585;
                 background: #FFFFFF;
                 a {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    flex-wrap: nowrap;
+                    grid-column-gap: 10px;
                     font-style: normal;
                     font-weight: normal;
                     font-size: 13px;
                     color: #858585;
+                    white-space: nowrap;
                     padding: 12px 24px;
                 }
             }
@@ -842,6 +847,9 @@ footer {
         flex-wrap: nowrap;
         grid-row-gap: 50px;
         .last-work__slider {
+            .slick-slide {
+                padding: 0 10px;
+            }
             .last-work__photo {
                 position: relative;
                 border-radius: 0px 60px;
@@ -857,6 +865,68 @@ footer {
                 height: 192px;
                 background: url(../img/recycling-big.svg) center no-repeat;
                 background-size: cover;
+            }
+            .slick-prev,
+            .slick-next {
+              position: absolute;
+              display: block;
+              height: 100%;
+              width: 80px;
+              line-height: 0px;
+              font-size: 0px;
+              cursor: pointer;
+              background: transparent;
+              color: transparent;
+              top: 0;
+              border: none;
+              outline: none;
+              z-index: 4;
+            }
+            .slick-prev {
+                left: 10px;
+                transform: rotate(180deg);
+            }
+            [dir="rtl"] .slick-prev {
+                left: auto;
+                right: 10px;
+            }
+            .slick-next {
+                right: 12px;
+            }
+            [dir="rtl"] .slick-next {
+                left: 12px;
+                right: auto;
+            }
+            .slick-prev:before {
+                content: url(../img/small-left-white.svg);
+            }
+            
+            [dir="rtl"] .slick-prev:before {
+                content: url(../img/small-left-white.svg);
+            }
+            .slick-next:before {
+                content: url(../img/small-left-white.svg);
+                transform: rotate(180deg);
+            }
+            
+            [dir="rtl"] .slick-next:before {
+                content: url(../img/small-left-white.svg);
+            }
+            .slick-prev:hover:before, .slick-prev:focus:before,
+            .slick-next:hover:before,
+            .slick-next:focus:before {
+                opacity: 1;
+                background: rgba(0, 0, 0, 0.43);
+            }
+            .slick-prev:before,
+            .slick-next:before {
+                border-radius: 0px 60px 0px 0px;
+                display: flex;
+                width: 100%;
+                height: 100%;
+                padding: 20px;
+                justify-content: center;
+                align-items: center;
             }
         }
         .comment {
@@ -878,7 +948,7 @@ footer {
     }
 }
 .thesis__wrapper {
-    padding-top: 60px;
+    padding-top: 60px !important;
     padding-bottom: 30px;
     .thesis {
         display: flex;
@@ -1461,23 +1531,47 @@ footer {
 @media (max-width:1440px) {
     .response-wrapper {
         .response {
-            .slick-prev {
-              left: 20px;
-              z-index: 3;
+            .response__slider {
+                .slick-dots {
+                    bottom: -40px;
+                    li {
+                        width: 15px;
+                        height: 15px;
+                        background: #BFBEBE;
+                        border-radius: 1.69231px;
+                        transition: all 0.3s;
+                        button {
+                            width: 15px;
+                            height: 15px;
+                            padding: 0;
+                        }
+                        button::before {
+                            display: none;
+                        }
+                    }
+                    .slick-active {
+                        background: #F2664F;
+                        transition: all 0.3s;
+                    }
+                }
             }
-            [dir="rtl"] .slick-prev {
-              left: auto;
-              right: 20px;
-            }
-            .slick-next {
-              right: 20px;
-              transform: rotate(180deg);
-              z-index: 3;
-            }
-            [dir="rtl"] .slick-next {
-              left: 20px;
-              right: auto;
-            }
+            // .slick-prev {
+            //   left: 20px;
+            //   z-index: 3;
+            // }
+            // [dir="rtl"] .slick-prev {
+            //   left: auto;
+            //   right: 20px;
+            // }
+            // .slick-next {
+            //   right: 20px;
+            //   transform: rotate(180deg);
+            //   z-index: 3;
+            // }
+            // [dir="rtl"] .slick-next {
+            //   left: 20px;
+            //   right: auto;
+            // }
         }
     }
 }
@@ -1491,6 +1585,27 @@ footer {
     footer {
         .footer {
             padding: 25px 20px;
+        }
+    }
+    .contacts__wrapper {
+        padding: 20px 0;
+        .contacts {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-evenly;
+            align-items: center;
+            grid-gap: 36px;
+            .contacts__list {
+                flex: 0.5;
+                flex-wrap: nowrap;
+                max-height: none;
+            }
+            .callback {
+                flex: 0.5;
+                position: relative;
+            }
         }
     }
 }
@@ -1533,10 +1648,49 @@ footer {
             }
         }
     }
+    .thesis__wrapper {
+        .thesis {
+            flex-direction: column-reverse;
+            justify-content: center;
+            align-items: center;
+            grid-row-gap: 40px;
+            .thesis__img::before {
+                width: 110px;
+                height: 110px;
+                background: url(../img/recycling.svg) center no-repeat;
+            }
+            .thesis__body {
+                flex: 1;
+                text-align: center;
+            }
+        }
+        .thesis-even {
+            flex-direction: column-reverse;
+        }
+    }
+    .stat__wrapper {
+        .stat {
+            .stat__list {
+                flex-wrap: wrap;
+                .stat__item {
+                    width: 45%;
+                }
+            }
+            .section-text {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
 }
 @media (max-width:768px) {
+    .breadcrumbs__wrapper {
+        display: none;
+    }
     .section-title {
         text-align: center;
+        font-size: 30px;
+        line-height: 40px;
     }
     header {
         .header-nav {
@@ -1828,28 +1982,6 @@ footer {
                         }
                     }
                 }
-                .slick-dots {
-                    bottom: -40px;
-                    li {
-                        width: 15px;
-                        height: 15px;
-                        background: #BFBEBE;
-                        border-radius: 1.69231px;
-                        transition: all 0.3s;
-                        button {
-                            width: 15px;
-                            height: 15px;
-                            padding: 0;
-                        }
-                        button::before {
-                            display: none;
-                        }
-                    }
-                    .slick-active {
-                        background: #F2664F;
-                        transition: all 0.3s;
-                    }
-                }
             }
         }
     }
@@ -1945,6 +2077,136 @@ footer {
             padding: 25px 20px;
             .link__group {
                 grid-column-gap: 20px;
+                a {
+                    font-size: 12px;
+                    line-height: 14px;
+                }
+            }
+            span {
+                font-size: 12px;
+                line-height: 14px;
+            }
+        }
+    }
+    .osbb__wrapper {
+        .osbb {
+            align-items: center;
+            .section-text {
+                text-align: center;
+            }
+        }
+    }
+    .last-work__wrapper {
+        .last-work {
+            .last-work__slider {
+                .last-work__photo::before {
+                    width: 110px;
+                    height: 110px;
+                    background: url(../img/recycling.svg) center no-repeat;
+                }
+                .slick-prev,
+                .slick-next {
+                    width: 20px;
+                }
+                .slick-prev:before,
+                .slick-next:before {
+                    border-radius: 0px 30px 0px 0px;
+                }
+                .slick-prev:before {
+                    content: url(../img/small-small-left.svg);
+                }
+                
+                [dir="rtl"] .slick-prev:before {
+                    content: url(../img/small-small-left.svg);
+                }
+                .slick-next:before {
+                    content: url(../img/small-small-left.svg);
+                    transform: rotate(180deg);
+                }
+                
+                [dir="rtl"] .slick-next:before {
+                    content: url(../img/small-small-left.svg);
+                }
+                .slick-prev {
+                    left: 28px;
+                    transform: rotate(180deg);
+                }
+                [dir="rtl"] .slick-prev {
+                    left: auto;
+                    right: 28px;
+                }
+            }
+            .comment {
+                .section-text {
+                    width: 100%;
+                    text-align: center;
+                    z-index: 2;
+                }
+                svg {
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    opacity: 0.2;
+                    z-index: 1;
+                }
+            }
+        }
+    }
+    .stat__wrapper {
+        .stat {
+            .stat__list {
+                flex-wrap: wrap;
+                .stat__item {
+                    width: 45%;
+                }
+            }
+            .section-text {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+    .contacts__wrapper {
+        .contacts {
+            flex-direction: column;
+            .contacts__list {
+                flex: 1;
+                padding-bottom: 0;
+                .contacts__item > .bot__group {
+                    display: none;
+                } 
+            }
+            .callback {
+                flex: 1;
+                .callback__descriptin {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+@media (max-width:580px) {
+    .stat__wrapper {
+        .stat {
+            .stat__list {
+                flex-direction: column;
+                flex-wrap: nowrap;
+                justify-content: center;
+                align-items: center;
+                .stat__item {
+                    width: 100%;
+                    justify-content: space-between;
+                    align-items: center;
+                    text-align: end;
+                }
+            }
+        }
+    }
+}
+@media (max-width:480px) {
+    footer {
+        .footer {
+            .link__group {
                 a {
                     font-size: 8px;
                     line-height: 10px;
