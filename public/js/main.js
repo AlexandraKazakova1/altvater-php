@@ -36,7 +36,8 @@ $(document).ready (function() {
             $('.menu__icon').removeClass('close')
 		}
 	});
-    $('.callback__form').validate({
+
+    $('#callback-form').validate({
         rules: {
             username: {
                 required: true,
@@ -48,33 +49,57 @@ $(document).ready (function() {
             }
         }
     });
-    $('.callback__form').submit(function(e) {
-        e.preventDefault()
-        if ($('#username').hasClass('error')) {
-            return false;
-        } else if ($('#userphone').hasClass('error')) {
-            return false;
-        } else {
-            $.ajax({
-                url: "/ajax/order",
-                type: "POST",
-                dataType: "json",
-                data: $(this).serialize(),
-                success: function(data) {
-                console.log(data);
-                    console.log('ok');
-                },
-                error: function (data) {
-                    console.log(data);
-                    console.log('error');
-                },
-                complete: function () {
-                    console.log('end');
-                }
-            }).done(function(){
-                $('#ordering-success-msg').modal('show');
-            });
-            return false;
-        }
+    $("#callback-form").validate({
+        rules: {
+            username: {
+                required: true,
+                minlength: 2
+            },
+            useremail: {
+                required: true,
+                email: true
+            }
+        },
+        messages: {
+            username: {
+                required: "Введіть своє ім'я",
+                minlength: "Введіть більше двох символів"
+            },
+            useremail: {
+                required: "Введіть свій e-mail!",
+                email: "Адреса має бути типу name@domain.com"
+            }
+        },
+        focusInvalid: true,
+        errorClass: "input_error"
     });
+    
+
+    // $('#callback-form').submit(function(e) {
+    //     e.preventDefault()
+    //     if ($('#username').hasClass('error')) {
+    //         return false;
+    //     } else if ($('#useremail').hasClass('error')) {
+    //         return false;
+    //     } else {
+    //         $.ajax({
+    //             url: "/ajax/callback",
+    //             type: "POST",
+    //             dataType: "json",
+    //             data: $(this).serialize(),
+    //             success: function(data) {
+    //             console.log(data);
+    //                 console.log('ok');
+    //             },
+    //             error: function (data) {
+    //                 console.log(data);
+    //                 console.log('error');
+    //             },
+    //             complete: function () {
+    //                 console.log('end');
+    //             }
+    //         })
+    //         return false;
+    //     }
+    // });
 });
