@@ -1163,11 +1163,11 @@ footer {
                         color: #57585A;
                         transition: all 0.3s;
                     }
-                    button:hover {
-                        transition: all 0.3s;
+                }
+                .item__body.tel-button {
+                    button {
                         font-weight: bold;
-                        color: #57585A;
-                        text-decoration: underline;
+                        text-decoration-line: underline;
                     }
                 }
                 .bot__group {

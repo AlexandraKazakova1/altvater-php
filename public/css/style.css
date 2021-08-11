@@ -1704,12 +1704,10 @@ footer .footer span {
   transition: all 0.3s;
 }
 
-.contacts__wrapper .contacts .contacts__list .contacts__item .item__body button:hover {
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+.contacts__wrapper .contacts .contacts__list .contacts__item .item__body.tel-button button {
   font-weight: bold;
-  color: #57585A;
-  text-decoration: underline;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
 }
 
 .contacts__wrapper .contacts .contacts__list .contacts__item .bot__group {
