@@ -32,12 +32,17 @@ $(document).ready (function() {
         $(this).parent().children('.menu__body').slideToggle(300);
     });
     $(document).mouseup(function (e){
-		if (!$('.menu__body, .menu__icon').is(e.target) 
+        if (!$('.menu__body, .menu__icon').is(e.target) 
         && $('.menu__body, .menu__icon').has(e.target).length === 0) {
             $('.menu__body').slideUp(300);
             $('.menu__icon').removeClass('close')
-		}
-	});
+        }
+    });
+
+    $('.breadcrumbs__item').click(function() {
+        $(this).toggleClass('show');
+        $(this).children('.dropdown__list').slideToggle(300);
+    });
 });
 
 $(document).ready (function() {
@@ -45,7 +50,7 @@ $(document).ready (function() {
         rules: {
             username: {
                 required: true,
-                minlength: 2
+                rangelength: [2, 100]
             },
             useremail: {
                 required: true,

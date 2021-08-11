@@ -212,6 +212,7 @@ button:hover {
 }
 
 .breadcrumbs__wrapper .breadcrumbs .breadcrumbs__list li {
+  padding: 12px 24px;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -234,6 +235,7 @@ button:hover {
   font-size: 13px;
   color: #858585;
   background: #FFFFFF;
+  cursor: pointer;
 }
 
 .breadcrumbs__wrapper .breadcrumbs .breadcrumbs__list li a {
@@ -256,6 +258,49 @@ button:hover {
   color: #858585;
   white-space: nowrap;
   padding: 12px 24px;
+}
+
+.breadcrumbs__wrapper .breadcrumbs .breadcrumbs__list li .dropdown__list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 90%;
+  padding: 8px;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  grid-column-gap: 6px;
+  background: #FFFFFF;
+  z-index: 3;
+}
+
+.breadcrumbs__wrapper .breadcrumbs .breadcrumbs__list li .dropdown__list .dropdown__link {
+  padding: 0;
+}
+
+.breadcrumbs__wrapper .breadcrumbs .breadcrumbs__list li .dropdown__list .dropdown__link a {
+  padding: 5px;
+  font-style: normal;
+  font-weight: normal;
+  grid-column-gap: 10px;
+  font-size: 13px;
+  color: #858585;
+}
+
+.breadcrumbs__wrapper .breadcrumbs .breadcrumbs__list li .dropdown__list .dropdown__link:hover a {
+  color: #3E3B4A;
+}
+
+.breadcrumbs__wrapper .breadcrumbs .breadcrumbs__list li .dropdown__list .dropdown__link::before {
+  display: none;
+}
+
+.breadcrumbs__wrapper .breadcrumbs .breadcrumbs__list li .dropdown__list::before {
+  display: none;
 }
 
 .breadcrumbs__wrapper .breadcrumbs .breadcrumbs__list li.active {
@@ -2206,16 +2251,11 @@ footer .footer span {
   padding: 40px;
   background: #00B7CE;
   border-radius: 12px;
-}
-
-.open-news__wrapper .open-news .comment span {
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
   line-height: 26px;
-  z-index: 2;
-  color: #FFFFFF;
-  opacity: 0.8;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .open-news__wrapper .open-news .comment::before {
@@ -2374,6 +2414,13 @@ footer .footer span {
   font-size: 14px;
   line-height: 28px;
   color: rgba(87, 88, 90, 0.8);
+}
+
+p a {
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  color: #00B7CE;
 }
 
 .wrapper__gray {

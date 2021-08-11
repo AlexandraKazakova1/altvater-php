@@ -190,6 +190,7 @@ button:hover {
             align-items: center;
             padding: 13px 0;
             li {
+                padding: 12px 24px;
                 position: relative;
                 display: flex;
                 flex-direction: row;
@@ -202,6 +203,7 @@ button:hover {
                 font-size: 13px;
                 color: #858585;
                 background: #FFFFFF;
+                cursor: pointer;
                 a {
                     display: flex;
                     flex-direction: row;
@@ -214,6 +216,41 @@ button:hover {
                     color: #858585;
                     white-space: nowrap;
                     padding: 12px 24px;
+                }
+                .dropdown__list {
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    width: 90%;
+                    padding: 8px;
+                    display: none;
+                    flex-direction: column;
+                    flex-wrap: nowrap;
+                    grid-column-gap: 6px;
+                    background: #FFFFFF;
+                    z-index: 3;
+                    .dropdown__link {
+                        padding: 0;
+                        a {
+                            padding: 5px;
+                            font-style: normal;
+                            font-weight: normal;
+                            grid-column-gap: 10px;
+                            font-size: 13px;
+                            color: #858585;
+                        }
+                    }
+                    .dropdown__link:hover {
+                        a {
+                            color: #3E3B4A;
+                        }
+                    }
+                    .dropdown__link::before {
+                        display: none;
+                    }
+                }
+                .dropdown__list::before {
+                    display: none;
                 }
             }
             li.active {
@@ -1493,15 +1530,11 @@ footer {
             padding: 40px;
             background: #00B7CE;
             border-radius: 12px;
-            span {
-                font-style: normal;
-                font-weight: normal;
-                font-size: 16px;
-                line-height: 26px;
-                z-index: 2;
-                color: #FFFFFF;
-                opacity: 0.8;
-            }
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 26px;
+            color: rgba(255, 255, 255, 0.8);
         }
         .comment::before {
             content: url(../img/quote.svg);
@@ -1602,6 +1635,12 @@ footer {
             }
         }
     }
+}
+p a {
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;    
+    color: #00B7CE;
 }
 
 .wrapper__gray {
