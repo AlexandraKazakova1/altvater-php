@@ -18,7 +18,9 @@ $(document).ready (function() {
         slidesToShow: 1,
         slidesToScroll: 1
     });
+});
 
+$(document).ready (function() {
     $('.reply').slideToggle();
     $('.question').click(function() {
         $(this).toggleClass('active');
@@ -36,19 +38,9 @@ $(document).ready (function() {
             $('.menu__icon').removeClass('close')
 		}
 	});
+});
 
-    $('#callback-form').validate({
-        rules: {
-            username: {
-                required: true,
-                minlength: 2
-            },
-            useremail: {
-                required: true,
-                email: true
-            }
-        }
-    });
+$(document).ready (function() {
     $("#callback-form").validate({
         rules: {
             username: {
@@ -58,6 +50,9 @@ $(document).ready (function() {
             useremail: {
                 required: true,
                 email: true
+            },
+            rule: {
+                required: true
             }
         },
         messages: {
@@ -68,38 +63,43 @@ $(document).ready (function() {
             useremail: {
                 required: "Введіть свій e-mail!",
                 email: "Адреса має бути типу name@domain.com"
+            },
+            rule: {
+                required: "Підтвердіть свою згоду"
             }
         },
-        focusInvalid: true,
-        errorClass: "input_error"
+        focusInvalid: false,
+        errorClass: "error"
     });
+});
     
 
-    // $('#callback-form').submit(function(e) {
-    //     e.preventDefault()
-    //     if ($('#username').hasClass('error')) {
-    //         return false;
-    //     } else if ($('#useremail').hasClass('error')) {
-    //         return false;
-    //     } else {
-    //         $.ajax({
-    //             url: "/ajax/callback",
-    //             type: "POST",
-    //             dataType: "json",
-    //             data: $(this).serialize(),
-    //             success: function(data) {
-    //             console.log(data);
-    //                 console.log('ok');
-    //             },
-    //             error: function (data) {
-    //                 console.log(data);
-    //                 console.log('error');
-    //             },
-    //             complete: function () {
-    //                 console.log('end');
-    //             }
-    //         })
-    //         return false;
-    //     }
-    // });
+$(document).ready (function() {
+    $('#callback-form').submit(function(e) {
+        e.preventDefault()
+        if ($('#username').hasClass('error')) {
+            return false;
+        } else if ($('#useremail').hasClass('error')) {
+            return false;
+        } else {
+            $.ajax({
+                url: "/ajax/callback",
+                type: "POST",
+                dataType: "json",
+                data: $(this).serialize(),
+                success: function(data) {
+                console.log(data);
+                    console.log('ok');
+                },
+                error: function (data) {
+                    console.log(data);
+                    console.log('error');
+                },
+                complete: function () {
+                    console.log('end');
+                }
+            })
+            return false;
+        }
+    });
 });

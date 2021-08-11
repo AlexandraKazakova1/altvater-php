@@ -163,7 +163,7 @@
                         <fieldset class="callback-fieldset">
                             <label>
                                 <span>Ім'я </span>
-                                <input class="form-control required" type="text" id="username" name="username" placeholder="Ваше Ім'я">
+                                <input class="form-control" type="text" id="username" name="username" placeholder="Ваше Ім'я">
                             </label>
                             <label>
                                 <span>E-mail</span>
@@ -173,9 +173,9 @@
                                 <span>Повідомлення</span>
                                 <textarea placeholder="Ваше Повідомлення "></textarea>
                             </label>
-                            <button class="btn-submit">Залишити заявку</button>
+                            <button class="btn-submit" type="submit" name="comment">Залишити заявку</button>
                             <label class="checkbox__label">
-                                <input class="input-checkbox" type="checkbox">
+                                <input class="input-checkbox" type="checkbox" id="rule" name="rule">
                                 <span class="custom-checkbox"></span>
                                 <span class="checkbox-text">Підтверджуючи замовлення, я приймаю умови угоди користувача</span>
                             </label>
@@ -200,7 +200,8 @@
         </div>
     </footer>
     <script src="../js/jquery.min.js"></script>
-    <script src="../js/jquery.validate.min.js"></script>?
+    <script src="../js/slick.min.js"></script>
+    <script src="../js/jquery.validate.min.js"></script>
     <script src="../js/main.js"></script>
 </body>
 </html>

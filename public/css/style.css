@@ -992,6 +992,91 @@ header .header-banner .header-banner__link {
   line-height: 30px;
 }
 
+.response-wrapper .response .response__slider .slick-slide {
+  padding: 0 20px;
+}
+
+.response-wrapper .response .response__slider .slick-prev,
+.response-wrapper .response .response__slider .slick-next {
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 60px;
+  line-height: 0px;
+  font-size: 0px;
+  cursor: pointer;
+  background: transparent;
+  color: transparent;
+  top: 50%;
+  border: none;
+  outline: none;
+  z-index: 4;
+}
+
+.response-wrapper .response .response__slider .slick-prev {
+  left: -80px;
+}
+
+.response-wrapper .response .response__slider [dir="rtl"] .slick-prev {
+  left: auto;
+  right: -80px;
+}
+
+.response-wrapper .response .response__slider .slick-next {
+  right: -80px;
+}
+
+.response-wrapper .response .response__slider [dir="rtl"] .slick-next {
+  left: -80px;
+  right: auto;
+}
+
+.response-wrapper .response .response__slider .slick-prev:before {
+  content: url(../img/small-left.svg);
+}
+
+.response-wrapper .response .response__slider [dir="rtl"] .slick-prev:before {
+  content: url(../img/small-left.svg);
+}
+
+.response-wrapper .response .response__slider .slick-next:before {
+  content: url(../img/small-left.svg);
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.response-wrapper .response .response__slider [dir="rtl"] .slick-next:before {
+  content: url(../img/small-left.svg);
+}
+
+.response-wrapper .response .response__slider .slick-prev:hover:before, .response-wrapper .response .response__slider .slick-prev:focus:before,
+.response-wrapper .response .response__slider .slick-next:hover:before,
+.response-wrapper .response .response__slider .slick-next:focus:before {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  content: url(../img/small-left-hover.svg);
+}
+
+.response-wrapper .response .response__slider .slick-prev:before,
+.response-wrapper .response .response__slider .slick-next:before {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border-radius: 0px 60px 0px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 1;
+}
+
 .detail__wrapper {
   position: relative;
   background: rgba(242, 242, 242, 0.6);
@@ -1743,6 +1828,15 @@ footer .footer span {
   resize: none;
 }
 
+.contacts__wrapper .contacts .callback .callback__form fieldset label .error {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 1.1px;
+  color: #F2664F;
+}
+
 .contacts__wrapper .contacts .callback .callback__form fieldset label input,
 .contacts__wrapper .contacts .callback .callback__form fieldset label textarea {
   font-style: normal;
@@ -1756,6 +1850,11 @@ footer .footer span {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   border-bottom: 3px solid rgba(189, 200, 214, 0.3);
+}
+
+.contacts__wrapper .contacts .callback .callback__form fieldset label .form-control.error,
+.contacts__wrapper .contacts .callback .callback__form fieldset label textarea.error {
+  border-bottom: 3px solid #F2664F;
 }
 
 .contacts__wrapper .contacts .callback .callback__form fieldset label textarea:focus,
@@ -1824,6 +1923,7 @@ footer .footer span {
       flex-wrap: nowrap;
   cursor: pointer;
   grid-column-gap: 13px;
+  position: relative;
 }
 
 .contacts__wrapper .contacts .callback .callback__form fieldset .checkbox__label .input-checkbox {
@@ -1868,7 +1968,7 @@ footer .footer span {
   transition: all 0.3s;
 }
 
-.contacts__wrapper .contacts .callback .callback__form fieldset .checkbox__label .input-checkbox:checked + .custom-checkbox::before {
+.contacts__wrapper .contacts .callback .callback__form fieldset .checkbox__label .input-checkbox:checked ~ .custom-checkbox::before {
   width: 24px;
   height: 24px;
   background: #00B7CE;
@@ -1877,10 +1977,20 @@ footer .footer span {
   transition: all 0.3s;
 }
 
-.contacts__wrapper .contacts .callback .callback__form fieldset .checkbox__label .input-checkbox:checked + .custom-checkbox::after {
+.contacts__wrapper .contacts .callback .callback__form fieldset .checkbox__label .input-checkbox:checked ~ .custom-checkbox::after {
   opacity: 1;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+}
+
+.contacts__wrapper .contacts .callback .callback__form fieldset .checkbox__label .input-checkbox.error ~ .custom-checkbox::before {
+  border: 1px solid #F2664F;
+}
+
+.contacts__wrapper .contacts .callback .callback__form fieldset .checkbox__label .error {
+  position: absolute;
+  left: 0;
+  bottom: -18px;
 }
 
 .contacts__wrapper .contacts .callback .callback__form fieldset .btn-submit {
