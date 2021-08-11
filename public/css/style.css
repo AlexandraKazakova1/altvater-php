@@ -3262,6 +3262,9 @@ p a {
             flex-direction: column;
     grid-row-gap: 20px;
   }
+  p a {
+    word-wrap: break-word;
+  }
 }
 
 @media (max-width: 580px) {

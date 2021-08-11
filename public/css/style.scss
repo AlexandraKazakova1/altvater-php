@@ -1653,7 +1653,6 @@ p a {
     text-decoration: none;    
     color: #00B7CE;
 }
-
 .wrapper__gray {
     background: #EAE9E9;
     padding-top: 30px;
@@ -2426,6 +2425,9 @@ p a {
             }
         }
     }
+    p a {
+        word-wrap: break-word;
+    }   
 }
 @media (max-width:580px) {
     .stat__wrapper {
