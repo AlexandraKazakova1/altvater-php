@@ -591,6 +591,62 @@ main {
   border-radius: 16px;
   padding: 25px;
   width: 48%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  grid-row-gap: 24px;
+}
+
+.account__wrapper .account__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  grid-row-gap: 26px;
+}
+
+.account__wrapper .account__info .owner, .account__wrapper .account__info .owner__id__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  grid-column-gap: 14px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.account__wrapper .account__info .owner div, .account__wrapper .account__info .owner__id__wrapper div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  grid-row-gap: 4px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 25px;
+  color: #91929E;
+}
+
+.account__wrapper .account__info .owner div .owner-name, .account__wrapper .account__info .owner div .owner-id, .account__wrapper .account__info .owner__id__wrapper div .owner-name, .account__wrapper .account__info .owner__id__wrapper div .owner-id {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #3A3A39;
 }
 
 .volume__wrapper {

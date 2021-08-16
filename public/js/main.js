@@ -18,9 +18,7 @@ $(document).ready (function() {
         slidesToShow: 1,
         slidesToScroll: 1
     });
-});
 
-$(document).ready (function() {
     $('.reply').slideToggle();
     $('.question').click(function() {
         $(this).toggleClass('active');
@@ -43,9 +41,7 @@ $(document).ready (function() {
         $(this).toggleClass('show');
         $(this).children('.dropdown__list').slideToggle(300);
     });
-});
 
-$(document).ready (function() {
     $("#callback-form").validate({
         rules: {
             username: {
@@ -76,10 +72,7 @@ $(document).ready (function() {
         focusInvalid: false,
         errorClass: "error"
     });
-});
-    
 
-$(document).ready (function() {
     $('#callback-form').submit(function(e) {
         e.preventDefault()
         if ($('#username').hasClass('error')) {
@@ -107,9 +100,7 @@ $(document).ready (function() {
             return false;
         }
     });
-});
-
-$(document).ready (function() {
+    
     $(".scroll").click(function(event){     
         event.preventDefault();
         $('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
