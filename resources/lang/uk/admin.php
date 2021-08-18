@@ -329,4 +329,27 @@ return [
 		'title'					=> 'Заголовок',
 		'url'					=> 'URL',
 	],
+	
+	'pages'					=> [
+		'page_info'				=> 'Основна інформація',
+		'page_seo'				=> 'SEO',
+		'page_content'			=> 'Контент',
+		
+		'created_at'			=> 'Створено',
+		'updated_at'			=> 'Оновлено',
+		'public'				=> 'Опубліковано',
+		'sort'					=> 'Порядок',
+		'title'					=> 'Заголовок',
+		'slug'					=> 'URL',
+		'meta_keywords'			=> 'META ключові слова',
+		'meta_description'		=> 'META опис',
+		'canonical'				=> 'Canonical',
+		'robots'				=> [
+			'type'					=> 'Індексація',
+			'index'					=> 'Індексувати',
+			'noindex'				=> 'Не індексувати',
+		],
+		'header'				=> 'Заголовок (H1)',
+		'text'					=> 'Текст',
+	],
 ];

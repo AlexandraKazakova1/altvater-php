@@ -46,7 +46,7 @@ class PagesController extends MyAdminController {
 		
 		$grid->column('title'			, __('admin.pages.title'));
 		
-		$grid->column('robots'			, __('admin.pages.robots'))->display(function($robots){
+		$grid->column('robots'			, __('admin.pages.robots.type'))->display(function($robots){
 			return $robots == 'index' ? '<i class="fa fa-check" style="color:green;" aria-hidden="true"></i>' : '<i class="fa fa-times" style="color:red;" aria-hidden="true"></i>';
 		});
 		
