@@ -1,0 +1,82 @@
+{
+    "name": "laravel/laravel",
+    "type": "project",
+    "description": "The Laravel Framework.",
+    "keywords": ["framework", "laravel"],
+    "license": "MIT",
+    "require": {
+        "php": "^7.3|^8.0",
+        "bogdaan/viber-bot-php": "^0.0.14",
+        "encore/laravel-admin": "^1.8",
+        "fideloper/proxy": "^4.4",
+        "fruitcake/laravel-cors": "^2.0",
+        "google/apiclient": "^2.9",
+        "guzzlehttp/guzzle": "6.5.5",
+        "intervention/image": "^2.5",
+        "james.xue/login-captcha": "^2.0",
+        "jxlwqq/code-mirror": "^1.0",
+        "jxlwqq/json-editor": "^1.0",
+        "laravel-admin-ext/backup": "^1.1",
+        "laravel-admin-ext/chartjs": "^1.0",
+        "laravel-admin-ext/clike-editor": "^1.0",
+        "laravel-admin-ext/config": "^1.1",
+        "laravel-admin-ext/grid-lightbox": "^1.0",
+        "laravel-admin-ext/grid-sortable": "^1.1",
+        "laravel-admin-ext/log-viewer": "^1.0",
+        "laravel-admin-ext/media-manager": "1.x",
+        "laravel-admin-ext/scheduling": "^1.1",
+        "laravel-admin-ext/summernote": "^1.0",
+        "laravel/framework": "^8.12",
+        "laravel/socialite": "^5.2",
+        "laravel/tinker": "^2.5",
+        "matthiasmullie/minify": "^1.3",
+        "monolog/monolog": "^2.2",
+        "spatie/eloquent-sortable": "^3.11",
+        "spatie/laravel-backup": "^6.16",
+        "spatie/laravel-image-optimizer": "^1.6"
+    },
+    "require-dev": {
+        "facade/ignition": "^2.5",
+        "fakerphp/faker": "^1.9.1",
+        "laravel/sail": "^1.0.1",
+        "mockery/mockery": "^1.4.2",
+        "nunomaduro/collision": "^5.0",
+        "phpunit/phpunit": "^9.3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi"
+        ],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate --ansi"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
