@@ -753,6 +753,9 @@ main {
         border-radius: 16px 16px 0 0;
         border-bottom: 1px solid #2F5E97;
         background: #2F5E97;
+        .dhx_title {
+            text-transform: none;
+        }
     }
     .dhx_cal_ltext textarea {
         border: 1px solid #E2E8F0;
@@ -780,6 +783,7 @@ main {
         transition: all 0.3s;
     }
     .dhx_btn_set {
+        outline: none;
         text-transform: none;
     }
     .dhx_btn_set,

@@ -1087,6 +1087,10 @@ main {
   background: #2F5E97;
 }
 
+.dhx_cal_light .dhx_cal_ltitle .dhx_title {
+  text-transform: none;
+}
+
 .dhx_cal_light .dhx_cal_ltext textarea {
   border: 1px solid #E2E8F0;
   background: #FFFFFF;
@@ -1121,6 +1125,7 @@ main {
 }
 
 .dhx_cal_light .dhx_btn_set {
+  outline: none;
   text-transform: none;
 }
 
