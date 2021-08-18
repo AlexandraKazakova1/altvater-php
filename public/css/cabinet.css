@@ -1070,10 +1070,6 @@ main {
   font-family: 'Fira Sans';
 }
 
-.calendar__wrapper .dhx_cal_nav_button:hover {
-  background: rgba(207, 104, 84, 0.2);
-}
-
 .dhx_cal_light {
   background: #FFFFFF;
   border-radius: 16px;
