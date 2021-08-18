@@ -268,12 +268,9 @@ return [
 		'created_at'			=> 'Створено',
 		'updated_at'			=> 'Оновлено',
 		
-		'phone'					=> 'Телефон',
-		'name'					=> 'Ім\'я',
+		'image'					=> 'Зображення',
 		'client'				=> 'Клієнт',
-		'rating'				=> 'Оцінка',
 		'text'					=> 'Текст',
-		'show'					=> 'Показувати',
 	],
 	
 	'sale_containers'		=> [

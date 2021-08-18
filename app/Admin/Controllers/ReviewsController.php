@@ -34,12 +34,8 @@ class ReviewsController extends MyAdminController {
 		$grid->column('id'				, __('ID'));
 		
 		$grid->column('created_at'		, __('admin.reviews.created_at'));
-		$grid->column('client'			, __('admin.reviews.client'))->display(function(){
-			$client = $this->client;
-			
-			return '#'.$client->id.' - '.$client->name;
-		});
-		$grid->column('rating'			, __('admin.reviews.rating'));
+		$grid->column('name'			, __('admin.reviews.client'));
+		$grid->column('image'			, __('admin.reviews.image'))->image();
 		$grid->column('text'			, __('admin.reviews.text'));
 		
 		$model = $grid->model();
@@ -52,7 +48,7 @@ class ReviewsController extends MyAdminController {
 		
 		$model->orderBy('created_at', 'desc');
 		
-		$grid->disableCreateButton();
+		//$grid->disableCreateButton();
 		
 		$grid->paginate(100);
 		
@@ -60,7 +56,7 @@ class ReviewsController extends MyAdminController {
 	}
 	
 	protected function detail($id){
-		header('Location: /reviews/'.$id.'/edit');
+		header('Location: /admin/reviews/'.$id.'/edit');
 		return;
 	}
 	
@@ -76,14 +72,9 @@ class ReviewsController extends MyAdminController {
 		
 		$id = $this->_id;
 		
-		$form->radio('rating'			, __('admin.reviews.rating'))
-					->options([
-						'1'			=> '1',
-						'2'			=> '2',
-						'3'			=> '3',
-						'4'			=> '4',
-						'5'			=> '5',
-					]);
+		$form->text('name'				, __('admin.reviews.client'))->rules('required|min:2|max:250');
+		
+		$form->image('image'			, __('admin.reviews.image'))->removable()->move('reviews-images')->uniqueName();
 		
 		$form->textarea('text'			, __('admin.reviews.text'))->rules('min:4|max:1500|required');
 		
