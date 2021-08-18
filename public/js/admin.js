@@ -52,9 +52,12 @@ function open_edit(){
 		var current = $(this);
 		
 		if(!current.hasClass('column-__actions__') && e.target.tagName != "A"){
-			var tr = current.parents('tr');
+			var tr	= current.parents('tr');
+			var key	= parseInt(tr.attr("data-key"));
 			
-			window.location.href = window.location.href+'/'+tr.attr("data-key")+'/edit';
+			if(!isNaN(key) && key > 0){
+				window.location.href = window.location.href+'/'+tr.attr("data-key")+'/edit';
+			}
 		}
 	});
 };
