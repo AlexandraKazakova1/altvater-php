@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Veolia</title>
+    <link rel="stylesheet" href="../css/dhtmlxscheduler_material.css">
     <link rel="stylesheet" href="../css/select2.css">
     <link rel="stylesheet" href="../css/cabinet.css">
 </head>
@@ -228,7 +229,20 @@
                                 <option>Рік</option>
                             </select>
                         </div>
-                        <img src="../img/cabinet/zaglushka-1.png" alt="">
+                        <div id="scheduler__calendar" class="dhx_cal_container" style='width:100%; height:100vh;'>
+                            <div class="dhx_cal_navline">
+                                <div class="dhx_cal_prev_button">&nbsp;</div>
+                                <div class="dhx_cal_next_button">&nbsp;</div>
+                                <div class="dhx_cal_today_button"></div>
+                                <div class="dhx_cal_date"></div>
+                                <div class="dhx_cal_tab" name="day_tab"></div>
+                                <div class="dhx_cal_tab" name="week_tab" ></div>
+                                <div class="dhx_cal_tab" name="month_tab"></div>
+                            </div>
+                            <div class="dhx_cal_header"></div>
+                            <div class="dhx_cal_data"></div>       
+                       </div>
+                        <!-- <img src="../img/cabinet/zaglushka-1.png" alt=""> -->
                     </section>
                 </div>
                 <aside class="addresses__wrapper">
@@ -353,5 +367,9 @@
     <script src="../js/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../js/cabinet.js"></script>
+    <script src="../js/dhtmlxscheduler.js"></script>
+    <script type="text/javascript">
+        scheduler.init("scheduler_here");
+    </script>
 </body>
 </html>
