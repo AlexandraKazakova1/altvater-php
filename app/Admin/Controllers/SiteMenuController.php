@@ -54,7 +54,7 @@ class SiteMenuController extends MyAdminController {
 			//$tools->disableList();
 		});
 		
-		$model->orderBy('sort', 'desc');
+		$model->orderBy('sort', 'asc');
 		
 		//$grid->disableCreateButton();
 		

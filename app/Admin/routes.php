@@ -30,4 +30,5 @@ Route::group([
 	$router->resource('ip-list'					, IpListController::class);
 	$router->resource('faq'						, FAQController::class);
 	$router->resource('site-menu'				, SiteMenuController::class);
+	$router->resource('pages'					, PagesController::class);
 });
