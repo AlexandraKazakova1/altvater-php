@@ -31,4 +31,5 @@ Route::group([
 	$router->resource('faq'						, FAQController::class);
 	$router->resource('site-menu'				, SiteMenuController::class);
 	$router->resource('pages'					, PagesController::class);
+	$router->resource('news'					, NewsController::class);
 });

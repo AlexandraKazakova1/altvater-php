@@ -2,7 +2,7 @@
 
 namespace App\Admin\Controllers;
 
-use App\Models\Pages;
+use App\Models\News;
 
 use App\Admin\Controllers\MyAdminController;
 
@@ -12,14 +12,14 @@ use Encore\Admin\Show;
 
 use App\Helpers\StringHelper;
 
-class PagesController extends MyAdminController {
+class NewsController extends MyAdminController {
 	
 	/**
 	 * Title for current resource.
 	 *
 	 * @var string
 	 */
-	protected $title = 'Сторінки';
+	protected $title = 'Новини';
 	
 	/**
 	 * Make a grid builder.
@@ -27,7 +27,7 @@ class PagesController extends MyAdminController {
 	 * @return Grid
 	 */
 	protected function grid(){
-		$grid = new Grid(new Pages());
+		$grid = new Grid(new News());
 		
 		$grid->column('id'				, __('ID'));
 		
@@ -52,6 +52,8 @@ class PagesController extends MyAdminController {
 			return $robots == 'index' ? '<i class="fa fa-check" style="color:green;" aria-hidden="true"></i>' : '<i class="fa fa-times" style="color:red;" aria-hidden="true"></i>';
 		});
 		
+		$grid->column('image'			, __('admin.pages.image'))->image();
+		
 		$grid->actions(function($actions){
 			//$tools->disableDelete();
 			$actions->disableView();
@@ -69,7 +71,7 @@ class PagesController extends MyAdminController {
 	}
 	
 	protected function detail($id){
-		header('Location: /admin/pages/'.$id.'/edit');
+		header('Location: /admin/news/'.$id.'/edit');
 		return;
 	}
 	
@@ -79,7 +81,7 @@ class PagesController extends MyAdminController {
 	 * @return Form
 	 */
 	protected function form(){
-		$form = new Form(new Pages());
+		$form = new Form(new News());
 		
 		$this->configure($form);
 		
@@ -90,6 +92,8 @@ class PagesController extends MyAdminController {
 			$form->text('slug'			, __('admin.pages.slug'))->rules('max:150');
 			
 			$form->switch('public'		, __('admin.pages.public'));
+			
+			$form->image('image'		, __('admin.pages.image'))->help('675x457px')->removable()->move('news-images')->uniqueName();
 		});
 		
 		$form->tab(__('admin.pages.page_seo')		, function($form){

@@ -17,7 +17,7 @@ class HomeController extends Controller{
 	
     public function index(Content $content){
 		if(Admin::guard()->check()){
-			return redirect('/admin/clients');
+			return redirect('/admin/pages');
 		}
 		
 		return redirect('/admin/auth/login');
