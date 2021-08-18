@@ -172,6 +172,8 @@ return [
         App\Providers\RouteServiceProvider::class,
 		
 		//Spatie\EloquentSortable\EloquentSortableServiceProvider::class,
+		
+		Nutnet\LaravelSms\ServiceProvider::class,
     ],
     /*
     |--------------------------------------------------------------------------
