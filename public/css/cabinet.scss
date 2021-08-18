@@ -222,6 +222,14 @@ main {
     grid-column-gap: 20px;
     .menu-icon {
         display: none;
+        svg {
+            stroke: #4A5568;
+        }
+    }
+    .menu-icon:hover {
+        svg {
+            stroke: #CF6854;
+        }
     }
     .c__header__newOrder {
         display: flex;
@@ -545,9 +553,6 @@ main {
         justify-content: space-between;
         padding-bottom: 25px;
     }
-    #scheduler__calendar {
-
-    }
 }
 .content__wrapper {
     display: flex;
@@ -823,5 +828,93 @@ main {
         border-radius: 8px;
         color: #FFFFFF;
         transition: all 0.3s;
+    }
+}
+
+
+@media (max-width:1440px) {
+    .content__wrapper {
+        .content {
+            flex: 1 0 auto;
+            flex-direction: column;
+            justify-content: flex-start;
+            .account__wrapper {
+                width: 100%;
+                max-width: 34.722vw;
+            }
+            .volume__wrapper {
+                width: 100%;
+                max-width: 34.722vw;
+                .volume {
+                    width: 100%;
+                }
+            }
+        }
+        .addresses__wrapper {
+            flex: 1 0 auto;
+        }
+        .calendar__wrapper {
+            display: none;
+        }
+    }
+}
+@media (max-width:1024px) {
+    .c__header {
+        .c__header__nav {
+            display: none;
+        }
+    }
+    .content__wrapper {
+        margin-right: 0;
+        flex-direction: column;
+        .content {
+            .account__wrapper {
+                max-width: 100%;
+            }
+            .volume__wrapper {
+                max-width: 100%;
+                .volume {
+                    width: 400px;
+                }
+            }
+        }
+    }
+    .sidebar__menu {
+        min-width: 248px;
+    }
+}
+@media (max-width:768px) {
+    .c__header {
+        .menu-icon {
+            outline: none;
+            background: inherit;
+            display: block;
+        }
+        .c__header__newOrder {
+            display: none;
+        }
+        .c__header__info .profile .profile__info {
+            display: none;
+        }
+    }
+    .sidebar__menu {
+        position: absolute;
+        display: none;
+    }
+    .page__title {
+        margin: 0 25px;
+    }
+    .content__wrapper {
+    }
+}
+@media (max-width:480px) {
+    .content__wrapper {
+        .content {
+            .volume__wrapper {
+                .volume {
+                    width: 312px;
+                }
+            }
+        }
     }
 }
