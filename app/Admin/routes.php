@@ -28,4 +28,5 @@ Route::group([
 	$router->resource('purchase'				, PurchaseController::class);
 	
 	$router->resource('ip-list'					, IpListController::class);
+	$router->resource('faq'						, FAQController::class);
 });
