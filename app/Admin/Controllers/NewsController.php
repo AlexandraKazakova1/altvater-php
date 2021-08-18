@@ -112,7 +112,7 @@ class NewsController extends MyAdminController {
 		});
 		
 		$form->tab(__('admin.pages.page_content')	, function($form){
-			$form->text('header'				, __('admin.pages.header'))->rules('max:250');
+			$form->textarea('header'			, __('admin.pages.header'));
 			
 			$form->ckeditor('text'				, __('admin.pages.text'));
 		});
