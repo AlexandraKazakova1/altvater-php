@@ -26,4 +26,6 @@ Route::group([
 	$router->resource('reviews'					, ReviewsController::class);
 	$router->resource('sale-containers'			, SaleContainersController::class);
 	$router->resource('purchase'				, PurchaseController::class);
+	
+	$router->resource('ip-list'					, IpListController::class);
 });
