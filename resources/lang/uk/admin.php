@@ -267,7 +267,7 @@ return [
 	'reviews'				=> [
 		'created_at'			=> 'Створено',
 		'updated_at'			=> 'Оновлено',
-		
+		'public'				=> 'Опубліковано',
 		'image'					=> 'Зображення',
 		'client'				=> 'Клієнт',
 		'text'					=> 'Текст',

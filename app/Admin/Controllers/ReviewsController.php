@@ -34,6 +34,13 @@ class ReviewsController extends MyAdminController {
 		$grid->column('id'				, __('ID'));
 		
 		$grid->column('created_at'		, __('admin.reviews.created_at'));
+		
+		$grid->column('public'			, __('admin.reviews.public'))->display(function($public){
+			$public = (int)$public;
+			
+			return $public > 0 ? '<i class="fa fa-check" style="color:green;" aria-hidden="true"></i>' : '<i class="fa fa-times" style="color:red;" aria-hidden="true"></i>';
+		});
+		
 		$grid->column('name'			, __('admin.reviews.client'));
 		$grid->column('image'			, __('admin.reviews.image'))->image();
 		$grid->column('text'			, __('admin.reviews.text'));
@@ -71,6 +78,8 @@ class ReviewsController extends MyAdminController {
 		$this->configure($form);
 		
 		$id = $this->_id;
+		
+		$form->switch('public'			, __('admin.reviews.public'));
 		
 		$form->text('name'				, __('admin.reviews.client'))->rules('required|min:2|max:250');
 		
