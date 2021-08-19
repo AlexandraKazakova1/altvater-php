@@ -51,7 +51,7 @@ class NewsController extends MyController {
 	public function once(Request $request){
 		$uri = $request->route('uri');
 		
-		$page = Pages::query()->where('slug', $uri)->where('public', 1)->first();
+		$page = News::query()->where('slug', $uri)->where('public', 1)->first();
 		
 		if(!$page){
 			return abort(404);
@@ -60,16 +60,18 @@ class NewsController extends MyController {
 		return view(
 			'news/once',
 			[
-				'page'		=> array(
+				'page'			=> array(
 					'title'			=> $page->title,
 					'keywords'		=> $page->keywords,
 					'description'	=> $page->description,
-					'uri'			=> $uri,
+					'uri'			=> 'news/'.$uri,
 					'og_image'		=> '',
 				),
-				'data'		=> $page,
-				'robots'	=> $page->robots,
-				'canonical'	=> $page->canonical,
+				'headerClass'	=> 'background-2',
+				'data'			=> $page,
+				'robots'		=> $page->robots,
+				'canonical'		=> $page->canonical,
+				'news'			=> News::getNew(),
 			]
 		);
 	}
