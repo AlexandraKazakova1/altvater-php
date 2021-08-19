@@ -110,13 +110,19 @@
 			</nav>
 			
 			@if($page['uri'] == 'index')
+				@if($data->header)
 				<div class="header-banner container">
-					<h1 class="header-banner__title">ТОВ "Альтфатер Київ"<br>представляє собою сучасну компанію</h1>
+					<h1 class="header-banner__title">{!!$data->header!!}</h1>
 					
-					<div class="header-banner__descrption">Ваш надійний партнер у сфері поводження з відходами!</div>
+					@if($data->subheader)
+						<div class="header-banner__descrption">{!!$data->subheader!!}</div>
+					@endif
 					
-					<a href="#" class="header-banner__link btn-red">Отримати консультацію</a>
+					@if($data->show_btn)
+						<a href="{{$data->btn_url}}" class="{{$data->btn_class}}">{{$data->btn_label}}</a>
+					@endif
 				</div>
+				@endif
 			@endif
 		</header>
 		

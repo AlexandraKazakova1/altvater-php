@@ -22,7 +22,7 @@ class PageController extends MyController {
 	}
 	
 	public function index(){
-		$page = Pages::query()->where('slug', 'index')->first();
+		$page = (object)Pages::query()->where('slug', 'index')->first()->toArray();
 		
 		$data = [
 			'page' => array(
@@ -32,6 +32,7 @@ class PageController extends MyController {
 				'uri'			=> 'index',
 				'og_image'		=> '',
 			),
+			'data'	=> $page
 		];
 		
 		return view(
