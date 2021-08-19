@@ -141,10 +141,12 @@
 			</div>
 		</section>
 		
-		<section class="map__wrapper">
-			<div class="map">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2542.303867778357!2d30.44555131573017!3d50.41680987947067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4c94c9785da35%3A0x74c88dfe5d85f814!2z0J_QvtCy0ZbRgtGA0L7RhNC70L7RgtGB0YzQutC40Lkg0L_RgNC-0YHQv9C10LrRgiwgNzIsINCa0LjRl9CyLCAwMjAwMA!5e0!3m2!1suk!2sua!4v1628112965382!5m2!1suk!2sua" width="100%" height="530px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-			</div>
-		</section>
+		@if($settings['map_url'])
+			<section class="map__wrapper">
+				<div class="map">
+					<iframe src="{{$settings['map_url']}}" width="100%" height="530px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+				</div>
+			</section>
+		@endif
 	</main>
 @stop
