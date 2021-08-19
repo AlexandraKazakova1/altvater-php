@@ -334,6 +334,7 @@ return [
 		'page_info'				=> 'Основна інформація',
 		'page_seo'				=> 'SEO',
 		'page_content'			=> 'Контент',
+		'recent_works'			=> 'Останні виконані роботи',
 		
 		'created_at'			=> 'Створено',
 		'updated_at'			=> 'Оновлено',
@@ -351,6 +352,8 @@ return [
 		],
 		'header'				=> 'Заголовок (H1)',
 		'image'					=> 'Зображення',
+		'alt'					=> 'ALT',
 		'text'					=> 'Текст',
+		'slider_label'			=> 'Подпись под слайдером',
 	],
 ];

@@ -32,4 +32,5 @@ Route::group([
 	$router->resource('site-menu'				, SiteMenuController::class);
 	$router->resource('pages'					, PagesController::class);
 	$router->resource('news'					, NewsController::class);
+	$router->resource('services'				, ServicesController::class);
 });
