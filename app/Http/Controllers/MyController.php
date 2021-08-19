@@ -68,6 +68,8 @@ class MyController extends Controller {
 		View::share('robots'				, '');
 		View::share('canonical'				, '');
 		
+		View::share('headerClass'			, '');
+		
 		//
 		
 		View::share('menu'					, SiteMenu::query()->where('public', 1)->orderBy('sort', 'asc')->get());

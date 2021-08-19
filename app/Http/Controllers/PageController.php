@@ -66,16 +66,17 @@ class PageController extends MyController {
 		return view(
 			'page',
 			[
-				'page'		=> array(
+				'page'			=> array(
 					'title'			=> $page->title,
 					'keywords'		=> $page->keywords,
 					'description'	=> $page->description,
 					'uri'			=> $uri,
 					'og_image'		=> '',
 				),
-				'data'		=> $page,
-				'robots'	=> $page->robots,
-				'canonical'	=> $page->canonical,
+				'data'			=> $page,
+				'headerClass'	=> 'small',
+				'robots'		=> $page->robots,
+				'canonical'		=> $page->canonical,
 			]
 		);
 	}

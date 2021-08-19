@@ -75,7 +75,7 @@
 	<body>
 		{!!$settings['body_code']!!}
 		
-		<header>
+		<header class="{{$headerClass}}">
 			<nav class="header-nav container">
 				<a href="/" class="header-nav__logo">
 					<img src="/img/logo.png" alt="Veolia">
@@ -121,8 +121,7 @@
 				</div>
 			</nav>
 			
-			@if($page['uri'] == 'index')
-				@if($data->header)
+			@if($data->header)
 				<div class="header-banner container">
 					<h1 class="header-banner__title">{!!$data->header!!}</h1>
 					
@@ -134,7 +133,6 @@
 						<a href="{{$data->btn_url}}" class="{{$data->btn_class}}">{{$data->btn_label}}</a>
 					@endif
 				</div>
-				@endif
 			@endif
 		</header>
 		

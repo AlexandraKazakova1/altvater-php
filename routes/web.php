@@ -31,6 +31,15 @@ Route::group(['namespace' => 'Ajax'], function(){
 	]);
 });
 
+Route::get('news', [
+	'as'    => 'news',
+	'uses'  => 'NewsController@index'
+]);
+
+Route::get('news/{uri}', [
+	'uses' => 'NewsController@once'
+])->where('uri', '[a-zA-Z_0-9\-]+');
+
 Route::get('/{uri}', [
 	'uses' => 'PageController@once'
 ])->where('uri', '[a-zA-Z_0-9\-]+');
