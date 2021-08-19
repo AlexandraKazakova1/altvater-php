@@ -10,16 +10,34 @@
 <body>
     <main>
         <div class="log__in-page">
-            <h1 class="popap__title">Вхід до<br>особистогу кабінету</h1>
+            <h1 class="popap__title">Вхід до<br>особистого кабінету</h1>
             <form class="log__in__form" id="log__in-form">
                 <fieldset class="log__in-fieldset">
                     <label>
                         <span class="input-description">Email:</span>
-                        <input class="form-control" type="email" id="user-email" name="user-email" placeholder="Ваш email">
+                        <input class="form-control" type="email" id="user-email" name="user-email" placeholder=" ">
+                        <span class="input-placeholder">
+                            <div>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.49805 9.74805L10.4247 11.5524C11.3905 12.1478 12.6094 12.1478 13.5751 11.5524L16.5018 9.74805" stroke="#2F5E97" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <rect x="2.99609" y="4.99609" width="18.0075" height="14.0058" rx="3" stroke="#2F5E97" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            Ваш Email
+                        </span>
                     </label>
                     <label>
                         <span class="input-description">Пароль:</span>
-                        <input class="form-control" type="password" id="user-password" name="user-password" placeholder="Введіть пароль">
+                        <input class="form-control" type="password" id="user-password" name="user-password" placeholder=" ">
+                        <span class="input-placeholder">
+                            <div>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M14.8167 4.16689C16.3726 5.72274 16.3726 8.24527 14.8167 9.80112C13.2609 11.357 10.7384 11.357 9.18251 9.80112C7.62666 8.24527 7.62666 5.72274 9.18251 4.16689C10.7384 2.61104 13.2609 2.61104 14.8167 4.16689" stroke="#2F5E97" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12 14.0078C16.554 14.0078 21 15.9748 21 18.9998V19.9998C21 20.5518 20.552 20.9998 20 20.9998H4C3.448 20.9998 3 20.5518 3 19.9998V18.9998C3 15.9738 7.446 14.0078 12 14.0078" stroke="#2F5E97" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            Введіть пароль
+                        </span>
                     </label>
                     <div class="convenience">
                         <label class="checkbox__label">
@@ -27,24 +45,23 @@
                             <span class="custom-checkbox"></span>
                             <span class="checkbox-text">Запам'ятати мене</span>
                         </label>
-                        <a class="forgot__password__link" href="#">Забули пароль?</a>
+                        <a class="forgot__password__link popup-text__link" href="#">Забули пароль?</a>
                     </div>
-                    <button class="btn-submit" type="submit" name="comment">Залишити заявку</button>
-                    <label class="checkbox__label">
-                        <input class="input-checkbox" type="checkbox" id="rule" name="rule">
-                        <span class="custom-checkbox"></span>
-                        <span class="checkbox-text">Підтверджуючи замовлення, я приймаю умови угоди користувача</span>
-                    </label>
+                    <button class="btn-submit" type="submit" name="logIn">Вхід</button>
                 </fieldset>
             </form>
-            <span>або продовжити</span>
+            <div class="or__text">
+                <span>або продовжити</span>
+            </div>
             <div class="log__with">
                 <a href="#">
+                    <img src="../img/cabinet/modal-icon/google.svg" alt="G">
                 </a>
                 <a href="#">
+                    <img src="../img/cabinet/modal-icon/facebook.svg" alt="f">
                 </a>
             </div>
-            <span>Немає акаунту? <a href="create__acc__link">Створити акаунт</a></span>
+            <span class="create__acc">Немає акаунту? <a href="create__acc__link popup-text__link">Створити акаунт</a></span>
         </div>
     </main>
     <script src="../js/jquery.min.js"></script>

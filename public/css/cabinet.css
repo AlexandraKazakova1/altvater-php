@@ -73,6 +73,78 @@ select {
 }
 
 @font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100;
+  src: local("Inter Thin"), local("Inter-Thin"), url("../fonts/Inter-Thin.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 200;
+  src: local("Inter ExtraLight"), local("Inter-ExtraLight"), url("../fonts/Inter-ExtraLight.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300;
+  src: local("Inter Light"), local("Inter-Light"), url("../fonts/Inter-Light.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Inter Regular"), local("Inter-Regular"), url("../fonts/Inter-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  src: local("Inter Medium"), local("Inter-Medium"), url("../fonts/Inter-Medium.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  src: local("Inter SemiBold"), local("Inter-SemiBold"), url("../fonts/Inter-SemiBold.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  src: local("Inter Bold"), local("Inter-Bold"), url("../fonts/Inter-Bold.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  src: local("Inter ExtraBold"), local("Inter-ExtraBold"), url("../fonts/Inter-ExtraBold.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 900;
+  src: local("Inter Black"), local("Inter-Black"), url("../fonts/Inter-Black.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
   font-family: 'Fira Sans';
   font-style: normal;
   font-weight: 100;
@@ -1194,6 +1266,14 @@ main {
   color: #4A5568;
 }
 
+.popup-text__link {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 110%;
+  color: #CF6854;
+}
+
 .log__in-page {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1211,13 +1291,22 @@ main {
   background: #FFFFFF;
   border-radius: 16px;
   max-width: 440px;
+  font-family: 'Inter';
 }
 
 .log__in-page .popap__title {
   padding-bottom: 40px;
 }
 
+.log__in-page .log__in__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
 .log__in-page .log__in__form .log__in-fieldset {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1232,6 +1321,7 @@ main {
 }
 
 .log__in-page .log__in__form .log__in-fieldset label {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1239,16 +1329,267 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding-bottom: 24px;
+  margin-bottom: 24px;
 }
 
 .log__in-page .log__in__form .log__in-fieldset label .input-description {
+  padding-left: 16px;
   padding-bottom: 8px;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 24px;
   color: rgba(113, 128, 150, 0.8);
+}
+
+.log__in-page .log__in__form .log__in-fieldset label .input-description::after {
+  content: '*';
+  color: rgba(218, 20, 20, 0.8);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.log__in-page .log__in__form .log__in-fieldset label input {
+  padding: 12px 16px;
+  background: #FFFFFF;
+  border: 1px solid #CBD5E0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 8px;
+  color: #4A5568;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  outline: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.log__in-page .log__in__form .log__in-fieldset label input:hover,
+.log__in-page .log__in__form .log__in-fieldset label input:focus {
+  border: 1px solid #2F5E97;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.log__in-page .log__in__form .log__in-fieldset label .input-placeholder {
+  pointer-events: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: absolute;
+  top: 45px;
+  left: 16px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba(113, 128, 150, 0.5);
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.log__in-page .log__in__form .log__in-fieldset label .input-placeholder div {
+  padding-right: 15px;
+}
+
+.log__in-page .log__in__form .log__in-fieldset label input:focus ~ .input-placeholder, .log__in-page .log__in__form .log__in-fieldset label input:not(:placeholder-shown) ~ .input-placeholder, .log__in-page .log__in__form .log__in-fieldset label input:-webkit-autofill ~ .input-placeholder {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.log__in-page .log__in__form .log__in-fieldset .convenience {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 25px;
+}
+
+.log__in-page .log__in__form .log__in-fieldset .convenience .checkbox__label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 0;
+}
+
+.log__in-page .log__in__form .log__in-fieldset .convenience .checkbox__label .input-checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.log__in-page .log__in__form .log__in-fieldset .convenience .checkbox__label .custom-checkbox {
+  width: 35px;
+  position: relative;
+  padding-right: 10px;
+}
+
+.log__in-page .log__in__form .log__in-fieldset .convenience .checkbox__label .custom-checkbox::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 23px;
+  height: 23px;
+  border: 1px solid rgba(44, 44, 44, 0.3);
+  border-radius: 2px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.log__in-page .log__in__form .log__in-fieldset .convenience .checkbox__label .custom-checkbox:hover::before {
+  border: 1px solid #00B7CE;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.log__in-page .log__in__form .log__in-fieldset .convenience .checkbox__label .custom-checkbox::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  background: url(../img/contact-icons/tick-checkbox.svg);
+  opacity: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.log__in-page .log__in__form .log__in-fieldset .convenience .checkbox__label .input-checkbox:checked ~ .custom-checkbox::before {
+  width: 24px;
+  height: 24px;
+  background: #00B7CE;
+  border: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.log__in-page .log__in__form .log__in-fieldset .convenience .checkbox__label .input-checkbox:checked ~ .custom-checkbox::after {
+  opacity: 1;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.log__in-page .log__in__form .log__in-fieldset .convenience .checkbox__label .input-checkbox.error ~ .custom-checkbox::before {
+  border: 1px solid #F2664F;
+}
+
+.log__in-page .log__in__form .log__in-fieldset .convenience .checkbox__label .error {
+  position: absolute;
+  left: 0;
+  bottom: -18px;
+}
+
+.log__in-page .log__in__form .log__in-fieldset .convenience .checkbox__label .checkbox-text {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: #4A5568;
+}
+
+.log__in-page .log__in__form .log__in-fieldset .btn-submit {
+  border: 1px solid #CF6854;
+  border-radius: 7px;
+  background: #CF6854;
+  padding: 13px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 22px;
+  color: #FFFFFF;
+  text-align: center;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  margin-bottom: 20px;
+}
+
+.log__in-page .log__in__form .log__in-fieldset .btn-submit:hover {
+  background: #BF604D;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.log__in-page .or__text {
+  position: relative;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  width: 100%;
+  z-index: 1;
+  padding: 8px;
+  margin-bottom: 20px;
+}
+
+.log__in-page .or__text span {
+  background: #FFFFFF;
+  color: #718096;
+  padding: 8px;
+}
+
+.log__in-page .or__text::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  border: 1px solid #CBD5E0;
+  z-index: -1;
+}
+
+.log__in-page .log__with {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media (max-width: 1440px) {
