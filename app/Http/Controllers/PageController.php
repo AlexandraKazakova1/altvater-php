@@ -28,6 +28,8 @@ class PageController extends MyController {
 	public function index(){
 		$page = (object)Pages::query()->where('slug', 'index')->first()->toArray();
 		
+		$detail = (object)Pages::query()->where('id', 2)->select('header', 'text')->first()->toArray();
+		
 		$data = [
 			'page'		=> array(
 				'title'			=> $page->title,
@@ -43,6 +45,7 @@ class PageController extends MyController {
 			'news'		=> News::getLast(),
 			'reviews'	=> Reviews::query()->where('public', 1)->orderBy('created_at', 'desc')->select('image', 'name', 'text')->get(),
 			'faq'		=> FAQ::query()->where('public', 1)->orderBy('sort', 'desc')->select('title', 'text')->get(),
+			'detail'	=> $detail,
 		];
 		
 		return view(
