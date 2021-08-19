@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\View;
 
 use App\Helpers\ImageHelper;
 use App\Helpers\StringHelper;
+use App\Helpers\UseHelper;
 
 class MyController extends Controller {
 	
@@ -61,10 +62,14 @@ class MyController extends Controller {
 		
 		//
 		
-		View::share('menu'			, SiteMenu::query()->where('public', 1)->orderBy('sort', 'asc')->get());
-		View::share('footer_menu'	, FooterMenu::query()->where('public', 1)->orderBy('sort', 'asc')->get());
+		View::share('menu'					, SiteMenu::query()->where('public', 1)->orderBy('sort', 'asc')->get());
+		View::share('footer_menu'			, FooterMenu::query()->where('public', 1)->orderBy('sort', 'asc')->get());
 		
-		View::share('imageHelp'		, new ImageHelper);
-		View::share('string'		, new StringHelper);
+		View::share('styles'				, Config('styles'));
+		View::share('scripts'				, Config('scripts'));
+		
+		View::share('use'					, new UseHelper);
+		View::share('image'					, new ImageHelper);
+		View::share('string'				, new StringHelper);
 	}
 }
