@@ -125,8 +125,11 @@
 		<footer>
 			<div class="footer container">
 				<div class="link__group">
-					<a href="#">Terms & Conditions</a>
-					<a href="#">Privacy Policy</a>
+					@foreach($footer_menu as $item)
+						<!-- -->
+						<a href="{{url($item->url)}}">{{$item->title}}</a>
+						<!-- -->
+					@endforeach
 				</div>
 				
 				<span>Copyright © 2021 Veolia. All rights reserved</span>
