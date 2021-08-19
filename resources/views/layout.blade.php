@@ -70,11 +70,13 @@
 				</a>
 				
 				<ul class="header-nav__list">
-					<!-- -->
-					<li class="header-nav__list__item">
-						<a href="../html/home.html">Головна</a>
-					</li>
-					<!-- -->
+					@foreach($menu as $item)
+						<!-- -->
+						<li class="header-nav__list__item">
+							<a href="{{url($item->url)}}">{{$item->title}}</a>
+						</li>
+						<!-- -->
+					@endforeach
 				</ul>
 				
 				<div class="header-nav__btn-group">
@@ -90,11 +92,14 @@
 						</a>
 						
 						<ul class="menu-nav__list">
-							<!-- -->
-							<li class="menu-nav__list__item">
-								<a href="#">Головна</a>
-							</li>
-							<!-- -->
+							@foreach($menu as $item)
+								<!-- -->
+								<li class="menu-nav__list__item">
+									<a href="{{url($item->url)}}">{{$item->title}}</a>
+								</li>
+								<!-- -->
+							@endforeach
+							
 							<div class="menu-nav__btn-group">
 								<a href="#" class="btn-logIn">Вхід</a>
 								<a href="#" class="btn-reg btn-red">Реєстрація</a>
@@ -104,13 +109,15 @@
 				</div>
 			</nav>
 			
-			<div class="header-banner container">
-				<h1 class="header-banner__title">ТОВ "Альтфатер Київ"<br>представляє собою сучасну компанію</h1>
-				
-				<div class="header-banner__descrption">Ваш надійний партнер у сфері поводження з відходами!</div>
-				
-				<a href="#" class="header-banner__link btn-red">Отримати консультацію</a>
-			</div>
+			@if($page['uri'] == 'index')
+				<div class="header-banner container">
+					<h1 class="header-banner__title">ТОВ "Альтфатер Київ"<br>представляє собою сучасну компанію</h1>
+					
+					<div class="header-banner__descrption">Ваш надійний партнер у сфері поводження з відходами!</div>
+					
+					<a href="#" class="header-banner__link btn-red">Отримати консультацію</a>
+				</div>
+			@endif
 		</header>
 		
 		@yield('content')
