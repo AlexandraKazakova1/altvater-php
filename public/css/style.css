@@ -510,7 +510,8 @@ header .header-banner .header-banner__link {
 }
 
 header.small {
-  min-height: none;
+  min-height: auto;
+  padding-bottom: 10px;
 }
 
 .services-wrapper .services {
