@@ -132,7 +132,7 @@
 					@endforeach
 				</div>
 				
-				<span>Copyright © 2021 Veolia. All rights reserved</span>
+				<span>{{$settings['copyright']}}</span>
 			</div>
 		</footer>
 		

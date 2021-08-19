@@ -53,6 +53,10 @@ class MyController extends Controller {
 				$item->value = trim($item->value);
 				
 				if($item->value != '#'){
+					if($item->name == 'copyright'){
+						$item->value = str_replace('{Y}', date('Y'), $item->value);
+					}
+					
 					$settings[$item->name] = $item->value;
 				}
 			}
