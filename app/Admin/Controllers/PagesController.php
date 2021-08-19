@@ -138,7 +138,7 @@ class PagesController extends MyAdminController {
 			$form->tab(__('admin.pages.page_content')	, function($form) use ($id) {
 				$form->text('header'			, __('admin.pages.header'))->rules('max:250');
 				
-				if($id != 3){
+				if($id != 3 && $id != 4){
 					$form->ckeditor('text'				, __('admin.pages.text'));
 				}
 			});
@@ -181,6 +181,28 @@ class PagesController extends MyAdminController {
 				$form->ckeditor('meta_text'				, __('admin.pages.text'))->rules('max:1500');
 				
 				$form->image('meta_image'				, __('admin.pages.image'))->help('476x388px')->removable()->move('pages-images')->uniqueName();
+			});
+		}
+		
+		if($id == 4){
+			$form->tab(__('admin.pages.contacts')		, function($form) use ($id) {
+				$form->hasMany('contacts', '', function($form){
+					$form->switch('public'			, __('admin.pages.public'));
+					
+					$form->radio('type'				, __('admin.pages.type'))
+						->options([
+							'address'			=> __('admin.pages.address'),
+							'phone'				=> __('admin.pages.phone'),
+							'phone'				=> __('admin.pages.phone'),
+							'email'				=> __('admin.pages.email'),
+							'work'				=> __('admin.pages.work'),
+							'viber'				=> __('admin.pages.viber'),
+							'telegram'			=> __('admin.pages.telegram'),
+						])
+						->rules('required');
+					
+					$form->text('value'				, __('admin.pages.value'))->rules('max:50|required');
+				});
 			});
 		}
 		

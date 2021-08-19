@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use DB;
 
+use App\Models\Contacts;
+
 class Pages extends Model {
 	
 	protected $table	= 'pages';
@@ -44,4 +46,8 @@ class Pages extends Model {
 		'indicators_public',
 		'indicators_text'
 	];
+	
+	public function contacts(){
+		return $this->hasMany(Contacts::class, 'page_id');
+	}
 }
