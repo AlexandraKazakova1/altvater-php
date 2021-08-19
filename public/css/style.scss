@@ -284,11 +284,9 @@ button:hover {
        }
     }
 }
-
 header {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     position: relative;
     background-image: url(../img/banner.png);
     background-size: cover;
@@ -402,6 +400,9 @@ header {
 .background-2 {
     background-image: url(../img/banner-2.png);
     min-height: 31.250vw
+}
+header.small {
+    min-height: none;
 }
 .services-wrapper {
     .services {
