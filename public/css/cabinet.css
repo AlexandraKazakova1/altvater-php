@@ -1185,6 +1185,25 @@ main {
   transition: all 0.3s;
 }
 
+.log__in-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 32px 50px 45px 50px;
+  margin: auto;
+  margin-top: 160px;
+  background: #FFFFFF;
+  border-radius: 16px;
+  max-width: 440px;
+}
+
 @media (max-width: 1440px) {
   .content__wrapper .content {
     -webkit-box-flex: 1;
