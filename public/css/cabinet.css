@@ -1266,7 +1266,7 @@ main {
   color: #4A5568;
 }
 
-.popup-text__link {
+a.popup-text__link {
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -1287,7 +1287,7 @@ main {
           align-items: center;
   padding: 32px 50px 45px 50px;
   margin: auto;
-  margin-top: 160px;
+  margin-top: 11.111vw;
   background: #FFFFFF;
   border-radius: 16px;
   max-width: 440px;
@@ -1590,6 +1590,38 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  margin-bottom: 28px;
+}
+
+.log__in-page .log__with a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 8px;
+  width: 100%;
+  background: #FFFFFF;
+  border: 1px solid #CBD5E0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.log__in-page .log__with a:first-child {
+  margin-right: 5px;
+}
+
+.log__in-page .log__with a:last-child {
+  margin-left: 5px;
 }
 
 @media (max-width: 1440px) {
@@ -1669,6 +1701,10 @@ main {
   }
   .page__title {
     margin: 0 25px;
+  }
+  .log__in-page {
+    margin-top: 20px;
+    padding: 20px 15px 30px 15px;
   }
 }
 
