@@ -43,7 +43,7 @@ class NewsController extends MyAdminController {
 		$grid->column('slug'			, __('admin.pages.slug'))->display(function($slug){
 			$slug = trim($slug, '/');
 			
-			return '<a target="_blank" href="'.url($slug).'">'.$slug.'</a>';
+			return '<a target="_blank" href="'.url('news/'.$slug).'">'.$slug.'</a>';
 		});
 		
 		$grid->column('title'			, __('admin.pages.title'));
