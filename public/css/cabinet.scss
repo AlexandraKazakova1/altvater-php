@@ -832,6 +832,14 @@ main {
 }
 
 // Модальні вікна
+.popap__title {
+    text-align: center;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 30px;
+    color: #4A5568;
+}
 .log__in-page {
     display: flex;
     flex-direction: column;
@@ -842,6 +850,32 @@ main {
     background: #FFFFFF;
     border-radius: 16px;
     max-width: 440px;
+    .popap__title {
+        padding-bottom: 40px;
+    }
+    .log__in__form {
+        .log__in-fieldset {
+            display: flex;
+            flex-direction: column;
+            outline: none;
+            border: none;
+            padding: 0;
+            margin: 0;
+            label {
+                display: flex;
+                flex-direction: column;
+                padding-bottom: 24px;
+                .input-description {
+                    padding-bottom: 8px;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 14px;
+                    line-height: 24px;
+                    color: rgba(113, 128, 150, 0.8);
+                }
+            }
+        }
+    }
 }
 
 @media (max-width:1440px) {

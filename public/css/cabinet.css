@@ -1185,6 +1185,15 @@ main {
   transition: all 0.3s;
 }
 
+.popap__title {
+  text-align: center;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 30px;
+  color: #4A5568;
+}
+
 .log__in-page {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1202,6 +1211,44 @@ main {
   background: #FFFFFF;
   border-radius: 16px;
   max-width: 440px;
+}
+
+.log__in-page .popap__title {
+  padding-bottom: 40px;
+}
+
+.log__in-page .log__in__form .log__in-fieldset {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  outline: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.log__in-page .log__in__form .log__in-fieldset label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-bottom: 24px;
+}
+
+.log__in-page .log__in__form .log__in-fieldset label .input-description {
+  padding-bottom: 8px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(113, 128, 150, 0.8);
 }
 
 @media (max-width: 1440px) {
