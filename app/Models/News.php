@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use DB;
 
+use App\Models\NewsViews;
+
 class News extends Model {
 	
 	protected $table	= 'news';
@@ -23,10 +25,15 @@ class News extends Model {
 		'canonical',
 		'header',
 		'image',
+		'views',
 		'text'
 	];
 	
-	static function getLast(){
+	public function views(){
+		return $this->hasMany(NewsViews::class, 'page_id');
+	}
+	
+	static function getNew(){
 		$tmp = DB::table('news')
 					->where('public', 1)
 					->orderBy('created_at', 'desc')
@@ -59,5 +66,36 @@ class News extends Model {
 		}
 		
 		return $data;
+	}
+	
+	static function getLast(){
+		$tmp = DB::table('news')
+					->where('public', 1)
+					->orderBy('created_at', 'desc')
+					->select('created_at', 'slug', 'title', 'image')
+					->first();
+		
+		if($tmp){
+			$time = strtotime($tmp->created_at);
+			
+			$tmp->date = (object)[
+				'd'	=> date('d', $time),
+				'm'	=> date('m', $time),
+				'y'	=> date('Y', $time),
+			];
+			
+			return $tmp;
+		}
+		
+		return [];
+	}
+	
+	static function getOnce(){
+		$tmp = DB::table('news')
+					->where('public', 1)
+					->orderBy('created_at', 'desc')
+					->select('created_at', 'slug', 'title', 'image')
+					->take(3)
+					->get();
 	}
 }

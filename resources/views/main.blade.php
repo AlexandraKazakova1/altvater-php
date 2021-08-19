@@ -76,7 +76,7 @@
 								<a class="news__photo-link" style="width:100%;max-height:208px;overflow:hidden;" href="/news/{{$item->slug}}"><img style="width:100%;" class="news__photo" src="/storage/{{$item->image}}" alt="{!!$item->title!!}"></a>
 								
 								<div class="news__text">
-									<span class="news__date">{{$item->date->d}} {{trans('site.months'[$item->date->m])}}, {{$item->date->y}}</span>
+									<span class="news__date">{{$item->date->d}} {{trans('site.months')[$item->date->m]}}, {{$item->date->y}}</span>
 									<span>{!!$item->title!!}</span>
 								</div>
 								

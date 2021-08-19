@@ -37,7 +37,7 @@ class NewsController extends MyController {
 			'canonical'		=> $page->canonical,
 			'data'			=> $page,
 			'headerClass'	=> 'background-2',
-			'news'			=> News::getLast(),
+			'last'			=> News::getLast(),
 		];
 		
 		return view(
