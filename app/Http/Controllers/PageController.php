@@ -73,6 +73,7 @@ class PageController extends MyController {
 					'uri'			=> $uri,
 					'og_image'		=> '',
 				),
+				'data'		=> $page,
 				'robots'	=> $page->robots,
 				'canonical'	=> $page->canonical,
 			]
