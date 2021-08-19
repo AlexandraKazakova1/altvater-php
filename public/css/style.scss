@@ -401,8 +401,10 @@ header {
     background-image: url(../img/banner-2.png);
     min-height: 31.250vw
 }
+.background-2.small,
 header.small {
-    min-height: none;
+    min-height: auto;
+    padding-bottom: 10px;
 }
 .services-wrapper {
     .services {

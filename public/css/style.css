@@ -509,8 +509,10 @@ header .header-banner .header-banner__link {
   min-height: 31.250vw;
 }
 
+.background-2.small,
 header.small {
-  min-height: none;
+  min-height: auto;
+  padding-bottom: 10px;
 }
 
 .services-wrapper .services {
