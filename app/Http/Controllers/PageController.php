@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pages;
+use App\Models\News;
+use App\Models\Services;
+use App\Models\FAQ;
+use App\Models\Reviews;
 
 use App\Helpers\MyBreadcrumbs;
 use App\Helpers\StringHelper;
@@ -25,14 +29,18 @@ class PageController extends MyController {
 		$page = (object)Pages::query()->where('slug', 'index')->first()->toArray();
 		
 		$data = [
-			'page' => array(
+			'page'		=> array(
 				'title'			=> $page->title,
 				'keywords'		=> $page->keywords,
 				'description'	=> $page->description,
 				'uri'			=> 'index',
 				'og_image'		=> '',
 			),
-			'data'	=> $page
+			'data'		=> $page,
+			'services'	=> Services::query()->where('public', 1)->orderBy('created_at', 'desc')->select('slug', 'title')->get(),
+			'news'		=> News::query()->where('public', 1)->orderBy('created_at', 'desc')->select('created_at', 'slug', 'title')->take(3)->get(),
+			'reviews'	=> Reviews::query()->where('public', 1)->orderBy('created_at', 'desc')->select('image', 'name', 'text')->get(),
+			'faq'		=> FAQ::query()->where('public', 1)->orderBy('sort', 'desc')->select('title', 'text')->get(),
 		];
 		
 		return view(

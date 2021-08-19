@@ -2,29 +2,33 @@
 
 @section('content')
 	<main>
-		<section class="services-wrapper" id="our-services">
-			<div class="services container">
-				<h2 class="section-title">Наші послуги</h2>
-				
-				<ul class="services__list">
-					<!-- -->
-					<li class="services__item">
-						<a class="services__photo-link" href="#"><img class="services__photo" src="../img/services1.png" alt="services"></a>
-						
-						<span class="services__text">Вивіз твердих<br>побутових відходів</span>
-						
-						<a class="services__link" href="#">
-							<svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M23.8643 14.1685L5.73926 14.1685" stroke="white" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
-								<path d="M16.5537 6.88903L23.8641 14.168L16.5537 21.4482" stroke="white" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
-							</svg>
-							<span>Детальніше</span>
-						</a>
-					</li>
-					<!-- -->
-				</ul>
-			</div>
-		</section>
+		@if(count($services))
+			<section class="services-wrapper" id="our-services">
+				<div class="services container">
+					<h2 class="section-title">Наші послуги</h2>
+					
+					<ul class="services__list">
+						@foreach($services as $item)
+							<!-- -->
+							<li class="services__item">
+								<a class="services__photo-link" href="/services/{{$item->slug}}"><img class="services__photo" src="/storage/{{$item->image}}" alt="{{$item->title}}"></a>
+								
+								<span class="services__text">{!!$item->title!!}</span>
+								
+								<a class="services__link" href="/services/{{$item->slug}}">
+									<svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M23.8643 14.1685L5.73926 14.1685" stroke="white" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
+										<path d="M16.5537 6.88903L23.8641 14.168L16.5537 21.4482" stroke="white" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
+									</svg>
+									<span>Детальніше</span>
+								</a>
+							</li>
+							<!-- -->
+						@endforeach
+					</ul>
+				</div>
+			</section>
+		@endif
 		
 		<section class="about-wrapper">
 			<div class="about container">
