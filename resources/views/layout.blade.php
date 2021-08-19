@@ -63,7 +63,68 @@
 	<body>
 		{!!$settings['body_code']!!}
 		
+		<header>
+			<nav class="header-nav container">
+				<a href="/" class="header-nav__logo">
+					<img src="/img/logo.png" alt="Veolia">
+				</a>
+				
+				<ul class="header-nav__list">
+					<!-- -->
+					<li class="header-nav__list__item">
+						<a href="../html/home.html">Головна</a>
+					</li>
+					<!-- -->
+				</ul>
+				
+				<div class="header-nav__btn-group">
+					<a href="#" class="btn-logIn">Вхід</a>
+					<a href="#" class="btn-reg btn-red">Реєстрація</a>
+				</div>
+				
+				<div class="burger-menu">
+					<span class="menu__icon"></span>
+					<div class="menu__body">
+						<a href="/" class="header-nav__logo">
+							<img src="/img/logo.png" alt="Veolia">
+						</a>
+						
+						<ul class="menu-nav__list">
+							<!-- -->
+							<li class="menu-nav__list__item">
+								<a href="#">Головна</a>
+							</li>
+							<!-- -->
+							<div class="menu-nav__btn-group">
+								<a href="#" class="btn-logIn">Вхід</a>
+								<a href="#" class="btn-reg btn-red">Реєстрація</a>
+							</div>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			
+			<div class="header-banner container">
+				<h1 class="header-banner__title">ТОВ "Альтфатер Київ"<br>представляє собою сучасну компанію</h1
+				
+				<div class="header-banner__descrption">Ваш надійний партнер у сфері поводження з відходами!</div>
+				
+				<a href="#" class="header-banner__link btn-red">Отримати консультацію</a>
+			</div>
+		</header>
+		
 		@yield('content')
+		
+		<footer>
+			<div class="footer container">
+				<div class="link__group">
+					<a href="#">Terms & Conditions</a>
+					<a href="#">Privacy Policy</a>
+				</div>
+				
+				<span>Copyright © 2021 Veolia. All rights reserved</span>
+			</div>
+		</footer>
 		
 		<?php
 			if($styles['footer']){

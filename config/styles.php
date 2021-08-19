@@ -4,7 +4,7 @@ return [
 	'header' => [
 		[
 			'active'	=> true,
-			'minimize'	=> true,
+			'minimize'	=> false,
 			'dir'		=> '/css/',
 			'page'		=> [],
 			'media'		=> 'all',
