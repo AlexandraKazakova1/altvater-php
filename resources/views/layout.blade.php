@@ -105,7 +105,7 @@
 			</nav>
 			
 			<div class="header-banner container">
-				<h1 class="header-banner__title">ТОВ "Альтфатер Київ"<br>представляє собою сучасну компанію</h1
+				<h1 class="header-banner__title">ТОВ "Альтфатер Київ"<br>представляє собою сучасну компанію</h1>
 				
 				<div class="header-banner__descrption">Ваш надійний партнер у сфері поводження з відходами!</div>
 				
