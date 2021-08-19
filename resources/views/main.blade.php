@@ -96,32 +96,36 @@
 			</section>
 		@endif
 		
-		<section class="response-wrapper">
-			<div class="response container">
-				<h2 class="section-title">Відгуки наших клієнтів</h2>
-				
-				<div class="response__slider slider">
-					<!-- -->
-					<div class="slider__item">
-						<div class="response__photo"><img src="../img/slick/Rectangle1.png"></div>
-						
-						<div class="response__body">
-							<div class="quotes">
-								<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<g opacity="0.2" clip-path="url(#clip0)">
-										<path d="M0 32V59.4286H27.4286V32H9.14292C9.14292 21.9175 17.3461 13.7143 27.4286 13.7143V4.57142C12.3036 4.57142 0 16.875 0 32Z" fill="#7ABCCE"/>
-										<path d="M64.0009 13.7143V4.57142C48.8758 4.57142 36.5723 16.875 36.5723 32V59.4286H64.0009V32H45.7152C45.7152 21.9175 53.9184 13.7143 64.0009 13.7143Z" fill="#7ABCCE"/>
-									</g>
-								</svg>
+		@if(count($reviews))
+			<section class="response-wrapper">
+				<div class="response container">
+					<h2 class="section-title">Відгуки наших клієнтів</h2>
+					
+					<div class="response__slider slider">
+						@foreach($reviews as $item)
+							<!-- -->
+							<div class="slider__item">
+								<div class="response__photo"><img src="/storage/{{$item->image}}" alt="{{strip_tags($item->name)}}"></div>
+								
+								<div class="response__body">
+									<div class="quotes">
+										<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<g opacity="0.2" clip-path="url(#clip0)">
+												<path d="M0 32V59.4286H27.4286V32H9.14292C9.14292 21.9175 17.3461 13.7143 27.4286 13.7143V4.57142C12.3036 4.57142 0 16.875 0 32Z" fill="#7ABCCE"/>
+												<path d="M64.0009 13.7143V4.57142C48.8758 4.57142 36.5723 16.875 36.5723 32V59.4286H64.0009V32H45.7152C45.7152 21.9175 53.9184 13.7143 64.0009 13.7143Z" fill="#7ABCCE"/>
+											</g>
+										</svg>
+									</div>
+									<span class="response__text">{!!$item->text!!}</span>
+									<div class="responser__name">{!!$item->name!!}</div>
+								</div>
 							</div>
-							<span class="response__text">Хороші молоді хлопці. Ціна була прийнятна. Домовився з адміністратором порталу про прийняття замовлення без передоплати, чим дуже допоміг мені. (Не було під рукою карти) Водій приїхав точно до терміну, навіть трохи раніше. Як і обіцяв з вантажником. Сам так же допомагав вантажити. Обсяг був пристойний. Все дуже культурно і професійно. Дуже задоволений їх роботою. Обов'язково в разі потреби звернуся до них.</span>
-							<h3 class="responser__name">ПРИВАТНЕ АКЦІОНЕРНЕ ТОВАРИСТВО<br>«ГОТЕЛЬ «ПРЕМ’ЄР ПАЛАЦ»</h3>
-						</div>
+							<!-- -->
+						@endforeach
 					</div>
-					<!-- -->
 				</div>
-			</div>
-		</section>
+			</section>
+		@endif
 		
 		<section class="detail__wrapper">
 			<div class="detail container">
