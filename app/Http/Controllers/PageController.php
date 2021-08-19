@@ -60,7 +60,7 @@ class PageController extends MyController {
 		$page = Pages::query()->where('slug', $uri)->where('public', 1)->first();
 		
 		if(!$page){
-			return abort_404();
+			return abort(404);
 		}
 		
 		return view(
