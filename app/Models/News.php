@@ -122,6 +122,36 @@ class News extends Model {
 		return $data;
 	}
 	
+	static function getAll(){
+		$tmp = DB::table('news')
+					->where('public', 1)
+					->orderBy('views', 'desc')
+					->select('created_at', 'slug', 'title', 'image')
+					->get();
+		
+		$data = [];
+		
+		if(count($tmp)){
+			$tmp = $tmp->toArray();
+			
+			foreach($tmp as $item){
+				$item = (object)$item;
+				
+				$time = strtotime($item->created_at);
+				
+				$item->date = (object)[
+					'd'	=> date('d', $time),
+					'm'	=> date('m', $time),
+					'y'	=> date('Y', $time),
+				];
+								
+				$data[] = $item;
+			}
+		}
+		
+		return $data;
+	}
+	
 	static function getOnce(){
 		$tmp = DB::table('news')
 					->where('public', 1)

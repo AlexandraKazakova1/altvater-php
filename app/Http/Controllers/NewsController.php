@@ -39,6 +39,7 @@ class NewsController extends MyController {
 			'headerClass'	=> 'background-2',
 			'last'			=> News::getLast(),
 			'popular'		=> News::getPopular(),
+			'news'			=> News::getAll(),
 		];
 		
 		return view(

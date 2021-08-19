@@ -74,49 +74,30 @@
 		<section class="news-wrapper">
 			<div class="news container">
 				<h2 class="section-title">Новини нашої компанії</h2>
+				
 				<ul class="news__list">
-					<li class="news__item">
-						<a class="news__photo-link" href="#"><img class="news__photo" src="../img/news1.png" alt="news"></a>
-						<div class="news__text">
-							<span class="news__date">14 Апреля,2021</span>
-							<span>Там буде зелена зона для відпочинку..</span>
-						</div>
-						<a class="news__link" href="#">
-							<svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M23.8643 14.1685L5.73926 14.1685" stroke="#2C2C2C" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
-								<path d="M16.5537 6.88903L23.8641 14.168L16.5537 21.4482" stroke="#2C2C2C" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
-							</svg>
-							<span>Детальніше</span>
-						</a>
-					</li>
-					<li class="news__item">
-						<a class="news__photo-link" href="#"><img class="news__photo" src="../img/news2.png" alt="news"></a>
-						<div class="news__text">
-							<span class="news__date">14 Апреля,2021</span>
-							<span>Там буде зелена зона для відпочинку..</span>
-						</div>
-						<a class="news__link" href="#">
-							<svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M23.8643 14.1685L5.73926 14.1685" stroke="#2C2C2C" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
-								<path d="M16.5537 6.88903L23.8641 14.168L16.5537 21.4482" stroke="#2C2C2C" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
-							</svg>
-							<span>Детальніше</span>
-						</a>
-					</li>
-					<li class="news__item">
-						<a class="news__photo-link" href="#"><img class="news__photo" src="../img/news3.png" alt="news"></a>
-						<div class="news__text">
-							<span class="news__date">14 Апреля,2021</span>
-							<span>Там буде зелена зона для відпочинку..</span>
-						</div>
-						<a class="news__link" href="#">
-							<svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M23.8643 14.1685L5.73926 14.1685" stroke="#2C2C2C" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
-								<path d="M16.5537 6.88903L23.8641 14.168L16.5537 21.4482" stroke="#2C2C2C" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
-							</svg>
-							<span>Детальніше</span>
-						</a>
-					</li>
+					@if(count($news))
+						@foreach($news as $item)
+							<!-- -->
+							<li class="news__item">
+								<a class="news__photo-link" style="width:100%;max-height:208px;overflow:hidden;" href="/news/{{$item->slug}}"><img style="width:100%;" class="news__photo" src="/storage/{{$item->image}}" alt="{{$item->title}}"></a>
+								
+								<div class="news__text">
+									<span class="news__date">{{$item->date->d}} {{trans('site.months')[$item->date->m]}}, {{$item->date->y}}</span>
+									<span>{!!$item->title!!}</span>
+								</div>
+								
+								<a class="news__link" href="#">
+									<svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M23.8643 14.1685L5.73926 14.1685" stroke="#2C2C2C" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
+										<path d="M16.5537 6.88903L23.8641 14.168L16.5537 21.4482" stroke="#2C2C2C" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
+									</svg>
+									<span>Детальніше</span>
+								</a>
+							</li>
+							<!-- -->
+						@endforeach
+					@endif
 				</ul>
 			</div>
 		</section>
