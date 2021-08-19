@@ -120,17 +120,69 @@ class PagesController extends MyAdminController {
 				$form->text('btn_url'			, __('admin.pages.btn_url'))->rules('max:150');
 				$form->text('btn_class'			, __('admin.pages.btn_class'))->rules('max:100');
 			});
+			
+			$form->tab(__('admin.pages.page_about')	, function($form) use ($id) {
+				$form->text('about_header'		, __('admin.pages.about_header'))->rules('max:250');
+				
+				$form->textarea('about_left'	, __('admin.pages.about_left'))->rules('max:1500');
+				$form->textarea('about_right'	, __('admin.pages.about_right'))->rules('max:1500');
+				
+				$form->switch('meta_public'		, __('admin.pages.meta_public'));
+				
+				$form->text('meta_header'		, __('admin.pages.meta_header'))->rules('max:250');
+				$form->textarea('meta_text'		, __('admin.pages.meta_text'))->rules('max:1500');
+				
+				$form->image('meta_image'		, __('admin.pages.meta_image'))->help('1168x542px')->removable()->move('pages-images')->uniqueName();
+			});
+		}else{
+			$form->tab(__('admin.pages.page_content')	, function($form) use ($id) {
+				$form->text('header'			, __('admin.pages.header'))->rules('max:250');
+				
+				if($id != 3){
+					$form->ckeditor('text'				, __('admin.pages.text'));
+				}
+			});
 		}
 		
-		$form->tab(__('admin.pages.page_content')	, function($form) use ($id) {
-			if($id != 1){
-				$form->text('header'			, __('admin.pages.header'))->rules('max:250');
-			}else{
-				//$form->hidden('header');
-			}
+		if($id == 3){
+			$form->tab(__('admin.pages.first_block')	, function($form) use ($id) {
+				$form->switch('about_right_public'		, __('admin.pages.public'));
+				
+				$form->text('about_right_header'		, __('admin.pages.header'))->rules('max:250');
+				$form->ckeditor('about_right'			, __('admin.pages.text'))->rules('max:1500');
+				
+				$form->image('about_right_image'		, __('admin.pages.image'))->help('476x388px')->removable()->move('pages-images')->uniqueName();
+			});
 			
-			$form->ckeditor('text'				, __('admin.pages.text'));
-		});
+			$form->tab(__('admin.pages.second_block')	, function($form) use ($id) {
+				$form->switch('about_left_public'		, __('admin.pages.public'));
+				
+				$form->text('about_left_header'			, __('admin.pages.header'))->rules('max:250');
+				$form->ckeditor('about_left'			, __('admin.pages.text'))->rules('max:1500');
+				
+				$form->image('about_left_image'			, __('admin.pages.image'))->help('476x388px')->removable()->move('pages-images')->uniqueName();
+			});
+			
+			$form->tab(__('admin.pages.indicators')		, function($form) use ($id) {
+				$form->switch('indicators_public'		, __('admin.pages.public'));
+				
+				$form->decimal('branches'				, __('admin.pages.branches'));
+				$form->decimal('orders'					, __('admin.pages.orders'));
+				$form->decimal('employees'				, __('admin.pages.employees'));
+				$form->decimal('hours'					, __('admin.pages.hours'));
+				
+				$form->ckeditor('indicators_text'		, __('admin.pages.text'));
+			});
+			
+			$form->tab(__('admin.pages.third_block')	, function($form) use ($id) {
+				$form->switch('meta_public'				, __('admin.pages.public'));
+				
+				$form->text('meta_header'				, __('admin.pages.header'))->rules('max:250');
+				$form->ckeditor('meta_text'				, __('admin.pages.text'))->rules('max:1500');
+				
+				$form->image('meta_image'				, __('admin.pages.image'))->help('476x388px')->removable()->move('pages-images')->uniqueName();
+			});
+		}
 		
 		// callback after form submission
 		//$form->submitted(function(Form $form){});

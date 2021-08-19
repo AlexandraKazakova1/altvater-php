@@ -27,6 +27,21 @@ class Pages extends Model {
 		'btn_label',
 		'btn_url',
 		'btn_class',
-		'text'
+		'text',
+		'about_header',
+		'about_left_header',
+		'about_left_image',
+		'about_left_public',
+		'about_left',
+		'about_right_header',
+		'about_right_image',
+		'about_right_public',
+		'about_right',
+		'meta_public',
+		'meta_header',
+		'meta_text',
+		'meta_image',
+		'indicators_public',
+		'indicators_text'
 	];
 }

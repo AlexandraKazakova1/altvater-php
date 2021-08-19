@@ -336,6 +336,7 @@ return [
 		'page_content'			=> 'Контент',
 		'recent_works'			=> 'Останні виконані роботи',
 		'page_header'			=> 'Шапка',
+		'page_about'			=> 'Про нашу компанію',
 		
 		'created_at'			=> 'Створено',
 		'updated_at'			=> 'Оновлено',
@@ -362,5 +363,23 @@ return [
 		'btn_label'				=> 'Текст кнопки',
 		'btn_url'				=> 'Адреса кнопки',
 		'btn_class'				=> 'CSS клас кнопки',
+		
+		'about_header'			=> 'Заголовок',
+		'about_left'			=> 'Лівий блок',
+		'about_right'			=> 'Правий блок',
+		'meta_public'			=> 'Показувати мету',
+		'meta_header'			=> 'Заголовок блоку мети',
+		'meta_text'				=> 'Текст блоку мети',
+		'meta_image'			=> 'Зображення блоку мети',
+		
+		'first_block'			=> 'Перший блок',
+		'second_block'			=> 'Другий блок',
+		'third_block'			=> 'Третій блок',
+		
+		'indicators'			=> 'Показники',
+		'branches'				=> 'Філіалів',
+		'orders'				=> 'Замовлень',
+		'employees'				=> 'Працівників',
+		'hours'					=> 'Годин',
 	],
 ];
