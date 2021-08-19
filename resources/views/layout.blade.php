@@ -14,6 +14,18 @@
 		<meta name="copyright" content="{!!$settings['copyright']!!}">
 	@endif
 		
+	@if($canonical)
+		<meta name="canonical" content="{{$canonical}}">
+	@endif
+		
+	@if($robots)
+		<meta name="robots" content="{{($robots == 'index' ? 'all' : 'noindex, nofollow')}}">
+	@endif
+		
+	@if($settings['author'])
+		<meta name="author" content="{{$settings['author']}}">
+	@endif
+		
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
 		
 		<meta property="og:site_name"       content="{{$settings['appname']}}" />

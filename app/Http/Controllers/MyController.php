@@ -35,6 +35,7 @@ class MyController extends Controller {
 		
 		$settings = array(
 			'appname'			=> '',
+			'author'			=> '',
 			'map_url'			=> '',
 			'copyright'			=> '',
 			'google_api_key'	=> '',
@@ -62,7 +63,10 @@ class MyController extends Controller {
 			}
 		}
 		
-		View::share('settings'		, $settings);
+		View::share('settings'				, $settings);
+		
+		View::share('robots'				, '');
+		View::share('canonical'				, '');
 		
 		//
 		

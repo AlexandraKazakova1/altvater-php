@@ -36,6 +36,8 @@ class PageController extends MyController {
 				'uri'			=> 'index',
 				'og_image'		=> '',
 			),
+			'robots'	=> $page->robots,
+			'canonical'	=> $page->canonical,
 			'data'		=> $page,
 			'services'	=> Services::query()->where('public', 1)->orderBy('created_at', 'desc')->select('slug', 'title', 'image')->get(),
 			'news'		=> News::query()->where('public', 1)->orderBy('created_at', 'desc')->select('created_at', 'slug', 'title')->take(3)->get(),
@@ -61,13 +63,15 @@ class PageController extends MyController {
 		return view(
 			'page',
 			[
-				'page' => array(
+				'page'		=> array(
 					'title'			=> $page->title,
 					'keywords'		=> $page->keywords,
 					'description'	=> $page->description,
 					'uri'			=> $uri,
 					'og_image'		=> '',
 				),
+				'robots'	=> $page->robots,
+				'canonical'	=> $page->canonical,
 			]
 		);
 	}
@@ -83,6 +87,8 @@ class PageController extends MyController {
 				'uri'			=> 'about',
 				'og_image'		=> '',
 			),
+			'robots'		=> $page->robots,
+			'canonical'		=> $page->canonical,
 		];
 		
 		return view(
