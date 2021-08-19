@@ -30,6 +30,7 @@ Route::group([
 	$router->resource('ip-list'					, IpListController::class);
 	$router->resource('faq'						, FAQController::class);
 	$router->resource('site-menu'				, SiteMenuController::class);
+	$router->resource('footer-menu'				, FooterMenuController::class);
 	$router->resource('pages'					, PagesController::class);
 	$router->resource('news'					, NewsController::class);
 	$router->resource('services'				, ServicesController::class);

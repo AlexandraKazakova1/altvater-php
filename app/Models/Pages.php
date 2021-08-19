@@ -22,6 +22,11 @@ class Pages extends Model {
 		'robots',
 		'canonical',
 		'header',
+		'subheader',
+		'show_btn',
+		'btn_label',
+		'btn_url',
+		'btn_class',
 		'text'
 	];
 }

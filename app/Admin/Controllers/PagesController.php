@@ -83,6 +83,8 @@ class PagesController extends MyAdminController {
 		
 		$this->configure($form);
 		
+		$id = (int)request()->segment(3);
+		
 		$form->tab(__('admin.pages.page_info')		, function($form){
 			$form->datetime('updated_at', __('admin.pages.updated_at'))->default(date('Y-m-d H:i:s'));
 			
@@ -107,8 +109,25 @@ class PagesController extends MyAdminController {
 				->rules('required');
 		});
 		
-		$form->tab(__('admin.pages.page_content')	, function($form){
-			$form->text('header'				, __('admin.pages.header'))->rules('max:250');
+		if($id == 1){
+			$form->tab(__('admin.pages.page_header'), function($form) use ($id) {
+				$form->textarea('header'		, __('admin.pages.header'))->rules('max:250');
+				$form->textarea('subheader'		, __('admin.pages.subheader'))->rules('max:250');
+				
+				$form->switch('show_btn'		, __('admin.pages.show_btn'));
+				
+				$form->text('btn_label'			, __('admin.pages.btn_label'))->rules('max:150');
+				$form->text('btn_url'			, __('admin.pages.btn_url'))->rules('max:150');
+				$form->text('btn_class'			, __('admin.pages.btn_class'))->rules('max:100');
+			});
+		}
+		
+		$form->tab(__('admin.pages.page_content')	, function($form) use ($id) {
+			if($id != 1){
+				$form->text('header'			, __('admin.pages.header'))->rules('max:250');
+			}else{
+				//$form->hidden('header');
+			}
 			
 			$form->ckeditor('text'				, __('admin.pages.text'));
 		});

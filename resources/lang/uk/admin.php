@@ -335,6 +335,7 @@ return [
 		'page_seo'				=> 'SEO',
 		'page_content'			=> 'Контент',
 		'recent_works'			=> 'Останні виконані роботи',
+		'page_header'			=> 'Шапка',
 		
 		'created_at'			=> 'Створено',
 		'updated_at'			=> 'Оновлено',
@@ -351,9 +352,15 @@ return [
 			'noindex'				=> 'Не індексувати',
 		],
 		'header'				=> 'Заголовок (H1)',
+		'subheader'				=> 'Підзаголовок',
 		'image'					=> 'Зображення',
 		'alt'					=> 'ALT',
 		'text'					=> 'Текст',
 		'slider_label'			=> 'Подпись под слайдером',
+		
+		'show_btn'				=> 'Показувати кнопку',
+		'btn_label'				=> 'Текст кнопки',
+		'btn_url'				=> 'Адреса кнопки',
+		'btn_class'				=> 'CSS клас кнопки',
 	],
 ];
