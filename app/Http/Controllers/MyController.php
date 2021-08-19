@@ -36,6 +36,10 @@ class MyController extends Controller {
 			'appname'			=> '',
 			'map_url'			=> '',
 			'copyright'			=> '',
+			'google_api_key'	=> '',
+			'head_code'			=> '',
+			'body_code'			=> '',
+			'footer_code'		=> '',
 		);
 		
 		$tmp = DB::table('admin_config')
@@ -45,7 +49,11 @@ class MyController extends Controller {
 		
 		if(count($tmp)){
 			foreach($tmp as $item){
-				$settings[$item->name] = trim($item->value);
+				$item->value = trim($item->value);
+				
+				if($item->value != '#'){
+					$settings[$item->name] = $item->value;
+				}
 			}
 		}
 		
