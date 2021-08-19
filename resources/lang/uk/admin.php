@@ -392,4 +392,12 @@ return [
 		'telegram'				=> 'Телеграм',
 		'value'					=> 'Значення',
 	],
+	
+	'feedback'				=> [
+		'created_at'			=> 'Створено',
+		'updated_at'			=> 'Оновлено',
+		'name'					=> 'Клієнт',
+		'email'					=> 'E-mail',
+		'messasge'				=> 'Повідомлення'
+	],
 ];

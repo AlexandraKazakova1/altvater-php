@@ -34,4 +34,5 @@ Route::group([
 	$router->resource('pages'					, PagesController::class);
 	$router->resource('news'					, NewsController::class);
 	$router->resource('services'				, ServicesController::class);
+	$router->resource('feedback'				, FeedbackController::class);
 });
