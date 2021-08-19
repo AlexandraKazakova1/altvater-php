@@ -10,6 +10,7 @@ define('ROOT', $_SERVER['DOCUMENT_ROOT']);
 define('TMP_PATH', ROOT.'/../storage/tmp');
 define('LOGS_PATH', ROOT.'/../storage/logs');
 define('STOR_PATH', ROOT.'/../storage');
+define('CACHE_PATH', ROOT.'/../storage/tmp');
 
 /*
 |--------------------------------------------------------------------------
