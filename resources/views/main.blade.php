@@ -11,7 +11,7 @@
 						@foreach($services as $item)
 							<!-- -->
 							<li class="services__item">
-								<a class="services__photo-link" style="max-height: 208px;overflow: hidden;" href="/services/{{$item->slug}}"><img class="services__photo" src="/storage/{{$item->image}}" alt="{{$item->title}}"></a>
+								<a class="services__photo-link" style="width:100%;max-height:208px;overflow:hidden;" href="/services/{{$item->slug}}"><img style="width:100%;" class="services__photo" src="/storage/{{$item->image}}" alt="{{$item->title}}"></a>
 								
 								<span class="services__text">{!!$item->title!!}</span>
 								
@@ -32,51 +32,69 @@
 		
 		<section class="about-wrapper">
 			<div class="about container">
-				<h2 class="section-title">Про нашу компанію</h2>
+				<h2 class="section-title">{!!$data->about_header!!}</h2>
 				
 				<div class="about-content">
-					<div class="description-group">
-						<span class="text">ТОВ «Альтфатер Київ» входить в групу Веолія, яка протягом багатьох років працює в багатьох країнах світу в сфері очищення стічних вод, поводження з відходами тощо. Якісний вивіз сміття можна замовити максимально швидко і просто, якщо звернутися до перевірених професіоналів.<br>Маючи більш ніж 20-ти річний досвід роботи у галузі поводження з відходами в Україні, ми пропонуємо найбільш оптимальні рішення щодо ефективного використання ресурсів, їх збереження та відновлення, сприяючи таким чином розвитку циркулярної економіки.</span>
-						<span class="text">Мета Veolia була розроблена завдяки тривалому процесу роботи та безпрецедентному співробітництву, в якому брали участь органи управління компанією, співробітники, Комітет критичних друзів (зовнішні експерти), клієнти, панелі людей тощо.<br>Мета Veolia була прийнята її Радою директорів та представлена ​​на щорічних зборах акціонерів 18 квітня 2019 року.</span>
-					</div>
+					@if($data->about_left || $data->about_right)
+						<div class="description-group">
+							@if($data->about_left)
+								<span class="text">{!!$data->about_left!!}</span>
+							@endif
+							@if($data->about_right)
+								<span class="text">{!!$data->about_right!!}</span>
+							@endif
+						</div>
+					@endif
 					
-					<div class="goal">
-						<h3 class="goal__title subTitle21">Мета Веолії - це не просто гасло, воно виражене у повному тексті</h3>
-						<span class="goal__text">Мета Veolia - сприяти людському прогресу, твердо дотримуючись цілей сталого розвитку, визначених ООН для досягнення кращого та більш сталого майбутнього для всіх. Саме з цією метою Veolia ставить перед собою завдання «ресурси світу» за допомогою свого бізнесу з питань екологічних послуг.</span>
-					</div>
+					@if($data->meta_public)
+						<div class="goal">
+							@if($data->meta_header)
+								<h3 class="goal__title subTitle21">{!!$data->meta_header!!}</h3>
+							@endif
+							@if($data->meta_text)
+								<span class="goal__text">{!!$data->meta_text!!}</span>
+							@endif
+						</div>
+					@endif
 					
-					<div class="our-photo"><img src="/img/aboutBanner.png" alt="Veolia"></div>
+					@if($data->meta_image)
+						<div class="our-photo"><img src="/storage/{{$data->meta_image}}" alt="{!!$data->meta_header!!}"></div>
+					@endif
 				</div>
 			</div>
 		</section>
 		
-		<section class="news-wrapper">
-			<div class="news container">
-				<h2 class="section-title">Новини нашої компанії</h2>
-				
-				<ul class="news__list">
-					<!-- -->
-					<li class="news__item">
-						<a class="news__photo-link" href="#"><img class="news__photo" src="/img/news1.png" alt="news"></a>
-						
-						<div class="news__text">
-							<span class="news__date">14 Апреля,2021</span>
-							<span>Там буде зелена зона для відпочинку..</span>
-						</div>
-						
-						<a class="news__link" href="#">
-							<svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M23.8643 14.1685L5.73926 14.1685" stroke="#2C2C2C" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
-								<path d="M16.5537 6.88903L23.8641 14.168L16.5537 21.4482" stroke="#2C2C2C" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
-							</svg>
-							
-							<span>Детальніше</span>
-						</a>
-					</li>
-					<!-- -->
-				</ul>
-			</div>
-		</section>
+		@if(count($news))
+			<section class="news-wrapper">
+				<div class="news container">
+					<h2 class="section-title">Новини нашої компанії</h2>
+					
+					<ul class="news__list">
+						@foreach($news as $item)
+							<!-- -->
+							<li class="news__item">
+								<a class="news__photo-link" style="width:100%;max-height:208px;overflow:hidden;" href="/news/{{$item->slug}}"><img style="width:100%;" class="news__photo" src="/storage/{{$item->image}}" alt="{!!$item->title!!}"></a>
+								
+								<div class="news__text">
+									<span class="news__date">{{$item->date->d}} {{trans('site.months'[$item->date->m])}}, {{$item->date->y}}</span>
+									<span>{!!$item->title!!}</span>
+								</div>
+								
+								<a class="news__link" href="/news/{{$item->slug}}">
+									<svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M23.8643 14.1685L5.73926 14.1685" stroke="#2C2C2C" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
+										<path d="M16.5537 6.88903L23.8641 14.168L16.5537 21.4482" stroke="#2C2C2C" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
+									</svg>
+									
+									<span>Детальніше</span>
+								</a>
+							</li>
+							<!-- -->
+						@endforeach
+					</ul>
+				</div>
+			</section>
+		@endif
 		
 		<section class="response-wrapper">
 			<div class="response container">
@@ -144,7 +162,7 @@
 		@if($settings['map_url'])
 			<section class="map__wrapper">
 				<div class="map">
-					<iframe src="{{$settings['map_url']}}" width="100%" height="530px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+					<iframe src="{!!$settings['map_url']!!}" width="100%" height="530px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 				</div>
 			</section>
 		@endif
