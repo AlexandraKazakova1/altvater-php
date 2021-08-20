@@ -38,10 +38,10 @@
 					@if($data->about_left || $data->about_right)
 						<div class="description-group">
 							@if($data->about_left)
-								<span class="text">{!!$data->about_left!!}</span>
+								<p class="text">{!!$data->about_left!!}</p>
 							@endif
 							@if($data->about_right)
-								<span class="text">{!!$data->about_right!!}</span>
+								<p class="text">{!!$data->about_right!!}</p>
 							@endif
 						</div>
 					@endif
@@ -52,7 +52,7 @@
 								<h3 class="goal__title subTitle21">{!!$data->meta_header!!}</h3>
 							@endif
 							@if($data->meta_text)
-								<span class="goal__text">{!!$data->meta_text!!}</span>
+								<p class="goal__text">{!!$data->meta_text!!}</p>
 							@endif
 						</div>
 					@endif
