@@ -45,7 +45,7 @@ class ServicesController extends MyController {
 			'data'			=> $page,
 			'detail'		=> $detail,
 			'faq'			=> FAQ::query()->where('public', 1)->orderBy('sort', 'desc')->select('title', 'text')->get(),
-			'images'		=> ServicesImages::query()->where('service_id', $page->id)->where('public', 1)->select('image', 'alt')->get()
+			'images'		=> ServicesImages::query()->where('service_id', $page->id)->select('image', 'alt')->get()
 		];
 		
 		return view(
