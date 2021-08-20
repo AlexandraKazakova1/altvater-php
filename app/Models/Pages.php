@@ -44,7 +44,11 @@ class Pages extends Model {
 		'meta_text',
 		'meta_image',
 		'indicators_public',
-		'indicators_text'
+		'indicators_text',
+		'branches',
+		'orders',
+		'employees',
+		'hours'
 	];
 	
 	public function contacts(){
