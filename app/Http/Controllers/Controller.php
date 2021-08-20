@@ -17,7 +17,7 @@ class Controller extends BaseController {
 	
 	use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 	
-	function sendEmail($key, $to = null, $file = null){
+	function sendEmail($key, $to = null, $trans = [], $file = null){
 		$template = DB::table('email_templates')->where('slug', $key)->first();
 		
 		if(!$template){
@@ -26,6 +26,18 @@ class Controller extends BaseController {
 		
 		$subject	= $template->subject;
 		$text		= $template->content;
+		
+		if($trans){
+			$keys	= [];
+			$values	= [];
+			
+			foreach($trans as $k => $v){
+				$keys[]		= '{'.$k.'}';
+				$values[]	= $v;
+			}
+			
+			$text = str_replace($keys, $values, $text);
+		}
 		
 		$config = [
 			'appname'			=> '', 
