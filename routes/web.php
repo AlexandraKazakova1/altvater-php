@@ -50,6 +50,11 @@ Route::get('services/{uri}', [
 	'uses'  => 'ServicesController@index'
 ])->where('uri', '[a-zA-Z_0-9\-]+');
 
+Route::get('about', [
+	'as'    => 'about',
+	'uses'  => 'AboutController@index'
+]);
+
 Route::get('/{uri}', [
 	'uses' => 'PageController@once'
 ])->where('uri', '[a-zA-Z_0-9\-]+');

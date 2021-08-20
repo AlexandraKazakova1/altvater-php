@@ -80,25 +80,4 @@ class PageController extends MyController {
 			]
 		);
 	}
-	
-	public function about(){
-		$page = Pages::query()->where('slug', 'about')->first();
-		
-		$data = [
-			'page'			=> array(
-				'title'			=> $page->title,
-				'keywords'		=> $page->keywords,
-				'description'	=> $page->description,
-				'uri'			=> 'about',
-				'og_image'		=> '',
-			),
-			'robots'		=> $page->robots,
-			'canonical'		=> $page->canonical,
-		];
-		
-		return view(
-			'about',
-			$data
-		);
-	}
 }
