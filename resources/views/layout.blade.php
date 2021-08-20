@@ -123,10 +123,10 @@
 			
 			@if($data->header)
 				<div class="header-banner container">
-					<h1 class="header-banner__title">{!!$data->header!!}</h1>
+					<h1>{!!$data->header!!}</h1>
 					
 					@if($data->subheader)
-						<div class="header-banner__descrption">{!!$data->subheader!!}</div>
+						<p>{!!$data->subheader!!}</p>
 					@endif
 					
 					@if($data->show_btn)
