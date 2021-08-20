@@ -24,7 +24,7 @@ class Contacts extends Model{
 					->select('type', 'value')
 					->get();
 		
-		$data = (object)[
+		$data = [
 			'address'	=> [],
 			'phone'		=> [],
 			'email'		=> [],
@@ -43,7 +43,7 @@ class Contacts extends Model{
 			}
 			
 			if($item->value){
-				$data->{$item->type}[] = $item->value;
+				$data[$item->type][] = $item->value;
 			}
 		}
 		
