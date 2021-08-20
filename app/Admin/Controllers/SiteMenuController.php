@@ -86,6 +86,7 @@ class SiteMenuController extends MyAdminController {
 		
 		$form->text('url'				, __('admin.site-menu.url'))->rules('min:1|max:100|required');
 		$form->text('title'				, __('admin.site-menu.title'))->rules('min:1|max:100|required');
+		$form->text('class'				, __('admin.site-menu.class'))->rules('max:50');
 		
 		$form->saving(function(Form $form){
 			$form->sort			= (int)trim($form->sort);
