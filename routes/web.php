@@ -26,7 +26,7 @@ Route::group(['namespace' => 'Ajax'], function(){
 	])->where(['action' => '[a-zA-Z_]+']);
 	
 	// feedback
-	Route::post('ajax/send/contact', [
+	Route::post('ajax/callback', [
 		'uses' => 'SendController@contact'
 	]);
 });
