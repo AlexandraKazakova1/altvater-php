@@ -423,7 +423,7 @@ header.small {
             align-items: center;
             .services__item {
                 display: flex;
-                justify-content: center;
+                justify-content: space-between;
                 align-items: center;
                 flex-direction: column;
                 flex-wrap: nowrap;
@@ -435,6 +435,7 @@ header.small {
                 overflow: hidden;
                 margin: 0 10px;
                 margin-bottom: 24px;
+                height: 454px;
                 .services__photo-link {
                     position: relative;
                     width: 100%;
@@ -458,11 +459,12 @@ header.small {
                     line-height: 30px;
                     text-align: center;
                     white-space: pre-wrap;
-                    padding: 57px;
+                    padding-top: 60px;
                     color: #FFFFFF;
                     width: 100%;
                     margin-top: 4px;
                     position: relative;
+                    height: 100%;
                 }
                 .services__text::before {
                     content: '';
@@ -491,7 +493,7 @@ header.small {
                     flex-direction: row;
                     flex-wrap: nowrap;
                     text-decoration: none;
-                    height: 66px;
+                    min-height: 66px;
                     width: 100%;
                     background-image: url('../img/Vector\ 1.png');
                     span {
@@ -2181,6 +2183,7 @@ p a {
                     background: #31B5CF;
                     overflow: hidden;
                     margin-bottom: 20px;
+                    max-height: 121px;
                     .services__photo-link {
                         position: relative;
                         width: 100%;
@@ -2208,6 +2211,8 @@ p a {
                         text-align: start;
                         padding: 15px;
                         margin-top: 0px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
                     }
                     .services__text::before {
                         display: none;

@@ -561,9 +561,9 @@ header.small {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -581,6 +581,7 @@ header.small {
   overflow: hidden;
   margin: 0 10px;
   margin-bottom: 24px;
+  height: 454px;
 }
 
 .services-wrapper .services .services__list .services__item .services__photo-link {
@@ -609,11 +610,12 @@ header.small {
   line-height: 30px;
   text-align: center;
   white-space: pre-wrap;
-  padding: 57px;
+  padding-top: 60px;
   color: #FFFFFF;
   width: 100%;
   margin-top: 4px;
   position: relative;
+  height: 100%;
 }
 
 .services-wrapper .services .services__list .services__item .services__text::before {
@@ -656,7 +658,7 @@ header.small {
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   text-decoration: none;
-  height: 66px;
+  min-height: 66px;
   width: 100%;
   background-image: url("../img/Vector 1.png");
 }
@@ -3046,6 +3048,7 @@ p a {
     background: #31B5CF;
     overflow: hidden;
     margin-bottom: 20px;
+    max-height: 121px;
   }
   .services-wrapper .services .services__list .services__item .services__photo-link {
     position: relative;
@@ -3076,6 +3079,8 @@ p a {
     text-align: start;
     padding: 15px;
     margin-top: 0px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .services-wrapper .services .services__list .services__item .services__text::before {
     display: none;
