@@ -673,6 +673,10 @@ header.small {
   color: #FFFFFF;
 }
 
+.services-wrapper .services .services__list .services__item .services__link:hover span {
+  text-decoration: underline;
+}
+
 .about-wrapper {
   margin-top: 72px;
   background: rgba 234, 233, 233, 0.2;
@@ -981,6 +985,10 @@ header.small {
   line-height: 19px;
   text-transform: uppercase;
   color: #2C2C2C;
+}
+
+.news-wrapper .news .news__list .news__item .news__link:hover span {
+  text-decoration: underline;
 }
 
 .response-wrapper .response {
@@ -3101,6 +3109,7 @@ p a {
   }
   .services-wrapper .services .services__list .services__item .services__link span {
     display: none;
+    z-index: 2;
   }
   .about-wrapper .about {
     padding-top: 20px;

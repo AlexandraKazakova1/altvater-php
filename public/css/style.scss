@@ -506,6 +506,9 @@ header.small {
                         color: #FFFFFF;
                     }
                 }
+                .services__link:hover span {
+                    text-decoration: underline;
+                }
             }
         }
     }
@@ -700,6 +703,9 @@ header.small {
                         text-transform: uppercase;
                         color: #2C2C2C;
                     }
+                }
+                .news__link:hover span {
+                    text-decoration: underline;
                 }
             }
         }
@@ -2229,6 +2235,7 @@ p a {
                         background-image: none;
                         span {
                             display: none;
+                            z-index: 2;
                         }
                     }
                 }
