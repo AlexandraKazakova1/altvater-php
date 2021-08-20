@@ -60,13 +60,16 @@ class SendController extends Controller {
 					'message'	=> $post['message']
 				]);
 				
-				$this->sendEmail('feedback', null, [
-					'id'		=> $insert->id,
-					'name'		=> $post['username'],
-					'email'		=> $post['useremail'],
-					'message'	=> $post['message'],
-					'url'		=> url('/admin/feedback/'.$insert->id.'/edit')
-				]);
+				try {
+					$this->sendEmail('feedback', null, [
+						'id'		=> $insert->id,
+						'name'		=> $post['username'],
+						'email'		=> $post['useremail'],
+						'message'	=> $post['message'],
+						'url'		=> url('/admin/feedback/'.$insert->id.'/edit')
+					]);
+				} catch (Exception $e) {
+				}
 				
 				$status = true;
 				$msg	= trans('ajax.success_send_feedback');
