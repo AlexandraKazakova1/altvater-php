@@ -11,7 +11,7 @@
 						@foreach($services as $item)
 							<!-- -->
 							<div class="services__item">
-								<a class="services__photo-link" style="width:100%;max-height:208px;overflow:hidden;" href="/services/{{$item->slug}}"><img style="width:100%;" class="services__photo" src="/storage/{{$item->image}}" alt="{{$item->title}}"></a>
+								<a class="services__photo-link" href="/services/{{$item->slug}}"><img class="services__photo" src="/storage/{{$item->image}}" alt="{{$item->title}}"></a>
 								
 								<span class="services__text">{!!$item->title!!}</span>
 								
@@ -73,7 +73,7 @@
 						@foreach($news as $item)
 							<!-- -->
 							<li class="news__item">
-								<a class="news__photo-link" style="width:100%;max-height:208px;overflow:hidden;" href="/news/{{$item->slug}}"><img style="width:100%;" class="news__photo" src="/storage/{{$item->image}}" alt="{!!$item->title!!}"></a>
+								<a class="news__photo-link" href="/news/{{$item->slug}}"><img class="news__photo" src="/storage/{{$item->image}}" alt="{!!$item->title!!}"></a>
 								
 								<div class="news__text">
 									<span class="news__date">{{$item->date->d}} {{trans('site.months')[$item->date->m]}}, {{$item->date->y}}</span>
