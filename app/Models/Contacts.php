@@ -38,7 +38,7 @@ class Contacts extends Model{
 			
 			if($item->value){
 				if($item->type == 'phone'){
-					$item->value = preg_replace("/[^0-9]/", '', $str);
+					$item->value = preg_replace("/[^0-9]/", '', $item->value);
 				}
 			}
 			
