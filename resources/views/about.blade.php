@@ -31,7 +31,7 @@
 					<div class="thesis__img"><img src="/storage/{{$data->about_right_image}}" alt="{{$data->about_right_header}}"></div>
 					<div class="thesis__body">
 						<h2 class="section-title">{{$data->about_right_header}}</h2>
-						{{$data->about_right}}
+						{!!$data->about_right!!}
 					</div>
 				</div>
 			</section>
@@ -43,7 +43,7 @@
 					<div class="thesis__img"><img src="/storage/{{$data->about_left_image}}" alt="{{$data->about_left_header}}"></div>
 					<div class="thesis__body">
 						<h2 class="section-title">{{$data->about_left_header}}</h2>
-						{{$data->about_left}}
+						{!!$data->about_left!!}
 					</div>
 				</div>
 			</section>
