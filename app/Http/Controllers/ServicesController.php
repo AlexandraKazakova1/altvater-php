@@ -23,7 +23,7 @@ class ServicesController extends MyController {
 		parent::__construct();
 	}
 	
-	public function index(){
+	public function index(Request $request){
 		$uri = $request->route('uri');
 		
 		$page = Services::query()->where('slug', $uri)->where('public', 1)->first();
