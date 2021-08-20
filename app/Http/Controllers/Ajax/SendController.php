@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers\Ajax;
 
-use App\Models\Feedback;
-
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
