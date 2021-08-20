@@ -40,6 +40,11 @@ Route::get('news/{uri}', [
 	'uses' => 'NewsController@once'
 ])->where('uri', '[a-zA-Z_0-9\-]+');
 
+Route::get('contacts', [
+	'as'    => 'contacts',
+	'uses'  => 'ContactsController@index'
+]);
+
 Route::get('/{uri}', [
 	'uses' => 'PageController@once'
 ])->where('uri', '[a-zA-Z_0-9\-]+');

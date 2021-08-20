@@ -17,4 +17,40 @@ class Contacts extends Model{
 		'public',
 		'value'
 	];
+	
+	static function getData(){
+		$tmp = DB::table('contacts')
+					->where('public', 1)
+					->select('type', 'value')
+					->get();
+		
+		$data = (object)[
+			'address'	=> [],
+			'phone'		=> [],
+			'email'		=> [],
+			'work'		=> [],
+			'viber'		=> [],
+			'telegram'	=> [],
+		];
+		
+		foreach($tmp as $item){
+			$item->value = trim($item->value);
+			
+			if($item->value){
+				if($item->type == 'phone'){
+					$item->value = preg_replace("/[^0-9]/", '', $str);
+				}
+			}
+			
+			if($item->value){
+				$data->{$item->type}[] = $item->value;
+			}
+		}
+		
+		echo "<pre>";
+		print_r($data);
+		exit;
+		
+		return $data;
+	}
 }
