@@ -328,6 +328,7 @@ return [
 		'sort'					=> 'Порядок',
 		'title'					=> 'Заголовок',
 		'url'					=> 'URL',
+		'class'					=> 'CSS клас',
 	],
 	
 	'pages'					=> [

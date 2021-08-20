@@ -85,7 +85,7 @@
 					@foreach($menu as $item)
 						<!-- -->
 						<li class="header-nav__list__item">
-							<a href="{{url($item->url)}}">{{$item->title}}</a>
+							<a class="{{$item->class}}" href="{{url($item->url)}}">{{$item->title}}</a>
 						</li>
 						<!-- -->
 					@endforeach

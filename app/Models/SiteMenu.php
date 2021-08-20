@@ -17,6 +17,7 @@ class SiteMenu extends Model {
 		'public',
 		'sort',
 		'url',
-		'title'
+		'title',
+		'class'
 	];
 }
