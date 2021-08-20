@@ -116,8 +116,8 @@
 											</g>
 										</svg>
 									</div>
-									<span class="response__text">{!!$item->text!!}</span>
-									<div class="responser__name">{!!$item->name!!}</div>
+									<p class="response__text">{!!$item->text!!}</p>
+									<span class="responser__name">{!!$item->name!!}</span>
 								</div>
 							</div>
 							<!-- -->
