@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pages;
 use App\Models\Services;
+use App\Models\ServicesImages;
 use App\Models\FAQ;
 
 use App\Helpers\MyBreadcrumbs;
@@ -44,6 +45,7 @@ class ServicesController extends MyController {
 			'data'			=> $page,
 			'detail'		=> $detail,
 			'faq'			=> FAQ::query()->where('public', 1)->orderBy('sort', 'desc')->select('title', 'text')->get(),
+			'images'		=> ServicesImages::query()->where('service_id', $page->id)->where('public', 1)->select('image', 'alt')->get()
 		];
 		
 		return view(
