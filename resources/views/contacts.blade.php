@@ -93,8 +93,7 @@
 						</li>
 						<!-- -->
 					@endif
-					->
-					@endif
+					
 				</ul>
 				
 				<div class="callback">
