@@ -26,17 +26,18 @@ class ContactsController extends MyController {
 		$page = (object)Pages::query()->where('slug', 'contacts')->first()->toArray();
 		
 		$data = [
-			'page'		=> array(
+			'page'			=> array(
 				'title'			=> $page->title,
 				'keywords'		=> $page->keywords,
 				'description'	=> $page->description,
 				'uri'			=> 'contacts',
 				'og_image'		=> '',
 			),
-			'robots'	=> $page->robots,
-			'canonical'	=> $page->canonical,
-			'data'		=> $page,
-			'contacts'	=> Contacts::getData(),
+			'headerClass'	=> 'background-2',
+			'robots'		=> $page->robots,
+			'canonical'		=> $page->canonical,
+			'data'			=> $page,
+			'contacts'		=> Contacts::getData(),
 		];
 		
 		return view(

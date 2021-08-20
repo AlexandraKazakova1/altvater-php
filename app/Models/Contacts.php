@@ -47,10 +47,6 @@ class Contacts extends Model{
 			}
 		}
 		
-		echo "<pre>";
-		print_r($data);
-		exit;
-		
 		return $data;
 	}
 }
