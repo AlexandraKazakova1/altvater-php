@@ -93,7 +93,23 @@
 						</li>
 						<!-- -->
 					@endif
-					
+					@if($contacts['viber'] || $contacts['telegram'])
+						<!-- -->
+						<li class="contacts__item">
+							<div class="item__body bot__group">
+								<span class="subTitle21">Наші боти:</span>
+								
+								@if($contacts['viber'])
+									
+								@endif
+								
+								@if($contacts['telegram'])
+									
+								@endif
+							</div>
+						</li>
+						<!-- -->
+					@endif
 				</ul>
 				
 				<div class="callback">
