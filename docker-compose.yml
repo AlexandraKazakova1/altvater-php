@@ -1,0 +1,62 @@
+version: "3"
+
+services:
+  php-fpm:
+    tty: true
+    env_file:
+      - .env_inside
+    build: docker/php
+    volumes:
+      - ./:/app
+    depends_on:
+      - db
+    networks:
+      - web
+  nginx:
+    image: nginx:1.12-alpine
+    networks:
+      - web
+    ports:
+      - 80:80
+    volumes:
+      - ./:/app
+      - ./docker/nginx/vhost.conf:/etc/nginx/conf.d/vhost.conf
+    depends_on:
+      - php-fpm
+  db:
+    image: postgres:10.16
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - PGDATA=/data/postgres
+    ports:
+     - 5433:5432
+    volumes:
+     - ./db:/data/postgres
+    networks:
+      - web
+  memcached:
+    image: memcached:latest
+    networks:
+      - web
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin4@pgadmin.org}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+    ports:
+      - "${PGADMIN_PORT:-5050}:80"
+    networks:
+      - web
+    restart: unless-stopped
+  redis_system:
+    image: redis:latest
+    networks:
+      - web
+    depends_on:
+     - php-fpm
+networks:
+  web:
+    external: true
