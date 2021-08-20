@@ -17,7 +17,16 @@ class Controller extends BaseController {
 	
 	use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 	
-	function sendEmail($subject, $text, $to = null, $file = null){
+	function sendEmail($key, $to = null, $file = null){
+		$template = DB::table('email_templates')->where('slug', $key)->first();
+		
+		if(!$template){
+			return false;
+		}
+		
+		$subject	= $template->subject;
+		$text		= $template->content;
+		
 		$config = [
 			'appname'			=> '', 
 			'email'				=> '', 
@@ -30,6 +39,11 @@ class Controller extends BaseController {
 			$item->value = trim($item->value);
 			
 			$config[$item->name] = $item->value;
+		}
+		
+		if($template->emails){
+			$template->emails = trim($template->emails);
+			$to = explode(',', $template->emails);
 		}
 		
 		if($to && is_string($to)){
@@ -62,9 +76,6 @@ class Controller extends BaseController {
 				$config['email_for_letters'] = trim($config['email_for_letters']);
 				$to = explode(',', $config['email_for_letters']);
 			}
-			
-			print_r($to);
-			exit;
 			
 			foreach($to as $item){
 				$item = trim($item);
