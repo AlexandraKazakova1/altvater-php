@@ -7,10 +7,10 @@
 				<div class="services container">
 					<h2 class="section-title">Наші послуги</h2>
 					
-					<ul class="services__list">
+					<div class="services__list">
 						@foreach($services as $item)
 							<!-- -->
-							<li class="services__item">
+							<div class="services__item">
 								<a class="services__photo-link" style="width:100%;max-height:208px;overflow:hidden;" href="/services/{{$item->slug}}"><img style="width:100%;" class="services__photo" src="/storage/{{$item->image}}" alt="{{$item->title}}"></a>
 								
 								<span class="services__text">{!!$item->title!!}</span>
@@ -22,10 +22,10 @@
 									</svg>
 									<span>Детальніше</span>
 								</a>
-							</li>
+							</div>
 							<!-- -->
 						@endforeach
-					</ul>
+					</div>
 				</div>
 			</section>
 		@endif
