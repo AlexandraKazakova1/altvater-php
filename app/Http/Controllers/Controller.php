@@ -63,6 +63,9 @@ class Controller extends BaseController {
 				$to = explode(',', $config['email_for_letters']);
 			}
 			
+			print_r($to);
+			exit;
+			
 			foreach($to as $item){
 				$item = trim($item);
 				
