@@ -64,14 +64,14 @@ class NewsController extends MyController {
 		$check = NewsViews::query()->where('page_id', $page->id)->where('ip', $ip)->first();
 		
 		if(!$check){
-			NewsViews::insert({
+			NewsViews::insert([
 				'page_id'	=> $page->id,
 				'ip'		=> $ip
-			});
+			]);
 			
-			News::query()->where('id', $page->id)->update({
+			News::query()->where('id', $page->id)->update([
 				'views'	=> ($page->views + 1)
-			});
+			]);
 		}
 		
 		return view(
