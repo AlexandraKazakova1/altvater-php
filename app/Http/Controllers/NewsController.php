@@ -40,6 +40,7 @@ class NewsController extends MyController {
 			'last'			=> News::getLast(),
 			'popular'		=> News::getPopular(),
 			'news'			=> News::getAll(),
+			'all_news'		=> News::query()->where('public', 1)->orderBy('created_at', 'desc')->select('slug', 'title')->get()
 		];
 		
 		return view(

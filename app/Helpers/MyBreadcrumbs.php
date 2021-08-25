@@ -18,8 +18,8 @@ class MyBreadcrumbs {
     }
     
     public static function render(){
-		$html = '<nav class="nav-page" aria-label="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList">';
-			$html .= '<ul>';
+		$html = '<nav aria-label="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList">';
+			$html .= '<ul class="breadcrumbs__list">';
 			
 			if(self::$_links){
 				$i = 1;
@@ -30,21 +30,21 @@ class MyBreadcrumbs {
 					foreach(self::$_links as $uri => $title){
 						if($i > 1){
 							if($i != $count){
-								$html .= '<li itemscope="" itemprop="itemListElement" itemtype="http://schema.org/ListItem">';
+								$html .= '<li class="breadcrumbs__item" itemscope="" itemprop="itemListElement" itemtype="http://schema.org/ListItem">';
 									$html .= '<a href="'.url("/".$uri).'" itemprop="item">';
 										$html .= '<span itemprop="name">'.$title.'</span>';
 									$html .= '</a>';
 									$html .= '<meta itemprop="position" content="'.$i.'">';
 								$html .= '</li>';
 							}else{
-								$html .= '<li aria-current="page">';
+								$html .= '<li class="breadcrumbs__item" aria-current="page">';
 									$html .= '<div>';
 										$html .= '<span>'.$title.'</span>';
 									$html .= '</div>';
 								$html .= '</li>';
 							}
 						}else{
-							$html .= '<li itemscope="" itemprop="itemListElement" itemtype="http://schema.org/ListItem">';
+							$html .= '<li class="breadcrumbs__item" itemscope="" itemprop="itemListElement" itemtype="http://schema.org/ListItem">';
 								$html .= '<a href="'.url("/".$uri).'" itemprop="item">';
 									$html .= '<span itemprop="name">'.$title.'</span>';
 								$html .= '</a>';
@@ -57,7 +57,7 @@ class MyBreadcrumbs {
 				}else{
 					$vals = array_values(self::$_links);
 					
-					$html .= '<li aria-current="page">';
+					$html .= '<li class="breadcrumbs__item" aria-current="page">';
 						$html .= '<div>';
 							$html .= '<span>'.$vals[0].'</span>';
 						$html .= '</div>';

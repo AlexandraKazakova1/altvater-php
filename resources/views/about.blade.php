@@ -14,11 +14,13 @@
 						</svg>
 						
 						<ul class="dropdown__list">
-							<!-- -->
-							<li class="dropdown__link">
-								<a href="#">Послуги</a>
-							</li>
-							<!-- -->
+							@foreach($pages as $item)
+								<!-- -->
+								<li class="dropdown__link">
+									<a href="{{url($item->slug == 'index' ? '/' : $item->slug)}}">{{$item->title}}</a>
+								</li>
+								<!-- -->
+							@endforeach
 						</ul>
 					</li>
 				</ul>

@@ -12,6 +12,10 @@ use DB;
 use App\Models\SiteMenu;
 use App\Models\FooterMenu;
 
+use App\Models\Pages;
+use App\Models\News;
+use App\Models\Services;
+
 use Illuminate\Support\Facades\View;
 
 use App\Helpers\ImageHelper;
@@ -74,6 +78,8 @@ class MyController extends Controller {
 		
 		View::share('menu'					, SiteMenu::query()->where('public', 1)->orderBy('sort', 'asc')->get());
 		View::share('footer_menu'			, FooterMenu::query()->where('public', 1)->orderBy('sort', 'asc')->get());
+		
+		View::share('pages'					, Pages::query()->orderBy('title', 'asc')->get());
 		
 		View::share('styles'				, Config('styles'));
 		View::share('scripts'				, Config('scripts'));
