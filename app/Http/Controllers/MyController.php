@@ -79,7 +79,7 @@ class MyController extends Controller {
 		View::share('menu'					, SiteMenu::query()->where('public', 1)->orderBy('sort', 'asc')->get());
 		View::share('footer_menu'			, FooterMenu::query()->where('public', 1)->orderBy('sort', 'asc')->get());
 		
-		View::share('pages'					, Pages::query()->orderBy('title', 'asc')->get());
+		View::share('pages'					, Pages::query()->whereNotIn('id', [1, 2])->orderBy('title', 'asc')->get());
 		
 		View::share('styles'				, Config('styles'));
 		View::share('scripts'				, Config('scripts'));
