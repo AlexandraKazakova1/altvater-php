@@ -139,7 +139,7 @@ class PagesController extends MyAdminController {
 				$form->text('header'			, __('admin.pages.header'))->rules('max:250');
 				
 				if($id != 3 && $id != 4){
-					$form->ckeditor('text'				, __('admin.pages.text'));
+					$form->summernote('text'				, __('admin.pages.text'));
 				}
 			});
 		}
@@ -149,7 +149,7 @@ class PagesController extends MyAdminController {
 				$form->switch('about_right_public'		, __('admin.pages.public'));
 				
 				$form->text('about_right_header'		, __('admin.pages.header'))->rules('max:250');
-				$form->ckeditor('about_right'			, __('admin.pages.text'))->rules('max:1500');
+				$form->summernote('about_right'			, __('admin.pages.text'))->rules('max:1500');
 				
 				$form->image('about_right_image'		, __('admin.pages.image'))->help('476x388px')->removable()->move('pages-images')->uniqueName();
 			});
@@ -158,7 +158,7 @@ class PagesController extends MyAdminController {
 				$form->switch('about_left_public'		, __('admin.pages.public'));
 				
 				$form->text('about_left_header'			, __('admin.pages.header'))->rules('max:250');
-				$form->ckeditor('about_left'			, __('admin.pages.text'))->rules('max:1500');
+				$form->summernote('about_left'			, __('admin.pages.text'))->rules('max:1500');
 				
 				$form->image('about_left_image'			, __('admin.pages.image'))->help('476x388px')->removable()->move('pages-images')->uniqueName();
 			});
@@ -171,14 +171,14 @@ class PagesController extends MyAdminController {
 				$form->decimal('employees'				, __('admin.pages.employees'));
 				$form->decimal('hours'					, __('admin.pages.hours'));
 				
-				$form->ckeditor('indicators_text'		, __('admin.pages.text'));
+				$form->summernote('indicators_text'		, __('admin.pages.text'));
 			});
 			
 			$form->tab(__('admin.pages.third_block')	, function($form) use ($id) {
 				$form->switch('meta_public'				, __('admin.pages.public'));
 				
 				$form->text('meta_header'				, __('admin.pages.header'))->rules('max:250');
-				$form->ckeditor('meta_text'				, __('admin.pages.text'))->rules('max:1500');
+				$form->summernote('meta_text'				, __('admin.pages.text'))->rules('max:1500');
 				
 				$form->image('meta_image'				, __('admin.pages.image'))->help('476x388px')->removable()->move('pages-images')->uniqueName();
 			});

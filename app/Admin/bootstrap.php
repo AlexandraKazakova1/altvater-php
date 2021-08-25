@@ -19,10 +19,13 @@
  */
 
 use Encore\Admin\Form;
-use App\Admin\Extensions\Form\CKEditor;
+
+//use App\Admin\Extensions\Form\CKEditor;
+use App\Admin\Extensions\Form\Summernote;
 
 Form::forget(['map', 'editor']);
 
-Form::extend('ckeditor', CKEditor::class);
+//Form::extend('ckeditor', CKEditor::class);
+Form::extend('summernote', Summernote::class);
 
 Admin::js('/js/admin.js');

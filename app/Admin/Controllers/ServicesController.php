@@ -114,7 +114,7 @@ class ServicesController extends MyAdminController {
 		$form->tab(__('admin.pages.page_content')	, function($form){
 			$form->textarea('header'			, __('admin.pages.header'));
 			
-			$form->ckeditor('text'				, __('admin.pages.text'));
+			$form->summernote('text'				, __('admin.pages.text'));
 		});
 		
 		$form->tab(__('admin.pages.recent_works')	, function($form){
