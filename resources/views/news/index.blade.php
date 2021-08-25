@@ -80,7 +80,7 @@
 									<span>{!!$item->title!!}</span>
 								</div>
 								
-								<a class="news__link" href="#">
+								<a class="news__link" href="/news/{{$item->slug}}">
 									<svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path d="M23.8643 14.1685L5.73926 14.1685" stroke="#2C2C2C" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
 										<path d="M16.5537 6.88903L23.8641 14.168L16.5537 21.4482" stroke="#2C2C2C" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
