@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pages;
 use App\Models\News;
+use App\Models\NewsViews;
 
 use App\Helpers\MyBreadcrumbs;
 use App\Helpers\StringHelper;
@@ -56,6 +57,21 @@ class NewsController extends MyController {
 		
 		if(!$page){
 			return abort(404);
+		}
+		
+		$ip = \ip2long($request->ip());
+		
+		$check = NewsViews::query()->where('page_id', $page->id)->where('ip', $ip)->first();
+		
+		if(!$check){
+			NewsViews::insert({
+				'page_id'	=> $page->id,
+				'ip'		=> $ip
+			});
+			
+			News::query()->where('id', $page->id)->update({
+				'views'	=> ($page->views + 1)
+			});
 		}
 		
 		return view(
