@@ -73,6 +73,7 @@ class NewsController extends MyController {
 				'robots'		=> $page->robots,
 				'canonical'		=> $page->canonical,
 				'news'			=> News::getNew(),
+				'all_news'		=> News::query()->where('public', 1)->orderBy('created_at', 'desc')->select('slug', 'title')->get()
 			]
 		);
 	}
