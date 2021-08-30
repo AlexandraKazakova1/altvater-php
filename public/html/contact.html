@@ -30,12 +30,12 @@
                 </li>
             </ul>
             <div class="header-nav__btn-group">
-                <a href="#" class="btn-logIn">
+                <button type="button" class="btn-logIn" data-toggle="modal" data-target="#log__in-modal">
                     Вхід
-                </a>
-                <a href="#" class="btn-reg btn-red">
+                </button>
+                <button type="button" class="btn-reg btn-red" data-toggle="modal" data-target="#create-modal">
                     Реєстрація
-                </a>
+                </button>
             </div>
             <div class="burger-menu">
                 <span class="menu__icon"></span>
@@ -201,6 +201,293 @@
             <span>Copyright © 2021 Veolia. All rights reserved</span>
         </div>
     </footer>
+    
+    <div class="modal fade" id="log__in-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-md modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="log__in-page popup">
+                    <div class="modal-header">
+                        <h2 class="popup__title">Вхід до<br>особистого кабінету</h2>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <img src="../img/close.svg" alt="X">
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="popup__form" id="log__in-form">
+                            <fieldset class="fieldset">
+                                <label>
+                                    <span class="input-description">Email:</span>
+                                    <input class="form-control" type="email" id="user-email" name="user-email" placeholder=" ">
+                                    <span class="input-placeholder">
+                                        <div>
+                                            <img src="../img/cabinet/modal-icon/email.svg">
+                                        </div>
+                                        Ваш Email
+                                    </span>
+                                </label>
+                                <label>
+                                    <span class="input-description">Пароль:</span>
+                                    <input class="form-control" type="password" id="user-password" name="user-password" placeholder=" ">
+                                    <span class="input-placeholder">
+                                        <div>
+                                            <img src="../img/cabinet/modal-icon/lock.svg">
+                                        </div>
+                                        Введіть пароль
+                                    </span>
+                                </label>
+                                <div class="convenience">
+                                    <label class="checkbox__label">
+                                        <input class="input-checkbox" type="checkbox" id="remember-me" name="remember-me">
+                                        <span class="custom-checkbox"></span>
+                                        <span class="checkbox-text">Запам'ятати мене</span>
+                                    </label>
+                                    <button class="btn-forgot forgot__password__link popup-text__link" type="button" data-toggle="modal" data-target="#recovery-modal">Забули пароль?</button>
+                                </div>
+                                <button class="btn-submit" type="submit" name="logIn">Вхід</button>
+                            </fieldset>
+                        </form>
+                        <div class="or__text">
+                            <span>або продовжити</span>
+                        </div>
+                        <div class="log__with">
+                            <a href="#">
+                                <img src="../img/cabinet/modal-icon/google.svg" alt="G">
+                            </a>
+                            <a href="#">
+                                <img src="../img/cabinet/modal-icon/facebook.svg" alt="f">
+                            </a>
+                        </div>
+                        <span class="popup__question">Немає акаунту? <button type="button" class="btn-reg popup__question__link popup-text__link" data-toggle="modal" data-target="#create-modal">Створити акаунт</button></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="create-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-md modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="create-page popup">
+                    <div class="modal-header">
+                        <h2 class="popup__title">Створити Акаунт</h2>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <img src="../img/close.svg" alt="X">
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="popup__form" id="create-form">
+                            <fieldset class="fieldset">
+                                <div class="radio__select">
+                                    <label>
+                                        <input type="radio" name="user-type" id="individual" checked>
+                                        <span>Фізична особа</span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="user-type" id="legal">
+                                        <span>Юридична особа</span>
+                                    </label>
+                                </div>
+                                <label>
+                                    <span class="input-description">Ім'я і Прізвище:</span>
+                                    <input class="form-control" type="email" id="user-email" name="user-email" placeholder=" ">
+                                    <span class="input-placeholder">
+                                        <div>
+                                            <img src="../img/cabinet/modal-icon/profile.svg">
+                                        </div>
+                                        Ім'я і Прізвище
+                                    </span>
+                                </label>
+                                <label>
+                                    <span class="input-description">Номер телефону:</span>
+                                    <input class="form-control" type="email" id="user-email" name="user-email" placeholder=" ">
+                                    <span class="input-placeholder">
+                                        <div>
+                                            <img src="../img/cabinet/modal-icon/phone.svg">
+                                        </div>
+                                        Номер телефону
+                                    </span>
+                                </label>
+                                <label>
+                                    <span class="input-description">Email:</span>
+                                    <input class="form-control" type="email" id="user-email" name="user-email" placeholder=" ">
+                                    <span class="input-placeholder">
+                                        <div>
+                                            <img src="../img/cabinet/modal-icon/email.svg">
+                                        </div>
+                                        Ваш Email
+                                    </span>
+                                </label>
+                                <label>
+                                    <span class="input-description">Пароль:</span>
+                                    <input class="form-control" type="password" id="user-password" name="user-password" placeholder=" ">
+                                    <span class="input-placeholder">
+                                        <div>
+                                            <img src="../img/cabinet/modal-icon/lock.svg">
+                                        </div>
+                                        Введіть пароль
+                                    </span>
+                                </label>
+                                <label>
+                                    <span class="input-description">Повторіть пароль:</span>
+                                    <input class="form-control" type="password" id="user-password" name="user-password" placeholder=" ">
+                                    <span class="input-placeholder">
+                                        <div>
+                                            <img src="../img/cabinet/modal-icon/lock.svg">
+                                        </div>
+                                        Повторіть пароль
+                                    </span>
+                                </label>
+                                <div class="user-agree">
+                                    <label class="checkbox__label">
+                                        <input class="input-checkbox" type="checkbox" id="user-agree" name="user-agree">
+                                        <span class="custom-checkbox"></span>
+                                        <span class="checkbox-text">Я даю згоду на обробку <a href="#">особистих даних</a></span>
+                                    </label>
+                                </div>
+                                <div class="recaptcha">
+                                    <img src="../img/cabinet/zaglushka-3.png" alt="">
+                                </div>
+                                <button class="btn-submit" type="submit" name="reg">Створити акаунт</button>
+                            </fieldset>
+                        </form>
+                        <span class="popup__question">У вас є акаунт? <button type="button" class="popup-text__link btn-logIn" data-toggle="modal" data-target="#log__in-modal">Зайти в особистий кабінет</button></span>
+                        <div class="or__text">
+                            <span>або продовжити</span>
+                        </div>
+                        <div class="log__with">
+                            <a href="#">
+                                <img src="../img/cabinet/modal-icon/google.svg" alt="G">
+                            </a>
+                            <a href="#">
+                                <img src="../img/cabinet/modal-icon/facebook.svg" alt="f">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="recovery-modal-1" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-md modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="pass__recovery-page popup">
+                    <div class="modal-header">
+                        <h2 class="popup__title">Відновити пароль</h2>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <img src="../img/close.svg" alt="X">
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="popup__form" id="pass__recovery-form">
+                            <fieldset class="fieldset">
+                                <p>Укажіть електронну адресу, на яку був створений акаунт.</p>
+                                <label>
+                                    <span class="input-description">Email:</span>
+                                    <input class="form-control" type="email" id="user-email" name="user-email" placeholder=" ">
+                                    <span class="input-placeholder">
+                                        <div>
+                                            <img src="../img/cabinet/modal-icon/email.svg">
+                                        </div>
+                                        Ваш Email
+                                    </span>
+                                </label>
+                                <button class="btn-submit recovery-1" type="submit" name="logIn" name="step-1" data-toggle="modal" data-target="#recovery-modal-2">Відновити пароль</button>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="recovery-modal-2" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-md modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="pass__recovery-page popup">
+                    <div class="modal-header">
+                        <img src="../img/recovery-mail.svg">
+                        <h2 class="popup__title">Перевірте пошту</h2>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <img src="../img/close.svg" alt="X">
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="recovery-mail-msg">На цей E-mail <span class="recovery-mail">bortnovskiv@ukr.net</span> буде відправлено лист з подальшими інструкціями по відновленню пароля</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="recovery-modal-3" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-md modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="pass__recovery-page popup">
+                    <div class="modal-header">
+                        <h2 class="popup__title">Введіть новий пароль</h2>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <img src="../img/close.svg" alt="X">
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="popup__form" id="pass__recovery-form">
+                            <fieldset class="fieldset">
+                                <label>
+                                    <span class="input-description">Пароль:</span>
+                                    <input class="form-control" type="password" id="user-password" name="user-password" placeholder=" ">
+                                    <span class="input-placeholder">
+                                        <div>
+                                            <img src="../img/cabinet/modal-icon/lock.svg">
+                                        </div>
+                                        Введіть пароль
+                                    </span>
+                                </label>
+                                <label>
+                                    <span class="input-description">Повторіть пароль:</span>
+                                    <input class="form-control" type="password" id="user-password" name="user-password" placeholder=" ">
+                                    <span class="input-placeholder">
+                                        <div>
+                                            <img src="../img/cabinet/modal-icon/lock.svg">
+                                        </div>
+                                        Повторіть пароль
+                                    </span>
+                                </label>
+                                <button class="btn-submit" type="submit" name="logIn">Вхід</button>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="verification-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-md modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="pass__verification-page popup">
+                    <div class="modal-header">
+                        <img src="../img/verif.svg">
+                        <h2 class="popup__title">Підтвердити номер телефону</h2>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <img src="../img/close.svg" alt="X">
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="popup__form" id="pass__verification-form">
+                            <fieldset class="fieldset">
+                                <p>На цей номер <span class="number">+38(098) 34-43-895</span> відправлений SMS-код, введіть його в поле нижче:</p>
+                                <label class="verif-code">
+                                    <input class="form-control" type="password" name="verif-code-1" placeholder=" ">
+                                    <input class="form-control" type="password" name="verif-code-2" placeholder=" ">
+                                    <input class="form-control" type="password" name="verif-code-3" placeholder=" ">
+                                    <input class="form-control" type="password" name="verif-code-4" placeholder=" ">
+                                    <input class="form-control" type="password" name="verif-code-5" placeholder=" ">
+                                </label>
+                                <a href="#" class="sendAgain">Відправити знову <span>(09: 16с)</span></a>
+                                <button class="btn-submit" type="submit" name="logIn">Вхід</button>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="../js/jquery.min.js"></script>
     <script src="../js/slick.min.js"></script>
     <script src="../js/jquery.validate.min.js"></script>

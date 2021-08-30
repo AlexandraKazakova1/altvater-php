@@ -105,4 +105,33 @@ $(document).ready (function() {
         event.preventDefault();
         $('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
     });
+    modalFade();
 });
+
+function modalFade() {
+    var closeBtn = $('.close')
+
+    $('.btn-logIn').click(function() {
+        $('.modal').modal('hide');
+        $('#log__in-modal').modal('show');
+    });
+    $('.btn-reg').click(function() {
+        $('.modal').modal('hide');
+        $('#create-modal').modal('show');
+    });
+
+    $('.btn-forgot').click(function() {
+        $('.modal').modal('hide');
+        $('#recovery-modal-1').modal('show');
+    });
+    $('.recovery-1').click(function() {
+        $('.modal').modal('hide');
+        $('#recovery-modal-2').modal('show');
+    });
+
+
+
+    closeBtn.click(function() {
+        $(this).parents('.modal').modal('hide');
+    });
+}

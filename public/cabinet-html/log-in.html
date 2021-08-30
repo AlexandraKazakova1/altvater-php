@@ -9,19 +9,16 @@
 </head>
 <body>
     <main>
-        <div class="log__in-page">
-            <h1 class="popap__title">Вхід до<br>особистого кабінету</h1>
-            <form class="log__in__form" id="log__in-form">
-                <fieldset class="log__in-fieldset">
+        <div class="log__in-page popup">
+            <h1 class="popup__title">Вхід до<br>особистого кабінету</h1>
+            <form class="popup__form" id="log__in-form">
+                <fieldset class="fieldset">
                     <label>
                         <span class="input-description">Email:</span>
                         <input class="form-control" type="email" id="user-email" name="user-email" placeholder=" ">
                         <span class="input-placeholder">
                             <div>
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M7.49805 9.74805L10.4247 11.5524C11.3905 12.1478 12.6094 12.1478 13.5751 11.5524L16.5018 9.74805" stroke="#2F5E97" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <rect x="2.99609" y="4.99609" width="18.0075" height="14.0058" rx="3" stroke="#2F5E97" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
+                                <img src="../img/cabinet/modal-icon/email.svg">
                             </div>
                             Ваш Email
                         </span>
@@ -31,10 +28,7 @@
                         <input class="form-control" type="password" id="user-password" name="user-password" placeholder=" ">
                         <span class="input-placeholder">
                             <div>
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M14.8167 4.16689C16.3726 5.72274 16.3726 8.24527 14.8167 9.80112C13.2609 11.357 10.7384 11.357 9.18251 9.80112C7.62666 8.24527 7.62666 5.72274 9.18251 4.16689C10.7384 2.61104 13.2609 2.61104 14.8167 4.16689" stroke="#2F5E97" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M12 14.0078C16.554 14.0078 21 15.9748 21 18.9998V19.9998C21 20.5518 20.552 20.9998 20 20.9998H4C3.448 20.9998 3 20.5518 3 19.9998V18.9998C3 15.9738 7.446 14.0078 12 14.0078" stroke="#2F5E97" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
+                                <img src="../img/cabinet/modal-icon/lock.svg">
                             </div>
                             Введіть пароль
                         </span>
@@ -61,7 +55,7 @@
                     <img src="../img/cabinet/modal-icon/facebook.svg" alt="f">
                 </a>
             </div>
-            <span class="create__acc">Немає акаунту? <a href="#" class="create__acc__link popup-text__link">Створити акаунт</a></span>
+            <span class="popup__question">Немає акаунту? <a href="#" class="popup__question__link popup-text__link">Створити акаунт</a></span>
         </div>
     </main>
     <script src="../js/jquery.min.js"></script>
