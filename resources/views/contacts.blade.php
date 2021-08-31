@@ -162,6 +162,7 @@
 							</label>
 						</fieldset>
 					</form>
+					<span id="answer-msg"></span>
 				</div>
 			</div>
 		</section>
