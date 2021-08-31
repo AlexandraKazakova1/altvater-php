@@ -25,7 +25,7 @@ class ServicesController extends MyController {
 	}
 	
 	public function index(Request $request){
-		$page = Services::query()->where('slug', $uri)->where('public', 1)->first();
+		$page = Services::query()->where('slug', 'services')->where('public', 1)->first();
 		
 		$data = [
 			'page'			=> array(
