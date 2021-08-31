@@ -183,6 +183,7 @@
                             </label>
                         </fieldset>
                     </form>
+                    <span id="answer-msg"></span>
                 </div>
             </div>
         </section>
@@ -217,7 +218,7 @@
                             <fieldset class="fieldset">
                                 <label>
                                     <span class="input-description">Email:</span>
-                                    <input class="form-control" type="email" id="user-email" name="user-email" placeholder=" ">
+                                    <input class="form-control" type="email" name="user-email" placeholder=" ">
                                     <span class="input-placeholder">
                                         <div>
                                             <img src="../img/cabinet/modal-icon/email.svg">
@@ -227,7 +228,7 @@
                                 </label>
                                 <label>
                                     <span class="input-description">Пароль:</span>
-                                    <input class="form-control" type="password" id="user-password" name="user-password" placeholder=" ">
+                                    <input class="form-control" type="password"  name="user-password" placeholder=" ">
                                     <span class="input-placeholder">
                                         <div>
                                             <img src="../img/cabinet/modal-icon/lock.svg">
@@ -288,7 +289,7 @@
                                 </div>
                                 <label>
                                     <span class="input-description">Ім'я і Прізвище:</span>
-                                    <input class="form-control" type="email" id="user-email" name="user-email" placeholder=" ">
+                                    <input class="form-control" type="text" name="user-name" placeholder=" ">
                                     <span class="input-placeholder">
                                         <div>
                                             <img src="../img/cabinet/modal-icon/profile.svg">
@@ -298,7 +299,7 @@
                                 </label>
                                 <label>
                                     <span class="input-description">Номер телефону:</span>
-                                    <input class="form-control" type="email" id="user-email" name="user-email" placeholder=" ">
+                                    <input class="form-control" type="tel" name="user-tel" placeholder=" ">
                                     <span class="input-placeholder">
                                         <div>
                                             <img src="../img/cabinet/modal-icon/phone.svg">
@@ -308,7 +309,7 @@
                                 </label>
                                 <label>
                                     <span class="input-description">Email:</span>
-                                    <input class="form-control" type="email" id="user-email" name="user-email" placeholder=" ">
+                                    <input class="form-control" type="email" name="user-email" placeholder=" ">
                                     <span class="input-placeholder">
                                         <div>
                                             <img src="../img/cabinet/modal-icon/email.svg">
@@ -318,7 +319,7 @@
                                 </label>
                                 <label>
                                     <span class="input-description">Пароль:</span>
-                                    <input class="form-control" type="password" id="user-password" name="user-password" placeholder=" ">
+                                    <input class="form-control" type="password"  name="user-password" placeholder=" ">
                                     <span class="input-placeholder">
                                         <div>
                                             <img src="../img/cabinet/modal-icon/lock.svg">
@@ -328,7 +329,7 @@
                                 </label>
                                 <label>
                                     <span class="input-description">Повторіть пароль:</span>
-                                    <input class="form-control" type="password" id="user-password" name="user-password" placeholder=" ">
+                                    <input class="form-control" type="password"  name="user-password" placeholder=" ">
                                     <span class="input-placeholder">
                                         <div>
                                             <img src="../img/cabinet/modal-icon/lock.svg">
@@ -377,12 +378,12 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form class="popup__form" id="pass__recovery-form">
+                        <form class="popup__form" id="pass__recovery-form-1">
                             <fieldset class="fieldset">
                                 <p>Укажіть електронну адресу, на яку був створений акаунт.</p>
                                 <label>
                                     <span class="input-description">Email:</span>
-                                    <input class="form-control" type="email" id="user-email" name="user-email" placeholder=" ">
+                                    <input class="form-control" type="email" name="user-email" placeholder=" ">
                                     <span class="input-placeholder">
                                         <div>
                                             <img src="../img/cabinet/modal-icon/email.svg">
@@ -427,11 +428,11 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form class="popup__form" id="pass__recovery-form">
+                        <form class="popup__form" id="pass__recovery-form-2">
                             <fieldset class="fieldset">
                                 <label>
                                     <span class="input-description">Пароль:</span>
-                                    <input class="form-control" type="password" id="user-password" name="user-password" placeholder=" ">
+                                    <input class="form-control" type="password"  name="user-password" placeholder=" ">
                                     <span class="input-placeholder">
                                         <div>
                                             <img src="../img/cabinet/modal-icon/lock.svg">
@@ -441,7 +442,7 @@
                                 </label>
                                 <label>
                                     <span class="input-description">Повторіть пароль:</span>
-                                    <input class="form-control" type="password" id="user-password" name="user-password" placeholder=" ">
+                                    <input class="form-control" type="password"  name="user-password" placeholder=" ">
                                     <span class="input-placeholder">
                                         <div>
                                             <img src="../img/cabinet/modal-icon/lock.svg">
@@ -473,11 +474,11 @@
                             <fieldset class="fieldset">
                                 <p>На цей номер <span class="number">+38(098) 34-43-895</span> відправлений SMS-код, введіть його в поле нижче:</p>
                                 <label class="verif-code">
-                                    <input class="form-control" type="password" name="verif-code-1" placeholder=" ">
-                                    <input class="form-control" type="password" name="verif-code-2" placeholder=" ">
-                                    <input class="form-control" type="password" name="verif-code-3" placeholder=" ">
-                                    <input class="form-control" type="password" name="verif-code-4" placeholder=" ">
-                                    <input class="form-control" type="password" name="verif-code-5" placeholder=" ">
+                                    <input class="form-control" type="number" name="verif-code-1" placeholder=" ">
+                                    <input class="form-control" type="number" name="verif-code-2" placeholder=" ">
+                                    <input class="form-control" type="number" name="verif-code-3" placeholder=" ">
+                                    <input class="form-control" type="number" name="verif-code-4" placeholder=" ">
+                                    <input class="form-control" type="number" name="verif-code-5" placeholder=" ">
                                 </label>
                                 <a href="#" class="sendAgain">Відправити знову <span>(09: 16с)</span></a>
                                 <button class="btn-submit" type="submit" name="logIn">Вхід</button>

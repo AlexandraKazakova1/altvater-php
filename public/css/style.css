@@ -2298,6 +2298,17 @@ footer .footer span {
   background: #1EBCD4;
 }
 
+.contacts__wrapper .contacts .callback #answer-msg {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px;
+  color: #6cce63;
+  white-space: pre-wrap;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
 .topNews-wrapper {
   padding: 25px 0;
   padding-bottom: 7px;

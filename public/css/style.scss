@@ -396,7 +396,7 @@ header {
                 line-height: 16px;
                 padding: 5px 0;
                 color: #FFFFFF;
-                background: transparent
+                background: transparent;
             }
             .btn-reg {
                 color: #FFFFFF;
@@ -1603,6 +1603,16 @@ footer {
                     transition: all 0.3s;
                     background: #1EBCD4;
                 }
+            }
+            #answer-msg {
+                font-style: normal;
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 21px;
+                color: #6cce63;
+                white-space: pre-wrap;
+                margin-bottom: 20px;
+                text-align: center;
             }
         }
     }
