@@ -28,16 +28,20 @@ class Acl {
 	 * @return mixed
 	 */
 	public function handle(Request $request, Closure $next){
-		$ip = \ip2long($request->ip());
+		$active = env('ACL', false);
 		
-		if(!$ip){
-			return abort(404);
-		}
-		
-		$check = IpList::query()->where('ip', $ip)->first();
-		
-		if(!$check){
-			return abort(404);
+		if($active){
+			$ip = \ip2long($request->ip());
+			
+			if(!$ip){
+				return abort(404);
+			}
+			
+			$check = IpList::query()->where('ip', $ip)->first();
+			
+			if(!$check){
+				return abort(404);
+			}
 		}
 		
 		return $next($request);
