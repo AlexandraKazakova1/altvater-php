@@ -137,7 +137,7 @@ class sitemap extends Command {
 			
 			if($item->pages){
 				foreach($item->pages as $j => $sub){
-					$generator->addItem(url($sub->slug), (string)($sub->updated_at ? $sub->updated_at : $sub->created_at), $sub->changefreq, $sub->priority);
+					$generator->addItem(url($item->slug.'/'.$sub->slug), (string)($sub->updated_at ? $sub->updated_at : $sub->created_at), $sub->changefreq, $sub->priority);
 				}
 			}
 		}
