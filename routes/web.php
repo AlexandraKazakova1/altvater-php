@@ -50,6 +50,11 @@ Route::get('services/{uri}', [
 	'uses'  => 'ServicesController@index'
 ])->where('uri', '[a-zA-Z_0-9\-]+');
 
+Route::get('sitemap.html', [
+	'as'    => 'sitemap',
+	'uses'  => 'SitemapController@index'
+]);
+
 Route::get('about', [
 	'as'    => 'about',
 	'uses'  => 'AboutController@index'
