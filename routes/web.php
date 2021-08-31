@@ -45,9 +45,14 @@ Route::get('contacts', [
 	'uses'  => 'ContactsController@index'
 ]);
 
-Route::get('services/{uri}', [
+Route::get('services', [
 	'as'    => 'services',
 	'uses'  => 'ServicesController@index'
+]);
+
+Route::get('services/{uri}', [
+	'as'    => 'services_once',
+	'uses'  => 'ServicesController@once'
 ])->where('uri', '[a-zA-Z_0-9\-]+');
 
 Route::get('sitemap.html', [

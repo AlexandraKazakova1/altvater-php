@@ -25,6 +25,30 @@ class ServicesController extends MyController {
 	}
 	
 	public function index(Request $request){
+		$page = Services::query()->where('slug', $uri)->where('public', 1)->first();
+		
+		$data = [
+			'page'			=> array(
+				'title'			=> $page->title,
+				'keywords'		=> $page->keywords,
+				'description'	=> $page->description,
+				'uri'			=> 'services',
+				'og_image'		=> '',
+			),
+			'headerClass'	=> 'background-2',
+			'robots'		=> $page->robots,
+			'canonical'		=> $page->canonical,
+			'data'			=> $page,
+			'all_services'	=> Services::query()->where('public', 1)->orderBy('created_at', 'desc')->select('slug', 'title')->get()
+		];
+		
+		return view(
+			'services/index',
+			$data
+		);
+	}
+	
+	public function once(Request $request){
 		$uri = $request->route('uri');
 		
 		$page = Services::query()->where('slug', $uri)->where('public', 1)->first();
