@@ -25,7 +25,7 @@ class Acl {
 	 * @param  string  $role
 	 * @return mixed
 	 */
-	public function handle(Request $request, Closure $next, $role){
+	public function handle(Request $request, Closure $next){
 		echo $request->ip();
 		exit;
 		
