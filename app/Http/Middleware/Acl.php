@@ -6,6 +6,8 @@ use Closure;
 
 use Illuminate\Http\Request;
 
+use App\Models\IpList;
+
 class Acl {
 	
 	/**
@@ -26,10 +28,17 @@ class Acl {
 	 * @return mixed
 	 */
 	public function handle(Request $request, Closure $next){
-		echo $request->ip();
-		exit;
-		
 		$ip = \ip2long($request->ip());
+		
+		if(!$ip){
+			return abort(404);
+		}
+		
+		$check = IpList::query()->where('ip', $ip)->first();
+		
+		if(!$check){
+			return abort(404);
+		}
 		
 		return $next($request);
 	}
