@@ -39,7 +39,7 @@ class SitemapController extends MyController {
 			
 			$item->pages = [];
 			
-			$pages[$item->pages] = $item;
+			$pages[$item->id] = $item;
 		}
 		
 		$services = Services::query()->where('public', 1)->orderBy('created_at', 'desc')->select('slug', 'title')->get()->toArray();
