@@ -24,7 +24,7 @@ class SitemapController extends MyController {
 	}
 	
 	public function index(){
-		$page = (object)Pages::query()->where('slug', 'sitemap.html')->first()->toArray();
+		$page = (object)Pages::query()->where('slug', 'sitemap.html')->select('id', 'slug', 'title', 'public')->first()->toArray();
 		
 		$pages = [];
 		
@@ -42,7 +42,7 @@ class SitemapController extends MyController {
 			$pages[$item->id] = $item;
 		}
 		
-		$services = Services::query()->where('public', 1)->orderBy('created_at', 'desc')->select('slug', 'title')->get()->toArray();
+		$services = Services::query()->where('public', 1)->orderBy('created_at', 'desc')->select('slug', 'title', 'public')->get()->toArray();
 		
 		foreach($services as $item){
 			$item = (object)$item;
@@ -50,7 +50,7 @@ class SitemapController extends MyController {
 			$pages[9]->pages[] = $item;
 		}
 		
-		$news = News::query()->where('public', 1)->orderBy('created_at', 'desc')->select('slug', 'title')->get()->toArray();
+		$news = News::query()->where('public', 1)->orderBy('created_at', 'desc')->select('slug', 'title', 'public')->get()->toArray();
 		
 		foreach($news as $item){
 			$item = (object)$item;
