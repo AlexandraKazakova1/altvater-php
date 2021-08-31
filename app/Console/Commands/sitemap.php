@@ -133,11 +133,11 @@ class sitemap extends Command {
 		$generator = new SiteMapHelper;
 		
 		foreach($pages as $i => $item){
-			$generator->addItem(url($item->uri), (string)($item->updated_at ? $item->updated_at : $item->created_at), $item->changefreq, $item->priority);
+			$generator->addItem(url($item->slug), (string)($item->updated_at ? $item->updated_at : $item->created_at), $item->changefreq, $item->priority);
 			
 			if($item->pages){
 				foreach($item->pages as $j => $sub){
-					$generator->addItem(url($sub->uri), (string)($sub->updated_at ? $sub->updated_at : $sub->created_at), $sub->changefreq, $sub->priority);
+					$generator->addItem(url($sub->slug), (string)($sub->updated_at ? $sub->updated_at : $sub->created_at), $sub->changefreq, $sub->priority);
 				}
 			}
 		}
