@@ -391,7 +391,6 @@ header {
                 font-weight: normal;
                 font-size: 14px;
                 line-height: 16px;
-                padding: 5px 0;
                 color: #FFFFFF;
                 background: transparent;
                 padding: 10px 24px;
@@ -504,7 +503,8 @@ header.small {
                     position: relative;
                     width: 100%;
                     background: #FFFFFF;
-                    img {object-fit: cover;
+                    img {
+                        object-fit: cover;
                         max-height: 225px;
                     }
                 }
@@ -686,7 +686,7 @@ header.small {
                 flex-direction: column;
                 flex-wrap: nowrap;
                 width: 100%;
-                max-width: 370px;
+                max-width: 360px;
                 min-width: 310px;
                 border-radius: 0px 45px;
                 background: #F2F2F2;
@@ -717,18 +717,24 @@ header.small {
                     line-height: 30px;
                     text-align: center;
                     white-space: pre-wrap;
-                    padding: 26px 50px;
+                    padding-bottom: 16px;
                     padding-top: 43px;
                     color: #3E3B4A;
                     width: 100%;
                     .news__date {
-                        margin-bottom: 20px;
+                        margin-bottom: 10px;
                         font-style: normal;
                         font-weight: normal;
                         font-size: 15px;
                         line-height: 26px;
                         text-transform: uppercase;
                         color: #57585A;
+                    }
+                    span {
+                        padding: 10px 40px;
+                    }
+                    span:last-child {
+                        border-left: 3px solid #F2664F;
                     }
                 }
                 .news__text::before {
@@ -2372,7 +2378,7 @@ p a {
                         font-size: 18px;
                         line-height: 23px;
                         font-weight: 600;
-                        padding: 26px 45px;
+                        padding: 26px 0px;
                         padding-top: 43px;
                         .news__date {
                             font-size: 14px;

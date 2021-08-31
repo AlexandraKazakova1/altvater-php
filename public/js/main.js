@@ -106,24 +106,7 @@ function callBackForm() {
                     console.log(data);
                     console.log('ok');
                     $('#callback-form').trigger('reset');
-                    answerMsg();
-                    function answerMsg(file, callback) {
-                        var rawFile = new XMLHttpRequest();
-                        rawFile.overrideMimeType("application/json");
-                        rawFile.open("GET", file, true);
-                        rawFile.onreadystatechange = function() {
-                            if (rawFile.readyState === 4 && rawFile.status == "200") {
-                                callback(rawFile.responseText);
-                            }
-                        }
-                        rawFile.send(null);
-                    }
-                    
-                    readTextFile("../app/Http/Controllers/Ajax/callback", function(text){
-                        var data = JSON.parse(text);
-                        console.log(data);
-                        $('#answer-msg').val(data);
-                    });
+                    $('#answer-msg').text(data.msg).show();
                 },
                 error: function (data) {
                     console.log(data);

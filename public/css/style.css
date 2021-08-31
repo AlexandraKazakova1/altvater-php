@@ -494,7 +494,6 @@ header .header-nav .header-nav__btn-group .btn-logIn {
   font-weight: normal;
   font-size: 14px;
   line-height: 16px;
-  padding: 5px 0;
   color: #FFFFFF;
   background: transparent;
   padding: 10px 24px;
@@ -949,7 +948,7 @@ header.small {
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   width: 100%;
-  max-width: 370px;
+  max-width: 360px;
   min-width: 310px;
   border-radius: 0px 45px;
   background: #F2F2F2;
@@ -994,20 +993,28 @@ header.small {
   line-height: 30px;
   text-align: center;
   white-space: pre-wrap;
-  padding: 26px 50px;
+  padding-bottom: 16px;
   padding-top: 43px;
   color: #3E3B4A;
   width: 100%;
 }
 
 .news-wrapper .news .news__list .news__item .news__text .news__date {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-style: normal;
   font-weight: normal;
   font-size: 15px;
   line-height: 26px;
   text-transform: uppercase;
   color: #57585A;
+}
+
+.news-wrapper .news .news__list .news__item .news__text span {
+  padding: 10px 40px;
+}
+
+.news-wrapper .news .news__list .news__item .news__text span:last-child {
+  border-left: 3px solid #F2664F;
 }
 
 .news-wrapper .news .news__list .news__item .news__text::before {
@@ -3258,7 +3265,7 @@ p a {
     font-size: 18px;
     line-height: 23px;
     font-weight: 600;
-    padding: 26px 45px;
+    padding: 26px 0px;
     padding-top: 43px;
   }
   .news-wrapper .news .news__list .news__item .news__text .news__date {
