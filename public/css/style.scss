@@ -385,9 +385,6 @@ header {
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
-            button {
-                margin: 0 12px;
-            }
             .btn-logIn {
                 font-family: Fira Sans;
                 font-style: normal;
@@ -397,6 +394,7 @@ header {
                 padding: 5px 0;
                 color: #FFFFFF;
                 background: transparent;
+                padding: 10px 24px;
             }
             .btn-reg {
                 color: #FFFFFF;
