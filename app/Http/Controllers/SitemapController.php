@@ -24,11 +24,11 @@ class SitemapController extends MyController {
 	}
 	
 	public function index(){
-		$page = (object)Pages::query()->where('slug', 'sitemap.html')->select('id', 'slug', 'title', 'public')->first()->toArray();
+		$page = (object)Pages::query()->where('slug', 'sitemap.html')->first()->toArray();
 		
 		$pages = [];
 		
-		$tmp = Pages::query()->orderBy('title', 'asc')->get()->toArray();
+		$tmp = Pages::query()->orderBy('title', 'asc')->select('id', 'slug', 'title', 'public')->get()->toArray();
 		
 		foreach($tmp as $item){
 			$item = (object)$item;
