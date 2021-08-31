@@ -6,7 +6,7 @@ use Closure;
 
 use Illuminate\Http\Request;
 
-class Acl extends Middleware {
+class Acl {
 	
 	/**
 	 * The names of the cookies that should not be encrypted.
