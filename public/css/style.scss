@@ -1907,6 +1907,16 @@ p a {
     height: 45px;
     background: url(../img/wrapper-mask.png) center no-repeat;
 }
+.siteMap__wrapper {
+    padding: 50px 0;
+    .siteMap {
+        .sitemap-container {
+            ul {
+                list-style: none;
+            }
+        }
+    }
+}
 
 @media (max-width:1440px) {
     .response-wrapper {
