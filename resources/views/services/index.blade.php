@@ -5,7 +5,7 @@
 		<section class="services-wrapper">
 			<div class="services container">
 				<div class="services__list">
-					@foreach($services as $item)
+					@foreach($all_services as $item)
 						<!-- -->
 						<div class="services__item">
 							<a class="services__photo-link" href="/services/{{$item->slug}}"><img class="services__photo" src="/storage/{{$item->image}}" alt="{{$item->title}}"></a>
