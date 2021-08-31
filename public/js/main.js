@@ -106,7 +106,7 @@ function callBackForm() {
                     console.log(data);
                     console.log('ok');
                     $('#callback-form').trigger('reset');
-                    $('#answer-msg').text(data.msg).show();
+                    $('#answer-msg').val(data.msg);
                 },
                 error: function (data) {
                     console.log(data);

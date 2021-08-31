@@ -2277,6 +2277,7 @@ footer .footer span {
 
 .contacts__wrapper .contacts .callback .callback__form fieldset .checkbox__label .error {
   position: absolute;
+  top: 100%;
   left: 0;
   bottom: -18px;
 }
