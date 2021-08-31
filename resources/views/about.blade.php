@@ -5,7 +5,7 @@
 		<section class="breadcrumbs__wrapper">
 			<div class="breadcrumbs container">
 				<ul class="breadcrumbs__list">
-					<li class="breadcrumbs__item"><a href="/">Veolia</a></li>
+					<li class="breadcrumbs__item"><a href="/">Головна</a></li>
 					<li class="breadcrumbs__item active">
 						<span>Про компанію</span>
 						
