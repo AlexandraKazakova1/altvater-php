@@ -92,8 +92,8 @@
 				</ul>
 				
 				<div class="header-nav__btn-group">
-					<a href="#" class="btn-logIn">Вхід</a>
-					<a href="#" class="btn-reg btn-red">Реєстрація</a>
+					<button type="button" class="btn-logIn" data-toggle="modal" data-target="#log__in-modal">Вхід</button>
+					<button type="button" class="btn-reg btn-red" data-toggle="modal" data-target="#create-modal">Реєстрація</button>
 				</div>
 				
 				<div class="burger-menu">
@@ -113,8 +113,8 @@
 							@endforeach
 							
 							<div class="menu-nav__btn-group">
-								<a href="#" class="btn-logIn">Вхід</a>
-								<a href="#" class="btn-reg btn-red">Реєстрація</a>
+								<a href="/login" class="btn-logIn">Вхід</a>
+								<a href="/registration" class="btn-reg btn-red">Реєстрація</a>
 							</div>
 						</ul>
 					</div>
