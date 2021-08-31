@@ -39,7 +39,7 @@ class ServicesController extends MyController {
 			'robots'		=> $page->robots,
 			'canonical'		=> $page->canonical,
 			'data'			=> $page,
-			'all_services'	=> Services::query()->where('public', 1)->orderBy('created_at', 'desc')->select('slug', 'title')->get()
+			'all_services'	=> Services::query()->where('public', 1)->orderBy('created_at', 'desc')->select('slug', 'title', 'image')->get()
 		];
 		
 		return view(
