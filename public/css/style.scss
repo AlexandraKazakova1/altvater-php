@@ -1910,9 +1910,46 @@ p a {
 .siteMap__wrapper {
     padding: 50px 0;
     .siteMap {
+        padding: 0;
         .sitemap-container {
             ul {
-                list-style: none;
+                padding-left: 0;
+                li {
+                    position: relative;
+                    list-style: none;
+                    padding: 5px;
+                    a {
+                        padding-left: 10px;
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 18px;
+                        line-height: 30px;
+                        color: #57585A;
+                        text-decoration: underline;
+                        transition: all 0.3s;
+                    }
+                    a:hover {
+                        transition: all 0.3s;
+                        color: #F2664F;
+                    }
+                    ul {
+                        padding-left: 20px;
+                        li a::before {
+                            border: 1px solid #2F5E97;
+                            background: inherit;
+                        }
+                    }
+                }
+                li a::before {
+                    position: absolute;
+                    content: '';
+                    width: 5px;
+                    height: 5px;
+                    top: 18px;
+                    left: 0;
+                    background: #2F5E97;
+                    border-radius: 50%;
+                }
             }
         }
     }

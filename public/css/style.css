@@ -2746,8 +2746,56 @@ p a {
   padding: 50px 0;
 }
 
+.siteMap__wrapper .siteMap {
+  padding: 0;
+}
+
 .siteMap__wrapper .siteMap .sitemap-container ul {
+  padding-left: 0;
+}
+
+.siteMap__wrapper .siteMap .sitemap-container ul li {
+  position: relative;
   list-style: none;
+  padding: 5px;
+}
+
+.siteMap__wrapper .siteMap .sitemap-container ul li a {
+  padding-left: 10px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 30px;
+  color: #57585A;
+  text-decoration: underline;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.siteMap__wrapper .siteMap .sitemap-container ul li a:hover {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  color: #F2664F;
+}
+
+.siteMap__wrapper .siteMap .sitemap-container ul li ul {
+  padding-left: 20px;
+}
+
+.siteMap__wrapper .siteMap .sitemap-container ul li ul li a::before {
+  border: 1px solid #2F5E97;
+  background: inherit;
+}
+
+.siteMap__wrapper .siteMap .sitemap-container ul li a::before {
+  position: absolute;
+  content: '';
+  width: 5px;
+  height: 5px;
+  top: 18px;
+  left: 0;
+  background: #2F5E97;
+  border-radius: 50%;
 }
 
 @media (max-width: 1440px) {
