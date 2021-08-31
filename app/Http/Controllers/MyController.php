@@ -46,6 +46,7 @@ class MyController extends Controller {
 			'head_code'			=> '',
 			'body_code'			=> '',
 			'footer_code'		=> '',
+			'header_btn'		=> 0
 		);
 		
 		$tmp = DB::table('admin_config')
@@ -60,6 +61,8 @@ class MyController extends Controller {
 				if($item->value != '#'){
 					if($item->name == 'copyright'){
 						$item->value = str_replace('{Y}', date('Y'), $item->value);
+					}else if($item->name == 'header_btn'){
+						$item->value = (int)trim($item->value);
 					}
 					
 					$settings[$item->name] = $item->value;

@@ -91,10 +91,12 @@
 					@endforeach
 				</ul>
 				
-				<div class="header-nav__btn-group">
-					<button type="button" class="btn-logIn" data-toggle="modal" data-target="#log__in-modal">Вхід</button>
-					<button type="button" class="btn-reg btn-red" data-toggle="modal" data-target="#create-modal">Реєстрація</button>
-				</div>
+				@if($settings['header_btn'])
+					<div class="header-nav__btn-group">
+						<button type="button" class="btn-logIn" data-toggle="modal" data-target="#log__in-modal">Вхід</button>
+						<button type="button" class="btn-reg btn-red" data-toggle="modal" data-target="#create-modal">Реєстрація</button>
+					</div>
+				@endif
 				
 				<div class="burger-menu">
 					<span class="menu__icon"></span>
@@ -112,10 +114,12 @@
 								<!-- -->
 							@endforeach
 							
-							<div class="menu-nav__btn-group">
-								<a href="/login" class="btn-logIn">Вхід</a>
-								<a href="/registration" class="btn-reg btn-red">Реєстрація</a>
-							</div>
+							@if($settings['header_btn'])
+								<div class="menu-nav__btn-group">
+									<a href="/login" class="btn-logIn">Вхід</a>
+									<a href="/registration" class="btn-reg btn-red">Реєстрація</a>
+								</div>
+							@endif
 						</ul>
 					</div>
 				</div>
