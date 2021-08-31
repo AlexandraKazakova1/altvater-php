@@ -11,7 +11,8 @@ return [
 			'files' => [
 				'slick.css',
 				'slick-theme.css',
-				'style.css'
+				'style.css',
+				'addition.css'
 			]
 		]
 	],

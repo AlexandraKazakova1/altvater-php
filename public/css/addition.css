@@ -1,0 +1,16 @@
+.services-wrapper .services .services__list .services__item .services__photo-link {
+	position: relative;
+	width: 100%;
+	background: #FFFFFF;
+	max-height: 225px;
+	overflow: hidden;
+	height: 225px;
+	min-height: 225px;
+}
+
+.services-wrapper .services .services__list .services__item .services__photo-link img {
+	max-width: initial;
+	object-fit: cover;
+	max-height: 225px;
+	width: 100%;
+}
