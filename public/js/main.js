@@ -122,10 +122,15 @@ function callBackForm() {
 };
 
 function slideScroll() {
-    $(".scroll").click(function(event){     
-        event.preventDefault();
-        $('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
-    });
+	$(".scroll").click(function(event){     
+		event.preventDefault();
+		
+		if($(this.hash).length > 0){
+			$('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
+		}else{
+			window.location = '/#'+this.hash;
+		}
+	});
 };
 
 function modalFade() {
