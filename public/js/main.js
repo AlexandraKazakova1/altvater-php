@@ -128,7 +128,7 @@ function slideScroll() {
 		if($(this.hash).length > 0){
 			$('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
 		}else{
-			window.location = '/#'+this.hash;
+			window.location = '/'+this.hash;
 		}
 	});
 };
