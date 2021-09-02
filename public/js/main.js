@@ -112,9 +112,8 @@ function callBackForm() {
 				$.ajax({
 					type: "POST",
 					url: form.attr("action"),
-                    data: $(this).serialize(),
-                    datatype: "application/json",
-					contentType: "application/json; charset=utf-8",
+                    data: form.serialize(),
+                    dataType: "json",
                     beforeSend: function(request){
                         lock = true;
                         
