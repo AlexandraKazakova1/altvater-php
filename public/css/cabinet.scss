@@ -243,6 +243,67 @@ button:hover {
 body {
     background: #F8F8FB;
 }
+main {
+    position: relative;
+}
+
+.breadcrumbs__wrapper {
+    width: 100%;
+    .breadcrumbs {
+        .breadcrumbs__list {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            li {
+                padding: 40px 4px;
+                padding-bottom: 0px;
+                position: relative;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                align-items: center;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 13px;
+                color: #858585;
+                a {
+                    color: #858585;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 13px;
+                    transition: all 0.3s;
+                    cursor: pointer;
+                }
+                a:hover {
+                    color: #CF6854;
+                    transition: all 0.3s;
+                }
+            }
+            li:first-child {
+                padding-left: 0;
+            }
+            li.active {
+                font-weight: 500;
+                color: #2C2C2C;
+                span {
+                    white-space: nowrap;
+                    max-width: 224px;
+                    overflow-x: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+            li::after {
+                content: url(../img/cabinet/Arrow.svg);
+                padding-left: 8px;
+            }
+            li:last-child::after {
+                display: none;
+            }
+       }
+    }
+}
 .wrapper {
     display: flex;
     flex-direction: row;
@@ -271,6 +332,30 @@ main {
             }
         }
     }
+}
+.back-link {
+    position: absolute;
+    top: 90px;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #CF6854;
+    transition: all 0.3s;
+    img {
+        padding-right: 12px;
+    }
+}
+.back-link:hover {
+    color: #CF6854;
+    text-decoration: underline;
+    transition: all 0.3s;
+}
+.accounts__wrapper {
+
 }
 
 // Сторінки

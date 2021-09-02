@@ -107,85 +107,85 @@ function callBackForm() {
                 required: "Підтвердіть свою згоду"
             }
         },
-		// submitHandler: function(form){
-			// if(!lock){
-			// 	var data = serializeObject(form);
-			// 	$.ajax({
-			// 		type: "POST",
-			// 		url: form.attr("action"),
-            //         data: JSON.stringify(data),
-            //         datatype: "application/json",
-			// 		contentType: "application/json; charset=utf-8",
-            //         beforeSend: function(request){
-            //             lock = true;
+		submitHandler: function() {
+			if(!lock){
+				$.ajax({
+					type: "POST",
+					url: form.attr("action"),
+                    data: $(this).serialize(),
+                    datatype: "application/json",
+					contentType: "application/json; charset=utf-8",
+                    beforeSend: function(request){
+                        lock = true;
                         
-            //             btn.attr('disabled', true);
-            //             form.find('label.error').text('').hide();
-			// 		},
-			// 		success: function(response){
-			// 			console.log('response:');
-			// 			console.log(response);
+                        btn.attr('disabled', true);
+                        form.find('label.error').text('').hide();
+					},
+					success: function(response){
+						console.log('response:');
+						console.log(response);
 						
-			// 			lock = false;
-            //             btn.attr('disabled', false);
+						lock = false;
+                        btn.attr('disabled', false);
 						
-			// 			if(response.status){;
-			// 				form.trigger('reset');
+						if(response.status){;
+							form.trigger('reset');
 							
-            //                 $('#callback-form').trigger('reset');
-            //                 $('#answer-msg').text(data.msg);
+                            $('#callback-form').trigger('reset');
+                            $('#answer-msg').text(data.msg);
 
 							
-			// 				setTimeout('#answer-msg', 5000);
-			// 			}else{
-			// 				status.text(response.msg).show();
-			// 			}
-			// 		},
-			// 		error: function(err){
-			// 			lock = false;
-            //             btn.attr('disabled', false);
+							setTimeout('#answer-msg', 5000);
+						}
+                        // else{
+						// 	status.text(response.msg).show();
+						// }
+					},
+					error: function(err){
+						lock = false;
+                        btn.attr('disabled', false);
                         
-            //             status.text(langs.set_up_failed).show();
-			// 		}
-			// 	});
-			// };
+                        // status.text(langs.set_up_failed).show();
+					}
+				});
+			};
 			
-			// return false;
-	    // }
+			return false;
+	    }
     });
     
-    form.submit(function(e) {
-        e.preventDefault()
-        if ($('#username').hasClass('error')) {
-            return false;
-        } else if ($('#useremail').hasClass('error')) {
-            return false;
-        } else {
-            $.ajax({
-                url: "/ajax/callback",
-                type: "POST",
-                dataType: "json",
-                data: $(this).serialize(),
-                beforeSend: function(data){
-                    form.find('label.error').text('').hide();
-                },
-                success: function(data) {
-                    console.log(data);
-                    console.log('ok');
-                    $('#callback-form').trigger('reset');
-                    $('#answer-msg').text(data.msg);
-                },
-                error: function (data) {
-                    console.log(data);
-                    console.log('error');
-                },
-                complete: function () {
-                    console.log('end');
-                }
-            })
-            return false;
-        }
-    });
+    // form.submit(function(e) {
+    //     e.preventDefault()
+    //     if ($('#username').hasClass('error')) {
+    //         return false;
+    //     } else if ($('#useremail').hasClass('error')) {
+    //         return false;
+    //     } else {
+    //         $.ajax({
+    //             url: "/ajax/callback",
+    //             type: "POST",
+    //             dataType: "json",
+    //             data: $(this).serialize(),
+    //             beforeSend: function(data){
+    //                 form.find('label.error').text('').hide();
+    //             },
+    //             success: function(data) {
+    //                 console.log(data);
+    //                 console.log('ok');
+    //                 $('#callback-form').trigger('reset');
+    //                 $('#answer-msg').text(data.msg);
+    //             },
+    //             error: function (data) {
+    //                 console.log(data);
+    //                 console.log('error');
+    //             },
+    //             complete: function () {
+    //                 console.log('end');
+    //             }
+    //         })
+    //         return false;
+    //     }
+    // });
 };
 
 function slideScroll() {
