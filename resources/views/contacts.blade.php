@@ -136,7 +136,7 @@
 					<div class="callback__title">Залишіть заявку</div>
 					<div class="callback__descriptin">Якщо хочете дізнатися про всі можливості сервісу і задати питання - замовте онлайн демонстрацію</div>
 					
-					<form class="callback__form" id="callback-form">
+					<form class="callback__form" id="callback-form" method="POST">
 						<fieldset class="callback-fieldset">
 							<label>
 								<span>Ім'я </span>
