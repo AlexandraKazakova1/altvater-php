@@ -131,7 +131,7 @@ function callBackForm() {
 							form.trigger('reset');
 							
                             $('#callback-form').trigger('reset');
-                            $('#answer-msg').text(data.msg);
+                            $('#answer-msg').text(response.msg);
 
 							
 							setTimeout('#answer-msg', 5000);
