@@ -22,14 +22,14 @@
             <a class="header__logo" href="#">
                 <img src="../img/cabinet/logo_Veolia_vektor.svg">
             </a>
-            <a class="header__newOrder" href="#">
+            <button class="header__newOrder order-btn" data-toggle="modal" data-target="#orderService">
                 <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12.5 8V16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M16.5 12H8.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M12.5 21V21C7.529 21 3.5 16.971 3.5 12V12C3.5 7.029 7.529 3 12.5 3V3C17.471 3 21.5 7.029 21.5 12V12C21.5 16.971 17.471 21 12.5 21Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
                 Замовити послугу
-            </a>
+            </button >
             <ul class="header__nav">
                 <li>
                     <a href="#">Послуги</a>
@@ -466,6 +466,73 @@
                             <img src="../img/problem2.png">
                             <img src="../img/problem3.png">
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="orderService" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-md modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="orderService popup">
+                    <div class="modal-header">
+                        <h2 class="popup__title">Новий договір</h2>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <img src="../img/close.svg" alt="X">
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="popup__form" id="orderService-form">
+                            <fieldset class="fieldset">
+                                <label>
+                                    <span class="input-description">Введіть адресу:</span>
+                                    <select class="custom-select" id="service" name="service">
+                                        <option value="Послуга-1">Послуга-1</option>
+                                        <option value="Послуга-2">Послуга-2</option>
+                                        <option value="Послуга-3">Послуга-3</option>
+                                    </select>
+                                </label>
+                                <label>
+                                    <span class="input-description">Вибрати дату:</span>
+                                    <select class="custom-select" id="date" name="date">
+                                        <option value="Дата-1">Дата-1</option>
+                                        <option value="Дата-2">Дата-2</option>
+                                        <option value="Дата-3">Дата-3</option>
+                                    </select>
+                                </label>
+                                <label>
+                                    <span class="input-description">Введіть адресу:</span>
+                                    <input class="form-control" type="tel" name="user-tel" placeholder=" ">
+                                    <span class="input-placeholder">
+                                        <div>
+                                            <img src="../img/cabinet/modal-icon/house.svg">
+                                        </div>
+                                        Місто
+                                    </span>
+                                </label>
+                                <label>
+                                    <span class="input-description">Вибрати час:</span>
+                                    <input class="form-control" type="text" name="user-address" placeholder=" ">
+                                    <span class="input-placeholder">
+                                        <div>
+                                            <img src="../img/cabinet/modal-icon/time-clock.svg">
+                                        </div>
+                                        Вибрати час
+                                    </span>
+                                </label>
+                                <label>
+                                    <span class="input-description">Введіть коментар:</span>
+                                    <input class="form-control" type="text" name="postIndex" placeholder=" ">
+                                    <span class="input-placeholder">
+                                        <div>
+                                            <img src="../img/cabinet/modal-icon/messages.svg">
+                                        </div>
+                                        Коментар
+                                    </span>
+                                </label>
+                                <button class="btn-submit" type="submit" name="reg">Замовити</button>
+                            </fieldset>
+                        </form>
                     </div>
                 </div>
             </div>

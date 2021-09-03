@@ -6,6 +6,10 @@ $(document).ready (function() {
     dragAndDrop();
     accountsActs();
     settingsPage();
+    $('.custom-select2').select2({
+        minimumResultsForSearch: 1000,
+        dropdownParent: $("#orderService-form")
+    });
 });
 
 function calendar() {
@@ -65,7 +69,7 @@ function customSelect() {
     $('.custom-select').select2({
         minimumResultsForSearch: 1000 
     });
-}
+};
 
 function modalFade() {
     var closeBtn = $('.close')
@@ -95,6 +99,11 @@ function modalFade() {
     $('.btn-address__info').click(function() {
         $('.modal').modal('hide');
         $('#address__info-modal').modal('show');
+    });
+    $('#orderService').modal('show');
+    $('.order-btn').click(function() {
+        $('.modal').modal('hide');
+        $('#orderService').modal('show');
     });
 
     closeBtn.click(function() {
@@ -184,7 +193,7 @@ function accountsActs() {
         $('.acts__content').fadeIn(200);
         $('#accountsToggle').removeClass('act');
     });
-}
+};
 function settingsPage() {
     if($('#general').hasClass('act')) {
         $('.security__content').fadeOut(1);
@@ -206,4 +215,4 @@ function settingsPage() {
         $('.security__content').fadeIn(1);
         $('#general').removeClass('act');
     });
-}
+};
