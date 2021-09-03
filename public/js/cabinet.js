@@ -5,6 +5,7 @@ $(document).ready (function() {
     modalFade();
     dragAndDrop();
     accountsActs();
+    settingsPage();
 });
 
 function calendar() {
@@ -182,5 +183,27 @@ function accountsActs() {
         $('.accountsActs__content').fadeOut(200);
         $('.acts__content').fadeIn(200);
         $('#accountsToggle').removeClass('act');
+    });
+}
+function settingsPage() {
+    if($('#general').hasClass('act')) {
+        $('.security__content').fadeOut(1);
+        $('.general__content').fadeIn(1);
+    } else if($('#security').hasClass('act')) {
+        $('.general__content').fadeOut(1);
+        $('.security__content').fadeIn(1);
+    }
+
+    $('#general').click(function() {
+        $(this).addClass('act');
+        $('.security__content').fadeOut(1);
+        $('.general__content').fadeIn(1);
+        $('#security').removeClass('act');
+    });
+    $('#security').click(function() {
+        $(this).addClass('act');
+        $('.general__content').fadeOut(1);
+        $('.security__content').fadeIn(1);
+        $('#general').removeClass('act');
     });
 }

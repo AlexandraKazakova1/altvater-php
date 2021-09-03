@@ -134,69 +134,154 @@
                 Вийти з аккаунту
             </a>
         </aside>
-        <main class="openAccounts__page">
-            <h1 class="page__title">Рахунок #24275</h1>
-            <a class="back-link wb" href="../cabinet-html/cabinet.html">
+        <main class="settings__page">
+            <section class="breadcrumbs__wrapper">
+                <div class="breadcrumbs container">
+                    <ul class="breadcrumbs__list">
+                        <li class="breadcrumbs__item"><a href="../cabinet-html/cabinet.html">Кабінет</a></li>
+                        <li class="breadcrumbs__item active">
+                            <span>Акти</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <h1 class="page__title">Мої рахунки</h1>
+            <a class="back-link" href="../cabinet-html/cabinet.html">
                 <img src="../img/cabinet/arrow-red.svg">
                 <span>Назад</span>
             </a>
-            <section class="openAccounts">
-                <div class="accounts__info">
-                    <div>
-                        <img src="../img/cabinet/payer.svg">
-                        <div>
-                            Рахунок виставлено:
-                            <span>Бортновському Владиславу</span>
-                        </div>
-                    </div>
-                    <div>
-                        <img src="../img/cabinet/payer.svg">
-                        <div>
-                            Рахунок виставив:
-                            <span>Олексієнко Олександр</span>
-                        </div>
-                    </div>
-                    <div>
-                        <img src="../img/cabinet/date.svg">
-                        <div>
-                            Дата виставлення Рахунку:
-                            <span>18 Серпня 2021 року</span>
-                        </div>
-                    </div>
-                    <button>
-                        <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10.3242 9.68579C10.5612 8.66424 11.4917 7.95594 12.5395 7.99942C13.7121 7.93447 14.7174 8.82806 14.7904 10.0003C14.7904 11.5048 12.6395 12.0011 12.6395 13.0015" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M12.7659 15.7543C12.7658 15.8233 12.7098 15.8792 12.6408 15.8792C12.5718 15.8791 12.5158 15.8232 12.5158 15.7542C12.5158 15.6851 12.5717 15.6292 12.6407 15.6291C12.6739 15.629 12.7058 15.6422 12.7293 15.6657C12.7527 15.6892 12.7659 15.7211 12.7659 15.7543" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5.26728 17.1605C2.58418 13.3308 3.27369 8.08546 6.85539 5.07926C10.4371 2.07305 15.7225 2.30347 19.029 5.60997C22.3355 8.91646 22.5659 14.2019 19.5597 17.7836C16.5535 21.3653 11.3082 22.0548 7.47847 19.3717L4.63555 20.0034L5.26728 17.1605Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        Допомога
-                    </button>
+            <section class="settings__wrapper">
+                <div class="selector">
+                    <span class="act" id="general">Загальна інформація</span>
+                    <span id="security">Безпека</span>
                 </div>
-                <div class="account__wrapper">
-                    <div>
-                        <select class="custom-select" name="page" id="page">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                        </select>
-                        <select class="custom-select" name="prtMethod" id="prtMethod">
-                            <option value="Вмістити">Вмістити</option>
-                            <option value="Масштабувати">Масштабувати</option>
-                        </select>
-                        <div>
-                            <button>
-                                <img src="../img/cabinet/search-ico.svg">
-                            </button>
-                            <button>
-                                <img src="../img/cabinet/printer-ico.svg">
-                            </button>
-                            <button>
-                                <img src="../img/cabinet/fullscreen-exit-ico.svg">
-                            </button>
-                        </div>
-                    </div>
-                    <img src="../img/cabinet/account.png">
+                <div class="general__content">
+                    <form action="POST">
+                        <fieldset>
+                            <label>
+                                <span class="input-description">Ім'я:</span>
+                                <input class="form-control" type="text" name="name" placeholder=" ">
+                                <span class="input-placeholder">
+                                    <div>
+                                        <img src="../img/cabinet/modal-icon/profile.svg">
+                                    </div>
+                                    Ваше Ім'я
+                                </span>
+                            </label>
+                            <label>
+                                <span class="input-description">Прізвище:</span>
+                                <input class="form-control" type="text" name="surname" placeholder=" ">
+                                <span class="input-placeholder">
+                                    <div>
+                                        <img src="../img/cabinet/modal-icon/users.svg">
+                                    </div>
+                                    Ваше Прізвище
+                                </span>
+                            </label>
+                            <label>
+                                <span class="input-description">По батькові:</span>
+                                <input class="form-control" type="text" name="fatherName" placeholder=" ">
+                                <span class="input-placeholder">
+                                    <div>
+                                        <img src="../img/cabinet/modal-icon/users.svg">
+                                    </div>
+                                    По батькові
+                                </span>
+                            </label>
+                            <label>
+                                <span class="input-description">Email:</span>
+                                <input class="form-control" type="email" name="email" placeholder=" ">
+                                <span class="input-placeholder">
+                                    <div>
+                                        <img src="../img/cabinet/modal-icon/email.svg">
+                                    </div>
+                                    Ваш Email
+                                </span>
+                            </label>
+                            <label>
+                                <span class="input-description">Телефон:</span>
+                                <input class="form-control" type="tel" name="tel" placeholder=" ">
+                                <span class="input-placeholder">
+                                    <div>
+                                        <img src="../img/cabinet/modal-icon/phone.svg">
+                                    </div>
+                                    Ваш телефон
+                                </span>
+                            </label>
+                            <label>
+                                <span class="input-description notCheck">Додатковий телефон:</span>
+                                <input class="form-control" type="tel" name="addPhone" placeholder=" ">
+                                <span class="input-placeholder">
+                                    <div>
+                                        <img src="../img/cabinet/modal-icon/phone-2.svg">
+                                    </div>
+                                    Ваш телефон
+                                </span>
+                            </label>
+                            <label>
+                                <span class="input-description">Адреса:</span>
+                                <input class="form-control" type="text" name="address" placeholder=" ">
+                                <span class="input-placeholder">
+                                    <div>
+                                        <img src="../img/cabinet/modal-icon/location.svg">
+                                    </div>
+                                    Адреса
+                                </span>
+                            </label>
+                            <label>
+                                <span class="input-description">Індекс:</span>
+                                <input class="form-control" type="text" name="postIndex" placeholder=" ">
+                                <span class="input-placeholder">
+                                    <div>
+                                        <img src="../img/cabinet/modal-icon/postIndex.svg">
+                                    </div>
+                                    Поштовий індекс
+                                </span>
+                            </label>
+                            <div class="submit__wrap">
+                                <button class="btn-submit" type="submit" name="add-request">Зберегти</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="security__content">
+                    <form action="POST">
+                        <fieldset>
+                            <label>
+                                <span class="input-description">Старий пароль:</span>
+                                <input class="form-control" type="password" name="password" placeholder=" ">
+                                <span class="input-placeholder">
+                                    <div>
+                                        <img src="../img/cabinet/modal-icon/lock.svg">
+                                    </div>
+                                    Введіть пароль
+                                </span>
+                            </label>
+                            <label>
+                                <span class="input-description">Новий пароль:</span>
+                                <input class="form-control" type="password" name="password" placeholder=" ">
+                                <span class="input-placeholder">
+                                    <div>
+                                        <img src="../img/cabinet/modal-icon/lock.svg">
+                                    </div>
+                                    Введіть новий пароль
+                                </span>
+                            </label>
+                            <label>
+                                <span class="input-description">Повторіть новий пароль:</span>
+                                <input class="form-control" type="password" name="password" placeholder=" ">
+                                <span class="input-placeholder">
+                                    <div>
+                                        <img src="../img/cabinet/modal-icon/lock.svg">
+                                    </div>
+                                    Повторіть новий пароль
+                                </span>
+                            </label>
+                            <div class="submit__wrap">
+                                <button class="btn-submit" type="submit" name="add-request">Зберегти</button>
+                            </div>
+                        </fieldset>
+                    </form>
                 </div>
             </section>
         </main>
@@ -298,7 +383,7 @@
                                 </label>
                                 <label>
                                     <span class="input-description">Контактна особа:</span>
-                                    <input class="form-control" type="text" name="user-email" placeholder=" ">
+                                    <input class="form-control" type="text" name="user-contact-emp" placeholder=" ">
                                     <span class="input-placeholder">
                                         <div>
                                             <img src="../img/cabinet/modal-icon/profile.svg">
