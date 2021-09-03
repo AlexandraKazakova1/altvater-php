@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *,
 *::before,
 *::after {
@@ -70,6 +71,16 @@ select {
             transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 @font-face {
@@ -252,7 +263,7 @@ button:hover {
 }
 
 .container {
-  max-width: 1440px;
+  max-width: 1439px;
   margin: auto;
   padding: 0;
 }
@@ -262,11 +273,18 @@ body {
 }
 
 main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   position: relative;
-}
-
-.breadcrumbs__wrapper {
-  width: 100%;
+  margin-right: 50px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
 }
 
 .breadcrumbs__wrapper .breadcrumbs .breadcrumbs__list {
@@ -304,17 +322,14 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 13px;
-  color: #858585;
 }
 
 .breadcrumbs__wrapper .breadcrumbs .breadcrumbs__list li a {
-  color: #858585;
+  color: #4A5568;
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 14px;
+  line-height: 20px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   cursor: pointer;
@@ -330,12 +345,12 @@ main {
   padding-left: 0;
 }
 
-.breadcrumbs__wrapper .breadcrumbs .breadcrumbs__list li.active {
-  font-weight: 500;
-  color: #2C2C2C;
-}
-
 .breadcrumbs__wrapper .breadcrumbs .breadcrumbs__list li.active span {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  color: #718096;
   white-space: nowrap;
   max-width: 224px;
   overflow-x: hidden;
@@ -359,11 +374,8 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  width: 100%;
-}
-
-main {
-  width: 100%;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
 }
 
 .with-select span.select2 .selection .select2-selection {
@@ -412,6 +424,10 @@ main {
 
 .back-link img {
   padding-right: 12px;
+}
+
+.back-link.wb {
+  top: 38px;
 }
 
 .back-link:hover {
@@ -707,8 +723,10 @@ main {
   padding: 38px 20px;
   border-right: 1px solid #EDF2F7;
   max-width: 248px;
-  width: 100%;
   margin-right: 50px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 248px;
+          flex: 1 1 248px;
 }
 
 .sidebar__menu .title {
@@ -819,6 +837,7 @@ main {
   font-size: 14px;
   line-height: 17px;
   color: #4A5568;
+  white-space: nowrap;
 }
 
 .sidebar__menu .logout svg {
@@ -1006,7 +1025,6 @@ main {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 100%;
           flex: 1 1 100%;
-  margin-right: 50px;
 }
 
 .content__wrapper .content {
@@ -1379,6 +1397,1027 @@ main {
   transition: all 0.3s;
 }
 
+.accountsActs__wrapper {
+  width: 100%;
+}
+
+.accountsActs__wrapper .selector {
+  padding-top: 2px;
+  border-bottom: 1px solid #DDE6EE;
+  padding-bottom: 17px;
+}
+
+.accountsActs__wrapper .selector span {
+  padding-bottom: 20px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #718096;
+  margin-right: 35px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border-bottom: 1px solid #DDE6EE;
+  cursor: pointer;
+}
+
+.accountsActs__wrapper .selector span.act {
+  color: #D24A43;
+  border-bottom: 1px solid #CF6854;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.accountsActs__wrapper .selector span:hover {
+  color: #D24A43;
+  border-bottom: 1px solid #CF6854;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.accountsActs__wrapper .acts__content,
+.accountsActs__wrapper .accountsActs__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+.accountsActs__wrapper .acts__content .filters,
+.accountsActs__wrapper .accountsActs__content .filters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 42px;
+  width: 100%;
+  padding-bottom: 5px;
+}
+
+.accountsActs__wrapper .acts__content .filters div,
+.accountsActs__wrapper .accountsActs__content .filters div {
+  pointer-events: none;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: #4A5568;
+}
+
+.accountsActs__wrapper .acts__content .filters div span,
+.accountsActs__wrapper .accountsActs__content .filters div span {
+  padding: 2.63px 11.53px;
+  font-size: 13.1429px;
+  line-height: 136.52%;
+  color: #6B89B5;
+  background: rgba(221, 230, 238, 0.4);
+  border-radius: 65.0571px;
+}
+
+.accountsActs__wrapper .acts__content .filters ul,
+.accountsActs__wrapper .accountsActs__content .filters ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.accountsActs__wrapper .acts__content .filters ul li,
+.accountsActs__wrapper .accountsActs__content .filters ul li {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: #4A5568;
+  padding: 3px 8px;
+}
+
+.accountsActs__wrapper .acts__content .filters ul li button,
+.accountsActs__wrapper .accountsActs__content .filters ul li button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #2F5E97;
+  padding: 3.5px 0;
+  background: inherit;
+  outline: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.accountsActs__wrapper .acts__content .filters ul li button svg,
+.accountsActs__wrapper .accountsActs__content .filters ul li button svg {
+  padding-left: 5px;
+  stroke: #2F5E97;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.accountsActs__wrapper .acts__content .filters ul li button:hover,
+.accountsActs__wrapper .accountsActs__content .filters ul li button:hover {
+  color: #BF604D;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.accountsActs__wrapper .acts__content .filters ul li button:hover svg,
+.accountsActs__wrapper .accountsActs__content .filters ul li button:hover svg {
+  stroke: #BF604D;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.accountsActs__wrapper .acts__content .filters ul li:first-child,
+.accountsActs__wrapper .accountsActs__content .filters ul li:first-child {
+  padding-left: 0;
+}
+
+.accountsActs__wrapper .acts__content .filters ul li:last-child,
+.accountsActs__wrapper .accountsActs__content .filters ul li:last-child {
+  padding-right: 0;
+}
+
+.accountsActs__wrapper .acts__content .acts__list,
+.accountsActs__wrapper .acts__content .accountsActs__list,
+.accountsActs__wrapper .accountsActs__content .acts__list,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list {
+  width: 100%;
+}
+
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item {
+  margin: 21px 0;
+  background: #FFFFFF;
+  border-radius: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 25px 32px;
+  min-height: 108px;
+  border: 2px solid #FFFFFF;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item a,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item a,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item a,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item a {
+  background: transparent;
+  padding: 0;
+  padding-right: 5px;
+}
+
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item a svg,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item a svg,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item a svg,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item a svg {
+  fill: #B5B5BE;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item a:hover svg,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item a:hover svg,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item a:hover svg,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item a:hover svg {
+  fill: #BF604D;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item div,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item div,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item div,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item div {
+  position: relative;
+  padding: 5px 20px;
+  border-right: 1px dashed #afc5e0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #91929E;
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  min-height: 54px;
+}
+
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item div span,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item div span,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item div span,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item div span {
+  padding-top: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: #425466;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  max-width: 200px;
+}
+
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item .number span::before,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item .number span::before,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item .number span::before,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item .number span::before {
+  content: '#';
+}
+
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item .date,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item .date,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item .date,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item .date {
+  padding-left: 65px;
+}
+
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item .date::before,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item .date::before,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item .date::before,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item .date::before {
+  content: url(../img/cabinet/date.svg);
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 15px;
+}
+
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item .cost span::after,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item .cost span::after,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item .cost span::after,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item .cost span::after {
+  content: ' ₴';
+}
+
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item .status,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item .status,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item .status,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item .status {
+  position: relative;
+  padding: 0;
+  width: 150px;
+  height: 44px;
+  margin: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 8px;
+}
+
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item .status::after,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item .status::after,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item .status::after,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item .status::after {
+  padding-bottom: 2px;
+}
+
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item div.more,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item div.more,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item div.more,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item div.more {
+  border-right: none;
+  border-left: 1px dashed #afc5e0;
+}
+
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item div.more svg,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item div.more svg,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item div.more svg,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item div.more svg {
+  stroke: #718096;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item div.more:hover,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item div.more:hover,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item div.more:hover,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item div.more:hover {
+  cursor: pointer;
+}
+
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item div.more:hover svg,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item div.more:hover svg,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item div.more:hover svg,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item div.more:hover svg {
+  stroke: #BF604D;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item.paid .status::after,
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item.notPaid .status::after,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.paid .status::after,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.notPaid .status::after,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.paid .status::after,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.notPaid .status::after,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.paid .status::after,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.notPaid .status::after {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  padding-left: 11px;
+}
+
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item.paid .status,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.paid .status,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.paid .status,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.paid .status {
+  background: rgba(72, 152, 113, 0.05);
+  border: 1px dashed #489871;
+}
+
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item.paid .status::before,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.paid .status::before,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.paid .status::before,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.paid .status::before {
+  content: url(../img/cabinet/check.svg);
+}
+
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item.paid .status::after,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.paid .status::after,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.paid .status::after,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.paid .status::after {
+  content: 'Оплачено';
+  color: #489871;
+}
+
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item.notPaid,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.notPaid,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.notPaid,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.notPaid {
+  margin: 21px 1px;
+  border: 1px dashed #CF6854;
+}
+
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item.notPaid .number span,
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item.notPaid .cost span,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.notPaid .number span,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.notPaid .cost span,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.notPaid .number span,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.notPaid .cost span,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.notPaid .number span,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.notPaid .cost span {
+  color: #CF6854;
+}
+
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item.notPaid .status,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.notPaid .status,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.notPaid .status,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.notPaid .status {
+  background: rgba(207, 104, 84, 0.05);
+  border: 1px dashed #CF6854;
+}
+
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item.notPaid .status::before,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.notPaid .status::before,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.notPaid .status::before,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.notPaid .status::before {
+  content: url(../img/cabinet/notCheck.svg);
+}
+
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item.notPaid .status::after,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.notPaid .status::after,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.notPaid .status::after,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.notPaid .status::after {
+  content: 'Не оплачено';
+  color: #CF6854;
+}
+
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item.read .status,
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item.notRead .status,
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item.signed .status,
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item.notSigned .status,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.read .status,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.notRead .status,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.signed .status,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.notSigned .status,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.read .status,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.notRead .status,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.signed .status,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.notSigned .status,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.read .status,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.notRead .status,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.signed .status,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.notSigned .status {
+  width: 150px;
+}
+
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item.read .status::after,
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item.notRead .status::after,
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item.signed .status::after,
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item.notSigned .status::after,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.read .status::after,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.notRead .status::after,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.signed .status::after,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.notSigned .status::after,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.read .status::after,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.notRead .status::after,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.signed .status::after,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.notSigned .status::after,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.read .status::after,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.notRead .status::after,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.signed .status::after,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.notSigned .status::after {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  padding-left: 11px;
+}
+
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item.signed .status,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.signed .status,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.signed .status,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.signed .status {
+  background: rgba(72, 152, 113, 0.05);
+  border: 1px dashed #489871;
+}
+
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item.signed .status::before,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.signed .status::before,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.signed .status::before,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.signed .status::before {
+  content: url(../img/cabinet/check.svg);
+}
+
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item.signed .status::after,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.signed .status::after,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.signed .status::after,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.signed .status::after {
+  content: 'Підписано';
+  color: #489871;
+}
+
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item.notSigned .status,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.notSigned .status,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.notSigned .status,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.notSigned .status {
+  background: rgba(207, 104, 84, 0.05);
+  border: 1px dashed #CF6854;
+}
+
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item.notSigned .status::before,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.notSigned .status::before,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.notSigned .status::before,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.notSigned .status::before {
+  content: url(../img/cabinet/notCheck.svg);
+}
+
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item.notSigned .status::after,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.notSigned .status::after,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.notSigned .status::after,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.notSigned .status::after {
+  content: 'Не підписано';
+  color: #CF6854;
+}
+
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item.read .status,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.read .status,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.read .status,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.read .status {
+  background: rgba(59, 89, 153, 0.05);
+  border: 1px dashed #3B5999;
+}
+
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item.read .status::before,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.read .status::before,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.read .status::before,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.read .status::before {
+  content: url(../img/cabinet/read.svg);
+  padding-right: 3px;
+}
+
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item.read .status::after,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.read .status::after,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.read .status::after,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.read .status::after {
+  content: 'Прочитано';
+  color: #3B5999;
+}
+
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item.notRead .status,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.notRead .status,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.notRead .status,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.notRead .status {
+  background: rgba(181, 181, 190, 0.05);
+  border: 1px dashed #B5B5BE;
+}
+
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item.notRead .status::before,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.notRead .status::before,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.notRead .status::before,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.notRead .status::before {
+  content: url(../img/cabinet/notRead.svg);
+}
+
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item.notRead .status::after,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.notRead .status::after,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.notRead .status::after,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.notRead .status::after {
+  content: 'Не прочитано';
+  color: #B5B5BE;
+}
+
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item:hover,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item:hover,
+.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item:hover,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item:hover {
+  margin: 21px 0px;
+  border: 2px solid #DDE6EE;
+  -webkit-box-shadow: 0px 18px 26px rgba(131, 140, 152, 0.1);
+          box-shadow: 0px 18px 26px rgba(131, 140, 152, 0.1);
+  outline: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.accountsActs__wrapper .acts__content .acts__list .acts__item .payer,
+.accountsActs__wrapper .acts__content .accountsActs__list .acts__item .payer,
+.accountsActs__wrapper .accountsActs__content .acts__list .acts__item .payer,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .acts__item .payer {
+  padding-left: 65px;
+}
+
+.accountsActs__wrapper .acts__content .acts__list .acts__item .payer::before,
+.accountsActs__wrapper .acts__content .accountsActs__list .acts__item .payer::before,
+.accountsActs__wrapper .accountsActs__content .acts__list .acts__item .payer::before,
+.accountsActs__wrapper .accountsActs__content .accountsActs__list .acts__item .payer::before {
+  left: 20px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  position: absolute;
+  content: url("../img/cabinet/payer.svg");
+}
+
+.accountsActs__wrapper .acts__content {
+  display: none;
+}
+
+.openAccounts__page .page__title {
+  font-weight: 600;
+  font-size: 27px;
+  line-height: 33px;
+  color: #4A5568;
+}
+
+.openAccounts__page .openAccounts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.openAccounts__page .openAccounts .accounts__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.openAccounts__page .openAccounts .accounts__info div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.openAccounts__page .openAccounts .accounts__info div img {
+  width: 35px;
+  height: 35px;
+}
+
+.openAccounts__page .openAccounts .accounts__info div div {
+  padding-left: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #91929E;
+}
+
+.openAccounts__page .openAccounts .accounts__info div div span {
+  padding-top: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: #425466;
+}
+
+.openAccounts__page .openAccounts .accounts__info button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 12px 40px;
+  border: 1px solid rgba(210, 74, 67, 0.3);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 8px;
+  background: transparent;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  color: #4A5568;
+}
+
+.openAccounts__page .openAccounts .accounts__info button svg {
+  stroke: #CF6854;
+  padding-right: 5px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.openAccounts__page .openAccounts .accounts__info button:hover {
+  background: #CF6854;
+  color: #FFFFFF;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.openAccounts__page .openAccounts .accounts__info button:hover svg {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  stroke: #FFFFFF;
+}
+
+.openAccounts__page .openAccounts .account__wrapper {
+  margin-top: 44px;
+  background: #FFFFFF;
+  border-radius: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+.openAccounts__page .openAccounts .account__wrapper div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.openAccounts__page .openAccounts .account__wrapper div .custom-select {
+  min-width: 60px;
+}
+
+.openAccounts__page .openAccounts .account__wrapper div .select2-selection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 34px;
+}
+
+.openAccounts__page .openAccounts .account__wrapper div .select2-selection__arrow {
+  top: 4px;
+}
+
+.openAccounts__page .openAccounts .account__wrapper div div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.openAccounts__page .openAccounts .account__wrapper div div button {
+  padding: 6px;
+  background: inherit;
+}
+
+.request__page .request {
+  padding: 34px 0;
+  border-top: 1px solid #DDE6EE;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+.request__page .request .request__form fieldset {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.request__page .request .request__form fieldset div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.request__page .request .request__form fieldset div label {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 24px;
+  margin-right: 25px;
+}
+
+.request__page .request .request__form fieldset div label .input-description::after {
+  content: '*';
+  color: rgba(218, 20, 20, 0.8);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.request__page .request .request__form fieldset div label textarea,
+.request__page .request .request__form fieldset div label input {
+  padding: 12px 16px;
+  background: #FFFFFF;
+  border: 1px solid #CBD5E0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 8px;
+  color: #4A5568;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  outline: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  width: 23.403vw;
+  min-width: 280px;
+}
+
+.request__page .request .request__form fieldset div label input:hover,
+.request__page .request .request__form fieldset div label input:focus {
+  border: 1px solid #2F5E97;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.request__page .request .request__form fieldset div label .input-placeholder {
+  pointer-events: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 42px;
+  left: 16px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba(113, 128, 150, 0.5);
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.request__page .request .request__form fieldset div label .input-placeholder div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-right: 15px;
+  margin: 0;
+}
+
+.request__page .request .request__form fieldset div label textarea:focus ~ .input-placeholder, .request__page .request .request__form fieldset div label textarea:not(:placeholder-shown) ~ .input-placeholder, .request__page .request .request__form fieldset div label textarea:-webkit-autofill ~ .input-placeholder,
+.request__page .request .request__form fieldset div label input:focus ~ .input-placeholder, .request__page .request .request__form fieldset div label input:not(:placeholder-shown) ~ .input-placeholder, .request__page .request .request__form fieldset div label input:-webkit-autofill ~ .input-placeholder {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.request__page .request .request__form fieldset div label textarea {
+  min-height: 153px;
+  resize: none;
+}
+
+.request__page .request .request__form fieldset div .input-description {
+  padding-left: 16px;
+  padding-bottom: 8px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #425466;
+}
+
+.request__page .request .request__form fieldset .submit__wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+}
+
+.request__page .request .request__form fieldset .submit__wrap .btn-submit {
+  margin-top: 30px;
+  border: 2px solid #CF6854;
+  border-radius: 7px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: #4A5568;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 23.403vw;
+  height: 48px;
+  min-width: 280px;
+}
+
 @media (max-width: 1439px) {
   .content__wrapper .content {
     -webkit-box-flex: 1;
@@ -1418,7 +2457,6 @@ main {
     display: none;
   }
   .content__wrapper {
-    margin-right: 0;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -1435,6 +2473,9 @@ main {
   }
   .sidebar__menu {
     min-width: 248px;
+  }
+  main {
+    margin-right: 10px;
   }
 }
 
@@ -1457,10 +2498,14 @@ main {
   .page__title {
     margin: 0 25px;
   }
-  .create-page,
-  .log__in-page {
-    margin-top: 20px;
-    padding: 20px 15px 30px 15px;
+  .breadcrumbs__wrapper {
+    margin: 0 25px;
+  }
+  .back-link {
+    right: 25px;
+  }
+  .request {
+    margin: 0 25px;
   }
 }
 
@@ -2060,6 +3105,72 @@ a.popup-text__link {
 
 .popup button {
   background: inherit;
+}
+
+.address__info-page .modal-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.address__info-page .modal-body .input-description {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #91929E;
+  text-align: start;
+  padding-bottom: 10px;
+  padding-top: 28px;
+}
+
+.address__info-page .modal-body .input-description:first-child {
+  padding-top: 0;
+}
+
+.address__info-page .modal-body .address {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 23px;
+  color: #4A5568;
+  text-align: start;
+  padding-bottom: 28px;
+}
+
+.address__info-page .modal-body .galery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.address__info-page .modal-body .galery img {
+  border-radius: 8px;
+  width: 110px;
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  padding: 5px;
 }
 
 .popup .popup__form .fieldset div .file-wrap-drop {

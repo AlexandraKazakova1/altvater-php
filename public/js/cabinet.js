@@ -1,9 +1,10 @@
 $(document).ready (function() {
 
     calendar();
+    customSelect();
     modalFade();
     dragAndDrop();
-
+    accountsActs();
 });
 
 function calendar() {
@@ -57,11 +58,13 @@ function calendar() {
         document.getElementById('myChart'),
         config
     );
+};
 
+function customSelect() {
     $('.custom-select').select2({
         minimumResultsForSearch: 1000 
     });
-};
+}
 
 function modalFade() {
     var closeBtn = $('.close')
@@ -158,3 +161,26 @@ function dragAndDrop() {
 		});
 	}
 };
+
+function accountsActs() {
+    if($('#accountsToggle').hasClass('act')) {
+        $('.acts__content').fadeOut(200);
+        $('.accountsActs__content').fadeIn(200);
+    } else if($('#actsToggle').hasClass('act')) {
+        $('.accountsActs__content').fadeOut(200);
+        $('.acts__content').fadeIn(200);
+    }
+
+    $('#accountsToggle').click(function() {
+        $(this).addClass('act');
+        $('.acts__content').fadeOut(200);
+        $('.accountsActs__content').fadeIn(200);
+        $('#actsToggle').removeClass('act');
+    });
+    $('#actsToggle').click(function() {
+        $(this).addClass('act');
+        $('.accountsActs__content').fadeOut(200);
+        $('.acts__content').fadeIn(200);
+        $('#accountsToggle').removeClass('act');
+    });
+}

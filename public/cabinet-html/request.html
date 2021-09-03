@@ -43,50 +43,6 @@
                 </li>
             </ul>
             <div class="header__info">
-                <!-- <a class="notification-icon act" href="#">
-                    <svg width="26" height="22" viewBox="0 0 26 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10.5171 17.8727V18.2681C10.5171 19.6385 11.6286 20.75 13.0001 20.75V20.75C14.3716 20.75 15.4831 19.6385 15.4831 18.267V17.8716" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M14.9858 4.23025V3.23575C14.9858 2.13942 14.0974 1.25 13 1.25V1.25C11.9026 1.25 11.0143 2.13942 11.0143 3.23575V4.23025" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.10996 9.037V9.037C7.10996 6.32542 9.30804 4.12842 12.0185 4.12842H13.9826C16.6942 4.12842 18.8912 6.3265 18.8912 9.037V9.037V12.0671C18.8912 12.6413 19.1198 13.1927 19.526 13.5989L20.2205 14.2933C20.6267 14.6996 20.8553 15.251 20.8553 15.8252V15.8252C20.8553 16.9562 19.9388 17.8727 18.8078 17.8727H7.19337C6.06237 17.8727 5.14587 16.9562 5.14587 15.8252V15.8252C5.14587 15.251 5.37446 14.6996 5.78071 14.2933L6.47512 13.5989C6.88137 13.1927 7.10996 12.6413 7.10996 12.0671V9.037Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <span class="condition">
-                        <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="8" height="8" rx="4" fill="#FC5A5A"/>
-                        </svg>
-                    </span>
-                </a>
-                <select class="lang select2">
-                    <option selected>
-                        <span class="flag">
-                            <svg width="24" height="15" viewBox="0 0 24 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0)">
-                                    <path d="M24 0H0V15H24V0Z" fill="#005BBB"/>
-                                    <path d="M24 7.5H0V15H24V7.5Z" fill="#FFD500"/>
-                                </g>
-                                <defs>
-                                    <clipPath id="clip0">
-                                        <rect width="24" height="15" rx="4" fill="white"/>
-                                    </clipPath>
-                                </defs>
-                            </svg>
-                        </span>
-                        Укр
-                    </option>
-                    <option>
-                        <svg width="24" height="15" viewBox="0 0 24 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0)">
-                                <path d="M24 0H0V15H24V0Z" fill="#005BBB"/>
-                                <path d="M24 7.5H0V15H24V7.5Z" fill="#FFD500"/>
-                            </g>
-                            <defs>
-                                <clipPath id="clip0">
-                                    <rect width="24" height="15" rx="4" fill="white"/>
-                                </clipPath>
-                            </defs>
-                        </svg>
-                        Укр
-                    </option>
-                </select> -->
                 <div class="profile">
                     <span class="profile__icon">
                         ВБ
@@ -178,24 +134,84 @@
                 Вийти з аккаунту
             </a>
         </aside>
-        <main>
+        <main class="request__page">
             <section class="breadcrumbs__wrapper">
                 <div class="breadcrumbs container">
                     <ul class="breadcrumbs__list">
-                        <li class="breadcrumbs__item"><a href="../html/home.html">Кабінет</a></li>
-                        <li class="breadcrumbs__item active">
-                            <span>Акти</span>
+                        <li><a href="../cabinet-html/cabinet.html">Кабінет</a></li>
+                        <li class="active">
+                            <span>Повідомлення</span>
                         </li>
                     </ul>
                 </div>
             </section>
-            <h1 class="page__title">Мої рахунки</h1>
+            <h1 class="page__title">Повідомлення</h1>
             <a class="back-link" href="../cabinet-html/cabinet.html">
                 <img src="../img/cabinet/arrow-red.svg">
                 <span>Назад</span>
             </a>
-            <section class="accounts__wrapper">
-                
+            <section class="request">
+                <form class="request__form" action="POST">
+                    <fieldset>
+                        <div>
+                            <label>
+                                <span class="input-description">Вибір тематики заявки:</span>
+                                <input class="form-control" type="text" id="subject" name="subject" placeholder=" ">
+                                <span class="input-placeholder">
+                                    <div>
+                                        <img src="../img/cabinet/text.svg">
+                                    </div>
+                                    Тематика заявки
+                                </span>
+                            </label>
+                            <label>
+                                <span class="input-description">Номер договору:</span>
+                                <input class="form-control" type="number" id="id" name="id" placeholder=" ">
+                                <span class="input-placeholder">
+                                    <div>
+                                        <img src="../img/cabinet/documents.svg">
+                                    </div>
+                                    Номер договору
+                                </span>
+                            </label>
+                            <label>
+                                <span class="input-description">Телефон:</span>
+                                <input class="form-control" type="tel" id="phone" name="phone" placeholder=" ">
+                                <span class="input-placeholder">
+                                    <div>
+                                        <img src="../img/cabinet/phone.svg">
+                                    </div>
+                                    Ваш телефон
+                                </span>
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <span class="input-description">Заголовку звернення:</span>
+                                <input class="form-control" type="text" id="subject" name="subject" placeholder=" ">
+                                <span class="input-placeholder">
+                                    <div>
+                                        <img src="../img/cabinet/text.svg">
+                                    </div>
+                                    Заголовок
+                                </span>
+                            </label>
+                            <label>
+                                <span class="input-description">Коментар</span>
+                                <textarea placeholder=" " id="massage" name="massage"></textarea>
+                                <span class="input-placeholder">
+                                    <div>
+                                        <img src="../img/cabinet/messages.svg">
+                                    </div>
+                                    Коментар
+                                </span>
+                            </label>
+                        </div>
+                        <div class="submit__wrap">
+                            <button class="btn-submit" type="submit" name="add-request">Залишити заявку</button>
+                        </div>
+                    </fieldset>
+                </form>
             </section>
         </main>
     </div>
@@ -442,7 +458,7 @@
                         <span class="input-description">Адреса:</span>
                         <span class="address">вулиця Бакуліна, 4а, Харків, Харківська область, 61000</span>
                         <map name="place-location">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10162.523927873703!2d30.510156484441165!3d50.447973844449656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce59e3ab65a7%3A0x694b8565cab02eaf!2z0JfQvtC70L7RgtGWINCy0L7RgNC-0YLQsA!5e0!3m2!1suk!2sua!4v1630349645139!5m2!1suk!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10162.523927873703!2d30.510156484441165!3d50.447973844449656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce59e3ab65a7%3A0x694b8565cab02eaf!2z0JfQvtC70L7RgtGWINCy0L7RgNC-0YLQsA!5e0!3m2!1suk!2sua!4v1630349645139!5m2!1suk!2sua" width="338" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                         </map>
                         <span class="input-description">Проблемні місця:</span>
                         <div class="galery">
@@ -463,23 +479,5 @@
     <script src="../js/locale_ua.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/cabinet.js"></script>
-    <script type="text/javascript">
-        scheduler.init("scheduler__calendar");
-    </script>
-    
-    <script>
-        //The structure of the scheduler
-        scheduler.config.header = [
-            "day",
-            "week",
-            "month",
-            "date",
-            "prev",
-            "today",
-            "next"
-        ];
-        scheduler.config.displayed_event_color="#DFEDF7";
-        scheduler.init('scheduler__calendar',new Date(2021,07,01),"month");
-    </script>
 </body>
 </html>
