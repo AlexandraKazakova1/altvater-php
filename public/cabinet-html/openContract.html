@@ -134,223 +134,48 @@
                 Вийти з аккаунту
             </a>
         </aside>
-        <main>
-            <section class="breadcrumbs__wrapper">
-                <div class="breadcrumbs container">
-                    <ul class="breadcrumbs__list">
-                        <li class="breadcrumbs__item"><a href="../cabinet-html/cabinet.html">Кабінет</a></li>
-                        <li class="breadcrumbs__item active">
-                            <span>Мої рахунки</span>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-            <h1 class="page__title">Мої замовлення</h1>
-            <a class="back-link" href="../cabinet-html/cabinet.html">
+        <main class="openAccounts__page">
+            <h1 class="page__title">Договір.PDF</h1>
+            <a class="back-link wb" href="../cabinet-html/cabinet.html">
                 <img src="../img/cabinet/arrow-red.svg">
                 <span>Назад</span>
             </a>
-            <section class="newOrder">
-                <h2>Створити замовлення</h2>
-                <form class="newOrder__form" id="newOrder-form">
-                    <fieldset class="fieldset">
-                        <label>
-                            <span class="input-description">Оберіть послугу:</span>
-                            <select class="custom-select2" name="service">
-                                <option data-id="0" class="first-option" disabled selected value hidden></option>
-                                <option value="Послуга-1">Послуга-1</option>
-                                <option value="Послуга-2">Послуга-2</option>
-                                <option value="Послуга-3">Послуга-3</option>
-                            </select>
-                            <span class="input-placeholder">
-                                <div>
-                                    <img src="../img/cabinet/modal-icon/order.svg">
-                                </div>
-                                Обрати послугу
-                            </span>
-                        </label>
-                        <label>
-                            <span class="input-description">Оберіть дату:</span>
-                            <select class="custom-select2" name="date">
-                                <option data-id="0" disabled selected value hidden></option>
-                                <option value="Дата-1">Дата-1</option>
-                                <option value="Дата-2">Дата-2</option>
-                                <option value="Дата-3">Дата-3</option>
-                            </select>
-                            <span class="input-placeholder">
-                                <div>
-                                    <img src="../img/cabinet/modal-icon/date.svg">
-                                </div>
-                                Обрати дату
-                            </span>
-                        </label>
-                        <label>
-                            <span class="input-description">Введіть адресу:</span>
-                            <input class="form-control" type="tel" name="user-tel" placeholder=" ">
-                            <span class="input-placeholder">
-                                <div>
-                                    <img src="../img/cabinet/modal-icon/house.svg">
-                                </div>
-                                Місто
-                            </span>
-                        </label>
-                        <label>
-                            <span class="input-description">Оберіть час:</span>
-                            <input class="form-control" type="text" name="user-address" placeholder=" ">
-                            <span class="input-placeholder">
-                                <div>
-                                    <img src="../img/cabinet/modal-icon/time-clock.svg">
-                                </div>
-                                Обрати час
-                            </span>
-                        </label>
-                        <label>
-                            <span class="input-description">Введіть коментар:</span>
-                            <input class="form-control" type="text" name="postIndex" placeholder=" ">
-                            <span class="input-placeholder">
-                                <div>
-                                    <img src="../img/cabinet/modal-icon/messages.svg">
-                                </div>
-                                Коментар
-                            </span>
-                        </label>
-                        <div class="submit__wrap">
-                            <button class="btn-submit" type="submit" name="reg">Замовити</button>
-                        </div>
-                    </fieldset>
-                </form>
-            </section>
-            <section class="orders__wrapper">
-                <div class="selector">
-                    <span class="act">Всі замовлення</span>
-                    <span>В обробці</span>
-                    <span>Виконуються</span>
-                    <span>Готові</span>
-                    <span>Заплановано</span>
+            <section class="openAccounts">
+                <div class="accounts__info">
+                    <button>
+                        <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10.3242 9.68579C10.5612 8.66424 11.4917 7.95594 12.5395 7.99942C13.7121 7.93447 14.7174 8.82806 14.7904 10.0003C14.7904 11.5048 12.6395 12.0011 12.6395 13.0015" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12.7659 15.7543C12.7658 15.8233 12.7098 15.8792 12.6408 15.8792C12.5718 15.8791 12.5158 15.8232 12.5158 15.7542C12.5158 15.6851 12.5717 15.6292 12.6407 15.6291C12.6739 15.629 12.7058 15.6422 12.7293 15.6657C12.7527 15.6892 12.7659 15.7211 12.7659 15.7543" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5.26728 17.1605C2.58418 13.3308 3.27369 8.08546 6.85539 5.07926C10.4371 2.07305 15.7225 2.30347 19.029 5.60997C22.3355 8.91646 22.5659 14.2019 19.5597 17.7836C16.5535 21.3653 11.3082 22.0548 7.47847 19.3717L4.63555 20.0034L5.26728 17.1605Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Допомога
+                    </button>
                 </div>
-                <div class="orders__content">
-                    <div class="filters">
+                <div class="account__wrapper">
+                    <div>
+                        <select class="custom-select" name="page" id="page">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                        <select class="custom-select" name="prtMethod" id="prtMethod">
+                            <option value="Вмістити">Вмістити</option>
+                            <option value="Масштабувати">Масштабувати</option>
+                        </select>
                         <div>
-                            Список замовлень: <span class="counter">18</span>
+                            <button>
+                                <img src="../img/cabinet/search-ico.svg">
+                            </button>
+                            <button>
+                                <img src="../img/cabinet/printer-ico.svg">
+                            </button>
+                            <button>
+                                <img src="../img/cabinet/fullscreen-exit-ico.svg">
+                            </button>
                         </div>
                     </div>
-                    <div class="orders__list">
-                        <div class="orders__item processed">
-                            <span>
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17 12C17 13.1046 17.8954 14 19 14C20.1046 14 21 13.1046 21 12C21 10.8954 20.1046 10 19 10C17.8954 10 17 10.8954 17 12Z"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10 12C10 13.1046 10.8954 14 12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12Z"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3 12C3 13.1046 3.89543 14 5 14C6.10457 14 7 13.1046 7 12C7 10.8954 6.10457 10 5 10C3.89543 10 3 10.8954 3 12Z"/>
-                                </svg>
-                            </span>
-                            <div class="number">
-                                Номер замовлення:
-                                <span>876364</span>
-                            </div>
-                            <div class="service">
-                                Послуга:
-                                <span>Заміна контейнера</span>
-                            </div>
-                            <div class="date">
-                                Дата заявки:
-                                <span>12.12.2021</span>
-                            </div>
-                            <div class="status">
-                            </div>
-                        </div>
-                        <div class="orders__item canceled">
-                            <span>
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17 12C17 13.1046 17.8954 14 19 14C20.1046 14 21 13.1046 21 12C21 10.8954 20.1046 10 19 10C17.8954 10 17 10.8954 17 12Z"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10 12C10 13.1046 10.8954 14 12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12Z"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3 12C3 13.1046 3.89543 14 5 14C6.10457 14 7 13.1046 7 12C7 10.8954 6.10457 10 5 10C3.89543 10 3 10.8954 3 12Z"/>
-                                </svg>
-                            </span>
-                            <div class="number">
-                                Номер замовлення:
-                                <span>876364</span>
-                            </div>
-                            <div class="service">
-                                Послуга:
-                                <span>Заміна контейнера</span>
-                            </div>
-                            <div class="date">
-                                Дата заявки:
-                                <span>12.12.2021</span>
-                            </div>
-                            <div class="status">
-                            </div>
-                        </div>
-                        <div class="orders__item performed">
-                            <span>
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17 12C17 13.1046 17.8954 14 19 14C20.1046 14 21 13.1046 21 12C21 10.8954 20.1046 10 19 10C17.8954 10 17 10.8954 17 12Z"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10 12C10 13.1046 10.8954 14 12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12Z"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3 12C3 13.1046 3.89543 14 5 14C6.10457 14 7 13.1046 7 12C7 10.8954 6.10457 10 5 10C3.89543 10 3 10.8954 3 12Z"/>
-                                </svg>
-                            </span>
-                            <div class="number">
-                                Номер замовлення:
-                                <span>876364</span>
-                            </div>
-                            <div class="service">
-                                Послуга:
-                                <span>Заміна контейнера</span>
-                            </div>
-                            <div class="date">
-                                Дата заявки:
-                                <span>12.12.2021</span>
-                            </div>
-                            <div class="status">
-                            </div>
-                        </div>
-                        <div class="orders__item ready">
-                            <span>
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17 12C17 13.1046 17.8954 14 19 14C20.1046 14 21 13.1046 21 12C21 10.8954 20.1046 10 19 10C17.8954 10 17 10.8954 17 12Z"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10 12C10 13.1046 10.8954 14 12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12Z"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3 12C3 13.1046 3.89543 14 5 14C6.10457 14 7 13.1046 7 12C7 10.8954 6.10457 10 5 10C3.89543 10 3 10.8954 3 12Z"/>
-                                </svg>
-                            </span>
-                            <div class="number">
-                                Номер замовлення:
-                                <span>876364</span>
-                            </div>
-                            <div class="service">
-                                Послуга:
-                                <span>Заміна контейнера</span>
-                            </div>
-                            <div class="date">
-                                Дата заявки:
-                                <span>12.12.2021</span>
-                            </div>
-                            <div class="status">
-                            </div>
-                        </div>
-                        <div class="orders__item planned">
-                            <span>
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17 12C17 13.1046 17.8954 14 19 14C20.1046 14 21 13.1046 21 12C21 10.8954 20.1046 10 19 10C17.8954 10 17 10.8954 17 12Z"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10 12C10 13.1046 10.8954 14 12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12Z"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3 12C3 13.1046 3.89543 14 5 14C6.10457 14 7 13.1046 7 12C7 10.8954 6.10457 10 5 10C3.89543 10 3 10.8954 3 12Z"/>
-                                </svg>
-                            </span>
-                            <div class="number">
-                                Номер замовлення:
-                                <span>876364</span>
-                            </div>
-                            <div class="service">
-                                Послуга:
-                                <span>Заміна контейнера</span>
-                            </div>
-                            <div class="date">
-                                Дата заявки:
-                                <span>12.12.2021</span>
-                            </div>
-                            <div class="status">
-                            </div>
-                        </div>
-                    </div>
+                    <img src="../img/cabinet/contract.png">
                 </div>
             </section>
         </main>
@@ -367,7 +192,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form class="popup__form" id="create__contract-form-1">
+                        <form class="popup__form" id="create__contract-form">
                             <fieldset class="fieldset">
                                 <label>
                                     <span class="input-description">ПІБ:</span>
@@ -438,7 +263,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form class="popup__form" id="create__contract-form-2">
+                        <form class="popup__form" id="create__contract-form">
                             <fieldset class="fieldset">
                                 <label>
                                     <span class="input-description">Назва компанії:</span>
@@ -611,12 +436,12 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="orderService" role="dialog">
+    <div class="modal fade" id="orderService" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-md modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="orderService popup">
                     <div class="modal-header">
-                        <h2 class="popup__title">Створити замовлення</h2>
+                        <h2 class="popup__title">Новий договір</h2>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <img src="../img/close.svg" alt="X">
                         </button>
@@ -625,34 +450,20 @@
                         <form class="popup__form" id="orderService-form">
                             <fieldset class="fieldset">
                                 <label>
-                                    <span class="input-description">Оберіть послугу:</span>
-                                    <select class="form-select" id="service" name="service">
-                                        <option data-id="0" class="first-option" disabled selected value hidden></option>
+                                    <span class="input-description">Введіть адресу:</span>
+                                    <select class="custom-select" id="service" name="service">
                                         <option value="Послуга-1">Послуга-1</option>
                                         <option value="Послуга-2">Послуга-2</option>
                                         <option value="Послуга-3">Послуга-3</option>
                                     </select>
-                                    <span class="input-placeholder">
-                                        <div>
-                                            <img src="../img/cabinet/modal-icon/order.svg">
-                                        </div>
-                                        Обрати послугу
-                                    </span>
                                 </label>
                                 <label>
-                                    <span class="input-description">Оберіть дату:</span>
-                                    <select class="custom-select2" id="date" name="date">
-                                        <option data-id="0" disabled selected value hidden></option>
+                                    <span class="input-description">Вибрати дату:</span>
+                                    <select class="custom-select" id="date" name="date">
                                         <option value="Дата-1">Дата-1</option>
                                         <option value="Дата-2">Дата-2</option>
                                         <option value="Дата-3">Дата-3</option>
                                     </select>
-                                    <!-- <span class="input-placeholder">
-                                        <div>
-                                            <img src="../img/cabinet/modal-icon/date.svg">
-                                        </div>
-                                        Обрати дату
-                                    </span> -->
                                 </label>
                                 <label>
                                     <span class="input-description">Введіть адресу:</span>
@@ -665,13 +476,13 @@
                                     </span>
                                 </label>
                                 <label>
-                                    <span class="input-description">Оберіть час:</span>
+                                    <span class="input-description">Вибрати час:</span>
                                     <input class="form-control" type="text" name="user-address" placeholder=" ">
                                     <span class="input-placeholder">
                                         <div>
                                             <img src="../img/cabinet/modal-icon/time-clock.svg">
                                         </div>
-                                        Обрати час
+                                        Вибрати час
                                     </span>
                                 </label>
                                 <label>

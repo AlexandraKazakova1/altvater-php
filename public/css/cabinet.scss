@@ -1434,6 +1434,7 @@ main {
                 flex-direction: row;
                 align-items: center;
                 justify-content: space-between;
+                margin-bottom: 20px;
                 .custom-select {
                     min-width: 60px;
                 }
@@ -1837,19 +1838,44 @@ main {
                 }
             }
             .orders__item.processed {
+                .status::before {
 
+                }
+                .status::after {
+
+                }
             }
             .orders__item.canceled {
+                .status::before {
 
+                }
+                .status::after {
+                    
+                }
             }
             .orders__item.performed {
+                .status::before {
 
+                }
+                .status::after {
+                    
+                }
             }
             .orders__item.ready {
+                .status::before {
 
+                }
+                .status::after {
+                    
+                }
             }
             .orders__item.planned {
+                .status::before {
 
+                }
+                .status::after {
+                    
+                }
             }
         }
     }

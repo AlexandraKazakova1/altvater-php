@@ -2191,6 +2191,7 @@ main {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 .openAccounts__page .openAccounts .account__wrapper div .custom-select {
