@@ -8,7 +8,7 @@ $(document).ready (function() {
     settingsPage();
     $('.custom-select2').select2({
         minimumResultsForSearch: 1000,
-        dropdownParent: $("#orderService-form")
+        dropdownParent: $("#newOrder-form")
     });
 });
 
@@ -100,7 +100,7 @@ function modalFade() {
         $('.modal').modal('hide');
         $('#address__info-modal').modal('show');
     });
-    $('#orderService').modal('show');
+    // $('#orderService').modal('show');
     $('.order-btn').click(function() {
         $('.modal').modal('hide');
         $('#orderService').modal('show');
@@ -175,21 +175,21 @@ function dragAndDrop() {
 function accountsActs() {
     if($('#accountsToggle').hasClass('act')) {
         $('.acts__content').fadeOut(200);
-        $('.accountsActs__content').fadeIn(200);
+        $('.accounts__content').fadeIn(200);
     } else if($('#actsToggle').hasClass('act')) {
-        $('.accountsActs__content').fadeOut(200);
+        $('.accounts__content').fadeOut(200);
         $('.acts__content').fadeIn(200);
     }
 
     $('#accountsToggle').click(function() {
         $(this).addClass('act');
         $('.acts__content').fadeOut(200);
-        $('.accountsActs__content').fadeIn(200);
+        $('.accounts__content').fadeIn(200);
         $('#actsToggle').removeClass('act');
     });
     $('#actsToggle').click(function() {
         $(this).addClass('act');
-        $('.accountsActs__content').fadeOut(200);
+        $('.accounts__content').fadeOut(200);
         $('.acts__content').fadeIn(200);
         $('#accountsToggle').removeClass('act');
     });

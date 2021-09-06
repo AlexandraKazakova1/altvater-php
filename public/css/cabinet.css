@@ -1439,7 +1439,7 @@ main {
 }
 
 .accountsActs__wrapper .acts__content,
-.accountsActs__wrapper .accountsActs__content {
+.accountsActs__wrapper .accounts__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1451,7 +1451,7 @@ main {
 }
 
 .accountsActs__wrapper .acts__content .filters,
-.accountsActs__wrapper .accountsActs__content .filters {
+.accountsActs__wrapper .accounts__content .filters {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1473,7 +1473,7 @@ main {
 }
 
 .accountsActs__wrapper .acts__content .filters div,
-.accountsActs__wrapper .accountsActs__content .filters div {
+.accountsActs__wrapper .accounts__content .filters div {
   pointer-events: none;
   font-style: normal;
   font-weight: 600;
@@ -1483,7 +1483,7 @@ main {
 }
 
 .accountsActs__wrapper .acts__content .filters div span,
-.accountsActs__wrapper .accountsActs__content .filters div span {
+.accountsActs__wrapper .accounts__content .filters div span {
   padding: 2.63px 11.53px;
   font-size: 13.1429px;
   line-height: 136.52%;
@@ -1493,7 +1493,7 @@ main {
 }
 
 .accountsActs__wrapper .acts__content .filters ul,
-.accountsActs__wrapper .accountsActs__content .filters ul {
+.accountsActs__wrapper .accounts__content .filters ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1507,7 +1507,7 @@ main {
 }
 
 .accountsActs__wrapper .acts__content .filters ul li,
-.accountsActs__wrapper .accountsActs__content .filters ul li {
+.accountsActs__wrapper .accounts__content .filters ul li {
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -1517,7 +1517,7 @@ main {
 }
 
 .accountsActs__wrapper .acts__content .filters ul li button,
-.accountsActs__wrapper .accountsActs__content .filters ul li button {
+.accountsActs__wrapper .accounts__content .filters ul li button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1540,7 +1540,7 @@ main {
 }
 
 .accountsActs__wrapper .acts__content .filters ul li button svg,
-.accountsActs__wrapper .accountsActs__content .filters ul li button svg {
+.accountsActs__wrapper .accounts__content .filters ul li button svg {
   padding-left: 5px;
   stroke: #2F5E97;
   -webkit-transition: all 0.3s;
@@ -1548,40 +1548,40 @@ main {
 }
 
 .accountsActs__wrapper .acts__content .filters ul li button:hover,
-.accountsActs__wrapper .accountsActs__content .filters ul li button:hover {
+.accountsActs__wrapper .accounts__content .filters ul li button:hover {
   color: #BF604D;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 
 .accountsActs__wrapper .acts__content .filters ul li button:hover svg,
-.accountsActs__wrapper .accountsActs__content .filters ul li button:hover svg {
+.accountsActs__wrapper .accounts__content .filters ul li button:hover svg {
   stroke: #BF604D;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 
 .accountsActs__wrapper .acts__content .filters ul li:first-child,
-.accountsActs__wrapper .accountsActs__content .filters ul li:first-child {
+.accountsActs__wrapper .accounts__content .filters ul li:first-child {
   padding-left: 0;
 }
 
 .accountsActs__wrapper .acts__content .filters ul li:last-child,
-.accountsActs__wrapper .accountsActs__content .filters ul li:last-child {
+.accountsActs__wrapper .accounts__content .filters ul li:last-child {
   padding-right: 0;
 }
 
 .accountsActs__wrapper .acts__content .acts__list,
 .accountsActs__wrapper .acts__content .accountsActs__list,
-.accountsActs__wrapper .accountsActs__content .acts__list,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list {
+.accountsActs__wrapper .accounts__content .acts__list,
+.accountsActs__wrapper .accounts__content .accountsActs__list {
   width: 100%;
 }
 
 .accountsActs__wrapper .acts__content .acts__list .accountsActs__item,
 .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item {
+.accountsActs__wrapper .accounts__content .acts__list .accountsActs__item,
+.accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item {
   margin: 21px 0;
   background: #FFFFFF;
   border-radius: 8px;
@@ -1606,40 +1606,38 @@ main {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   width: 100%;
+  max-width: 1090px;
   overflow-x: hidden;
 }
 
-.accountsActs__wrapper .acts__content .acts__list .accountsActs__item a,
-.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item a,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item a,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item a {
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item span,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item span,
+.accountsActs__wrapper .accounts__content .acts__list .accountsActs__item span,
+.accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item span {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  max-width: 30px;
   background: transparent;
   padding: 0;
-  padding-right: 5px;
 }
 
-.accountsActs__wrapper .acts__content .acts__list .accountsActs__item a svg,
-.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item a svg,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item a svg,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item a svg {
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item span svg,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item span svg,
+.accountsActs__wrapper .accounts__content .acts__list .accountsActs__item span svg,
+.accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item span svg {
   fill: #B5B5BE;
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
 }
 
-.accountsActs__wrapper .acts__content .acts__list .accountsActs__item a:hover svg,
-.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item a:hover svg,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item a:hover svg,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item a:hover svg {
-  fill: #BF604D;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-
 .accountsActs__wrapper .acts__content .acts__list .accountsActs__item div,
 .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item div,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item div,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item div {
+.accountsActs__wrapper .accounts__content .acts__list .accountsActs__item div,
+.accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item div {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   position: relative;
   padding: 5px 20px;
   border-right: 1px dashed #afc5e0;
@@ -1669,8 +1667,8 @@ main {
 
 .accountsActs__wrapper .acts__content .acts__list .accountsActs__item div span,
 .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item div span,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item div span,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item div span {
+.accountsActs__wrapper .accounts__content .acts__list .accountsActs__item div span,
+.accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item div span {
   padding-top: 8px;
   font-weight: 600;
   font-size: 16px;
@@ -1683,48 +1681,72 @@ main {
   max-width: 200px;
 }
 
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item .number,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item .number,
+.accountsActs__wrapper .accounts__content .acts__list .accountsActs__item .number,
+.accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item .number {
+  max-width: 150px;
+}
+
 .accountsActs__wrapper .acts__content .acts__list .accountsActs__item .number span::before,
 .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item .number span::before,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item .number span::before,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item .number span::before {
+.accountsActs__wrapper .accounts__content .acts__list .accountsActs__item .number span::before,
+.accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item .number span::before {
   content: '#';
 }
 
 .accountsActs__wrapper .acts__content .acts__list .accountsActs__item .date,
 .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item .date,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item .date,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item .date {
-  padding-left: 65px;
+.accountsActs__wrapper .accounts__content .acts__list .accountsActs__item .date,
+.accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item .date {
+  max-width: 250px;
+  padding-left: 55px;
 }
 
 .accountsActs__wrapper .acts__content .acts__list .accountsActs__item .date::before,
 .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item .date::before,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item .date::before,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item .date::before {
+.accountsActs__wrapper .accounts__content .acts__list .accountsActs__item .date::before,
+.accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item .date::before {
   content: url(../img/cabinet/date.svg);
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  left: 15px;
+  left: 10px;
+}
+
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item .payer,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item .payer,
+.accountsActs__wrapper .accounts__content .acts__list .accountsActs__item .payer,
+.accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item .payer {
+  max-width: 250px;
+}
+
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item .cost,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item .cost,
+.accountsActs__wrapper .accounts__content .acts__list .accountsActs__item .cost,
+.accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item .cost {
+  max-width: 150px;
 }
 
 .accountsActs__wrapper .acts__content .acts__list .accountsActs__item .cost span::after,
 .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item .cost span::after,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item .cost span::after,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item .cost span::after {
+.accountsActs__wrapper .accounts__content .acts__list .accountsActs__item .cost span::after,
+.accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item .cost span::after {
   content: ' ₴';
 }
 
 .accountsActs__wrapper .acts__content .acts__list .accountsActs__item .status,
 .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item .status,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item .status,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item .status {
+.accountsActs__wrapper .accounts__content .acts__list .accountsActs__item .status,
+.accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item .status {
+  justify-self: flex-end;
   position: relative;
   padding: 0;
   width: 150px;
   height: 44px;
   margin: 5px;
+  margin-left: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1741,56 +1763,24 @@ main {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: 8px;
+  max-width: 150px;
 }
 
 .accountsActs__wrapper .acts__content .acts__list .accountsActs__item .status::after,
 .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item .status::after,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item .status::after,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item .status::after {
+.accountsActs__wrapper .accounts__content .acts__list .accountsActs__item .status::after,
+.accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item .status::after {
   padding-bottom: 2px;
-}
-
-.accountsActs__wrapper .acts__content .acts__list .accountsActs__item div.more,
-.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item div.more,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item div.more,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item div.more {
-  border-right: none;
-  border-left: 1px dashed #afc5e0;
-}
-
-.accountsActs__wrapper .acts__content .acts__list .accountsActs__item div.more svg,
-.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item div.more svg,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item div.more svg,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item div.more svg {
-  stroke: #718096;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-
-.accountsActs__wrapper .acts__content .acts__list .accountsActs__item div.more:hover,
-.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item div.more:hover,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item div.more:hover,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item div.more:hover {
-  cursor: pointer;
-}
-
-.accountsActs__wrapper .acts__content .acts__list .accountsActs__item div.more:hover svg,
-.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item div.more:hover svg,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item div.more:hover svg,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item div.more:hover svg {
-  stroke: #BF604D;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
 }
 
 .accountsActs__wrapper .acts__content .acts__list .accountsActs__item.paid .status::after,
 .accountsActs__wrapper .acts__content .acts__list .accountsActs__item.notPaid .status::after,
 .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.paid .status::after,
 .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.notPaid .status::after,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.paid .status::after,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.notPaid .status::after,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.paid .status::after,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.notPaid .status::after {
+.accountsActs__wrapper .accounts__content .acts__list .accountsActs__item.paid .status::after,
+.accountsActs__wrapper .accounts__content .acts__list .accountsActs__item.notPaid .status::after,
+.accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item.paid .status::after,
+.accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item.notPaid .status::after {
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
@@ -1800,31 +1790,31 @@ main {
 
 .accountsActs__wrapper .acts__content .acts__list .accountsActs__item.paid .status,
 .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.paid .status,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.paid .status,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.paid .status {
+.accountsActs__wrapper .accounts__content .acts__list .accountsActs__item.paid .status,
+.accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item.paid .status {
   background: rgba(72, 152, 113, 0.05);
   border: 1px dashed #489871;
 }
 
 .accountsActs__wrapper .acts__content .acts__list .accountsActs__item.paid .status::before,
 .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.paid .status::before,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.paid .status::before,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.paid .status::before {
+.accountsActs__wrapper .accounts__content .acts__list .accountsActs__item.paid .status::before,
+.accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item.paid .status::before {
   content: url(../img/cabinet/check.svg);
 }
 
 .accountsActs__wrapper .acts__content .acts__list .accountsActs__item.paid .status::after,
 .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.paid .status::after,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.paid .status::after,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.paid .status::after {
+.accountsActs__wrapper .accounts__content .acts__list .accountsActs__item.paid .status::after,
+.accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item.paid .status::after {
   content: 'Оплачено';
   color: #489871;
 }
 
 .accountsActs__wrapper .acts__content .acts__list .accountsActs__item.notPaid,
 .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.notPaid,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.notPaid,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.notPaid {
+.accountsActs__wrapper .accounts__content .acts__list .accountsActs__item.notPaid,
+.accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item.notPaid {
   margin: 21px 1px;
   border: 1px dashed #CF6854;
 }
@@ -1833,32 +1823,32 @@ main {
 .accountsActs__wrapper .acts__content .acts__list .accountsActs__item.notPaid .cost span,
 .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.notPaid .number span,
 .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.notPaid .cost span,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.notPaid .number span,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.notPaid .cost span,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.notPaid .number span,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.notPaid .cost span {
+.accountsActs__wrapper .accounts__content .acts__list .accountsActs__item.notPaid .number span,
+.accountsActs__wrapper .accounts__content .acts__list .accountsActs__item.notPaid .cost span,
+.accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item.notPaid .number span,
+.accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item.notPaid .cost span {
   color: #CF6854;
 }
 
 .accountsActs__wrapper .acts__content .acts__list .accountsActs__item.notPaid .status,
 .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.notPaid .status,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.notPaid .status,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.notPaid .status {
+.accountsActs__wrapper .accounts__content .acts__list .accountsActs__item.notPaid .status,
+.accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item.notPaid .status {
   background: rgba(207, 104, 84, 0.05);
   border: 1px dashed #CF6854;
 }
 
 .accountsActs__wrapper .acts__content .acts__list .accountsActs__item.notPaid .status::before,
 .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.notPaid .status::before,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.notPaid .status::before,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.notPaid .status::before {
+.accountsActs__wrapper .accounts__content .acts__list .accountsActs__item.notPaid .status::before,
+.accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item.notPaid .status::before {
   content: url(../img/cabinet/notCheck.svg);
 }
 
 .accountsActs__wrapper .acts__content .acts__list .accountsActs__item.notPaid .status::after,
 .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.notPaid .status::after,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.notPaid .status::after,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.notPaid .status::after {
+.accountsActs__wrapper .accounts__content .acts__list .accountsActs__item.notPaid .status::after,
+.accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item.notPaid .status::after {
   content: 'Не оплачено';
   color: #CF6854;
 }
@@ -1871,14 +1861,14 @@ main {
 .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.notRead .status,
 .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.signed .status,
 .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.notSigned .status,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.read .status,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.notRead .status,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.signed .status,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.notSigned .status,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.read .status,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.notRead .status,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.signed .status,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.notSigned .status {
+.accountsActs__wrapper .accounts__content .acts__list .accountsActs__item.read .status,
+.accountsActs__wrapper .accounts__content .acts__list .accountsActs__item.notRead .status,
+.accountsActs__wrapper .accounts__content .acts__list .accountsActs__item.signed .status,
+.accountsActs__wrapper .accounts__content .acts__list .accountsActs__item.notSigned .status,
+.accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item.read .status,
+.accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item.notRead .status,
+.accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item.signed .status,
+.accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item.notSigned .status {
   width: 150px;
 }
 
@@ -1890,14 +1880,14 @@ main {
 .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.notRead .status::after,
 .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.signed .status::after,
 .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.notSigned .status::after,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.read .status::after,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.notRead .status::after,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.signed .status::after,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.notSigned .status::after,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.read .status::after,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.notRead .status::after,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.signed .status::after,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.notSigned .status::after {
+.accountsActs__wrapper .accounts__content .acts__list .accountsActs__item.read .status::after,
+.accountsActs__wrapper .accounts__content .acts__list .accountsActs__item.notRead .status::after,
+.accountsActs__wrapper .accounts__content .acts__list .accountsActs__item.signed .status::after,
+.accountsActs__wrapper .accounts__content .acts__list .accountsActs__item.notSigned .status::after,
+.accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item.read .status::after,
+.accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item.notRead .status::after,
+.accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item.signed .status::after,
+.accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item.notSigned .status::after {
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
@@ -1907,101 +1897,101 @@ main {
 
 .accountsActs__wrapper .acts__content .acts__list .accountsActs__item.signed .status,
 .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.signed .status,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.signed .status,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.signed .status {
+.accountsActs__wrapper .accounts__content .acts__list .accountsActs__item.signed .status,
+.accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item.signed .status {
   background: rgba(72, 152, 113, 0.05);
   border: 1px dashed #489871;
 }
 
 .accountsActs__wrapper .acts__content .acts__list .accountsActs__item.signed .status::before,
 .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.signed .status::before,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.signed .status::before,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.signed .status::before {
+.accountsActs__wrapper .accounts__content .acts__list .accountsActs__item.signed .status::before,
+.accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item.signed .status::before {
   content: url(../img/cabinet/check.svg);
 }
 
 .accountsActs__wrapper .acts__content .acts__list .accountsActs__item.signed .status::after,
 .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.signed .status::after,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.signed .status::after,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.signed .status::after {
+.accountsActs__wrapper .accounts__content .acts__list .accountsActs__item.signed .status::after,
+.accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item.signed .status::after {
   content: 'Підписано';
   color: #489871;
 }
 
 .accountsActs__wrapper .acts__content .acts__list .accountsActs__item.notSigned .status,
 .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.notSigned .status,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.notSigned .status,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.notSigned .status {
+.accountsActs__wrapper .accounts__content .acts__list .accountsActs__item.notSigned .status,
+.accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item.notSigned .status {
   background: rgba(207, 104, 84, 0.05);
   border: 1px dashed #CF6854;
 }
 
 .accountsActs__wrapper .acts__content .acts__list .accountsActs__item.notSigned .status::before,
 .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.notSigned .status::before,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.notSigned .status::before,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.notSigned .status::before {
+.accountsActs__wrapper .accounts__content .acts__list .accountsActs__item.notSigned .status::before,
+.accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item.notSigned .status::before {
   content: url(../img/cabinet/notCheck.svg);
 }
 
 .accountsActs__wrapper .acts__content .acts__list .accountsActs__item.notSigned .status::after,
 .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.notSigned .status::after,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.notSigned .status::after,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.notSigned .status::after {
+.accountsActs__wrapper .accounts__content .acts__list .accountsActs__item.notSigned .status::after,
+.accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item.notSigned .status::after {
   content: 'Не підписано';
   color: #CF6854;
 }
 
 .accountsActs__wrapper .acts__content .acts__list .accountsActs__item.read .status,
 .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.read .status,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.read .status,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.read .status {
+.accountsActs__wrapper .accounts__content .acts__list .accountsActs__item.read .status,
+.accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item.read .status {
   background: rgba(59, 89, 153, 0.05);
   border: 1px dashed #3B5999;
 }
 
 .accountsActs__wrapper .acts__content .acts__list .accountsActs__item.read .status::before,
 .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.read .status::before,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.read .status::before,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.read .status::before {
+.accountsActs__wrapper .accounts__content .acts__list .accountsActs__item.read .status::before,
+.accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item.read .status::before {
   content: url(../img/cabinet/read.svg);
   padding-right: 3px;
 }
 
 .accountsActs__wrapper .acts__content .acts__list .accountsActs__item.read .status::after,
 .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.read .status::after,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.read .status::after,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.read .status::after {
+.accountsActs__wrapper .accounts__content .acts__list .accountsActs__item.read .status::after,
+.accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item.read .status::after {
   content: 'Прочитано';
   color: #3B5999;
 }
 
 .accountsActs__wrapper .acts__content .acts__list .accountsActs__item.notRead .status,
 .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.notRead .status,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.notRead .status,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.notRead .status {
+.accountsActs__wrapper .accounts__content .acts__list .accountsActs__item.notRead .status,
+.accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item.notRead .status {
   background: rgba(181, 181, 190, 0.05);
   border: 1px dashed #B5B5BE;
 }
 
 .accountsActs__wrapper .acts__content .acts__list .accountsActs__item.notRead .status::before,
 .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.notRead .status::before,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.notRead .status::before,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.notRead .status::before {
+.accountsActs__wrapper .accounts__content .acts__list .accountsActs__item.notRead .status::before,
+.accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item.notRead .status::before {
   content: url(../img/cabinet/notRead.svg);
 }
 
 .accountsActs__wrapper .acts__content .acts__list .accountsActs__item.notRead .status::after,
 .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.notRead .status::after,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item.notRead .status::after,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item.notRead .status::after {
+.accountsActs__wrapper .accounts__content .acts__list .accountsActs__item.notRead .status::after,
+.accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item.notRead .status::after {
   content: 'Не прочитано';
   color: #B5B5BE;
 }
 
 .accountsActs__wrapper .acts__content .acts__list .accountsActs__item:hover,
 .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item:hover,
-.accountsActs__wrapper .accountsActs__content .acts__list .accountsActs__item:hover,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .accountsActs__item:hover {
+.accountsActs__wrapper .accounts__content .acts__list .accountsActs__item:hover,
+.accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item:hover {
   margin: 21px 0px;
   border: 2px solid #DDE6EE;
   -webkit-box-shadow: 0px 18px 26px rgba(131, 140, 152, 0.1);
@@ -2009,19 +1999,29 @@ main {
   outline: none;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+  cursor: pointer;
+}
+
+.accountsActs__wrapper .acts__content .acts__list .accountsActs__item:hover .more svg,
+.accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item:hover .more svg,
+.accountsActs__wrapper .accounts__content .acts__list .accountsActs__item:hover .more svg,
+.accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item:hover .more svg {
+  stroke: #BF604D;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .accountsActs__wrapper .acts__content .acts__list .acts__item .payer,
 .accountsActs__wrapper .acts__content .accountsActs__list .acts__item .payer,
-.accountsActs__wrapper .accountsActs__content .acts__list .acts__item .payer,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .acts__item .payer {
+.accountsActs__wrapper .accounts__content .acts__list .acts__item .payer,
+.accountsActs__wrapper .accounts__content .accountsActs__list .acts__item .payer {
   padding-left: 65px;
 }
 
 .accountsActs__wrapper .acts__content .acts__list .acts__item .payer::before,
 .accountsActs__wrapper .acts__content .accountsActs__list .acts__item .payer::before,
-.accountsActs__wrapper .accountsActs__content .acts__list .acts__item .payer::before,
-.accountsActs__wrapper .accountsActs__content .accountsActs__list .acts__item .payer::before {
+.accountsActs__wrapper .accounts__content .acts__list .acts__item .payer::before,
+.accountsActs__wrapper .accounts__content .accountsActs__list .acts__item .payer::before {
   left: 20px;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -2231,6 +2231,7 @@ main {
   background: inherit;
 }
 
+.newOrder form fieldset label,
 .settings__wrapper form fieldset label,
 .request form fieldset label {
   position: relative;
@@ -2245,6 +2246,7 @@ main {
   margin-right: 25px;
 }
 
+.newOrder form fieldset label .input-description::after,
 .settings__wrapper form fieldset label .input-description::after,
 .request form fieldset label .input-description::after {
   content: '*';
@@ -2255,11 +2257,14 @@ main {
   line-height: 20px;
 }
 
+.newOrder form fieldset label .input-description.notCheck::after,
 .settings__wrapper form fieldset label .input-description.notCheck::after,
 .request form fieldset label .input-description.notCheck::after {
   display: none;
 }
 
+.newOrder form fieldset label textarea,
+.newOrder form fieldset label input,
 .settings__wrapper form fieldset label textarea,
 .settings__wrapper form fieldset label input,
 .request form fieldset label textarea,
@@ -2282,6 +2287,10 @@ main {
   min-width: 280px;
 }
 
+.newOrder form fieldset label textarea:hover,
+.newOrder form fieldset label textarea:focus,
+.newOrder form fieldset label input:hover,
+.newOrder form fieldset label input:focus,
 .settings__wrapper form fieldset label textarea:hover,
 .settings__wrapper form fieldset label textarea:focus,
 .settings__wrapper form fieldset label input:hover,
@@ -2295,6 +2304,7 @@ main {
   transition: all 0.3s;
 }
 
+.newOrder form fieldset label .input-placeholder,
 .settings__wrapper form fieldset label .input-placeholder,
 .request form fieldset label .input-placeholder {
   pointer-events: none;
@@ -2323,6 +2333,7 @@ main {
   white-space: nowrap;
 }
 
+.newOrder form fieldset label .input-placeholder div,
 .settings__wrapper form fieldset label .input-placeholder div,
 .request form fieldset label .input-placeholder div {
   display: -webkit-box;
@@ -2338,8 +2349,14 @@ main {
   margin: 0;
 }
 
-.settings__wrapper form fieldset label textarea:focus ~ .input-placeholder, .settings__wrapper form fieldset label textarea:not(:placeholder-shown) ~ .input-placeholder, .settings__wrapper form fieldset label textarea:-webkit-autofill ~ .input-placeholder,
-.settings__wrapper form fieldset label input:focus ~ .input-placeholder, .settings__wrapper form fieldset label input:not(:placeholder-shown) ~ .input-placeholder, .settings__wrapper form fieldset label input:-webkit-autofill ~ .input-placeholder,
+.newOrder form fieldset label textarea:focus ~ .input-placeholder, .newOrder form fieldset label textarea:not(:placeholder-shown) ~ .input-placeholder, .newOrder form fieldset label textarea:-webkit-autofill ~ .input-placeholder,
+.newOrder form fieldset label input:focus ~ .input-placeholder, .newOrder form fieldset label input:not(:placeholder-shown) ~ .input-placeholder, .newOrder form fieldset label input:-webkit-autofill ~ .input-placeholder,
+.settings__wrapper form fieldset label textarea:focus ~ .input-placeholder,
+.settings__wrapper form fieldset label textarea:not(:placeholder-shown) ~ .input-placeholder,
+.settings__wrapper form fieldset label textarea:-webkit-autofill ~ .input-placeholder,
+.settings__wrapper form fieldset label input:focus ~ .input-placeholder,
+.settings__wrapper form fieldset label input:not(:placeholder-shown) ~ .input-placeholder,
+.settings__wrapper form fieldset label input:-webkit-autofill ~ .input-placeholder,
 .request form fieldset label textarea:focus ~ .input-placeholder,
 .request form fieldset label textarea:not(:placeholder-shown) ~ .input-placeholder,
 .request form fieldset label textarea:-webkit-autofill ~ .input-placeholder,
@@ -2352,12 +2369,14 @@ main {
   transition: all 0.3s;
 }
 
+.newOrder form fieldset label textarea,
 .settings__wrapper form fieldset label textarea,
 .request form fieldset label textarea {
   min-height: 153px;
   resize: none;
 }
 
+.newOrder form fieldset .input-description,
 .settings__wrapper form fieldset .input-description,
 .request form fieldset .input-description {
   padding-left: 16px;
@@ -2369,6 +2388,7 @@ main {
   color: #425466;
 }
 
+.newOrder form fieldset .submit__wrap .btn-submit,
 .settings__wrapper form fieldset .submit__wrap .btn-submit,
 .request form fieldset .submit__wrap .btn-submit {
   margin-top: 30px;
@@ -2397,6 +2417,7 @@ main {
   margin-bottom: 24px;
 }
 
+.newOrder form fieldset .submit__wrap .btn-submit:hover,
 .settings__wrapper form fieldset .submit__wrap .btn-submit:hover,
 .request form fieldset .submit__wrap .btn-submit:hover {
   color: #FFFFFF;
@@ -2506,6 +2527,711 @@ main {
           justify-content: flex-start;
 }
 
+.newOrder {
+  background: #FFFFFF;
+  border-radius: 15px;
+  padding: 30px 45px;
+  margin-bottom: 56px;
+}
+
+.newOrder h2 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  color: #4A5568;
+  margin-bottom: 40px;
+}
+
+.newOrder .newOrder__form fieldset {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.newOrder .newOrder__form fieldset label .input-placeholder div img {
+  width: 16px;
+  height: 16px;
+}
+
+.newOrder .newOrder__form fieldset label input,
+.newOrder .newOrder__form fieldset label select {
+  width: 300px;
+  min-width: 280px;
+}
+
+.newOrder .newOrder__form fieldset label .select2-selection {
+  padding: 12px 16px;
+  background: #FFFFFF;
+  border: 1px solid #CBD5E0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 8px;
+  color: #4A5568;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  outline: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  width: 300px;
+  min-width: 280px;
+  height: 50px;
+}
+
+.newOrder .newOrder__form fieldset label .select2-selection__arrow {
+  top: 12px;
+}
+
+.newOrder .newOrder__form fieldset .submit__wrap .btn-submit {
+  width: 300px;
+  min-width: 280px;
+}
+
+.orders__wrapper {
+  width: 100%;
+}
+
+.orders__wrapper .orders__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+.orders__wrapper .orders__content .filters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 42px;
+  width: 100%;
+  padding-bottom: 5px;
+}
+
+.orders__wrapper .orders__content .filters div {
+  pointer-events: none;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: #4A5568;
+}
+
+.orders__wrapper .orders__content .filters div span {
+  padding: 2.63px 11.53px;
+  font-size: 13.1429px;
+  line-height: 136.52%;
+  color: #6B89B5;
+  background: rgba(221, 230, 238, 0.4);
+  border-radius: 65.0571px;
+}
+
+.orders__wrapper .orders__content .orders__list {
+  width: 100%;
+}
+
+.orders__wrapper .orders__content .orders__list .orders__item {
+  margin: 21px 0;
+  background: #FFFFFF;
+  border-radius: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 25px 32px;
+  min-height: 108px;
+  border: 2px solid #FFFFFF;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  width: 100%;
+  max-width: 1090px;
+  overflow-x: hidden;
+}
+
+.orders__wrapper .orders__content .orders__list .orders__item span {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  max-width: 30px;
+  background: transparent;
+  padding: 0;
+}
+
+.orders__wrapper .orders__content .orders__list .orders__item span svg {
+  fill: #B5B5BE;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.orders__wrapper .orders__content .orders__list .orders__item div {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  position: relative;
+  padding: 5px 20px;
+  border-right: 1px dashed #afc5e0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #91929E;
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  min-height: 54px;
+}
+
+.orders__wrapper .orders__content .orders__list .orders__item div span {
+  padding-top: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: #425466;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  max-width: 200px;
+}
+
+.orders__wrapper .orders__content .orders__list .orders__item .number span::before {
+  content: '#';
+}
+
+.orders__wrapper .orders__content .orders__list .orders__item .service {
+  padding-left: 65px;
+}
+
+.orders__wrapper .orders__content .orders__list .orders__item .service::before {
+  content: url(../img/cabinet/wrench.svg);
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 10px;
+}
+
+.orders__wrapper .orders__content .orders__list .orders__item .date {
+  max-width: 250px;
+  padding-left: 65px;
+}
+
+.orders__wrapper .orders__content .orders__list .orders__item .date::before {
+  content: url(../img/cabinet/date.svg);
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 10px;
+}
+
+.orders__wrapper .orders__content .orders__list .orders__item .status {
+  justify-self: flex-end;
+  position: relative;
+  padding: 0;
+  width: 150px;
+  height: 44px;
+  margin: 5px;
+  margin-left: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 8px;
+  max-width: 150px;
+}
+
+.title__wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.title__wrap .btn-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.title__wrap .btn-group button {
+  padding: 15px 25px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  color: #4A5568;
+  border-radius: 8px;
+  background: transparent;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.title__wrap .btn-group .pinned {
+  border: 1px solid #DDE6EE;
+  margin-right: 10px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.title__wrap .btn-group .pinned svg {
+  stroke: #6B89B5;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.title__wrap .btn-group .pinned:hover {
+  color: #FFFFFF;
+  background: #2F5E97;
+  border: 1px solid #2F5E97;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.title__wrap .btn-group .pinned:hover svg {
+  stroke: #FFFFFF;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.title__wrap .btn-group .add {
+  border: 1px solid rgba(210, 74, 67, 0.3);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.title__wrap .btn-group .add svg {
+  stroke: #CF6854;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.title__wrap .btn-group .add:hover {
+  color: #FFFFFF;
+  background: #CF6854;
+  border: 1px solid #CF6854;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.title__wrap .btn-group .add:hover svg {
+  stroke: #FFFFFF;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.contracts__clear {
+  margin-top: 120px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contracts__wrapper {
+  width: 100%;
+}
+
+.contracts__wrapper .contracts__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+.contracts__wrapper .contracts__content .filters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 42px;
+  width: 100%;
+  padding-bottom: 5px;
+}
+
+.contracts__wrapper .contracts__content .filters div {
+  pointer-events: none;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: #4A5568;
+}
+
+.contracts__wrapper .contracts__content .filters div span {
+  padding: 2.63px 11.53px;
+  font-size: 13.1429px;
+  line-height: 136.52%;
+  color: #6B89B5;
+  background: rgba(221, 230, 238, 0.4);
+  border-radius: 65.0571px;
+}
+
+.contracts__wrapper .contracts__content .filters ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contracts__wrapper .contracts__content .filters ul li {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: #4A5568;
+  padding: 3px 8px;
+}
+
+.contracts__wrapper .contracts__content .filters ul li button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #2F5E97;
+  padding: 3.5px 0;
+  background: inherit;
+  outline: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.contracts__wrapper .contracts__content .filters ul li button svg {
+  padding-left: 5px;
+  stroke: #2F5E97;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.contracts__wrapper .contracts__content .filters ul li button:hover {
+  color: #BF604D;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.contracts__wrapper .contracts__content .filters ul li button:hover svg {
+  stroke: #BF604D;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.contracts__wrapper .contracts__content .filters ul li:first-child {
+  padding-left: 0;
+}
+
+.contracts__wrapper .contracts__content .filters ul li:last-child {
+  padding-right: 0;
+}
+
+.contracts__wrapper .contracts__content .contracts__list {
+  width: 100%;
+}
+
+.contracts__wrapper .contracts__content .contracts__list .contract__item {
+  margin: 21px 0;
+  background: #FFFFFF;
+  border-radius: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 25px 32px;
+  min-height: 108px;
+  border: 2px solid #FFFFFF;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  width: 100%;
+  max-width: 1090px;
+}
+
+.contracts__wrapper .contracts__content .contracts__list .contract__item span {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  max-width: 30px;
+  background: transparent;
+  padding: 0;
+}
+
+.contracts__wrapper .contracts__content .contracts__list .contract__item span svg {
+  fill: #B5B5BE;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.contracts__wrapper .contracts__content .contracts__list .contract__item div {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  position: relative;
+  padding: 5px 20px;
+  border-right: 1px dashed #afc5e0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #91929E;
+  white-space: nowrap;
+  min-height: 54px;
+}
+
+.contracts__wrapper .contracts__content .contracts__list .contract__item div span {
+  padding-top: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: #425466;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  max-width: 200px;
+}
+
+.contracts__wrapper .contracts__content .contracts__list .contract__item .number span::before {
+  content: '#';
+}
+
+.contracts__wrapper .contracts__content .contracts__list .contract__item .docName {
+  padding-left: 55px;
+}
+
+.contracts__wrapper .contracts__content .contracts__list .contract__item .docName span {
+  padding-top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contracts__wrapper .contracts__content .contracts__list .contract__item .docName::before {
+  content: url(../img/cabinet/PDF.svg);
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 12px;
+}
+
+.contracts__wrapper .contracts__content .contracts__list .contract__item .date {
+  min-width: 180px;
+  padding-left: 55px;
+}
+
+.contracts__wrapper .contracts__content .contracts__list .contract__item .date::before {
+  content: url(../img/cabinet/date.svg);
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 10px;
+}
+
+.contracts__wrapper .contracts__content .contracts__list .contract__item .download button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  background: transparent;
+  color: #4A5568;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border: 1px solid #CF6854;
+  border-radius: 8px;
+  padding: 16px 25px;
+}
+
+.contracts__wrapper .contracts__content .contracts__list .contract__item .download button svg {
+  margin-right: 15px;
+  fill: #CF6854;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.contracts__wrapper .contracts__content .contracts__list .contract__item .download {
+  border-right: none;
+  padding-right: 0;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+}
+
+.contracts__wrapper .contracts__content .contracts__list .contract__item .download button:hover {
+  background: #CF6854;
+  color: #FFFFFF;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.contracts__wrapper .contracts__content .contracts__list .contract__item .download button:hover svg {
+  fill: #FFFFFF;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.contracts__wrapper .contracts__content .contracts__list .more {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  color: #2F5E97;
+  text-align: center;
+  width: 100%;
+  padding: 14px;
+  background: #EDF1F6;
+  border-radius: 8px;
+  margin-bottom: 40px;
+}
+
 @media (max-width: 1439px) {
   .content__wrapper .content {
     -webkit-box-flex: 1;
@@ -2543,6 +3269,142 @@ main {
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
   }
+  .accountsActs__wrapper .acts__content .acts__list .acts__item,
+  .accountsActs__wrapper .acts__content .acts__list .accounts__item,
+  .accountsActs__wrapper .acts__content .accountsActs__list .acts__item,
+  .accountsActs__wrapper .acts__content .accountsActs__list .accounts__item,
+  .accountsActs__wrapper .accounts__content .acts__list .acts__item,
+  .accountsActs__wrapper .accounts__content .acts__list .accounts__item,
+  .accountsActs__wrapper .accounts__content .accountsActs__list .acts__item,
+  .accountsActs__wrapper .accounts__content .accountsActs__list .accounts__item {
+    padding: 15px 22px;
+  }
+  .accountsActs__wrapper .acts__content .acts__list .acts__item .date,
+  .accountsActs__wrapper .acts__content .acts__list .accounts__item .date,
+  .accountsActs__wrapper .acts__content .accountsActs__list .acts__item .date,
+  .accountsActs__wrapper .acts__content .accountsActs__list .accounts__item .date,
+  .accountsActs__wrapper .accounts__content .acts__list .acts__item .date,
+  .accountsActs__wrapper .accounts__content .acts__list .accounts__item .date,
+  .accountsActs__wrapper .accounts__content .accountsActs__list .acts__item .date,
+  .accountsActs__wrapper .accounts__content .accountsActs__list .accounts__item .date {
+    padding-left: 10px;
+  }
+  .accountsActs__wrapper .acts__content .acts__list .acts__item .date::before,
+  .accountsActs__wrapper .acts__content .acts__list .accounts__item .date::before,
+  .accountsActs__wrapper .acts__content .accountsActs__list .acts__item .date::before,
+  .accountsActs__wrapper .acts__content .accountsActs__list .accounts__item .date::before,
+  .accountsActs__wrapper .accounts__content .acts__list .acts__item .date::before,
+  .accountsActs__wrapper .accounts__content .acts__list .accounts__item .date::before,
+  .accountsActs__wrapper .accounts__content .accountsActs__list .acts__item .date::before,
+  .accountsActs__wrapper .accounts__content .accountsActs__list .accounts__item .date::before {
+    display: none;
+  }
+  .accountsActs__wrapper .acts__content .acts__list .acts__item .date,
+  .accountsActs__wrapper .acts__content .acts__list .accounts__item .date,
+  .accountsActs__wrapper .acts__content .accountsActs__list .acts__item .date,
+  .accountsActs__wrapper .acts__content .accountsActs__list .accounts__item .date,
+  .accountsActs__wrapper .accounts__content .acts__list .acts__item .date,
+  .accountsActs__wrapper .accounts__content .acts__list .accounts__item .date,
+  .accountsActs__wrapper .accounts__content .accountsActs__list .acts__item .date,
+  .accountsActs__wrapper .accounts__content .accountsActs__list .accounts__item .date {
+    max-width: 220px;
+  }
+  .accountsActs__wrapper .acts__content .acts__list .acts__item .payer,
+  .accountsActs__wrapper .acts__content .acts__list .accounts__item .payer,
+  .accountsActs__wrapper .acts__content .accountsActs__list .acts__item .payer,
+  .accountsActs__wrapper .acts__content .accountsActs__list .accounts__item .payer,
+  .accountsActs__wrapper .accounts__content .acts__list .acts__item .payer,
+  .accountsActs__wrapper .accounts__content .acts__list .accounts__item .payer,
+  .accountsActs__wrapper .accounts__content .accountsActs__list .acts__item .payer,
+  .accountsActs__wrapper .accounts__content .accountsActs__list .accounts__item .payer {
+    display: none;
+  }
+  .accountsActs__wrapper .acts__content .acts__list .acts__item .cost,
+  .accountsActs__wrapper .acts__content .acts__list .accounts__item .cost,
+  .accountsActs__wrapper .acts__content .accountsActs__list .acts__item .cost,
+  .accountsActs__wrapper .acts__content .accountsActs__list .accounts__item .cost,
+  .accountsActs__wrapper .accounts__content .acts__list .acts__item .cost,
+  .accountsActs__wrapper .accounts__content .acts__list .accounts__item .cost,
+  .accountsActs__wrapper .accounts__content .accountsActs__list .acts__item .cost,
+  .accountsActs__wrapper .accounts__content .accountsActs__list .accounts__item .cost {
+    max-width: 130px;
+  }
+}
+
+@media (max-width: 1279px) {
+  .accountsActs__wrapper .acts__content .acts__list .accountsActs__item div,
+  .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item div,
+  .accountsActs__wrapper .accounts__content .acts__list .accountsActs__item div,
+  .accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item div {
+    padding: 5px 10px;
+  }
+  .accountsActs__wrapper .acts__content .acts__list .accountsActs__item .number,
+  .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item .number,
+  .accountsActs__wrapper .accounts__content .acts__list .accountsActs__item .number,
+  .accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item .number {
+    max-width: 130px;
+  }
+  .accountsActs__wrapper .acts__content .acts__list .accountsActs__item .status,
+  .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item .status,
+  .accountsActs__wrapper .accounts__content .acts__list .accountsActs__item .status,
+  .accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item .status {
+    margin-left: 10px;
+  }
+  .accountsActs__wrapper .acts__content .acts__list .acts__item .payer,
+  .accountsActs__wrapper .acts__content .accountsActs__list .acts__item .payer,
+  .accountsActs__wrapper .accounts__content .acts__list .acts__item .payer,
+  .accountsActs__wrapper .accounts__content .accountsActs__list .acts__item .payer {
+    padding-left: 10px;
+  }
+  .accountsActs__wrapper .acts__content .acts__list .acts__item .payer::before,
+  .accountsActs__wrapper .acts__content .accountsActs__list .acts__item .payer::before,
+  .accountsActs__wrapper .accounts__content .acts__list .acts__item .payer::before,
+  .accountsActs__wrapper .accounts__content .accountsActs__list .acts__item .payer::before {
+    display: none;
+  }
+  .accountsActs__wrapper .acts__content .acts__list .acts__item .date,
+  .accountsActs__wrapper .acts__content .accountsActs__list .acts__item .date,
+  .accountsActs__wrapper .accounts__content .acts__list .acts__item .date,
+  .accountsActs__wrapper .accounts__content .accountsActs__list .acts__item .date {
+    padding-left: 10px;
+  }
+  .accountsActs__wrapper .acts__content .acts__list .acts__item .date::before,
+  .accountsActs__wrapper .acts__content .accountsActs__list .acts__item .date::before,
+  .accountsActs__wrapper .accounts__content .acts__list .acts__item .date::before,
+  .accountsActs__wrapper .accounts__content .accountsActs__list .acts__item .date::before {
+    display: none;
+  }
+  .contracts__wrapper .contracts__content .contracts__list .contract__item div {
+    padding: 5px 10px;
+  }
+  .contracts__wrapper .contracts__content .contracts__list .contract__item .date {
+    min-width: 140px;
+    padding-left: 10px;
+  }
+  .contracts__wrapper .contracts__content .contracts__list .contract__item .date::before {
+    display: none;
+  }
+}
+
+@media (max-width: 1151px) {
+  .accountsActs__wrapper .acts__content .acts__list .accountsActs__item .cost,
+  .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item .cost,
+  .accountsActs__wrapper .accounts__content .acts__list .accountsActs__item .cost,
+  .accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item .cost {
+    display: none;
+  }
+  .accountsActs__wrapper .acts__content .acts__list .accountsActs__item .status,
+  .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item .status,
+  .accountsActs__wrapper .accounts__content .acts__list .accountsActs__item .status,
+  .accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item .status {
+    max-width: unset;
+  }
+  .accountsActs__wrapper .acts__content .acts__list .acts__item .payer,
+  .accountsActs__wrapper .acts__content .accountsActs__list .acts__item .payer,
+  .accountsActs__wrapper .accounts__content .acts__list .acts__item .payer,
+  .accountsActs__wrapper .accounts__content .accountsActs__list .acts__item .payer {
+    display: none;
+  }
 }
 
 @media (max-width: 1023px) {
@@ -2578,6 +3440,68 @@ main {
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
+  }
+  .accountsActs__wrapper {
+    padding-right: 25px;
+  }
+  .accountsActs__wrapper .acts__content .acts__list .accountsActs__item .date,
+  .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item .date,
+  .accountsActs__wrapper .accounts__content .acts__list .accountsActs__item .date,
+  .accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item .date {
+    display: none;
+  }
+  .title__wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .title__wrap .page__title {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+  }
+  .title__wrap .btn-group {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+    margin-bottom: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    margin-right: 25px;
+  }
+  .contracts__wrapper {
+    padding-right: 25px;
+  }
+  .contracts__wrapper .contracts__content .contracts__list .contract__item {
+    padding: 10px 20px;
+  }
+  .contracts__wrapper .contracts__content .contracts__list .contract__item .docName {
+    display: none;
+  }
+  .contracts__wrapper .contracts__content .contracts__list .contract__item .download button {
+    padding: 15px 10px;
+  }
+  .contracts__wrapper .contracts__content .contracts__list .contract__item .download button svg {
+    margin-right: 5px;
   }
 }
 
@@ -2640,6 +3564,38 @@ main {
         -ms-grid-row-align: center;
         align-self: center;
   }
+  .accountsActs__wrapper {
+    padding: 0 25px;
+  }
+  .title__wrap .btn-group button {
+    padding: 12px 18px;
+  }
+  .contracts__wrapper {
+    padding-left: 25px;
+  }
+  .contracts__wrapper .contracts__content .contracts__list .contract__item .download button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 579px) {
+  .contracts__wrapper .contracts__content .filters {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .contracts__wrapper .contracts__content .filters div {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+  }
+  .contracts__wrapper .contracts__content .filters ul {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+  }
+  .contracts__wrapper .contracts__content .contracts__list .contract__item .date {
+    display: none;
+  }
 }
 
 @media (max-width: 479px) {
@@ -2692,6 +3648,41 @@ main {
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
+  }
+  .accountsActs__wrapper .acts__content .filters .filters__list li:last-child,
+  .accountsActs__wrapper .accounts__content .filters .filters__list li:last-child {
+    display: none;
+  }
+  .accountsActs__wrapper .acts__content .filters .filters__list li,
+  .accountsActs__wrapper .accounts__content .filters .filters__list li {
+    padding: 3px;
+  }
+  .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item div,
+  .accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item div {
+    font-size: 12px;
+    line-height: 15px;
+    min-height: 40px;
+  }
+  .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item div span,
+  .accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item div span {
+    padding-top: 5px;
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item .number,
+  .accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item .number {
+    max-width: 110px;
+  }
+  .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item .status,
+  .accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item .status {
+    width: 120px;
+  }
+  .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.paid .status::after,
+  .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.notPaid .status::after,
+  .accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item.paid .status::after,
+  .accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item.notPaid .status::after {
+    font-size: 12px;
+    line-height: 15px;
   }
 }
 
