@@ -730,6 +730,7 @@ main {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 248px;
           flex: 1 1 248px;
+  z-index: 2;
 }
 
 .sidebar__menu .title {
@@ -1400,13 +1401,46 @@ main {
   transition: all 0.3s;
 }
 
-.selector {
-  padding-top: 2px;
+.selector ul::before {
+  content: '';
+  position: absolute;
   border-bottom: 1px solid #DDE6EE;
-  padding-bottom: 17px;
+  bottom: 17px;
+  width: 100%;
+  height: 1px;
+  z-index: -1;
+  left: 0;
 }
 
-.selector span {
+.selector {
+  padding-top: 2px;
+  padding-bottom: 17px;
+  width: 100%;
+  position: relative;
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.selector ul {
+  width: 100%;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
+  white-space: nowrap;
+}
+
+.selector li {
+  display: inline-block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   padding-bottom: 20px;
   font-style: normal;
   font-weight: 500;
@@ -1418,16 +1452,21 @@ main {
   transition: all 0.3s;
   border-bottom: 1px solid #DDE6EE;
   cursor: pointer;
+  white-space: nowrap;
 }
 
-.selector span.act {
+.selector li.act {
   color: #D24A43;
   border-bottom: 1px solid #CF6854;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 
-.selector span:hover {
+.selector li:last-child {
+  margin-right: 0;
+}
+
+.selector li:hover {
   color: #D24A43;
   border-bottom: 1px solid #CF6854;
   -webkit-transition: all 0.3s;
@@ -2675,6 +2714,7 @@ main {
 
 .newOrder .newOrder__form fieldset .submit__wrap .btn-submit {
   width: 300px;
+  margin-right: 24px;
   min-width: 280px;
 }
 
@@ -2762,7 +2802,6 @@ main {
   transition: all 0.3s;
   width: 100%;
   max-width: 1090px;
-  overflow-x: hidden;
 }
 
 .orders__wrapper .orders__content .orders__list .orders__item span {
@@ -2859,7 +2898,7 @@ main {
   justify-self: flex-end;
   position: relative;
   padding: 0;
-  width: 150px;
+  width: 130px;
   height: 44px;
   margin: 5px;
   margin-left: 20px;
@@ -2880,6 +2919,80 @@ main {
           box-sizing: border-box;
   border-radius: 8px;
   max-width: 150px;
+  border-right: none;
+}
+
+.orders__wrapper .orders__content .orders__list .orders__item .status::after {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  padding-left: 10px;
+}
+
+.orders__wrapper .orders__content .orders__list .orders__item.processed .status {
+  background: rgba(230, 173, 116, 0.08);
+}
+
+.orders__wrapper .orders__content .orders__list .orders__item.processed .status::before {
+  content: url(../img/cabinet/status-icon/rotate.svg);
+}
+
+.orders__wrapper .orders__content .orders__list .orders__item.processed .status::after {
+  content: 'В обробці';
+  color: #E6AD74;
+}
+
+.orders__wrapper .orders__content .orders__list .orders__item.canceled .status {
+  background: rgba(210, 74, 67, 0.05);
+}
+
+.orders__wrapper .orders__content .orders__list .orders__item.canceled .status::before {
+  content: url(../img/cabinet/status-icon/disabled.svg);
+}
+
+.orders__wrapper .orders__content .orders__list .orders__item.canceled .status::after {
+  content: 'Відмінено';
+  color: #D24A43;
+}
+
+.orders__wrapper .orders__content .orders__list .orders__item.performed .status {
+  background: rgba(230, 173, 116, 0.08);
+}
+
+.orders__wrapper .orders__content .orders__list .orders__item.performed .status::before {
+  content: url(../img/cabinet/status-icon/watch.svg);
+}
+
+.orders__wrapper .orders__content .orders__list .orders__item.performed .status::after {
+  content: 'Виконуються';
+  color: #E6AD74;
+}
+
+.orders__wrapper .orders__content .orders__list .orders__item.ready .status {
+  background: rgba(72, 152, 113, 0.05);
+}
+
+.orders__wrapper .orders__content .orders__list .orders__item.ready .status::before {
+  content: url(../img/cabinet/status-icon/done.svg);
+}
+
+.orders__wrapper .orders__content .orders__list .orders__item.ready .status::after {
+  content: 'Готові';
+  color: #489871;
+}
+
+.orders__wrapper .orders__content .orders__list .orders__item.planned .status {
+  background: rgba(230, 173, 116, 0.08);
+}
+
+.orders__wrapper .orders__content .orders__list .orders__item.planned .status::before {
+  content: url(../img/cabinet/status-icon/documents.svg);
+}
+
+.orders__wrapper .orders__content .orders__list .orders__item.planned .status::after {
+  content: 'Заплановано';
+  color: #E6AD74;
 }
 
 .title__wrap {
@@ -3260,17 +3373,21 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 15px;
   background: transparent;
-  color: #4A5568;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   border: 1px solid #CF6854;
   border-radius: 8px;
   padding: 16px 25px;
+}
+
+.contracts__wrapper .contracts__content .contracts__list .contract__item .download button span {
+  padding: 0;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  color: #4A5568;
 }
 
 .contracts__wrapper .contracts__content .contracts__list .contract__item .download button svg {
@@ -3290,6 +3407,11 @@ main {
 
 .contracts__wrapper .contracts__content .contracts__list .contract__item .download button:hover {
   background: #CF6854;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.contracts__wrapper .contracts__content .contracts__list .contract__item .download button:hover span {
   color: #FFFFFF;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -3488,6 +3610,9 @@ main {
   .accountsActs__wrapper .accounts__content .accountsActs__list .acts__item .payer {
     display: none;
   }
+  .orders__wrapper .orders__content .orders__list .orders__item .date {
+    display: none;
+  }
 }
 
 @media (max-width: 1023px) {
@@ -3577,18 +3702,57 @@ main {
   .contracts__wrapper .contracts__content .contracts__list .contract__item {
     padding: 10px 20px;
   }
-  .contracts__wrapper .contracts__content .contracts__list .contract__item .docName {
+  .contracts__wrapper .contracts__content .contracts__list .contract__item .date {
     display: none;
   }
+  .contracts__wrapper .contracts__content .contracts__list .contract__item .download {
+    max-width: -webkit-fit-content;
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+  }
   .contracts__wrapper .contracts__content .contracts__list .contract__item .download button {
-    padding: 15px 10px;
+    padding: 9px;
+  }
+  .contracts__wrapper .contracts__content .contracts__list .contract__item .download button span {
+    display: none;
   }
   .contracts__wrapper .contracts__content .contracts__list .contract__item .download button svg {
-    margin-right: 5px;
+    margin-right: 0px;
+  }
+  .newOrder .newOrder__form fieldset {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+  .orders__wrapper {
+    padding-right: 25px;
+  }
+  .orders__wrapper .orders__content .orders__list .orders__item .service {
+    padding-left: 15px;
+  }
+  .orders__wrapper .orders__content .orders__list .orders__item .service::before {
+    display: none;
+  }
+  .orders__wrapper .orders__content .orders__list .orders__item .status {
+    max-width: 34px;
+    max-height: 34px;
+    min-width: 34px;
+    min-height: 34px;
+    height: 34px;
+    width: 34px;
+  }
+  .orders__wrapper .orders__content .orders__list .orders__item .status::after {
+    display: none;
+  }
+  .selector ul li {
+    margin-right: 12px;
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .header .menu-icon {
     outline: none;
     background: inherit;
@@ -3656,8 +3820,83 @@ main {
   .contracts__wrapper {
     padding-left: 25px;
   }
-  .contracts__wrapper .contracts__content .contracts__list .contract__item .download button {
+  .contracts__wrapper .contracts__content .contracts__list .contract__item span {
+    max-width: -webkit-fit-content;
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+  }
+  .contracts__wrapper .contracts__content .contracts__list .contract__item .number {
+    padding-right: 0;
+  }
+  .contracts__wrapper .contracts__content .contracts__list .contract__item .docName {
+    padding-left: 10px;
+    overflow-x: hidden;
+  }
+  .contracts__wrapper .contracts__content .contracts__list .contract__item .docName span {
+    text-overflow: ellipsis;
+  }
+  .contracts__wrapper .contracts__content .contracts__list .contract__item .docName::before {
+    display: none;
+  }
+  .newOrder {
+    margin: 10px;
+    padding: 15px;
+  }
+  .newOrder .newOrder__form fieldset {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .newOrder .newOrder__form fieldset label {
+    margin-right: 0;
+  }
+  .newOrder .newOrder__form fieldset .submit__wrap .btn-submit {
     width: 100%;
+  }
+  .orders__wrapper {
+    padding-left: 25px;
+  }
+  .orders__wrapper .orders__content .orders__list .orders__item {
+    min-width: 325px;
+    padding: 10px 15px;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .orders__wrapper .orders__content .orders__list .orders__item div {
+    padding: 5px 5px;
+    font-size: 10px;
+    line-height: 12px;
+  }
+  .orders__wrapper .orders__content .orders__list .orders__item div span {
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .orders__wrapper .orders__content .orders__list .orders__item span {
+    padding: 0;
+  }
+  .orders__wrapper .orders__content .orders__list .orders__item .number {
+    -webkit-box-flex: 0;
+        -ms-flex: none;
+            flex: none;
+    max-width: 70px;
+    width: 70px;
+  }
+  .orders__wrapper .orders__content .orders__list .orders__item .service {
+    width: 100%;
+    padding-right: 10px;
+    -webkit-box-flex: unset;
+        -ms-flex: unset;
+            flex: unset;
+  }
+  .orders__wrapper .orders__content .orders__list .orders__item .status {
+    margin-right: 0;
+    margin-left: 10px;
+  }
+  .selector {
+    width: calc(100vw - 50px);
   }
 }
 

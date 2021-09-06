@@ -547,6 +547,7 @@ main {
     min-height: 100vh;
     margin-right: 50px;
     flex: 1 1 248px;
+    z-index: 2;
     .title {
         font-style: normal;
         font-weight: 600;
@@ -992,11 +993,37 @@ main {
         transition: all 0.3s;
     }
 }
+.selector ul::before {
+    content: '';
+    position: absolute;
+    border-bottom: 1px solid #DDE6EE;
+    bottom: 17px;
+    width: 100%;
+    height: 1px;
+    z-index: -1;
+    left: 0;
+}
 .selector {
     padding-top: 2px;
-    border-bottom: 1px solid #DDE6EE;
     padding-bottom: 17px;
-    span {
+    width: 100%;
+    position: relative;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    ul {
+        // width: 539px;
+        width: 100%;
+        min-width: fit-content;
+        padding-left: 0;
+        margin: 0;
+        list-style: none;
+        white-space: nowrap;
+    }
+    li {
+        display: inline-block;
+        width: fit-content;
+        height: fit-content;
         padding-bottom: 20px;
         font-style: normal;
         font-weight: 500;
@@ -1007,13 +1034,17 @@ main {
         transition: all 0.3s;
         border-bottom: 1px solid #DDE6EE;
         cursor: pointer;
+        white-space: nowrap;
     }
-    span.act {
+    li.act {
         color: #D24A43;
         border-bottom: 1px solid #CF6854;
         transition: all 0.3s;
     }
-    span:hover {
+    li:last-child {
+        margin-right: 0;
+    }
+    li:hover {
         color: #D24A43;
         border-bottom: 1px solid #CF6854;
         transition: all 0.3s;
@@ -1733,6 +1764,7 @@ main {
             .submit__wrap {
                 .btn-submit {
                     width: 300px;
+                    margin-right: 24px;
                     min-width: 280px;
                 }
             }
@@ -1788,7 +1820,6 @@ main {
                 transition: all 0.3s;
                 width: 100%;
                 max-width: 1090px;
-                overflow-x: hidden;
                 span {
                     flex: 1;
                     max-width: 30px;
@@ -1860,7 +1891,7 @@ main {
                     justify-self: flex-end;
                     position: relative;
                     padding: 0;
-                    width: 150px;
+                    width: 130px;
                     height: 44px;
                     margin: 5px;
                     margin-left: 20px;
@@ -1871,46 +1902,78 @@ main {
                     box-sizing: border-box;
                     border-radius: 8px;
                     max-width: 150px;
+                    border-right: none;
+                }
+                .status::after {
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 14px;
+                    line-height: 17px;
+                    padding-left: 10px;
                 }
             }
             .orders__item.processed {
+                .status {
+                    background: rgba(230, 173, 116, 0.08);
+                }
                 .status::before {
-
+                    content: url(../img/cabinet/status-icon/rotate.svg);
                 }
                 .status::after {
-
+                    content: 'В обробці';
+                    color: #E6AD74;
                 }
             }
             .orders__item.canceled {
+                .status {
+                    background: rgba(210, 74, 67,0.05);
+                }
                 .status::before {
+                    content: url(../img/cabinet/status-icon/disabled.svg);
 
                 }
                 .status::after {
-                    
+                    content: 'Відмінено';
+                    color: #D24A43;;
                 }
             }
             .orders__item.performed {
+                .status {
+                    background: rgba(230, 173, 116, 0.08);
+                }
                 .status::before {
+                    content: url(../img/cabinet/status-icon/watch.svg);
 
                 }
                 .status::after {
-                    
+                    content: 'Виконуються';
+                    color: #E6AD74;
                 }
             }
             .orders__item.ready {
+                .status {
+                    background: rgba(72, 152, 113, 0.05);
+                }
                 .status::before {
+                    content: url(../img/cabinet/status-icon/done.svg);
 
                 }
                 .status::after {
-                    
+                    content: 'Готові';
+                    color: #489871;
                 }
             }
             .orders__item.planned {
+                .status {
+                    background: rgba(230, 173, 116, 0.08);
+                }
                 .status::before {
+                    content: url(../img/cabinet/status-icon/documents.svg);
 
                 }
                 .status::after {
-                    
+                    content: 'Заплановано';
+                    color: #E6AD74;
                 }
             }
         }
@@ -2155,16 +2218,19 @@ main {
                     flex-direction: row;
                     justify-content: center;
                     align-items: center;
-                    font-style: normal;
-                    font-weight: 600;
-                    font-size: 12px;
-                    line-height: 15px;
                     background: transparent;
-                    color: #4A5568;
                     transition: all 0.3s;
                     border: 1px solid #CF6854;
                     border-radius: 8px;
                     padding: 16px 25px;
+                    span {
+                        padding: 0;
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 12px;
+                        line-height: 15px;
+                        color: #4A5568;
+                    }
                     svg {
                         margin-right: 15px;
                         fill: #CF6854;
@@ -2177,8 +2243,11 @@ main {
                     min-width: fit-content;
                     button:hover {
                         background: #CF6854;
-                        color: #FFFFFF;
                         transition: all 0.3s;
+                        span {
+                            color: #FFFFFF;
+                            transition: all 0.3s;
+                        }
                         svg {
                             fill: #FFFFFF;
                             transition: all 0.3s;
@@ -2339,6 +2408,17 @@ main {
             }
         }
     }
+    .orders__wrapper {
+        .orders__content {
+            .orders__list {
+                .orders__item {
+                    .date {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
 }
 @media (max-width:1023px) {
     .header {
@@ -2415,21 +2495,68 @@ main {
             .contracts__list {
                 .contract__item {
                     padding: 10px 20px;
-                    .docName {
+                    .date {
                         display: none;
                     }
-                    .download button {
-                        padding: 15px 10px;
-                        svg {
-                            margin-right: 5px;
+                    .download {
+                        max-width: fit-content;
+                        button {
+                            padding: 9px;
+                            span {
+                                display: none;
+                            }
+                            svg {
+                                margin-right: 0px;
+                            }
                         }
                     }
                 }
             }
         }
     }
+    .newOrder {
+        .newOrder__form {
+            fieldset {
+                flex-direction: column;
+                flex-wrap: nowrap;
+            }
+        }
+    }
+    .orders__wrapper {
+        padding-right: 25px;
+        .orders__content {
+            .orders__list {
+                .orders__item {
+                    .service {
+                        padding-left: 15px;
+                    }
+                    .service::before {
+                        display: none;
+                    }
+                    .status {
+                        max-width: 34px;
+                        max-height: 34px;
+                        min-width: 34px;
+                        min-height: 34px;
+                        height: 34px;
+                        width: 34px;
+                    }
+                    .status::after {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    .selector {
+        ul {
+            li {
+                margin-right: 12px;
+            }
+        }
+    }
 }
-@media (max-width:767px) {
+@media (max-width:768px) {
     .header {
         .menu-icon {
             outline: none;
@@ -2495,12 +2622,84 @@ main {
         .contracts__content {
             .contracts__list {
                 .contract__item {
-                    .download button {
+                    span {
+                        max-width: fit-content;
+                    }
+                    .number {
+                        padding-right: 0;
+                    }
+                    .docName {
+                        padding-left: 10px;
+                        overflow-x: hidden;
+                        span {
+                            text-overflow: ellipsis;
+                        }
+                    }
+                    .docName::before {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    .newOrder {
+        margin: 10px;
+        padding: 15px;
+        .newOrder__form {
+            fieldset {
+                justify-content: center;
+                align-items: center;
+                label {
+                    margin-right: 0;
+                }
+                .submit__wrap {
+                    .btn-submit {
                         width: 100%;
                     }
                 }
             }
         }
+    }
+    .orders__wrapper {
+        padding-left: 25px;
+        .orders__content {
+            .orders__list {
+                .orders__item {
+                    min-width: 325px;
+                    padding: 10px 15px;
+                    justify-content: space-around;
+                    div {
+                        padding: 5px 5px;
+                        font-size: 10px;
+                        line-height: 12px;
+                        span {
+                            font-size: 14px;
+                            line-height: 17px;
+                        }
+                    }
+                    span {
+                        padding: 0;
+                    }
+                    .number {
+                        flex: none;
+                        max-width: 70px;
+                        width: 70px;
+                    }
+                    .service {
+                        width: 100%;
+                        padding-right: 10px;
+                        flex: unset;
+                    }
+                    .status {
+                        margin-right: 0;
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+    }
+    .selector {
+        width: calc(100vw - 50px);
     }
 }
 @media (max-width:579px) {
