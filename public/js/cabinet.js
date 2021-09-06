@@ -6,10 +6,6 @@ $(document).ready (function() {
     dragAndDrop();
     accountsActs();
     settingsPage();
-    $('.custom-select2').select2({
-        minimumResultsForSearch: 1000,
-        dropdownParent: $("#newOrder-form")
-    });
 });
 
 function calendar() {
@@ -68,6 +64,10 @@ function calendar() {
 function customSelect() {
     $('.custom-select').select2({
         minimumResultsForSearch: 1000 
+    });
+    $('.custom-select2').select2({
+        minimumResultsForSearch: 1000,
+        dropdownParent: $("#newOrder-form")
     });
 };
 
