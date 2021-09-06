@@ -1347,6 +1347,7 @@ main {
         display: none;
     }
 }
+.openContract__page,
 .openAccounts__page {
     .page__title {
         font-weight: 600;
@@ -1357,6 +1358,41 @@ main {
     .openAccounts {
         display: flex;
         flex-direction: column;
+        .contract__info {
+            display: flex;
+            flex-direction: row-reverse;
+            button {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                padding: 12px 40px;
+                border: 1px solid rgba(210, 74, 67, 0.3);
+                box-sizing: border-box;
+                border-radius: 8px;
+                background: transparent;
+                transition: all 0.3s;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 17px;
+                color: #4A5568;
+                svg {
+                    stroke: #CF6854;
+                    padding-right: 5px;
+                    transition: all 0.3s;
+                }
+            }
+            button:hover {
+                background: #CF6854;
+                color: #FFFFFF;
+                transition: all 0.3s;
+                svg {
+                    transition: all 0.3s;
+                    stroke: #FFFFFF;
+                }
+            }
+        }
         .accounts__info {
             display: flex;
             flex-direction: row;

@@ -2034,6 +2034,7 @@ main {
   display: none;
 }
 
+.openContract__page .page__title,
 .openAccounts__page .page__title {
   font-weight: 600;
   font-size: 27px;
@@ -2041,6 +2042,7 @@ main {
   color: #4A5568;
 }
 
+.openContract__page .openAccounts,
 .openAccounts__page .openAccounts {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2051,6 +2053,71 @@ main {
           flex-direction: column;
 }
 
+.openContract__page .openAccounts .contract__info,
+.openAccounts__page .openAccounts .contract__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.openContract__page .openAccounts .contract__info button,
+.openAccounts__page .openAccounts .contract__info button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 12px 40px;
+  border: 1px solid rgba(210, 74, 67, 0.3);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 8px;
+  background: transparent;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  color: #4A5568;
+}
+
+.openContract__page .openAccounts .contract__info button svg,
+.openAccounts__page .openAccounts .contract__info button svg {
+  stroke: #CF6854;
+  padding-right: 5px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.openContract__page .openAccounts .contract__info button:hover,
+.openAccounts__page .openAccounts .contract__info button:hover {
+  background: #CF6854;
+  color: #FFFFFF;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.openContract__page .openAccounts .contract__info button:hover svg,
+.openAccounts__page .openAccounts .contract__info button:hover svg {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  stroke: #FFFFFF;
+}
+
+.openContract__page .openAccounts .accounts__info,
 .openAccounts__page .openAccounts .accounts__info {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2066,6 +2133,7 @@ main {
           justify-content: space-between;
 }
 
+.openContract__page .openAccounts .accounts__info div,
 .openAccounts__page .openAccounts .accounts__info div {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2079,11 +2147,13 @@ main {
           align-items: center;
 }
 
+.openContract__page .openAccounts .accounts__info div img,
 .openAccounts__page .openAccounts .accounts__info div img {
   width: 35px;
   height: 35px;
 }
 
+.openContract__page .openAccounts .accounts__info div div,
 .openAccounts__page .openAccounts .accounts__info div div {
   padding-left: 14px;
   display: -webkit-box;
@@ -2106,6 +2176,7 @@ main {
   color: #91929E;
 }
 
+.openContract__page .openAccounts .accounts__info div div span,
 .openAccounts__page .openAccounts .accounts__info div div span {
   padding-top: 8px;
   font-weight: 600;
@@ -2114,6 +2185,7 @@ main {
   color: #425466;
 }
 
+.openContract__page .openAccounts .accounts__info button,
 .openAccounts__page .openAccounts .accounts__info button {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2143,6 +2215,7 @@ main {
   color: #4A5568;
 }
 
+.openContract__page .openAccounts .accounts__info button svg,
 .openAccounts__page .openAccounts .accounts__info button svg {
   stroke: #CF6854;
   padding-right: 5px;
@@ -2150,6 +2223,7 @@ main {
   transition: all 0.3s;
 }
 
+.openContract__page .openAccounts .accounts__info button:hover,
 .openAccounts__page .openAccounts .accounts__info button:hover {
   background: #CF6854;
   color: #FFFFFF;
@@ -2157,12 +2231,14 @@ main {
   transition: all 0.3s;
 }
 
+.openContract__page .openAccounts .accounts__info button:hover svg,
 .openAccounts__page .openAccounts .accounts__info button:hover svg {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   stroke: #FFFFFF;
 }
 
+.openContract__page .openAccounts .account__wrapper,
 .openAccounts__page .openAccounts .account__wrapper {
   margin-top: 44px;
   background: #FFFFFF;
@@ -2177,6 +2253,7 @@ main {
   width: 100%;
 }
 
+.openContract__page .openAccounts .account__wrapper div,
 .openAccounts__page .openAccounts .account__wrapper div {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2194,10 +2271,12 @@ main {
   margin-bottom: 20px;
 }
 
+.openContract__page .openAccounts .account__wrapper div .custom-select,
 .openAccounts__page .openAccounts .account__wrapper div .custom-select {
   min-width: 60px;
 }
 
+.openContract__page .openAccounts .account__wrapper div .select2-selection,
 .openAccounts__page .openAccounts .account__wrapper div .select2-selection {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2208,10 +2287,12 @@ main {
   min-height: 34px;
 }
 
+.openContract__page .openAccounts .account__wrapper div .select2-selection__arrow,
 .openAccounts__page .openAccounts .account__wrapper div .select2-selection__arrow {
   top: 4px;
 }
 
+.openContract__page .openAccounts .account__wrapper div div,
 .openAccounts__page .openAccounts .account__wrapper div div {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2227,6 +2308,7 @@ main {
           align-items: center;
 }
 
+.openContract__page .openAccounts .account__wrapper div div button,
 .openAccounts__page .openAccounts .account__wrapper div div button {
   padding: 6px;
   background: inherit;
