@@ -117,7 +117,7 @@ class ClientsController extends MyAdminController {
 			}
 		});
 		
-		$form->tools(function(Form\Tools $tools) use ($user_id){
+		$form->tools(function(Form\Tools $tools){
 			$tools->disableView();
 		});
 		
