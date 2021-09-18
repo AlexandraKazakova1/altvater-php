@@ -2,7 +2,7 @@
 
 namespace App\Admin\Controllers;
 
-use App\Models\Clients;
+use App\Models\User;
 
 use App\Admin\Controllers\MyAdminController;
 
@@ -31,13 +31,17 @@ class ClientsController extends MyAdminController {
 	* @return Grid
 	*/
 	protected function grid(){
-		$grid = new Grid(new Clients());
+		$grid = new Grid(new User());
 		
 		$grid->column('id'				, __('ID'));
 		
 		$grid->column('created_at'		, __('admin.clients.created_at'));
 		
 		$grid->column('name'			, __('admin.clients.name'));
+		
+		$grid->column('phone'			, __('admin.clients.phone'));
+		
+		$grid->column('email'			, __('admin.clients.email'));
 		
 		$grid->column('blocked'			, __('admin.clients.blocked'))->display(function($blocked){
 			$blocked = (int)$blocked;
@@ -59,10 +63,9 @@ class ClientsController extends MyAdminController {
 			$filter->like('name'			, __('admin.clients.name'));
 			$filter->like('phone'			, __('admin.clients.phone'));
 			$filter->like('email'			, __('admin.clients.email'));
-			$filter->like('address'			, __('admin.clients.address'));
 		});
 		
-		$grid->disableCreateButton();
+		//$grid->disableCreateButton();
 		
 		$grid->paginate(100);
 		
@@ -80,19 +83,48 @@ class ClientsController extends MyAdminController {
 	* @return Form
 	*/
 	protected function form(){
-		$form = new Form(new Clients());
+		$form = new Form(new User());
 		
 		$this->configure($form);
 		
 		$id = $this->_id;
 		
-		$form->text('name'			, __('admin.clients.name'))->rules('required|min:2|max:100');
+		$form->text('name'				, __('admin.clients.name'))->rules('required|min:2|max:100');
 		
-		$form->switch('blocked'		, __('admin.clients.blocked'));
+		$form->email('email'			, __('admin.clients.email'))->rules('required|email');
+		$form->switch('verify_email'	, __('admin.clients.verify_email'));
+		
+		$form->text('phone'				, __('admin.clients.phone'))->rules('required|min:12|max:12');
+		$form->switch('verify_phone'	, __('admin.clients.verify_phone'));
+		
+		$form->switch('blocked'			, __('admin.clients.blocked'));
+		
+		$form->radio('type'				, __('admin.clients.type.label'))
+					->options([
+						null			=> '-',
+						'individual'	=> __('admin.clients.type.individual'),
+						'legal-entit'	=> __('admin.clients.type.legal-entit')
+					]);
+		
+		$form->password('password'		, __('admin.clients.password'));
 		
 		// callback before save
 		$form->saving(function (Form $form){
 			$form->name			= trim($form->name);
+			
+			if($form->password && $form->model()->password != $form->password){
+				$form->password = bcrypt($form->password);
+			}
+		});
+		
+		$form->tools(function(Form\Tools $tools) use ($user_id){
+			$tools->disableView();
+		});
+		
+		$form->footer(function($footer){
+			$footer->disableReset();
+			$footer->disableViewCheck();
+			//$footer->disableCreatingCheck();
 		});
 		
 		return $form;

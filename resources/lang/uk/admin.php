@@ -126,12 +126,17 @@ return [
 		'birthday'				=> 'Дата народження',
 		'code'					=> 'Кодове слово',
 		'number'				=> '№ картки',
-		'service'				=> 'Якість обслуговування',
-		'rating_1'				=> '1',
-		'rating_2'				=> '2',
-		'rating_3'				=> '3',
-		'comment'				=> 'Порада',
-		'questionnaire'			=> 'Анкету заповнено'
+		
+		'verify_email'			=> 'Email підтверджено',
+		'verify_phone'			=> 'Телефон підтверджено',
+		
+		'type'					=> [
+			'label'					=> 'Тип',
+			'individual'			=> 'Фізична особа',
+			'legal-entit'			=> 'Юридична особа'
+		],
+		
+		'password'				=> 'Пароль',
 	],
 	
 	'violation'				=> [

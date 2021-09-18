@@ -26,7 +26,9 @@ class User extends Authenticatable	{
 		'updated_at',
 		'phone',
 		'blocked',
-		'type'
+		'type',
+		'verify_email',
+		'verify_phone'
 	];
 	
 	/**
