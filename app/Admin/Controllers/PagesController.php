@@ -124,8 +124,10 @@ class PagesController extends MyAdminController {
 			$form->tab(__('admin.pages.page_about')	, function($form) use ($id) {
 				$form->text('about_header'		, __('admin.pages.about_header'))->rules('max:250');
 				
-				$form->textarea('about_left'	, __('admin.pages.about_left'))->rules('max:1500');
-				$form->textarea('about_right'	, __('admin.pages.about_right'))->rules('max:1500');
+				$form->textarea('about_left'	, __('admin.pages.about_left'))->rules('max:5000');
+				$form->textarea('about_right'	, __('admin.pages.about_right'))->rules('max:5000');
+				
+				$form->summernote('text'		, __('admin.pages.text'));
 				
 				$form->switch('meta_public'		, __('admin.pages.meta_public'));
 				
