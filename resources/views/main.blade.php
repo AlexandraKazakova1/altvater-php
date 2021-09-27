@@ -46,6 +46,10 @@
 						</div>
 					@endif
 					
+					@if($data->text)
+						<p class="text">{!!$data->text!!}</p>
+					@endif
+					
 					@if($data->meta_public)
 						<div class="goal">
 							@if($data->meta_header)
