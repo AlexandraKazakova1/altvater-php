@@ -15,7 +15,7 @@
 	width: 100%;
 }
 
-.about-wrapper .about-content section ul li,
-.about-wrapper .about-content section ol li {
+.about-wrapper .about-content .detail__text li,
+.about-wrapper .about-content .detail__text li {
 	color: #000000;
 }
