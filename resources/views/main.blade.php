@@ -47,7 +47,7 @@
 					@endif
 					
 					@if($data->text)
-						<div class="description-group text">
+						<div class="full-text text">
 							{!!$data->text!!}
 						</div>
 					@endif
