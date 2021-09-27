@@ -270,6 +270,26 @@ section {
         }
     }
 }
+.main-page section {
+    ul,
+    ol {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        li {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            color: rgba(87, 88, 90, 0.8);
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 30px;
+        }
+        li:last-child {
+            margin-bottom: 30px;
+        }
+    }
+}
 
 .breadcrumbs__wrapper {
     background: #F2F2F2;
