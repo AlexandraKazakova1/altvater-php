@@ -47,8 +47,8 @@
 					@endif
 					
 					@if($data->text)
-						<div class="description-group">
-							<p class="text">{!!$data->text!!}</p>
+						<div class="description-group text">
+							{!!$data->text!!}
 						</div>
 					@endif
 					
