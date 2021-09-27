@@ -250,7 +250,7 @@ button:hover {
     line-height: 25px;
     color: #000000;
 }
-section {
+section:not(.breadcrumbs__wrapper) {
     ul,
     ol {
         display: flex;

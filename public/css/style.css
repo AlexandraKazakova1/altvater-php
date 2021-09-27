@@ -278,8 +278,8 @@ button:hover {
   color: #000000;
 }
 
-section ul,
-section ol {
+section:not(.breadcrumbs__wrapper) ul,
+section:not(.breadcrumbs__wrapper) ol {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -291,8 +291,8 @@ section ol {
       flex-wrap: nowrap;
 }
 
-section ul li,
-section ol li {
+section:not(.breadcrumbs__wrapper) ul li,
+section:not(.breadcrumbs__wrapper) ol li {
   padding-top: 5px;
   padding-bottom: 5px;
   color: rgba(87, 88, 90, 0.8);
@@ -302,8 +302,8 @@ section ol li {
   line-height: 30px;
 }
 
-section ul li:last-child,
-section ol li:last-child {
+section:not(.breadcrumbs__wrapper) ul li:last-child,
+section:not(.breadcrumbs__wrapper) ol li:last-child {
   margin-bottom: 30px;
 }
 
