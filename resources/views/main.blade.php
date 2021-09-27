@@ -47,11 +47,13 @@
 					@endif
 					
 					@if($data->text)
-						<div class="detail container">
-							<div class="detail__text">
-								{!!$data->text!!}
+						<section class="detail__wrapper">
+							<div class="detail container">
+								<div class="detail__text">
+									{!!$data->text!!}
+								</div>
 							</div>
-						</div>
+						</section>
 					@endif
 					
 					@if($data->meta_public)
