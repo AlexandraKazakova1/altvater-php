@@ -283,6 +283,35 @@ section ol li:last-child {
   margin-bottom: 30px;
 }
 
+.main-page ul,
+.main-page ol {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.main-page ul li,
+.main-page ol li {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: rgba(87, 88, 90, 0.8);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 30px;
+}
+
+.main-page ul li:last-child,
+.main-page ol li:last-child {
+  margin-bottom: 30px;
+}
+
 .breadcrumbs__wrapper {
   background: #F2F2F2;
 }
