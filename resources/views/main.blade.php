@@ -47,8 +47,10 @@
 					@endif
 					
 					@if($data->text)
-						<div class="detail__text">
-							{!!$data->text!!}
+						<div class="detail container">
+							<div class="detail__text">
+								{!!$data->text!!}
+							</div>
 						</div>
 					@endif
 					
