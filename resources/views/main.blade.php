@@ -47,7 +47,9 @@
 					@endif
 					
 					@if($data->text)
-						<p class="text">{!!$data->text!!}</p>
+						<div class="description-group">
+							<p class="text">{!!$data->text!!}</p>
+						</div>
 					@endif
 					
 					@if($data->meta_public)
