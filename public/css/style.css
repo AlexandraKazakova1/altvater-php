@@ -283,8 +283,8 @@ section ol li:last-child {
   margin-bottom: 30px;
 }
 
-.main-page ul,
-.main-page ol {
+.main-page section ul,
+.main-page section ol {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -296,8 +296,8 @@ section ol li:last-child {
       flex-wrap: nowrap;
 }
 
-.main-page ul li,
-.main-page ol li {
+.main-page section ul li,
+.main-page section ol li {
   padding-top: 5px;
   padding-bottom: 5px;
   color: rgba(87, 88, 90, 0.8);
@@ -307,8 +307,8 @@ section ol li:last-child {
   line-height: 30px;
 }
 
-.main-page ul li:last-child,
-.main-page ol li:last-child {
+.main-page section ul li:last-child,
+.main-page section ol li:last-child {
   margin-bottom: 30px;
 }
 
