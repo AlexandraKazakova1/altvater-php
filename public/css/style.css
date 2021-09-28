@@ -216,6 +216,30 @@ select {
   font-display: swap;
 }
 
+section .detail__text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+section .detail__text p {
+  color: #2C2C2C;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 30px;
+  opacity: 0.7;
+  margin-bottom: 30px;
+}
+
+section .detail__text :last-child {
+  margin-bottom: 0px;
+}
+
 .container {
   max-width: 1170px;
   margin: auto;
@@ -254,8 +278,8 @@ button:hover {
   color: #000000;
 }
 
-section ul,
-section ol {
+section:not(.breadcrumbs__wrapper) ul,
+section:not(.breadcrumbs__wrapper) ol {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -267,8 +291,8 @@ section ol {
       flex-wrap: nowrap;
 }
 
-section ul li,
-section ol li {
+section:not(.breadcrumbs__wrapper) ul li,
+section:not(.breadcrumbs__wrapper) ol li {
   padding-top: 5px;
   padding-bottom: 5px;
   color: rgba(87, 88, 90, 0.8);
@@ -278,8 +302,8 @@ section ol li {
   line-height: 30px;
 }
 
-section ul li:last-child,
-section ol li:last-child {
+section:not(.breadcrumbs__wrapper) ul li:last-child,
+section:not(.breadcrumbs__wrapper) ol li:last-child {
   margin-bottom: 30px;
 }
 
@@ -300,7 +324,7 @@ section ol li:last-child {
 .main-page section ol li {
   padding-top: 5px;
   padding-bottom: 5px;
-  color: rgba(87, 88, 90, 0.8);
+  color: rgba(44, 44, 44, 0.8);
   font-style: normal;
   font-weight: normal;
   font-size: 16px;

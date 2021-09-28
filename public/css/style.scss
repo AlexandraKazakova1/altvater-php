@@ -250,7 +250,7 @@ button:hover {
     line-height: 25px;
     color: #000000;
 }
-section {
+section:not(.breadcrumbs__wrapper) {
     ul,
     ol {
         display: flex;
@@ -260,6 +260,26 @@ section {
             padding-top: 5px;
             padding-bottom: 5px;
             color: rgba(87, 88, 90, 0.8);
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 30px;
+        }
+        li:last-child {
+            margin-bottom: 30px;
+        }
+    }
+}
+.main-page section {
+    ul,
+    ol {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        li {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            color: rgba(44, 44, 44, 0.8);
             font-style: normal;
             font-weight: normal;
             font-size: 16px;
