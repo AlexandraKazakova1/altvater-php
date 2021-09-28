@@ -53,7 +53,7 @@ class ServicesController extends MyController {
 		
 		$page = Services::query()->where('slug', $uri)->where('public', 1)->first();
 		
-		$detail = (object)Pages::query()->where('id', 2)->select('header', 'text')->first()->toArray();
+		$detail = (object)Pages::query()->where('id', 2)->where('public', 1)->select('header', 'text')->first()->toArray();
 		
 		$data = [
 			'page'			=> array(
