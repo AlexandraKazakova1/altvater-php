@@ -28,10 +28,10 @@ class PageController extends MyController {
 	public function index(){
 		$page = (object)Pages::query()->where('slug', 'index')->first()->toArray();
 		
-		$detail = (object)Pages::query()->where('id', 2)->where('public', 1)->select('header', 'text')->first();
+		$detail = Pages::query()->where('id', 2)->where('public', 1)->select('header', 'text')->first();
 		
 		if($detail){
-			$detail = $detail->toArray();
+			$detail = (object)$detail->toArray();
 		}
 		
 		$data = [
