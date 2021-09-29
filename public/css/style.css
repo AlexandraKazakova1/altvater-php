@@ -324,7 +324,7 @@ section:not(.breadcrumbs__wrapper) ol li:last-child {
 .main-page section ol li {
   padding-top: 5px;
   padding-bottom: 5px;
-  color: rgba(44, 44, 44, 0.8);
+  color: #2C2C2C;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
