@@ -78,7 +78,7 @@ class PageController extends MyController {
 					'og_image'		=> '',
 				),
 				'data'			=> $page,
-				'headerClass'	=> '',
+				'headerClass'	=> 'background-2',
 				'robots'		=> $page->robots,
 				'canonical'		=> $page->canonical,
 			]
