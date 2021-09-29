@@ -7,6 +7,7 @@ $(document).ready (function() {
     slideScroll();
     modalFade();
 });
+
 function slidersConfig() {
     $('.response__slider').slick({
         dots: false,
@@ -52,9 +53,17 @@ function burgerMenu() {
 };
 
 function breadcrumbs() {
-    $('.breadcrumbs__item').click(function() {
-        $(this).toggleClass('show');
-        $(this).children('.dropdown__list').slideToggle(300);
+    $('.breadcrumbs__toggle').click(function() {
+        $('.dropdown__list').slideUp(300);
+        $(this).toggleClass('act');
+        $(this).parent().children('.dropdown__list').slideToggle(300);
+    });
+    $(document).mouseup(function (e){
+        if (!$('.breadcrumbs__item, .breadcrumbs__toggle').is(e.target) 
+        && $('.breadcrumbs__item, .breadcrumbs__toggle').has(e.target).length === 0) {
+            $('.dropdown__list').slideUp(300);
+            $('.breadcrumbs__toggle').removeClass('act')
+        }
     });
 };
 

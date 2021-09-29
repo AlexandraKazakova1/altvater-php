@@ -301,7 +301,6 @@ section:not(.breadcrumbs__wrapper) {
             align-items: center;
             padding: 13px 0;
             li {
-                padding: 12px 24px;
                 position: relative;
                 display: flex;
                 flex-direction: row;
@@ -364,9 +363,16 @@ section:not(.breadcrumbs__wrapper) {
                 .dropdown__list::before {
                     display: none;
                 }
+                .breadcrumbs__toggle {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    padding: 12px 24px;
+                    justify-content: space-between;
+                    align-items: center;
+                }
             }
             li.active {
-                padding: 12px 24px;
                 font-weight: 500;
                 color: #2C2C2C;
                 span {
@@ -397,6 +403,7 @@ section:not(.breadcrumbs__wrapper) {
        }
     }
 }
+
 header {
     display: flex;
     flex-direction: column;

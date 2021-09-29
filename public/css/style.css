@@ -358,7 +358,6 @@ section:not(.breadcrumbs__wrapper) ol li:last-child {
 }
 
 .breadcrumbs__wrapper .breadcrumbs .breadcrumbs__list li {
-  padding: 12px 24px;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -448,8 +447,26 @@ section:not(.breadcrumbs__wrapper) ol li:last-child {
   display: none;
 }
 
-.breadcrumbs__wrapper .breadcrumbs .breadcrumbs__list li.active {
+.breadcrumbs__wrapper .breadcrumbs .breadcrumbs__list li .breadcrumbs__toggle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   padding: 12px 24px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.breadcrumbs__wrapper .breadcrumbs .breadcrumbs__list li.active {
   font-weight: 500;
   color: #2C2C2C;
 }
