@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-	<main>
+	<main class="main-page">
 		@if(count($services))
 			<section class="services-wrapper" id="our-services">
 				<div class="services container">
