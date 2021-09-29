@@ -327,7 +327,7 @@ section:not(.breadcrumbs__wrapper) ol li:last-child {
   color: rgba(44, 44, 44, 0.8);
   font-style: normal;
   font-weight: normal;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 30px;
 }
 
@@ -407,6 +407,7 @@ section:not(.breadcrumbs__wrapper) ol li:last-child {
   top: 100%;
   left: 0;
   width: 90%;
+  min-width: 150px;
   padding: 8px;
   display: none;
   -webkit-box-orient: vertical;
@@ -478,6 +479,7 @@ section:not(.breadcrumbs__wrapper) ol li:last-child {
 .breadcrumbs__wrapper .breadcrumbs .breadcrumbs__list li:first-child {
   background: none;
   padding-right: 10px;
+  padding-left: 0;
 }
 
 header {
