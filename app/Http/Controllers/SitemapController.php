@@ -69,7 +69,8 @@ class SitemapController extends MyController {
 			'robots'		=> $page->robots,
 			'canonical'		=> $page->canonical,
 			'data'			=> $page,
-			'all_pages'		=> $pages
+			'all_pages'		=> $pages,
+			'headerClass'	=> 'background-2',
 			//'services'	=> Services::query()->where('public', 1)->orderBy('created_at', 'desc')->select('slug', 'title', 'image')->get(),
 			//'news'		=> News::getNew()
 		];
