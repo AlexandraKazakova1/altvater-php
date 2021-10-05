@@ -2033,6 +2033,23 @@ p a {
     }
 }
 
+label .error {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 1.1px;
+    color: #F2664F;
+}
+
+.checkbox__label .error {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    bottom: -18px;
+    white-space: nowrap;
+}
+
 @media (max-width:1440px) {
     .response-wrapper {
         .response {
@@ -3021,13 +3038,37 @@ a.popup-text__link {
                     transition: all 0.3s;
                 }
             }
+            label.error {
+                position: absolute;
+                top: 53%;
+                left: 50%;
+                transform: translateX(-50%);
+                white-space: nowrap;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 12px;
+                line-height: 16px;
+                letter-spacing: 1.1px;
+                color: #F2664F;
+            }
             .verif-code {
+                position: relative;
                 display: flex;
                 flex-direction: row;
                 flex-wrap: nowrap;
                 justify-content: space-between;
                 .form-control {
                     width: 45px;
+                }
+                .form-control:hover
+                .form-control:focus {
+                    border: 1px solid #2F5E97;
+                    transition: all 0.3s;
+                }
+                .form-control.error,
+                .form-control.error ~ .form-control {
+                    border: 1px solid #F2664F;
+                    transition: all 0.3s;
                 }
             }
             .user-agree,
