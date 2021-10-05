@@ -472,6 +472,7 @@ section:not(.breadcrumbs__wrapper) ol li:last-child {
 }
 
 .breadcrumbs__wrapper .breadcrumbs .breadcrumbs__list li.active span {
+  text-align: start;
   white-space: nowrap;
   max-width: 224px;
   overflow-x: hidden;
@@ -2062,12 +2063,13 @@ footer .footer span {
       flex-wrap: nowrap;
 }
 
-.contacts__wrapper .contacts .contacts__list .contacts__item .item__body :first-child {
-  margin-bottom: 15px;
-}
-
 .contacts__wrapper .contacts .contacts__list .contacts__item .item__body span {
   white-space: pre-wrap;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 25px;
+  color: #57585A;
 }
 
 .contacts__wrapper .contacts .contacts__list .contacts__item .item__body :last-child {
@@ -2076,6 +2078,16 @@ footer .footer span {
   font-size: 16px;
   line-height: 25px;
   color: #57585A;
+}
+
+.contacts__wrapper .contacts .contacts__list .contacts__item .item__body :first-child {
+  white-space: nowrap;
+  margin-bottom: 15px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 21px;
+  line-height: 25px;
+  color: #000000;
 }
 
 .contacts__wrapper .contacts .contacts__list .contacts__item .item__body button {

@@ -376,6 +376,7 @@ section:not(.breadcrumbs__wrapper) {
                 font-weight: 500;
                 color: #2C2C2C;
                 span {
+                    text-align: start;
                     white-space: nowrap;
                     max-width: 224px;
                     overflow-x: hidden;
@@ -1437,11 +1438,13 @@ footer {
                     display: flex;
                     flex-direction: column;
                     flex-wrap: nowrap;
-                    :first-child {
-                        margin-bottom: 15px;
-                    }
                     span {
                         white-space: pre-wrap;
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 16px;
+                        line-height: 25px;
+                        color: #57585A;
                     }
                     :last-child {
                         font-style: normal;
@@ -1449,6 +1452,15 @@ footer {
                         font-size: 16px;
                         line-height: 25px;
                         color: #57585A;
+                    }
+                    :first-child {
+                        white-space: nowrap;
+                        margin-bottom: 15px;
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 21px;
+                        line-height: 25px;
+                        color: #000000;
                     }
                     button {
                         background: none;
