@@ -28,11 +28,13 @@
 					</li>
 					
 					<li class="breadcrumbs__item active">
-						<span>{!!$data->header!!}</span>
-						
-						<svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M11 1L6 6L1 1" stroke="#858585" stroke-linecap="round" stroke-linejoin="round"/>
-						</svg>
+						<div class="breadcrumbs__toggle">
+							<span>{!!$data->header!!}</span>
+							
+							<svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M11 1L6 6L1 1" stroke="#858585" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+						</div>
 						
 						<ul class="dropdown__list">
 							@foreach($all_services as $item)
