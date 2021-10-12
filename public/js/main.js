@@ -196,7 +196,11 @@ function modalFade() {
         $('.modal').modal('hide');
         $('#recovery-modal-2').modal('show');
     });
-
+    $('.calc-btn').click(function() {
+        $('.modal').modal('hide');
+        $('#servicesCalc').modal('show');
+    });
+    
 
 
     closeBtn.click(function() {
@@ -608,7 +612,7 @@ function passVerificationForm() {
     });
 };
 
-function checkCookies(){
+function checkCookies() {
     let cookieDate = localStorage.getItem('cookieDate');
     let cookieNotification = document.getElementById('cookie_notification');
     let cookieBtn = cookieNotification.querySelector('.cookie_accept');
@@ -623,4 +627,12 @@ function checkCookies(){
         localStorage.setItem( 'cookieDate', Date.now() );
         cookieNotification.classList.remove('show');
     })
+}
+
+function calcPopup() {
+	$('.select2').select2({
+        minimumResultsForSearch: -1,
+		// dropdownParent: $('.select')
+        // placeholder: 'Select an option'
+    });
 }
