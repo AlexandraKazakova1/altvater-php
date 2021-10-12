@@ -4788,6 +4788,10 @@ input.form-control:focus {
   }
 }
 
+#servicesCalc .modal-header h2 {
+  padding-bottom: 16px;
+}
+
 #servicesCalc .select .select2 {
   padding: 12px 16px;
   background: #FFFFFF;
@@ -4817,8 +4821,19 @@ input.form-control:focus {
   display: none;
 }
 
+#servicesCalc .popup__form .fieldset {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
 #servicesCalc .popup__form .fieldset label {
-  margin-bottom: 16px;
+  max-width: 400px;
+  width: 100%;
+  margin-bottom: 10px;
 }
 
 #servicesCalc .popup__form .fieldset p {
@@ -4838,7 +4853,7 @@ input.form-control:focus {
   text-align: center;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-  margin-bottom: 30px;
+  margin-bottom: 0px;
 }
 
 #servicesCalc .popup__form .fieldset a:hover {
@@ -4846,5 +4861,9 @@ input.form-control:focus {
   background: #F2664F;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+}
+
+#servicesCalc label .input-description {
+  padding-bottom: 0px;
 }
 /*# sourceMappingURL=style.css.map */
