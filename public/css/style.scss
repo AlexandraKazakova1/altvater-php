@@ -3598,6 +3598,12 @@ input.form-control:focus {
     border-radius: 90px;
     width: 100%;
 }
+@media (max-width:1280px) {
+    .calc-btn {
+        width: 70%;
+        min-width: fit-content;
+    }
+}
 #servicesCalc {
     .select {
         .select2 {
