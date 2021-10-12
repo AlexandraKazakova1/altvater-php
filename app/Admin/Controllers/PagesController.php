@@ -204,6 +204,7 @@ class PagesController extends MyAdminController {
 						->rules('required');
 					
 					$form->text('value'				, __('admin.pages.value'))->rules('max:150|required');
+					$form->text('label'				, __('admin.pages.label'))->rules('max:150');
 				});
 			});
 		}

@@ -15,7 +15,8 @@ class Contacts extends Model{
 		'page_id',
 		'type',
 		'public',
-		'value'
+		'value',
+		'label'
 	];
 	
 	static function getData(){
@@ -43,7 +44,7 @@ class Contacts extends Model{
 			}
 			
 			if($item->value){
-				$data[$item->type][] = $item->value;
+				$data[$item->type][] = $item;
 			}
 		}
 		

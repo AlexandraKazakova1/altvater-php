@@ -59,7 +59,12 @@
 							<div class="item__body tel-button">
 								<span class="subTitle21">Тел/Факс:</span>
 								@foreach($contacts['phone'] as $item)
-									<a href="tel:+{{$item}}">+{{$string->call('phone', [$item, '[2] [(3)] 3-2-2'])}}</a>
+									<div>
+										@if($item->label)
+											<span>{{$item->label}}</span>
+										@endif
+										<a href="tel:+{{$item->value}}">+{{$string->call('phone', [$item->value, '[2] [(3)] 3-2-2'])}}</a>
+									</div>
 								@endforeach
 							</div>
 						</li>
