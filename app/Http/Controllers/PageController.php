@@ -67,8 +67,14 @@ class PageController extends MyController {
 			return abort(404);
 		}
 		
+		$view = 'page';
+		
+		if($page->id == 10){
+			$view = 'info';
+		}
+		
 		return view(
-			'page',
+			$view,
 			[
 				'page'			=> array(
 					'title'			=> $page->title,
