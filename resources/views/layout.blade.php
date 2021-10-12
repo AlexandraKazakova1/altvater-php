@@ -157,8 +157,8 @@
 		</footer>
 		
 		<div id="cookie_notification">
-			<p>{{trans('site.text')}}</p>
-			<button class="button cookie_accept">{{trans('site.btn')}}</button>
+			<p>{{trans('site.cookie.text')}}</p>
+			<button class="button cookie_accept">{{trans('site.cookie.btn')}}</button>
 		</div>
 		
 		<?php
