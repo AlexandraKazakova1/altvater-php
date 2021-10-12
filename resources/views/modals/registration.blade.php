@@ -83,7 +83,7 @@
 								<label class="checkbox__label">
 									<input class="input-checkbox" type="checkbox" name="userAgree">
 									<span class="custom-checkbox"></span>
-									<span class="checkbox-text">Я даю згоду на обробку <a href="#">особистих даних</a></span>
+									<span class="checkbox-text">Я даю згоду на обробку <a href="/privacy-policy" target="_bank">особистих даних</a></span>
 								</label>
 							</div>
 							
