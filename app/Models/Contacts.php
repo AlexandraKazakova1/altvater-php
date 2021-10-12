@@ -22,7 +22,7 @@ class Contacts extends Model{
 	static function getData(){
 		$tmp = DB::table('contacts')
 					->where('public', 1)
-					->select('type', 'value')
+					->select('type', 'value', 'label')
 					->get();
 		
 		$data = [
