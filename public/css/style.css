@@ -2925,6 +2925,84 @@ label .error {
   white-space: nowrap;
 }
 
+.infoList-wrapper {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.infoList-wrapper .infoList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.infoList-wrapper .infoList h3 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 21px;
+  line-height: 30px;
+  color: #2C2C2C;
+  margin-bottom: 30px;
+}
+
+.infoList-wrapper .infoList blockquote {
+  position: relative;
+  padding: 40px;
+  border-radius: 12px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 26px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 30px;
+}
+
+.infoList-wrapper .infoList blockquote::after {
+  content: url(../img/quote.svg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.infoList-wrapper .infoList blockquote::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #00b7ce;
+  z-index: -1;
+  border-radius: 12px;
+}
+
+.infoList-wrapper .infoList p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 30px;
+  color: rgba(87, 88, 90, 0.8);
+  margin-bottom: 30px;
+}
+
+.infoList-wrapper .infoList a,
+.infoList-wrapper .infoList p a {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 30px;
+  text-decoration: none;
+  color: #00B7CE;
+}
+
 @media (max-width: 1440px) {
   .response-wrapper .response .response__slider .slick-dots {
     bottom: -40px;
@@ -3091,6 +3169,22 @@ label .error {
   .stat__wrapper .stat .section-text {
     width: 100%;
     text-align: center;
+  }
+  .infoList blockquote {
+    padding: 40px 20px;
+  }
+  .infoList blockquote span {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    text-align: center;
+  }
+  .infoList blockquote::before {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
   }
   .open-news__wrapper {
     -webkit-box-orient: vertical;
@@ -3642,6 +3736,17 @@ label .error {
     font-size: 14px;
     line-height: 28px;
   }
+  .infoList h2, .infoList h3, .infoList h4 {
+    text-align: center;
+    font-size: 30px;
+    line-height: 40px;
+    margin-bottom: 30px;
+  }
+  .infoList p {
+    text-align: center;
+    font-size: 14px;
+    line-height: 28px;
+  }
   .last-work__wrapper .last-work h2 {
     text-align: center;
     font-size: 30px;
@@ -3840,6 +3945,29 @@ label .error {
   }
   .open-news__wrapper .last-news {
     padding: 15px;
+  }
+  .infoList .more__link a {
+    word-wrap: break-word;
+  }
+  .infoList .share {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    grid-row-gap: 15px;
+    border: none;
+  }
+  .infoList .share a {
+    border: 1px solid rgba(191, 190, 190, 0.4);
+    border-radius: 4px;
   }
 }
 
