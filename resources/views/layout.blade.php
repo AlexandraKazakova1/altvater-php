@@ -158,6 +158,7 @@
 		
 		@include('modals.login', ['user' => $user])
 		@include('modals.registration', ['user' => $user])
+		@include('modals.activation', ['user' => $user])
 		
 		<div id="cookie_notification">
 			<p>{{trans('site.cookie.text')}}</p>
