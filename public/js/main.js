@@ -12,6 +12,7 @@ $(document).ready (function() {
     passRecovery3();
     passVerificationForm();
     checkCookies();
+    // calcPopup();
 });
 
 function slidersConfig() {
@@ -629,10 +630,10 @@ function checkCookies() {
     })
 }
 
-function calcPopup() {
-	$('.select2').select2({
-        minimumResultsForSearch: -1,
-		// dropdownParent: $('.select')
-        // placeholder: 'Select an option'
-    });
-}
+// function calcPopup() {
+// 	$('.select2').select2({
+//         minimumResultsForSearch: -1,
+// 		// dropdownParent: $('.select')
+//         // placeholder: 'Select an option'
+//     });
+// }
