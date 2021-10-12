@@ -14,7 +14,7 @@
 						<fieldset class="fieldset">
 							<label>
 								<span class="input-description">Email:</span>
-								<input class="form-control" type="email" name="user-email" placeholder=" ">
+								<input class="form-control" type="email" name="email" placeholder=" ">
 								<span class="input-placeholder">
 									<div>
 										<img src="/img/cabinet/modal-icon/email.svg">
@@ -25,7 +25,7 @@
 							
 							<label>
 								<span class="input-description">Пароль:</span>
-								<input class="form-control" type="password"  name="user-password" placeholder=" ">
+								<input class="form-control" type="password"  name="password" placeholder=" ">
 								<span class="input-placeholder">
 									<div>
 										<img src="/img/cabinet/modal-icon/lock.svg">
@@ -36,7 +36,7 @@
 							
 							<div class="convenience">
 								<label class="checkbox__label">
-									<input class="input-checkbox" type="checkbox" id="remember-me" name="remember-me">
+									<input class="input-checkbox" type="checkbox" id="remember-me" name="remember">
 									<span class="custom-checkbox"></span>
 									<span class="checkbox-text">Запам'ятати мене</span>
 								</label>
