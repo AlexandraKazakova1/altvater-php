@@ -6,6 +6,11 @@ $(document).ready (function() {
     dragAndDrop();
     accountsActs();
     settingsPage();
+    logIn();
+    create();
+    passRecovery();
+    passRecovery3();
+    passVerificationForm();
 });
 
 function calendar() {
@@ -214,5 +219,409 @@ function settingsPage() {
         $('.general__content').fadeOut(1);
         $('.security__content').fadeIn(1);
         $('#general').removeClass('act');
+    });
+};
+
+function logIn() {
+	var form = jQuery("#log__in-form");
+
+    if(!form.length){
+		return false;
+	};
+
+	var lock = false,
+    btn = form.find('button[type="submit"]');
+
+    form.validate({
+		onkeyup	: false,
+        focusCleanup: true,
+        focusInvalid: false,
+        errorClass: "error",
+        rules: {
+            userEmail: {
+                required: true,
+                email: true
+            },
+            userPassword: {
+                required: true,
+                rangelength: [8, 24]
+            }
+        },
+        messages: {
+            userEmail: {
+                required: "Введіть свій e-mail!",
+                email: "Адреса має бути типу name@domain.com"
+            },
+            userPassword: {
+                required: "Введіть пароль використовуючи A-Z a-z 0-9",
+                rangelength: "Введіть 8-24 символи"
+            }
+        },
+		submitHandler: function() {
+			if(!lock){
+				$.ajax({
+					type: "POST",
+					url: form.attr("action"),
+                    data: form.serialize(),
+                    dataType: "json",
+                    beforeSend: function(request){
+                        lock = true;
+                        
+                        btn.attr('disabled', true);
+                        form.find('label.error').text('').hide();
+					},
+					success: function(response){
+						console.log('response:');
+						console.log(response);
+						
+						lock = false;
+                        btn.attr('disabled', false);
+						
+						if(response.status){;
+							form.trigger('reset');
+							
+                            $('#log__in-form').trigger('reset');
+                            $('#answer-msg').text(response.msg);
+
+							
+							setTimeout('#answer-msg', 5000);
+						}
+					},
+					error: function(err){
+						lock = false;
+                        btn.attr('disabled', false);
+					}
+				});
+			};
+			
+			return false;
+	    }
+    });
+};
+
+function create() {
+	var form = jQuery("#create-form");
+
+    if(!form.length){
+		return false;
+	};
+
+	var lock = false,
+    btn = form.find('button[type="submit"]');
+
+    form.validate({
+		onkeyup	: false,
+        focusCleanup: true,
+        focusInvalid: false,
+        errorClass: "error",
+        rules: {
+            userName: {
+                required: true,
+				minlength: 5
+            },
+            userTel: {
+                required: true,
+				minlength: 8
+            },
+            userEmail: {
+                required: true,
+                email: true
+            },
+            userPassword: {
+                required: true,
+                rangelength: [8, 24]
+            },
+            userPasswordConfirm: {
+                required: true,
+                rangelength: [8, 24],
+                equalTo: ".password"
+            },
+            userAgree: {
+                required: true
+            }
+        },
+        messages: {
+            userName: {
+                required: "Введіть своє Ім'я та Прізвище",
+				minlength: "Введіть більше 5 символів"
+            },
+            userTel: {
+                required: "Введіть свій контактний телефон",
+				minlength: "Введіть номер в форматі +380999999999"
+            },
+            userEmail: {
+                required: "Введіть свій e-mail!",
+                email: "Адреса має бути типу name@domain.com"
+            },
+            userPassword: {
+                required: "Введіть пароль використовуючи A-Z a-z 0-9",
+                rangelength: "Введіть 8-24 символи"
+            },
+            userPasswordConfirm: {
+                required: "Введіть пароль використовуючи A-Z a-z 0-9",
+                rangelength: "Введіть 8-24 символи",
+                equalTo: "Паролі не співпадають"
+            }
+        },
+		submitHandler: function() {
+			if(!lock){
+				$.ajax({
+					type: "POST",
+					url: form.attr("action"),
+                    data: form.serialize(),
+                    dataType: "json",
+                    beforeSend: function(request){
+                        lock = true;
+                        
+                        btn.attr('disabled', true);
+                        form.find('label.error').text('').hide();
+					},
+					success: function(response){
+						console.log('response:');
+						console.log(response);
+						
+						lock = false;
+                        btn.attr('disabled', false);
+						
+						if(response.status){;
+							form.trigger('reset');
+							
+                            $('#create-form').trigger('reset');
+                            $('#answer-msg').text(response.msg);
+
+							
+							setTimeout('#answer-msg', 5000);
+						}
+					},
+					error: function(err){
+						lock = false;
+                        btn.attr('disabled', false);
+					}
+				});
+			};
+			
+			return false;
+	    }
+    });
+};
+
+function passRecovery() {
+	var form = jQuery("#pass__recovery-form");
+
+    if(!form.length){
+		return false;
+	};
+
+	var lock = false,
+    btn = form.find('button[type="submit"]');
+
+    form.validate({
+		onkeyup	: false,
+        focusCleanup: true,
+        focusInvalid: false,
+        errorClass: "error",
+        rules: {
+            userEmail: {
+                required: true,
+                email: true
+            }
+        },
+        messages: {
+            userEmail: {
+                required: "Введіть свій e-mail!",
+                email: "Адреса має бути типу name@domain.com"
+            }
+        },
+		submitHandler: function() {
+			if(!lock){
+				$.ajax({
+					type: "POST",
+					url: form.attr("action"),
+                    data: form.serialize(),
+                    dataType: "json",
+                    beforeSend: function(request){
+                        lock = true;
+                        
+                        btn.attr('disabled', true);
+                        form.find('label.error').text('').hide();
+					},
+					success: function(response){
+						console.log('response:');
+						console.log(response);
+						
+						lock = false;
+                        btn.attr('disabled', false);
+						
+						if(response.status){;
+							form.trigger('reset');
+							
+                            $('#pass__recovery-form').trigger('reset');
+                            $('#answer-msg').text(response.msg);
+
+							
+							setTimeout('#answer-msg', 5000);
+						}
+					},
+					error: function(err){
+						lock = false;
+                        btn.attr('disabled', false);
+					}
+				});
+			};
+			
+			return false;
+	    }
+    });
+};
+
+function passRecovery3() {
+	var form = jQuery("#pass__recovery-form3");
+
+    if(!form.length){
+		return false;
+	};
+
+	var lock = false,
+    btn = form.find('button[type="submit"]');
+
+    form.validate({
+		onkeyup	: false,
+        focusCleanup: true,
+        focusInvalid: false,
+        errorClass: "error",
+        rules: {
+            userPassword: {
+                required: true,
+                rangelength: [8, 24]
+            },
+            userPasswordConfirm: {
+                required: true,
+                rangelength: [8, 24],
+                equalTo: ".password-2"
+            }
+        },
+        messages: {
+            userPassword: {
+                required: "Введіть пароль використовуючи A-Z a-z 0-9",
+                rangelength: "Введіть 8-24 символи"
+            },
+            userPasswordConfirm: {
+                required: "Введіть пароль використовуючи A-Z a-z 0-9",
+                rangelength: "Введіть 8-24 символи",
+                equalTo: "Паролі не співпадають"
+            }
+        },
+		submitHandler: function() {
+			if(!lock){
+				$.ajax({
+					type: "POST",
+					url: form.attr("action"),
+                    data: form.serialize(),
+                    dataType: "json",
+                    beforeSend: function(request){
+                        lock = true;
+                        
+                        btn.attr('disabled', true);
+                        form.find('label.error').text('').hide();
+					},
+					success: function(response){
+						console.log('response:');
+						console.log(response);
+						
+						lock = false;
+                        btn.attr('disabled', false);
+						
+						if(response.status){;
+							form.trigger('reset');
+							
+                            $('#pass__recovery-form3').trigger('reset');
+                            $('#answer-msg').text(response.msg);
+
+							
+							setTimeout('#answer-msg', 5000);
+						}
+					},
+					error: function(err){
+						lock = false;
+                        btn.attr('disabled', false);
+					}
+				});
+			};
+			
+			return false;
+	    }
+    });
+};
+
+function passVerificationForm() {
+    $(".verifCode").keyup(function () {
+        if (this.value.length == this.maxLength) {
+            $(this).next('.verifCode').focus();
+        }
+    });
+
+	var form = jQuery("#pass__verification-form");
+
+    if(!form.length){
+		return false;
+	};
+
+	var lock = false,
+    btn = form.find('button[type="submit"]');
+
+    form.validate({
+		onkeyup	: false,
+        focusCleanup: true,
+        focusInvalid: false,
+        errorClass: "error",
+        // rules: {
+        //     verifCode: {
+        //         required: true
+        //     }
+        // },
+        // messages: {
+        //     verifCode: {
+        //         required: 'Введите код'
+        //     }
+        // },
+		submitHandler: function() {
+			if(!lock){
+				$.ajax({
+					type: "POST",
+					url: form.attr("action"),
+                    data: form.serialize(),
+                    dataType: "json",
+                    beforeSend: function(request){
+                        lock = true;
+                        
+                        btn.attr('disabled', true);
+                        form.find('label.error').text('').hide();
+					},
+					success: function(response){
+						console.log('response:');
+						console.log(response);
+						
+						lock = false;
+                        btn.attr('disabled', false);
+						
+						if(response.status){;
+							form.trigger('reset');
+							
+                            $('#pass__verification-form').trigger('reset');
+                            $('#answer-msg').text(response.msg);
+
+							
+							setTimeout('#answer-msg', 5000);
+						}
+					},
+					error: function(err){
+						lock = false;
+                        btn.attr('disabled', false);
+					}
+				});
+			};
+			
+			return false;
+	    }
     });
 };

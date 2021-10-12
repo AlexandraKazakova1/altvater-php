@@ -397,6 +397,7 @@ return [
 		'viber'					=> 'Вайбер',
 		'telegram'				=> 'Телеграм',
 		'value'					=> 'Значення',
+		'label'					=> 'Підпис',
 	],
 	
 	'feedback'				=> [

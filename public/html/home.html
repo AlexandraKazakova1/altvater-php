@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/slick.css">
     <link rel="stylesheet" href="../css/slick-theme.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/select2.css">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -158,6 +159,7 @@
                         </a>
                     </div>
                 </div>
+                <button class="calc-btn btn-red" data-toggle="modal" data-target="#servicesCalc">Розрахунок вартості наших послуг</button>
             </div>
         </section>
         <section class="about-wrapper">
@@ -370,7 +372,7 @@
             <span>Copyright © 2021 Veolia. All rights reserved</span>
         </div>
     </footer>
-
+    
     <div class="modal fade" id="log__in-modal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-md modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -386,7 +388,7 @@
                             <fieldset class="fieldset">
                                 <label>
                                     <span class="input-description">Email:</span>
-                                    <input class="form-control" type="email" name="user-email" placeholder=" ">
+                                    <input class="form-control" type="email" name="userEmail" placeholder=" ">
                                     <span class="input-placeholder">
                                         <div>
                                             <img src="../img/cabinet/modal-icon/email.svg">
@@ -396,7 +398,7 @@
                                 </label>
                                 <label>
                                     <span class="input-description">Пароль:</span>
-                                    <input class="form-control" type="password"  name="user-password" placeholder=" ">
+                                    <input class="form-control" type="password"  name="userPassword" placeholder=" ">
                                     <span class="input-placeholder">
                                         <div>
                                             <img src="../img/cabinet/modal-icon/lock.svg">
@@ -406,7 +408,7 @@
                                 </label>
                                 <div class="convenience">
                                     <label class="checkbox__label">
-                                        <input class="input-checkbox" type="checkbox" id="remember-me" name="remember-me">
+                                        <input class="input-checkbox" type="checkbox" id="remember-me" name="rememberMe">
                                         <span class="custom-checkbox"></span>
                                         <span class="checkbox-text">Запам'ятати мене</span>
                                     </label>
@@ -457,7 +459,7 @@
                                 </div>
                                 <label>
                                     <span class="input-description">Ім'я і Прізвище:</span>
-                                    <input class="form-control" type="email" name="user-email" placeholder=" ">
+                                    <input class="form-control" type="text" name="userName" placeholder=" ">
                                     <span class="input-placeholder">
                                         <div>
                                             <img src="../img/cabinet/modal-icon/profile.svg">
@@ -467,7 +469,7 @@
                                 </label>
                                 <label>
                                     <span class="input-description">Номер телефону:</span>
-                                    <input class="form-control" type="email" name="user-email" placeholder=" ">
+                                    <input class="form-control" type="tel" name="userTel" placeholder=" ">
                                     <span class="input-placeholder">
                                         <div>
                                             <img src="../img/cabinet/modal-icon/phone.svg">
@@ -477,7 +479,7 @@
                                 </label>
                                 <label>
                                     <span class="input-description">Email:</span>
-                                    <input class="form-control" type="email" name="user-email" placeholder=" ">
+                                    <input class="form-control" type="email" name="userEmail" placeholder=" ">
                                     <span class="input-placeholder">
                                         <div>
                                             <img src="../img/cabinet/modal-icon/email.svg">
@@ -487,7 +489,7 @@
                                 </label>
                                 <label>
                                     <span class="input-description">Пароль:</span>
-                                    <input class="form-control" type="password"  name="user-password" placeholder=" ">
+                                    <input class="form-control password" type="password"  name="userPassword" placeholder=" ">
                                     <span class="input-placeholder">
                                         <div>
                                             <img src="../img/cabinet/modal-icon/lock.svg">
@@ -497,7 +499,7 @@
                                 </label>
                                 <label>
                                     <span class="input-description">Повторіть пароль:</span>
-                                    <input class="form-control" type="password"  name="user-password" placeholder=" ">
+                                    <input class="form-control" type="password"  name="userPasswordConfirm" placeholder=" ">
                                     <span class="input-placeholder">
                                         <div>
                                             <img src="../img/cabinet/modal-icon/lock.svg">
@@ -507,7 +509,7 @@
                                 </label>
                                 <div class="user-agree">
                                     <label class="checkbox__label">
-                                        <input class="input-checkbox" type="checkbox" id="user-agree" name="user-agree">
+                                        <input class="input-checkbox" type="checkbox" name="userAgree">
                                         <span class="custom-checkbox"></span>
                                         <span class="checkbox-text">Я даю згоду на обробку <a href="#">особистих даних</a></span>
                                     </label>
@@ -551,7 +553,7 @@
                                 <p>Укажіть електронну адресу, на яку був створений акаунт.</p>
                                 <label>
                                     <span class="input-description">Email:</span>
-                                    <input class="form-control" type="email" name="user-email" placeholder=" ">
+                                    <input class="form-control" type="email" name="userEmail" placeholder=" ">
                                     <span class="input-placeholder">
                                         <div>
                                             <img src="../img/cabinet/modal-icon/email.svg">
@@ -596,11 +598,11 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form class="popup__form" id="pass__recovery-form">
+                        <form class="popup__form" id="pass__recovery-form3">
                             <fieldset class="fieldset">
                                 <label>
                                     <span class="input-description">Пароль:</span>
-                                    <input class="form-control" type="password"  name="user-password" placeholder=" ">
+                                    <input class="form-control password-2" type="password"  name="userPassword" placeholder=" ">
                                     <span class="input-placeholder">
                                         <div>
                                             <img src="../img/cabinet/modal-icon/lock.svg">
@@ -610,7 +612,7 @@
                                 </label>
                                 <label>
                                     <span class="input-description">Повторіть пароль:</span>
-                                    <input class="form-control" type="password"  name="user-password" placeholder=" ">
+                                    <input class="form-control" type="password"  name="userPasswordConfirm" placeholder=" ">
                                     <span class="input-placeholder">
                                         <div>
                                             <img src="../img/cabinet/modal-icon/lock.svg">
@@ -642,14 +644,104 @@
                             <fieldset class="fieldset">
                                 <p>На цей номер <span class="number">+38(098) 34-43-895</span> відправлений SMS-код, введіть його в поле нижче:</p>
                                 <label class="verif-code">
-                                    <input class="form-control" type="password" name="verif-code-1" placeholder=" ">
-                                    <input class="form-control" type="password" name="verif-code-2" placeholder=" ">
-                                    <input class="form-control" type="password" name="verif-code-3" placeholder=" ">
-                                    <input class="form-control" type="password" name="verif-code-4" placeholder=" ">
-                                    <input class="form-control" type="password" name="verif-code-5" placeholder=" ">
+                                    <input class="form-control verifCode" type="text" name="verifCode" autocomplete="off" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder=" "  onfocus="this.value=''"/>
+                                    <input class="form-control verifCode" type="text" name="verifCode" autocomplete="off" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder=" "  onfocus="this.value=''"/>
+                                    <input class="form-control verifCode" type="text" name="verifCode" autocomplete="off" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder=" "  onfocus="this.value=''"/>
+                                    <input class="form-control verifCode" type="text" name="verifCode" autocomplete="off" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder=" "  onfocus="this.value=''"/>
+                                    <input class="form-control verifCode" type="text" name="verifCode" autocomplete="off" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder=" "  onfocus="this.value=''"/>
                                 </label>
                                 <a href="#" class="sendAgain">Відправити знову <span>(09: 16с)</span></a>
                                 <button class="btn-submit" type="submit" name="logIn">Вхід</button>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="cookie_notification">
+        <p>Для улучшения работы сайта и его взаимодействия с пользователями мы используем файлы cookie. Продолжая работу с сайтом, Вы разрешаете использование cookie-файлов. Вы всегда можете отключить файлы cookie в настройках Вашего браузера.</p>
+        <button class="button cookie_accept">Принять</button>
+    </div>
+    <div class="modal fade" id="servicesCalc" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-md modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="servicesCalc-page popup">
+                    <div class="modal-header">
+                        <h2 class="popup__title">Для розрахунку заповніть поля</h2>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <img src="../img/close.svg" alt="X">
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="popup__form" id="servicesCalc-form">
+                            <fieldset class="fieldset">
+                                <Label class="select">
+                                    <span class="input-description">Об'єкт утворення ТПВ</span>
+                                    <select class="select2">
+                                        <option>Багатоквартирні будинки</option>
+                                        <option>Приватний будинок</option>
+                                        <option>Офіс</option>
+                                        <option>Промислове підприємство</option>
+                                    </select>
+                                </label>
+                                <Label>
+                                    <span class="input-description">Кількість людей</span>
+                                    <input class="form-control" type="text" autocomplete="off" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder=" "/>
+                                </Label>
+                                <Label class="select">
+                                    <span class="input-description">Категорія тарифу</span>
+                                    <select class="select2">
+                                        <option>Населення</option>
+                                        <option>Комерція</option>
+                                    </select>
+                                </Label>
+                                <Label class="select">
+                                    <span class="input-description">Об'єм контейнера, м<sup>3</sup></span>
+                                    <select class="select2">
+                                        <option>1,1</option>
+                                        <option>2,2</option>
+                                        <option>4,1</option>
+                                    </select>
+                                </Label>
+                                <Label class="select">
+                                    <span class="input-description">Бажана періодичність вивезень, разів на тиждень</span>
+                                    <select class="select2">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                    </select>
+                                </Label>
+                                <Label class="readonly">
+                                    <span class="input-description">Норма, м<sup>3</sup>/рік на одиницю розрахунку</span>
+                                    <input class="form-control" type="text" readonly/>
+                                </Label>
+                                <Label class="readonly">
+                                    <span class="input-description">&#8776; тонн/рік (для декларації, від 50т)</span>
+                                    <input class="form-control" type="text" readonly/>
+                                </Label>
+                                <Label class="readonly">
+                                    <span class="input-description">Тариф, грн/1 м<sup>3</sup> з ПДВ</span>
+                                    <input class="form-control" type="text" readonly/>
+                                </Label>
+                                <Label class="readonly">
+                                    <span class="input-description">Рекомендована мінімальна кількість вивезень на тиждень &#8776;</span>
+                                    <input class="form-control" type="text" readonly style="font-weight: bold;"/>
+                                </Label>
+                                <Label class="readonly">
+                                    <span class="input-description">*Вартість послуг за місяць, грн. з ПДВ &#8776;</span>
+                                    <input class="form-control" type="text" readonly style="font-weight: bold;"/>
+                                </Label>
+                                <Label class="readonly">
+                                    <span class="input-description">**Потреба в контейнерах, шт.</span>
+                                    <input class="form-control" type="text" readonly style="font-weight: bold;"/>
+                                </Label>
+                                <p>*Остаточну вартість та умови визначає менеджер при оформленні!</p>
+                                <a class="btn-red" href="#">Оформити заявку</a>
                             </fieldset>
                         </form>
                     </div>
@@ -662,6 +754,7 @@
     <script src="../js/slick.min.js"></script>
     <script src="../js/jquery.validate.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/select2.min.js"></script>
     <script src="../js/main.js"></script>
 </body>
 </html>
