@@ -156,6 +156,11 @@
 			</div>
 		</footer>
 		
+		<div id="cookie_notification">
+			<p>{{trans('site.cookie.text')}}</p>
+			<button class="button cookie_accept">{{trans('site.cookie.btn')}}</button>
+		</div>
+		
 		<?php
 			if($styles['footer']){
 				foreach($styles['footer'] as $group){
