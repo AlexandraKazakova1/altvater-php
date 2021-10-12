@@ -15,13 +15,14 @@ class Contacts extends Model{
 		'page_id',
 		'type',
 		'public',
-		'value'
+		'value',
+		'label'
 	];
 	
 	static function getData(){
 		$tmp = DB::table('contacts')
 					->where('public', 1)
-					->select('type', 'value')
+					->select('type', 'value', 'label')
 					->get();
 		
 		$data = [
@@ -43,7 +44,11 @@ class Contacts extends Model{
 			}
 			
 			if($item->value){
-				$data[$item->type][] = $item->value;
+				if($item->type == 'phone'){
+					$data[$item->type][] = $item;
+				}else{
+					$data[$item->type][] = $item->value;
+				}
 			}
 		}
 		

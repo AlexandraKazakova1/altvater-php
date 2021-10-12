@@ -59,7 +59,10 @@
 							<div class="item__body tel-button">
 								<span class="subTitle21">Тел/Факс:</span>
 								@foreach($contacts['phone'] as $item)
-									<a href="tel:+{{$item}}">+{{$string->call('phone', [$item, '[2] [(3)] 3-2-2'])}}</a>
+									@if($item->label)
+										<span>{{$item->label}}</span>
+									@endif
+									<a href="tel:+{{$item->value}}">+{{$string->call('phone', [$item->value, '[2] [(3)] 3-2-2'])}}</a>
 								@endforeach
 							</div>
 						</li>
@@ -136,7 +139,7 @@
 				
 				<div class="callback">
 					<div class="callback__title">Залишіть заявку</div>
-					<div class="callback__descriptin">Якщо хочете дізнатися про всі можливості сервісу і задати питання - замовте онлайн демонстрацію</div>
+					<div class="callback__description">Якщо хочете дізнатися про всі можливості сервісу і задати питання - замовте онлайн демонстрацію</div>
 					
 					<form class="callback__form" id="callback-form" action="/ajax/callback" method="POST">
 						<fieldset class="callback-fieldset">
