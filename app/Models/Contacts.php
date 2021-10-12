@@ -44,7 +44,11 @@ class Contacts extends Model{
 			}
 			
 			if($item->value){
-				$data[$item->type][] = $item;
+				if($item->type == 'phone'){
+					$data[$item->type][] = $item;
+				}else{
+					$data[$item->type][] = $item->value;
+				}
 			}
 		}
 		
