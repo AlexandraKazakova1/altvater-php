@@ -90,5 +90,7 @@ class MyController extends Controller {
 		View::share('use'					, new UseHelper);
 		View::share('image'					, new ImageHelper);
 		View::share('string'				, new StringHelper);
+		
+		View::share('user'					, []);
 	}
 }
