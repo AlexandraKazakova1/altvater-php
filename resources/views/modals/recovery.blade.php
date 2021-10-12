@@ -17,7 +17,7 @@
 							
 							<label>
 								<span class="input-description">Email:</span>
-								<input class="form-control" type="email" name="userEmail" placeholder=" ">
+								<input class="form-control" type="email" name="email" placeholder=" ">
 								<span class="input-placeholder">
 									<div>
 										<img src="/img/cabinet/modal-icon/email.svg">

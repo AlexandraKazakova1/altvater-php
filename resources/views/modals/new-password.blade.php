@@ -15,7 +15,7 @@
 						<fieldset class="fieldset">
 							<label>
 								<span class="input-description">Пароль:</span>
-								<input class="form-control password-2" type="password"  name="userPassword" placeholder=" ">
+								<input class="form-control password-2" type="password"  name="password" placeholder=" ">
 								<span class="input-placeholder">
 									<div>
 										<img src="/img/cabinet/modal-icon/lock.svg">
@@ -26,7 +26,7 @@
 							
 							<label>
 								<span class="input-description">Повторіть пароль:</span>
-								<input class="form-control" type="password"  name="userPasswordConfirm" placeholder=" ">
+								<input class="form-control" type="password"  name="confirm_password" placeholder=" ">
 								<span class="input-placeholder">
 									<div>
 										<img src="/img/cabinet/modal-icon/lock.svg">
