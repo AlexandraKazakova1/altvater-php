@@ -2024,7 +2024,8 @@ footer .footer span {
           flex-direction: column;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  max-height: 500px;
+  max-height: 1000px;
+  max-width: 50%;
 }
 
 .contacts__wrapper .contacts .contacts__list .contacts__item {
@@ -2058,6 +2059,7 @@ footer .footer span {
           flex-direction: column;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
+  max-width: 260px;
 }
 
 .contacts__wrapper .contacts .contacts__list .contacts__item .item__body a, .contacts__wrapper .contacts .contacts__list .contacts__item .item__body span {
@@ -2153,7 +2155,9 @@ footer .footer span {
   padding: 36px 48px;
   padding-bottom: 2px;
   position: absolute;
-  top: -50%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   right: 0;
   background: #FFFFFF;
   -webkit-box-shadow: 0px 4px 64px rgba(0, 0, 0, 0.15);

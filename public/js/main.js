@@ -60,16 +60,16 @@ function burgerMenu() {
 
 function breadcrumbs() {
     $('.breadcrumbs__toggle').click(function() {
-        $('.dropdown__list').slideUp(300);
+        // $('.dropdown__list').slideUp(300);
         $(this).toggleClass('act');
         $(this).parent().children('.dropdown__list').slideToggle(300);
     });
     $(document).mouseup(function (e){
-        if (!$('.breadcrumbs__item, .breadcrumbs__toggle').is(e.target) 
-        && $('.breadcrumbs__item, .breadcrumbs__toggle').has(e.target).length === 0) {
+        if (!$('.dropdown__list').is(e.target) 
+        && $('.dropdown__list').has(e.target).length === 0) {
             $('.dropdown__list').slideUp(300);
             $('.breadcrumbs__toggle').removeClass('act')
-        }
+        } 
     });
 };
 
