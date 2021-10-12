@@ -4854,6 +4854,7 @@ input.form-control:focus {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   margin-bottom: 0px;
+  width: 100%;
 }
 
 #servicesCalc .popup__form .fieldset a:hover {
