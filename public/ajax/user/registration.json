@@ -1,0 +1,10 @@
+{
+	"status" : true,
+	"message": "success",
+	"errors" : [],
+	"payload": {
+		"phone"	: "380686781355",
+		"email"	: "mirasoft182@gmail.com",
+		"token" : "fdgfdgg54fgbhfgbfg45gfgfgnfghf",
+	}
+}

@@ -4169,10 +4169,8 @@ a.popup-text__link {
 
 .popup .popup__form .fieldset label.error {
   position: absolute;
-  top: 53%;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  top: 100%;
+  left: 0;
   white-space: nowrap;
   font-style: normal;
   font-weight: normal;

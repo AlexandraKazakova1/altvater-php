@@ -1,0 +1,15 @@
+{
+	"status" : true,
+	"message": "success",
+	"errors" : [],
+	"payload": {
+		"id"		: 1,
+		"name" 		: "test1",
+		"addresses"	: "вулиця Бакуліна, 4а, Харків, Харківська область, 61000",
+		"lat"		: 0,
+		"lng"		: 0,
+		"images"	: [
+			"https://altvater.kiev.ua/img/problem1.png"
+		],
+	}
+}

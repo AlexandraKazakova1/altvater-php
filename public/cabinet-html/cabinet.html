@@ -380,11 +380,11 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form class="popup__form" id="create__contract-form">
+                        <form class="popup__form" id="create__contract-form__individual">
                             <fieldset class="fieldset">
                                 <label>
                                     <span class="input-description">ПІБ:</span>
-                                    <input class="form-control" type="text" name="userEmail" placeholder=" ">
+                                    <input class="form-control" type="text" name="userName" placeholder=" ">
                                     <span class="input-placeholder">
                                         <div>
                                             <img src="../img/cabinet/modal-icon/profile.svg">
@@ -414,7 +414,7 @@
                                 </label>
                                 <label>
                                     <span class="input-description">Адреса:</span>
-                                    <input class="form-control" type="text" name="user-address" placeholder=" ">
+                                    <input class="form-control" type="text" name="userAddress" placeholder=" ">
                                     <span class="input-placeholder">
                                         <div>
                                             <img src="../img/cabinet/modal-icon/location.svg">
@@ -451,11 +451,11 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form class="popup__form" id="create__contract-form">
+                        <form class="popup__form" id="create__contract-form__entity">
                             <fieldset class="fieldset">
                                 <label>
                                     <span class="input-description">Назва компанії:</span>
-                                    <input class="form-control" type="text" name="userEmail" placeholder=" ">
+                                    <input class="form-control" type="text" name="userName" placeholder=" ">
                                     <span class="input-placeholder">
                                         <div>
                                             <img src="../img/cabinet/modal-icon/profile.svg">
@@ -465,7 +465,7 @@
                                 </label>
                                 <label>
                                     <span class="input-description">Контактна особа:</span>
-                                    <input class="form-control" type="text" name="userEmail" placeholder=" ">
+                                    <input class="form-control" type="text" name="userContactName" placeholder=" ">
                                     <span class="input-placeholder">
                                         <div>
                                             <img src="../img/cabinet/modal-icon/profile.svg">
@@ -475,7 +475,7 @@
                                 </label>
                                 <label>
                                     <span class="input-description">Юридична адреса:</span>
-                                    <input class="form-control" type="text" name="user-ur-address" placeholder=" ">
+                                    <input class="form-control" type="text" name="userEntityAddress" placeholder=" ">
                                     <span class="input-placeholder">
                                         <div>
                                             <img src="../img/cabinet/modal-icon/location.svg">
@@ -505,7 +505,7 @@
                                 </label>
                                 <label>
                                     <span class="input-description">Додатковий телефон:</span>
-                                    <input class="form-control" type="tel" name="user-addTel" placeholder=" ">
+                                    <input class="form-control" type="tel" name="userAddTel" placeholder=" ">
                                     <span class="input-placeholder">
                                         <div>
                                             <img src="../img/cabinet/modal-icon/phone.svg">
@@ -560,7 +560,7 @@
                             <fieldset class="fieldset">
                                 <label>
                                     <span class="input-description">Назва:</span>
-                                    <input class="form-control" type="text" name="userEmail" placeholder=" ">
+                                    <input class="form-control" type="text" name="placeName" placeholder=" ">
                                     <span class="input-placeholder">
                                         <div>
                                             <img src="../img/cabinet/modal-icon/profile.svg">
@@ -570,7 +570,7 @@
                                 </label>
                                 <label>
                                     <span class="input-description">Адреса:</span>
-                                    <input class="form-control" type="text" name="user-address" placeholder=" ">
+                                    <input class="form-control" type="text" name="placeAddress" placeholder=" ">
                                     <span class="input-placeholder">
                                         <div>
                                             <img src="../img/cabinet/modal-icon/location.svg">
@@ -610,8 +610,7 @@
                     <div class="modal-body">
                         <span class="input-description">Адреса:</span>
                         <span class="address">вулиця Бакуліна, 4а, Харків, Харківська область, 61000</span>
-                        <map name="place-location">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10162.523927873703!2d30.510156484441165!3d50.447973844449656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce59e3ab65a7%3A0x694b8565cab02eaf!2z0JfQvtC70L7RgtGWINCy0L7RgNC-0YLQsA!5e0!3m2!1suk!2sua!4v1630349645139!5m2!1suk!2sua" width="338" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        <map class="place-location" id="map" name="place-location">
                         </map>
                         <span class="input-description">Проблемні місця:</span>
                         <div class="galery">
@@ -665,7 +664,7 @@
                                 </label>
                                 <label>
                                     <span class="input-description">Вибрати час:</span>
-                                    <input class="form-control" type="text" name="user-address" placeholder=" ">
+                                    <input class="form-control" type="text" name="userAddress" placeholder=" ">
                                     <span class="input-placeholder">
                                         <div>
                                             <img src="../img/cabinet/modal-icon/time-clock.svg">
@@ -698,11 +697,13 @@
     <script src="../js/dhtmlxscheduler.js"></script>
     <script src="../js/locale_ua.js"></script>
     <script src="../js/bootstrap.min.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&v=weekly" async></script>
     <script src="../js/cabinet.js"></script>
+
     <script type="text/javascript">
         scheduler.init("scheduler__calendar");
     </script>
-    
     <script>
         //The structure of the scheduler
         scheduler.config.header = [

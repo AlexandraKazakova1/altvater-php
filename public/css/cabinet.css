@@ -4639,6 +4639,12 @@ a.popup-text__link {
   padding-bottom: 28px;
 }
 
+.address__info-page .modal-body .place-location {
+  width: 100%;
+  height: 300px;
+  border-radius: 16px;
+}
+
 .address__info-page .modal-body .galery {
   display: -webkit-box;
   display: -ms-flexbox;

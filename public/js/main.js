@@ -248,7 +248,8 @@ function logIn() {
 			if(!lock){
 				$.ajax({
 					type: "POST",
-					url: form.attr("action"),
+					url: '/ajax/user/login',
+                    method: "POST",
                     data: form.serialize(),
                     dataType: "json",
                     beforeSend: function(request){
@@ -263,24 +264,18 @@ function logIn() {
 						
 						lock = false;
                         btn.attr('disabled', false);
-						
-						if(response.status){;
-							form.trigger('reset');
-							
-                            $('#log__in-form').trigger('reset');
-                            $('#answer-msg').text(response.msg);
 
-							
-							setTimeout('#answer-msg', 5000);
+						if(response.status){
+							form.trigger('reset');
 						}
 					},
 					error: function(err){
+						console.log('error');
 						lock = false;
                         btn.attr('disabled', false);
 					}
 				});
 			};
-			
 			return false;
 	    }
     });
@@ -354,7 +349,7 @@ function create() {
 			if(!lock){
 				$.ajax({
 					type: "POST",
-					url: form.attr("action"),
+					url: '/ajax/user/registration',
                     data: form.serialize(),
                     dataType: "json",
                     beforeSend: function(request){
@@ -372,15 +367,10 @@ function create() {
 						
 						if(response.status){;
 							form.trigger('reset');
-							
-                            $('#create-form').trigger('reset');
-                            $('#answer-msg').text(response.msg);
-
-							
-							setTimeout('#answer-msg', 5000);
 						}
 					},
 					error: function(err){
+						console.log('error');
 						lock = false;
                         btn.attr('disabled', false);
 					}
@@ -423,7 +413,7 @@ function passRecovery() {
 			if(!lock){
 				$.ajax({
 					type: "POST",
-					url: form.attr("action"),
+					url: '/ajax/user/recovery',
                     data: form.serialize(),
                     dataType: "json",
                     beforeSend: function(request){
@@ -441,15 +431,10 @@ function passRecovery() {
 						
 						if(response.status){;
 							form.trigger('reset');
-							
-                            $('#pass__recovery-form').trigger('reset');
-                            $('#answer-msg').text(response.msg);
-
-							
-							setTimeout('#answer-msg', 5000);
 						}
 					},
 					error: function(err){
+						console.log('error');
 						lock = false;
                         btn.attr('disabled', false);
 					}
@@ -502,7 +487,7 @@ function passRecovery3() {
 			if(!lock){
 				$.ajax({
 					type: "POST",
-					url: form.attr("action"),
+					url: '/ajax/user/new-password',
                     data: form.serialize(),
                     dataType: "json",
                     beforeSend: function(request){
@@ -520,15 +505,10 @@ function passRecovery3() {
 						
 						if(response.status){;
 							form.trigger('reset');
-							
-                            $('#pass__recovery-form3').trigger('reset');
-                            $('#answer-msg').text(response.msg);
-
-							
-							setTimeout('#answer-msg', 5000);
 						}
 					},
 					error: function(err){
+						console.log('error');
 						lock = false;
                         btn.attr('disabled', false);
 					}
@@ -575,7 +555,7 @@ function passVerificationForm() {
 			if(!lock){
 				$.ajax({
 					type: "POST",
-					url: form.attr("action"),
+					url: '/ajax/user/verification',
                     data: form.serialize(),
                     dataType: "json",
                     beforeSend: function(request){
@@ -593,15 +573,10 @@ function passVerificationForm() {
 						
 						if(response.status){;
 							form.trigger('reset');
-							
-                            $('#pass__verification-form').trigger('reset');
-                            $('#answer-msg').text(response.msg);
-
-							
-							setTimeout('#answer-msg', 5000);
 						}
 					},
 					error: function(err){
+						console.log('error');
 						lock = false;
                         btn.attr('disabled', false);
 					}

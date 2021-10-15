@@ -1,0 +1,16 @@
+{
+	"status" : true,
+	"message": "success",
+	"errors" : [],
+	"payload": {
+		"count"	: 18,
+		"items"	: [
+			{
+				"id"	: "876364",
+				"file"	: "Договір1.pdf",
+				"date"	: "12.12.2021",
+				"path"	: "https://altvater.kiev.ua/storage/doc1.pdf",
+			},
+		]
+	}
+}

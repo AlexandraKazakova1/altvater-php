@@ -151,12 +151,12 @@
                 <span>Назад</span>
             </a>
             <section class="request">
-                <form class="request__form" action="POST">
+                <form class="request__form" id="request__form" action="POST">
                     <fieldset>
                         <div>
                             <label>
                                 <span class="input-description">Вибір тематики заявки:</span>
-                                <input class="form-control" type="text" id="subject" name="subject" placeholder=" ">
+                                <input class="form-control" type="text" name="theme" placeholder=" ">
                                 <span class="input-placeholder">
                                     <div>
                                         <img src="../img/cabinet/text.svg">
@@ -166,7 +166,7 @@
                             </label>
                             <label>
                                 <span class="input-description">Номер договору:</span>
-                                <input class="form-control" type="number" id="id" name="id" placeholder=" ">
+                                <input class="form-control" type="number" name="number" placeholder=" ">
                                 <span class="input-placeholder">
                                     <div>
                                         <img src="../img/cabinet/documents.svg">
@@ -176,7 +176,7 @@
                             </label>
                             <label>
                                 <span class="input-description">Телефон:</span>
-                                <input class="form-control" type="tel" name="tel" placeholder=" ">
+                                <input class="form-control" type="tel" name="phone" placeholder=" ">
                                 <span class="input-placeholder">
                                     <div>
                                         <img src="../img/cabinet/phone.svg">
@@ -188,7 +188,7 @@
                         <div>
                             <label>
                                 <span class="input-description">Заголовку звернення:</span>
-                                <input class="form-control" type="text" id="subject" name="subject" placeholder=" ">
+                                <input class="form-control" type="text" name="header" placeholder=" ">
                                 <span class="input-placeholder">
                                     <div>
                                         <img src="../img/cabinet/text.svg">
@@ -198,7 +198,7 @@
                             </label>
                             <label>
                                 <span class="input-description">Коментар</span>
-                                <textarea placeholder=" " id="massage" name="massage"></textarea>
+                                <textarea placeholder=" " name="text"></textarea>
                                 <span class="input-placeholder">
                                     <div>
                                         <img src="../img/cabinet/messages.svg">
@@ -261,7 +261,7 @@
                                 </label>
                                 <label>
                                     <span class="input-description">Адреса:</span>
-                                    <input class="form-control" type="text" name="user-address" placeholder=" ">
+                                    <input class="form-control" type="text" name="userAddress" placeholder=" ">
                                     <span class="input-placeholder">
                                         <div>
                                             <img src="../img/cabinet/modal-icon/location.svg">
@@ -322,7 +322,7 @@
                                 </label>
                                 <label>
                                     <span class="input-description">Юридична адреса:</span>
-                                    <input class="form-control" type="text" name="user-ur-address" placeholder=" ">
+                                    <input class="form-control" type="text" name="userEntityAddress" placeholder=" ">
                                     <span class="input-placeholder">
                                         <div>
                                             <img src="../img/cabinet/modal-icon/location.svg">
@@ -352,7 +352,7 @@
                                 </label>
                                 <label>
                                     <span class="input-description">Додатковий телефон:</span>
-                                    <input class="form-control" type="tel" name="user-addTel" placeholder=" ">
+                                    <input class="form-control" type="tel" name="userAddTel" placeholder=" ">
                                     <span class="input-placeholder">
                                         <div>
                                             <img src="../img/cabinet/modal-icon/phone.svg">
@@ -417,7 +417,7 @@
                                 </label>
                                 <label>
                                     <span class="input-description">Адреса:</span>
-                                    <input class="form-control" type="text" name="user-address" placeholder=" ">
+                                    <input class="form-control" type="text" name="userAddress" placeholder=" ">
                                     <span class="input-placeholder">
                                         <div>
                                             <img src="../img/cabinet/modal-icon/location.svg">
@@ -512,7 +512,7 @@
                                 </label>
                                 <label>
                                     <span class="input-description">Вибрати час:</span>
-                                    <input class="form-control" type="text" name="user-address" placeholder=" ">
+                                    <input class="form-control" type="text" name="userAddress" placeholder=" ">
                                     <span class="input-placeholder">
                                         <div>
                                             <img src="../img/cabinet/modal-icon/time-clock.svg">
