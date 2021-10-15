@@ -12,6 +12,7 @@
 					'jquery.min.js',
 					'slick.min.js',
 					'jquery.validate.min.js',
+					'bootstrap.min.js',
 					'main.js'
 				)
 			)
