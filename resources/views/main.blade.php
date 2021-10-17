@@ -199,32 +199,60 @@
 								<Label class="select">
 									<span class="input-description">Об'єкт утворення ТПВ</span>
 									<select class="select2" name="type">
-										<option name="apartments">Багатоквартирні будинки</option>
-										<option name="private">Приватний будинок</option>
-										<option name="office">Офіс</option>
-										<option name="industrial">Промислове підприємство</option>
+										<option data-label="Кількість людей" value="2.15">Багатоквартирні будинки</option>
+										<option data-label="Кількість людей" value="2.52">Будинки приватного сектору </option>
+										<option data-label="Кількість людей" value="3.25">Готелі з ресторанами, конференц-залами;</option>
+										<option data-label="Кількість місць" value="1.64">Готелі: без ресторанів, конференц-залів</option>
+										<option data-label="Кількість місць" value="1.39">Гуртожитки</option>
+										<option data-label="Кількість місць" value="2.08">Санаторії, пансіонати, будинки відпочинку</option>
+										<option data-label="Кількість місць" value="2.12">Лікарні</option>
+										<option data-label="Кількість відвідувань" value="0.23">Поліклініки</option>
+										<option data-label="м² площі" value="0.5">Склади</option>
+										<option data-label="Кількість робочих місць" value="0.7">Адміністративні установи</option>
+										<option data-label="Кількість робочих місць" value="0.95">Науково-дослідні організації</option>
+										<option data-label="Кількість учнів" value="0.23">Школи, ліцеї</option>
+										<option data-label="Кількість учнів" value="0.24">Вищі і середні навчальні заклади</option>
+										<option data-label="Кількість учнів" value="0.95">Школи-інтернати</option>
+										<option data-label="Кількість учнів" value="0.88">Профтехучилища</option>
+										<option data-label="м² торговельної площі" value="0.39">Промтоварні крамниці</option>
+										<option data-label="м² торговельної площі" value="0.57">Продовольчі крамниці</option>
+										<option data-label="м² торговельної площі" value="0.44">Ринки (продовольчі, речові, змішані)</option>
+										<option data-label="м² торговельної площі" value="0.55">Супер, гіпер-, мегамаркети</option>
+										<option data-label="Кількість місць" value="0.36">Видовищні установи (стадіони, літні площадки, оглядові майданчики тощо)</option>
+										<option data-label="Кількість робочих місць" value="1.26">Підприємства побутового обслуговування</option>
+										<option data-label="Кількість місць" value="0.29">Заклади культури і мистецтв</option>
+										<option data-label="м² площі для пасажирів" value="0.77">Залізничні вокзали, аеропорти, автовокзали</option>
+										<option data-label="м² площі" value="0.07">Кемпінги, автостоянки</option>
+										<option data-label="м² території" value="0.1095">Пляжі (в літній сезон)</option>
+										<option data-label="Кількість місць" value="2.92">Ресторани</option>
+										<option data-label="Кількість місць" value="2.19">Кафе, їдальні</option>
+										<option data-label="Кількість місць" value="1.46">Відкриті сезонні торгові площадки, павільйони</option>
 									</select>
 								</label>
 								
 								<Label>
 									<span class="input-description">Кількість людей</span>
-									<input class="form-control" type="text" name="count" autocomplete="off" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder=" "/>
+									<input class="form-control" type="text" name="count" autocomplete="off" oninput="this.value=this.value.replace(/[^0-9\.]/g,'');" placeholder=" "/>
 								</Label>
 								
 								<Label class="select">
 									<span class="input-description">Категорія тарифу</span>
 									<select class="select2" name="category">
-										<option value="people">Населення</option>
-										<option value="commerce">Комерція</option>
+										<option value="people">населення</option>
+										<option value="commerce">бюджетні установи</option>
+										<option value="people">інші</option>
 									</select>
 								</Label>
 								
 								<Label class="select">
 									<span class="input-description">Об'єм контейнера, м<sup>3</sup></span>
 									<select class="select2" name="volume">
+										<option value="0.12">0,12</option>
+										<option value="0.24">0,24</option>
+										<option value="0.36">0,36</option>
+										<option value="0.66">0,66</option>
+										<option value="0.77">0,77</option>
 										<option value="1.1">1,1</option>
-										<option value="2.2">2,2</option>
-										<option value="4.1">4,1</option>
 									</select>
 								</Label>
 								
