@@ -13,6 +13,7 @@ $(document).ready (function() {
     passVerificationForm();
     checkCookies();
     // calcPopup();
+    servicesCalc();
 });
 
 function slidersConfig() {
@@ -612,3 +613,19 @@ function checkCookies() {
 //         // placeholder: 'Select an option'
 //     });
 // }
+
+function servicesCalc(){
+	var form = jQuery("#servicesCalc-form");
+	
+	if(!form.length){
+		return false;
+	};
+	
+	form.find('select[name="type"]').on('change', function(e){
+		console.log('e:', e);
+		
+		var current = $(e.target);
+		
+		console.log('current:', current);
+	});
+};
