@@ -12,6 +12,10 @@ class VerifyCsrfToken extends Middleware {
 	 * @var array
 	 */
 	protected $except = [
-		'ajax/callback'
+		'ajax/callback',
+		'ajax/user/login',
+		'ajax/user/register',
+		'ajax/user/forgotten',
+		'ajax/user/profile'
 	];
 }
