@@ -45,7 +45,7 @@ class PageController extends MyController {
 			'robots'	=> $page->robots,
 			'canonical'	=> $page->canonical,
 			'data'		=> $page,
-			'services'	=> Services::query()->where('public', 1)->orderBy('created_at', 'desc')->select('slug', 'title', 'image')->get(),
+			'services'	=> Services::query()->where('public', 1)->orderBy('sort', 'asc')->select('slug', 'title', 'image')->get(),
 			'news'		=> News::getNew(),
 			'reviews'	=> Reviews::query()->where('public', 1)->orderBy('created_at', 'desc')->select('image', 'name', 'text')->get(),
 			'faq'		=> FAQ::query()->where('public', 1)->orderBy('sort', 'desc')->select('title', 'text')->get(),
