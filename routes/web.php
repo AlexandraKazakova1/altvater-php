@@ -29,6 +29,22 @@ Route::group(['namespace' => 'Ajax'], function(){
 	Route::post('ajax/callback', [
 		'uses' => 'SendController@contact'
 	]);
+	
+	Route::post('ajax/user/login', [
+		'uses' => 'UserController@login'
+	]);
+	
+	Route::post('ajax/user/register', [
+		'uses' => 'UserController@register'
+	]);
+	
+	Route::post('ajax/user/forgotten', [
+		'uses' => 'UserController@forgotten'
+	]);
+	
+	Route::post('ajax/user/profile', [
+		'uses' => 'UserController@profile'
+	]);
 });
 
 Route::get('news', [
