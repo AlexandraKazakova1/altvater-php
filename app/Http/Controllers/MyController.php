@@ -7,8 +7,6 @@ use Request;
 
 use App\Http\Requests;
 
-use DB;
-
 use App\Models\SiteMenu;
 use App\Models\FooterMenu;
 
@@ -16,6 +14,8 @@ use App\Models\Pages;
 use App\Models\News;
 use App\Models\Services;
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\View;
 
 use App\Helpers\ImageHelper;
