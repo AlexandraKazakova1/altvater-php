@@ -24,6 +24,10 @@ use App\Helpers\UseHelper;
 
 class MyController extends Controller {
 	
+	public $_auth	= false;
+	public $_user	= [];
+	public $_id		= 0;
+	
 	function __construct(){
 		//parent::__construct();
 		
@@ -91,6 +95,16 @@ class MyController extends Controller {
 		View::share('image'					, new ImageHelper);
 		View::share('string'				, new StringHelper);
 		
-		View::share('user'					, []);
+		$this->_user = Auth::user();
+		
+		if($this->_user){
+			//$this->_user = (array)$this->_user;
+			
+			$this->_id = $this->_user->id;
+			
+			$this->_auth = true;
+		};
+		
+		View::share('user'	, $this->_user);
 	}
 }
