@@ -23,6 +23,8 @@ class ContactsController extends MyController {
 	}
 	
 	public function index(){
+		$this->session();
+		
 		$page = (object)Pages::query()->where('slug', 'contacts')->first()->toArray();
 		
 		$data = [

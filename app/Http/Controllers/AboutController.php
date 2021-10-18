@@ -22,6 +22,8 @@ class AboutController extends MyController {
 	}
 	
 	public function index(){
+		$this->session();
+		
 		$page	= (object)Pages::query()->where('slug', 'about')->first()->toArray();
 		
 		$detail = Pages::query()->where('id', 2)->where('public', 1)->select('header', 'text')->first();

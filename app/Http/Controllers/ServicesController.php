@@ -25,6 +25,8 @@ class ServicesController extends MyController {
 	}
 	
 	public function index(Request $request){
+		$this->session();
+		
 		$page = Pages::query()->where('slug', 'services')->first();
 		
 		$data = [
@@ -49,6 +51,8 @@ class ServicesController extends MyController {
 	}
 	
 	public function once(Request $request){
+		$this->session();
+		
 		$uri = $request->route('uri');
 		
 		$page = Services::query()->where('slug', $uri)->where('public', 1)->first();

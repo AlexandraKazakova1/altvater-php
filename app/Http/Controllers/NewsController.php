@@ -24,6 +24,8 @@ class NewsController extends MyController {
 	}
 	
 	public function index(){
+		$this->session();
+		
 		$page = (object)Pages::query()->where('slug', 'news')->first()->toArray();
 		
 		$data = [
@@ -51,6 +53,8 @@ class NewsController extends MyController {
 	}
 	
 	public function once(Request $request){
+		$this->session();
+		
 		$uri = $request->route('uri');
 		
 		$page = News::query()->where('slug', $uri)->where('public', 1)->first();

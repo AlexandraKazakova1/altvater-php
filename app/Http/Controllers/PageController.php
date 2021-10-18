@@ -26,6 +26,8 @@ class PageController extends MyController {
 	}
 	
 	public function index(){
+		$this->session();
+		
 		$page = (object)Pages::query()->where('slug', 'index')->first()->toArray();
 		
 		$detail = Pages::query()->where('id', 2)->where('public', 1)->select('header', 'text')->first();
@@ -59,6 +61,8 @@ class PageController extends MyController {
 	}
 	
 	public function once(Request $request){
+		$this->session();
+		
 		$uri = $request->route('uri');
 		
 		$page = Pages::query()->where('slug', $uri)->where('public', 1)->first();

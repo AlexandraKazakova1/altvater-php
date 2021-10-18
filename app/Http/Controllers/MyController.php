@@ -95,6 +95,10 @@ class MyController extends Controller {
 		View::share('image'					, new ImageHelper);
 		View::share('string'				, new StringHelper);
 		
+		View::share('user'	, []);
+	}
+	
+	function session(){
 		$this->_user = Auth::user();
 		
 		if($this->_user){
