@@ -31,7 +31,7 @@ class User extends Authenticatable	{
 		'verify_phone',
 		'email_token',
 		'phone_token',
-		'code'
+		'phone_code'
 	];
 	
 	/**

@@ -25,4 +25,9 @@ return [
 	
 	'failed_profile'					=> 'Помилка при оновленні профіля',
 	'success_profile'					=> 'Профіль успішно оновлено',
+	
+	'code_invalid'						=> 'Вказаний код не знайдено',
+	
+	'failed_activation'					=> 'Активація не вдалась',
+	'success_activation'				=> 'Активація пройшла успішно',
 ];

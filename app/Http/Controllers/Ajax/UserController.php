@@ -49,7 +49,11 @@ class UserController extends Controller {
 			
 			if($user){
 				if($user->verify_phone > 0){
-					if(Auth::attempt(['email' => $post['email'], 'password' => $post['password']], true)){
+					if(!isset($post['remember'])){
+						$post['remember'] = '';
+					}
+					
+					if(Auth::attempt(['email' => $post['email'], 'password' => $post['password']], $post['remember'] == 'on')){
 						$status = true;
 						$msg	= trans('ajax.success_login');
 					}
@@ -283,6 +287,75 @@ class UserController extends Controller {
 				
 				$status = true;
 				$msg	= trans('ajax.success_register');
+			}
+		}else{
+			$messages = $validator->messages();
+			
+			foreach($post as $k => $v){
+				$error = $messages->first($k);
+				
+				if($error){
+					$errors[$k] = $error;
+				}
+			}
+		}
+		
+		return response()->json([
+			'status' 	=> $status,
+			'message'	=> $msg,
+			'errors'	=> $errors,
+			'payload'	=> $payload
+		], 200, [], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+	}
+	
+	function activation(Request $request){
+		$post = $request->all();
+		
+		$status = false;
+		$errors = array();
+		$msg	= trans('ajax.failed_activation');
+		$payload= [];
+		
+		$validator = Validator::make(
+			$post,
+			array(
+				'token'					=> 'required|string|max:32|min:32',
+				'code'					=> 'required',
+			),
+			array(
+				'token.required'		=> trans('ajax_validation.phone_required'),
+				'token.min'				=> trans('ajax_validation.min_length'),
+				'token.max'				=> trans('ajax_validation.max_length'),
+				
+				'code.required'			=> trans('ajax_validation.required'),
+			)
+		);
+		
+		if($validator->passes()){
+			if(is_array($post['code'])){
+				$post['code'] = implode('', $post['code']);
+			}
+			
+			$user = User::query()
+						->where('phone_token', '=', $post['token'])
+						//->where('phone_code', '=', $post['code'])
+						->first();
+			
+			if($user){
+				if($user->phone_code == $post['code']){
+					if(!isset($post['remember'])){
+						$post['remember'] = '';
+					}
+					
+					if(Auth::loginUsingId($user->id, $post['remember'] == 'on')){
+						$status = true;
+						$msg	= trans('ajax.success_activation');
+					}
+				}else{
+					$msg	= trans('ajax.code_invalid');
+				}
+			}else{
+				$msg	= trans('ajax.user_not_found');
 			}
 		}else{
 			$messages = $validator->messages();
