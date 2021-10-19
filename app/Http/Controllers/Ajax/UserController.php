@@ -55,6 +55,12 @@ class UserController extends Controller {
 					}
 				}else{
 					$msg	= trans('ajax.user_not_active');
+					
+					$payload = [
+						'sms'	=> true,
+						'phone'	=> $user->phone,
+						'token'	=> $user->phone_token
+					];
 				}
 			}
 		}else{

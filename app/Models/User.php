@@ -28,7 +28,10 @@ class User extends Authenticatable	{
 		'blocked',
 		'type',
 		'verify_email',
-		'verify_phone'
+		'verify_phone',
+		'email_token',
+		'phone_token',
+		'code'
 	];
 	
 	/**
