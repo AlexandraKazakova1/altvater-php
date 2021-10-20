@@ -199,6 +199,10 @@ function modalFade() {
         $('.modal').modal('hide');
         $('#recovery-modal-2').modal('show');
     });
+    $('#calculator').click(function() {
+        $('.modal').modal('hide');
+        $('#servicesCalc').modal('show');
+    });
     $('.calc-btn').click(function() {
         $('.modal').modal('hide');
         $('#servicesCalc').modal('show');
