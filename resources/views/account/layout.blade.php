@@ -505,7 +505,7 @@
 		<script src="/js/locale_ua.js"></script>
 		<script src="/js/bootstrap.min.js"></script>
 		<script
-		  src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&v=weekly" async></script>
+		  src="https://maps.googleapis.com/maps/api/js?key={{$settings['google_api_key']}}&callback=initMap&v=weekly" async></script>
 		<script src="/js/cabinet.js"></script>
 		
 		<script type="text/javascript">
