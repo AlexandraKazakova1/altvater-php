@@ -28,7 +28,7 @@ class AccountController extends MyController {
 			'account/index',
 			[
 				'page'			=> array(
-					'title'			=> trans('cabinet.index.title'),
+					'title'			=> trans('site.cabinet.index.title'),
 					'keywords'		=> '',
 					'description'	=> '',
 					'uri'			=> 'account/index',
