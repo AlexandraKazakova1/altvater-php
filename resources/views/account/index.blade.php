@@ -20,7 +20,7 @@
 							</svg>
 							<div>
 								<span>Ім'я:</span>
-								<span class="owner-name">Владислав</span>
+								<span class="owner-name">{{$user['name']}}</span>
 							</div>
 						</div>
 						
@@ -32,7 +32,7 @@
 							</svg>
 							<div>
 								<span>Номер акаунту:</span>
-								<span class="owner-id">876364</span>
+								<span class="owner-id">{{$user['id']}}</span>
 							</div>
 						</div>
 					</div>
