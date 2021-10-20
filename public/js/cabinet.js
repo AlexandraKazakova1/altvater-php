@@ -1131,3 +1131,4 @@ function settingsForm() {
 	    }
     });
 };
+

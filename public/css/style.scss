@@ -414,6 +414,20 @@ header {
     background-repeat: no-repeat;
     background-position: center;
     min-height: 39.583vw;
+    .btn-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        font-family: 'Fira Sans';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 16px;
+        color: #FFFFFF;
+        background: transparent;
+        padding: 10px 24px;
+    }
     .header-nav {
         margin: 0 auto;
         width: 100%;
@@ -453,7 +467,7 @@ header {
             justify-content: space-between;
             align-items: center;
             .btn-logIn {
-                font-family: Fira Sans;
+                font-family: 'Fira Sans';
                 font-style: normal;
                 font-weight: normal;
                 font-size: 14px;
@@ -746,6 +760,7 @@ header.small {
             align-items: center;
             .news__item {
                 margin: 0 10px;
+                padding: 0;
                 margin-bottom: 48px;
                 display: flex;
                 justify-content: center;
@@ -3068,9 +3083,51 @@ a.popup-text__link {
             margin: 0;
         }
     }
-    .popup__form {
+    .radio__select {
+        padding: 2px;
         display: flex;
+        flex-direction: row;
         width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        background: #F6F7F9;
+        border-radius: 8px;
+        margin-bottom: 28px;
+        button {
+            flex: 0.48;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: #F6F7F9;
+            filter: drop-shadow(0px 0px 0px rgba(2, 3, 3, 0.03)) drop-shadow(0px 0px 0px rgba(2, 3, 3, 0.02)) drop-shadow(0px 0px 0px rgba(2, 3, 3, 0.04));
+            span {
+                z-index: 1;
+                padding: 10px 8px;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 12px;
+                line-height: 12px;
+                text-align: center;
+                color: #020303;
+            }
+        }
+        button:hover,
+        button.act {
+            filter: drop-shadow(0px 2px 2px rgba(2, 3, 3, 0.03)) drop-shadow(0px 3px 1px rgba(2, 3, 3, 0.02)) drop-shadow(0px 1px 5px rgba(2, 3, 3, 0.04));
+            background: #FFFFFF;
+            transition: all 0.3s;
+        }
+    }
+    .popup__form {
+        display: none;
+        width: 100%;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s;
         .fieldset {
             width: 100%;
             display: flex;
@@ -3289,64 +3346,6 @@ a.popup-text__link {
                 background: #BF604D;
                 transition: all 0.3s;
             }
-            .radio__select {
-                padding: 2px;
-                display: flex;
-                flex-direction: row;
-                width: 100%;
-                align-items: center;
-                justify-content: space-between;
-                background: #F6F7F9;
-                border-radius: 8px;
-                margin-bottom: 28px;
-                label {
-                    flex: 0.48;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    margin: 0;
-                    position: relative;
-                    cursor: pointer;
-                    filter: drop-shadow(0px 2px 2px rgba(2, 3, 3, 0.03)) drop-shadow(0px 3px 1px rgba(2, 3, 3, 0.02)) drop-shadow(0px 1px 5px rgba(2, 3, 3, 0.04));
-                    input {
-                        border: 0;
-                        clip: rect(0 0 0 0);
-                        height: 1px;
-                        margin: -1px;
-                        overflow: hidden;
-                        padding: 0;
-                        // position: absolute;
-                        width: 1px;
-                    }
-                    input::after {
-                        content: '';
-                        position: absolute;
-                        left: 0;
-                        top: 0;
-                        right: 0;
-                        bottom: 0;
-                        z-index: 1;
-                        background: transparent;
-                        transition: all 0.3s;
-                        pointer-events: none;
-                        border-radius: 8px;
-                    }
-                    span {
-                        z-index: 1;
-                        padding: 10px 8px;
-                        font-style: normal;
-                        font-weight: 600;
-                        font-size: 12px;
-                        line-height: 12px;
-                        text-align: center;
-                        color: #020303;
-                    }
-                    input:checked::after {
-                        background: #FFFFFF;
-                        transition: all 0.3s;
-                    }
-                }
-            }
             .recaptcha {
                 display: flex;
                 width: 100%;
@@ -3379,6 +3378,12 @@ a.popup-text__link {
                 }
             }
         }
+    }
+    .popup__form.act {
+        opacity: 1;
+        visibility: visible;
+        transition: all 0.3s;
+        display: flex;
     }
     .or__text {
         position: relative;

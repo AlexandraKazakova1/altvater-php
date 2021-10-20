@@ -12,7 +12,9 @@ $(document).ready (function() {
     passRecovery3();
     passVerificationForm();
     checkCookies();
+    createModal();
     // calcPopup();
+        $('#create-modal').modal('show');
 });
 
 function slidersConfig() {
@@ -605,6 +607,20 @@ function checkCookies() {
     })
 }
 
+function createModal() {
+    $('.btn-individual').click(function() {
+        $('.btn-entity').removeClass('act');
+        $('#create-form__entity').removeClass('act');
+        $('.btn-individual').addClass('act');
+        $('#create-form__individual').addClass('act');
+    });
+    $('.btn-entity').click(function() {
+        $('.btn-individual').removeClass('act');
+        $('#create-form__individual').removeClass('act');
+        $('.btn-entity').addClass('act');
+        $('#create-form__entity').addClass('act');
+    });
+}
 // function calcPopup() {
 // 	$('.select2').select2({
 //         minimumResultsForSearch: -1,
