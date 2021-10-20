@@ -7,8 +7,6 @@ use Request;
 
 use App\Http\Requests;
 
-use DB;
-
 use App\Models\SiteMenu;
 use App\Models\FooterMenu;
 
@@ -16,6 +14,8 @@ use App\Models\Pages;
 use App\Models\News;
 use App\Models\Services;
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\View;
 
 use App\Helpers\ImageHelper;
@@ -23,6 +23,10 @@ use App\Helpers\StringHelper;
 use App\Helpers\UseHelper;
 
 class MyController extends Controller {
+	
+	public $_auth	= false;
+	public $_user	= [];
+	public $_id		= 0;
 	
 	function __construct(){
 		//parent::__construct();
@@ -91,6 +95,20 @@ class MyController extends Controller {
 		View::share('image'					, new ImageHelper);
 		View::share('string'				, new StringHelper);
 		
-		View::share('user'					, []);
+		View::share('user'	, []);
+	}
+	
+	function session(){
+		$this->_user = Auth::user();
+		
+		if($this->_user){
+			//$this->_user = (array)$this->_user;
+			
+			$this->_id = $this->_user->id;
+			
+			$this->_auth = true;
+		};
+		
+		View::share('user'	, $this->_user);
 	}
 }

@@ -14,7 +14,7 @@ $(document).ready (function() {
     checkCookies();
     createModal();
     // calcPopup();
-        $('#create-modal').modal('show');
+    servicesCalc();
 });
 
 function slidersConfig() {
@@ -628,3 +628,19 @@ function createModal() {
 //         // placeholder: 'Select an option'
 //     });
 // }
+
+function servicesCalc(){
+	var form = jQuery("#servicesCalc-form");
+	
+	if(!form.length){
+		return false;
+	};
+	
+	form.find('select[name="type"]').on('change', function(e){
+		console.log('e:', e);
+		
+		var current = $(e.target);
+		
+		console.log('current:', current);
+	});
+};

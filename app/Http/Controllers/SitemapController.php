@@ -24,6 +24,8 @@ class SitemapController extends MyController {
 	}
 	
 	public function index(){
+		$this->session();
+		
 		$page = (object)Pages::query()->where('slug', 'sitemap.html')->first()->toArray();
 		
 		$pages = [];

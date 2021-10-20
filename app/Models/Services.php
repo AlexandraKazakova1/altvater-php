@@ -26,7 +26,8 @@ class Services extends Model {
 		'header',
 		'image',
 		'slider_label',
-		'text'
+		'text',
+		'sort'
 	];
 	
 	public function images(){

@@ -26,6 +26,8 @@ class PageController extends MyController {
 	}
 	
 	public function index(){
+		$this->session();
+		
 		$page = (object)Pages::query()->where('slug', 'index')->first()->toArray();
 		
 		$detail = Pages::query()->where('id', 2)->where('public', 1)->select('header', 'text')->first();
@@ -45,7 +47,7 @@ class PageController extends MyController {
 			'robots'	=> $page->robots,
 			'canonical'	=> $page->canonical,
 			'data'		=> $page,
-			'services'	=> Services::query()->where('public', 1)->orderBy('created_at', 'desc')->select('slug', 'title', 'image')->get(),
+			'services'	=> Services::query()->where('public', 1)->orderBy('sort', 'asc')->select('slug', 'title', 'image')->get(),
 			'news'		=> News::getNew(),
 			'reviews'	=> Reviews::query()->where('public', 1)->orderBy('created_at', 'desc')->select('image', 'name', 'text')->get(),
 			'faq'		=> FAQ::query()->where('public', 1)->orderBy('sort', 'desc')->select('title', 'text')->get(),
@@ -59,6 +61,8 @@ class PageController extends MyController {
 	}
 	
 	public function once(Request $request){
+		$this->session();
+		
 		$uri = $request->route('uri');
 		
 		$page = Pages::query()->where('slug', $uri)->where('public', 1)->first();
