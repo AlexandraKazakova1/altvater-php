@@ -4133,12 +4133,10 @@ a.popup-text__link {
 }
 
 .popup .popup__form {
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 100%;
-  opacity: 0;
-  visibility: hidden;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
 }
 
 .popup .popup__form .fieldset {
@@ -4500,14 +4498,24 @@ a.popup-text__link {
   font-size: 13px;
 }
 
-.popup .popup__form.act {
+.popup #create-form__individual,
+.popup #create-form__entity {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.popup #create-form__individual.act,
+.popup #create-form__entity.act {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   opacity: 1;
   visibility: visible;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .popup .or__text {

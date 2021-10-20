@@ -3123,11 +3123,8 @@ a.popup-text__link {
         }
     }
     .popup__form {
-        display: none;
+        display: flex;
         width: 100%;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s;
         .fieldset {
             width: 100%;
             display: flex;
@@ -3379,11 +3376,19 @@ a.popup-text__link {
             }
         }
     }
-    .popup__form.act {
+    #create-form__individual,
+    #create-form__entity {
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s;
+    }
+    #create-form__individual.act,
+    #create-form__entity.act {
+        display: flex;
         opacity: 1;
         visibility: visible;
         transition: all 0.3s;
-        display: flex;
     }
     .or__text {
         position: relative;
