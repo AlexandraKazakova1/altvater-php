@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="ua">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<title>{{$page['title']}}</title>
+		
+		<meta name="csrf-token" content="{{ csrf_token() }}">
+		
+		<link rel="stylesheet" href="/css/dhtmlxscheduler_material.css">
+		<link rel="stylesheet" href="/css/select2.css">
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/css/cabinet.css">
+	</head>
+	<body>
+		<header class="header__wrapper container">
+			<nav class="header">
+				<button class="menu-icon">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M2.99609 5.9963H21.0036" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M17.0019 11.9983H2.99609" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M2.99609 18.0022H13.0003" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+				</button>
+				
+				<a class="header__logo" href="/account">
+					<img src="/img/cabinet/logo_Veolia_vektor.svg">
+				</a>
+				
+				<button class="header__newOrder order-btn" data-toggle="modal" data-target="#orderService">
+					<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M12.5 8V16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M16.5 12H8.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M12.5 21V21C7.529 21 3.5 16.971 3.5 12V12C3.5 7.029 7.529 3 12.5 3V3C17.471 3 21.5 7.029 21.5 12V12C21.5 16.971 17.471 21 12.5 21Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+					Замовити послугу
+				</button >
+				
+				<ul class="header__nav">
+					<li>
+						<a href="/#our-services">Послуги</a>
+					</li>
+					<li>
+						<a href="/">FaQ</a>
+					</li>
+					<li>
+						<a href="/account/messages">Допомога</a>
+					</li>
+				</ul>
+				
+				<div class="header__info">
+					<div class="profile">
+						<span class="profile__icon">ВБ</span>
+						
+						<div class="profile__info">
+							<div class="user__name"><span class="name">Владислав</span> <span class="surname">Бортнов</span></div>
+							<span class="position">Директор</span>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</header>
+		
+		<div class="wrapper container">
+			<aside class="sidebar__menu">
+				<ul class="menu__list">
+					<h3 class="title">меню</h3>
+					<li class="menu__item">
+						<a href="/account">
+							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M6.66667 8.33333H4.16667C3.24583 8.33333 2.5 7.5875 2.5 6.66667V4.16667C2.5 3.24583 3.24583 2.5 4.16667 2.5H6.66667C7.5875 2.5 8.33333 3.24583 8.33333 4.16667V6.66667C8.33333 7.5875 7.5875 8.33333 6.66667 8.33333Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M15.8332 8.33333H13.3332C12.4123 8.33333 11.6665 7.5875 11.6665 6.66667V4.16667C11.6665 3.24583 12.4123 2.5 13.3332 2.5H15.8332C16.754 2.5 17.4998 3.24583 17.4998 4.16667V6.66667C17.4998 7.5875 16.754 8.33333 15.8332 8.33333Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M6.66667 17.4998H4.16667C3.24583 17.4998 2.5 16.754 2.5 15.8332V13.3332C2.5 12.4123 3.24583 11.6665 4.16667 11.6665H6.66667C7.5875 11.6665 8.33333 12.4123 8.33333 13.3332V15.8332C8.33333 16.754 7.5875 17.4998 6.66667 17.4998Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+								<path d="M14.5832 12.5V16.6667" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+								<path d="M16.6667 14.5832H12.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+							Мій кабінет
+						</a>
+					</li>
+					<li class="menu__item">
+						<a href="/account/contracts">
+							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M12.5006 5.83139H7.49854" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+								<path d="M4.16406 11.6671V4.16394C4.16406 3.24309 4.91057 2.49658 5.83142 2.49658H14.1682C15.0891 2.49658 15.8356 3.24309 15.8356 4.16394V11.6671" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M2.49658 15.8354V12.9175C2.49658 12.2269 3.05646 11.667 3.7471 11.667H5.31359C5.64502 11.6671 5.96286 11.7987 6.19729 12.033L7.01096 12.8466C7.32351 13.1589 7.74719 13.3343 8.18895 13.3344H11.8096C12.2521 13.3345 12.6765 13.1587 12.9893 12.8458L13.6804 12.1547C13.993 11.8425 14.4166 11.6671 14.8584 11.667H16.2523C16.943 11.667 17.5028 12.2269 17.5028 12.9175V15.8354C17.5028 16.7563 16.7563 17.5028 15.8355 17.5028H4.16394C3.24309 17.5028 2.49658 16.7563 2.49658 15.8354Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+							Мої договори
+						</a>
+					</li>
+					<li class="menu__item">
+						<a href="/account/bills">
+							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M17.5002 10H14.516C13.8627 10 13.3335 10.5292 13.3335 11.1825V12.1508C13.3335 12.8042 13.8627 13.3333 14.516 13.3333H17.5002"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M15.8333 17.5002H4.16667C3.24583 17.5002 2.5 16.7543 2.5 15.8335V7.50016C2.5 6.57933 3.24583 5.8335 4.16667 5.8335H15.8333C16.7542 5.8335 17.5 6.57933 17.5 7.50016V15.8335C17.5 16.7543 16.7542 17.5002 15.8333 17.5002Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+								<path d="M11.6667 5.83327L8.9225 3.0891C8.59667 2.76327 8.06917 2.76327 7.74417 3.0891L5 5.83327" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+								<path d="M10 4.1666L11.0775 3.0891C11.4033 2.76327 11.9308 2.76327 12.2558 3.0891L15 5.83327" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+							Мої рахунки
+						</a>
+					</li>
+					<li class="menu__item">
+						<a href="/account/messages">
+							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M12.8119 10.5982L16.5669 8.05234C17.151 7.65734 17.5002 6.99817 17.5002 6.29317V6.29317C17.5002 5.11817 16.5485 4.1665 15.3744 4.1665H4.63853C3.46436 4.1665 2.5127 5.11817 2.5127 6.29234V6.29234C2.5127 6.99734 2.86186 7.6565 3.44603 8.05234L7.20103 10.5982C8.8952 11.7465 11.1177 11.7465 12.8119 10.5982V10.5982Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+								<path d="M2.5 6.29248V14.1666C2.5 15.5475 3.61917 16.6666 5 16.6666H15C16.3808 16.6666 17.5 15.5475 17.5 14.1666V6.29331" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+							Повідомлення
+							<span class="counter">6</span>
+						</a>
+					</li>
+					<li class="menu__item">
+						<a href="/account/orders">
+							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M15.8355 17.5029H4.16394C3.24309 17.5029 2.49658 16.7564 2.49658 15.8355V8.3324C2.49658 7.41154 3.24309 6.66504 4.16394 6.66504H15.8355C16.7563 6.66504 17.5028 7.41154 17.5028 8.3324V15.8355C17.5028 16.7564 16.7563 17.5029 15.8355 17.5029Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+								<path d="M13.3345 17.5031V4.99793C13.3345 4.07707 12.588 3.33057 11.6671 3.33057H8.3324C7.41154 3.33057 6.66504 4.07707 6.66504 4.99793V17.5031" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+							Мої замовлення
+						</a>
+					</li>
+					<li class="menu__item">
+						<a href="/account/settings">
+							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M11.7678 8.23223C12.7441 9.20854 12.7441 10.7915 11.7678 11.7678C10.7915 12.7441 9.20854 12.7441 8.23223 11.7678C7.25592 10.7915 7.25592 9.20854 8.23223 8.23223C9.20854 7.25592 10.7915 7.25592 11.7678 8.23223" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M13.4833 15.6042V15.6042C13.9025 16.0233 14.5833 16.0233 15.0025 15.6042L15.6042 15.0025C16.0233 14.5833 16.0233 13.9025 15.6042 13.4833V13.4833C15.2858 13.165 15.1925 12.6875 15.3675 12.2725C15.3858 12.2283 15.4042 12.1842 15.4217 12.1392C15.5742 11.7508 15.9525 11.5008 16.3692 11.5008H16.425C17.0183 11.5008 17.4992 11.02 17.4992 10.4267V9.57583C17.4992 8.9825 17.0183 8.50167 16.425 8.50167H16.3692C15.9525 8.50167 15.5742 8.25083 15.4217 7.86333C15.4042 7.81833 15.3858 7.77417 15.3675 7.73C15.1925 7.315 15.2858 6.8375 15.6042 6.51917V6.51917C16.0233 6.1 16.0233 5.41917 15.6042 5L15.0025 4.39833C14.5833 3.97917 13.9025 3.97917 13.4833 4.39833V4.39833C13.165 4.71667 12.6875 4.81 12.2725 4.635C12.2283 4.61667 12.1842 4.59833 12.1392 4.58083C11.7508 4.42583 11.5 4.04667 11.5 3.63V3.57417C11.5 2.98083 11.0192 2.5 10.4258 2.5H9.575C8.98083 2.5 8.5 2.98083 8.5 3.57417V3.63C8.5 4.04667 8.24917 4.425 7.86167 4.5775C7.81667 4.59583 7.7725 4.61333 7.72833 4.6325C7.31333 4.8075 6.83583 4.71417 6.5175 4.39583V4.39583C6.09833 3.97667 5.4175 3.97667 4.99833 4.39583L4.39583 4.9975C3.97667 5.41667 3.97667 6.0975 4.39583 6.51667V6.51667C4.71417 6.835 4.8075 7.3125 4.6325 7.7275C4.61333 7.7725 4.59583 7.81667 4.57833 7.86167C4.42583 8.24917 4.04667 8.5 3.63 8.5H3.57417C2.98083 8.5 2.5 8.98083 2.5 9.57417V10.425C2.5 11.0192 2.98083 11.5 3.57417 11.5H3.63C4.04667 11.5 4.425 11.7508 4.5775 12.1383C4.595 12.1833 4.61333 12.2275 4.63167 12.2717C4.80667 12.6867 4.71333 13.1642 4.395 13.4825V13.4825C3.97583 13.9017 3.97583 14.5825 4.395 15.0017L4.99667 15.6033C5.41583 16.0225 6.09667 16.0225 6.51583 15.6033V15.6033C6.83417 15.285 7.31167 15.1917 7.72667 15.3667C7.77083 15.385 7.815 15.4033 7.86 15.4208C8.24833 15.5733 8.49833 15.9517 8.49833 16.3683V16.4242C8.49833 17.0175 8.97917 17.4983 9.5725 17.4983H10.4233C11.0167 17.4983 11.4975 17.0175 11.4975 16.4242V16.3683C11.4975 15.9517 11.7483 15.5733 12.1358 15.4208C12.1808 15.4033 12.225 15.385 12.2692 15.3667C12.6867 15.1925 13.1642 15.2858 13.4833 15.6042V15.6042Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+							Налаштування
+						</a>
+					</li>
+				</ul>
+				<a class="logout" href="/account/logout">
+					<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="16">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M6 12.5C6 12.7761 6.22386 13 6.5 13L14.5 13C14.7761 13 15 12.7761 15 12.5L15 3.5C15 3.22386 14.7761 3 14.5 3L6.5 3C6.22386 3 6 3.22386 6 3.5L6 5.5C6 5.77614 5.77614 6 5.5 6C5.22386 6 5 5.77614 5 5.5L5 3.5C5 2.67157 5.67157 2 6.5 2L14.5 2C15.3284 2 16 2.67157 16 3.5L16 12.5C16 13.3284 15.3284 14 14.5 14L6.5 14C5.67157 14 5 13.3284 5 12.5L5 10.5C5 10.2239 5.22386 10 5.5 10C5.77614 10 6 10.2239 6 10.5L6 12.5Z"/>
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M0.146446 8.35355C-0.0488157 8.15829 -0.0488157 7.84171 0.146446 7.64645L3.14645 4.64645C3.34171 4.45118 3.65829 4.45118 3.85355 4.64645C4.04882 4.84171 4.04882 5.15829 3.85355 5.35355L1.70711 7.5L10.5 7.5C10.7761 7.5 11 7.72386 11 8C11 8.27614 10.7761 8.5 10.5 8.5L1.70711 8.5L3.85355 10.6464C4.04882 10.8417 4.04882 11.1583 3.85355 11.3536C3.65829 11.5488 3.34171 11.5488 3.14645 11.3536L0.146446 8.35355Z"/>
+						</mask>
+						<g mask="url(#mask0)">
+							<rect width="16" height="16"/>
+						</g>
+					</svg>
+					Вийти з аккаунту
+				</a>
+			</aside>
+			
+			@yield('main')
+		</div>
+		
+		<div class="modal fade" id="create__contract-modal-1" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-md modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="create__contract-page popup">
+						<div class="modal-header">
+							<h2 class="popup__title">Новий договір</h2>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<img src="/img/close.svg" alt="X">
+							</button>
+						</div>
+						
+						<div class="modal-body">
+							<form class="popup__form" id="create__contract-form__individual">
+								<fieldset class="fieldset">
+									<label>
+										<span class="input-description">ПІБ:</span>
+										<input class="form-control" type="text" name="userName" placeholder=" ">
+										<span class="input-placeholder">
+											<div>
+												<img src="/img/cabinet/modal-icon/profile.svg">
+											</div>
+											ПІБ
+										</span>
+									</label>
+									
+									<label>
+										<span class="input-description">Email:</span>
+										<input class="form-control" type="email" name="userEmail" placeholder=" ">
+										<span class="input-placeholder">
+											<div>
+												<img src="/img/cabinet/modal-icon/email.svg">
+											</div>
+											Ваш Email
+										</span>
+									</label>
+									
+									<label>
+										<span class="input-description">Номер телефону:</span>
+										<input class="form-control" type="tel" name="userTel" placeholder=" ">
+										<span class="input-placeholder">
+											<div>
+												<img src="/img/cabinet/modal-icon/phone.svg">
+											</div>
+											Номер телефону
+										</span>
+									</label>
+									
+									<label>
+										<span class="input-description">Адреса:</span>
+										<input class="form-control" type="text" name="userAddress" placeholder=" ">
+										<span class="input-placeholder">
+											<div>
+												<img src="/img/cabinet/modal-icon/location.svg">
+											</div>
+											Адреса
+										</span>
+									</label>
+									
+									<label>
+										<span class="input-description">Індекс:</span>
+										<input class="form-control" type="text" name="postIndex" placeholder=" ">
+										<span class="input-placeholder">
+											<div>
+												<img src="/img/cabinet/modal-icon/location.svg">
+											</div>
+											Індекс
+										</span>
+									</label>
+									
+									<button class="btn-submit" type="submit" name="reg">Новий договір</button>
+								</fieldset>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="modal fade" id="create__contract-modal-2" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-md modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="create__contract-page popup">
+						<div class="modal-header">
+							<h2 class="popup__title">Новий договір</h2>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<img src="/img/close.svg" alt="X">
+							</button>
+						</div>
+						
+						<div class="modal-body">
+							<form class="popup__form" id="create__contract-form__entity">
+								<fieldset class="fieldset">
+									<label>
+										<span class="input-description">Назва компанії:</span>
+										<input class="form-control" type="text" name="userName" placeholder=" ">
+										<span class="input-placeholder">
+											<div>
+												<img src="/img/cabinet/modal-icon/profile.svg">
+											</div>
+											Назва компанії
+										</span>
+									</label>
+									
+									<label>
+										<span class="input-description">Контактна особа:</span>
+										<input class="form-control" type="text" name="userContactName" placeholder=" ">
+										<span class="input-placeholder">
+											<div>
+												<img src="/img/cabinet/modal-icon/profile.svg">
+											</div>
+											Контактна особа
+										</span>
+									</label>
+									
+									<label>
+										<span class="input-description">Юридична адреса:</span>
+										<input class="form-control" type="text" name="userEntityAddress" placeholder=" ">
+										<span class="input-placeholder">
+											<div>
+												<img src="/img/cabinet/modal-icon/location.svg">
+											</div>
+											Юридична адреса
+										</span>
+									</label>
+									
+									<label>
+										<span class="input-description">Email:</span>
+										<input class="form-control" type="email" name="userEmail" placeholder=" ">
+										<span class="input-placeholder">
+											<div>
+												<img src="/img/cabinet/modal-icon/email.svg">
+											</div>
+											Ваш Email
+										</span>
+									</label>
+									
+									<label>
+										<span class="input-description">Номер телефону:</span>
+										<input class="form-control" type="tel" name="userTel" placeholder=" ">
+										<span class="input-placeholder">
+											<div>
+												<img src="/img/cabinet/modal-icon/phone.svg">
+											</div>
+											Номер телефону
+										</span>
+									</label>
+									
+									<label>
+										<span class="input-description">Додатковий телефон:</span>
+										<input class="form-control" type="tel" name="userAddTel" placeholder=" ">
+										<span class="input-placeholder">
+											<div>
+												<img src="/img/cabinet/modal-icon/phone.svg">
+											</div>
+											Додатковий телефон
+										</span>
+									</label>
+									
+									<label>
+										<span class="input-description">ІПН:</span>
+										<input class="form-control" type="text" name="ipn" placeholder=" ">
+										<span class="input-placeholder">
+											ІПН
+										</span>
+									</label>
+									
+									<label>
+										<span class="input-description">ЄДРПОУ:</span>
+										<input class="form-control" type="text" name="uedrpou" placeholder=" ">
+										<span class="input-placeholder">
+											ЄДРПОУ
+										</span>
+									</label>
+									
+									<label>
+										<span class="input-description">Поштовий індекс:</span>
+										<input class="form-control" type="text" name="postIndex" placeholder=" ">
+										<span class="input-placeholder">
+											<div>
+												<img src="/img/cabinet/modal-icon/location.svg">
+											</div>
+											Поштовий індекс
+										</span>
+									</label>
+									
+									<button class="btn-submit" type="submit" name="reg">Новий договір</button>
+								</fieldset>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="modal fade" id="add__address-modal" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-md modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="add__address-page popup">
+						<div class="modal-header">
+							<h2 class="popup__title">Додати адресу</h2>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<img src="/img/close.svg" alt="X">
+							</button>
+						</div>
+						
+						<div class="modal-body">
+							<form class="popup__form" id="add__address-form">
+								<fieldset class="fieldset">
+									<label>
+										<span class="input-description">Назва:</span>
+										<input class="form-control" type="text" name="placeName" placeholder=" ">
+										<span class="input-placeholder">
+											<div>
+												<img src="/img/cabinet/modal-icon/profile.svg">
+											</div>
+											Назва адреси
+										</span>
+									</label>
+									
+									<label>
+										<span class="input-description">Адреса:</span>
+										<input class="form-control" type="text" name="placeAddress" placeholder=" ">
+										<span class="input-placeholder">
+											<div>
+												<img src="/img/cabinet/modal-icon/location.svg">
+											</div>
+											Адреса
+										</span>
+									</label>
+									
+									<div>
+										<span class="input-description">Проблемні місця</span>
+										<label class="file-wrap-drop">
+											<input class="form-control-file" type="file" name="problem-place" multiple>
+											<span class="input-placeholder-file">
+												<img src="/img/File-fill.svg">
+												<p>Перемістіть сюди<br><span>або</span></p>
+												<span>Вибрати</span>
+											</span>
+										</label>
+									</div>
+									
+									<button class="btn-submit" type="submit" name="reg">Додати адресу</button>
+								</fieldset>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="modal fade" id="address__info-modal" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-md modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="address__info-page popup">
+						<div class="modal-header">
+							<h2 class="popup__title">Додати адресу</h2>
+							
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<img src="/img/close.svg" alt="X">
+							</button>
+						</div>
+						
+						<div class="modal-body">
+							<span class="input-description">Адреса:</span>
+							<span class="address">вулиця Бакуліна, 4а, Харків, Харківська область, 61000</span>
+							<map class="place-location" id="map" name="place-location"></map>
+							<span class="input-description">Проблемні місця:</span>
+							<div class="galery">
+								<img src="/img/problem1.png">
+								<img src="/img/problem2.png">
+								<img src="/img/problem3.png">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="modal fade" id="orderService" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-md modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="orderService popup">
+						<div class="modal-header">
+							<h2 class="popup__title">Новий договір</h2>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<img src="/img/close.svg" alt="X">
+							</button>
+						</div>
+						
+						<div class="modal-body">
+							<form class="popup__form" id="orderService-form">
+								<fieldset class="fieldset">
+									<label>
+										<span class="input-description">Введіть адресу:</span>
+										<select class="custom-select" id="service" name="service">
+											<option value="Послуга-1">Послуга-1</option>
+											<option value="Послуга-2">Послуга-2</option>
+											<option value="Послуга-3">Послуга-3</option>
+										</select>
+									</label>
+									
+									<label>
+										<span class="input-description">Вибрати дату:</span>
+										<select class="custom-select" id="date" name="date">
+											<option value="Дата-1">Дата-1</option>
+											<option value="Дата-2">Дата-2</option>
+											<option value="Дата-3">Дата-3</option>
+										</select>
+									</label>
+									
+									<label>
+										<span class="input-description">Введіть адресу:</span>
+										<input class="form-control" type="tel" name="userTel" placeholder=" ">
+										<span class="input-placeholder">
+											<div>
+												<img src="/img/cabinet/modal-icon/house.svg">
+											</div>
+											Місто
+										</span>
+									</label>
+									
+									<label>
+										<span class="input-description">Вибрати час:</span>
+										<input class="form-control" type="text" name="userAddress" placeholder=" ">
+										<span class="input-placeholder">
+											<div>
+												<img src="/img/cabinet/modal-icon/time-clock.svg">
+											</div>
+											Вибрати час
+										</span>
+									</label>
+									
+									<label>
+										<span class="input-description">Введіть коментар:</span>
+										<input class="form-control" type="text" name="postIndex" placeholder=" ">
+										<span class="input-placeholder">
+											<div>
+												<img src="/img/cabinet/modal-icon/messages.svg">
+											</div>
+											Коментар
+										</span>
+									</label>
+									
+									<button class="btn-submit" type="submit" name="reg">Замовити</button>
+								</fieldset>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script src="/js/jquery.min.js"></script>
+		<script src="/js/select2.min.js"></script>
+		<script src="/js/chart.js"></script>
+		<script src="/js/dhtmlxscheduler.js"></script>
+		<script src="/js/locale_ua.js"></script>
+		<script src="/js/bootstrap.min.js"></script>
+		<script
+		  src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&v=weekly" async></script>
+		<script src="/js/cabinet.js"></script>
+		
+		<script type="text/javascript">
+			scheduler.init("scheduler__calendar");
+		</script>
+		
+		<script>
+			//The structure of the scheduler
+			scheduler.config.header = [
+				"day",
+				"week",
+				"month",
+				"date",
+				"prev",
+				"today",
+				"next"
+			];
+			scheduler.config.displayed_event_color="#DFEDF7";
+			scheduler.init('scheduler__calendar',new Date(2021,07,01),"month");
+		</script>
+	</body>
+</html>
