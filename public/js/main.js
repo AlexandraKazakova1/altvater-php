@@ -12,6 +12,7 @@ $(document).ready (function() {
     passRecovery3();
     passVerificationForm();
     checkCookies();
+    createModal();
     // calcPopup();
     servicesCalc();
 });
@@ -197,6 +198,10 @@ function modalFade() {
     $('.recovery-1').click(function() {
         $('.modal').modal('hide');
         $('#recovery-modal-2').modal('show');
+    });
+    $('#calculator').click(function() {
+        $('.modal').modal('hide');
+        $('#servicesCalc').modal('show');
     });
     $('.calc-btn').click(function() {
         $('.modal').modal('hide');
@@ -606,6 +611,20 @@ function checkCookies() {
     })
 }
 
+function createModal() {
+    $('.btn-individual').click(function() {
+        $('.btn-entity').removeClass('act');
+        $('#create-form__entity').removeClass('act');
+        $('.btn-individual').addClass('act');
+        $('#create-form__individual').addClass('act');
+    });
+    $('.btn-entity').click(function() {
+        $('.btn-individual').removeClass('act');
+        $('#create-form__individual').removeClass('act');
+        $('.btn-entity').addClass('act');
+        $('#create-form__entity').addClass('act');
+    });
+}
 // function calcPopup() {
 // 	$('.select2').select2({
 //         minimumResultsForSearch: -1,
