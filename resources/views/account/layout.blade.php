@@ -51,11 +51,11 @@
 				
 				<div class="header__info">
 					<div class="profile">
-						<span class="profile__icon">ВБ</span>
+						<span class="profile__icon">{{($user['name'] ? $user['name'][0] : '')}}{{($user['surname'] ? $user['surname'][0] : '')}}</span>
 						
 						<div class="profile__info">
-							<div class="user__name"><span class="name">Владислав</span> <span class="surname">Бортнов</span></div>
-							<span class="position">Директор</span>
+							<div class="user__name"><span class="name">{{$user['name']}}</span> <span class="surname">{{$user['surname']}}</span></div>
+							<span class="position">{{$user['position']}}</span>
 						</div>
 					</div>
 				</div>

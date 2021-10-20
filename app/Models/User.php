@@ -18,6 +18,8 @@ class User extends Authenticatable	{
 	 */
 	protected $fillable = [
 		'name',
+		'surname',
+		'middlename',
 		'email',
 		'email_verified_at',
 		'password',
@@ -25,13 +27,17 @@ class User extends Authenticatable	{
 		'created_at',
 		'updated_at',
 		'phone',
+		'extra_phone',
 		'blocked',
 		'type',
 		'verify_email',
 		'verify_phone',
 		'email_token',
 		'phone_token',
-		'phone_code'
+		'phone_code',
+		'position',
+		'addresses',
+		'index'
 	];
 	
 	/**
