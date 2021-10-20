@@ -279,14 +279,30 @@ section:not(.breadcrumbs__wrapper) {
         li {
             padding-top: 5px;
             padding-bottom: 5px;
-            color: rgba(44, 44, 44, 0.7);
+            color: #2C2C2C;
             font-style: normal;
             font-weight: normal;
             font-size: 14px;
-            line-height: 30px;
+            line-height: 24px;
         }
         li:last-child {
             margin-bottom: 30px;
+        }
+    }
+    P {
+        color: #2C2C2C;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .detail__text {
+        P {
+            color: #2C2C2C;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 24px;
         }
     }
 }
