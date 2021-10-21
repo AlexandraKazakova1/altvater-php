@@ -120,7 +120,7 @@
 						</div>
 						<!-- -->
 					@endforeach
-					<button style="{{($count > count($contracts) ? '' : 'none;')}}" class="more">Показати всі</button>
+					<button style="{{($count > count($contracts) ? '' : 'display:none;')}}" class="more">Показати всі</button>
 				</div>
 			</div>
 		</section>
