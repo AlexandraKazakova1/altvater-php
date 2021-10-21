@@ -26,6 +26,10 @@ class AccountController extends MyController {
 	public function index(){
 		$this->session();
 		
+		if(!$this->_auth){
+			return redirect('/');
+		}
+		
 		return view(
 			'account/index',
 			[
@@ -46,6 +50,10 @@ class AccountController extends MyController {
 	
 	public function contracts(){
 		$this->session();
+		
+		if(!$this->_auth){
+			return redirect('/');
+		}
 		
 		return view(
 			'account/contracts',
@@ -69,6 +77,10 @@ class AccountController extends MyController {
 	public function bills(){
 		$this->session();
 		
+		if(!$this->_auth){
+			return redirect('/');
+		}
+		
 		return view(
 			'account/bills',
 			[
@@ -89,6 +101,10 @@ class AccountController extends MyController {
 	
 	public function messages(){
 		$this->session();
+		
+		if(!$this->_auth){
+			return redirect('/');
+		}
 		
 		return view(
 			'account/messages',
@@ -111,6 +127,10 @@ class AccountController extends MyController {
 	public function orders(){
 		$this->session();
 		
+		if(!$this->_auth){
+			return redirect('/');
+		}
+		
 		return view(
 			'account/orders',
 			[
@@ -131,6 +151,10 @@ class AccountController extends MyController {
 	
 	public function settings(){
 		$this->session();
+		
+		if(!$this->_auth){
+			return redirect('/');
+		}
 		
 		return view(
 			'account/settings',
