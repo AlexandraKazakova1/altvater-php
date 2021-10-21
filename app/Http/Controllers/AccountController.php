@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pages;
+use App\Models\Contracts;
 
 use App\Helpers\MyBreadcrumbs;
 use App\Helpers\StringHelper;
@@ -59,7 +60,8 @@ class AccountController extends MyController {
 				'headerClass'	=> '',
 				'robots'		=> '',
 				'canonical'		=> '',
-				'data'			=> []
+				'count'			=> Contracts::query()->where('client_id', $this->_id)->count(),
+				'contracts'		=> Contracts::query()->where('client_id', $this->_id)->orderBy('created_at', 'desc')->get()
 			]
 		);
 	}
