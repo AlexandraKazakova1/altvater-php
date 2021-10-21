@@ -109,6 +109,9 @@ class ContractsController extends MyAdminController {
 		
 		// callback before save
 		$form->saving(function (Form $form){
+			print_r($form);
+			exit;
+			
 			$form->name			= trim($form->name);
 			$form->contact		= trim($form->contact);
 			
@@ -118,6 +121,10 @@ class ContractsController extends MyAdminController {
 			$form->index		= preg_replace("/[^0-9]/", '', $form->index);
 			$form->ipn			= preg_replace("/[^0-9]/", '', $form->ipn);
 			$form->edrpou		= preg_replace("/[^0-9]/", '', $form->edrpou);
+		});
+		
+		$form->saved(function(Form $form){
+			$id = $form->model()->id;
 		});
 		
 		return $form;
