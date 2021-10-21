@@ -411,13 +411,18 @@
 						<div class="modal-body">
 							<span class="input-description">Адреса:</span>
 							<span class="address">вулиця Бакуліна, 4а, Харків, Харківська область, 61000</span>
+							
 							<map class="place-location" id="map" name="place-location"></map>
+							
 							<span class="input-description">Проблемні місця:</span>
+							
 							<div class="galery">
 								<img src="/img/problem1.png">
 								<img src="/img/problem2.png">
 								<img src="/img/problem3.png">
 							</div>
+							
+							<button type="button" class="remove">Видалити адресу</button>
 						</div>
 					</div>
 				</div>
