@@ -9,6 +9,7 @@ use App\Helpers\StringHelper;
 use App\Helpers\ImageHelper;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 use Mail;
 use DB;
@@ -124,5 +125,38 @@ class AccountController extends MyController {
 				'data'			=> []
 			]
 		);
+	}
+	
+	public function settings(){
+		$this->session();
+		
+		return view(
+			'account/settings',
+			[
+				'page'			=> array(
+					'title'			=> trans('site.cabinet.settings.title'),
+					'keywords'		=> '',
+					'description'	=> '',
+					'uri'			=> 'account/settings',
+					'og_image'		=> '',
+				),
+				'headerClass'	=> '',
+				'robots'		=> '',
+				'canonical'		=> '',
+				'data'			=> []
+			]
+		);
+	}
+	
+	public function logout(){
+		$this->session();
+		
+		if(!$this->_auth){
+			return redirect('/');
+		}
+		
+		Auth::logout();
+		
+		return redirect('/');
 	}
 }

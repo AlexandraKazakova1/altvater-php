@@ -57,12 +57,12 @@
 								</g>
 							</svg>
 							<div class="item__body tel-button">
-								<span class="subTitle21">Тел/Факс:</span>
+								<span class="subTitle21">Зателефонуйте нам:</span>
 								@foreach($contacts['phone'] as $item)
 									@if($item->label)
 										<span>{{$item->label}}</span>
 									@endif
-									<a href="tel:+{{$item->value}}">+{{$string->call('phone', [$item->value, '[2] [(3)] 3-2-2'])}}</a>
+									<a href="tel:+{{$item->value}}" {!!($item->label ? 'style="margin-bottom:10px;"':'')!!}>+{{$string->call('phone', [$item->value, '[2] [(3)] 3-2-2'])}}</a>
 								@endforeach
 							</div>
 						</li>
