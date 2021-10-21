@@ -275,7 +275,7 @@ function logIn() {
 							form.trigger('reset');
 						}
                         
-                        window.location.href = 'http://www.google.com';
+                        window.location.href = '../cabinet-html/cabinet.html';
 					},
 					error: function(err){
 						console.log('error');
@@ -376,8 +376,8 @@ function create() {
 						if(response.status){;
 							form.trigger('reset');
 						}
-                        
-                        window.location.href = 'http://www.google.com';
+
+                        window.location.href = '../cabinet-html/cabinet.html';
 					},
 					error: function(err){
 						console.log('error');
