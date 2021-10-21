@@ -460,7 +460,6 @@ main {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 25px;
-  grid-column-gap: 20px;
 }
 
 .header .menu-icon {
@@ -489,7 +488,6 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  grid-column-gap: 14px;
   padding: 10px 30px;
   border: 2px solid rgba(218, 131, 140, 0.3);
   border-radius: 8px;
@@ -503,6 +501,7 @@ main {
 }
 
 .header .header__newOrder svg {
+  margin-right: 14px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   stroke: #CF6854;
@@ -531,7 +530,19 @@ main {
           flex-direction: row;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  grid-column-gap: 35px;
+}
+
+.header .header__nav li {
+  padding-left: 17px;
+  padding-right: 17px;
+}
+
+.header .header__nav li:first-child {
+  padding-left: 0px;
+}
+
+.header .header__nav li:last-child {
+  padding-right: 0px;
 }
 
 .header .header__nav a {
@@ -563,80 +574,6 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  grid-column-gap: 32px;
-}
-
-.header .header__info .notification-icon {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-
-.header .header__info .notification-icon .condition {
-  position: absolute;
-  top: 0;
-  right: 2px;
-  display: none;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.header .header__info .notification-icon svg {
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  stroke: #425466;
-}
-
-.header .header__info .notification-icon:hover svg {
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  stroke: #D24A43;
-}
-
-.header .header__info .notification-icon.act .condition {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.header .header__info .lang {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 16px;
-  color: #757889;
-  cursor: pointer;
-  padding: 16px 10px;
-  border: 2px solid rgba(235, 242, 250, 0.76);
-}
-
-.header .header__info .lang option {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  grid-column-gap: 7px;
 }
 
 .header .header__info .profile {
@@ -650,7 +587,6 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  grid-column-gap: 16px;
 }
 
 .header .header__info .profile .profile__icon {
@@ -672,6 +608,7 @@ main {
   font-size: 16px;
   line-height: 24px;
   color: #FFFFFF;
+  margin-right: 16px;
 }
 
 .header .header__info .profile .profile__info {
@@ -719,7 +656,6 @@ main {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  grid-row-gap: 15px;
   background: #FFFFFF;
   padding: 38px 20px;
   border-right: 1px solid #EDF2F7;
@@ -751,7 +687,10 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  grid-row-gap: 6px;
+}
+
+.sidebar__menu .menu__list h3 {
+  margin-bottom: 3px;
 }
 
 .sidebar__menu .menu__list .menu__item a {
@@ -763,11 +702,11 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  grid-column-gap: 20px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   padding: 16px 0;
+  margin: 3px 0;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -781,6 +720,7 @@ main {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   stroke: #718096;
+  margin-right: 20px;
 }
 
 .sidebar__menu .menu__list .menu__item a .counter {
@@ -3437,6 +3377,367 @@ main {
   margin-bottom: 40px;
 }
 
+.request__page .messages__wrapper {
+  width: 100%;
+}
+
+.request__page .messages__wrapper .messages__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+.request__page .messages__wrapper .messages__content .filters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 42px;
+  width: 100%;
+  padding-bottom: 5px;
+}
+
+.request__page .messages__wrapper .messages__content .filters div {
+  pointer-events: none;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: #4A5568;
+}
+
+.request__page .messages__wrapper .messages__content .filters div span {
+  padding: 2.63px 11.53px;
+  font-size: 13.1429px;
+  line-height: 136.52%;
+  color: #6B89B5;
+  background: rgba(221, 230, 238, 0.4);
+  border-radius: 65.0571px;
+}
+
+.request__page .messages__wrapper .messages__content .messages__list {
+  width: 100%;
+}
+
+.request__page .messages__wrapper .messages__content .messages__list .messages__item {
+  margin: 21px 0;
+  background: #FFFFFF;
+  border-radius: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 25px 32px;
+  min-height: 108px;
+  border: 2px solid #FFFFFF;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  width: 100%;
+  max-width: 1090px;
+}
+
+.request__page .messages__wrapper .messages__content .messages__list .messages__item span {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  max-width: 30px;
+  background: transparent;
+  padding: 0;
+}
+
+.request__page .messages__wrapper .messages__content .messages__list .messages__item span svg {
+  fill: #B5B5BE;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.request__page .messages__wrapper .messages__content .messages__list .messages__item div {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  position: relative;
+  padding: 5px 20px;
+  border-right: 1px dashed #afc5e0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #91929E;
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  min-height: 54px;
+}
+
+.request__page .messages__wrapper .messages__content .messages__list .messages__item div span {
+  padding-top: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: #425466;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  max-width: 200px;
+}
+
+.request__page .messages__wrapper .messages__content .messages__list .messages__item div:last-child {
+  border-right: none;
+}
+
+.request__page .messages__wrapper .messages__content .messages__list .messages__item .title {
+  width: 100%;
+}
+
+.request__page .messages__wrapper .messages__content .messages__list .messages__item .title span {
+  max-width: unset;
+}
+
+.request__page .messages__wrapper .messages__content .messages__list .messages__item .title span::before {
+  content: '#';
+}
+
+.request__page .messages__wrapper .messages__content .messages__list .messages__item .date {
+  max-width: 250px;
+  padding-left: 65px;
+}
+
+.request__page .messages__wrapper .messages__content .messages__list .messages__item .date::before {
+  content: url(../img/cabinet/date.svg);
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 10px;
+}
+
+.request__page .messages__wrapper .messages__content .messages__list .messages__item:focus,
+.request__page .messages__wrapper .messages__content .messages__list .messages__item:hover {
+  -webkit-box-shadow: 0px 0px 10px 10px rgba(181, 181, 190, 0.15);
+          box-shadow: 0px 0px 10px 10px rgba(181, 181, 190, 0.15);
+}
+
+.message__page .message__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.message__page .message__wrapper .msg__field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  width: 100%;
+}
+
+.message__page .message__wrapper .msg__field div {
+  padding: 16px;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+.message__page .message__wrapper .msg__field div .name {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 20px;
+  color: #425466;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-bottom: 10px;
+}
+
+.message__page .message__wrapper .msg__field div .name .time {
+  color: rgba(66, 84, 102, 0.5);
+  margin-left: 10px;
+}
+
+.message__page .message__wrapper .msg__field div p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 130%;
+  color: #4A5568;
+}
+
+.message__page .message__wrapper .msg__field div.user {
+  background: rgba(0, 183, 206, 0.1);
+}
+
+.message__page .message__wrapper .msg__field div.manager {
+  background: rgba(242, 102, 79, 0.1);
+}
+
+.message__page .message__wrapper .msg__form {
+  margin-top: 30px;
+  width: 100%;
+}
+
+.message__page .message__wrapper .msg__form form {
+  width: 100%;
+}
+
+.message__page .message__wrapper .msg__form form fieldset {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.message__page .message__wrapper .msg__form form fieldset label {
+  width: 76%;
+}
+
+.message__page .message__wrapper .msg__form form fieldset label input {
+  padding: 12px 16px;
+  background: #FFFFFF;
+  border: 1px solid #CBD5E0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 8px;
+  color: #4A5568;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  outline: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  width: 100%;
+  min-width: 280px;
+}
+
+.message__page .message__wrapper .msg__form form fieldset label input:hover,
+.message__page .message__wrapper .msg__form form fieldset label input:focus {
+  border: 1px solid #2F5E97;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.message__page .message__wrapper .msg__form form fieldset button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 22%;
+  border: 1px solid rgba(210, 74, 67, 0.3);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 8px;
+  background: #FFFFFF;
+}
+
+.message__page .message__wrapper .msg__form form fieldset button span {
+  margin-right: 14px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: #4A5568;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.message__page .message__wrapper .msg__form form fieldset button svg {
+  fill: rgba(210, 74, 67, 0.3);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.message__page .message__wrapper .msg__form form fieldset button:hover {
+  background: #BF604D;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.message__page .message__wrapper .msg__form form fieldset button:hover span {
+  color: #FFFFFF;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.message__page .message__wrapper .msg__form form fieldset button:hover svg {
+  fill: #FFFFFF;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
 @media (max-width: 1439px) {
   .content__wrapper .content {
     -webkit-box-flex: 1;
@@ -3750,6 +4051,70 @@ main {
   .selector ul li {
     margin-right: 12px;
   }
+  .request__page {
+    margin: 0 25px;
+  }
+  .request__page .request {
+    margin: 0;
+  }
+  .request__page .request .request__form fieldset {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .request__page .messages__wrapper .messages__content .messages__list .messages__item div.date {
+    display: none;
+  }
+  .request__page .messages__wrapper .messages__content .messages__list .messages__item div {
+    min-width: 200px;
+  }
+  .message__page .message__wrapper {
+    margin-right: 25px;
+  }
+  .message__page .message__wrapper .msg__form form fieldset label {
+    width: 78%;
+  }
+  .message__page .message__wrapper .msg__form form fieldset button {
+    width: 20%;
+    min-width: 80px;
+  }
+  .message__page .message__wrapper .msg__form form fieldset button span {
+    display: none;
+  }
+  .message__page .message__wrapper .msg__form form fieldset button svg {
+    width: 30px;
+    height: 30px;
+    fill: rgba(210, 74, 67, 0.3);
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  .message__page .message__wrapper .msg__form form fieldset button:hover {
+    background: #BF604D;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  .message__page .message__wrapper .msg__form form fieldset button:hover span {
+    color: #FFFFFF;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  .message__page .message__wrapper .msg__form form fieldset button:hover svg {
+    fill: #FFFFFF;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
 }
 
 @media (max-width: 768px) {
@@ -3898,6 +4263,9 @@ main {
   .selector {
     width: calc(100vw - 50px);
   }
+  .message__page .message__wrapper {
+    margin-left: 25px;
+  }
 }
 
 @media (max-width: 579px) {
@@ -3971,6 +4339,18 @@ main {
         -ms-grid-row-align: center;
         align-self: center;
   }
+  .settings__wrapper .messages__wrapper .messages__content .messages__list .messages__item,
+  .request__page .messages__wrapper .messages__content .messages__list .messages__item {
+    padding: 5px;
+  }
+  .settings__wrapper .messages__wrapper .messages__content .messages__list .messages__item div,
+  .request__page .messages__wrapper .messages__content .messages__list .messages__item div {
+    width: 180px;
+  }
+  .settings__wrapper .messages__wrapper .messages__content .messages__list .messages__item div span,
+  .request__page .messages__wrapper .messages__content .messages__list .messages__item div span {
+    width: 180px;
+  }
   .accountsActs__wrapper .acts__content .filters .filters__list li:last-child,
   .accountsActs__wrapper .accounts__content .filters .filters__list li:last-child {
     display: none;
@@ -4005,6 +4385,27 @@ main {
   .accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item.notPaid .status::after {
     font-size: 12px;
     line-height: 15px;
+  }
+  .message__page .message__wrapper .msg__form {
+    margin-top: 30px;
+    width: 100%;
+  }
+  .message__page .message__wrapper .msg__form form {
+    width: 100%;
+  }
+  .message__page .message__wrapper .msg__form form fieldset {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .message__page .message__wrapper .msg__form form fieldset label {
+    width: 100%;
+  }
+  .message__page .message__wrapper .msg__form form fieldset button {
+    margin-top: 10px;
+    width: 100%;
+    min-height: 50px;
   }
 }
 
