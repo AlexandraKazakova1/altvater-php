@@ -77,7 +77,7 @@
 						
 						<label>
 							<span class="input-description">Телефон:</span>
-							<input class="form-control" type="tel" name="phone" value="{{$user['email']}}" placeholder=" ">
+							<input class="form-control" type="tel" name="phone" value="{{$user['phone']}}" placeholder=" ">
 							<span class="input-placeholder">
 								<div>
 									<img src="/img/cabinet/modal-icon/phone.svg">
