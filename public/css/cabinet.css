@@ -5073,6 +5073,30 @@ a.popup-text__link {
   padding: 5px;
 }
 
+.address__info-page .modal-body .remove {
+  border: 1px solid #CF6854;
+  border-radius: 7px;
+  background: #CF6854;
+  padding: 13px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 22px;
+  color: #FFFFFF;
+  text-align: center;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  margin-top: 16px;
+  width: 100%;
+}
+
+.address__info-page .modal-body .remove:focus,
+.address__info-page .modal-body .remove:hover {
+  background: #BF604D;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
 .orderService .modal-body form fieldset label .input-placeholder div img {
   width: 16px;
   height: 16px;

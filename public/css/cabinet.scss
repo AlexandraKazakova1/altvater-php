@@ -3630,6 +3630,26 @@ a.popup-text__link {
                 padding: 5px;
             }
         }
+        .remove {
+            border: 1px solid #CF6854;
+            border-radius: 7px;
+            background: #CF6854;
+            padding: 13px;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 22px;
+            color: #FFFFFF;
+            text-align: center;
+            transition: all 0.3s;
+            margin-top: 16px;
+            width: 100%;
+        }
+        .remove:focus,
+        .remove:hover {
+            background: #BF604D;
+            transition: all 0.3s;
+        }
     }
 }
 .orderService {
