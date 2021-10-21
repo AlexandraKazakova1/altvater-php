@@ -125,4 +125,25 @@ class AccountController extends MyController {
 			]
 		);
 	}
+	
+	public function settings(){
+		$this->session();
+		
+		return view(
+			'account/settings',
+			[
+				'page'			=> array(
+					'title'			=> trans('site.cabinet.settings.title'),
+					'keywords'		=> '',
+					'description'	=> '',
+					'uri'			=> 'account/settings',
+					'og_image'		=> '',
+				),
+				'headerClass'	=> '',
+				'robots'		=> '',
+				'canonical'		=> '',
+				'data'			=> []
+			]
+		);
+	}
 }
