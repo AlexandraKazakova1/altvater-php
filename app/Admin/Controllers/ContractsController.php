@@ -109,7 +109,7 @@ class ContractsController extends MyAdminController {
 		
 		// callback before save
 		$form->saving(function (Form $form){
-			print_r($form);
+			print_r($_FILES);
 			exit;
 			
 			$form->name			= trim($form->name);
