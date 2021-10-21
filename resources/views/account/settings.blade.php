@@ -7,7 +7,7 @@
 				<ul class="breadcrumbs__list">
 					<li class="breadcrumbs__item"><a href="/account">Кабінет</a></li>
 					<li class="breadcrumbs__item active">
-						<span>Акти</span>
+						<span>Налаштування</span>
 					</li>
 				</ul>
 			</div>
