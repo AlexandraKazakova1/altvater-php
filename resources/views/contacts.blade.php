@@ -57,7 +57,7 @@
 								</g>
 							</svg>
 							<div class="item__body tel-button">
-								<span class="subTitle21">Тел/Факс:</span>
+								<span class="subTitle21">Зателефонуйте нам:</span>
 								@foreach($contacts['phone'] as $item)
 									@if($item->label)
 										<span>{{$item->label}}</span>
