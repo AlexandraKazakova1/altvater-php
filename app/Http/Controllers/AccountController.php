@@ -52,7 +52,28 @@ class AccountController extends MyController {
 					'title'			=> trans('site.cabinet.contracts.title'),
 					'keywords'		=> '',
 					'description'	=> '',
-					'uri'			=> 'account/index',
+					'uri'			=> 'account/contracts',
+					'og_image'		=> '',
+				),
+				'headerClass'	=> '',
+				'robots'		=> '',
+				'canonical'		=> '',
+				'data'			=> []
+			]
+		);
+	}
+	
+	public function bills(){
+		$this->session();
+		
+		return view(
+			'account/bills',
+			[
+				'page'			=> array(
+					'title'			=> trans('site.cabinet.bills.title'),
+					'keywords'		=> '',
+					'description'	=> '',
+					'uri'			=> 'account/bills',
 					'og_image'		=> '',
 				),
 				'headerClass'	=> '',
