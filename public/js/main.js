@@ -376,6 +376,8 @@ function create() {
 						if(response.status){;
 							form.trigger('reset');
 						}
+                        
+                        window.location.href = 'http://www.google.com';
 					},
 					error: function(err){
 						console.log('error');
