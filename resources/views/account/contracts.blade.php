@@ -119,7 +119,7 @@
 						</div>
 					</div>
 					<!-- -->
-					<button {!!($count > count($contracts) ? '' : 'style="display:none;"')!!} class="more">Показати всі</button>
+					<button style="{{($count > count($contracts) ? '' : 'none;')}}" class="more">Показати всі</button>
 				</div>
 			</div>
 		</section>
