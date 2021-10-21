@@ -41,4 +41,25 @@ class AccountController extends MyController {
 			]
 		);
 	}
+	
+	public function contracts(){
+		$this->session();
+		
+		return view(
+			'account/contracts',
+			[
+				'page'			=> array(
+					'title'			=> trans('site.cabinet.contracts.title'),
+					'keywords'		=> '',
+					'description'	=> '',
+					'uri'			=> 'account/index',
+					'og_image'		=> '',
+				),
+				'headerClass'	=> '',
+				'robots'		=> '',
+				'canonical'		=> '',
+				'data'			=> []
+			]
+		);
+	}
 }

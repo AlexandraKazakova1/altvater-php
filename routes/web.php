@@ -90,6 +90,11 @@ Route::get('account', [
 	'uses'  => 'AccountController@index'
 ]);
 
+Route::get('account/contracts', [
+	'as'    => 'contracts',
+	'uses'  => 'AccountController@contracts'
+]);
+
 Route::get('/{uri}', [
 	'uses' => 'PageController@once'
 ])->where('uri', '[a-zA-Z_0-9\-]+');
