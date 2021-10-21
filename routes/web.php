@@ -110,6 +110,11 @@ Route::get('account/orders', [
 	'uses'  => 'AccountController@orders'
 ]);
 
+Route::get('account/settings', [
+	'as'    => 'settings',
+	'uses'  => 'AccountController@settings'
+]);
+
 Route::get('/{uri}', [
 	'uses' => 'PageController@once'
 ])->where('uri', '[a-zA-Z_0-9\-]+');
