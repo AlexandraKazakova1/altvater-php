@@ -134,7 +134,7 @@
                 Вийти з аккаунту
             </a>
         </aside>
-        <main class="request__page">
+        <main class="message__page">
             <section class="breadcrumbs__wrapper">
                 <div class="breadcrumbs container">
                     <ul class="breadcrumbs__list">
@@ -145,157 +145,40 @@
                     </ul>
                 </div>
             </section>
-            <h1 class="page__title">Повідомлення</h1>
+            <h1 class="page__title">Збільшення кількості контейнерів</h1>
             <a class="back-link" href="../cabinet-html/cabinet.html">
                 <img src="../img/cabinet/arrow-red.svg">
                 <span>Назад</span>
             </a>
-            <section class="request">
-                <form class="request__form" id="request__form" action="POST">
-                    <fieldset>
-                        <div>
-                            <label>
-                                <span class="input-description">Вибір тематики заявки:</span>
-                                <input class="form-control" type="text" name="theme" placeholder=" ">
-                                <span class="input-placeholder">
-                                    <div>
-                                        <img src="../img/cabinet/text.svg">
-                                    </div>
-                                    Тематика заявки
-                                </span>
-                            </label>
-                            <label>
-                                <span class="input-description">Номер договору:</span>
-                                <input class="form-control" type="number" name="number" placeholder=" ">
-                                <span class="input-placeholder">
-                                    <div>
-                                        <img src="../img/cabinet/documents.svg">
-                                    </div>
-                                    Номер договору
-                                </span>
-                            </label>
-                            <label>
-                                <span class="input-description">Телефон:</span>
-                                <input class="form-control" type="tel" name="phone" placeholder=" ">
-                                <span class="input-placeholder">
-                                    <div>
-                                        <img src="../img/cabinet/phone.svg">
-                                    </div>
-                                    Ваш телефон
-                                </span>
-                            </label>
-                        </div>
-                        <div>
-                            <label>
-                                <span class="input-description">Заголовку звернення:</span>
-                                <input class="form-control" type="text" name="header" placeholder=" ">
-                                <span class="input-placeholder">
-                                    <div>
-                                        <img src="../img/cabinet/text.svg">
-                                    </div>
-                                    Заголовок
-                                </span>
-                            </label>
-                            <label>
-                                <span class="input-description">Коментар</span>
-                                <textarea placeholder=" " name="text"></textarea>
-                                <span class="input-placeholder">
-                                    <div>
-                                        <img src="../img/cabinet/messages.svg">
-                                    </div>
-                                    Коментар
-                                </span>
-                            </label>
-                        </div>
-                        <div class="submit__wrap">
-                            <button class="btn-submit" type="submit" name="add-request">Залишити заявку</button>
-                        </div>
-                    </fieldset>
-                </form>
-            </section>
-            <section class="messages__wrapper">
-                <div class="selector">
-                    <ul>
-                        <li class="act">Всі замовлення</li>
-                        <li>Не прочитані</li>
-                    </ul>
+            <section class="message__wrapper">
+                <div class="msg__field">
+                    <div class="user">
+                        <span class="name">Іван<span class="time">23:30</span></span>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque ullam tempora aliquid consequuntur rerum. Esse nulla reiciendis non ipsa cupiditate ullam reprehenderit eveniet mollitia? Tempore tenetur optio numquam dolorem itaque.</p>
+                    </div>
+                    <div class="manager">
+                        <span class="name">Александра<span class="time">00:30</span></span>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere at, nobis consequuntur tenetur doloribus accusantium commodi quis reprehenderit rem nam sit eveniet ratione dolor et delectus praesentium recusandae. Quo, porro?</p>
+                    </div>
+                    <div class="user">
+                        <span class="name">Іван<span class="time">00:40</span></span>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur, voluptatum.</p>
+                    </div>
                 </div>
-                <div class="messages__content">
-                    <div class="filters">
-                        <div>
-                            Повідомлень: <span class="counter">18</span>
-                        </div>
-                    </div>
-                    <div class="messages__list">
-                        <a href="#" class="messages__item">
-                            <span>
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17 12C17 13.1046 17.8954 14 19 14C20.1046 14 21 13.1046 21 12C21 10.8954 20.1046 10 19 10C17.8954 10 17 10.8954 17 12Z"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10 12C10 13.1046 10.8954 14 12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12Z"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3 12C3 13.1046 3.89543 14 5 14C6.10457 14 7 13.1046 7 12C7 10.8954 6.10457 10 5 10C3.89543 10 3 10.8954 3 12Z"/>
+                <div class="msg__form">
+                    <form>
+                        <fieldset>
+                            <label>
+                                <input type="text" placeholder="Повідомлення">
+                            </label>
+                            <button type="submit">
+                                <span>Відправити</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-send-circle" width="24" height="24" viewBox="0 0 24 24">
+                                    <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M8,7.71V11.05L15.14,12L8,12.95V16.29L18,12L8,7.71Z" />
                                 </svg>
-                            </span>
-                            <div class="title">
-                                Тема:
-                                <span>Збільшення кількості контейнерів</span>
-                            </div>
-                            <div class="date">
-                                Останнє оновлення:
-                                <span>12.12.2021</span>
-                            </div>
-                        </a>
-                        <a href="#" class="messages__item">
-                            <span>
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17 12C17 13.1046 17.8954 14 19 14C20.1046 14 21 13.1046 21 12C21 10.8954 20.1046 10 19 10C17.8954 10 17 10.8954 17 12Z"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10 12C10 13.1046 10.8954 14 12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12Z"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3 12C3 13.1046 3.89543 14 5 14C6.10457 14 7 13.1046 7 12C7 10.8954 6.10457 10 5 10C3.89543 10 3 10.8954 3 12Z"/>
-                                </svg>
-                            </span>
-                            <div class="title">
-                                Тема:
-                                <span>Збільшення кількості контейнерів</span>
-                            </div>
-                            <div class="date">
-                                Останнє оновлення:
-                                <span>12.12.2021</span>
-                            </div>
-                        </a>
-                        <a href="#" class="messages__item">
-                            <span>
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17 12C17 13.1046 17.8954 14 19 14C20.1046 14 21 13.1046 21 12C21 10.8954 20.1046 10 19 10C17.8954 10 17 10.8954 17 12Z"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10 12C10 13.1046 10.8954 14 12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12Z"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3 12C3 13.1046 3.89543 14 5 14C6.10457 14 7 13.1046 7 12C7 10.8954 6.10457 10 5 10C3.89543 10 3 10.8954 3 12Z"/>
-                                </svg>
-                            </span>
-                            <div class="title">
-                                Тема:
-                                <span>Збільшення кількості контейнерів</span>
-                            </div>
-                            <div class="date">
-                                Останнє оновлення:
-                                <span>12.12.2021</span>
-                            </div>
-                        </a>
-                        <a href="#" class="messages__item">
-                            <span>
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17 12C17 13.1046 17.8954 14 19 14C20.1046 14 21 13.1046 21 12C21 10.8954 20.1046 10 19 10C17.8954 10 17 10.8954 17 12Z"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10 12C10 13.1046 10.8954 14 12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12Z"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3 12C3 13.1046 3.89543 14 5 14C6.10457 14 7 13.1046 7 12C7 10.8954 6.10457 10 5 10C3.89543 10 3 10.8954 3 12Z"/>
-                                </svg>
-                            </span>
-                            <div class="title">
-                                Тема:
-                                <span>Збільшення кількості контейнерів</span>
-                            </div>
-                            <div class="date">
-                                Останнє оновлення:
-                                <span>12.12.2021</span>
-                            </div>
-                        </a>
-                    </div>
+                            </button>
+                        </fieldset>
+                    </form>
                 </div>
             </section>
         </main>
