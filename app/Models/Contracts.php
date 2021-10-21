@@ -12,15 +12,20 @@ class Contracts extends Model{
 	public $timestamps	= false;
 	
 	protected $fillable = [
+		'created_at',
+		'updated_at',
 		'client_id',
-		'type',
-		'container',
-		'volume',
-		'count_containers',
-		'period',
 		'address',
 		'name',
+		'contact',
 		'phone',
-		'email'
+		'extra_phone',
+		'email',
+		'index',
+		'ipn',
+		'edrpou',
+		'file',
+		'file_name',
+		'date'
 	];
 }
