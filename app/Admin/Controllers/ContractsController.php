@@ -119,7 +119,7 @@ class ContractsController extends MyAdminController {
 			$form->ipn			= preg_replace("/[^0-9]/", '', $form->ipn);
 			$form->edrpou		= preg_replace("/[^0-9]/", '', $form->edrpou);
 			
-			if(!empty($_FILES['file'])){
+			if(!empty($_FILES['file']['name'])){
 				$form->file_name = $_FILES['file']['name'];
 			}
 		});
