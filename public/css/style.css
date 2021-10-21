@@ -974,6 +974,10 @@ header.small {
           align-items: flex-start;
 }
 
+.about-wrapper .about-content .description-group P {
+  text-align: justify;
+}
+
 .about-wrapper .about-content .description-group p:first-child {
   padding-right: 15px;
 }
@@ -1002,6 +1006,7 @@ header.small {
 }
 
 .about-wrapper .about-content .goal .goal__text {
+  text-align: justify;
   padding-top: 20px;
   color: rgba(44, 44, 44, 0.8);
 }
@@ -1313,6 +1318,7 @@ header.small {
   font-size: 16px;
   line-height: 150%;
   color: #2C2C2C;
+  text-align: justify;
 }
 
 .response-wrapper .response .response__slider .slider__item .response__body span {
@@ -1380,7 +1386,8 @@ header.small {
   content: url(../img/small-left.svg);
 }
 
-.response-wrapper .response .response__slider .slick-prev:hover:before, .response-wrapper .response .response__slider .slick-prev:focus:before,
+.response-wrapper .response .response__slider .slick-prev:hover:before,
+.response-wrapper .response .response__slider .slick-prev:focus:before,
 .response-wrapper .response .response__slider .slick-next:hover:before,
 .response-wrapper .response .response__slider .slick-next:focus:before {
   -webkit-transition: all 0.3s;
@@ -1458,6 +1465,7 @@ header.small {
   line-height: 30px;
   opacity: 0.7;
   margin-bottom: 30px;
+  text-align: justify;
 }
 
 .detail__wrapper .detail .detail__text :last-child {
@@ -1666,13 +1674,13 @@ footer .footer span {
 }
 
 .osbb__wrapper .osbb p {
-  width: 80%;
   margin-bottom: 20px;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
   line-height: 150%;
   color: #808080;
+  text-align: justify;
 }
 
 .last-work__wrapper .last-work {
@@ -1921,6 +1929,7 @@ footer .footer span {
   color: #2C2C2C;
   line-height: 150%;
   margin-bottom: 15px;
+  text-align: justify;
 }
 
 .thesis__wrapper .thesis .thesis__body p:last-child {
@@ -2033,6 +2042,7 @@ footer .footer span {
   line-height: 150%;
   color: #2C2C2C;
   width: 88%;
+  text-align: justify;
 }
 
 .contacts__wrapper .contacts {
@@ -2688,6 +2698,7 @@ footer .footer span {
   line-height: 26px;
   color: rgba(255, 255, 255, 0.8);
   margin-bottom: 30px;
+  text-align: justify;
 }
 
 .open-news__wrapper .open-news blockquote::after {
@@ -2718,6 +2729,7 @@ footer .footer span {
   line-height: 30px;
   color: rgba(87, 88, 90, 0.8);
   margin-bottom: 30px;
+  text-align: justify;
 }
 
 .open-news__wrapper .open-news p a {

@@ -716,6 +716,9 @@ header.small {
             flex-direction: row;
             justify-content: space-between;
             align-items: flex-start;
+            P {
+                text-align: justify;
+            }
             p:first-child {
                 padding-right: 15px;
             }
@@ -732,6 +735,7 @@ header.small {
             align-items: flex-start;
             padding: 30px 48px;
             .goal__text {
+                text-align: justify;
                 padding-top: 20px;
                 color: rgba(44, 44, 44, 0.8);
             }
@@ -930,6 +934,7 @@ header.small {
                         font-size: 16px;
                         line-height: 150%;
                         color: #2C2C2C;
+                        text-align: justify;
                     }
                     span {
                         margin-top: 30px;
@@ -988,7 +993,8 @@ header.small {
             [dir="rtl"] .slick-next:before {
                 content: url(../img/small-left.svg);
             }
-            .slick-prev:hover:before, .slick-prev:focus:before,
+            .slick-prev:hover:before, 
+            .slick-prev:focus:before,
             .slick-next:hover:before,
             .slick-next:focus:before {
                 transition: all 0.3s;
@@ -1038,6 +1044,7 @@ header.small {
                 line-height: 30px;
                 opacity: 0.7;
                 margin-bottom: 30px;
+                text-align: justify;
             }
             :last-child {
                 margin-bottom: 0px;
@@ -1182,13 +1189,13 @@ footer {
             margin-bottom: 20px;
         }
         p {
-            width: 80%;
             margin-bottom: 20px;
             font-style: normal;
             font-weight: normal;
             font-size: 16px;
             line-height: 150%;
             color: #808080;
+            text-align: justify;
         }
     }
 }
@@ -1366,6 +1373,7 @@ footer {
                 color: #2C2C2C;
                 line-height: 150%;
                 margin-bottom: 15px;
+                text-align: justify;
             }
             p:last-child {
                 margin-bottom: 0px;
@@ -1438,6 +1446,7 @@ footer {
             line-height: 150%;
             color: #2C2C2C;
             width: 88%;
+            text-align: justify;
         }
     }
 }
@@ -1876,6 +1885,7 @@ footer {
             line-height: 26px;
             color: rgba(255, 255, 255, 0.8);
             margin-bottom: 30px;
+            text-align: justify;
         }
         blockquote::after {
             content: url(../img/quote.svg);
@@ -1903,6 +1913,7 @@ footer {
             line-height: 30px;
             color: rgba(87, 88, 90, 0.8);
             margin-bottom: 30px;
+            text-align: justify;
         }
         p a {
             font-style: normal;
