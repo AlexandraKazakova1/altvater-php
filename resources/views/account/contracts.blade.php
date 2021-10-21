@@ -103,7 +103,7 @@
 							
 							<div class="date">
 								Дата підписання:
-								<span>{{($item->date ? $item->date : '-')}}</span>
+								<span>{{($item->date ? implode('.', array_reverse(explode('-', $item->date))) : '-')}}</span>
 							</div>
 							
 							<div class="download">
