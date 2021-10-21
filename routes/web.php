@@ -115,6 +115,11 @@ Route::get('account/settings', [
 	'uses'  => 'AccountController@settings'
 ]);
 
+Route::get('account/logout', [
+	'as'    => 'logout',
+	'uses'  => 'AccountController@logout'
+]);
+
 Route::get('/{uri}', [
 	'uses' => 'PageController@once'
 ])->where('uri', '[a-zA-Z_0-9\-]+');
