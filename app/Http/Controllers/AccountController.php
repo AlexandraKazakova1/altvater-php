@@ -83,4 +83,25 @@ class AccountController extends MyController {
 			]
 		);
 	}
+	
+	public function messages(){
+		$this->session();
+		
+		return view(
+			'account/messages',
+			[
+				'page'			=> array(
+					'title'			=> trans('site.cabinet.messages.title'),
+					'keywords'		=> '',
+					'description'	=> '',
+					'uri'			=> 'account/messages',
+					'og_image'		=> '',
+				),
+				'headerClass'	=> '',
+				'robots'		=> '',
+				'canonical'		=> '',
+				'data'			=> []
+			]
+		);
+	}
 }
