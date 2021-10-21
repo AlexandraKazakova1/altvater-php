@@ -104,4 +104,25 @@ class AccountController extends MyController {
 			]
 		);
 	}
+	
+	public function orders(){
+		$this->session();
+		
+		return view(
+			'account/orders',
+			[
+				'page'			=> array(
+					'title'			=> trans('site.cabinet.orders.title'),
+					'keywords'		=> '',
+					'description'	=> '',
+					'uri'			=> 'account/orders',
+					'og_image'		=> '',
+				),
+				'headerClass'	=> '',
+				'robots'		=> '',
+				'canonical'		=> '',
+				'data'			=> []
+			]
+		);
+	}
 }

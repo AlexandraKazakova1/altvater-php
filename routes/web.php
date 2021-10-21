@@ -105,6 +105,11 @@ Route::get('account/messages', [
 	'uses'  => 'AccountController@messages'
 ]);
 
+Route::get('account/orders', [
+	'as'    => 'orders',
+	'uses'  => 'AccountController@orders'
+]);
+
 Route::get('/{uri}', [
 	'uses' => 'PageController@once'
 ])->where('uri', '[a-zA-Z_0-9\-]+');
