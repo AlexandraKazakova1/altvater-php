@@ -109,9 +109,6 @@ class ContractsController extends MyAdminController {
 		
 		// callback before save
 		$form->saving(function (Form $form){
-			print_r($_FILES);
-			exit;
-			
 			$form->name			= trim($form->name);
 			$form->contact		= trim($form->contact);
 			
@@ -121,6 +118,10 @@ class ContractsController extends MyAdminController {
 			$form->index		= preg_replace("/[^0-9]/", '', $form->index);
 			$form->ipn			= preg_replace("/[^0-9]/", '', $form->ipn);
 			$form->edrpou		= preg_replace("/[^0-9]/", '', $form->edrpou);
+			
+			if(!empty($_FILES['file'])){
+				$form->file_name = $_FILES['file']['name'];
+			}
 		});
 		
 		$form->saved(function(Form $form){
