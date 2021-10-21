@@ -85,6 +85,31 @@ Route::get('about', [
 	'uses'  => 'AboutController@index'
 ]);
 
+Route::get('account', [
+	'as'    => 'account',
+	'uses'  => 'AccountController@index'
+]);
+
+Route::get('account/contracts', [
+	'as'    => 'contracts',
+	'uses'  => 'AccountController@contracts'
+]);
+
+Route::get('account/bills', [
+	'as'    => 'bills',
+	'uses'  => 'AccountController@bills'
+]);
+
+Route::get('account/messages', [
+	'as'    => 'messages',
+	'uses'  => 'AccountController@messages'
+]);
+
+Route::get('account/orders', [
+	'as'    => 'orders',
+	'uses'  => 'AccountController@orders'
+]);
+
 Route::get('/{uri}', [
 	'uses' => 'PageController@once'
 ])->where('uri', '[a-zA-Z_0-9\-]+');

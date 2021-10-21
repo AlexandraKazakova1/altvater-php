@@ -119,6 +119,8 @@ return [
 		'patronymic'			=> 'По-батькові',
 		
 		'phone'					=> 'Телефон',
+		'extra_phone'			=> 'Додатковий телефон',
+		
 		'email'					=> 'Email',
 		'address'				=> 'Адреса',
 		'username'				=> 'Логін',
@@ -137,6 +139,9 @@ return [
 		],
 		
 		'password'				=> 'Пароль',
+		
+		'position'				=> 'Посада',
+		'index'					=> 'Індекс',
 	],
 	
 	'violation'				=> [
