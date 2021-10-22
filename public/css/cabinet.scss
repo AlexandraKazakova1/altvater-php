@@ -2049,10 +2049,10 @@ main {
 }
 .contracts__clear {
     margin-top: 120px;
-    display: flex;
-    display: none;
     justify-content: center;
     align-items: center;
+    display: flex;
+    // display: none;
 }
 .contracts__wrapper {
     width: 100%;

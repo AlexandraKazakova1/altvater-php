@@ -21,6 +21,8 @@ $(document).ready (function() {
         $('.modal').modal('hide');
         $('#orderService').modal('show');
     });
+    var elemCount  = document.getElementsByClassName("contracts__list")[0].childElementCount;
+    console.log(elemCount);
 
 });
 
