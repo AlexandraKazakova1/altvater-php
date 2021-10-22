@@ -16,14 +16,14 @@ use App\Helpers\StringHelper;
 
 use DB;
 
-class ContractsSeparateController extends MyAdminController {
+class ContractsController extends MyAdminController {
 	
 	/**
 	* Title for current resource.
 	*
 	* @var string
 	*/
-	protected $title = 'Договори - роздільне збирання';
+	protected $title = 'Договори';
 	
 	/**
 	* Make a grid builder.
@@ -38,17 +38,16 @@ class ContractsSeparateController extends MyAdminController {
 		$grid->column('created_at'		, __('admin.contracts.created_at'));
 		
 		$grid->column('name'			, __('admin.contracts.name'));
+		$grid->column('contact'			, __('admin.contracts.contact'));
 		$grid->column('address'			, __('admin.contracts.address'));
 		$grid->column('phone'			, __('admin.contracts.phone'));
+		$grid->column('email'			, __('admin.contracts.email'));
 		
-		$grid->column('count_containers', __('admin.contracts.count_containers'));
-		$grid->column('period'			, __('admin.contracts.period'));
+		$grid->column('date'			, __('admin.contracts.date'));
 		
 		$model = $grid->model();
 		
 		$model->orderBy('created_at', 'desc');
-		
-		$model->where('type', 'separate');
 		
 		$grid->actions(function($actions){
 			//$tools->disableDelete();
@@ -58,6 +57,7 @@ class ContractsSeparateController extends MyAdminController {
 		
 		$grid->filter(function($filter){
 			$filter->like('name'			, __('admin.contracts.name'));
+			$filter->like('contact'			, __('admin.contracts.contact'));
 			$filter->like('phone'			, __('admin.contracts.phone'));
 			$filter->like('email'			, __('admin.contracts.email'));
 			$filter->like('address'			, __('admin.contracts.address'));
@@ -65,11 +65,13 @@ class ContractsSeparateController extends MyAdminController {
 		
 		$grid->disableCreateButton();
 		
+		$grid->paginate(100);
+		
 		return $grid;
 	}
 	
 	protected function detail($id){
-		header('Location: /contracts-separate/'.$id.'/edit');
+		header('Location: /contracts/'.$id.'/edit');
 		return;
 	}
 	
@@ -85,36 +87,45 @@ class ContractsSeparateController extends MyAdminController {
 		
 		$id = $this->_id;
 		
-		$form->hidden('type');
-		
-		$this->configure($form);
-		
-		$form->decimal('count_containers'		, __('admin.contracts.count_containers'))->rules('required');
-		
-		$form->radio('period'		, __('admin.contracts.period'))
-				->options([
-					1			=> 1,
-					2			=> 2,
-					3			=> 3,
-					4			=> 4,
-					5			=> 5,
-					6			=> 6
-				])
-				->rules('required');
-		
-		$form->text('address'		, __('admin.contracts.address'))->rules('required|max:150');
-		$form->text('name'			, __('admin.contracts.name'))->rules('required|min:2|max:100');
+		$form->text('name'			, __('admin.contracts.name'))->rules('required|min:2|max:200');
+		$form->text('contact'		, __('admin.contracts.contact'))->rules('max:100');
 		
 		$form->text('phone'			, __('admin.contracts.phone'))->rules('min:9|max:30');
+		$form->text('extra_phone'	, __('admin.contracts.extra_phone'))->rules('min:9|max:30');
 		
 		$form->email('email'		, __('admin.contracts.email'))->rules('max:50');
+		
+		$form->text('address'		, __('admin.contracts.address'))->rules('required|max:150');
+		
+		$form->text('index'			, __('admin.contracts.index'))->rules('max:6');
+		$form->text('ipn'			, __('admin.contracts.ipn'))->rules('max:15');
+		$form->text('edrpou'		, __('admin.contracts.edrpou'))->rules('max:40');
+		
+		$form->date('date'			, __('admin.contracts.date'));
+		
+		$form->hidden('file_name');
+		
+		$form->file('file'			, __('admin.contracts.doc'))->help('PDF')->removable()->move('contracts')->uniqueName();
 		
 		// callback before save
 		$form->saving(function (Form $form){
 			$form->name			= trim($form->name);
-			$form->type			= 'separate';
+			$form->contact		= trim($form->contact);
 			
 			$form->phone		= preg_replace("/[^0-9]/", '', $form->phone);
+			$form->extra_phone	= preg_replace("/[^0-9]/", '', $form->extra_phone);
+			
+			$form->index		= preg_replace("/[^0-9]/", '', $form->index);
+			$form->ipn			= preg_replace("/[^0-9]/", '', $form->ipn);
+			$form->edrpou		= preg_replace("/[^0-9]/", '', $form->edrpou);
+			
+			if(!empty($_FILES['file']['name'])){
+				$form->file_name = $_FILES['file']['name'];
+			}
+		});
+		
+		$form->saved(function(Form $form){
+			$id = $form->model()->id;
 		});
 		
 		return $form;

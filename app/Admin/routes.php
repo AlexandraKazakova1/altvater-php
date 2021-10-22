@@ -14,17 +14,13 @@ Route::group([
 	$router->get('/auth/logout'					, 'AuthController@logout')->name('admin.logout');
 	
 	$router->resource('clients'					, ClientsController::class);
-	$router->resource('violation-schedule'		, ViolationController::class);
 	$router->resource('applications'			, ApplicationsController::class);
-	$router->resource('contracts-household'		, ContractsHouseholdController::class);
-	$router->resource('contracts-construction'	, ContractsConstructionController::class);
-	$router->resource('contracts-separate'		, ContractsSeparateController::class);
+	$router->resource('contracts'				, ContractsController::class);
 	$router->resource('contents'				, ContentsController::class);
 	$router->resource('packages'				, PackagesController::class);
 	$router->resource('templates'				, EmailTemplatesController::class);
 	$router->resource('payments'				, PaymentsController::class);
 	$router->resource('reviews'					, ReviewsController::class);
-	$router->resource('sale-containers'			, SaleContainersController::class);
 	$router->resource('purchase'				, PurchaseController::class);
 	
 	$router->resource('ip-list'					, IpListController::class);

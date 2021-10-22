@@ -161,7 +161,7 @@
 								<fieldset class="fieldset">
 									<label>
 										<span class="input-description">ПІБ:</span>
-										<input class="form-control" type="text" name="userName" placeholder=" ">
+										<input class="form-control" type="text" name="name" placeholder=" ">
 										<span class="input-placeholder">
 											<div>
 												<img src="/img/cabinet/modal-icon/profile.svg">
@@ -172,7 +172,7 @@
 									
 									<label>
 										<span class="input-description">Email:</span>
-										<input class="form-control" type="email" name="userEmail" placeholder=" ">
+										<input class="form-control" type="email" name="email" placeholder=" ">
 										<span class="input-placeholder">
 											<div>
 												<img src="/img/cabinet/modal-icon/email.svg">
@@ -183,7 +183,7 @@
 									
 									<label>
 										<span class="input-description">Номер телефону:</span>
-										<input class="form-control" type="tel" name="userTel" placeholder=" ">
+										<input class="form-control" type="tel" name="phone" placeholder=" ">
 										<span class="input-placeholder">
 											<div>
 												<img src="/img/cabinet/modal-icon/phone.svg">
@@ -194,7 +194,7 @@
 									
 									<label>
 										<span class="input-description">Адреса:</span>
-										<input class="form-control" type="text" name="userAddress" placeholder=" ">
+										<input class="form-control" type="text" name="address" placeholder=" ">
 										<span class="input-placeholder">
 											<div>
 												<img src="/img/cabinet/modal-icon/location.svg">
@@ -205,7 +205,7 @@
 									
 									<label>
 										<span class="input-description">Індекс:</span>
-										<input class="form-control" type="text" name="postIndex" placeholder=" ">
+										<input class="form-control" type="text" name="index" placeholder=" ">
 										<span class="input-placeholder">
 											<div>
 												<img src="/img/cabinet/modal-icon/location.svg">
@@ -239,7 +239,7 @@
 								<fieldset class="fieldset">
 									<label>
 										<span class="input-description">Назва компанії:</span>
-										<input class="form-control" type="text" name="userName" placeholder=" ">
+										<input class="form-control" type="text" name="name" placeholder=" ">
 										<span class="input-placeholder">
 											<div>
 												<img src="/img/cabinet/modal-icon/profile.svg">
@@ -250,7 +250,7 @@
 									
 									<label>
 										<span class="input-description">Контактна особа:</span>
-										<input class="form-control" type="text" name="userContactName" placeholder=" ">
+										<input class="form-control" type="text" name="contact" placeholder=" ">
 										<span class="input-placeholder">
 											<div>
 												<img src="/img/cabinet/modal-icon/profile.svg">
@@ -261,7 +261,7 @@
 									
 									<label>
 										<span class="input-description">Юридична адреса:</span>
-										<input class="form-control" type="text" name="userEntityAddress" placeholder=" ">
+										<input class="form-control" type="text" name="address" placeholder=" ">
 										<span class="input-placeholder">
 											<div>
 												<img src="/img/cabinet/modal-icon/location.svg">
@@ -272,7 +272,7 @@
 									
 									<label>
 										<span class="input-description">Email:</span>
-										<input class="form-control" type="email" name="userEmail" placeholder=" ">
+										<input class="form-control" type="email" name="email" placeholder=" ">
 										<span class="input-placeholder">
 											<div>
 												<img src="/img/cabinet/modal-icon/email.svg">
@@ -283,7 +283,7 @@
 									
 									<label>
 										<span class="input-description">Номер телефону:</span>
-										<input class="form-control" type="tel" name="userTel" placeholder=" ">
+										<input class="form-control" type="tel" name="phone" placeholder=" ">
 										<span class="input-placeholder">
 											<div>
 												<img src="/img/cabinet/modal-icon/phone.svg">
@@ -294,7 +294,7 @@
 									
 									<label>
 										<span class="input-description">Додатковий телефон:</span>
-										<input class="form-control" type="tel" name="userAddTel" placeholder=" ">
+										<input class="form-control" type="tel" name="extra_phone" placeholder=" ">
 										<span class="input-placeholder">
 											<div>
 												<img src="/img/cabinet/modal-icon/phone.svg">
@@ -313,7 +313,7 @@
 									
 									<label>
 										<span class="input-description">ЄДРПОУ:</span>
-										<input class="form-control" type="text" name="uedrpou" placeholder=" ">
+										<input class="form-control" type="text" name="edrpou" placeholder=" ">
 										<span class="input-placeholder">
 											ЄДРПОУ
 										</span>
@@ -321,7 +321,7 @@
 									
 									<label>
 										<span class="input-description">Поштовий індекс:</span>
-										<input class="form-control" type="text" name="postIndex" placeholder=" ">
+										<input class="form-control" type="text" name="index" placeholder=" ">
 										<span class="input-placeholder">
 											<div>
 												<img src="/img/cabinet/modal-icon/location.svg">
