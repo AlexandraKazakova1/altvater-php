@@ -3299,7 +3299,15 @@ main {
   left: 10px;
 }
 
-.contracts__wrapper .contracts__content .contracts__list .contract__item .download button {
+.contracts__wrapper .contracts__content .contracts__list .contract__item .download {
+  border-right: none;
+  padding-right: 0;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+}
+
+.contracts__wrapper .contracts__content .contracts__list .contract__item .download a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3321,7 +3329,7 @@ main {
   padding: 16px 25px;
 }
 
-.contracts__wrapper .contracts__content .contracts__list .contract__item .download button span {
+.contracts__wrapper .contracts__content .contracts__list .contract__item .download a span {
   padding: 0;
   font-style: normal;
   font-weight: 600;
@@ -3330,34 +3338,29 @@ main {
   color: #4A5568;
 }
 
-.contracts__wrapper .contracts__content .contracts__list .contract__item .download button svg {
+.contracts__wrapper .contracts__content .contracts__list .contract__item .download a svg {
   margin-right: 15px;
   fill: #CF6854;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 
-.contracts__wrapper .contracts__content .contracts__list .contract__item .download {
-  border-right: none;
-  padding-right: 0;
-  min-width: -webkit-fit-content;
-  min-width: -moz-fit-content;
-  min-width: fit-content;
-}
-
-.contracts__wrapper .contracts__content .contracts__list .contract__item .download button:hover {
+.contracts__wrapper .contracts__content .contracts__list .contract__item .download a:focus,
+.contracts__wrapper .contracts__content .contracts__list .contract__item .download a:hover {
   background: #CF6854;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 
-.contracts__wrapper .contracts__content .contracts__list .contract__item .download button:hover span {
+.contracts__wrapper .contracts__content .contracts__list .contract__item .download a:focus span,
+.contracts__wrapper .contracts__content .contracts__list .contract__item .download a:hover span {
   color: #FFFFFF;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 
-.contracts__wrapper .contracts__content .contracts__list .contract__item .download button:hover svg {
+.contracts__wrapper .contracts__content .contracts__list .contract__item .download a:focus svg,
+.contracts__wrapper .contracts__content .contracts__list .contract__item .download a:hover svg {
   fill: #FFFFFF;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;

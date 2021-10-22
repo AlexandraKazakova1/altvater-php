@@ -271,11 +271,10 @@ function logIn() {
 						lock = false;
                         btn.attr('disabled', false);
 
-						if(response.status){
+						if(response.status = true){;
 							form.trigger('reset');
+                            window.location.href = '/account';
 						}
-                        
-                        window.location.href = '../cabinet-html/cabinet.html';
 					},
 					error: function(err){
 						console.log('error');
@@ -373,11 +372,10 @@ function create() {
 						lock = false;
                         btn.attr('disabled', false);
 						
-						if(response.status){;
+						if(response.status = true){;
 							form.trigger('reset');
+                            window.location.href = '/account';
 						}
-
-                        window.location.href = '../cabinet-html/cabinet.html';
 					},
 					error: function(err){
 						console.log('error');

@@ -2219,35 +2219,36 @@ main {
                     transform: translateY(-50%);
                     left: 10px;
                 }
-                .download button {
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: center;
-                    align-items: center;
-                    background: transparent;
-                    transition: all 0.3s;
-                    border: 1px solid #CF6854;
-                    border-radius: 8px;
-                    padding: 16px 25px;
-                    span {
-                        padding: 0;
-                        font-style: normal;
-                        font-weight: 600;
-                        font-size: 12px;
-                        line-height: 15px;
-                        color: #4A5568;
-                    }
-                    svg {
-                        margin-right: 15px;
-                        fill: #CF6854;
-                        transition: all 0.3s;
-                    }
-                }
                 .download {
                     border-right: none;
                     padding-right: 0;
                     min-width: fit-content;
-                    button:hover {
+                    a {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        align-items: center;
+                        background: transparent;
+                        transition: all 0.3s;
+                        border: 1px solid #CF6854;
+                        border-radius: 8px;
+                        padding: 16px 25px;
+                        span {
+                            padding: 0;
+                            font-style: normal;
+                            font-weight: 600;
+                            font-size: 12px;
+                            line-height: 15px;
+                            color: #4A5568;
+                        }
+                        svg {
+                            margin-right: 15px;
+                            fill: #CF6854;
+                            transition: all 0.3s;
+                        }
+                    }
+                    a:focus,
+                    a:hover {
                         background: #CF6854;
                         transition: all 0.3s;
                         span {
