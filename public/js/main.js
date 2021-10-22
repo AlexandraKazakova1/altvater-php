@@ -1,4 +1,12 @@
 $(document).ready (function() {
+	var csrf = $('meta[name="csrf-token"]').attr('content');
+	
+	$.ajaxSetup({
+		headers: {
+			'X-CSRF-TOKEN': csrf,
+		}
+	});
+
     slidersConfig();
     faqSlide();
     burgerMenu();
@@ -15,6 +23,7 @@ $(document).ready (function() {
     createModal();
     // calcPopup();
     servicesCalc();
+    timepicker();
 });
 
 function slidersConfig() {
@@ -635,7 +644,7 @@ function createModal() {
 //     });
 // }
 
-function servicesCalc(){
+function servicesCalc() {
 	var form = jQuery("#servicesCalc-form");
 	
 	if(!form.length){
@@ -650,3 +659,29 @@ function servicesCalc(){
 		console.log('current:', current);
 	});
 };
+
+function timepicker() {
+    // $('.datepicker').timepicker({
+    //     timeFormat: 'HH:mm:ss',
+    //     // interval: 60,
+    //     // minTime: '10',
+    //     // maxTime: '6:00pm',
+    //     // defaultTime: '11',
+    //     // startTime: '10:00',
+    //     // dynamic: false,
+    //     // dropdown: true,
+    //     // scrollbar: true
+    // });
+
+    $('.timepicker').timepicker({
+        timeFormat: 'h:mm p',
+        interval: 60,
+        minTime: '24',
+        maxTime: '6:00pm',
+        defaultTime: '11',
+        startTime: '10:00',
+        dynamic: true,
+        dropdown: true,
+        scrollbar: true
+    });
+}
