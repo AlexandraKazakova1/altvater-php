@@ -36,13 +36,6 @@ class ContractsController extends MyAdminController {
 		$grid->column('id'				, __('ID'));
 		
 		$grid->column('created_at'		, __('admin.contracts.created_at'));
-		
-		$grid->column('name'			, __('admin.contracts.name'));
-		$grid->column('contact'			, __('admin.contracts.contact'));
-		$grid->column('address'			, __('admin.contracts.address'));
-		$grid->column('phone'			, __('admin.contracts.phone'));
-		$grid->column('email'			, __('admin.contracts.email'));
-		
 		$grid->column('date'			, __('admin.contracts.date'));
 		
 		$grid->column('archive'			, __('admin.contracts.archive'))->display(function($archive){
@@ -50,6 +43,12 @@ class ContractsController extends MyAdminController {
 			
 			return $archive > 0 ? '<i class="fa fa-check" style="color:green;" aria-hidden="true"></i>' : '<i class="fa fa-times" style="color:red;" aria-hidden="true"></i>';
 		});
+		
+		$grid->column('name'			, __('admin.contracts.name'));
+		$grid->column('contact'			, __('admin.contracts.contact'));
+		$grid->column('address'			, __('admin.contracts.address'));
+		$grid->column('phone'			, __('admin.contracts.phone'));
+		$grid->column('email'			, __('admin.contracts.email'));
 		
 		$model = $grid->model();
 		
