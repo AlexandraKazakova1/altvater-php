@@ -26,6 +26,7 @@ class Contracts extends Model{
 		'edrpou',
 		'file',
 		'file_name',
-		'date'
+		'date',
+		'archive'
 	];
 }

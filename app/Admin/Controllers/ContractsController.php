@@ -45,6 +45,12 @@ class ContractsController extends MyAdminController {
 		
 		$grid->column('date'			, __('admin.contracts.date'));
 		
+		$grid->column('archive'			, __('admin.contracts.archive'))->display(function($archive){
+			$archive = (int)$archive;
+			
+			return $archive > 0 ? '<i class="fa fa-check" style="color:green;" aria-hidden="true"></i>' : '<i class="fa fa-times" style="color:red;" aria-hidden="true"></i>';
+		});
+		
 		$model = $grid->model();
 		
 		$model->orderBy('created_at', 'desc');
@@ -102,6 +108,8 @@ class ContractsController extends MyAdminController {
 		$form->text('edrpou'		, __('admin.contracts.edrpou'))->rules('max:40');
 		
 		$form->date('date'			, __('admin.contracts.date'));
+		
+		$form->switch('archive'		, __('admin.contracts.archive'));
 		
 		$form->hidden('file_name');
 		

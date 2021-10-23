@@ -50,8 +50,8 @@
 		<section class="contracts__wrapper" style="{{($count > 0 ? '' : 'display:none;')}}">
 			<div class="selector">
 				<ul>
-					<li class="act">Документи</li>
-					<li>Архів</li>
+					<li data-archive="0" class="act">Документи</li>
+					<li data-archive="1">Архів</li>
 				</ul>
 			</div>
 			
@@ -85,7 +85,7 @@
 				<div class="contracts__list">
 					@foreach($contracts as $item)
 						<!-- -->
-						<div class="contract__item">
+						<div class="contract__item" data-archive="{{(int)($item->archive)}}">
 							<span>
 								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path fill-rule="evenodd" clip-rule="evenodd" d="M17 12C17 13.1046 17.8954 14 19 14C20.1046 14 21 13.1046 21 12C21 10.8954 20.1046 10 19 10C17.8954 10 17 10.8954 17 12Z"/>
