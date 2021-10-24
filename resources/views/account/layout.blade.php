@@ -153,6 +153,7 @@
 					<div class="create__contract-page popup">
 						<div class="modal-header">
 							<h2 class="popup__title">Новий договір</h2>
+							
 							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 								<img src="/img/close.svg" alt="X">
 							</button>
