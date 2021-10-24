@@ -50,8 +50,8 @@
 		<section class="contracts__wrapper" style="{{($count > 0 ? '' : 'display:none;')}}">
 			<div class="selector">
 				<ul>
-					<li data-archive="0" class="act">Документи</li>
-					<li data-archive="1">Архів</li>
+					<li data-archive="0" data-count="{{$count}}" class="act">Документи</li>
+					<li data-archive="1" data-count="{{$count_archive}}">Архів</li>
 				</ul>
 			</div>
 			
@@ -96,7 +96,7 @@
 							
 							<div class="number">
 								ID договору:
-								<span>{{$item->id}}</span>
+								<span>{{$item->number}}</span>
 							</div>
 							
 							<div class="docName">

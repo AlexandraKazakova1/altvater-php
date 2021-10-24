@@ -7,30 +7,20 @@ use DB;
 
 use App\Models\Clients;
 
-class Contracts extends Model{
+class Bills extends Model{
 	
-	protected $table	= 'contracts';
+	protected $table	= 'bills';
 	
 	public $timestamps	= false;
 	
 	protected $fillable = [
 		'created_at',
 		'updated_at',
-		'client_id',
-		'address',
-		'name',
-		'contact',
-		'phone',
-		'extra_phone',
-		'email',
-		'index',
-		'ipn',
-		'edrpou',
-		'file',
-		'file_name',
 		'date',
-		'archive',
-		'number'
+		'client_id',
+		'number',
+		'amount',
+		'signed'
 	];
 	
 	public function client(){

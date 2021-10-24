@@ -68,7 +68,7 @@ class ContractsController extends MyAdminController {
 			$filter->like('address'			, __('admin.contracts.address'));
 		});
 		
-		$grid->disableCreateButton();
+		//$grid->disableCreateButton();
 		
 		$grid->paginate(100);
 		
@@ -76,7 +76,7 @@ class ContractsController extends MyAdminController {
 	}
 	
 	protected function detail($id){
-		header('Location: /contracts/'.$id.'/edit');
+		header('Location: /admin/contracts/'.$id.'/edit');
 		return;
 	}
 	
