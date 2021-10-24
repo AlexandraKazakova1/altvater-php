@@ -31,5 +31,5 @@ Route::group([
 	
 	$router->resource('contracts'				, ContractsController::class);
 	$router->resource('bills'					, BillsController::class);
-	
+	$router->resource('acts'					, ActsController::class);
 });
