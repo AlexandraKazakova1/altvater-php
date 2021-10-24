@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use DB;
 
-use App\Models\Clients;
+use App\Models\User;
 
 class Acts extends Model{
 	
@@ -24,6 +24,6 @@ class Acts extends Model{
 	];
 	
 	public function client(){
-		return $this->belongsTo(Clients::class, 'client_id');
+		return $this->belongsTo(User::class, 'client_id');
 	}
 }
