@@ -66,6 +66,7 @@
 			<aside class="sidebar__menu">
 				<ul class="menu__list">
 					<h3 class="title">меню</h3>
+					
 					<li class="menu__item">
 						<a href="/account">
 							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -128,6 +129,7 @@
 						</a>
 					</li>
 				</ul>
+				
 				<a class="logout" href="/account/logout">
 					<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="16">
