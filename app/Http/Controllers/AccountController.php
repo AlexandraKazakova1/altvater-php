@@ -68,7 +68,7 @@ class AccountController extends MyController {
 				'headerClass'	=> '',
 				'robots'		=> '',
 				'canonical'		=> '',
-				'count'			=> Contracts::query()->where('client_id', $this->_id)->whereRaw('(archive != 1)')->count(),
+				'count'			=> Contracts::query()->where('client_id', $this->_id)->whereRaw(DB::raw('(archive != 1)'))->count(),
 				'count_archive'	=> Contracts::query()->where('client_id', $this->_id)->where('archive', 1)->count(),
 				'contracts'		=> Contracts::query()->where('client_id', $this->_id)->orderBy('created_at', 'desc')->get()
 			]
