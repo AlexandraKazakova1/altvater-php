@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use DB;
 
-use App\Models\ViolationPhotos;
+use App\Models\Messages;
 
 class Dialogues extends Model{
 	

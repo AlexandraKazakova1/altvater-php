@@ -11,6 +11,8 @@
 		<link rel="stylesheet" href="/css/dhtmlxscheduler_material.css">
 		<link rel="stylesheet" href="/css/select2.css">
 		<link rel="stylesheet" href="/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/css/jquery.timepicker.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
 		<link rel="stylesheet" href="/css/cabinet.css">
 	</head>
 	<body>
@@ -514,9 +516,11 @@
 		@endif
 		<script src="/js/locale_ua.js"></script>
 		<script src="/js/bootstrap.min.js"></script>
-		<script
-		  src="https://maps.googleapis.com/maps/api/js?key={{$settings['google_api_key']}}&callback=initMap&v=weekly" async></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key={{$settings['google_api_key']}}&callback=initMap&v=weekly" async></script>
+		<script src="/js/jquery.timepicker.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
 		<script src="/js/cabinet.js"></script>
+		
 		@if($page['uri'] == 'account/index')
 		<script type="text/javascript">
 			scheduler.init("scheduler__calendar");

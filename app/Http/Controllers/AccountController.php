@@ -9,6 +9,9 @@ use App\Models\Acts;
 use App\Models\Orders;
 use App\Models\OrdersServices;
 
+use App\Models\Dialogues;
+use App\Models\Messages;
+
 use App\Helpers\MyBreadcrumbs;
 use App\Helpers\StringHelper;
 use App\Helpers\ImageHelper;
@@ -120,6 +123,33 @@ class AccountController extends MyController {
 		
 		return view(
 			'account/messages',
+			[
+				'page'			=> array(
+					'title'			=> trans('site.cabinet.messages.title'),
+					'keywords'		=> '',
+					'description'	=> '',
+					'uri'			=> 'account/messages',
+					'og_image'		=> '',
+				),
+				'headerClass'	=> '',
+				'robots'		=> '',
+				'canonical'		=> '',
+				'data'			=> Dialogues::query()->where('client_id', $this->_id)->orderBy('created_at', 'desc')->get(),
+			]
+		);
+	}
+	
+	public function dialog(Request $request){
+		$this->session();
+		
+		if(!$this->_auth){
+			return redirect('/');
+		}
+		
+		$id = $request->route('id');
+		
+		return view(
+			'account/dialog',
 			[
 				'page'			=> array(
 					'title'			=> trans('site.cabinet.messages.title'),
