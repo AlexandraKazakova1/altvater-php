@@ -102,7 +102,7 @@ class AccountController extends MyController {
 					'acts'			=> Acts::query()->where('client_id', $this->_id)->count(),
 				],
 				'data'			=> [
-					'bills'			=> Bills::query()->where('client_id', $this->_id)->orderBy('created_at', 'desc')->get()
+					'bills'			=> Bills::query()->where('client_id', $this->_id)->orderBy('created_at', 'desc')->get(),
 					'acts'			=> Acts::query()->where('client_id', $this->_id)->orderBy('created_at', 'desc')->get()
 				]
 			]
