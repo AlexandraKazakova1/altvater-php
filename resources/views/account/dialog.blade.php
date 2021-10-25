@@ -1,7 +1,7 @@
 @extends('account.layout')
 
 @section('main')
-	<main class="request__page">
+	<main class="message__page">
 		<section class="breadcrumbs__wrapper">
 			<div class="breadcrumbs container">
 				<ul class="breadcrumbs__list">
