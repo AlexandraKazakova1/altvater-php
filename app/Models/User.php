@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-use App\Models\Addresses;
+use App\Models\UserAddresses;
 
 class User extends Authenticatable	{
 	
@@ -61,7 +61,7 @@ class User extends Authenticatable	{
 		'email_verified_at' => 'datetime',
 	];
 	
-	public function addresses(){
-		return $this->hasMany(Addresses::class, 'client_id');
+	public function user_addresses(){
+		return $this->hasMany(UserAddresses::class, 'client_id');
 	}
 }

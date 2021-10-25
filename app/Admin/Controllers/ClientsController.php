@@ -122,16 +122,14 @@ class ClientsController extends MyAdminController {
 			$form->text('index'				, __('admin.clients.index'))->rules('max:6');
 		});
 		
-		/*
 		$form->tab(__('admin.clients.addresses')		, function($form) use ($id){
-			$form->hasMany('addresses', '', function($form){
+			$form->hasMany('user_addresses', '', function($form){
 				$form->text('name'			, __('admin.addresses.name'))->rules('required|max:150');
 				$form->text('address'		, __('admin.addresses.address'))->rules('required|max:200');
 				
 				//$form->image('image'			, __('admin.applications.image'))->removable()->move('applications-images')->uniqueName();
 			});
 		});
-		*/
 		
 		// callback before save
 		$form->saving(function (Form $form){

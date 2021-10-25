@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use DB;
 
-class AddressesImages extends Model{
+class UserAddressesImages extends Model{
 	
-	protected $table	= 'addresses_images';
+	protected $table	= 'user_addresses_images';
 	
 	public $timestamps	= false;
 	

@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use DB;
 
-use App\Models\AddressesImages;
+use App\Models\UserAddressesImages;
 
-class Addresses extends Model{
+class UserAddresses extends Model{
 	
-	protected $table	= 'addresses';
+	protected $table	= 'user_addresses';
 	
 	public $timestamps	= false;
 	
@@ -20,6 +20,6 @@ class Addresses extends Model{
 	];
 	
 	public function images(){
-		return $this->hasMany(AddressesImages::class, 'address_id');
+		return $this->hasMany(UserAddressesImages::class, 'address_id');
 	}
 }
