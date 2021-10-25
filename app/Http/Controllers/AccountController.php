@@ -156,7 +156,7 @@ class AccountController extends MyController {
 		
 		Messages::query()->where('id', $id)->update(['read' => 1]);
 		
-		$messages = Messages::query()->where('client_id', $this->_id)->where('dialogue_id', $id)->orderBy('created_at', 'desc')->get();
+		$messages = Messages::query()->where('dialogue_id', $id)->orderBy('created_at', 'desc')->get();
 		
 		return view(
 			'account/dialog',
