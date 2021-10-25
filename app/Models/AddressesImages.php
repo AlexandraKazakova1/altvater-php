@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use DB;
 
-class ApplicationsPhotos extends Model{
+class AddressesImages extends Model{
 	
-	protected $table	= 'application-photos';
+	protected $table	= 'addresses_images';
 	
 	public $timestamps	= false;
 	
 	protected $fillable = [
-		'record_id',
-		'image'
+		'address_id',
+		'file'
 	];
 }

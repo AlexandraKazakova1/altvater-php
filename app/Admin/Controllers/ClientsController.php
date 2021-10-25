@@ -63,6 +63,7 @@ class ClientsController extends MyAdminController {
 		$grid->filter(function($filter){
 			$filter->like('name'			, __('admin.clients.name'));
 			$filter->like('surname'			, __('admin.clients.surname'));
+			$filter->like('middlename'		, __('admin.clients.patronymic'));
 			
 			$filter->like('phone'			, __('admin.clients.phone'));
 			$filter->like('email'			, __('admin.clients.email'));
@@ -76,7 +77,7 @@ class ClientsController extends MyAdminController {
 	}
 	
 	protected function detail($id){
-		header('Location: /clients/'.$id.'/edit');
+		header('Location: /admin/clients/'.$id.'/edit');
 		return;
 	}
 	
@@ -94,7 +95,7 @@ class ClientsController extends MyAdminController {
 		
 		$form->text('name'				, __('admin.clients.name'))->rules('required|min:2|max:50');
 		$form->text('surname'			, __('admin.clients.surname'))->rules('max:50');
-		$form->text('middlename'		, __('admin.clients.middlename'))->rules('max:50');
+		$form->text('middlename'		, __('admin.clients.patronymic'))->rules('max:50');
 		
 		$form->email('email'			, __('admin.clients.email'))->rules('required|email');
 		$form->switch('verify_email'	, __('admin.clients.verify_email'));
