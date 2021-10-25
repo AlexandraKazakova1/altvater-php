@@ -15,12 +15,12 @@ $(document).ready (function() {
     contractEntity();
     addAddress();
     requestForm();
-    // pdfViever();
+    timepicker();
+    select2();
+    maskPhone();
+    orderServiceForm();
+    contractsArchive();
 
-    $('.add').click(function() {
-        $('.modal').modal('hide');
-        $('#orderService').modal('show');
-    });
 
 });
 
@@ -125,6 +125,10 @@ function modalFade() {
     $('.add').click(function() {
         $('.modal').modal('hide');
         $('#create__contract-modal-1').modal('show');
+    });
+    $('.header .add').click(function() {
+        $('.modal').modal('hide');
+        $('#orderService').modal('show');
     });
     $('.pinned').click(function() {
         $('.modal').modal('hide');
@@ -241,6 +245,29 @@ function settingsPage() {
         $('.general__content').fadeOut(1);
         $('.security__content').fadeIn(1);
         $('#general').removeClass('act');
+    });
+};
+
+function contractsArchive() {
+    if($('#contractsToggle').hasClass('act')) {
+        $('.archive__content').fadeOut(200);
+        $('.contracts__content').fadeIn(200);
+    } else if($('#archiveToggle').hasClass('act')) {
+        $('.contracts__content').fadeOut(200);
+        $('.archive__content').fadeIn(200);
+    }
+
+    $('#contractsToggle').click(function() {
+        $(this).addClass('act');
+        $('.archive__content').fadeOut(200);
+        $('.contracts__content').fadeIn(200);
+        $('#archiveToggle').removeClass('act');
+    });
+    $('#archiveToggle').click(function() {
+        $(this).addClass('act');
+        $('.contracts__content').fadeOut(200);
+        $('.archive__content').fadeIn(200);
+        $('#contractsToggle').removeClass('act');
     });
 };
 
@@ -624,7 +651,7 @@ function passVerificationForm() {
 };
 
 function contractIndividual() {
-	var form = jQuery("#create__contract-form__individual");
+	var form = jQuery("#create__contract__individual");
 
     if(!form.length){
 		return false;
@@ -753,7 +780,7 @@ function contractEntity() {
                 required: true,
             },
             userAddTel: {
-                required: true,
+                required: false,
             },
             ipn: {
                 required: true,
@@ -794,12 +821,12 @@ function contractEntity() {
                 required: "Введіть додатковий номер телефону"
             },
             ipn: {
-                required: true,
+                required: "Це поле обов'язкове для заповнення",
 				minlength: "Некоректні дані",
 				maxlength: "Некоректні дані"
             },
             uedrpou: {
-                required: true,
+                required: "Це поле обов'язкове для заповнення",
 				minlength: "Некоректні дані",
 				maxlength: "Некоректні дані"
             },
@@ -1133,29 +1160,119 @@ function settingsForm() {
     });
 };
 
-// function pdfViever() {
-//     PDFJS.getDocument('helloworld.pdf').then(function(pdf) {
-//         // Using promise to fetch the page
-//         pdf.getPage(1).then(function(page) {
-//             var scale = 1.5;
-//             var viewport = page.getViewport(scale);
-        
-//             //
-//             // Prepare canvas using PDF page dimensions
-//             //
-//             var canvas = document.getElementById('the-canvas');
-//             var context = canvas.getContext('2d');
-//             canvas.height = viewport.height;
-//             canvas.width = viewport.width;
-        
-//             //
-//             // Render PDF page into canvas context
-//             //
-//             var renderContext = {
-//                 canvasContext: context,
-//                 viewport: viewport
-//             };
-//             page.render(renderContext);
-//         });
-//     });
-// }
+function orderServiceForm() {
+	var form = jQuery("#orderService-form");
+
+    if(!form.length){
+		return false;
+	};
+
+	var lock = false,
+    btn = form.find('button[type="submit"]');
+
+    form.validate({
+		onkeyup	: false,
+        focusCleanup: true,
+        focusInvalid: false,
+        errorClass: "error",
+        rules: {
+            service: {
+                required: true
+            },
+            date: {
+                required: true
+            },
+            city: {
+                required: true
+            },
+            time: {
+                required: true
+            },
+            comment: {
+                required: true,
+            }
+        },
+        messages: {
+            service: {
+                required: "Це поле обов'язкове для заповнення",
+            },
+            date: {
+                required: "Це поле обов'язкове для заповнення",
+            },
+            city: {
+                required: "Це поле обов'язкове для заповнення",
+            },
+            time: {
+                required: "Це поле обов'язкове для заповнення",
+            },
+            comment: {
+                required: "Це поле обов'язкове для заповнення",
+            }
+        },
+		submitHandler: function() {
+			if(!lock){
+				$.ajax({
+					type: "POST",
+					url: '/ajax/user/settings',
+                    method: "POST",
+                    data: form.serialize(),
+                    dataType: "json",
+                    beforeSend: function(request){
+                        lock = true;
+                        
+                        btn.attr('disabled', true);
+                        form.find('label.error').text('').hide();
+					},
+					success: function(response){
+						console.log('response:');
+						console.log(response);
+						
+						lock = false;
+                        btn.attr('disabled', false);
+
+						if(response.status){
+							form.trigger('reset');
+						}
+					},
+					error: function(err){
+						console.log('error');
+						lock = false;
+                        btn.attr('disabled', false);
+					}
+				});
+			};
+			return false;
+	    }
+    });
+};
+
+function timepicker() {
+    $('.timepicker').timepicker({
+        timeFormat: 'HH:mm',
+        interval: 60,
+        minTime: '5:00',
+        maxTime: '23:00pm',
+        defaultTime: '10:00',
+        startTime: '5:00',
+        dynamic: false,
+        dropdown: true,
+        scrollbar: true
+    });
+}
+
+function select2() {
+    $('.custom-select').select2({
+        minimumResultsForSearch: -1
+    });
+}
+
+
+function maskPhone() {
+	var el = $('input[type="tel"]');
+	
+	if(!el.length){
+		return false;
+	};
+	
+	el.mask('+380999999999');
+};

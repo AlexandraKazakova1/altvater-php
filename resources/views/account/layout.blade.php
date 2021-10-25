@@ -157,7 +157,7 @@
 						</div>
 						
 						<div class="modal-body">
-							<form class="popup__form" id="create__contract-form__individual">
+							<form class="popup__form" id="create__contract__individual">
 								<fieldset class="fieldset">
 									<label>
 										<span class="input-description">ПІБ:</span>
@@ -293,7 +293,7 @@
 									</label>
 									
 									<label>
-										<span class="input-description">Додатковий телефон:</span>
+										<span class="input-description nr">Додатковий телефон:</span>
 										<input class="form-control" type="tel" name="extra_phone" placeholder=" ">
 										<span class="input-placeholder">
 											<div>

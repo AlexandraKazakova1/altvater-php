@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="../css/select2.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/jquery.timepicker.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
     <link rel="stylesheet" href="../css/cabinet.css">
 </head>
 <body>
@@ -178,7 +177,7 @@
                             </label>
                             <label>
                                 <span class="input-description">Телефон:</span>
-                                <input class="form-control" type="tel" name="phone" placeholder=" ">
+                                <input class="form-control phoneInput" type="tel" name="phone" placeholder=" ">
                                 <span class="input-placeholder">
                                     <div>
                                         <img src="../img/cabinet/phone.svg">
@@ -314,11 +313,11 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form class="popup__form" id="create__contract-form">
+                        <form class="popup__form" id="create__contract__individual">
                             <fieldset class="fieldset">
                                 <label>
                                     <span class="input-description">ПІБ:</span>
-                                    <input class="form-control" type="text" name="userEmail" placeholder=" ">
+                                    <input class="form-control" type="text" name="userName" placeholder=" ">
                                     <span class="input-placeholder">
                                         <div>
                                             <img src="../img/cabinet/modal-icon/profile.svg">
@@ -385,11 +384,11 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form class="popup__form" id="create__contract-form">
+                        <form class="popup__form" id="create__contract-form__entity">
                             <fieldset class="fieldset">
                                 <label>
                                     <span class="input-description">Назва компанії:</span>
-                                    <input class="form-control" type="text" name="userEmail" placeholder=" ">
+                                    <input class="form-control" type="text" name="userName" placeholder=" ">
                                     <span class="input-placeholder">
                                         <div>
                                             <img src="../img/cabinet/modal-icon/profile.svg">
@@ -399,7 +398,7 @@
                                 </label>
                                 <label>
                                     <span class="input-description">Контактна особа:</span>
-                                    <input class="form-control" type="text" name="userEmail" placeholder=" ">
+                                    <input class="form-control" type="text" name="userContactName" placeholder=" ">
                                     <span class="input-placeholder">
                                         <div>
                                             <img src="../img/cabinet/modal-icon/profile.svg">
@@ -438,7 +437,7 @@
                                     </span>
                                 </label>
                                 <label>
-                                    <span class="input-description">Додатковий телефон:</span>
+                                    <span class="input-description nr">Додатковий телефон:</span>
                                     <input class="form-control" type="tel" name="userAddTel" placeholder=" ">
                                     <span class="input-placeholder">
                                         <div>
@@ -572,22 +571,17 @@
                         <form class="popup__form" id="orderService-form">
                             <fieldset class="fieldset">
                                 <label>
-                                    <span class="input-description">Введіть адресу:</span>
-                                    <select class="custom-select" id="service" name="service">
-                                        <option value="Послуга-1">Послуга-1</option>
-                                        <option value="Послуга-2">Послуга-2</option>
-                                        <option value="Послуга-3">Послуга-3</option>
+                                    <span class="input-description">Вибрати послугу:</span>
+                                    <select class="custom-select" name="service">
+                                <option data-id="0" class="first-option" disabled selected value hidden>Обрати послугу</option>
+                                <option value="Послуга-1">Послуга-1</option>
+                                <option value="Послуга-2">Послуга-2</option>
+                                <option value="Послуга-3">Послуга-3</option>
                                     </select>
                                 </label>
                                 <label>
                                     <span class="input-description">Вибрати дату:</span>
-                                    <input type="text" class="form-control datepicker" name="date">
-                                    <!-- <span class="input-placeholder">
-                                        <div>
-                                            <img src="../img/cabinet/modal-icon/date.svg">
-                                        </div>
-                                        Вибрати дату
-                                    </span> -->
+                                    <input class="form-control datapicker" type="date" name="date" placeholder=" ">
                                 </label>
                                 <label>
                                     <span class="input-description">Введіть адресу:</span>
@@ -601,13 +595,13 @@
                                 </label>
                                 <label>
                                     <span class="input-description">Вибрати час:</span>
-                                    <input class="form-control timepicker timepicker-with-dropdown" type="text" name="time" placeholder=" ">
-                                    <!-- <span class="input-placeholder">
+                                    <input class="form-control timepicker" type="text" name="time" placeholder=" ">
+                                    <span class="input-placeholder">
                                         <div>
                                             <img src="../img/cabinet/modal-icon/time-clock.svg">
                                         </div>
                                         Вибрати час
-                                    </span> -->
+                                    </span>
                                 </label>
                                 <label>
                                     <span class="input-description">Введіть коментар:</span>
@@ -627,15 +621,15 @@
             </div>
         </div>
     </div>
-
+    
     <script src="../js/jquery.min.js"></script>
-    <script src="../js/chart.js"></script>
-    <!-- <script src="../js/dhtmlxscheduler.js"></script> -->
-    <script src="../js/locale_ua.js"></script>
     <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/locale_ua.js"></script>
+    <script src="../js/jquery.validate.min.js"></script>
     <script src="../js/select2.min.js"></script>
+    <script src="../js/chart.js"></script>
     <script src="../js/jquery.timepicker.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+    <script src="../js/formMask.js"></script>
     <script src="../js/cabinet.js"></script>
 </body>
 </html>
