@@ -148,6 +148,16 @@ class AccountController extends MyController {
 		
 		$id = $request->route('id');
 		
+		$dialog = Dialogues::query()->where('client_id', $this->_id)->where('id', $id)->first();
+		
+		if(!$dialog){
+			return redirect('/account/messages');
+		}
+		
+		Messages::query()->where('id', $id)->update(['read' => 1]);
+		
+		$messages = Messages::query()->where('client_id', $this->_id)->where('id', $id)->first();
+		
 		return view(
 			'account/dialog',
 			[
@@ -161,7 +171,8 @@ class AccountController extends MyController {
 				'headerClass'	=> '',
 				'robots'		=> '',
 				'canonical'		=> '',
-				'data'			=> []
+				'dialog'		=> $dialog,
+				'messages'		=> $messages
 			]
 		);
 	}

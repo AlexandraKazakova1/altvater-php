@@ -5,6 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use DB;
 
+use App\Models\User;
+use App\Models\Admins;
+
 class Messages extends Model{
 	
 	protected $table	= 'messages';
@@ -17,6 +20,15 @@ class Messages extends Model{
 		'dialogue_id',
 		'client_id',
 		'admin_id',
-		'text'
+		'text',
+		'read'
 	];
+	
+	public function client(){
+		return $this->belongsTo(User::class, 'client_id');
+	}
+	
+	public function admin(){
+		return $this->belongsTo(Admins::class, 'admin_id');
+	}
 }
