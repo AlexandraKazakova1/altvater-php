@@ -434,4 +434,24 @@ return [
 		'sort'					=> 'Порядок',
 		'name'					=> 'Назва'
 	],
+	
+	'orders'				=> [
+		'created_at'			=> 'Створено',
+		'updated_at'			=> 'Оновлено',
+		
+		'service'				=> 'Послуга',
+		'client'				=> 'Клієнт',
+		'status'				=> [
+			'label'					=> 'Статус',
+			
+			'processing'			=> 'В обробці',
+			'performed'				=> 'Виконуються',
+			'done'					=> 'Виконано',
+			'scheduled'				=> 'Заплановано',
+		],
+		'date'					=> 'Дата',
+		'time'					=> 'Час',
+		'addresses'				=> 'Адреса',
+		'comment'				=> 'Коментар',
+	],
 ];

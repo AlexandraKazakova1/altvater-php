@@ -34,4 +34,6 @@ Route::group([
 	$router->resource('acts'					, ActsController::class);
 	
 	$router->resource('orders_services'			, OrdersServicesController::class);
+	
+	$router->resource('orders'					, OrdersController::class);
 });

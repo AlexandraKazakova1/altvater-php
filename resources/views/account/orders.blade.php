@@ -45,14 +45,7 @@
 					
 					<label>
 						<span class="input-description">Оберіть дату:</span>
-						
-						<select class="custom-select2" name="date">
-							<option data-id="0" disabled selected value hidden></option>
-							<option value="Дата-1">Дата-1</option>
-							<option value="Дата-2">Дата-2</option>
-							<option value="Дата-3">Дата-3</option>
-						</select>
-						
+						<input class="form-control" type="text" name="date" placeholder=" ">
 						<span class="input-placeholder">
 							<div>
 								<img src="/img/cabinet/modal-icon/date.svg">
@@ -63,18 +56,18 @@
 					
 					<label>
 						<span class="input-description">Введіть адресу:</span>
-						<input class="form-control" type="tel" name="userTel" placeholder=" ">
+						<input class="form-control" type="text" name="addresses" placeholder=" ">
 						<span class="input-placeholder">
 							<div>
 								<img src="/img/cabinet/modal-icon/house.svg">
 							</div>
-							Місто
+							Адреса
 						</span>
 					</label>
 					
 					<label>
 						<span class="input-description">Оберіть час:</span>
-						<input class="form-control" type="text" name="userAddress" placeholder=" ">
+						<input class="form-control" type="text" name="time" placeholder=" ">
 						<span class="input-placeholder">
 							<div>
 								<img src="/img/cabinet/modal-icon/time-clock.svg">
@@ -85,7 +78,7 @@
 					
 					<label>
 						<span class="input-description">Введіть коментар:</span>
-						<input class="form-control" type="text" name="postIndex" placeholder=" ">
+						<input class="form-control" type="text" name="comment" placeholder=" ">
 						<span class="input-placeholder">
 							<div>
 								<img src="/img/cabinet/modal-icon/messages.svg">
