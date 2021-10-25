@@ -43,14 +43,16 @@
 			<span>Назад</span>
 		</a>
 		
-		<section class="contracts__clear">
+		<section class="contracts__clear" style="{{($count > 0 ? 'display:none;' : '')}}">
 			<img src="/img/cabinet/noContracts.png">
 		</section>
 		
-		<section class="contracts__wrapper">
+		<section class="contracts__wrapper" style="{{($count > 0 ? '' : 'display:none;')}}">
 			<div class="selector">
-				<span class="act">Документи</span>
-				<span>Архів</span>
+				<ul>
+					<li data-archive="0" data-count="{{$count}}" class="act">Документи</li>
+					<li data-archive="1" data-count="{{$count_archive}}">Архів</li>
+				</ul>
 			</div>
 			
 			<div class="contracts__content">
@@ -83,7 +85,7 @@
 				<div class="contracts__list">
 					@foreach($contracts as $item)
 						<!-- -->
-						<div class="contract__item">
+						<div class="contract__item" data-archive="{{(int)($item->archive)}}">
 							<span>
 								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path fill-rule="evenodd" clip-rule="evenodd" d="M17 12C17 13.1046 17.8954 14 19 14C20.1046 14 21 13.1046 21 12C21 10.8954 20.1046 10 19 10C17.8954 10 17 10.8954 17 12Z"/>
@@ -94,7 +96,7 @@
 							
 							<div class="number">
 								ID договору:
-								<span>{{$item->id}}</span>
+								<span>{{$item->number}}</span>
 							</div>
 							
 							<div class="docName">
@@ -108,13 +110,13 @@
 							
 							<div class="download">
 								@if($item->file)
-									<button type="button" data-href="{{url('storage/'.$item->file)}}">
+									<a href="{{url('storage/'.$item->file)}}" download="">
 										<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path fill-rule="evenodd" clip-rule="evenodd" d="M4.40576 1.34182C5.31176 0.560456 6.57359 0 8 0C10.6902 0 12.9233 1.99944 13.1657 4.57898C14.7581 4.80411 16 6.13656 16 7.77273C16 9.56949 14.5023 11 12.6875 11H10C9.72386 11 9.5 10.7761 9.5 10.5C9.5 10.2239 9.72386 10 10 10H12.6875C13.9793 10 15 8.98842 15 7.77273C15 6.55703 13.9793 5.54545 12.6875 5.54545H12.1875V5.04545C12.1875 2.8256 10.3273 1 8 1C6.83758 1 5.80253 1.45773 5.05886 2.09909C4.30231 2.75157 3.90625 3.5383 3.90625 4.15455V4.6026L3.46088 4.65155C2.06371 4.80512 1 5.95266 1 7.31818C1 8.78492 2.23059 10 3.78125 10H6C6.27614 10 6.5 10.2239 6.5 10.5C6.5 10.7761 6.27614 11 6 11H3.78125C1.70754 11 0 9.36599 0 7.31818C0 5.55511 1.26586 4.09512 2.94223 3.725C3.08479 2.8617 3.63985 2.00237 4.40576 1.34182Z"/>
 											<path fill-rule="evenodd" clip-rule="evenodd" d="M7.64645 15.8536C7.84171 16.0488 8.15829 16.0488 8.35355 15.8536L11.3536 12.8536C11.5488 12.6583 11.5488 12.3417 11.3536 12.1464C11.1583 11.9512 10.8417 11.9512 10.6464 12.1464L8.5 14.2929V5.5C8.5 5.22386 8.27614 5 8 5C7.72386 5 7.5 5.22386 7.5 5.5V14.2929L5.35355 12.1464C5.15829 11.9512 4.84171 11.9512 4.64645 12.1464C4.45118 12.3417 4.45118 12.6583 4.64645 12.8536L7.64645 15.8536Z"/>
 										</svg>
 										<span>Завантажити</span>
-									</button>
+									</a>
 								@endif
 							</div>
 						</div>

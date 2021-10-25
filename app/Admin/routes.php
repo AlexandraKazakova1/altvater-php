@@ -14,14 +14,11 @@ Route::group([
 	$router->get('/auth/logout'					, 'AuthController@logout')->name('admin.logout');
 	
 	$router->resource('clients'					, ClientsController::class);
-	$router->resource('applications'			, ApplicationsController::class);
-	$router->resource('contracts'				, ContractsController::class);
+	
 	$router->resource('contents'				, ContentsController::class);
 	$router->resource('packages'				, PackagesController::class);
 	$router->resource('templates'				, EmailTemplatesController::class);
-	$router->resource('payments'				, PaymentsController::class);
 	$router->resource('reviews'					, ReviewsController::class);
-	$router->resource('purchase'				, PurchaseController::class);
 	
 	$router->resource('ip-list'					, IpListController::class);
 	$router->resource('faq'						, FAQController::class);
@@ -31,4 +28,14 @@ Route::group([
 	$router->resource('news'					, NewsController::class);
 	$router->resource('services'				, ServicesController::class);
 	$router->resource('feedback'				, FeedbackController::class);
+	
+	$router->resource('contracts'				, ContractsController::class);
+	$router->resource('bills'					, BillsController::class);
+	$router->resource('acts'					, ActsController::class);
+	
+	$router->resource('orders_services'			, OrdersServicesController::class);
+	
+	$router->resource('orders'					, OrdersController::class);
+	
+	//$router->resource('addresses'				, AddressesController::class);
 });

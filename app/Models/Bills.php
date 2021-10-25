@@ -5,25 +5,26 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use DB;
 
-use App\Models\Messages;
+use App\Models\User;
 
-class Dialogues extends Model{
+class Bills extends Model{
 	
-	protected $table	= 'dialogues';
+	protected $table	= 'bills';
 	
 	public $timestamps	= false;
 	
 	protected $fillable = [
 		'created_at',
 		'updated_at',
+		'date',
 		'client_id',
-		'theme',
 		'number',
-		'phone',
-		'header'
+		'amount',
+		'paid',
+		'name'
 	];
 	
-	public function messages(){
-		return $this->hasMany(Messages::class, 'dialogue_id');
+	public function client(){
+		return $this->belongsTo(User::class, 'client_id');
 	}
 }

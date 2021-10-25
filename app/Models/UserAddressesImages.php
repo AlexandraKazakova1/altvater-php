@@ -5,16 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use DB;
 
-class Packages extends Model{
+class UserAddressesImages extends Model{
 	
-	protected $table	= 'packages';
+	protected $table	= 'user_addresses_images';
 	
 	public $timestamps	= false;
 	
 	protected $fillable = [
-		'public',
-		'name',
-		'sort',
-		'price'
+		'address_id',
+		'file'
 	];
 }

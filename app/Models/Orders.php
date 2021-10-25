@@ -5,11 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use DB;
 
+use App\Models\OrdersServices;
 use App\Models\User;
 
-class Contracts extends Model{
+class Orders extends Model{
 	
-	protected $table	= 'contracts';
+	protected $table	= 'orders';
 	
 	public $timestamps	= false;
 	
@@ -17,23 +18,19 @@ class Contracts extends Model{
 		'created_at',
 		'updated_at',
 		'client_id',
-		'address',
-		'name',
-		'contact',
-		'phone',
-		'extra_phone',
-		'email',
-		'index',
-		'ipn',
-		'edrpou',
-		'file',
-		'file_name',
+		'service_id',
+		'status',
 		'date',
-		'archive',
-		'number'
+		'time',
+		'addresses',
+		'comment'
 	];
 	
 	public function client(){
 		return $this->belongsTo(User::class, 'client_id');
+	}
+	
+	public function service(){
+		return $this->belongsTo(OrdersServices::class, 'service_id');
 	}
 }

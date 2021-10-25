@@ -4,6 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\Pages;
 use App\Models\Contracts;
+use App\Models\Bills;
+use App\Models\Acts;
+use App\Models\Orders;
+use App\Models\OrdersServices;
+use App\Models\UserAddresses;
+
+use App\Models\Dialogues;
+use App\Models\Messages;
 
 use App\Helpers\MyBreadcrumbs;
 use App\Helpers\StringHelper;
@@ -43,7 +51,9 @@ class AccountController extends MyController {
 				'headerClass'	=> '',
 				'robots'		=> '',
 				'canonical'		=> '',
-				'data'			=> []
+				'data'			=> [],
+				'services'		=> OrdersServices::query()->orderBy('name', 'asc')->get(),
+				'addresses'		=> UserAddresses::query()->where('client_id', $this->_id)->orderBy('name', 'asc')->get(),
 			]
 		);
 	}
@@ -68,8 +78,10 @@ class AccountController extends MyController {
 				'headerClass'	=> '',
 				'robots'		=> '',
 				'canonical'		=> '',
-				'count'			=> Contracts::query()->where('client_id', $this->_id)->count(),
-				'contracts'		=> Contracts::query()->where('client_id', $this->_id)->orderBy('created_at', 'desc')->get()
+				'count'			=> Contracts::query()->where('client_id', $this->_id)->whereRaw(DB::raw('(`archive` IS NULL OR `archive` = 0)'))->count(),
+				'count_archive'	=> Contracts::query()->where('client_id', $this->_id)->where('archive', 1)->count(),
+				'contracts'		=> Contracts::query()->where('client_id', $this->_id)->orderBy('created_at', 'desc')->get(),
+				'services'		=> OrdersServices::query()->orderBy('name', 'asc')->get(),
 			]
 		);
 	}
@@ -94,7 +106,15 @@ class AccountController extends MyController {
 				'headerClass'	=> '',
 				'robots'		=> '',
 				'canonical'		=> '',
-				'data'			=> []
+				'count'			=> [
+					'bills'			=> Bills::query()->where('client_id', $this->_id)->count(),
+					'acts'			=> Acts::query()->where('client_id', $this->_id)->count(),
+				],
+				'data'			=> [
+					'bills'			=> Bills::query()->where('client_id', $this->_id)->orderBy('created_at', 'desc')->get(),
+					'acts'			=> Acts::query()->where('client_id', $this->_id)->orderBy('created_at', 'desc')->get()
+				],
+				'services'		=> OrdersServices::query()->orderBy('name', 'asc')->get(),
 			]
 		);
 	}
@@ -119,7 +139,47 @@ class AccountController extends MyController {
 				'headerClass'	=> '',
 				'robots'		=> '',
 				'canonical'		=> '',
-				'data'			=> []
+				'data'			=> Dialogues::query()->where('client_id', $this->_id)->orderBy('created_at', 'desc')->get(),
+				'services'		=> OrdersServices::query()->orderBy('name', 'asc')->get(),
+			]
+		);
+	}
+	
+	public function dialog(Request $request){
+		$this->session();
+		
+		if(!$this->_auth){
+			return redirect('/');
+		}
+		
+		$id = $request->route('id');
+		
+		$dialog = Dialogues::query()->where('client_id', $this->_id)->where('id', $id)->first();
+		
+		if(!$dialog){
+			return redirect('/account/messages');
+		}
+		
+		Messages::query()->where('id', $id)->update(['read' => 1]);
+		
+		$messages = Messages::query()->where('dialogue_id', $id)->orderBy('created_at', 'asc')->get();
+		
+		return view(
+			'account/dialog',
+			[
+				'page'			=> array(
+					'title'			=> trans('site.cabinet.messages.title'),
+					'keywords'		=> '',
+					'description'	=> '',
+					'uri'			=> 'account/messages',
+					'og_image'		=> '',
+				),
+				'headerClass'	=> '',
+				'robots'		=> '',
+				'canonical'		=> '',
+				'dialog'		=> $dialog,
+				'messages'		=> $messages,
+				'services'		=> OrdersServices::query()->orderBy('name', 'asc')->get(),
 			]
 		);
 	}
@@ -144,7 +204,9 @@ class AccountController extends MyController {
 				'headerClass'	=> '',
 				'robots'		=> '',
 				'canonical'		=> '',
-				'data'			=> []
+				'count'			=> Orders::query()->where('client_id', $this->_id)->count(),
+				'data'			=> Orders::query()->where('client_id', $this->_id)->orderBy('created_at', 'desc')->get(),
+				'services'		=> OrdersServices::query()->orderBy('name', 'asc')->get(),
 			]
 		);
 	}
@@ -169,7 +231,8 @@ class AccountController extends MyController {
 				'headerClass'	=> '',
 				'robots'		=> '',
 				'canonical'		=> '',
-				'data'			=> []
+				'data'			=> [],
+				'services'		=> OrdersServices::query()->orderBy('name', 'asc')->get(),
 			]
 		);
 	}

@@ -105,6 +105,11 @@ Route::get('account/messages', [
 	'uses'  => 'AccountController@messages'
 ]);
 
+Route::get('account/messages/{id}', [
+	'as'    => 'dialog',
+	'uses'  => 'AccountController@dialog'
+])->where('id', '[0-9]+');
+
 Route::get('account/orders', [
 	'as'    => 'orders',
 	'uses'  => 'AccountController@orders'

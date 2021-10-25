@@ -231,4 +231,19 @@ class StringHelper extends Helper {
 			return $uuid;
 		}
 	}
+	
+	static function date2Str($date){
+		//28 Серпня 2021 року
+		
+		$date = explode('-', $date);
+		
+		$out = [];
+		
+		$out[] = $date[2];
+		$out[] = trans('site.months.'.$date[1]);
+		$out[] = $date[0];
+		$out[] = trans('site.year');
+		
+		return implode(' ', $out);
+	}
 }

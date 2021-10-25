@@ -11,6 +11,8 @@
 		<link rel="stylesheet" href="/css/dhtmlxscheduler_material.css">
 		<link rel="stylesheet" href="/css/select2.css">
 		<link rel="stylesheet" href="/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/css/jquery.timepicker.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
 		<link rel="stylesheet" href="/css/cabinet.css">
 	</head>
 	<body>
@@ -66,6 +68,7 @@
 			<aside class="sidebar__menu">
 				<ul class="menu__list">
 					<h3 class="title">меню</h3>
+					
 					<li class="menu__item">
 						<a href="/account">
 							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -106,7 +109,7 @@
 								<path d="M2.5 6.29248V14.1666C2.5 15.5475 3.61917 16.6666 5 16.6666H15C16.3808 16.6666 17.5 15.5475 17.5 14.1666V6.29331" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 							</svg>
 							Повідомлення
-							<span class="counter">6</span>
+							<span class="counter" style="display:none;">6</span>
 						</a>
 					</li>
 					<li class="menu__item">
@@ -128,6 +131,7 @@
 						</a>
 					</li>
 				</ul>
+				
 				<a class="logout" href="/account/logout">
 					<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="16">
@@ -151,6 +155,7 @@
 					<div class="create__contract-page popup">
 						<div class="modal-header">
 							<h2 class="popup__title">Новий договір</h2>
+							
 							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 								<img src="/img/close.svg" alt="X">
 							</button>
@@ -434,7 +439,7 @@
 				<div class="modal-content">
 					<div class="orderService popup">
 						<div class="modal-header">
-							<h2 class="popup__title">Новий договір</h2>
+							<h2 class="popup__title">Замовлення послуги</h2>
 							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 								<img src="/img/close.svg" alt="X">
 							</button>
@@ -444,26 +449,28 @@
 							<form class="popup__form" id="orderService-form">
 								<fieldset class="fieldset">
 									<label>
-										<span class="input-description">Введіть адресу:</span>
+										<span class="input-description">Оберіть послугу:</span>
 										<select class="custom-select" id="service" name="service">
-											<option value="Послуга-1">Послуга-1</option>
-											<option value="Послуга-2">Послуга-2</option>
-											<option value="Послуга-3">Послуга-3</option>
+											@foreach($services as $item)
+											<option value="{{$item->id}}">{{$item->name}}</option>
+											@endforeach
 										</select>
 									</label>
 									
 									<label>
-										<span class="input-description">Вибрати дату:</span>
-										<select class="custom-select" id="date" name="date">
-											<option value="Дата-1">Дата-1</option>
-											<option value="Дата-2">Дата-2</option>
-											<option value="Дата-3">Дата-3</option>
-										</select>
+										<span class="input-description">Оберіть дату:</span>
+										<input class="form-control" type="text" name="date" placeholder=" ">
+										<span class="input-placeholder">
+											<div>
+												<img src="/img/cabinet/modal-icon/date.svg">
+											</div>
+											Обрати дату
+										</span>
 									</label>
 									
 									<label>
 										<span class="input-description">Введіть адресу:</span>
-										<input class="form-control" type="tel" name="userTel" placeholder=" ">
+										<input class="form-control" type="text" name="addresses" placeholder=" ">
 										<span class="input-placeholder">
 											<div>
 												<img src="/img/cabinet/modal-icon/house.svg">
@@ -473,19 +480,19 @@
 									</label>
 									
 									<label>
-										<span class="input-description">Вибрати час:</span>
-										<input class="form-control" type="text" name="userAddress" placeholder=" ">
+										<span class="input-description">Оберіть час:</span>
+										<input class="form-control" type="text" name="time" placeholder=" ">
 										<span class="input-placeholder">
 											<div>
 												<img src="/img/cabinet/modal-icon/time-clock.svg">
 											</div>
-											Вибрати час
+											Обрати час
 										</span>
 									</label>
 									
 									<label>
 										<span class="input-description">Введіть коментар:</span>
-										<input class="form-control" type="text" name="postIndex" placeholder=" ">
+										<input class="form-control" type="text" name="comment" placeholder=" ">
 										<span class="input-placeholder">
 											<div>
 												<img src="/img/cabinet/modal-icon/messages.svg">
@@ -506,13 +513,17 @@
 		<script src="/js/jquery.min.js"></script>
 		<script src="/js/select2.min.js"></script>
 		<script src="/js/chart.js"></script>
+		@if($page['uri'] == 'account/index')
 		<script src="/js/dhtmlxscheduler.js"></script>
+		@endif
 		<script src="/js/locale_ua.js"></script>
 		<script src="/js/bootstrap.min.js"></script>
-		<script
-		  src="https://maps.googleapis.com/maps/api/js?key={{$settings['google_api_key']}}&callback=initMap&v=weekly" async></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key={{$settings['google_api_key']}}&callback=initMap&v=weekly" async></script>
+		<script src="/js/jquery.timepicker.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
 		<script src="/js/cabinet.js"></script>
 		
+		@if($page['uri'] == 'account/index')
 		<script type="text/javascript">
 			scheduler.init("scheduler__calendar");
 		</script>
@@ -531,5 +542,6 @@
 			scheduler.config.displayed_event_color="#DFEDF7";
 			scheduler.init('scheduler__calendar',new Date(2021,07,01),"month");
 		</script>
+		@endif
 	</body>
 </html>

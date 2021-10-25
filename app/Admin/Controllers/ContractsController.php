@@ -36,14 +36,19 @@ class ContractsController extends MyAdminController {
 		$grid->column('id'				, __('ID'));
 		
 		$grid->column('created_at'		, __('admin.contracts.created_at'));
+		$grid->column('date'			, __('admin.contracts.date'));
+		
+		$grid->column('archive'			, __('admin.contracts.archive'))->display(function($archive){
+			$archive = (int)$archive;
+			
+			return $archive > 0 ? '<i class="fa fa-check" style="color:green;" aria-hidden="true"></i>' : '<i class="fa fa-times" style="color:red;" aria-hidden="true"></i>';
+		});
 		
 		$grid->column('name'			, __('admin.contracts.name'));
 		$grid->column('contact'			, __('admin.contracts.contact'));
 		$grid->column('address'			, __('admin.contracts.address'));
 		$grid->column('phone'			, __('admin.contracts.phone'));
 		$grid->column('email'			, __('admin.contracts.email'));
-		
-		$grid->column('date'			, __('admin.contracts.date'));
 		
 		$model = $grid->model();
 		
@@ -63,7 +68,7 @@ class ContractsController extends MyAdminController {
 			$filter->like('address'			, __('admin.contracts.address'));
 		});
 		
-		$grid->disableCreateButton();
+		//$grid->disableCreateButton();
 		
 		$grid->paginate(100);
 		
@@ -71,7 +76,7 @@ class ContractsController extends MyAdminController {
 	}
 	
 	protected function detail($id){
-		header('Location: /contracts/'.$id.'/edit');
+		header('Location: /admin/contracts/'.$id.'/edit');
 		return;
 	}
 	
@@ -102,6 +107,8 @@ class ContractsController extends MyAdminController {
 		$form->text('edrpou'		, __('admin.contracts.edrpou'))->rules('max:40');
 		
 		$form->date('date'			, __('admin.contracts.date'));
+		
+		$form->switch('archive'		, __('admin.contracts.archive'));
 		
 		$form->hidden('file_name');
 		

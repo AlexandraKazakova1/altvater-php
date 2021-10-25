@@ -5,14 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use DB;
 
-class ApplicationsPhotos extends Model{
+class OrdersServices extends Model {
 	
-	protected $table	= 'application-photos';
+	protected $table	= 'orders_services';
 	
 	public $timestamps	= false;
 	
 	protected $fillable = [
-		'record_id',
-		'image'
+		'created_at',
+		'updated_at',
+		'sort',
+		'active',
+		'name'
 	];
 }
