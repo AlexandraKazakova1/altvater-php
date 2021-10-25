@@ -20,7 +20,8 @@ class Acts extends Model{
 		'client_id',
 		'number',
 		'status',
-		'file'
+		'file',
+		'name'
 	];
 	
 	public function client(){

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Pages;
 use App\Models\Contracts;
+use App\Models\Bills;
+use App\Models\Acts;
 
 use App\Helpers\MyBreadcrumbs;
 use App\Helpers\StringHelper;
@@ -95,7 +97,14 @@ class AccountController extends MyController {
 				'headerClass'	=> '',
 				'robots'		=> '',
 				'canonical'		=> '',
-				'data'			=> []
+				'count'			=> [
+					'bills'			=> Bills::query()->where('client_id', $this->_id)->ount(),
+					'acts'			=> Acts::query()->where('client_id', $this->_id)->count(),
+				],
+				'data'			=> [
+					'bills'			=> Bills::query()->where('client_id', $this->_id)->orderBy('created_at', 'desc')->get()
+					'acts'			=> Acts::query()->where('client_id', $this->_id)->orderBy('created_at', 'desc')->get()
+				]
 			]
 		);
 	}

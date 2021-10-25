@@ -57,6 +57,8 @@ class ActsController extends MyAdminController {
 			return '-';
 		});
 		
+		$grid->column('name'			, __('admin.acts.name'));
+		
 		$model = $grid->model();
 		
 		$model->orderBy('created_at', 'desc');
@@ -69,6 +71,7 @@ class ActsController extends MyAdminController {
 		
 		$grid->filter(function($filter){
 			$filter->like('number'			, __('admin.acts.number'));
+			$filter->like('name'			, __('admin.acts.name'));
 		});
 		
 		//$grid->disableCreateButton();
@@ -106,6 +109,8 @@ class ActsController extends MyAdminController {
 		$form->select('client_id'	, __('admin.acts.client'))->options($users);
 		
 		$form->date('date'			, __('admin.acts.date'));
+		
+		$form->text('name'			, __('admin.acts.name'))->rules('max:100');
 		
 		$form->text('number'		, __('admin.acts.number'))->rules('max:15');
 		

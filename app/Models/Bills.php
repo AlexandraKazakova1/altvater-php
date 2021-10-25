@@ -20,7 +20,8 @@ class Bills extends Model{
 		'client_id',
 		'number',
 		'amount',
-		'signed'
+		'paid',
+		'name'
 	];
 	
 	public function client(){

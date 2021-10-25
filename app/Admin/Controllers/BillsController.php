@@ -39,13 +39,14 @@ class BillsController extends MyAdminController {
 		$grid->column('created_at'		, __('admin.bills.created_at'));
 		$grid->column('date'			, __('admin.bills.date'));
 		
-		$grid->column('signed'			, __('admin.bills.signed'))->display(function($signed){
-			$signed = (int)$signed;
+		$grid->column('paid'			, __('admin.bills.paid'))->display(function($paid){
+			$paid = (int)$paid;
 			
-			return $signed > 0 ? '<i class="fa fa-check" style="color:green;" aria-hidden="true"></i>' : '<i class="fa fa-times" style="color:red;" aria-hidden="true"></i>';
+			return $paid > 0 ? '<i class="fa fa-check" style="color:green;" aria-hidden="true"></i>' : '<i class="fa fa-times" style="color:red;" aria-hidden="true"></i>';
 		});
 		
 		$grid->column('number'			, __('admin.bills.number'));
+		
 		$grid->column('amount'			, __('admin.bills.amount'));
 		
 		$grid->column('client_id'		, __('admin.bills.client'))->display(function(){
@@ -57,6 +58,8 @@ class BillsController extends MyAdminController {
 			
 			return '-';
 		});
+		
+		$grid->column('name'			, __('admin.bills.name'));
 		
 		$model = $grid->model();
 		
@@ -70,6 +73,7 @@ class BillsController extends MyAdminController {
 		
 		$grid->filter(function($filter){
 			$filter->like('number'			, __('admin.bills.number'));
+			$filter->like('name'			, __('admin.bills.name'));
 		});
 		
 		//$grid->disableCreateButton();
@@ -108,10 +112,12 @@ class BillsController extends MyAdminController {
 		
 		$form->date('date'			, __('admin.bills.date'));
 		
+		$form->text('name'			, __('admin.bills.name'))->rules('max:100');
+		
 		$form->text('number'		, __('admin.bills.number'))->rules('max:15');
 		$form->text('amount'		, __('admin.bills.amount'))->rules('max:15');
 		
-		$form->switch('signed'		, __('admin.bills.signed'));
+		$form->switch('paid'		, __('admin.bills.paid'));
 		
 		$form->file('file'			, __('admin.bills.doc'))->help('PDF')->removable()->move('bills')->uniqueName();
 		
