@@ -6,6 +6,8 @@ use App\Models\Pages;
 use App\Models\Contracts;
 use App\Models\Bills;
 use App\Models\Acts;
+use App\Models\Orders;
+use App\Models\OrdersServices;
 
 use App\Helpers\MyBreadcrumbs;
 use App\Helpers\StringHelper;
@@ -154,7 +156,9 @@ class AccountController extends MyController {
 				'headerClass'	=> '',
 				'robots'		=> '',
 				'canonical'		=> '',
-				'data'			=> []
+				'count'			=> Orders::query()->where('client_id', $this->_id)->count(),
+				'data'			=> Orders::query()->where('client_id', $this->_id)->orderBy('created_at', 'desc')->get(),
+				'services'		=> OrdersServices::query()->orderBy('name', 'asc')->get(),
 			]
 		);
 	}
