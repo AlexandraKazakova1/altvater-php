@@ -242,6 +242,7 @@ class StringHelper extends Helper {
 		$out[] = $date[2];
 		$out[] = trans('site.months.'.$date[1]);
 		$out[] = $date[0];
+		$out[] = trans('site.year');
 		
 		return implode(' ', $out);
 	}
