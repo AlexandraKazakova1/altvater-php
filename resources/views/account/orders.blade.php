@@ -98,10 +98,10 @@
 			<div class="selector">
 				<ul>
 					<li data-type="all" class="act">Всі замовлення</li>
-					<li data-type="processing" >В обробці</li>
+					<li data-type="processed" >В обробці</li>
 					<li data-type="performed" >Виконуються</li>
-					<li data-type="done" >Готові</li>
-					<li data-type="scheduled" >Заплановано</li>
+					<li data-type="ready" >Готові</li>
+					<li data-type="planned" >Заплановано</li>
 				</ul>
 			</div>
 			

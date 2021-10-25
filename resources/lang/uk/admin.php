@@ -444,10 +444,11 @@ return [
 		'status'				=> [
 			'label'					=> 'Статус',
 			
-			'processing'			=> 'В обробці',
+			'processed'				=> 'В обробці',
 			'performed'				=> 'Виконуються',
-			'done'					=> 'Виконано',
-			'scheduled'				=> 'Заплановано',
+			'canceled'				=> 'Відмінено',
+			'ready'					=> 'Виконано',
+			'planned'				=> 'Заплановано',
 		],
 		'date'					=> 'Дата',
 		'time'					=> 'Час',

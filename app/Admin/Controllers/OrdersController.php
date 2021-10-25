@@ -131,10 +131,11 @@ class OrdersController extends MyAdminController {
 		
 		$form->radio('status'		, __('admin.orders.status.label'))
 									->options([
-										'processing'	=> __('admin.orders.status.processing'),
+										'processed'		=> __('admin.orders.status.processed'),
 										'performed'		=> __('admin.orders.status.performed'),
-										'done'			=> __('admin.orders.status.done'),
-										'scheduled'		=> __('admin.orders.status.scheduled')
+										'canceled'		=> __('admin.orders.status.canceled'),
+										'ready'			=> __('admin.orders.status.ready'),
+										'planned'		=> __('admin.orders.status.planned')
 									]);
 		
 		$form->textarea('comment'	, __('admin.orders.comment'));
