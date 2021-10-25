@@ -82,7 +82,7 @@
 							
 							<div class="date">
 								Дата виставлення рахунку:
-								<span>{{($item->date ? $string->calls('date2Str', [$item->date]); : '-')}}</span>
+								<span>{{($item->date ? $string->call('date2Str', [$item->date]) : '-')}}</span>
 							</div>
 							
 							<div class="payer">
@@ -157,7 +157,7 @@
 							
 							<div class="date">
 								Дата виставлення акту:
-								<span>{{($item->date ? $string->calls('date2Str', [$item->date]); : '-')}}</span>
+								<span>{{($item->date ? $string->call('date2Str', [$item->date]) : '-')}}</span>
 							</div>
 							
 							<div class="payer">
