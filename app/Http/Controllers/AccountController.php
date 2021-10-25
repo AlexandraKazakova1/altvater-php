@@ -98,7 +98,7 @@ class AccountController extends MyController {
 				'robots'		=> '',
 				'canonical'		=> '',
 				'count'			=> [
-					'bills'			=> Bills::query()->where('client_id', $this->_id)->ount(),
+					'bills'			=> Bills::query()->where('client_id', $this->_id)->count(),
 					'acts'			=> Acts::query()->where('client_id', $this->_id)->count(),
 				],
 				'data'			=> [
