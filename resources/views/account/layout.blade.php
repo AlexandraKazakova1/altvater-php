@@ -109,7 +109,7 @@
 								<path d="M2.5 6.29248V14.1666C2.5 15.5475 3.61917 16.6666 5 16.6666H15C16.3808 16.6666 17.5 15.5475 17.5 14.1666V6.29331" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 							</svg>
 							Повідомлення
-							<span class="counter">6</span>
+							<span class="counter" style="display:none;">6</span>
 						</a>
 					</li>
 					<li class="menu__item">
@@ -439,7 +439,7 @@
 				<div class="modal-content">
 					<div class="orderService popup">
 						<div class="modal-header">
-							<h2 class="popup__title">Новий договір</h2>
+							<h2 class="popup__title">Замовлення послуги</h2>
 							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 								<img src="/img/close.svg" alt="X">
 							</button>
@@ -449,26 +449,28 @@
 							<form class="popup__form" id="orderService-form">
 								<fieldset class="fieldset">
 									<label>
-										<span class="input-description">Введіть адресу:</span>
+										<span class="input-description">Оберіть послугу:</span>
 										<select class="custom-select" id="service" name="service">
-											<option value="Послуга-1">Послуга-1</option>
-											<option value="Послуга-2">Послуга-2</option>
-											<option value="Послуга-3">Послуга-3</option>
+											@foreach($services as $item)
+											<option value="{{$item->id}}">{{$item->name}}</option>
+											@endforeach
 										</select>
 									</label>
 									
 									<label>
-										<span class="input-description">Вибрати дату:</span>
-										<select class="custom-select" id="date" name="date">
-											<option value="Дата-1">Дата-1</option>
-											<option value="Дата-2">Дата-2</option>
-											<option value="Дата-3">Дата-3</option>
-										</select>
+										<span class="input-description">Оберіть дату:</span>
+										<input class="form-control" type="text" name="date" placeholder=" ">
+										<span class="input-placeholder">
+											<div>
+												<img src="/img/cabinet/modal-icon/date.svg">
+											</div>
+											Обрати дату
+										</span>
 									</label>
 									
 									<label>
 										<span class="input-description">Введіть адресу:</span>
-										<input class="form-control" type="tel" name="userTel" placeholder=" ">
+										<input class="form-control" type="text" name="addresses" placeholder=" ">
 										<span class="input-placeholder">
 											<div>
 												<img src="/img/cabinet/modal-icon/house.svg">
@@ -478,19 +480,19 @@
 									</label>
 									
 									<label>
-										<span class="input-description">Вибрати час:</span>
-										<input class="form-control" type="text" name="userAddress" placeholder=" ">
+										<span class="input-description">Оберіть час:</span>
+										<input class="form-control" type="text" name="time" placeholder=" ">
 										<span class="input-placeholder">
 											<div>
 												<img src="/img/cabinet/modal-icon/time-clock.svg">
 											</div>
-											Вибрати час
+											Обрати час
 										</span>
 									</label>
 									
 									<label>
 										<span class="input-description">Введіть коментар:</span>
-										<input class="form-control" type="text" name="postIndex" placeholder=" ">
+										<input class="form-control" type="text" name="comment" placeholder=" ">
 										<span class="input-placeholder">
 											<div>
 												<img src="/img/cabinet/modal-icon/messages.svg">
