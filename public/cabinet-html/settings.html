@@ -158,10 +158,10 @@
                     </ul>
                 </div>
                 <div class="general__content">
-                    <form class="settings__form" id="settings__form">
+                    <form class="settings__form" id="settingsForm">
                         <fieldset>
                             <label>
-                                <span class="input-description">Ім'я:</span>
+                                <span class="input-description notCheck">Ім'я:</span>
                                 <input class="form-control" type="text" name="name" placeholder=" ">
                                 <span class="input-placeholder">
                                     <div>
@@ -171,7 +171,7 @@
                                 </span>
                             </label>
                             <label>
-                                <span class="input-description">Прізвище:</span>
+                                <span class="input-description notCheck">Прізвище:</span>
                                 <input class="form-control" type="text" name="surname" placeholder=" ">
                                 <span class="input-placeholder">
                                     <div>
@@ -181,7 +181,7 @@
                                 </span>
                             </label>
                             <label>
-                                <span class="input-description">По батькові:</span>
+                                <span class="input-description notCheck">По батькові:</span>
                                 <input class="form-control" type="text" name="middlename" placeholder=" ">
                                 <span class="input-placeholder">
                                     <div>
@@ -191,7 +191,7 @@
                                 </span>
                             </label>
                             <label>
-                                <span class="input-description">Email:</span>
+                                <span class="input-description notCheck">Email:</span>
                                 <input class="form-control" type="email" name="email" placeholder=" ">
                                 <span class="input-placeholder">
                                     <div>
@@ -201,7 +201,7 @@
                                 </span>
                             </label>
                             <label>
-                                <span class="input-description">Телефон:</span>
+                                <span class="input-description notCheck">Телефон:</span>
                                 <input class="form-control" type="tel" name="phone" placeholder=" ">
                                 <span class="input-placeholder">
                                     <div>
@@ -221,8 +221,8 @@
                                 </span>
                             </label>
                             <label>
-                                <span class="input-description">Адреса:</span>
-                                <input class="form-control" type="text" name="address" placeholder=" ">
+                                <span class="input-description notCheck">Адреса:</span>
+                                <input class="form-control" type="text" name="addresses" placeholder=" ">
                                 <span class="input-placeholder">
                                     <div>
                                         <img src="../img/cabinet/modal-icon/location.svg">
@@ -231,7 +231,7 @@
                                 </span>
                             </label>
                             <label>
-                                <span class="input-description">Індекс:</span>
+                                <span class="input-description notCheck">Індекс:</span>
                                 <input class="form-control" type="text" name="index" placeholder=" ">
                                 <span class="input-placeholder">
                                     <div>
@@ -247,7 +247,7 @@
                     </form>
                 </div>
                 <div class="security__content">
-                    <form action="POST">
+                    <form action="POST" id="changePasswordForm">
                         <fieldset>
                             <label>
                                 <span class="input-description">Старий пароль:</span>
@@ -261,7 +261,7 @@
                             </label>
                             <label>
                                 <span class="input-description">Новий пароль:</span>
-                                <input class="form-control" type="password" name="password" placeholder=" ">
+                                <input class="form-control" type="password" name="new_password" placeholder=" ">
                                 <span class="input-placeholder">
                                     <div>
                                         <img src="../img/cabinet/modal-icon/lock.svg">
@@ -271,7 +271,7 @@
                             </label>
                             <label>
                                 <span class="input-description">Повторіть новий пароль:</span>
-                                <input class="form-control" type="password" name="password" placeholder=" ">
+                                <input class="form-control" type="password" name="confirm_password" placeholder=" ">
                                 <span class="input-placeholder">
                                     <div>
                                         <img src="../img/cabinet/modal-icon/lock.svg">

@@ -2449,11 +2449,13 @@ main {
 .newOrder form fieldset label label.error,
 .settings__wrapper form fieldset label label.error,
 .request form fieldset label label.error {
+  position: absolute;
   color: #BF604D;
   font-weight: 400;
   font-style: normal;
   font-size: 12px;
   line-height: 14px;
+  top: 101%;
 }
 
 .newOrder form fieldset .input-description,

@@ -1,5 +1,4 @@
 $(document).ready (function() {
-
     calendar();
     customSelect();
     modalFade();
@@ -14,13 +13,15 @@ $(document).ready (function() {
     contractIndividual();
     contractEntity();
     addAddress();
-    requestForm();
     timepicker();
     select2();
     maskPhone();
     orderServiceForm();
     contractsArchive();
-
+    newOrderForm();
+    changePasswordForm();
+    settingsForm();
+    requestForm();
 
 });
 
@@ -957,7 +958,7 @@ function initMap() {
 }
 
 function requestForm() {
-	var form = jQuery("#request__form");
+	var form = jQuery("#requestForm");
 
     if(!form.length){
 		return false;
@@ -981,7 +982,7 @@ function requestForm() {
 				minlength: 5
             },
             phone: {
-                required: true,
+                required: true
             },
             header: {
                 required: true,
@@ -1017,7 +1018,71 @@ function requestForm() {
 			if(!lock){
 				$.ajax({
 					type: "POST",
-					url: '/ajax/user/request',
+					url: '/ajax/cabinet/request',
+                    method: "POST",
+                    data: form.serialize(),
+                    dataType: "json",
+                    beforeSend: function(request){
+                        lock = true;
+                        
+                        btn.attr('disabled', true);
+                        form.find('label.error').text('').hide();
+					},
+					success: function(response){
+						console.log('response:');
+						console.log(response);
+						
+						lock = false;
+                        btn.attr('disabled', false);
+
+						if(response.status){
+							form.trigger('reset');
+						}
+					},
+					error: function(err){
+						console.log('error');
+						lock = false;
+                        btn.attr('disabled', false);
+					}
+				});
+			};
+			return false;
+	    }
+    });
+};
+
+function requestForm() {
+	var form = jQuery("#msgRequestForm");
+
+    if(!form.length){
+		return false;
+	};
+
+	var lock = false,
+    btn = form.find('button[type="submit"]');
+
+    form.validate({
+		onkeyup	: false,
+        focusCleanup: true,
+        focusInvalid: false,
+        errorClass: "error",
+        rules: {
+            text: {
+                required: true,
+				maxlength: 1000
+            }
+        },
+        messages: {
+            text: {
+                required: "Це поле обов'язкове для заповнення",
+				maxlength: "Введіть не більше 1000 символів"
+            }
+        },
+		submitHandler: function() {
+			if(!lock){
+				$.ajax({
+					type: "POST",
+					url: '/ajax/cabinet/request/:id',
                     method: "POST",
                     data: form.serialize(),
                     dataType: "json",
@@ -1051,7 +1116,7 @@ function requestForm() {
 };
 
 function settingsForm() {
-	var form = jQuery("#settings__form");
+	var form = jQuery("#settingsForm");
 
     if(!form.length){
 		return false;
@@ -1085,7 +1150,10 @@ function settingsForm() {
             phone: {
                 required: true,
             },
-            address: {
+            extra_phone: {
+                required: false,
+            },
+            addresses: {
                 required: true,
 				minlength: 8
             },
@@ -1159,9 +1227,167 @@ function settingsForm() {
 	    }
     });
 };
+function changePasswordForm() {
+	var form = jQuery("#changePasswordForm");
+
+    if(!form.length){
+		return false;
+	};
+
+	var lock = false,
+    btn = form.find('button[type="submit"]');
+
+    form.validate({
+		onkeyup	: false,
+        focusCleanup: true,
+        focusInvalid: false,
+        errorClass: "error",
+        rules: {
+            password: {
+                required: true
+            },
+            new_password: {
+                required: true
+            },
+            confirm_password: {
+                required: true
+            }
+        },
+        messages: {
+            password: {
+                required: "Це поле обов'язкове для заповнення"
+            },
+            new_password: {
+                required: "Це поле обов'язкове для заповнення"
+            },
+            confirm_password: {
+                required: "Це поле обов'язкове для заповнення"
+            }
+        },
+		submitHandler: function() {
+			if(!lock){
+				$.ajax({
+					type: "POST",
+					url: ' /ajax/user/change-password',
+                    method: "POST",
+                    data: form.serialize(),
+                    dataType: "json",
+                    beforeSend: function(request){
+                        lock = true;
+                        
+                        btn.attr('disabled', true);
+                        form.find('label.error').text('').hide();
+					},
+					success: function(response){
+						console.log('response:');
+						console.log(response);
+						
+						lock = false;
+                        btn.attr('disabled', false);
+
+						if(response.status){
+							form.trigger('reset');
+						}
+					},
+					error: function(err){
+						console.log('error');
+						lock = false;
+                        btn.attr('disabled', false);
+					}
+				});
+			};
+			return false;
+	    }
+    });
+};
 
 function orderServiceForm() {
 	var form = jQuery("#orderService-form");
+
+    if(!form.length){
+		return false;
+	};
+
+	var lock = false,
+    btn = form.find('button[type="submit"]');
+
+    form.validate({
+		onkeyup	: false,
+        focusCleanup: true,
+        focusInvalid: false,
+        errorClass: "error",
+        rules: {
+            service: {
+                required: true
+            },
+            date: {
+                required: true
+            },
+            city: {
+                required: true
+            },
+            time: {
+                required: true
+            },
+            comment: {
+                required: true,
+            }
+        },
+        messages: {
+            service: {
+                required: "Це поле обов'язкове для заповнення",
+            },
+            date: {
+                required: "Це поле обов'язкове для заповнення",
+            },
+            city: {
+                required: "Це поле обов'язкове для заповнення",
+            },
+            time: {
+                required: "Це поле обов'язкове для заповнення",
+            },
+            comment: {
+                required: "Це поле обов'язкове для заповнення",
+            }
+        },
+		submitHandler: function() {
+			if(!lock){
+				$.ajax({
+					type: "POST",
+					url: '/ajax/user/settings',
+                    method: "POST",
+                    data: form.serialize(),
+                    dataType: "json",
+                    beforeSend: function(request){
+                        lock = true;
+                        
+                        btn.attr('disabled', true);
+                        form.find('label.error').text('').hide();
+					},
+					success: function(response){
+						console.log('response:');
+						console.log(response);
+						
+						lock = false;
+                        btn.attr('disabled', false);
+
+						if(response.status){
+							form.trigger('reset');
+						}
+					},
+					error: function(err){
+						console.log('error');
+						lock = false;
+                        btn.attr('disabled', false);
+					}
+				});
+			};
+			return false;
+	    }
+    });
+};
+function newOrderForm() {
+	var form = jQuery("#newOrder-form");
 
     if(!form.length){
 		return false;
