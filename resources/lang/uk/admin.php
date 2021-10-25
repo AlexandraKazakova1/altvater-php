@@ -147,7 +147,7 @@ return [
 		'addresses'				=> 'Адреси',
 	],
 	
-	'violation'				=> [
+	'addresses'				=> [
 		'name'					=> 'Назва',
 		'address'				=> 'Адреса',
 		'image'					=> 'Зображення',
