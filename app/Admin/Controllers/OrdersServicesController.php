@@ -32,8 +32,13 @@ class OrdersServicesController extends MyAdminController {
 		$grid->column('id'				, __('ID'));
 		
 		$grid->column('sort'			, __('admin.orders_services.sort'));
-		$grid->column('active'			, __('admin.orders_services.active'));
-				
+		
+		$grid->column('active'			, __('admin.orders_services.active'))->display(function($active){
+			$active = (int)$active;
+			
+			return $active > 0 ? '<i class="fa fa-check" style="color:green;" aria-hidden="true"></i>' : '<i class="fa fa-times" style="color:red;" aria-hidden="true"></i>';
+		});
+		
 		$grid->column('name'			, __('admin.orders_services.name'));
 		
 		$grid->actions(function($actions){
