@@ -36,4 +36,6 @@ Route::group([
 	$router->resource('orders_services'			, OrdersServicesController::class);
 	
 	$router->resource('orders'					, OrdersController::class);
+	
+	//$router->resource('addresses'				, AddressesController::class);
 });

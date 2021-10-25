@@ -142,6 +142,15 @@ return [
 		
 		'position'				=> 'Посада',
 		'index'					=> 'Індекс',
+		
+		'info'					=> 'Основна інформація',
+		'addresses'				=> 'Адреси',
+	],
+	
+	'violation'				=> [
+		'name'					=> 'Назва',
+		'address'				=> 'Адреса',
+		'image'					=> 'Зображення',
 	],
 	
 	'violation'				=> [
