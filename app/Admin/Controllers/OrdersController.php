@@ -41,8 +41,6 @@ class OrdersController extends MyAdminController {
 		$grid->column('date'			, __('admin.orders.date'));
 		
 		$grid->column('status'			, __('admin.orders.status.label'))->display(function($status){
-			$status = (int)$status;
-			
 			return trans('admin.orders.status.'.$status);
 		});
 		
