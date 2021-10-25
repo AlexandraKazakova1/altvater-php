@@ -8,6 +8,7 @@ use App\Models\Bills;
 use App\Models\Acts;
 use App\Models\Orders;
 use App\Models\OrdersServices;
+use App\Models\UserAddresses;
 
 use App\Models\Dialogues;
 use App\Models\Messages;
@@ -52,6 +53,7 @@ class AccountController extends MyController {
 				'canonical'		=> '',
 				'data'			=> [],
 				'services'		=> OrdersServices::query()->orderBy('name', 'asc')->get(),
+				'addresses'		=> UserAddresses::query()->where('client_id', $this->_id)->orderBy('name', 'asc')->get(),
 			]
 		);
 	}
