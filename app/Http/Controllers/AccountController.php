@@ -80,7 +80,10 @@ class AccountController extends MyController {
 				'canonical'		=> '',
 				'count'			=> Contracts::query()->where('client_id', $this->_id)->whereRaw(DB::raw('(`archive` IS NULL OR `archive` = 0)'))->count(),
 				'count_archive'	=> Contracts::query()->where('client_id', $this->_id)->where('archive', 1)->count(),
-				'contracts'		=> Contracts::query()->where('client_id', $this->_id)->orderBy('created_at', 'desc')->get(),
+				'contracts'		=> [
+					'active'		=> Contracts::query()->where('client_id', $this->_id)->whereRaw(DB::raw('(`archive` IS NULL OR `archive` = 0)'))->orderBy('created_at', 'desc')->get(),
+					'archive'		=> Contracts::query()->where('client_id', $this->_id)->where('archive', 1)->orderBy('created_at', 'desc')->get(),
+				],
 				'services'		=> OrdersServices::query()->orderBy('name', 'asc')->get(),
 			]
 		);
