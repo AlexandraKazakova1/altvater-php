@@ -29,10 +29,10 @@
 			</div>
 			
 			<div class="general__content">
-				<form class="settings__form" id="settings__form">
+				<form class="settings__form" id="settingsForm">
 					<fieldset>
 						<label>
-							<span class="input-description">Ім'я:</span>
+							<span class="input-description notCheck">Ім'я:</span>
 							<input class="form-control" type="text" name="name" value="{{$user['name']}}" placeholder=" ">
 							<span class="input-placeholder">
 								<div>
@@ -43,7 +43,7 @@
 						</label>
 						
 						<label>
-							<span class="input-description">Прізвище:</span>
+							<span class="input-description notCheck">Прізвище:</span>
 							<input class="form-control" type="text" name="surname" value="{{$user['surname']}}" placeholder=" ">
 							<span class="input-placeholder">
 								<div>
@@ -54,7 +54,7 @@
 						</label>
 						
 						<label>
-							<span class="input-description">По батькові:</span>
+							<span class="input-description notCheck">По батькові:</span>
 							<input class="form-control" type="text" name="middlename" value="{{$user['middlename']}}" placeholder=" ">
 							<span class="input-placeholder">
 								<div>
@@ -65,7 +65,7 @@
 						</label>
 						
 						<label>
-							<span class="input-description">Email:</span>
+							<span class="input-description notCheck">Email:</span>
 							<input class="form-control" type="email" name="email" value="{{$user['email']}}" placeholder=" ">
 							<span class="input-placeholder">
 								<div>
@@ -76,7 +76,7 @@
 						</label>
 						
 						<label>
-							<span class="input-description">Телефон:</span>
+							<span class="input-description notCheck">Телефон:</span>
 							<input class="form-control" type="tel" name="phone" value="{{$user['phone']}}" placeholder=" ">
 							<span class="input-placeholder">
 								<div>
@@ -98,7 +98,7 @@
 						</label>
 						
 						<label>
-							<span class="input-description">Адреса:</span>
+							<span class="input-description notCheck">Адреса:</span>
 							<input class="form-control" type="text" name="address" value="{{$user['addresses']}}" placeholder=" ">
 							<span class="input-placeholder">
 								<div>
@@ -109,7 +109,7 @@
 						</label>
 						
 						<label>
-							<span class="input-description">Індекс:</span>
+							<span class="input-description notCheck">Індекс:</span>
 							<input class="form-control" type="text" name="index" value="{{$user['index']}}" placeholder=" ">
 							<span class="input-placeholder">
 								<div>
@@ -127,7 +127,7 @@
 			</div>
 			
 			<div class="security__content">
-				<form action="POST">
+				<form action="POST" id="changePasswordForm">
 					<fieldset>
 						<label>
 							<span class="input-description">Старий пароль:</span>
