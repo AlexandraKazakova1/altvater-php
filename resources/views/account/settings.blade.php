@@ -142,7 +142,7 @@
 						
 						<label>
 							<span class="input-description">Новий пароль:</span>
-							<input class="form-control" type="password" name="password" placeholder=" ">
+							<input class="form-control" type="password" name="new_password" placeholder=" ">
 							<span class="input-placeholder">
 								<div>
 									<img src="/img/cabinet/modal-icon/lock.svg">
@@ -153,7 +153,7 @@
 						
 						<label>
 							<span class="input-description">Повторіть новий пароль:</span>
-							<input class="form-control" type="password" name="password" placeholder=" ">
+							<input class="form-control" type="password" name="confirm_password" placeholder=" ">
 							<span class="input-placeholder">
 								<div>
 									<img src="/img/cabinet/modal-icon/lock.svg">
