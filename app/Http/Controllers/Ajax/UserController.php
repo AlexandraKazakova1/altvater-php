@@ -493,8 +493,8 @@ class UserController extends Controller {
 				
 				//'email'					=> 'required|email',
 				
-				//'phone'					=> 'required|string|max:12|min:13',
-				'extra_phone'			=> 'max:12|min:13',
+				//'phone'					=> 'required|string|min:12|max:13',
+				'extra_phone'			=> 'min:12|max:13',
 				
 				'address'				=> 'string|max:150',
 				
