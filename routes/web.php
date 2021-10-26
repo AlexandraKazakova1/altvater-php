@@ -99,6 +99,11 @@ Route::get('account/contracts', [
 	'uses'  => 'AccountController@contracts'
 ]);
 
+Route::get('account/contract/{id}', [
+	'as'    => 'contract',
+	'uses'  => 'AccountController@contract'
+])->where('id', '[0-9]+');
+
 Route::get('account/bills', [
 	'as'    => 'bills',
 	'uses'  => 'AccountController@bills'

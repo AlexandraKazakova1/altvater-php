@@ -89,6 +89,40 @@ class AccountController extends MyController {
 		);
 	}
 	
+	public function contract(Request $request){
+		$this->session();
+		
+		if(!$this->_auth){
+			return redirect('/');
+		}
+		
+		$id = $request->route('id');
+		
+		$contract = Contracts::query()->where('client_id', $this->_id)->where('id', $id)->first();
+		
+		if(!$contract){
+			return redirect('/account/contracts');
+		}
+		
+		return view(
+			'account/contract',
+			[
+				'page'			=> array(
+					'title'			=> trans('site.cabinet.contracts.title').' - №'.$contract->number,
+					'keywords'		=> '',
+					'description'	=> '',
+					'uri'			=> 'account/contract',
+					'og_image'		=> '',
+				),
+				'headerClass'	=> '',
+				'robots'		=> '',
+				'canonical'		=> '',
+				'contract'		=> $contract,
+				'services'		=> OrdersServices::query()->orderBy('name', 'asc')->get(),
+			]
+		);
+	}
+	
 	public function bills(){
 		$this->session();
 		
