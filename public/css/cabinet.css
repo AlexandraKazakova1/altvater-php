@@ -3587,6 +3587,15 @@ main {
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
   min-width: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
 }
 
 .contracts__wrapper .archive__content .contracts__list .contract__item .download a,
@@ -3670,6 +3679,40 @@ main {
   background: #EDF1F6;
   border-radius: 8px;
   margin-bottom: 40px;
+}
+
+.contracts__wrapper .contracts__content .contracts__list .contract__item .download a:first-child {
+  border: 1px solid #2F5E97;
+  margin-right: 6px;
+}
+
+.contracts__wrapper .contracts__content .contracts__list .contract__item .download a:first-child svg {
+  margin-right: 15px;
+  fill: transparent;
+  stroke: #2F5E97;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.contracts__wrapper .contracts__content .contracts__list .contract__item .download a:first-child:focus,
+.contracts__wrapper .contracts__content .contracts__list .contract__item .download a:first-child:hover {
+  background: #2F5E97;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.contracts__wrapper .contracts__content .contracts__list .contract__item .download a:first-child:focus span,
+.contracts__wrapper .contracts__content .contracts__list .contract__item .download a:first-child:hover span {
+  color: #FFFFFF;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.contracts__wrapper .contracts__content .contracts__list .contract__item .download a:first-child:focus svg,
+.contracts__wrapper .contracts__content .contracts__list .contract__item .download a:first-child:hover svg {
+  stroke: #FFFFFF;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .request__page .messages__wrapper {

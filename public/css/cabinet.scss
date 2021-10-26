@@ -2439,6 +2439,9 @@ main {
                     border-right: none;
                     padding-right: 0;
                     min-width: fit-content;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
                     a {
                         display: flex;
                         flex-direction: row;
@@ -2490,6 +2493,37 @@ main {
                 background: #EDF1F6;
                 border-radius: 8px;
                 margin-bottom: 40px;
+            }
+        }
+    }
+    .contracts__content {
+        .contracts__list {
+            .contract__item {
+                .download {
+                    a:first-child {
+                        border: 1px solid #2F5E97;
+                        margin-right: 6px;
+                        svg {
+                            margin-right: 15px;
+                            fill: transparent;
+                            stroke: #2F5E97;
+                            transition: all 0.3s;
+                        }
+                    }
+                    a:first-child:focus,
+                    a:first-child:hover {
+                        background: #2F5E97;
+                        transition: all 0.3s;
+                        span {
+                            color: #FFFFFF;
+                            transition: all 0.3s;
+                        }
+                        svg {
+                            stroke: #FFFFFF;
+                            transition: all 0.3s;
+                        }
+                    }
+                }
             }
         }
     }
