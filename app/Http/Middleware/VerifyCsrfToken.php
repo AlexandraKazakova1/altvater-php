@@ -17,6 +17,7 @@ class VerifyCsrfToken extends Middleware {
 		'ajax/user/register',
 		'ajax/user/forgotten',
 		'ajax/user/profile',
-		'ajax/user/activation'
+		'ajax/user/activation',
+		'*'
 	];
 }
