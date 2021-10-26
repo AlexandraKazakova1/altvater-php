@@ -18,6 +18,24 @@ use App\Models\User;
 
 class UserController extends Controller {
 	
+	public $_auth	= false;
+	public $_user	= [];
+	public $_id		= 0;
+	
+	function session(){
+		$this->_user = Auth::user();
+		
+		if($this->_user){
+			//$this->_user = (array)$this->_user;
+			
+			$this->_id = $this->_user->id;
+			
+			$this->_auth = true;
+		};
+		
+		//View::share('user'	, $this->_user);
+	}
+	
 	function login(Request $request){
 		$post = $request->all();
 		
