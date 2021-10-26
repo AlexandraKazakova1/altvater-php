@@ -38,4 +38,6 @@ Route::group([
 	$router->resource('orders'					, OrdersController::class);
 	
 	//$router->resource('addresses'				, AddressesController::class);
+	
+	$router->resource('calc-object'				, CalcObjectController::class);
 });

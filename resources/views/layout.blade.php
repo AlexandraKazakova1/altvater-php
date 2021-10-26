@@ -169,6 +169,7 @@
 		@include('modals.activation', ['user' => $user])
 		@include('modals.recovery', ['user' => $user])
 		@include('modals.new-password', ['user' => $user])
+		@include('modals.calc', [])
 		
 		<div id="cookie_notification">
 			<p>{{trans('site.cookie.text')}}</p>
