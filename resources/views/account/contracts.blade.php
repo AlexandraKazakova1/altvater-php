@@ -43,11 +43,11 @@
 			<span>Назад</span>
 		</a>
 		
-		<section class="contracts__clear" style="{{($count > 0 ? 'display:none;' : '')}}">
+		<section class="contracts__clear" style="{{(($count > 0 || $count_archive > 0) ? 'display:none;' : '')}}">
 			<img src="/img/cabinet/noContracts.png">
 		</section>
 		
-		<section class="contracts__wrapper" style="{{($count > 0 ? '' : 'display:none;')}}">
+		<section class="contracts__wrapper" style="{{(($count > 0 || $count_archive > 0) ? '' : 'display:none;')}}">
 			<div class="selector">
 				<ul>
 					<li data-archive="0" data-count="{{$count}}" class="act" id="contractsToggle">Документи</li>
