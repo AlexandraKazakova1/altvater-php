@@ -12,7 +12,6 @@
 		<link rel="stylesheet" href="/css/select2.css">
 		<link rel="stylesheet" href="/css/bootstrap.min.css">
 		<link rel="stylesheet" href="/css/jquery.timepicker.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
 		<link rel="stylesheet" href="/css/cabinet.css">
 	</head>
 	<body>
