@@ -5,11 +5,6 @@ $(document).ready (function() {
     dragAndDrop();
     accountsActs();
     settingsPage();
-    logIn();
-    create();
-    passRecovery();
-    passRecovery3();
-    passVerificationForm();
     contractIndividual();
     contractEntity();
     addAddress();
@@ -22,6 +17,7 @@ $(document).ready (function() {
     changePasswordForm();
     settingsForm();
     requestForm();
+    ordersSelect();
 
 });
 
@@ -246,6 +242,54 @@ function settingsPage() {
         $('.general__content').fadeOut(1);
         $('.security__content').fadeIn(1);
         $('#general').removeClass('act');
+    });
+};
+function ordersSelect() {
+    if($('#all').hasClass('act')) {
+        $('.orders__item').fadeIn(200);
+    } else if($('#processed').hasClass('act')) {
+        $('.orders__item').fadeOut(1);
+        $('.processed').fadeIn(200);
+    } else if($('#performed').hasClass('act')) {
+        $('.orders__item').fadeOut(1);
+        $('.performed').fadeIn(200);
+    } else if($('#ready').hasClass('act')) {
+        $('.orders__item').fadeOut(1);
+        $('.ready').fadeIn(200);
+    } else if($('#planned').hasClass('act')) {
+        $('.orders__item').fadeOut(1);
+        $('.planned').fadeIn(200);
+    };
+
+    $('#all').click(function() {
+        $('.selector ul li').removeClass('act');
+        $(this).addClass('act');
+        $('.orders__item').fadeOut(1);
+        $('.orders__item').fadeIn(200);
+    });
+    $('#processed').click(function() {
+        $('.selector ul li').removeClass('act');
+        $(this).addClass('act');
+        $('.orders__item').fadeOut(1);
+        $('.processed').fadeIn(200);
+    });
+    $('#performed').click(function() {
+        $('.selector ul li').removeClass('act');
+        $(this).addClass('act');
+        $('.orders__item').fadeOut(1);
+        $('.performed').fadeIn(200);
+    });
+    $('#ready').click(function() {
+        $('.selector ul li').removeClass('act');
+        $(this).addClass('act');
+        $('.orders__item').fadeOut(1);
+        $('.ready').fadeIn(200);
+    });
+    $('#planned').click(function() {
+        $('.selector ul li').removeClass('act');
+        $(this).addClass('act');
+        $('.orders__item').fadeOut(1);
+        $('.planned').fadeIn(200);
     });
 };
 
@@ -576,7 +620,7 @@ function initMap() {
         position: place,
         map: map,
     });
-}
+};
 
 function requestForm() {
 	var form = jQuery("#requestForm");
@@ -1105,14 +1149,13 @@ function timepicker() {
         dropdown: true,
         scrollbar: true
     });
-}
+};
 
 function select2() {
     $('.custom-select').select2({
         minimumResultsForSearch: -1
     });
-}
-
+};
 
 function maskPhone() {
 	var el = $('input[type="tel"]');
