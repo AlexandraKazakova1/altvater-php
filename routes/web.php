@@ -46,8 +46,8 @@ Route::group(['namespace' => 'Ajax'], function(){
 		'uses' => 'UserController@forgotten'
 	]);
 	
-	Route::post('ajax/user/profile', [
-		'uses' => 'UserController@profile'
+	Route::post('ajax/user/settings', [
+		'uses' => 'UserController@settings'
 	]);
 });
 

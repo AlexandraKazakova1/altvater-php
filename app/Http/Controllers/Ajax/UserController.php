@@ -447,7 +447,7 @@ class UserController extends Controller {
 		], 200, [], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 	}
 	
-	function profile(Request $request){
+	function settings(Request $request){
 		$this->session();
 				
 		$status = false;
@@ -470,138 +470,85 @@ class UserController extends Controller {
 			$post,
 			array(
 				'name'					=> 'required|string|min:2|max:50',
-				'telephone'				=> 'required|string|max:17|min:17',
+				'surname'				=> 'required|string|min:2|max:50',
+				'middlename'			=> 'required|string|min:2|max:50',
 				
-				'addresses'				=> 'max:250',
+				//'email'					=> 'required|email',
+				
+				//'phone'					=> 'required|string|max:12|min:13',
+				'extra_phone'			=> 'max:12|min:13',
+				
+				'address'				=> 'string|max:150',
+				
+				'index'					=> 'string|max:6',
 			),
 			array(
-				'name.required'			=> trans('ajax_validation.enter_your_name'),
+				'name.required'			=> trans('ajax_validation.required'),
 				'name.min'				=> trans('ajax_validation.min_length'),
 				'name.max'				=> trans('ajax_validation.max_length'),
 				
-				'telephone.required'	=> trans('ajax_validation.phone_required'),
-				'telephone.min'			=> trans('ajax_validation.min_length'),
-				'telephone.max'			=> trans('ajax_validation.max_length'),
+				'surname.required'		=> trans('ajax_validation.required'),
+				'surname.min'			=> trans('ajax_validation.min_length'),
+				'surname.max'			=> trans('ajax_validation.max_length'),
+				
+				'middlename.required'	=> trans('ajax_validation.required'),
+				'middlename.min'		=> trans('ajax_validation.min_length'),
+				'middlename.max'		=> trans('ajax_validation.max_length'),
 				
 				'email.required'		=> trans('ajax_validation.email_required'),
 				'email.email'			=> trans('ajax_validation.email_invalid'),
 				
-				'addresses.max'			=> trans('ajax_validation.max_length')
+				'phone.required'		=> trans('ajax_validation.phone_required'),
+				'phone.min'				=> trans('ajax_validation.min_length'),
+				'phone.max'				=> trans('ajax_validation.max_length'),
+				
+				'extra_phone.required'	=> trans('ajax_validation.phone_required'),
+				'extra_phone.min'		=> trans('ajax_validation.min_length'),
+				'extra_phone.max'		=> trans('ajax_validation.max_length'),
+				
+				'address.max'			=> trans('ajax_validation.max_length'),
+				
+				'index.max'				=> trans('ajax_validation.max_length')
 			)
 		);
 		
 		if($validator->passes()){
 			$error	= false;
 			
-			if(!isset($post['del-type'])){
-				$post['del-type'] = null;
-			}
-			
-			if(!isset($post['pay-method'])){
-				$post['pay-method'] = null;
-			}
-			
-			if(!isset($post['np-city-select'])){
-				$post['np-city-select'] = null;
-			}
-			
-			if(!isset($post['np-dep-select'])){
-				$post['np-dep-select'] = null;
-			}
-			
-			//
-			
-			$post['telephone'] = preg_replace("/[^0-9]/", '', $post['telephone']);
-			
-			if(strlen($post['telephone']) != 12){
-				$error = true;
+			if(false){
+				$post['phone'] = preg_replace("/[^0-9]/", '', $post['phone']);
 				
-				$msg = trans('ajax_validation.phone_invalid');
-			}
-			
-			if(!$error && $post['del-type']){
-				if(!in_array($post['del-type'], ['self-pickup', 'free', 'novaposhta', 'ukrposhta', 'other'])){
+				if(strlen($post['phone']) != 12){
 					$error = true;
 					
-					$msg = trans('ajax_validation.choose_delivery_method');
+					$msg = trans('ajax_validation.phone_invalid');
 				}
 			}
 			
-			if(!$error && $post['pay-method']){
-				if(!in_array($post['pay-method'], ['cashless', 'cash', 'postpaid'])){
+			$post['extra_phone'] = preg_replace("/[^0-9]/", '', $post['extra_phone']);
+			
+			if($post['extra_phone']){
+				if(strlen($post['extra_phone']) != 12){
 					$error = true;
 					
-					$msg = trans('ajax_validation.choose_delivery_method');
+					$msg = trans('ajax_validation.phone_invalid');
 				}
 			}
 			
-			$city = null;
-			
-			if(!$error && $post['del-type']){
-				if($post['del-type'] == 'novaposhta'){
-					if(strlen($post['np-city-select']) != 36){
-						$error = true;
-						
-						$msg = trans('ajax_validation.city_delivery_required');
-					}else{
-						$city		= NPHelper::getCity($post['np-city-select']);
-						
-						if(!$city){
-							$error = true;
-							
-							$msg = trans('ajax_validation.city_delivery_required');
-						}else{
-							$city = $city['Ref'];
-						}
-					}
-				}
-			}
-			
-			$department	= null;
-			
-			if(!$error && $post['del-type']){
-				$department_name	= "";
-				
-				if($post['del-type'] == 'novaposhta'){
-					if(strlen($post['np-dep-select']) != 36){
-						$error = true;
-						
-						$msg = trans('ajax_validation.department_required');
-					}else{
-						$department			= NPHelper::getDepartment($post['np-dep-select']);
-						
-						if(!$department){
-							$error = true;
-							
-							$msg = trans('ajax_validation.department_required');
-						}else{
-							$department = $department['Ref'];
-						}
-					}
-				}
-			}
-			
-			if(!$error && $post['del-type']){
-				if($post['del-type'] != 'novaposhta' && $post['del-type'] != 'self-pickup'){
-					if(!$post['addresses']){
-						$error = true;
-						
-						$msg = trans('ajax_validation.addresses_required');
-					}
-				}
-			}
+			$post['index'] = preg_replace("/[^0-9]/", '', $post['index']);
 			
 			if(!$error){
 				User::query()
 							->where('id', $this->_id)
 							->update([
 								'name'				=> $post['name'],
-								'phone'				=> $post['telephone'],
-								'delivery_type'		=> $post['del-type'],
-								'city'				=> $post['np-city-select'],
-								'department'		=> $post['np-dep-select'],
-								'payment_method'	=> $post['pay-method'],
-								'addresses'			=> $post['addresses'],
+								'surname'			=> $post['surname'],
+								'middlename'		=> $post['middlename'],
+								
+								'extra_phone'		=> $post['extra_phone'],
+								
+								'address'			=> $post['address'],
+								'index'				=> $post['index'],
 							]);
 				
 				$status = true;

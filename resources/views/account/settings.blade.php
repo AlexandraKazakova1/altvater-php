@@ -66,7 +66,7 @@
 						
 						<label>
 							<span class="input-description notCheck">Email:</span>
-							<input class="form-control" type="email" name="email" value="{{$user['email']}}" placeholder=" ">
+							<input class="form-control" type="email" name="email" readonly value="{{$user['email']}}" placeholder=" ">
 							<span class="input-placeholder">
 								<div>
 									<img src="/img/cabinet/modal-icon/email.svg">
@@ -77,7 +77,7 @@
 						
 						<label>
 							<span class="input-description notCheck">Телефон:</span>
-							<input class="form-control" type="tel" name="phone" value="{{$user['phone']}}" placeholder=" ">
+							<input class="form-control" type="tel" name="phone" readonly value="{{$user['phone']}}" placeholder=" ">
 							<span class="input-placeholder">
 								<div>
 									<img src="/img/cabinet/modal-icon/phone.svg">
