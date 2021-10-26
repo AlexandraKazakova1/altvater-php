@@ -565,7 +565,7 @@ class UserController extends Controller {
 								
 								'extra_phone'		=> $post['extra_phone'],
 								
-								'address'			=> $post['address'],
+								'addresses'			=> $post['address'],
 								'index'				=> $post['index'],
 							]);
 				
