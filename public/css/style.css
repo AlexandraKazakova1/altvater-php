@@ -1047,6 +1047,7 @@ header.small {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  width: 100%;
 }
 
 .news-wrapper .news h2 {
@@ -1059,6 +1060,7 @@ header.small {
 }
 
 .news-wrapper .news .news__list {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

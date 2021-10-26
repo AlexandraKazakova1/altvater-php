@@ -328,8 +328,9 @@ function logIn() {
 						lock = false;
                         btn.attr('disabled', false);
 
-						if(response.status){
+						if(response.status = true){;
 							form.trigger('reset');
+                            window.location.href = '/account';
 						}
 					},
 					error: function(err){
@@ -428,8 +429,9 @@ function create() {
 						lock = false;
                         btn.attr('disabled', false);
 						
-						if(response.status){;
+						if(response.status = true){;
 							form.trigger('reset');
+                            window.location.href = '/account';
 						}
 					},
 					error: function(err){

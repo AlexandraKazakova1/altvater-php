@@ -764,6 +764,7 @@ header.small {
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        width: 100%;
         h2 {
             font-style: normal;
             font-weight: bold;
@@ -773,6 +774,7 @@ header.small {
             margin-bottom: 50px;
         }
         .news__list {
+            width: 100%;
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;

@@ -136,7 +136,8 @@ function callBackForm() {
 			if(!lock){
 				$.ajax({
 					type: "POST",
-					url: form.attr("action"),
+					url: '/ajax/user/callback',
+                    method: "POST",
                     data: form.serialize(),
                     dataType: "json",
                     beforeSend: function(request){
@@ -151,24 +152,19 @@ function callBackForm() {
 						
 						lock = false;
                         btn.attr('disabled', false);
-						
-						if(response.status){;
-							form.trigger('reset');
-							
-                            $('#callback-form').trigger('reset');
-                            $('#answer-msg').text(response.msg);
 
-							
-							setTimeout('#answer-msg', 5000);
+						if(response.status = true){;
+							form.trigger('reset');
+                            window.location.href = '/account';
 						}
 					},
 					error: function(err){
+						console.log('error');
 						lock = false;
                         btn.attr('disabled', false);
 					}
 				});
 			};
-			
 			return false;
 	    }
     });
