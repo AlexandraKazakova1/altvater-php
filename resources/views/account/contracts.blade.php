@@ -61,25 +61,13 @@
 						Кількість договорів: <span class="counter">{{$count}}</span>
 					</div>
 					
-					<ul class="filters__list">
-						<li>Сортування:</li>
-						<li>
-							<button type="button" data-sort="date">
-								Дата
-								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M17 9.5L12 14.5L7 9.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-								</svg>
-							</button>
-						</li>
-						<li>
-							<button type="button" data-sort="number">
-								Номер
-								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M17 9.5L12 14.5L7 9.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-								</svg>
-							</button>
-						</li>
-					</ul>
+					<div class="filters__list">
+						<p>Сортування:</p>
+						<select class="custom-select" name="contracts__filter">
+							<option value="date">Дата</option>
+							<option value="number">Номер</option>
+						</select>
+					</div>
 				</div>
 				
 				<div class="contracts__list">
@@ -110,6 +98,14 @@
 							
 							<div class="download">
 								@if($item->file)
+									<a href="/account/contract/{{$item->id}}">
+										<svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M12.1213 5.87975C13.2923 7.05075 13.2923 8.95175 12.1213 10.1248C10.9503 11.2958 9.0493 11.2958 7.8763 10.1248C6.7053 8.95375 6.7053 7.05275 7.8763 5.87975C9.0493 4.70675 10.9493 4.70675 12.1213 5.87975" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M1 8C1 7.341 1.152 6.689 1.446 6.088V6.088C2.961 2.991 6.309 1 10 1C13.691 1 17.039 2.991 18.554 6.088V6.088C18.848 6.689 19 7.341 19 8C19 8.659 18.848 9.311 18.554 9.912V9.912C17.039 13.009 13.691 15 10 15C6.309 15 2.961 13.009 1.446 9.912V9.912C1.152 9.311 1 8.659 1 8Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+											</svg>
+										<span>Переглянути</span>
+									</a>
+									
 									<a href="{{url('storage/'.$item->file)}}" download="">
 										<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path fill-rule="evenodd" clip-rule="evenodd" d="M4.40576 1.34182C5.31176 0.560456 6.57359 0 8 0C10.6902 0 12.9233 1.99944 13.1657 4.57898C14.7581 4.80411 16 6.13656 16 7.77273C16 9.56949 14.5023 11 12.6875 11H10C9.72386 11 9.5 10.7761 9.5 10.5C9.5 10.2239 9.72386 10 10 10H12.6875C13.9793 10 15 8.98842 15 7.77273C15 6.55703 13.9793 5.54545 12.6875 5.54545H12.1875V5.04545C12.1875 2.8256 10.3273 1 8 1C6.83758 1 5.80253 1.45773 5.05886 2.09909C4.30231 2.75157 3.90625 3.5383 3.90625 4.15455V4.6026L3.46088 4.65155C2.06371 4.80512 1 5.95266 1 7.31818C1 8.78492 2.23059 10 3.78125 10H6C6.27614 10 6.5 10.2239 6.5 10.5C6.5 10.7761 6.27614 11 6 11H3.78125C1.70754 11 0 9.36599 0 7.31818C0 5.55511 1.26586 4.09512 2.94223 3.725C3.08479 2.8617 3.63985 2.00237 4.40576 1.34182Z"/>
@@ -132,25 +128,13 @@
 						Кількість договорів: <span class="counter">{{$count_archive}}</span>
 					</div>
 					
-					<ul class="filters__list">
-						<li>Сортування:</li>
-						<li>
-							<button type="button" data-sort="date">
-								Дата
-								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M17 9.5L12 14.5L7 9.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-								</svg>
-							</button>
-						</li>
-						<li>
-							<button type="button" data-sort="number">
-								Номер
-								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M17 9.5L12 14.5L7 9.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-								</svg>
-							</button>
-						</li>
-					</ul>
+					<div class="filters__list">
+						<p>Сортування:</p>
+						<select class="custom-select" name="contracts__filter">
+							<option value="date">Дата</option>
+							<option value="number">Номер</option>
+						</select>
+					</div>
 				</div>
 				
 				<div class="contracts__list">
@@ -181,6 +165,14 @@
 							
 							<div class="download">
 								@if($item->file)
+									<a href="/account/contract/{{$item->id}}">
+										<svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M12.1213 5.87975C13.2923 7.05075 13.2923 8.95175 12.1213 10.1248C10.9503 11.2958 9.0493 11.2958 7.8763 10.1248C6.7053 8.95375 6.7053 7.05275 7.8763 5.87975C9.0493 4.70675 10.9493 4.70675 12.1213 5.87975" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M1 8C1 7.341 1.152 6.689 1.446 6.088V6.088C2.961 2.991 6.309 1 10 1C13.691 1 17.039 2.991 18.554 6.088V6.088C18.848 6.689 19 7.341 19 8C19 8.659 18.848 9.311 18.554 9.912V9.912C17.039 13.009 13.691 15 10 15C6.309 15 2.961 13.009 1.446 9.912V9.912C1.152 9.311 1 8.659 1 8Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+											</svg>
+										<span>Переглянути</span>
+									</a>
+									
 									<a href="{{url('storage/'.$item->file)}}" download="">
 										<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path fill-rule="evenodd" clip-rule="evenodd" d="M4.40576 1.34182C5.31176 0.560456 6.57359 0 8 0C10.6902 0 12.9233 1.99944 13.1657 4.57898C14.7581 4.80411 16 6.13656 16 7.77273C16 9.56949 14.5023 11 12.6875 11H10C9.72386 11 9.5 10.7761 9.5 10.5C9.5 10.2239 9.72386 10 10 10H12.6875C13.9793 10 15 8.98842 15 7.77273C15 6.55703 13.9793 5.54545 12.6875 5.54545H12.1875V5.04545C12.1875 2.8256 10.3273 1 8 1C6.83758 1 5.80253 1.45773 5.05886 2.09909C4.30231 2.75157 3.90625 3.5383 3.90625 4.15455V4.6026L3.46088 4.65155C2.06371 4.80512 1 5.95266 1 7.31818C1 8.78492 2.23059 10 3.78125 10H6C6.27614 10 6.5 10.2239 6.5 10.5C6.5 10.7761 6.27614 11 6 11H3.78125C1.70754 11 0 9.36599 0 7.31818C0 5.55511 1.26586 4.09512 2.94223 3.725C3.08479 2.8617 3.63985 2.00237 4.40576 1.34182Z"/>
