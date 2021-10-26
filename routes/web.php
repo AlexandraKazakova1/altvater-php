@@ -49,6 +49,10 @@ Route::group(['namespace' => 'Ajax'], function(){
 	Route::post('ajax/user/settings', [
 		'uses' => 'UserController@settings'
 	]);
+	
+	Route::post('ajax/user/change-password', [
+		'uses' => 'UserController@change_password'
+	]);
 });
 
 Route::get('news', [

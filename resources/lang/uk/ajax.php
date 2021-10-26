@@ -30,4 +30,9 @@ return [
 	
 	'failed_activation'					=> 'Активація не вдалась',
 	'success_activation'				=> 'Активація пройшла успішно',
+	
+	'failed_change_password'			=> 'Зміна пароля не вдалась',
+	'success_change_password'			=> 'Пароль успішно змінено',
+	'passwords_not_match'				=> 'Паролі не співпадають',
+	'password_incorrect'				=> 'Старий пароль невірний',
 ];
