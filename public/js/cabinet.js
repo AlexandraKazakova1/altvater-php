@@ -6,7 +6,7 @@ $(document).ready (function() {
 			'X-CSRF-TOKEN': csrf,
 		}
 	});
-    
+
     calendar();
     customSelect();
     modalFade();
@@ -568,7 +568,7 @@ function addAddress() {
             },
             placeAddress: {
                 required: true,
-				minlength: 10
+				minlength: 4
             }
         },
         messages: {
