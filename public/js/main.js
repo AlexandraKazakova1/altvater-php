@@ -414,6 +414,8 @@ function openActivationModal(data){
 	sendAgain.on('click', function(e){
 		e.preventDefault();
 		
+		// деактивація кнопки
+		
 		startTimer(() => {
 			// активація кнопки
 		});
