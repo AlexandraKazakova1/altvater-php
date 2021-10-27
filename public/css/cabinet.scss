@@ -2796,6 +2796,7 @@ main {
                     flex-wrap: nowrap;
                     justify-content: space-between;
                     width: 100%;
+                    position: relative;
                     label {
                         width: 76%;
                         input {
@@ -2856,6 +2857,16 @@ main {
                             fill: #FFFFFF;
                             transition: all 0.3s;
                         }
+                    }
+                    label.error {
+                        position: absolute;
+                        color: #BF604D;
+                        font-weight: 400;
+                        font-style: normal;
+                        font-size: 12px;
+                        line-height: 14px;
+                        top: 101%;
+                        left: 0;
                     }
                 }
             }

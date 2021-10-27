@@ -4099,6 +4099,7 @@ main {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
+  position: relative;
 }
 
 .message__page .message__wrapper .msg__form form fieldset label {
@@ -4188,6 +4189,17 @@ main {
   fill: #FFFFFF;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+}
+
+.message__page .message__wrapper .msg__form form fieldset label.error {
+  position: absolute;
+  color: #BF604D;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 14px;
+  top: 101%;
+  left: 0;
 }
 
 @media (max-width: 1439px) {

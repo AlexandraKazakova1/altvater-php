@@ -26,6 +26,7 @@ $(document).ready (function() {
     settingsForm();
     requestForm();
     ordersSelect();
+    requestMsg();
 
 });
 
@@ -1173,4 +1174,70 @@ function maskPhone() {
 	};
 	
 	el.mask('+380999999999');
+};
+
+function requestMsg() {
+	var form = jQuery("#msgRequestForm");
+
+    if(!form.length){
+		return false;
+	};
+
+	var lock = false,
+    btn = form.find('button[type="submit"]');
+
+    form.validate({
+		onkeyup	: false,
+        focusCleanup: true,
+        focusInvalid: false,
+        errorClass: "error",
+        rules: {
+            text: {
+                required: true,
+				minlength: 1,
+				maxlength: 2500
+            }
+        },
+        messages: {
+            text: {
+                required: 'Введіть повідомлення',
+				minlength: 'Поле не може бути пустиим',
+				maxlength: 'Максимальна кількість символів 2500'
+            }
+        },
+		submitHandler: function() {
+			if(!lock){
+				$.ajax({
+					type: "POST",
+					url: '/ajax/cabinet/request/:id',
+                    method: "POST",
+                    data: form.serialize(),
+                    dataType: "json",
+                    beforeSend: function(request){
+                        lock = true;
+                        
+                        btn.attr('disabled', true);
+                        form.find('label.error').text('').hide();
+					},
+					success: function(response){
+						console.log('response:');
+						console.log(response);
+						
+						lock = false;
+                        btn.attr('disabled', false);
+
+						if(response.status){
+							form.trigger('reset');
+						}
+					},
+					error: function(err){
+						console.log('error');
+						lock = false;
+                        btn.attr('disabled', false);
+					}
+				});
+			};
+			return false;
+	    }
+    });
 };
