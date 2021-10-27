@@ -3550,6 +3550,42 @@ main {
             }
         }
     }
+    .orders__wrapper {
+        .orders__content {
+            .orders__list {
+                .orders__item {
+                    .service {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    .newOrder {
+        .newOrder__form {
+            fieldset {
+                label {
+                    select,
+                    input {
+                        min-width: 200px;
+                    }
+                    margin-right: 0;
+                }
+                .submit__wrap {
+                    .btn-submit {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.dhtmlx_message_area {
+    position: absolute;
+    top: -600%;
+    right: -600%;
+    z-index: 1;
 }
 
 // Модальні вікна

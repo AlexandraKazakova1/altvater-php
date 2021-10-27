@@ -4906,6 +4906,26 @@ main {
   .title__wrap .btn-group span {
     display: none;
   }
+  .orders__wrapper .orders__content .orders__list .orders__item .service {
+    display: none;
+  }
+  .newOrder .newOrder__form fieldset label {
+    margin-right: 0;
+  }
+  .newOrder .newOrder__form fieldset label select,
+  .newOrder .newOrder__form fieldset label input {
+    min-width: 200px;
+  }
+  .newOrder .newOrder__form fieldset .submit__wrap .btn-submit {
+    width: 100%;
+  }
+}
+
+.dhtmlx_message_area {
+  position: absolute;
+  top: -600%;
+  right: -600%;
+  z-index: 1;
 }
 
 .popup__title {
