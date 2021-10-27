@@ -53,6 +53,10 @@ Route::group(['namespace' => 'Ajax'], function(){
 	Route::post('ajax/user/change-password', [
 		'uses' => 'UserController@change_password'
 	]);
+	
+	Route::post('ajax/cabinet/order-service', [
+		'uses' => 'OrdersController@add'
+	]);
 });
 
 Route::get('news', [

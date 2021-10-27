@@ -35,4 +35,7 @@ return [
 	'success_change_password'			=> 'Пароль успішно змінено',
 	'passwords_not_match'				=> 'Паролі не співпадають',
 	'password_incorrect'				=> 'Старий пароль невірний',
+	
+	'failed_add_order'					=> 'Не вдалось додати замовлення',
+	'success_add_order'					=> 'Замовлення успішно додано',
 ];
