@@ -237,9 +237,10 @@ class UserController extends Controller {
 				$msg	= trans('ajax.success_register');
 				
 				$payload = [
-					"phone"	=> $post['phone'],
-					"email"	=> $post['email'],
-					"token" => $phone_token,
+					"phone"			=> $post['phone'],
+					"phone_format"	=> StringHelper::phone($post['phone'], '[2] [(3)] 2-2-3'),
+					"email"			=> $post['email'],
+					"token" 		=> $phone_token,
 				];
 			}
 		}else{

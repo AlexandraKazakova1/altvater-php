@@ -407,7 +407,7 @@ function openActivationModal(data){
 	var input_token = form.find('input[name="token"]');
 	
 	input_token.val(data.token);
-	form.find('span.number').val(data.phone);
+	form.find('span.number').text(data.phone_format);
 	
 	var sendAgain = form.find('.sendAgain');
 	
