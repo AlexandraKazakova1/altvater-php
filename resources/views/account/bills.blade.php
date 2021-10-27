@@ -34,33 +34,14 @@
 						Всього: <span class="counter">{{$count['bills']}}</span>
 					</div>
 					
-					<ul class="filters__list">
-						<li>Сортування:</li>
-						<li>
-							<button type="button" data-sort="date">
-								Дата
-								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M17 9.5L12 14.5L7 9.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-								</svg>
-							</button>
-						</li>
-						<li>
-							<button type="button" data-sort="number">
-								Номер
-								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M17 9.5L12 14.5L7 9.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-								</svg>
-							</button>
-						</li>
-						<li>
-							<button type="button" data-sort="status">
-								Cтатус
-								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M17 9.5L12 14.5L7 9.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-								</svg>
-							</button>
-						</li>
-					</ul>
+					<div class="filters__list">
+						<p>Сортування:</p>
+						<select class="custom-select" name="contracts__filter">
+							<option value="date">Дата</option>
+							<option value="number">Номер</option>
+							<option value="status">Cтатус</option>
+						</select>
+					</div>
 				</div>
 				
 				<div class="accountsActs__list accounts__list">
@@ -108,33 +89,14 @@
 						Всього: <span class="counter">{{$count['acts']}}</span>
 					</div>
 					
-					<ul class="filters__list">
-						<li>Сортування:</li>
-						<li>
-							<button type="button" data-sort="date">
-								Дата
-								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M17 9.5L12 14.5L7 9.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-								</svg>
-							</button>
-						</li>
-						<li>
-							<button type="button" data-sort="number">
-								Номер
-								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M17 9.5L12 14.5L7 9.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-								</svg>
-							</button>
-						</li>
-						<li>
-							<button type="button" data-sort="status">
-								Cтатус
-								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M17 9.5L12 14.5L7 9.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-								</svg>
-							</button>
-						</li>
-					</ul>
+					<div class="filters__list">
+						<p>Сортування:</p>
+						<select class="custom-select" name="contracts__filter">
+							<option value="date">Дата</option>
+							<option value="number">Номер</option>
+							<option value="status">Cтатус</option>
+						</select>
+					</div>
 				</div>
 				
 				<div class="acts__list">
