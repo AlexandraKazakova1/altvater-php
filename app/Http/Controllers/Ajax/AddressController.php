@@ -59,58 +59,28 @@ class AddressController extends Controller {
 		$validator = Validator::make(
 			$post,
 			array(
-				'name'					=> 'required|string|min:2|max:200',
-				'contact'				=> 'required|string|min:2|max:100',
-				'address'				=> 'required|string|min:2|max:150',
-				'email'					=> 'required|email',
-				'phone'					=> 'required|string|min:9|max:13',
-				'extra_phone'			=> 'max:13',
-				'index'					=> 'required',
-				'ipn'					=> 'required',
-				'edrpou'				=> 'required',
+				'name'					=> 'required|string|min:2|max:150',
+				'addresses'				=> 'required|string|min:2|max:200'
 			),
 			array(
 				'name.required'			=> trans('ajax_validation.required'),
 				'name.min'				=> trans('ajax_validation.min_length'),
 				'name.max'				=> trans('ajax_validation.max_length'),
 				
-				'contact.required'		=> trans('ajax_validation.required'),
-				'contact.min'			=> trans('ajax_validation.min_length'),
-				'contact.max'			=> trans('ajax_validation.max_length'),
-				
-				'address.required'		=> trans('ajax_validation.required'),
-				'address.min'			=> trans('ajax_validation.min_length'),
-				'address.max'			=> trans('ajax_validation.max_length'),
-				
-				'email.required'		=> trans('ajax_validation.required'),
-				'email.min'				=> trans('ajax_validation.min_length'),
-				'email.max'				=> trans('ajax_validation.max_length'),
-				'email.email'			=> trans('ajax_validation.email'),
+				'addresses.required'	=> trans('ajax_validation.required'),
+				'addresses.min'			=> trans('ajax_validation.min_length'),
+				'addresses.max'			=> trans('ajax_validation.max_length'),
 			)
 		);
 		
 		if($validator->passes()){
 			$error	= false;
 			
-			$post['phone']			= preg_replace("/[^0-9]/", '', $post['phone']);
-			$post['extra_phone']	= preg_replace("/[^0-9]/", '', $post['extra_phone']);
-			$post['index']			= preg_replace("/[^0-9]/", '', $post['index']);
-			$post['ipn']			= preg_replace("/[^0-9]/", '', $post['ipn']);
-			$post['edrpou']			= preg_replace("/[^0-9]/", '', $post['edrpou']);
-			
-			//
-			
 			if(!$error){
 				$record = UserAddresses::create([
 					'client_id'			=> $this->_id,
 					'name'				=> $post['name'],
-					'contact'			=> $post['contact'],
-					'email'				=> $post['email'],
-					'phone'				=> $post['phone'],
-					'extra_phone'		=> $post['extra_phone'],
-					'index'				=> $post['index'],
-					'ipn'				=> $post['ipn'],
-					'edrpou'			=> $post['edrpou'],
+					'addresses'			=> $post['addresses']
 				]);
 				
 				$status = true;
