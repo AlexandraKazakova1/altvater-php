@@ -38,4 +38,13 @@ return [
 	
 	'failed_add_order'					=> 'Не вдалось додати замовлення',
 	'success_add_order'					=> 'Замовлення успішно додано',
+	
+	'failed_add_contract'				=> 'Не вдалось додати договір',
+	'success_add_contract'				=> 'Договір успішно додано',
+	
+	'failed_add_address'				=> 'Не вдалось додати адресу',
+	'success_add_address'				=> 'Адреса успішно додано',
+		
+	'failed_remove_address'				=> 'Не вдалось видалити адресу',
+	'success_remove_address'			=> 'Адреса успішно видалена',
 ];

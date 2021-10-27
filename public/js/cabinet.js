@@ -385,7 +385,7 @@ function contractIndividual() {
 			if(!lock){
 				$.ajax({
 					type: "POST",
-					url: '/ajax/user/contractIndividual',
+					url: '/ajax/cabinet/contracts/add',
                     method: "POST",
                     data: form.serialize(),
                     dataType: "json",
