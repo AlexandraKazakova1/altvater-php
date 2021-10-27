@@ -307,52 +307,55 @@ function create() {
         focusInvalid: false,
         errorClass: "error",
         rules: {
-            userName: {
+            name: {
                 required: true,
 				minlength: 5
             },
-            userTel: {
+            phone: {
                 required: true,
 				minlength: 8
             },
-            userEmail: {
+            email: {
                 required: true,
                 email: true
             },
-            userPassword: {
+            password: {
                 required: true,
                 rangelength: [8, 24]
             },
-            userPasswordConfirm: {
+            confirm_password: {
                 required: true,
                 rangelength: [8, 24],
                 equalTo: ".password"
             },
-            userAgree: {
+            agree: {
                 required: true
             }
         },
         messages: {
-            userName: {
+            name: {
                 required: "Введіть своє Ім'я та Прізвище",
 				minlength: "Введіть більше 5 символів"
             },
-            userTel: {
+            phone: {
                 required: "Введіть свій контактний телефон",
 				minlength: "Введіть номер в форматі +380999999999"
             },
-            userEmail: {
+            email: {
                 required: "Введіть свій e-mail!",
                 email: "Адреса має бути типу name@domain.com"
             },
-            userPassword: {
+            password: {
                 required: "Введіть пароль використовуючи A-Z a-z 0-9",
                 rangelength: "Введіть 8-24 символи"
             },
-            userPasswordConfirm: {
+            confirm_password: {
                 required: "Введіть пароль використовуючи A-Z a-z 0-9",
                 rangelength: "Введіть 8-24 символи",
                 equalTo: "Паролі не співпадають"
+            },
+            agree: {
+                required: 'Підтвердіть що ви даєте згоду'
             }
         },
 		submitHandler: function() {
