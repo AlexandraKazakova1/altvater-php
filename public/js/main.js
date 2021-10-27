@@ -400,6 +400,8 @@ function create() {
 var timerResend;
 
 function openActivationModal(data){
+	// відкриття модального вікна
+	
 	var form = $('#pass__verification-form');
 	
 	var input_token = form.find('input[name="token"]');
@@ -418,7 +420,7 @@ function openActivationModal(data){
 		
 		var token = input_token.val();
 		
-		// code resend
+		// ajax code resend
 		
 		form.find('input[name="verifCode"]').val('');
 	});
