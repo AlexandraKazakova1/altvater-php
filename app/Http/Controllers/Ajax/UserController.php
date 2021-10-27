@@ -117,7 +117,7 @@ class UserController extends Controller {
 			$post,
 			array(
 				'name'					=> 'required|string|min:2|max:50',
-				'telephone'				=> 'required|string|max:17|min:17',
+				'telephone'				=> 'required|string|min:17|max:17',
 				
 				'email'					=> 'required|email|string|max:100|min:5',
 				

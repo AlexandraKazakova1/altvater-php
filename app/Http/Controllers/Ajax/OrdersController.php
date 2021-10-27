@@ -63,7 +63,7 @@ class OrdersController extends Controller {
 				'service'				=> 'required',
 				
 				'addresses'				=> 'required|string|min:2|max:200',
-				'comment'				=> 'required|string|max:2|min:500',
+				'comment'				=> 'required|string|min:2|max:500',
 			),
 			array(
 				'service.required'		=> trans('ajax_validation.required'),
