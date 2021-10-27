@@ -13,7 +13,7 @@ class TariffCategory extends Model{
 	
 	protected $fillable = [
 		'sort',
-		'key',
+		'value',
 		'name'
 	];
 }
