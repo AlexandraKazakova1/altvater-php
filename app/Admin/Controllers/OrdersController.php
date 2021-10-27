@@ -131,6 +131,7 @@ class OrdersController extends MyAdminController {
 		
 		$form->radio('status'		, __('admin.orders.status.label'))
 									->options([
+										'new'			=> __('admin.orders.status.new'),
 										'processed'		=> __('admin.orders.status.processed'),
 										'performed'		=> __('admin.orders.status.performed'),
 										'canceled'		=> __('admin.orders.status.canceled'),
