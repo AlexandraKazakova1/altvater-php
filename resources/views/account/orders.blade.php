@@ -45,13 +45,7 @@
 					
 					<label>
 						<span class="input-description">Оберіть дату:</span>
-						<input class="form-control" type="text" name="date" placeholder=" ">
-						<span class="input-placeholder">
-							<div>
-								<img src="/img/cabinet/modal-icon/date.svg">
-							</div>
-							Обрати дату
-						</span>
+						<input class="form-control datapicker" type="date" name="date" placeholder=" ">
 					</label>
 					
 					<label>
@@ -67,13 +61,7 @@
 					
 					<label>
 						<span class="input-description">Оберіть час:</span>
-						<input class="form-control" type="text" name="time" placeholder=" ">
-						<span class="input-placeholder">
-							<div>
-								<img src="/img/cabinet/modal-icon/time-clock.svg">
-							</div>
-							Обрати час
-						</span>
+						<input class="form-control timepicker" type="text" name="time" placeholder=" ">
 					</label>
 					
 					<label>
@@ -97,9 +85,9 @@
 		<section class="orders__wrapper">
 			<div class="selector">
 				<ul>
-					<li data-type="all" class="act">Всі замовлення</li>
-					<li data-type="processed" >В обробці</li>
-					<li data-type="performed" >Виконуються</li>
+					<li id="all" data-type="all" class="act">Всі замовлення</li>
+					<li id="processed" data-type="processed" >В обробці</li>
+					<li id="performed" data-type="performed" >Виконуються</li>
 					<li data-type="ready" >Готові</li>
 					<li data-type="planned" >Заплановано</li>
 				</ul>

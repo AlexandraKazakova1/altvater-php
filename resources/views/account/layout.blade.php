@@ -458,13 +458,7 @@
 									
 									<label>
 										<span class="input-description">Оберіть дату:</span>
-										<input class="form-control" type="text" name="date" placeholder=" ">
-										<span class="input-placeholder">
-											<div>
-												<img src="/img/cabinet/modal-icon/date.svg">
-											</div>
-											Обрати дату
-										</span>
+										<input class="form-control datapicker" type="date" name="date" placeholder=" ">
 									</label>
 									
 									<label>
@@ -480,13 +474,7 @@
 									
 									<label>
 										<span class="input-description">Оберіть час:</span>
-										<input class="form-control" type="text" name="time" placeholder=" ">
-										<span class="input-placeholder">
-											<div>
-												<img src="/img/cabinet/modal-icon/time-clock.svg">
-											</div>
-											Обрати час
-										</span>
+										<input class="form-control timepicker" type="text" name="time" placeholder=" ">
 									</label>
 									
 									<label>
