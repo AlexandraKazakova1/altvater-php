@@ -30,9 +30,9 @@
 							<Label class="select">
 								<span class="input-description">Категорія тарифу</span>
 								<select class="select2" name="category">
-									<option value="people">населення</option>
-									<option value="commerce">бюджетні установи</option>
-									<option value="people">інші</option>
+								@foreach($tariff_category as $item)
+									<option value="{{$item->value}}">{{$item->name}}</option>
+								@endforeach
 								</select>
 							</Label>
 							

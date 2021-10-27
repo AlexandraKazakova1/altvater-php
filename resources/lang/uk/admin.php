@@ -453,6 +453,13 @@ return [
 		'value'					=> 'Значення'
 	],
 	
+	'tariff_category'		=> [
+		'active'				=> 'Опубліковано',
+		'sort'					=> 'Порядок',
+		'name'					=> 'Назва',
+		'value'					=> 'Значення'
+	],
+	
 	'orders'				=> [
 		'created_at'			=> 'Створено',
 		'updated_at'			=> 'Оновлено',
