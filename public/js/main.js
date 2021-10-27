@@ -358,7 +358,7 @@ function create() {
                 required: 'Підтвердіть що ви даєте згоду'
             }
         },
-		submitHandler: function() {
+		submitHandler: function() { 
 			if(!lock){
 				$.ajax({
 					type: "POST",

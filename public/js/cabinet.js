@@ -27,8 +27,21 @@ $(document).ready (function() {
     requestForm();
     ordersSelect();
     requestMsg();
+    menuToggle();
 
 });
+
+function menuToggle() {
+    $('.menu-icon').click(function() {
+        $('.sidebar__menu').toggleClass('act');
+    })
+    $(document).mouseup(function (e){
+        if (!$('.sidebar__menu, .menu__icon').is(e.target) 
+        && $('.sidebar__menu, .menu__icon').has(e.target).length === 0) {
+            $('.sidebar__menu').removeClass('act');
+        }
+    });
+};
 
 function calendar() {
     const labels = [

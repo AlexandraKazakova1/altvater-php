@@ -3256,8 +3256,15 @@ main {
         }
     }
     .sidebar__menu {
+        margin-right: 0;
         position: absolute;
-        display: none;
+        left: -300px;
+        top: 98px;
+        transition: all 0.3s;
+    }
+    .sidebar__menu.act {
+        left: 0;
+        transition: all 0.3s;
     }
     .page__title {
         margin: 0 25px;
