@@ -34,8 +34,8 @@ Route::group(['namespace' => 'Ajax'], function(){
 		'uses' => 'UserController@login'
 	]);
 	
-	Route::post('ajax/user/register', [
-		'uses' => 'UserController@register'
+	Route::post('ajax/user/registration', [
+		'uses' => 'UserController@registration'
 	]);
 	
 	Route::post('ajax/user/activation', [
@@ -56,6 +56,18 @@ Route::group(['namespace' => 'Ajax'], function(){
 	
 	Route::post('ajax/cabinet/order-service', [
 		'uses' => 'OrdersController@add'
+	]);
+	
+	Route::post('ajax/cabinet/contracts/add', [
+		'uses' => 'ContractsController@add'
+	]);
+	
+	Route::post('ajax/cabinet/add-address', [
+		'uses' => 'AddressController@add'
+	]);
+	
+	Route::post('ajax/cabinet/remove-address', [
+		'uses' => 'AddressController@remove'
 	]);
 });
 

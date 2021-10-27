@@ -48,11 +48,11 @@
 						</fieldset>
 					</form>
 					
-					<div class="or__text">
+					<div class="or__text" style="display:none;">
 						<span>або продовжити</span>
 					</div>
 					
-					<div class="log__with">
+					<div class="log__with" style="display:none;">
 						<a href="/social/google">
 							<img src="/img/cabinet/modal-icon/google.svg" alt="G">
 						</a>

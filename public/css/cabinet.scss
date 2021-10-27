@@ -2504,7 +2504,6 @@ main {
                         border: 1px solid #2F5E97;
                         margin-right: 6px;
                         svg {
-                            margin-right: 15px;
                             fill: transparent;
                             stroke: #2F5E97;
                             transition: all 0.3s;
@@ -2797,6 +2796,7 @@ main {
                     flex-wrap: nowrap;
                     justify-content: space-between;
                     width: 100%;
+                    position: relative;
                     label {
                         width: 76%;
                         input {
@@ -2857,6 +2857,16 @@ main {
                             fill: #FFFFFF;
                             transition: all 0.3s;
                         }
+                    }
+                    label.error {
+                        position: absolute;
+                        color: #BF604D;
+                        font-weight: 400;
+                        font-style: normal;
+                        font-size: 12px;
+                        line-height: 14px;
+                        top: 101%;
+                        left: 0;
                     }
                 }
             }
@@ -2962,18 +2972,30 @@ main {
     }
     .contracts__wrapper {
         .archive__content,
-    .contracts__content {
+        .contracts__content {
             .contracts__list {
                 .contract__item {
                     div {
                         padding: 5px 10px;
                     }
+                    .docName {
+                        padding-left: 10px;
+                    }
                     .date {
                         min-width: 140px;
                         padding-left: 10px;
                     }
+                    .docName::before,
                     .date::before {
                         display: none;
+                    }
+                    .download {
+                        a {
+                            padding: 12px 10px;
+                            svg {
+                                margin-right: 5px;
+                            }
+                        }
                     }
                 }
             }
@@ -3086,7 +3108,7 @@ main {
     .contracts__wrapper {
         padding-right: 25px;
         .archive__content,
-    .contracts__content {
+        .contracts__content {
             .contracts__list {
                 .contract__item {
                     padding: 10px 20px;
@@ -3095,7 +3117,7 @@ main {
                     }
                     .download {
                         max-width: fit-content;
-                        button {
+                        a {
                             padding: 9px;
                             span {
                                 display: none;
@@ -3234,8 +3256,15 @@ main {
         }
     }
     .sidebar__menu {
+        margin-right: 0;
         position: absolute;
-        display: none;
+        left: -300px;
+        top: 98px;
+        transition: all 0.3s;
+    }
+    .sidebar__menu.act {
+        left: 0;
+        transition: all 0.3s;
     }
     .page__title {
         margin: 0 25px;
@@ -3275,6 +3304,7 @@ main {
     }
     .title__wrap {
         .btn-group {
+            label,
             button {
                 padding: 12px 18px;
             }
@@ -3283,7 +3313,7 @@ main {
     .contracts__wrapper {
         padding-left: 25px;
         .archive__content,
-    .contracts__content {
+        .contracts__content {
             .contracts__list {
                 .contract__item {
                     span {
@@ -3374,7 +3404,7 @@ main {
 @media (max-width:579px) {
     .contracts__wrapper {
         .archive__content,
-    .contracts__content {
+        .contracts__content {
             .filters {
                 flex-wrap: wrap;
                 div {
@@ -3386,6 +3416,7 @@ main {
             }
             .contracts__list {
                 .contract__item {
+                    .docName,
                     .date {
                         display: none;
                     }
@@ -3480,7 +3511,11 @@ main {
                         max-width: 110px;
                     }
                     .status {
-                        width: 120px;
+                        min-width: 40px;
+                        width: 100%;
+                    }
+                    .status::after {
+                        display: none;
                     }
                 }
                 .accountsActs__item.paid,
@@ -3515,6 +3550,49 @@ main {
             }
         }
     }
+    .title__wrap {
+        .btn-group {
+            span {
+                display: none;
+            }
+        }
+    }
+    .orders__wrapper {
+        .orders__content {
+            .orders__list {
+                .orders__item {
+                    .service {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    .newOrder {
+        .newOrder__form {
+            fieldset {
+                label {
+                    select,
+                    input {
+                        min-width: 200px;
+                    }
+                    margin-right: 0;
+                }
+                .submit__wrap {
+                    .btn-submit {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.dhtmlx_message_area {
+    position: absolute;
+    top: -600%;
+    right: -600%;
+    z-index: 1;
 }
 
 // Модальні вікна

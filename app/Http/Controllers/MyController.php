@@ -14,6 +14,9 @@ use App\Models\Pages;
 use App\Models\News;
 use App\Models\Services;
 
+use App\Models\TariffCategory;
+use App\Models\CalcObject;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\View;
@@ -94,6 +97,9 @@ class MyController extends Controller {
 		View::share('use'					, new UseHelper);
 		View::share('image'					, new ImageHelper);
 		View::share('string'				, new StringHelper);
+		
+		View::share('tariff_category'		, TariffCategory::query()->orderBy('sort', 'asc')->get());
+		View::share('calc_object'			, CalcObject::query()->orderBy('sort', 'asc')->get());
 		
 		View::share('user'	, []);
 	}

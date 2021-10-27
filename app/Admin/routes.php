@@ -40,4 +40,5 @@ Route::group([
 	//$router->resource('addresses'				, AddressesController::class);
 	
 	$router->resource('calc-object'				, CalcObjectController::class);
+	$router->resource('tariff_category'			, TariffCategoryController::class);
 });

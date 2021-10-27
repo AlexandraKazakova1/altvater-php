@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 use App\Helpers\StringHelper;
+use App\Helpers\SMSClub;
 
 use App\Models\User;
 
@@ -105,7 +106,7 @@ class UserController extends Controller {
 		], 200, [], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 	}
 	
-	function register(Request $request){
+	function registration(Request $request){
 		$post = $request->all();
 		
 		$status = false;
@@ -116,37 +117,36 @@ class UserController extends Controller {
 		$validator = Validator::make(
 			$post,
 			array(
+				'user-type'				=> 'required',
+				
 				'name'					=> 'required|string|min:2|max:50',
-				'telephone'				=> 'required|string|min:17|max:17',
+				
+				'phone'					=> 'required|string|min:11|max:17',
 				
 				'email'					=> 'required|email|string|max:100|min:5',
 				
 				'password'				=> 'required|min:6|max:12',
-				'confirm'				=> 'required|min:6|max:12',
-				
-				'addresses'				=> 'max:250',
+				'confirm_password'		=> 'required|min:6|max:12',
 			),
 			array(
-				'name.required'			=> trans('ajax_validation.enter_your_name'),
-				'name.min'				=> trans('ajax_validation.min_length'),
-				'name.max'				=> trans('ajax_validation.max_length'),
+				'name.required'					=> trans('ajax_validation.enter_your_name'),
+				'name.min'						=> trans('ajax_validation.min_length'),
+				'name.max'						=> trans('ajax_validation.max_length'),
 				
-				'telephone.required'	=> trans('ajax_validation.phone_required'),
-				'telephone.min'			=> trans('ajax_validation.min_length'),
-				'telephone.max'			=> trans('ajax_validation.max_length'),
+				'phone.required'				=> trans('ajax_validation.phone_required'),
+				'phone.min'						=> trans('ajax_validation.min_length'),
+				'phone.max'						=> trans('ajax_validation.max_length'),
 				
-				'email.required'		=> trans('ajax_validation.email_required'),
-				'email.email'			=> trans('ajax_validation.email_invalid'),
+				'email.required'				=> trans('ajax_validation.email_required'),
+				'email.email'					=> trans('ajax_validation.email_invalid'),
 				
-				'password.required'		=> trans('ajax_validation.password_required'),
-				'password.min'			=> trans('ajax_validation.min_length'),
-				'password.max'			=> trans('ajax_validation.max_length'),
+				'password.required'				=> trans('ajax_validation.password_required'),
+				'password.min'					=> trans('ajax_validation.min_length'),
+				'password.max'					=> trans('ajax_validation.max_length'),
 				
-				'confirm.required'		=> trans('ajax_validation.password_required'),
-				'confirm.min'			=> trans('ajax_validation.min_length'),
-				'confirm.max'			=> trans('ajax_validation.max_length'),
-				
-				'addresses.max'			=> trans('ajax_validation.max_length')
+				'confirm_password.required'		=> trans('ajax_validation.password_required'),
+				'confirm_password.min'			=> trans('ajax_validation.min_length'),
+				'confirm_password.max'			=> trans('ajax_validation.max_length'),
 			)
 		);
 		
@@ -155,95 +155,32 @@ class UserController extends Controller {
 			
 			//
 			
-			if(!isset($post['del-type'])){
-				$post['del-type'] = null;
+			if($post['new_password'] != $post['confirm_password']){
+				return response()->json([
+					'status' 	=> false,
+					'message'	=> trans('ajax.passwords_not_match'),
+					'errors'	=> [],
+					'payload'	=> []
+				], 200, [], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 			}
 			
-			if(!isset($post['pay-method'])){
-				$post['pay-method'] = null;
-			}
+			$post['phone'] = preg_replace("/[^0-9]/", '', $post['phone']);
 			
-			if(!isset($post['np-city-select'])){
-				$post['np-city-select'] = null;
-			}
-			
-			if(!isset($post['np-dep-select'])){
-				$post['np-dep-select'] = null;
-			}
-			
-			$post['addresses'] = trim($post['addresses']);
-			
-			//
-			
-			$post['telephone'] = preg_replace("/[^0-9]/", '', $post['telephone']);
-			
-			if(strlen($post['telephone']) != 12){
+			if(strlen($post['phone']) != 12){
 				$error = true;
 				
 				$msg = trans('ajax_validation.phone_invalid');
 			}
 			
-			if(!$error && $post['del-type']){
-				if(!in_array($post['del-type'], ['self-pickup', 'free', 'novaposhta', 'ukrposhta', 'other'])){
+			if(!$error){
+				$check = User::query()
+							->where('phone', '=', $post['phone'])
+							->first();
+				
+				if($check){
 					$error = true;
 					
-					$msg = trans('ajax_validation.choose_delivery_method');
-				}
-			}
-			
-			$city = null;
-			
-			if(!$error && $post['del-type']){
-				if($post['del-type'] == 'novaposhta'){
-					if(strlen($post['np-city-select']) != 36){
-						$error = true;
-						
-						$msg = trans('ajax_validation.city_delivery_required');
-					}else{
-						$city		= NPHelper::getCity($post['np-city-select']);
-						
-						if(!$city){
-							$error = true;
-							
-							$msg = trans('ajax_validation.city_delivery_required');
-						}else{
-							$city = $city['Ref'];
-						}
-					}
-				}
-			}
-			
-			$department	= null;
-			
-			if(!$error && $post['del-type']){
-				$department_name	= "";
-				
-				if($post['del-type'] == 'novaposhta'){
-					if(strlen($post['np-dep-select']) != 36){
-						$error = true;
-						
-						$msg = trans('ajax_validation.department_required');
-					}else{
-						$department			= NPHelper::getDepartment($post['np-dep-select']);
-						
-						if(!$department){
-							$error = true;
-							
-							$msg = trans('ajax_validation.department_required');
-						}else{
-							$department = $department['Ref'];
-						}
-					}
-				}
-			}
-			
-			if(!$error && $post['del-type']){
-				if($post['del-type'] != 'novaposhta' && $post['del-type'] != 'self-pickup'){
-					if(!$post['addresses']){
-						$error = true;
-						
-						$msg = trans('ajax_validation.addresses_required');
-					}
+					$msg	= trans('ajax_validation.phone_unique');
 				}
 			}
 			
@@ -253,58 +190,58 @@ class UserController extends Controller {
 							->first();
 				
 				if($user){
-					if($user->status == 'on'){
-						$error = true;
-						
-						$msg	= trans('ajax_validation.email_unique');
-					}
-				}else{
-					$user = User::query()
-								->where('phone', '=', $post['telephone'])
-								->first();
+					$error = true;
 					
-					if($user){
-						if($user->status == 'on'){
-							$error = true;
-							
-							$msg	= trans('ajax_validation.phone_unique');
-						}
-					}
+					$msg	= trans('ajax_validation.email_unique');
 				}
 			}
 			
 			if(!$error){
-				$code = md5(time(). 'r' . $post['email']);
+				$email_token	= md5(time(). 'r' . $post['email']);
+				$phone_code		= mt_rand(11111, 99999);
+				$phone_token	= md5(time(). 'p' . $phone_code);
 				
-				if(!$user){
-					$user = User::create([
-						'name'				=> $post['name'],
-						'email'				=> $post['email'],
-						'phone'				=> $post['telephone'],
-						'password'			=> Hash::make($post['password']),
-						'confirm_code'		=> $code,
-						'delivery_type'		=> $post['del-type'],
-						'city'				=> $post['np-city-select'],
-						'department'		=> $post['np-dep-select'],
-						'addresses'			=> $post['addresses'],
-					]);
-				}else{
-					$user->update(['confirm_code'	=>  $code]);
-				}
+				$user = User::create([
+					'type'				=> $post['user-type'],
+					'name'				=> $post['name'],
+					'email'				=> $post['email'],
+					'phone'				=> $post['phone'],
+					'password'			=> Hash::make($post['password']),
+					'email_token'		=> $email_token,
+					'phone_code'		=> $phone_code,
+					'phone_token'		=> $phone_token,
+				]);
 				
 				$this->send_email(
 					'email-reg',
 					$post['email'],
 					array(
 						'email'	=> $post['email'],
-						'url'	=> url('/confirm/'.$code),
-						'code'	=> $code,
+						'url'	=> url('/confirm/'.$email_token),
+						'code'	=> $email_token,
 						'name'  => $post['name']
 					)
 				);
 				
+				$sms = new SMSClub();
+				$sms->config_user(env('SMSCRU_LOGIN'), env('SMSCRU_PASSWORD'));
+				$sms->sendSMS(
+					$post['phone'],
+					[
+						'code' => $phone_code
+					],
+					'reg'
+				);
+				
 				$status = true;
 				$msg	= trans('ajax.success_register');
+				
+				$payload = [
+					"phone"			=> $post['phone'],
+					"phone_format"	=> StringHelper::phone($post['phone'], '[2] [(3)] 2-2-3'),
+					"email"			=> $post['email'],
+					"token" 		=> $phone_token,
+				];
 			}
 		}else{
 			$messages = $validator->messages();

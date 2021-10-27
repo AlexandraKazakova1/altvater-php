@@ -3687,7 +3687,6 @@ main {
 }
 
 .contracts__wrapper .contracts__content .contracts__list .contract__item .download a:first-child svg {
-  margin-right: 15px;
   fill: transparent;
   stroke: #2F5E97;
   -webkit-transition: all 0.3s;
@@ -4100,6 +4099,7 @@ main {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
+  position: relative;
 }
 
 .message__page .message__wrapper .msg__form form fieldset label {
@@ -4189,6 +4189,17 @@ main {
   fill: #FFFFFF;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+}
+
+.message__page .message__wrapper .msg__form form fieldset label.error {
+  position: absolute;
+  color: #BF604D;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 14px;
+  top: 101%;
+  left: 0;
 }
 
 @media (max-width: 1439px) {
@@ -4337,14 +4348,28 @@ main {
   .contracts__wrapper .contracts__content .contracts__list .contract__item div {
     padding: 5px 10px;
   }
+  .contracts__wrapper .archive__content .contracts__list .contract__item .docName,
+  .contracts__wrapper .contracts__content .contracts__list .contract__item .docName {
+    padding-left: 10px;
+  }
   .contracts__wrapper .archive__content .contracts__list .contract__item .date,
   .contracts__wrapper .contracts__content .contracts__list .contract__item .date {
     min-width: 140px;
     padding-left: 10px;
   }
+  .contracts__wrapper .archive__content .contracts__list .contract__item .docName::before,
   .contracts__wrapper .archive__content .contracts__list .contract__item .date::before,
+  .contracts__wrapper .contracts__content .contracts__list .contract__item .docName::before,
   .contracts__wrapper .contracts__content .contracts__list .contract__item .date::before {
     display: none;
+  }
+  .contracts__wrapper .archive__content .contracts__list .contract__item .download a,
+  .contracts__wrapper .contracts__content .contracts__list .contract__item .download a {
+    padding: 12px 10px;
+  }
+  .contracts__wrapper .archive__content .contracts__list .contract__item .download a svg,
+  .contracts__wrapper .contracts__content .contracts__list .contract__item .download a svg {
+    margin-right: 5px;
   }
 }
 
@@ -4470,16 +4495,16 @@ main {
     max-width: -moz-fit-content;
     max-width: fit-content;
   }
-  .contracts__wrapper .archive__content .contracts__list .contract__item .download button,
-  .contracts__wrapper .contracts__content .contracts__list .contract__item .download button {
+  .contracts__wrapper .archive__content .contracts__list .contract__item .download a,
+  .contracts__wrapper .contracts__content .contracts__list .contract__item .download a {
     padding: 9px;
   }
-  .contracts__wrapper .archive__content .contracts__list .contract__item .download button span,
-  .contracts__wrapper .contracts__content .contracts__list .contract__item .download button span {
+  .contracts__wrapper .archive__content .contracts__list .contract__item .download a span,
+  .contracts__wrapper .contracts__content .contracts__list .contract__item .download a span {
     display: none;
   }
-  .contracts__wrapper .archive__content .contracts__list .contract__item .download button svg,
-  .contracts__wrapper .contracts__content .contracts__list .contract__item .download button svg {
+  .contracts__wrapper .archive__content .contracts__list .contract__item .download a svg,
+  .contracts__wrapper .contracts__content .contracts__list .contract__item .download a svg {
     margin-right: 0px;
   }
   .newOrder .newOrder__form fieldset {
@@ -4592,8 +4617,17 @@ main {
     display: none;
   }
   .sidebar__menu {
+    margin-right: 0;
     position: absolute;
-    display: none;
+    left: -300px;
+    top: 98px;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  .sidebar__menu.act {
+    left: 0;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
   }
   .page__title {
     margin: 0 25px;
@@ -4641,6 +4675,7 @@ main {
   .accountsActs__wrapper {
     padding: 0 25px;
   }
+  .title__wrap .btn-group label,
   .title__wrap .btn-group button {
     padding: 12px 18px;
   }
@@ -4753,7 +4788,9 @@ main {
         -ms-flex: 1 1 100%;
             flex: 1 1 100%;
   }
+  .contracts__wrapper .archive__content .contracts__list .contract__item .docName,
   .contracts__wrapper .archive__content .contracts__list .contract__item .date,
+  .contracts__wrapper .contracts__content .contracts__list .contract__item .docName,
   .contracts__wrapper .contracts__content .contracts__list .contract__item .date {
     display: none;
   }
@@ -4840,7 +4877,12 @@ main {
   }
   .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item .status,
   .accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item .status {
-    width: 120px;
+    min-width: 40px;
+    width: 100%;
+  }
+  .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item .status::after,
+  .accountsActs__wrapper .accounts__content .accountsActs__list .accountsActs__item .status::after {
+    display: none;
   }
   .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.paid .status::after,
   .accountsActs__wrapper .acts__content .accountsActs__list .accountsActs__item.notPaid .status::after,
@@ -4870,6 +4912,29 @@ main {
     width: 100%;
     min-height: 50px;
   }
+  .title__wrap .btn-group span {
+    display: none;
+  }
+  .orders__wrapper .orders__content .orders__list .orders__item .service {
+    display: none;
+  }
+  .newOrder .newOrder__form fieldset label {
+    margin-right: 0;
+  }
+  .newOrder .newOrder__form fieldset label select,
+  .newOrder .newOrder__form fieldset label input {
+    min-width: 200px;
+  }
+  .newOrder .newOrder__form fieldset .submit__wrap .btn-submit {
+    width: 100%;
+  }
+}
+
+.dhtmlx_message_area {
+  position: absolute;
+  top: -600%;
+  right: -600%;
+  z-index: 1;
 }
 
 .popup__title {
