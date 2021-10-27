@@ -26,7 +26,7 @@
 								<input class="form-control verifCode" type="text" name="verifCode" autocomplete="off" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder=" "  onfocus="this.value=''"/>
 							</label>
 							
-							<a href="#" class="sendAgain">Відправити знову <span>(09: 16с)</span></a>
+							<a href="#" class="sendAgain">Відправити знову <span id="seconds"></span></a>
 							
 							<button class="btn-submit" type="submit" name="logIn">Вхід</button>
 						</fieldset>
