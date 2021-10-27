@@ -1104,7 +1104,7 @@ function newOrderForm() {
 			if(!lock){
 				$.ajax({
 					type: "POST",
-					url: '/ajax/user/settings',
+					url: '/ajax/cabinet/order-service',
                     method: "POST",
                     data: form.serialize(),
                     dataType: "json",
