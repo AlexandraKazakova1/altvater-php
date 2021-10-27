@@ -1,4 +1,12 @@
 $(document).ready (function() {
+	var csrf = $('meta[name="csrf-token"]').attr('content');
+	
+	$.ajaxSetup({
+		headers: {
+			'X-CSRF-TOKEN': csrf,
+		}
+	});
+    
     calendar();
     customSelect();
     modalFade();
