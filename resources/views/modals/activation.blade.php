@@ -13,6 +13,8 @@
 				
 				<div class="modal-body">
 					<form class="popup__form" id="pass__verification-form">
+						<input type="hidden" name="token" value="" />
+						
 						<fieldset class="fieldset">
 							<p>На цей номер <span class="number"></span> відправлений SMS-код, введіть його в поле нижче:</p>
 							

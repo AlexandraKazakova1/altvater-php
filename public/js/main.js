@@ -378,9 +378,11 @@ function create() {
 						lock = false;
                         btn.attr('disabled', false);
 						
-						if(response.status = true){;
-							form.trigger('reset');
-                            window.location.href = '/account';
+						if(response.status){
+							$('#pass__verification-form input[name="token"]').val(response.payload.token);
+							$('#pass__verification-form span.number').val(response.payload.phone);
+						}else{
+							
 						}
 					},
 					error: function(err){
