@@ -396,7 +396,7 @@ function contractIndividual() {
             }
         },
 		submitHandler: function() {
-			if(!lock){
+			if(!lock){               
 				$.ajax({
 					type: "POST",
 					url: '/ajax/cabinet/contracts/add',
@@ -417,7 +417,7 @@ function contractIndividual() {
                         btn.attr('disabled', false);
 
 						if(response.status){
-							form.trigger('reset');
+							// form.trigger('reset');
 						}
 					},
 					error: function(err){
@@ -937,7 +937,8 @@ function changePasswordForm() {
                 required: true
             },
             confirm_password: {
-                required: true
+                required: true,
+                equalTo: "new_password"
             }
         },
         messages: {
