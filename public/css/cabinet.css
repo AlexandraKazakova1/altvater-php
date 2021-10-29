@@ -817,6 +817,9 @@ main {
           flex-direction: column;
   margin-bottom: 25px;
   margin-right: 25px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 .account__wrapper .section__title {
@@ -887,6 +890,9 @@ main {
   padding: 25px;
   width: 410px;
   margin-bottom: 25px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 .volume__wrapper .title__wrapper {
@@ -922,41 +928,6 @@ main {
   font-size: 27px;
   line-height: 33px;
   color: #4A5568;
-}
-
-.calendar__wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 100%;
-          flex: 1 1 100%;
-  background: #FFFFFF;
-  border-radius: 16px;
-  padding: 25px;
-}
-
-.calendar__wrapper .title__wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding-bottom: 25px;
 }
 
 .content__wrapper {
@@ -1161,182 +1132,6 @@ main {
 
 .content__wrapper .addresses__wrapper .addresses .add-address:hover {
   background: #2F5E97;
-  color: #FFFFFF;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-
-.calendar__wrapper .dhx_cal_prev_button {
-  background-image: url(../img/arrow_left.svg);
-}
-
-.calendar__wrapper .dhx_cal_next_button {
-  background-image: url(../img/arrow_right.svg);
-}
-
-.calendar__wrapper .dhx_cal_prev_button {
-  background-image: url(../img/arrow_left_hov.svg);
-}
-
-.calendar__wrapper .dhx_cal_next_button {
-  background-image: url(../img/arrow_right_hov.svg);
-}
-
-.calendar__wrapper .dhx_cal_tab {
-  display: none;
-}
-
-.calendar__wrapper .dhx_cal_scale_placeholder {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
-.calendar__wrapper .dhx_cal_date {
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 19px;
-  color: #4A5568;
-  font-family: 'Fira Sans';
-}
-
-.calendar__wrapper .dhx_scale_bar {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 25px;
-  color: #91929E;
-  padding-bottom: 5px;
-  font-family: 'Fira Sans';
-}
-
-.calendar__wrapper .dhx_month_head {
-  font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 17px;
-  color: rgba(145, 146, 158, 0.6);
-  padding-top: 8px;
-  font-family: 'Fira Sans';
-}
-
-.calendar__wrapper .dhx_cal_event_line,
-.calendar__wrapper .dhx_cal_event_clear {
-  background: #D36855;
-  border-radius: 4px;
-  color: #FFFFFF;
-  font-family: 'Fira Sans';
-}
-
-.calendar__wrapper .dhx_cal_today_button {
-  font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  font-family: 'Fira Sans';
-}
-
-.dhx_cal_light {
-  background: #FFFFFF;
-  border-radius: 16px;
-  font-family: 'Fira Sans';
-}
-
-.dhx_cal_light .dhx_cal_ltitle {
-  text-align: center;
-  border-radius: 16px 16px 0 0;
-  border-bottom: 1px solid #2F5E97;
-  background: #2F5E97;
-}
-
-.dhx_cal_light .dhx_cal_ltitle .dhx_title {
-  text-transform: none;
-}
-
-.dhx_cal_light .dhx_cal_ltext textarea {
-  border: 1px solid #E2E8F0;
-  background: #FFFFFF;
-  border-radius: 6px;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-
-.dhx_cal_light .dhx_cal_ltext textarea:hover,
-.dhx_cal_light .dhx_cal_ltext textarea:focus {
-  outline: none;
-  border: 1px solid rgba(145, 146, 158, 0.6);
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-
-.dhx_cal_light .dhx_section_time select {
-  border: 1px solid #E2E8F0;
-  background: #FFFFFF;
-  border-radius: 6px;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-
-.dhx_cal_light .dhx_section_time select:hover,
-.dhx_cal_light .dhx_section_time select:focus {
-  outline: none;
-  cursor: pointer;
-  border: 1px solid rgba(145, 146, 158, 0.6);
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-
-.dhx_cal_light .dhx_btn_set {
-  outline: none;
-  text-transform: none;
-}
-
-.dhx_cal_light .dhx_btn_set,
-.dhx_cal_light .dhx_save_btn_set {
-  background: #EDF1F6;
-  border: 2px solid #EDF1F6;
-  border-radius: 6px;
-  color: #2F5E97;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-
-.dhx_cal_light .dhx_btn_set:hover,
-.dhx_cal_light div.dhx_save_btn_set:hover {
-  background: #2F5E97;
-  color: #FFFFFF;
-  border-radius: 6px;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-
-.dhx_cal_light .dhx_delete_btn_set {
-  background: #CF6854;
-  border: 1px solid #CF6854;
-  border-radius: 6px;
-  color: #FFFFFF;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-
-.dhx_cal_light .dhx_delete_btn_set:hover {
-  background: #BF604D;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-
-.dhx_cal_light .dhx_cancel_btn_set {
-  background: #FFFFFF;
-  border: 2px solid rgba(218, 131, 140, 0.3);
-  border-radius: 6px;
-  color: #4A5568;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-
-.dhx_cal_light .dhx_cancel_btn_set:hover {
-  background: #CF6854;
-  border: 2px solid rgba(218, 131, 140, 0.3);
-  border-radius: 8px;
   color: #FFFFFF;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
