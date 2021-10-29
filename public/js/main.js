@@ -22,7 +22,24 @@ $(document).ready (function() {
     checkCookies();
     createModal();
     servicesCalc();
+    scrollUp();
 });
+
+function scrollUp() {
+    $('.scrollup').click(function() {
+        $("html, body").animate({
+            scrollTop:0
+        },800);
+    })
+    $(window).scroll(function() {
+        if ($(this).scrollTop()>200) {
+            $('.scrollup').fadeIn();
+        }
+        else {
+            $('.scrollup').fadeOut();
+        }
+    });
+}
 
 function slidersConfig() {
     $('.response__slider').slick({

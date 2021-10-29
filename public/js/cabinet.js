@@ -900,7 +900,6 @@ function settingsForm() {
                         btn.attr('disabled', false);
 
 						if(response.status){
-							form.trigger('reset');
 						}
 					},
 					error: function(err){
