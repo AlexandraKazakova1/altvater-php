@@ -469,6 +469,7 @@ return [
 		'status'				=> [
 			'label'					=> 'Статус',
 			
+			'new'					=> 'Нове',
 			'processed'				=> 'В обробці',
 			'performed'				=> 'Виконуються',
 			'canceled'				=> 'Відмінено',

@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Validator;
 
 use App\Helpers\StringHelper;
 use App\Helpers\SMSClub;
+use App\Helpers\smsc;
 
 use App\Models\User;
 
@@ -223,6 +224,12 @@ class UserController extends Controller {
 					)
 				);
 				
+				$sms = new smsc();
+				
+				$result = $sms->config_user(env('SMSCRU_LOGIN'), env('SMSCRU_PASSWORD'))
+							->send($post['phone'], ['code' => $phone_code], 'reg');
+				
+				/*
 				$sms = new SMSClub();
 				$sms->config_user(env('SMSCRU_LOGIN'), env('SMSCRU_PASSWORD'));
 				$sms->sendSMS(
@@ -232,14 +239,16 @@ class UserController extends Controller {
 					],
 					'reg'
 				);
+				*/
 				
 				$status = true;
 				$msg	= trans('ajax.success_register');
 				
 				$payload = [
-					"phone"	=> $post['phone'],
-					"email"	=> $post['email'],
-					"token" => $phone_token,
+					"phone"			=> $post['phone'],
+					"phone_format"	=> StringHelper::phone($post['phone'], '[2] [(3)] 2-2-3'),
+					"email"			=> $post['email'],
+					"token" 		=> $phone_token,
 				];
 			}
 		}else{

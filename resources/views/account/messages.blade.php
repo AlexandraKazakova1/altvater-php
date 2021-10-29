@@ -60,7 +60,7 @@
 					
 					<div>
 						<label>
-							<span class="input-description">Заголовку звернення:</span>
+							<span class="input-description">Заголовок звернення:</span>
 							<input class="form-control" type="text" name="header" placeholder=" ">
 							<span class="input-placeholder">
 								<div>

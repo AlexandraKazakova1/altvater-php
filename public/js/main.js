@@ -378,10 +378,11 @@ function create() {
 						lock = false;
                         btn.attr('disabled', false);
 						
-						if(response.status){;
-							form.trigger('reset');
-                            window.location.href = '/account';
-						}    
+						if(response.status){
+							openActivationModal(response.payload);
+						}else{
+							
+						}
 					},
 					error: function(err){
 						console.log('error');
@@ -394,6 +395,79 @@ function create() {
 			return false;
 	    }
     });
+};
+
+var timerResend;
+
+function openActivationModal(data){
+	// відкриття модального вікна
+	
+	var form = $('#pass__verification-form');
+	
+	var input_token = form.find('input[name="token"]');
+	
+	input_token.val(data.token);
+	form.find('span.number').text(data.phone_format);
+	
+	var sendAgain = form.find('.sendAgain');
+	
+	sendAgain.on('click', function(e){
+		e.preventDefault();
+		
+		// деактивація кнопки
+		
+		startTimer(() => {
+			// активація кнопки
+		});
+		
+		var token = input_token.val();
+		
+		// ajax code resend
+		
+		form.find('input[name="verifCode"]').val('');
+	});
+	
+	startTimer(() => {
+		// активація кнопки
+	});
+};
+
+function startTimer(callback){
+	if(timerResend){
+		clearTimeout(timerResend);
+	};
+	
+	var timestamp = 2 * 60;
+	
+	var hours;
+	var minutes;
+	var seconds; 
+	
+	var el_seconds = $('#seconds');
+	
+	timerResend = setInterval(() => {
+		timestamp -= 1;
+		
+		if(timestamp < 1){
+			clearTimeout(timerResend);
+			
+			callback();
+		};
+		
+		hours	= Math.floor(timestamp / 60 / 60);
+		minutes	= Math.floor(timestamp / 60) - (hours * 60);
+		seconds = timestamp % 60;
+		
+		if(minutes < 10){
+			minutes = '0'+minutes;
+		};
+		
+		if(seconds < 10){
+			seconds = '0'+seconds;
+		};
+		
+		el_seconds.text('('+minutes+':'+seconds+')с');
+	}, 1000);
 };
 
 function passRecovery() {
