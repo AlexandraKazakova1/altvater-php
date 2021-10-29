@@ -153,7 +153,7 @@ function callBackForm() {
 						lock = false;
                         btn.attr('disabled', false);
 
-						if(response.status = true){;
+						if(response.status){;
 							form.trigger('reset');
                             window.location.href = '/account';
 						}
@@ -274,7 +274,7 @@ function logIn() {
 						lock = false;
                         btn.attr('disabled', false);
 
-						if(response.status = true){;
+						if(response.status){;
 							form.trigger('reset');
                             window.location.href = '/account';
 						}
@@ -378,10 +378,10 @@ function create() {
 						lock = false;
                         btn.attr('disabled', false);
 						
-						if(response.status = true){;
+						if(response.status){;
 							form.trigger('reset');
                             window.location.href = '/account';
-						}
+						}    
 					},
 					error: function(err){
 						console.log('error');

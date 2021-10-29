@@ -357,9 +357,84 @@
                 </ul>
             </div>
         </section>
+        <section class="contacts__wrapper">
+            <div class="contacts container">
+                <ul class="contacts__list">
+                    <li class="contacts__item">
+                        <img src="../img/contact-icons/mapMarker.svg" alt="">
+                        <div class="item__body">
+                            <span class="subTitle21">Адреса:</span>
+                            <span>03151, м. Київ, пр-кт<br>Повітрофлотський, 72</span>
+                        </div>
+                    </li>
+                    <li class="contacts__item">
+                        <img src="../img/contact-icons/phone.svg" alt="">
+                        <div class="item__body tel-button">
+                            <span class="subTitle21">Тел/Факс:</span>
+                            <a href="#">+38 (044) 334-44-31</a>
+                        </div>
+                    </li>
+                    <li class="contacts__item">
+                        <img src="../img/contact-icons/mail.svg" alt="">
+                        <div class="item__body">
+                            <span class="subTitle21">Email:</span>
+                            <a href="#">ua.kyiv.all.groups@veolia.com</a>
+                        </div>
+                    </li>
+                    <li class="contacts__item">
+                        <img src="../img/contact-icons/clock.svg" alt="">
+                        <div class="item__body">
+                            <span class="subTitle21">Графік роботи:</span>
+                            <span>Понеділок - П’ятниця</span>
+                            <span>08:30-17:00</span>
+                        </div>
+                    </li>
+                    <li class="contacts__item">
+                        <div class="item__body bot__group">
+                            <span class="subTitle21">Наші боти:</span>
+                            <a href="#" class="bot__link">
+                                <img src="../img/contact-icons/viber.svg" alt="">
+                                <span style="color: #7D3DAF;">Вайбер</span>
+                            </a>
+                            <a href="#" class="bot__link">
+                                <img src="../img/contact-icons/telegram.svg" alt="">
+                                <span style="color: #039BE5;">Телеграм</span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                <div class="callback">
+                    <div class="callback__title">Залишіть заявку.</div>
+                    <div class="callback__description">Якщо хочете дізнатися про всі можливості сервісу або задати питання, заповніть, будь-ласка, форму</div>
+                    <form class="callback__form" id="callback-form">
+                        <fieldset class="callback-fieldset">
+                            <label>
+                                <span>Ім'я </span>
+                                <input class="form-control" type="text" id="username" name="username" placeholder="Ваше Ім'я">
+                            </label>
+                            <label>
+                                <span>Email</span>
+                                <input class="form-control" type="email" id="useremail" name="useremail" placeholder="Ваш email">
+                            </label>
+                            <label>
+                                <span>Повідомлення</span>
+                                <textarea placeholder="Ваше Повідомлення" id="massage" name="massage"></textarea>
+                            </label>
+                            <button class="btn-submit" type="submit" name="submit">Залишити заявку</button>
+                            <label class="checkbox__label">
+                                <input class="input-checkbox" type="checkbox" id="rule" name="rule">
+                                <span class="custom-checkbox"></span>
+                                <span class="checkbox-text">Підтверджуючи замовлення, я приймаю умови угоди користувача</span>
+                            </label>
+                        </fieldset>
+                    </form>
+                    <span id="answer-msg"></span>
+                </div>
+            </div>
+        </section>
         <section class="map__wrapper">
             <div class="map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2542.303867778357!2d30.44555131573017!3d50.41680987947067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4c94c9785da35%3A0x74c88dfe5d85f814!2z0J_QvtCy0ZbRgtGA0L7RhNC70L7RgtGB0YzQutC40Lkg0L_RgNC-0YHQv9C10LrRgiwgNzIsINCa0LjRl9CyLCAwMjAwMA!5e0!3m2!1suk!2sua!4v1628112965382!5m2!1suk!2sua" width="100%" height="530px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10168.797923267814!2d30.4431578!3d50.4187549!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd527faa7946b8ac!2z0KLQntCSICLQkNC70YzRgtGE0LDRgtC10YAg0JrQuNGX0LIi!5e0!3m2!1suk!2sua!4v1635346210129!5m2!1suk!2sua" width="100%" height="530px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </section>
     </main>
@@ -453,7 +528,7 @@
                                 <span>Юридична особа</span>
                             </button>
                         </div>
-                        <form class="popup__form act" id="create-form">
+                        <form class="popup__form act" id="create-form__individual">
                             <fieldset class="fieldset">
 							<label>
 								<span class="input-description">Ім'я і Прізвище:</span>
@@ -764,7 +839,7 @@
                                     <input class="form-control verifCode" type="text" name="verifCode" autocomplete="off" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder=" "  onfocus="this.value=''"/>
                                     <input class="form-control verifCode" type="text" name="verifCode" autocomplete="off" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder=" "  onfocus="this.value=''"/>
                                     <input class="form-control verifCode" type="text" name="verifCode" autocomplete="off" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder=" "  onfocus="this.value=''"/>
-                                </label>
+                                </label>              
                                 <a href="#" class="sendAgain">Відправити знову <span>(09: 16с)</span></a>
                                 <button class="btn-submit" type="submit" name="logIn">Вхід</button>
                             </fieldset>

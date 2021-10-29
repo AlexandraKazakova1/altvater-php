@@ -548,6 +548,7 @@ main {
     background: #FFFFFF;
     padding: 38px 20px;
     border-right: 1px solid #EDF2F7;
+    padding-top: 0;
     max-width: 248px;
     min-width: 248px;
     min-height: 100vh;
@@ -3593,6 +3594,9 @@ main {
     top: -600%;
     right: -600%;
     z-index: 1;
+    visibility: hidden;
+    opacity: 0;
+    display: none;
 }
 
 // Модальні вікна
