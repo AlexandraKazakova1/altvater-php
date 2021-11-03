@@ -28,10 +28,6 @@ class smsc extends Helper{
 	public function send($to, $data, $template){
 		$text = DB::table('cms_email_templates')->where('slug', $template)->first();
 		
-		echo "\ntext:\n";
-		print_r($text);
-		echo "\n";
-		
 		if(is_null($text)) return false;
 		
 		$text = $text->content;
@@ -58,19 +54,9 @@ class smsc extends Helper{
 			'mes'				=> $text
 		];
 		
-		echo "\nsend:\n";
-		print_r($send);
-		echo "\n";
-		
 		CurlHelper::setData($send);
 		
 		$data = CurlHelper::request();
-		
-		echo "\ndata:\n";
-		print_r($data);
-		echo "\n";
-		
-		exit;
 		
 		if($data){
 			$data = substr($data, 0, 2);
