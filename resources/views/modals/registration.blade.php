@@ -21,6 +21,7 @@
 					</div>
 					
 					<form class="popup__form act" id="create-form__individual">
+						<input type="hidden" name="user-type" value="individual" />
 						<fieldset class="fieldset">
 							<label>
 								<span class="input-description">Ім'я і Прізвище:</span>
@@ -94,6 +95,7 @@
 					</form>
 					
 					<form class="popup__form" id="create-form__entity">
+						<input type="hidden" name="user-type" value="legal-entity" />
 						<fieldset class="fieldset">
 							<label>
 								<span class="input-description">Назва компанії:</span>

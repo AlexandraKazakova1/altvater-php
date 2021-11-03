@@ -156,7 +156,7 @@ class UserController extends Controller {
 			
 			//
 			
-			if($post['new_password'] != $post['confirm_password']){
+			if($post['password'] != $post['confirm_password']){
 				return response()->json([
 					'status' 	=> false,
 					'message'	=> trans('ajax.passwords_not_match'),
