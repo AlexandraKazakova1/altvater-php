@@ -229,17 +229,15 @@ class UserController extends Controller {
 				$result = $sms->config_user(env('SMSCRU_LOGIN'), env('SMSCRU_PASSWORD'))
 							->send($post['phone'], ['code' => $phone_code], 'reg');
 				
-				/*
-				$sms = new SMSClub();
+				$sms = new smsc();
 				$sms->config_user(env('SMSCRU_LOGIN'), env('SMSCRU_PASSWORD'));
-				$sms->sendSMS(
+				$sms->send(
 					$post['phone'],
 					[
 						'code' => $phone_code
 					],
 					'reg'
 				);
-				*/
 				
 				$status = true;
 				$msg	= trans('ajax.success_register');
