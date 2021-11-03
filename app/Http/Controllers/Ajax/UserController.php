@@ -108,6 +108,25 @@ class UserController extends Controller {
 	}
 	
 	function registration(Request $request){
+		$type = $request->get('user-type');
+		
+		if($type == 'individual'){
+			return $this->registrationIndividual($request);
+		}
+		
+		if($type == 'legal-entity'){
+			return $this->registrationLegal($request);
+		}
+		
+		return response()->json([
+			'status' 	=> false,
+			'message'	=> trans('ajax.failed_register'),
+			'errors'	=> array(),
+			'payload'	=> array()
+		], 200, [], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+	}
+	
+	function registrationIndividual(Request $request){
 		$post = $request->all();
 		
 		$status = false;
@@ -226,18 +245,237 @@ class UserController extends Controller {
 				
 				$sms = new smsc();
 				
-				$result = $sms->config_user(env('SMSCRU_LOGIN'), env('SMSCRU_PASSWORD'))
-							->send($post['phone'], ['code' => $phone_code], 'reg');
-				
-				$sms = new smsc();
 				$sms->config_user(env('SMSCRU_LOGIN'), env('SMSCRU_PASSWORD'));
-				$sms->send(
+				
+				$result = $sms->send(
 					$post['phone'],
 					[
 						'code' => $phone_code
 					],
 					'reg'
 				);
+				
+				if(!$result){
+					return response()->json([
+						'status' 	=> false,
+						'message'	=> trans('ajax.failed_send_sms'),
+						'errors'	=> [],
+						'payload'	=> []
+					], 200, [], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+				}
+				
+				$status = true;
+				$msg	= trans('ajax.success_register');
+				
+				$payload = [
+					"phone"			=> $post['phone'],
+					"phone_format"	=> StringHelper::phone($post['phone'], '[2] [(3)] 2-2-3'),
+					"email"			=> $post['email'],
+					"token" 		=> $phone_token,
+				];
+			}
+		}else{
+			$messages = $validator->messages();
+			
+			foreach($post as $k => $v){
+				$error = $messages->first($k);
+				
+				if($error){
+					$errors[$k] = $error;
+				}
+			}
+		}
+		
+		return response()->json([
+			'status' 	=> $status,
+			'message'	=> $msg,
+			'errors'	=> $errors,
+			'payload'	=> $payload
+		], 200, [], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+	}
+	
+	function registrationLegal(Request $request){
+		$post = $request->all();
+		
+		$status = false;
+		$errors = array();
+		$msg	= trans('ajax.failed_register');
+		$payload= [];
+		
+		$validator = Validator::make(
+			$post,
+			array(
+				'user-type'				=> 'required',
+				
+				'company_name'			=> 'required|string|min:2|max:100',
+				
+				'name'					=> 'required|string|min:2|max:50',
+				
+				'addresses'				=> 'required|string|min:2|max:150',
+				
+				'phone'					=> 'required|string|min:11|max:17',
+				'extra_prone'			=> 'min:11|max:17',
+				
+				'email'					=> 'required|email|string|max:100|min:5',
+				
+				'password'				=> 'required|min:6|max:12',
+				'confirm_password'		=> 'required|min:6|max:12',
+				
+				'ipn'					=> 'required|min:10|max:10',
+				'uedrpou'				=> 'required|min:8|max:50',
+				'index'					=> 'required|min:6|max:10',
+			),
+			array(
+				'company_name.required'			=> trans('ajax_validation.enter_name_company'),
+				'company_name.min'				=> trans('ajax_validation.min_length'),
+				'company_name.max'				=> trans('ajax_validation.max_length'),
+				
+				'name.required'					=> trans('ajax_validation.enter_name_contact'),
+				'name.min'						=> trans('ajax_validation.min_length'),
+				'name.max'						=> trans('ajax_validation.max_length'),
+				
+				'addresses.required'			=> trans('ajax_validation.addresses_required'),
+				'addresses.min'					=> trans('ajax_validation.min_length'),
+				'addresses.max'					=> trans('ajax_validation.max_length'),
+				
+				'phone.required'				=> trans('ajax_validation.phone_required'),
+				'phone.min'						=> trans('ajax_validation.min_length'),
+				'phone.max'						=> trans('ajax_validation.max_length'),
+				
+				'extra_prone.required'			=> trans('ajax_validation.phone_required'),
+				'extra_prone.min'				=> trans('ajax_validation.min_length'),
+				'extra_prone.max'				=> trans('ajax_validation.max_length'),
+				
+				'email.required'				=> trans('ajax_validation.email_required'),
+				'email.email'					=> trans('ajax_validation.email_invalid'),
+				
+				'password.required'				=> trans('ajax_validation.password_required'),
+				'password.min'					=> trans('ajax_validation.min_length'),
+				'password.max'					=> trans('ajax_validation.max_length'),
+				
+				'confirm_password.required'		=> trans('ajax_validation.password_required'),
+				'confirm_password.min'			=> trans('ajax_validation.min_length'),
+				'confirm_password.max'			=> trans('ajax_validation.max_length'),
+				
+				'ipn.required'					=> trans('ajax_validation.required'),
+				'ipn.min'						=> trans('ajax_validation.min_length'),
+				'ipn.max'						=> trans('ajax_validation.max_length'),
+				
+				'uedrpou.required'				=> trans('ajax_validation.required'),
+				'uedrpou.min'					=> trans('ajax_validation.min_length'),
+				'uedrpou.max'					=> trans('ajax_validation.max_length'),
+				
+				'index.required'				=> trans('ajax_validation.required'),
+				'index.min'						=> trans('ajax_validation.min_length'),
+				'index.max'						=> trans('ajax_validation.max_length'),
+			)
+		);
+		
+		if($validator->passes()){
+			$error	= false;
+			
+			//
+			
+			if($post['password'] != $post['confirm_password']){
+				return response()->json([
+					'status' 	=> false,
+					'message'	=> trans('ajax.passwords_not_match'),
+					'errors'	=> [],
+					'payload'	=> []
+				], 200, [], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+			}
+			
+			$post['phone'] = preg_replace("/[^0-9]/", '', $post['phone']);
+			
+			if(strlen($post['phone']) != 12){
+				$error = true;
+				
+				$msg = trans('ajax_validation.phone_invalid');
+			}
+			
+			if(!$error){
+				$check = User::query()
+							->where('phone', '=', $post['phone'])
+							->first();
+				
+				if($check){
+					$error = true;
+					
+					$msg	= trans('ajax_validation.phone_unique');
+				}
+			}
+			
+			if(!$error){
+				$user = User::query()
+							->where('email', '=', $post['email'])
+							->first();
+				
+				if($user){
+					$error = true;
+					
+					$msg	= trans('ajax_validation.email_unique');
+				}
+			}
+			
+			if(!$error){
+				$post['ipn']		= preg_replace("/[^0-9]/", '', $post['ipn']);
+				//$post['uedrpou']	= preg_replace("/[^0-9]/", '', $post['phone']);
+				$post['index']		= preg_replace("/[^0-9]/", '', $post['index']);
+				
+				$post['extra_prone'] = preg_replace("/[^0-9]/", '', $post['extra_prone']);
+				
+				$email_token	= md5(time(). 'r' . $post['email']);
+				$phone_code		= mt_rand(11111, 99999);
+				$phone_token	= md5(time(). 'p' . $phone_code);
+				
+				$user = User::create([
+					'type'				=> $post['user-type'],
+					'company_name'		=> $post['company_name'],
+					'name'				=> $post['name'],
+					'addresses'			=> $post['addresses'],
+					'ipn'				=> $post['ipn'],
+					'uedrpou'			=> $post['uedrpou'],
+					'index'				=> $post['index'],
+					'email'				=> $post['email'],
+					'phone'				=> $post['phone'],
+					'extra_prone'		=> $post['extra_prone'],
+					'password'			=> Hash::make($post['password']),
+					'email_token'		=> $email_token,
+					'phone_code'		=> $phone_code,
+					'phone_token'		=> $phone_token,
+				]);
+				
+				$this->sendEmail(
+					'email-reg',
+					$post['email'],
+					array(
+						'email'	=> $post['email'],
+						'url'	=> url('/confirm/'.$email_token),
+						'code'	=> $email_token,
+						'name'  => $post['name']
+					)
+				);
+				
+				$sms = new smsc();
+				
+				$sms->config_user(env('SMSCRU_LOGIN'), env('SMSCRU_PASSWORD'));
+				
+				$result = $sms->send(
+					$post['phone'],
+					[
+						'code' => $phone_code
+					],
+					'reg'
+				);
+				
+				if(!$result){
+					return response()->json([
+						'status' 	=> false,
+						'message'	=> trans('ajax.failed_send_sms'),
+						'errors'	=> [],
+						'payload'	=> []
+					], 200, [], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+				}
 				
 				$status = true;
 				$msg	= trans('ajax.success_register');

@@ -437,17 +437,17 @@ function createEntity() {
         focusInvalid	: false,
         errorClass		: "error",
         rules			: {
+            company_name	: {
+                required		: true,
+				minlength		: 2,
+				maxlength		: 100
+            },
             name			: {
                 required		: true,
 				minlength		: 2,
 				maxlength		: 100
             },
-            contact			: {
-                required		: true,
-				minlength		: 2,
-				maxlength		: 100
-            },
-            address			: {
+            addresses		: {
                 required		: true,
 				minlength		: 5,
 				maxlength		: 100
@@ -488,23 +488,26 @@ function createEntity() {
             },
             index			: {
                 required		: true,
-				minlength		: 10,
+				minlength		: 6,
 				maxlength		: 10,
 				number			: true
             },
+            agree			: {
+                required		: true
+            }
         },
         messages		: {
-            name			: {
+            company_name	: {
                 required		: "Введіть назву",
 				minlength		: "Введіть більше 2 символів",
 				maxlength		: "Можна ввести до 100 символів"
             },
-            contact			: {
+            name			: {
                 required		: "Введіть контактну особу",
 				minlength		: "Введіть більше 2 символів",
 				maxlength		: "Можна ввести до 100 символів"
             },
-            address			: {
+            addresses		: {
                 required		: "Введіть адресу",
 				minlength		: "Введіть більше 5 символів",
 				maxlength		: "Можна ввести до 100 символів"
@@ -549,6 +552,9 @@ function createEntity() {
 				maxlength		: "Індекс має містити 5 цифр",
 				number			: "Індекс має містити 5 цифр"
             },
+            agree			: {
+                required		: 'Підтвердіть що ви даєте згоду'
+            }
         },
 		submitHandler: function() { 
 			if(!lock){

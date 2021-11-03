@@ -145,6 +145,11 @@ return [
 		
 		'info'					=> 'Основна інформація',
 		'addresses'				=> 'Адреси',
+		
+		'ipn'					=> 'ІПН',
+		'uedrpou'				=> 'ЄДРПОУ',
+		
+		'company_name'			=> 'Назва компанії',
 	],
 	
 	'addresses'				=> [

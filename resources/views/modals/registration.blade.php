@@ -99,7 +99,7 @@
 						<fieldset class="fieldset">
 							<label>
 								<span class="input-description">Назва компанії:</span>
-								<input class="form-control" type="text" name="name" placeholder=" ">
+								<input class="form-control" type="text" name="company_name" placeholder=" ">
 								<span class="input-placeholder">
 									<div>
 										<img src="/img/cabinet/modal-icon/profile.svg">
@@ -110,7 +110,7 @@
 							
 							<label>
 								<span class="input-description">Контактна особа:</span>
-								<input class="form-control" type="text" name="contact" placeholder=" ">
+								<input class="form-control" type="text" name="name" placeholder=" ">
 								<span class="input-placeholder">
 									<div>
 										<img src="/img/cabinet/modal-icon/profile.svg">
@@ -121,7 +121,7 @@
 							
 							<label>
 								<span class="input-description">Юридична адреса:</span>
-								<input class="form-control" type="text" name="address" placeholder=" ">
+								<input class="form-control" type="text" name="addresses" placeholder=" ">
 								<span class="input-placeholder">
 									<div>
 										<img src="/img/cabinet/modal-icon/location.svg">
@@ -211,6 +211,14 @@
 									Повторіть пароль
 								</span>
 							</label>
+							
+							<div class="user-agree">
+								<label class="checkbox__label">
+									<input class="input-checkbox" type="checkbox" name="agree">
+									<span class="custom-checkbox"></span>
+									<span class="checkbox-text">Я даю згоду на обробку <a href="/terms" target="_blank">особистих даних</a></span>
+								</label>
+							</div>
 							
 							<div class="recaptcha" style="display:none;">
 								<img src="/img/cabinet/zaglushka-3.png" alt="">

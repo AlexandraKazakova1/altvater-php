@@ -60,9 +60,12 @@ class smsc extends Helper{
 		
 		$data = CurlHelper::request();
 		
-		//print_r($data);
-		//exit;
+		if($data){
+			$data = substr($data, 0, 2);
+			
+			return ($data == "OK");
+		}
 		
-		return $data;
+		return false;
 	}
 }

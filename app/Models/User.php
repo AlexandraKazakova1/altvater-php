@@ -39,7 +39,10 @@ class User extends Authenticatable	{
 		'phone_code',
 		'position',
 		'addresses',
-		'index'
+		'index',
+		'company_name',
+		'ipn',
+		'uedrpou'
 	];
 	
 	/**

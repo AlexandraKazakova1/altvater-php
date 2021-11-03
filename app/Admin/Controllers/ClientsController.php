@@ -94,9 +94,11 @@ class ClientsController extends MyAdminController {
 		$id = $this->_id;
 		
 		$form->tab(__('admin.clients.info')		, function($form) use ($id){
-			$form->text('name'				, __('admin.clients.name'))->rules('required|min:2|max:50');
+			$form->text('name'				, __('admin.clients.name'))->rules('required|min:2|max:100');
 			$form->text('surname'			, __('admin.clients.surname'))->rules('max:50');
 			$form->text('middlename'		, __('admin.clients.patronymic'))->rules('max:50');
+			
+			$form->text('company_name'		, __('admin.clients.company_name'))->rules('max:100');
 			
 			$form->email('email'			, __('admin.clients.email'))->rules('required|email');
 			$form->switch('verify_email'	, __('admin.clients.verify_email'));
@@ -119,7 +121,10 @@ class ClientsController extends MyAdminController {
 			
 			$form->text('position'			, __('admin.clients.position'))->rules('max:50');
 			$form->text('addresses'			, __('admin.clients.address'))->rules('max:150');
-			$form->text('index'				, __('admin.clients.index'))->rules('max:6');
+			$form->text('index'				, __('admin.clients.index'))->rules('max:10');
+			
+			$form->text('ipn'				, __('admin.clients.ipn'))->rules('max:10');
+			$form->text('uedrpou'			, __('admin.clients.uedrpou'))->rules('max:50');
 		});
 		
 		$form->tab(__('admin.clients.addresses')		, function($form) use ($id){
