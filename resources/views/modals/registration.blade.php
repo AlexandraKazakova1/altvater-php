@@ -21,6 +21,7 @@
 					</div>
 					
 					<form class="popup__form act" id="create-form__individual">
+						<input type="hidden" name="user-type" value="individual" />
 						<fieldset class="fieldset">
 							<label>
 								<span class="input-description">Ім'я і Прізвище:</span>
@@ -57,7 +58,7 @@
 							
 							<label>
 								<span class="input-description">Пароль:</span>
-								<input class="form-control password" type="password"  name="password" placeholder=" ">
+								<input class="form-control password" type="password" id="password-individual" name="password" placeholder=" ">
 								<span class="input-placeholder">
 									<div>
 										<img src="/img/cabinet/modal-icon/lock.svg">
@@ -94,10 +95,11 @@
 					</form>
 					
 					<form class="popup__form" id="create-form__entity">
+						<input type="hidden" name="user-type" value="legal-entity" />
 						<fieldset class="fieldset">
 							<label>
 								<span class="input-description">Назва компанії:</span>
-								<input class="form-control" type="text" name="userName" placeholder=" ">
+								<input class="form-control" type="text" name="name" placeholder=" ">
 								<span class="input-placeholder">
 									<div>
 										<img src="/img/cabinet/modal-icon/profile.svg">
@@ -108,7 +110,7 @@
 							
 							<label>
 								<span class="input-description">Контактна особа:</span>
-								<input class="form-control" type="text" name="userContactName" placeholder=" ">
+								<input class="form-control" type="text" name="contact" placeholder=" ">
 								<span class="input-placeholder">
 									<div>
 										<img src="/img/cabinet/modal-icon/profile.svg">
@@ -119,7 +121,7 @@
 							
 							<label>
 								<span class="input-description">Юридична адреса:</span>
-								<input class="form-control" type="text" name="userEntityAddress" placeholder=" ">
+								<input class="form-control" type="text" name="address" placeholder=" ">
 								<span class="input-placeholder">
 									<div>
 										<img src="/img/cabinet/modal-icon/location.svg">
@@ -130,7 +132,7 @@
 							
 							<label>
 								<span class="input-description">Email:</span>
-								<input class="form-control" type="email" name="userEmail" placeholder=" ">
+								<input class="form-control" type="email" name="email" placeholder=" ">
 								<span class="input-placeholder">
 									<div>
 										<img src="/img/cabinet/modal-icon/email.svg">
@@ -141,7 +143,7 @@
 							
 							<label>
 								<span class="input-description">Номер телефону:</span>
-								<input class="form-control" type="tel" name="userTel" placeholder=" ">
+								<input class="form-control" type="tel" name="phone" placeholder=" ">
 								<span class="input-placeholder">
 									<div>
 										<img src="/img/cabinet/modal-icon/phone.svg">
@@ -152,7 +154,7 @@
 							
 							<label>
 								<span class="input-description nr">Додатковий телефон:</span>
-								<input class="form-control" type="tel" name="userAddTel" placeholder=" ">
+								<input class="form-control" type="tel" name="extra_prone" placeholder=" ">
 								<span class="input-placeholder">
 									<div>
 										<img src="/img/cabinet/modal-icon/phone.svg">
@@ -179,7 +181,7 @@
 							
 							<label>
 								<span class="input-description">Поштовий індекс:</span>
-								<input class="form-control" type="text" name="postIndex" placeholder=" ">
+								<input class="form-control" type="text" name="index" placeholder=" ">
 								<span class="input-placeholder">
 									<div>
 										<img src="/img/cabinet/modal-icon/location.svg">
@@ -190,7 +192,7 @@
 							
 							<label>
 								<span class="input-description">Пароль:</span>
-								<input class="form-control password" type="password"  name="userPassword" placeholder=" ">
+								<input class="form-control password" type="password"  name="password" id="password-entity" placeholder=" ">
 								<span class="input-placeholder">
 									<div>
 										<img src="/img/cabinet/modal-icon/lock.svg">
@@ -201,7 +203,7 @@
 							
 							<label>
 								<span class="input-description">Повторіть пароль:</span>
-								<input class="form-control" type="password"  name="userPasswordConfirm" placeholder=" ">
+								<input class="form-control" type="password"  name="confirm_password" placeholder=" ">
 								<span class="input-placeholder">
 									<div>
 										<img src="/img/cabinet/modal-icon/lock.svg">

@@ -156,7 +156,7 @@ class UserController extends Controller {
 			
 			//
 			
-			if($post['new_password'] != $post['confirm_password']){
+			if($post['password'] != $post['confirm_password']){
 				return response()->json([
 					'status' 	=> false,
 					'message'	=> trans('ajax.passwords_not_match'),
@@ -213,7 +213,7 @@ class UserController extends Controller {
 					'phone_token'		=> $phone_token,
 				]);
 				
-				$this->send_email(
+				$this->sendEmail(
 					'email-reg',
 					$post['email'],
 					array(
@@ -229,17 +229,15 @@ class UserController extends Controller {
 				$result = $sms->config_user(env('SMSCRU_LOGIN'), env('SMSCRU_PASSWORD'))
 							->send($post['phone'], ['code' => $phone_code], 'reg');
 				
-				/*
-				$sms = new SMSClub();
+				$sms = new smsc();
 				$sms->config_user(env('SMSCRU_LOGIN'), env('SMSCRU_PASSWORD'));
-				$sms->sendSMS(
+				$sms->send(
 					$post['phone'],
 					[
 						'code' => $phone_code
 					],
 					'reg'
 				);
-				*/
 				
 				$status = true;
 				$msg	= trans('ajax.success_register');

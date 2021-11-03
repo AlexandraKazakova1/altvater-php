@@ -15,7 +15,10 @@ $(document).ready (function() {
     slideScroll();
     modalFade();
     logIn();
-    create();
+    
+    createIndividual();
+    createEntity();
+    
     passRecovery();
     passRecovery3();
     passVerificationForm();
@@ -308,8 +311,8 @@ function logIn() {
     });
 };
 
-function create() {
-	var form = jQuery("#create-form");
+function createIndividual() {
+	var form = jQuery("#create-form__individual");
 
     if(!form.length){
 		return false;
@@ -319,61 +322,233 @@ function create() {
     btn = form.find('button[type="submit"]');
 
     form.validate({
-		onkeyup	: false,
-        focusCleanup: true,
-        focusInvalid: false,
-        errorClass: "error",
-        rules: {
-            name: {
-                required: true,
-				minlength: 5
+		onkeyup			: false,
+        focusCleanup	: true,
+        focusInvalid	: false,
+        errorClass		: "error",
+        rules			: {
+            name			: {
+                required		: true,
+				minlength		: 2,
+				maxlength		: 100
             },
-            phone: {
-                required: true,
-				minlength: 8
+            phone			: {
+                required		: true,
+				minlength		: 12,
+				maxlength		: 13,
             },
-            email: {
-                required: true,
-                email: true
+            email			: {
+                required		: true,
+                email			: true
             },
-            password: {
-                required: true,
-                rangelength: [8, 24]
+            password		: {
+                required		: true,
+                rangelength		: [8, 24]
             },
             confirm_password: {
-                required: true,
-                rangelength: [8, 24],
-                equalTo: ".password"
+                required		: true,
+                rangelength		: [8, 24],
+                equalTo			: "#password-individual"
             },
-            agree: {
-                required: true
+            agree			: {
+                required		: true
             }
         },
-        messages: {
-            name: {
-                required: "Введіть своє Ім'я та Прізвище",
-				minlength: "Введіть більше 5 символів"
+        messages		: {
+            name			: {
+                required		: "Введіть Ім'я та Прізвище",
+				minlength		: "Введіть більше 2 символів",
+				maxlength		: "Можна ввести до 100 символів"
             },
-            phone: {
-                required: "Введіть свій контактний телефон",
-				minlength: "Введіть номер в форматі +380999999999"
+            phone			: {
+                required		: "Введіть контактний телефон",
+				minlength		: "Введіть мінімум 12 символів",
+				maxlength		: "Можна ввести до 13 символів"
             },
-            email: {
-                required: "Введіть свій e-mail!",
-                email: "Адреса має бути типу name@domain.com"
+            email			: {
+                required		: "Введіть e-mail!",
+                email			: "Адреса має бути типу name@domain.com"
             },
-            password: {
-                required: "Введіть пароль використовуючи A-Z a-z 0-9",
-                rangelength: "Введіть 8-24 символи"
+            password		: {
+                required		: "Введіть пароль використовуючи A-Z a-z 0-9",
+                rangelength		: "Введіть 8-24 символи"
             },
             confirm_password: {
-                required: "Введіть пароль використовуючи A-Z a-z 0-9",
-                rangelength: "Введіть 8-24 символи",
-                equalTo: "Паролі не співпадають"
+                required		: "Введіть пароль використовуючи A-Z a-z 0-9",
+                rangelength		: "Введіть 8-24 символи",
+                equalTo			: "Паролі не співпадають"
             },
-            agree: {
-                required: 'Підтвердіть що ви даєте згоду'
+            agree			: {
+                required		: 'Підтвердіть що ви даєте згоду'
             }
+        },
+		submitHandler: function() { 
+			if(!lock){
+				$.ajax({
+					type: "POST",
+					url: '/ajax/user/registration',
+                    data: form.serialize(),
+                    dataType: "json",
+                    beforeSend: function(request){
+                        lock = true;
+                        
+                        btn.attr('disabled', true);
+                        form.find('label.error').text('').hide();
+					},
+					success: function(response){
+						console.log('response:');
+						console.log(response);
+						
+						lock = false;
+                        btn.attr('disabled', false);
+						
+						if(response.status){
+							openActivationModal(response.payload);
+						}else{
+							
+						}
+					},
+					error: function(err){
+						console.log('error');
+						lock = false;
+                        btn.attr('disabled', false);
+					}
+				});
+			};
+			
+			return false;
+	    }
+    });
+};
+
+function createEntity() {
+	var form = jQuery("#create-form__entity");
+	
+    if(!form.length){
+		return false;
+	};
+	
+	var lock = false,
+    btn = form.find('button[type="submit"]');
+	
+    form.validate({
+		onkeyup			: false,
+        focusCleanup	: true,
+        focusInvalid	: false,
+        errorClass		: "error",
+        rules			: {
+            name			: {
+                required		: true,
+				minlength		: 2,
+				maxlength		: 100
+            },
+            contact			: {
+                required		: true,
+				minlength		: 2,
+				maxlength		: 100
+            },
+            address			: {
+                required		: true,
+				minlength		: 5,
+				maxlength		: 100
+            },
+            phone			: {
+                required		: true,
+				minlength		: 12,
+				maxlength		: 13,
+            },
+            extra_prone		: {
+                required		: false,
+				minlength		: 12,
+				maxlength		: 13,
+            },
+            email			: {
+                required		: true,
+                email			: true
+            },
+            password		: {
+                required		: true,
+                rangelength		: [8, 24]
+            },
+            confirm_password: {
+                required		: true,
+                rangelength		: [8, 24],
+                equalTo			: "#password-entity"
+            },
+            ipn				: {
+                required		: true,
+				minlength		: 10,
+				maxlength		: 10,
+				number			: true
+            },
+            uedrpou			: {
+                required		: true,
+				minlength		: 8,
+				maxlength		: 50
+            },
+            index			: {
+                required		: true,
+				minlength		: 10,
+				maxlength		: 10,
+				number			: true
+            },
+        },
+        messages		: {
+            name			: {
+                required		: "Введіть назву",
+				minlength		: "Введіть більше 2 символів",
+				maxlength		: "Можна ввести до 100 символів"
+            },
+            contact			: {
+                required		: "Введіть контактну особу",
+				minlength		: "Введіть більше 2 символів",
+				maxlength		: "Можна ввести до 100 символів"
+            },
+            address			: {
+                required		: "Введіть адресу",
+				minlength		: "Введіть більше 5 символів",
+				maxlength		: "Можна ввести до 100 символів"
+            },
+            phone			: {
+                required		: "Введіть контактний телефон",
+				minlength		: "Введіть мінімум 12 символів",
+				maxlength		: "Можна ввести до 13 символів"
+            },
+            extra_prone		: {
+                required		: "Введіть контактний телефон",
+				minlength		: "Введіть мінімум 12 символів",
+				maxlength		: "Можна ввести до 13 символів"
+            },
+            email			: {
+                required		: "Введіть e-mail!",
+                email			: "Адреса має бути типу name@domain.com"
+            },
+            password		: {
+                required		: "Введіть пароль використовуючи A-Z a-z 0-9",
+                rangelength		: "Введіть 8-24 символи"
+            },
+            confirm_password: {
+                required		: "Введіть пароль використовуючи A-Z a-z 0-9",
+                rangelength		: "Введіть 8-24 символи",
+                equalTo			: "Паролі не співпадають"
+            },
+            ipn				: {
+                required		: "Введіть ІПН",
+				minlength		: "Код має містити 10 цифр",
+				maxlength		: "Код має містити 10 цифр",
+				number			: "Код має містити 10 цифр"
+            },
+            uedrpou			: {
+                required		: "Введіть ЄДРПОУ",
+				minlength		: "Мінімальна довжина 8 символів",
+				maxlength		: "Максимальна довжина 50 символів"
+            },
+            ipn				: {
+                required		: "Введіть індекс",
+				minlength		: "Індекс має містити 5 цифр",
+				maxlength		: "Індекс має містити 5 цифр",
+				number			: "Індекс має містити 5 цифр"
+            },
         },
 		submitHandler: function() { 
 			if(!lock){
@@ -717,13 +892,15 @@ function createModal() {
         $('.btn-individual').addClass('act');
         $('#create-form__individual').addClass('act');
     });
+    
     $('.btn-entity').click(function() {
         $('.btn-individual').removeClass('act');
         $('#create-form__individual').removeClass('act');
         $('.btn-entity').addClass('act');
         $('#create-form__entity').addClass('act');
     });
-}
+};
+
 // function calcPopup() {
 // 	$('.select2').select2({
 //         minimumResultsForSearch: -1,

@@ -50,6 +50,7 @@ class smsc extends Helper{
 			'login' 			=> $this->username,
 			'psw' 				=> $this->password,
 			'phones' 			=> "+".$to,
+			'sender'			=> env("SMSCRU_SENDER"),
 			'mes'				=> $text
 		];
 		

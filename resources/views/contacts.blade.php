@@ -139,7 +139,7 @@
 				
 				<div class="callback">
 					<div class="callback__title">Залишіть заявку</div>
-					<div class="callback__description">Якщо хочете дізнатися про всі можливості сервісу і задати питання - замовте онлайн демонстрацію</div>
+					<div class="callback__description">Якщо хочете дізнатися про всі можливості сервісу або задати питання, заповніть, будь-ласка, форму</div>
 					
 					<form class="callback__form" id="callback-form" action="/ajax/callback" method="POST">
 						<fieldset class="callback-fieldset">
