@@ -52,8 +52,6 @@ return [
 	'email_exists'              => 'Користувач з таким Email вже існує',
 	'user_exists'               => 'Користувач уже зареєстрований під поточним email.',
 	
-	'failed_send_sms'			=> 'Не вдалось відправити смс',
-	
 	'enter_name_company'		=> 'Введіть назву компанії',
 	'enter_name_contact'		=> 'Вкажіть контакнту особу',
 	'addresses_required'		=> 'Введіть адресу',
