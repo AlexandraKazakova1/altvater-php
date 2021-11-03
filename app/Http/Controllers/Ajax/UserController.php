@@ -213,7 +213,7 @@ class UserController extends Controller {
 					'phone_token'		=> $phone_token,
 				]);
 				
-				$this->send_email(
+				$this->sendEmail(
 					'email-reg',
 					$post['email'],
 					array(
