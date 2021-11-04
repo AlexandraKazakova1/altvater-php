@@ -297,7 +297,7 @@ function logIn() {
 						if(response.status){;
 							form.trigger('reset');
                             window.location.href = '/account';
-                            responseMsg();
+                            responseMsg(form, response);
 						}
 					},
 					error: function(err){
@@ -405,7 +405,7 @@ function createIndividual() {
 						
 						if(response.status){
 							openActivationModal(response.payload);
-                            responseMsg();
+                            responseMsg(form, response);
 						}
 					},
 					error: function(err){
@@ -578,7 +578,7 @@ function createEntity() {
 						
 						if(response.status){
 							openActivationModal(response.payload);
-                            responseMsg();
+                            responseMsg(form, response);
 						}
 					},
 					error: function(err){
@@ -720,7 +720,7 @@ function passRecovery() {
 						if(response.status){;
                             $('.modal').modal('hide');
                             $('#recovery-modal-2').modal('show');
-                            responseMsg();
+                            responseMsg(form, response);
 						}
 					},
 					error: function(err){
@@ -795,7 +795,7 @@ function passRecovery3() {
 						
 						if(response.status){;
 							form.trigger('reset');
-                            responseMsg();
+                            responseMsg(form, response);
 						}
 					},
 					error: function(err){
@@ -864,7 +864,7 @@ function passVerificationForm() {
 						
 						if(response.status){;
 							form.trigger('reset');
-                            responseMsg();
+                            responseMsg(form, response);
 						}
 					},
 					error: function(err){
@@ -879,9 +879,10 @@ function passVerificationForm() {
 	    }
     });
 };
-function responseMsg() {
-    form.$('.responseMsg').text(response.message)
-}
+
+function responseMsg(form, response) {
+    form.find('.responseMsg').text(response.message)
+};
 
 function checkCookies() {
     let cookieDate = localStorage.getItem('cookieDate');

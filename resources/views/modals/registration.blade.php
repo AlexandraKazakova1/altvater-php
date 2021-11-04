@@ -92,6 +92,7 @@
 							
 							<button class="btn-submit" type="submit" name="reg">Створити акаунт</button>
 						</fieldset>
+						<p class="responseMsg"></p>
 					</form>
 					
 					<form class="popup__form" id="create-form__entity">
@@ -226,6 +227,7 @@
 							
 							<button class="btn-submit" type="submit" name="reg">Створити акаунт</button>
 						</fieldset>
+						<p class="responseMsg"></p>
 					</form>
 					
 					<span class="popup__question">У вас є акаунт? <button type="button" class="popup-text__link btn-logIn" data-toggle="modal" data-target="#log__in-modal">Зайти в особистий кабінет</button></span>

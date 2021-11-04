@@ -35,8 +35,10 @@
 								</span>
 							</label>
 							
-							<button class="btn-submit" type="submit" name="logIn">Вхід</button>
+							<button class="btn-submit" type="submit" name="logIn">Зберегти</button>
 						</fieldset>
+						
+						<p class="responseMsg"></p>
 					</form>
 				</div>
 			</div>

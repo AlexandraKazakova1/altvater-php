@@ -46,6 +46,8 @@
 							
 							<button class="btn-submit" type="submit" name="logIn">Вхід</button>
 						</fieldset>
+						
+						<p class="responseMsg"></p>
 					</form>
 					
 					<div class="or__text" style="display:none;">
