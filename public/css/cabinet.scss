@@ -1693,20 +1693,32 @@ main {
                 font-size: 14px;
                 line-height: 17px;
                 color: #425466;
+                position: relative;
                 b {
                     font-size: 16px;
                     color: #69B6B0;
                     cursor: pointer;
-                    position: relative;
                 }
                 b:hover::after {
                     content: 'Для зміни цього поля зверніться до менеджера';
                     position: absolute;
+                    left: 0;
+                    top: -49px;
                     max-height: 44px;
-                    width: 200px;
                     padding: 5px;
                     border-radius: 5px;
-                    background: rgba(181, 181, 190, 0.15);
+                    color: #FFFFFF;
+                    background: rgba(0, 0, 0, 0.5);
+                }
+                b:hover::before {
+                    content: '';
+                    position: absolute;
+                    width: 5px;
+                    height: 5px;
+                    top: -5px;
+                    border-top: 5px solid rgba(0, 0, 0, 0.5);
+                    border-left: 5px solid transparent;
+                    border-right: 5px solid transparent;
                 }
             }
             .submit__wrap {
