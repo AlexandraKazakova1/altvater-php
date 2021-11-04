@@ -3536,6 +3536,7 @@ main {
         .orders__content {
             .orders__list {
                 .orders__item {
+                    min-width: 280px;
                     .service {
                         display: none;
                     }
@@ -4121,6 +4122,39 @@ a.popup-text__link {
                         transition: all 0.3s;
                     }
                 }
+            }
+        }
+    }
+}
+.orderInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    .modal-body,
+    .modal-header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+            margin-bottom: 20px;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 17px;
+            color: #91929E;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #CCD4DE;
+            span {
+                padding-top: 8px;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 19px;
+                color: #4A5568;
             }
         }
     }

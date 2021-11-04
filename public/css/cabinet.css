@@ -4914,6 +4914,9 @@ main {
   .title__wrap .btn-group span {
     display: none;
   }
+  .orders__wrapper .orders__content .orders__list .orders__item {
+    min-width: 280px;
+  }
   .orders__wrapper .orders__content .orders__list .orders__item .service {
     display: none;
   }
@@ -5697,6 +5700,66 @@ a.popup-text__link {
   visibility: hidden;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+}
+
+.orderInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.orderInfo .modal-body,
+.orderInfo .modal-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.orderInfo .modal-body div,
+.orderInfo .modal-header div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+  margin-bottom: 20px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #91929E;
+  padding-bottom: 20px;
+  border-bottom: 1px dashed #CCD4DE;
+}
+
+.orderInfo .modal-body div span,
+.orderInfo .modal-header div span {
+  padding-top: 8px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: #4A5568;
 }
 
 .ui-timepicker-container {
