@@ -410,11 +410,11 @@
                         <fieldset class="callback-fieldset">
                             <label>
                                 <span>Ім'я </span>
-                                <input class="form-control" type="text" id="username" name="username" placeholder="Ваше Ім'я">
+                                <input class="form-control" type="text" id="username" name="name" placeholder="Ваше Ім'я">
                             </label>
                             <label>
                                 <span>Email</span>
-                                <input class="form-control" type="email" id="useremail" name="useremail" placeholder="Ваш email">
+                                <input class="form-control" type="email" id="useremail" name="email" placeholder="Ваш email">
                             </label>
                             <label>
                                 <span>Повідомлення</span>
@@ -839,12 +839,12 @@
                             <fieldset class="fieldset">
                                 <p>На цей номер <span class="number">+38(098) 34-43-895</span> відправлений SMS-код, введіть його в поле нижче:</p>
                                 <label class="verif-code">
-                                    <input class="form-control verifCode" type="text" name="verifCode" autocomplete="off" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder=" "  onfocus="this.value=''"/>
-                                    <input class="form-control verifCode" type="text" name="verifCode" autocomplete="off" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder=" "  onfocus="this.value=''"/>
-                                    <input class="form-control verifCode" type="text" name="verifCode" autocomplete="off" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder=" "  onfocus="this.value=''"/>
-                                    <input class="form-control verifCode" type="text" name="verifCode" autocomplete="off" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder=" "  onfocus="this.value=''"/>
-                                    <input class="form-control verifCode" type="text" name="verifCode" autocomplete="off" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder=" "  onfocus="this.value=''"/>
-                                </label>              
+                                    <input class="form-control verifCode" type="text" name="code[]" autocomplete="off" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder=" "  onfocus="this.value=''"/>
+                                    <input class="form-control verifCode" type="text" name="code[]" autocomplete="off" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder=" "  onfocus="this.value=''"/>
+                                    <input class="form-control verifCode" type="text" name="code[]" autocomplete="off" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder=" "  onfocus="this.value=''"/>
+                                    <input class="form-control verifCode" type="text" name="code[]" autocomplete="off" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder=" "  onfocus="this.value=''"/>
+                                    <input class="form-control verifCode" type="text" name="code[]" autocomplete="off" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder=" "  onfocus="this.value=''"/>
+                                </label>          
                                 <a href="#" class="sendAgain">Відправити знову <span>(09: 16с)</span></a>
                                 <button class="btn-submit" type="submit" name="logIn">Вхід</button>
                             </fieldset>

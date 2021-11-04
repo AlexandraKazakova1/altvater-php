@@ -119,7 +119,7 @@ function callBackForm() {
         focusInvalid: false,
         errorClass: "error",
         rules: {
-            username: {
+            name: {
                 required: true,
                 rangelength: [2, 100]
             },
