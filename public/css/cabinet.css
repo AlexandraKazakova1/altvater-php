@@ -2237,7 +2237,7 @@ main {
       -ms-flex-align: center;
           align-items: center;
   position: absolute;
-  top: 42px;
+  top: 38px;
   left: 16px;
   font-style: normal;
   font-weight: normal;
@@ -2316,6 +2316,27 @@ main {
   font-size: 14px;
   line-height: 17px;
   color: #425466;
+}
+
+.newOrder form fieldset .input-description b,
+.settings__wrapper form fieldset .input-description b,
+.request form fieldset .input-description b {
+  font-size: 16px;
+  color: #69B6B0;
+  cursor: pointer;
+  position: relative;
+}
+
+.newOrder form fieldset .input-description b:hover::after,
+.settings__wrapper form fieldset .input-description b:hover::after,
+.request form fieldset .input-description b:hover::after {
+  content: 'Для зміни цього поля зверніться до менеджера';
+  position: absolute;
+  max-height: 44px;
+  width: 200px;
+  padding: 5px;
+  border-radius: 5px;
+  background: rgba(181, 181, 190, 0.15);
 }
 
 .newOrder form fieldset .submit__wrap .btn-submit,

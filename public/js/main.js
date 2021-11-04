@@ -127,10 +127,10 @@ function callBackForm() {
                 required: true,
                 email: true
             },
-			message: {
-				minlength: 8,
-				maxlength: 2000
-			},
+			// message: {
+			// 	minlength: 8,
+			// 	maxlength: 2000
+			// },
             rule: {
                 required: true
             }
@@ -144,10 +144,10 @@ function callBackForm() {
                 required: "Введіть свій e-mail!",
                 email: "Адреса має бути типу name@domain.com"
             },
-			message: {
-				minlength: "Введіть більше 8 символів",
-				maxlength: "Введено більше 2000 символів"
-			},
+			// message: {
+			// 	minlength: "Введіть більше 8 символів",
+			// 	maxlength: "Введено більше 2000 символів"
+			// },
             rule: {
                 required: "Підтвердіть свою згоду"
             }
@@ -218,10 +218,10 @@ function modalFade() {
         $('.modal').modal('hide');
         $('#recovery-modal-1').modal('show');
     });
-    $('.recovery-1').click(function() {
-        $('.modal').modal('hide');
-        $('#recovery-modal-2').modal('show');
-    });
+    // $('.recovery-1').click(function() {
+    //     $('.modal').modal('hide');
+    //     $('#recovery-modal-2').modal('show');
+    // });
     $('#calculator').click(function() {
         $('.modal').modal('hide');
         $('#servicesCalc').modal('show');
@@ -297,6 +297,7 @@ function logIn() {
 						if(response.status){;
 							form.trigger('reset');
                             window.location.href = '/account';
+                            responseMsg();
 						}
 					},
 					error: function(err){
@@ -404,8 +405,7 @@ function createIndividual() {
 						
 						if(response.status){
 							openActivationModal(response.payload);
-						}else{
-							
+                            responseMsg();
 						}
 					},
 					error: function(err){
@@ -578,8 +578,7 @@ function createEntity() {
 						
 						if(response.status){
 							openActivationModal(response.payload);
-						}else{
-							
+                            responseMsg();
 						}
 					},
 					error: function(err){
@@ -610,12 +609,14 @@ function openActivationModal(data){
 	var sendAgain = form.find('.sendAgain');
 	
 	sendAgain.on('click', function(e){
-		e.preventDefault();
-		
-		// деактивація кнопки
+		e.preventDefault();		
+        
+        // деактивація кнопки
+		form.$('.sendAgain').addClass('disable')
 		
 		startTimer(() => {
-			// активація кнопки
+            // активація кнопки
+            form.$('.sendAgain').removeClass('disable')
 		});
 		
 		var token = input_token.val();
@@ -627,6 +628,7 @@ function openActivationModal(data){
 	
 	startTimer(() => {
 		// активація кнопки
+        form.$('.sendAgain').removeClass('disable')
 	});
 };
 
@@ -684,13 +686,13 @@ function passRecovery() {
         focusInvalid: false,
         errorClass: "error",
         rules: {
-            userEmail: {
+            email: {
                 required: true,
                 email: true
             }
         },
         messages: {
-            userEmail: {
+            email: {
                 required: "Введіть свій e-mail!",
                 email: "Адреса має бути типу name@domain.com"
             }
@@ -716,7 +718,9 @@ function passRecovery() {
                         btn.attr('disabled', false);
 						
 						if(response.status){;
-							form.trigger('reset');
+                            $('.modal').modal('hide');
+                            $('#recovery-modal-2').modal('show');
+                            responseMsg();
 						}
 					},
 					error: function(err){
@@ -791,6 +795,7 @@ function passRecovery3() {
 						
 						if(response.status){;
 							form.trigger('reset');
+                            responseMsg();
 						}
 					},
 					error: function(err){
@@ -859,6 +864,7 @@ function passVerificationForm() {
 						
 						if(response.status){;
 							form.trigger('reset');
+                            responseMsg();
 						}
 					},
 					error: function(err){
@@ -873,6 +879,9 @@ function passVerificationForm() {
 	    }
     });
 };
+function responseMsg() {
+    form.$('.responseMsg').text(response.message)
+}
 
 function checkCookies() {
     let cookieDate = localStorage.getItem('cookieDate');

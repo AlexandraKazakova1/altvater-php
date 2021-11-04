@@ -417,13 +417,17 @@ function contractIndividual() {
                         btn.attr('disabled', false);
 
 						if(response.status){
-							// form.trigger('reset');
+							form.trigger('reset');
+                            responseMsg();
 						}
 					},
 					error: function(err){
 						console.log('error');
 						lock = false;
                         btn.attr('disabled', false);
+						if(response.status){
+                            responseMsg();
+						}
 					}
 				});
 			};
@@ -546,12 +550,16 @@ function contractEntity() {
 
 						if(response.status){
 							form.trigger('reset');
+                            responseMsg();
 						}
 					},
 					error: function(err){
 						console.log('error');
 						lock = false;
                         btn.attr('disabled', false);
+						if(response.status){
+                            responseMsg();
+						}
 					}
 				});
 			};
@@ -625,12 +633,16 @@ function addAddress() {
 
 						if(response.status){
 							form.trigger('reset');
+                            responseMsg();
 						}
 					},
 					error: function(err){
 						console.log('error');
 						lock = false;
                         btn.attr('disabled', false);
+						if(response.status){
+                            responseMsg();
+						}
 					}
 				});
 			};
@@ -731,76 +743,16 @@ function requestForm() {
 
 						if(response.status){
 							form.trigger('reset');
+                            responseMsg();
 						}
 					},
 					error: function(err){
 						console.log('error');
 						lock = false;
                         btn.attr('disabled', false);
-					}
-				});
-			};
-			return false;
-	    }
-    });
-};
-
-function requestForm() {
-	var form = jQuery("#msgRequestForm");
-
-    if(!form.length){
-		return false;
-	};
-
-	var lock = false,
-    btn = form.find('button[type="submit"]');
-
-    form.validate({
-		onkeyup	: false,
-        focusCleanup: true,
-        focusInvalid: false,
-        errorClass: "error",
-        rules: {
-            text: {
-                required: true,
-				maxlength: 1000
-            }
-        },
-        messages: {
-            text: {
-                required: "Це поле обов'язкове для заповнення",
-				maxlength: "Введіть не більше 1000 символів"
-            }
-        },
-		submitHandler: function() {
-			if(!lock){
-				$.ajax({
-					type: "POST",
-					url: '/ajax/cabinet/request/:id',
-                    method: "POST",
-                    data: form.serialize(),
-                    dataType: "json",
-                    beforeSend: function(request){
-                        lock = true;
-                        
-                        btn.attr('disabled', true);
-                        form.find('label.error').text('').hide();
-					},
-					success: function(response){
-						console.log('response:');
-						console.log(response);
-						
-						lock = false;
-                        btn.attr('disabled', false);
-
 						if(response.status){
-							form.trigger('reset');
+                            responseMsg();
 						}
-					},
-					error: function(err){
-						console.log('error');
-						lock = false;
-                        btn.attr('disabled', false);
 					}
 				});
 			};
@@ -808,6 +760,74 @@ function requestForm() {
 	    }
     });
 };
+
+// function msgRequestForm() {
+// 	var form = jQuery("#msgRequestForm");
+
+//     if(!form.length){
+// 		return false;
+// 	};
+
+// 	var lock = false,
+//     btn = form.find('button[type="submit"]');
+
+//     form.validate({
+// 		onkeyup	: false,
+//         focusCleanup: true,
+//         focusInvalid: false,
+//         errorClass: "error",
+//         rules: {
+//             text: {
+//                 required: true,
+// 				maxlength: 1000
+//             }
+//         },
+//         messages: {
+//             text: {
+//                 required: "Це поле обов'язкове для заповнення",
+// 				maxlength: "Введіть не більше 1000 символів"
+//             }
+//         },
+// 		submitHandler: function() {
+// 			if(!lock){
+// 				$.ajax({
+// 					type: "POST",
+// 					url: '/ajax/cabinet/request/:id',
+//                     method: "POST",
+//                     data: form.serialize(),
+//                     dataType: "json",
+//                     beforeSend: function(request){
+//                         lock = true;
+                        
+//                         btn.attr('disabled', true);
+//                         form.find('label.error').text('').hide();
+// 					},
+// 					success: function(response){
+// 						console.log('response:');
+// 						console.log(response);
+						
+// 						lock = false;
+//                         btn.attr('disabled', false);
+
+// 						if(response.status){
+// 							form.trigger('reset');
+//                             responseMsg();
+// 						}
+// 					},
+// 					error: function(err){
+// 						console.log('error');
+// 						lock = false;
+//                         btn.attr('disabled', false);
+// 						if(response.status){
+//                             responseMsg();
+// 						}
+// 					}
+// 				});
+// 			};
+// 			return false;
+// 	    }
+//     });
+// };
 
 function settingsForm() {
 	var form = jQuery("#settingsForm");
@@ -907,12 +927,16 @@ function settingsForm() {
                         btn.attr('disabled', false);
 
 						if(response.status){
+                            responseMsg();
 						}
 					},
 					error: function(err){
 						console.log('error');
 						lock = false;
                         btn.attr('disabled', false);
+						if(response.status){
+                            responseMsg();
+						}
 					}
 				});
 			};
@@ -981,12 +1005,16 @@ function changePasswordForm() {
 
 						if(response.status){
 							form.trigger('reset');
+                            responseMsg();
 						}
 					},
 					error: function(err){
 						console.log('error');
 						lock = false;
                         btn.attr('disabled', false);
+						if(response.status){
+                            responseMsg();
+						}
 					}
 				});
 			};
@@ -1067,12 +1095,16 @@ function orderServiceForm() {
 
 						if(response.status){
 							form.trigger('reset');
+                            responseMsg();
 						}
 					},
 					error: function(err){
 						console.log('error');
 						lock = false;
                         btn.attr('disabled', false);
+						if(response.status){
+                            responseMsg();
+						}
 					}
 				});
 			};
@@ -1152,12 +1184,16 @@ function newOrderForm() {
 
 						if(response.status){
 							form.trigger('reset');
+                            responseMsg();
 						}
 					},
 					error: function(err){
 						console.log('error');
 						lock = false;
                         btn.attr('disabled', false);
+						if(response.status){
+                            responseMsg();
+						}
 					}
 				});
 			};
@@ -1248,12 +1284,16 @@ function requestMsg() {
 
 						if(response.status){
 							form.trigger('reset');
+                            responseMsg();
 						}
 					},
 					error: function(err){
 						console.log('error');
 						lock = false;
                         btn.attr('disabled', false);
+						if(response.status){
+                            responseMsg();
+						}
 					}
 				});
 			};
@@ -1261,3 +1301,7 @@ function requestMsg() {
 	    }
     });
 };
+
+function responseMsg() {
+    form.$('.responseMsg').text(response.message)
+}

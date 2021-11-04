@@ -1646,7 +1646,7 @@ main {
                     flex-direction: row;
                     align-items: center;
                     position: absolute;
-                    top: 42px;
+                    top: 38px;
                     left: 16px;
                     font-style: normal;
                     font-weight: normal;
@@ -1693,6 +1693,21 @@ main {
                 font-size: 14px;
                 line-height: 17px;
                 color: #425466;
+                b {
+                    font-size: 16px;
+                    color: #69B6B0;
+                    cursor: pointer;
+                    position: relative;
+                }
+                b:hover::after {
+                    content: 'Для зміни цього поля зверніться до менеджера';
+                    position: absolute;
+                    max-height: 44px;
+                    width: 200px;
+                    padding: 5px;
+                    border-radius: 5px;
+                    background: rgba(181, 181, 190, 0.15);
+                }
             }
             .submit__wrap {
                 .btn-submit {
