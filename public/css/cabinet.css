@@ -4918,6 +4918,10 @@ a.popup-text__link {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .popup .popup__form .fieldset {

@@ -3724,6 +3724,7 @@ a.popup-text__link {
     .popup__form {
         display: flex;
         width: 100%;
+        flex-direction: column;
         .fieldset {
             width: 100%;
             display: flex;
