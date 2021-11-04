@@ -678,7 +678,7 @@
                                 </label>
                                 <label>
                                     <span class="input-description">Поштовий індекс:</span>
-                                    <input class="form-control" type="text" name="postIndex" placeholder=" ">
+                                    <input class="form-control" type="text" name="postIndex" autocomplete="off" maxlength="5" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder=" ">
                                     <span class="input-placeholder">
                                         <div>
                                             <img src="../img/cabinet/modal-icon/location.svg">

@@ -176,12 +176,14 @@ function callBackForm() {
 						if(response.status){;
 							form.trigger('reset');
                             window.location.href = '/account';
+                            responseMsg(form, response);
 						}
 					},
 					error: function(err){
 						console.log('error');
 						lock = false;
                         btn.attr('disabled', false);
+                        responseMsg(form, err);
 					}
 				});
 			};
@@ -304,6 +306,7 @@ function logIn() {
 						console.log('error');
 						lock = false;
                         btn.attr('disabled', false);
+                        responseMsg(form, err);
 					}
 				});
 			};
@@ -412,6 +415,8 @@ function createIndividual() {
 						console.log('error');
 						lock = false;
                         btn.attr('disabled', false);
+
+                        responseMsg(form, err);
 					}
 				});
 			};
@@ -585,6 +590,7 @@ function createEntity() {
 						console.log('error');
 						lock = false;
                         btn.attr('disabled', false);
+                        responseMsg(form, err);
 					}
 				});
 			};
@@ -727,6 +733,7 @@ function passRecovery() {
 						console.log('error');
 						lock = false;
                         btn.attr('disabled', false);
+                        responseMsg(form, err);
 					}
 				});
 			};
@@ -802,6 +809,7 @@ function passRecovery3() {
 						console.log('error');
 						lock = false;
                         btn.attr('disabled', false);
+                        responseMsg(form, err);
 					}
 				});
 			};
@@ -871,6 +879,7 @@ function passVerificationForm() {
 						console.log('error');
 						lock = false;
                         btn.attr('disabled', false);
+                        responseMsg(form, err);
 					}
 				});
 			};

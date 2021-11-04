@@ -418,16 +418,14 @@ function contractIndividual() {
 
 						if(response.status){
 							form.trigger('reset');
-                            responseMsg();
+                            responseMsg(form, response);
 						}
 					},
 					error: function(err){
 						console.log('error');
 						lock = false;
                         btn.attr('disabled', false);
-						if(response.status){
-                            responseMsg();
-						}
+                        responseMsg(form, err);
 					}
 				});
 			};
@@ -550,16 +548,14 @@ function contractEntity() {
 
 						if(response.status){
 							form.trigger('reset');
-                            responseMsg();
+                            responseMsg(form, response);
 						}
 					},
 					error: function(err){
 						console.log('error');
 						lock = false;
                         btn.attr('disabled', false);
-						if(response.status){
-                            responseMsg();
-						}
+                        responseMsg(form, err);
 					}
 				});
 			};
@@ -633,16 +629,14 @@ function addAddress() {
 
 						if(response.status){
 							form.trigger('reset');
-                            responseMsg();
+                            responseMsg(form, response);
 						}
 					},
 					error: function(err){
 						console.log('error');
 						lock = false;
                         btn.attr('disabled', false);
-						if(response.status){
-                            responseMsg();
-						}
+                        responseMsg(form, err);
 					}
 				});
 			};
@@ -731,16 +725,14 @@ function requestForm() {
 
 						if(response.status){
 							form.trigger('reset');
-                            responseMsg();
+                            responseMsg(form, response);
 						}
 					},
 					error: function(err){
 						console.log('error');
 						lock = false;
                         btn.attr('disabled', false);
-						if(response.status){
-                            responseMsg();
-						}
+                        responseMsg(form, err);
 					}
 				});
 			};
@@ -915,16 +907,14 @@ function settingsForm() {
                         btn.attr('disabled', false);
 
 						if(response.status){
-                            responseMsg();
+                            responseMsg(form, response);
 						}
 					},
 					error: function(err){
 						console.log('error');
 						lock = false;
                         btn.attr('disabled', false);
-						if(response.status){
-                            responseMsg();
-						}
+                        responseMsg(form, err);
 					}
 				});
 			};
@@ -993,16 +983,14 @@ function changePasswordForm() {
 
 						if(response.status){
 							form.trigger('reset');
-                            responseMsg();
+                            responseMsg(form, response);
 						}
 					},
 					error: function(err){
 						console.log('error');
 						lock = false;
                         btn.attr('disabled', false);
-						if(response.status){
-                            responseMsg();
-						}
+                        responseMsg(form, err);
 					}
 				});
 			};
@@ -1083,16 +1071,14 @@ function orderServiceForm() {
 
 						if(response.status){
 							form.trigger('reset');
-                            responseMsg();
+                            responseMsg(form, response);
 						}
 					},
 					error: function(err){
 						console.log('error');
 						lock = false;
                         btn.attr('disabled', false);
-						if(response.status){
-                            responseMsg();
-						}
+                        responseMsg(form, err);
 					}
 				});
 			};
@@ -1172,16 +1158,14 @@ function newOrderForm() {
 
 						if(response.status){
 							form.trigger('reset');
-                            responseMsg();
+                            responseMsg(form, response);
 						}
 					},
 					error: function(err){
 						console.log('error');
 						lock = false;
                         btn.attr('disabled', false);
-						if(response.status){
-                            responseMsg();
-						}
+                        responseMsg(form, err);
 					}
 				});
 			};
@@ -1272,16 +1256,14 @@ function requestMsg() {
 
 						if(response.status){
 							form.trigger('reset');
-                            responseMsg();
+                            responseMsg(form, response);
 						}
 					},
 					error: function(err){
 						console.log('error');
 						lock = false;
                         btn.attr('disabled', false);
-						if(response.status){
-                            responseMsg();
-						}
+                        responseMsg(form, err);
 					}
 				});
 			};
@@ -1290,6 +1272,6 @@ function requestMsg() {
     });
 };
 
-function responseMsg() {
-    form.$('.responseMsg').text(response.message)
-}
+function responseMsg(form, response) {
+    form.find('.responseMsg').text(response.message)
+};
