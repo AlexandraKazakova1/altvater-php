@@ -260,7 +260,7 @@ function logIn() {
                 required: true,
                 email: true
             },
-            userPassword: {
+            password: {
                 required: true,
                 rangelength: [8, 24]
             }
@@ -270,7 +270,7 @@ function logIn() {
                 required: "Введіть свій e-mail!",
                 email: "Адреса має бути типу name@domain.com"
             },
-            userPassword: {
+            password: {
                 required: "Введіть пароль використовуючи A-Z a-z 0-9",
                 rangelength: "Введіть 8-24 символи"
             }

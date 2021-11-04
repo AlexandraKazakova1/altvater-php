@@ -3521,6 +3521,11 @@ a.popup-text__link {
             border: 1px solid #CBD5E0;
             box-sizing: border-box;
             border-radius: 4px;
+            transition: all 0.3s;
+        }
+        a:hover {
+            border: 1px solid #2F5E97;
+            transition: all 0.3s;
         }
         a:first-child {
             margin-right: 5px;
