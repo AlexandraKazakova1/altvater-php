@@ -2162,7 +2162,6 @@ main {
           flex-direction: column;
   margin-bottom: 24px;
   margin-right: 25px;
-  width: 100%;
 }
 
 .newOrder form fieldset label .input-description::after,
@@ -2182,10 +2181,13 @@ main {
   display: none;
 }
 
+.newOrder form fieldset label select,
 .newOrder form fieldset label textarea,
 .newOrder form fieldset label input,
+.settings__wrapper form fieldset label select,
 .settings__wrapper form fieldset label textarea,
 .settings__wrapper form fieldset label input,
+.request form fieldset label select,
 .request form fieldset label textarea,
 .request form fieldset label input {
   padding: 12px 16px;
@@ -2311,6 +2313,7 @@ main {
 .settings__wrapper form fieldset label .select2-container,
 .request form fieldset label .select2-container {
   height: 50px;
+  width: 100%;
 }
 
 .newOrder form fieldset label .select2-container .selection,
@@ -2522,6 +2525,13 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.request__page .request .request__form fieldset div label {
+  width: 100%;
 }
 
 .request__page .request .request__form fieldset .submit__wrap {
@@ -2624,7 +2634,7 @@ main {
   min-width: 280px;
 }
 
-.newOrder .newOrder__form fieldset label .select2-selection {
+.newOrder .newOrder__form fieldset label .select2-container .selection .select2-selection {
   padding: 12px 16px;
   background: #FFFFFF;
   border: 1px solid #CBD5E0;
@@ -2642,10 +2652,6 @@ main {
   width: 300px;
   min-width: 280px;
   height: 50px;
-}
-
-.newOrder .newOrder__form fieldset label .select2-selection__arrow {
-  top: 12px;
 }
 
 .newOrder .newOrder__form fieldset .submit__wrap .btn-submit {
