@@ -1643,6 +1643,9 @@ main {
                     border: 1px solid rgba(171, 171, 171, 0.3);
                 }
             }
+            .select2-container .select2-selection--single .select2-selection__rendered {
+                padding-left: 0;
+            }
         }
     }
 }
