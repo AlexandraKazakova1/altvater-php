@@ -123,7 +123,7 @@ function callBackForm() {
                 required: true,
                 rangelength: [2, 100]
             },
-            useremail: {
+            email: {
                 required: true,
                 email: true
             },
@@ -140,7 +140,7 @@ function callBackForm() {
                 required: "Введіть своє ім'я",
                 rangelength: "Введіть більше двох символів"
             },
-            useremail: {
+            email: {
                 required: "Введіть свій e-mail!",
                 email: "Адреса має бути типу name@domain.com"
             },
@@ -256,7 +256,7 @@ function logIn() {
         focusInvalid: false,
         errorClass: "error",
         rules: {
-            userEmail: {
+            email: {
                 required: true,
                 email: true
             },
@@ -266,7 +266,7 @@ function logIn() {
             }
         },
         messages: {
-            userEmail: {
+            email: {
                 required: "Введіть свій e-mail!",
                 email: "Адреса має бути типу name@domain.com"
             },

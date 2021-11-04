@@ -358,7 +358,7 @@ function contractIndividual() {
                 required: true,
 				minlength: 8
             },
-            userEmail: {
+            email: {
                 required: true,
                 email: true
             },
@@ -379,7 +379,7 @@ function contractIndividual() {
                 required: "Введіть ваше ПІБ",
 				minlength: "Некоректні дані"
             },
-            userEmail: {
+            email: {
                 required: "Введіть свій e-mail!",
                 email: "Адреса має бути типу name@domain.com"
             },
@@ -462,7 +462,7 @@ function contractEntity() {
                 required: true,
 				minlength: 10
             },
-            userEmail: {
+            email: {
                 required: true,
                 email: true
             },
@@ -500,7 +500,7 @@ function contractEntity() {
                 required: "Введіть вашу юридичну адресу",
 				minlength: "Некоректні дані"
             },
-            userEmail: {
+            email: {
                 required: "Введіть e-mail!",
                 email: "Адреса має бути типу name@domain.com"
             },
