@@ -47,4 +47,6 @@ return [
 		
 	'failed_remove_address'				=> 'Не вдалось видалити адресу',
 	'success_remove_address'			=> 'Адреса успішно видалена',
+	
+	'failed_send_sms'					=> 'Не вдалось відправити смс',
 ];
