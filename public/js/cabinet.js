@@ -144,15 +144,16 @@ function modalFade() {
     $('.add').click(function() {
         $('.modal').modal('hide');
         $('#create__contract-modal-1').modal('show');
+        //     $('#create__contract-modal-2').modal('show');
     });
     $('.header .add').click(function() {
         $('.modal').modal('hide');
         $('#orderService').modal('show');
     });
-    $('.pinned').click(function() {
-        $('.modal').modal('hide');
-        $('#create__contract-modal-2').modal('show');
-    });
+    // $('.pinned').click(function() {
+    //     $('.modal').modal('hide');
+    //     $('#create__contract-modal-2').modal('show');
+    // });
 
 
 
