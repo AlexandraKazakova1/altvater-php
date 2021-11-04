@@ -28,6 +28,8 @@
 							
 							<button class="btn-submit recovery-1" type="submit" name="logIn" name="step-1" data-toggle="modal" data-target="#recovery-modal-2">Відновити пароль</button>
 						</fieldset>
+						
+						<p class="responseMsg"></p>
 					</form>
 				</div>
 			</div>

@@ -65,7 +65,7 @@
 						</label>
 						
 						<label>
-							<span class="input-description notCheck">Email:</span>
+							<span class="input-description notCheck">Email:<b> ?</b></span>
 							<input class="form-control" type="email" name="email" readonly value="{{$user['email']}}" placeholder=" ">
 							<span class="input-placeholder">
 								<div>
@@ -76,7 +76,7 @@
 						</label>
 						
 						<label>
-							<span class="input-description notCheck">Телефон:</span>
+							<span class="input-description notCheck">Телефон:<b> ?</b></span>
 							<input class="form-control" type="tel" name="phone" readonly value="{{$user['phone']}}" placeholder=" ">
 							<span class="input-placeholder">
 								<div>
@@ -123,6 +123,7 @@
 							<button class="btn-submit" type="submit" name="add-request">Зберегти</button>
 						</div>
 					</fieldset>
+					<p class="responseMsg"></p>
 				</form>
 			</div>
 			
@@ -166,6 +167,7 @@
 							<button class="btn-submit" type="submit" name="add-request">Зберегти</button>
 						</div>
 					</fieldset>
+					<p class="responseMsg"></p>
 				</form>
 			</div>
 		</section>
