@@ -220,8 +220,8 @@
                                 </span>
                             </label>
                             <label>
-                                <span class="input-description notCheck">Адреса:</span>
-                                <input class="form-control" type="text" name="addresses" placeholder=" ">
+                                <span class="input-description notCheck">Адреса:<b> ?</b></span>
+                                <input class="form-control" readonly type="text" name="addresses" placeholder=" ">
                                 <span class="input-placeholder">
                                     <div>
                                         <img src="../img/cabinet/modal-icon/location.svg">
@@ -230,8 +230,8 @@
                                 </span>
                             </label>
                             <label>
-                                <span class="input-description notCheck">Індекс:</span>
-                                <input class="form-control" type="text" name="index" placeholder=" ">
+                                <span class="input-description notCheck">Індекс:<b> ?</b></span>
+                                <input class="form-control" readonly type="text" name="index" autocomplete="off" maxlength="5" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder=" ">
                                 <span class="input-placeholder">
                                     <div>
                                         <img src="../img/cabinet/modal-icon/postIndex.svg">
@@ -553,7 +553,7 @@
             <div class="modal-content">
                 <div class="orderService popup">
                     <div class="modal-header">
-                        <h2 class="popup__title">Новий договір</h2>
+                        <h2 class="popup__title">Створити замовлення</h2>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <img src="../img/close.svg" alt="X">
                         </button>
