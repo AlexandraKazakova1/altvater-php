@@ -409,6 +409,8 @@ function createIndividual() {
 						if(response.status){
 							openActivationModal(response.payload);
                             responseMsg(form, response);
+                            $('.modal').modal('hide');
+                            $('#verification-modal').modal('show');
 						}
 					},
 					error: function(err){
