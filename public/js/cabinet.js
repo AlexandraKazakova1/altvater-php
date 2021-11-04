@@ -358,7 +358,7 @@ function contractIndividual() {
         focusInvalid: false,
         errorClass: "error",
         rules: {
-            userName: {
+            name: {
                 required: true,
 				minlength: 8
             },
@@ -366,20 +366,20 @@ function contractIndividual() {
                 required: true,
                 email: true
             },
-            userTel: {
+            phone: {
                 required: true,
             },
-            userAddress: {
+            address: {
                 required: true,
 				minlength: 10
             },
-            postIndex: {
+            index: {
                 required: true,
 				minlength: 5
             }
         },
         messages: {
-            userName: {
+            name: {
                 required: "Введіть ваше ПІБ",
 				minlength: "Некоректні дані"
             },
@@ -387,14 +387,14 @@ function contractIndividual() {
                 required: "Введіть свій e-mail!",
                 email: "Адреса має бути типу name@domain.com"
             },
-            userTel: {
+            phone: {
                 required: "Введіть ваш номер телефону",
             },
-            userAddress: {
+            address: {
                 required: "Введіть вашу адресу",
 				minlength: "Некоректні дані"
             },
-            postIndex: {
+            index: {
                 required: "Введіть ваш поштовий індекс",
 				minlength: "Некоректні дані"
             }
@@ -454,15 +454,15 @@ function contractEntity() {
         focusInvalid: false,
         errorClass: "error",
         rules: {
-            userName: {
+            name: {
                 required: true,
 				minlength: 8
             },
-            userContactName: {
+            contact: {
                 required: true,
 				minlength: 2
             },
-            userEntityAddress: {
+            address: {
                 required: true,
 				minlength: 10
             },
@@ -470,10 +470,10 @@ function contractEntity() {
                 required: true,
                 email: true
             },
-            userTel: {
+            phone: {
                 required: true,
             },
-            userAddTel: {
+            extra_phone: {
                 required: false,
             },
             ipn: {
@@ -481,26 +481,26 @@ function contractEntity() {
 				minlength: 12,
 				maxlength: 12
             },
-            uedrpou: {
+            edrpou: {
                 required: true,
 				minlength: 8,
 				maxlength: 8
             },
-            postIndex: {
+            index: {
                 required: true,
 				minlength: 5
             }
         },
         messages: {
-            userName: {
+            name: {
                 required: "Введіть назву компанії",
 				minlength: "Некоректні дані"
             },
-            userContactName: {
+            contact: {
                 required: "Введіть ПІБ контактної особи",
 				minlength: "Некоректні дані"
             },
-            userEntityAddress: {
+            address: {
                 required: "Введіть вашу юридичну адресу",
 				minlength: "Некоректні дані"
             },
@@ -508,10 +508,10 @@ function contractEntity() {
                 required: "Введіть e-mail!",
                 email: "Адреса має бути типу name@domain.com"
             },
-            userTel: {
+            phone: {
                 required: "Введіть номер телефону"
             },
-            userAddTel: {
+            extra_phone: {
                 required: "Введіть додатковий номер телефону"
             },
             ipn: {
@@ -519,12 +519,12 @@ function contractEntity() {
 				minlength: "Некоректні дані",
 				maxlength: "Некоректні дані"
             },
-            uedrpou: {
+            edrpou: {
                 required: "Це поле обов'язкове для заповнення",
 				minlength: "Некоректні дані",
 				maxlength: "Некоректні дані"
             },
-            postIndex: {
+            index: {
                 required: "Введіть ваш поштовий індекс",
 				minlength: "Некоректні дані"
             }
@@ -591,21 +591,21 @@ function addAddress() {
         focusInvalid: false,
         errorClass: "error",
         rules: {
-            placeName: {
+            name: {
                 required: true,
 				minlength: 2
             },
-            placeAddress: {
+            addresses: {
                 required: true,
 				minlength: 4
             }
         },
         messages: {
-            placeName: {
+            name: {
                 required: "Введіть назву компанії",
 				minlength: "Некоректні дані"
             },
-            placeAddress: {
+            addresses: {
                 required: "Введіть вашу адресу",
 				minlength: "Некоректні дані"
             }
