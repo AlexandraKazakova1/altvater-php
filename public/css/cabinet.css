@@ -2162,6 +2162,7 @@ main {
           flex-direction: column;
   margin-bottom: 24px;
   margin-right: 25px;
+  width: 100%;
 }
 
 .newOrder form fieldset label .input-description::after,
@@ -2304,6 +2305,85 @@ main {
   font-size: 12px;
   line-height: 14px;
   top: 101%;
+}
+
+.newOrder form fieldset label .select2-container,
+.settings__wrapper form fieldset label .select2-container,
+.request form fieldset label .select2-container {
+  height: 50px;
+}
+
+.newOrder form fieldset label .select2-container .selection,
+.settings__wrapper form fieldset label .select2-container .selection,
+.request form fieldset label .select2-container .selection {
+  height: 50px;
+}
+
+.newOrder form fieldset label .select2-container .selection .select2-selection,
+.settings__wrapper form fieldset label .select2-container .selection .select2-selection,
+.request form fieldset label .select2-container .selection .select2-selection {
+  padding: 12px 16px;
+  background: #FFFFFF;
+  border: 1px solid #CBD5E0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 8px;
+  color: #4A5568;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  outline: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  height: 50px;
+  width: 23.403vw;
+  min-width: 280px;
+  position: relative;
+}
+
+.newOrder form fieldset label .select2-container .selection .select2-selection .select2-selection__arrow,
+.settings__wrapper form fieldset label .select2-container .selection .select2-selection .select2-selection__arrow,
+.request form fieldset label .select2-container .selection .select2-selection .select2-selection__arrow {
+  height: 100%;
+}
+
+.newOrder form fieldset label select:hover,
+.newOrder form fieldset label select:focus,
+.settings__wrapper form fieldset label select:hover,
+.settings__wrapper form fieldset label select:focus,
+.request form fieldset label select:hover,
+.request form fieldset label select:focus {
+  border: 1px solid #2F5E97;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.newOrder form fieldset label select:focus ~ .input-placeholder,
+.newOrder form fieldset label select:not(:first-child[selected]) ~ .input-placeholder,
+.newOrder form fieldset label select:-webkit-autofill ~ .input-placeholder,
+.settings__wrapper form fieldset label select:focus ~ .input-placeholder,
+.settings__wrapper form fieldset label select:not(:first-child[selected]) ~ .input-placeholder,
+.settings__wrapper form fieldset label select:-webkit-autofill ~ .input-placeholder,
+.request form fieldset label select:focus ~ .input-placeholder,
+.request form fieldset label select:not(:first-child[selected]) ~ .input-placeholder,
+.request form fieldset label select:-webkit-autofill ~ .input-placeholder {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.newOrder form fieldset label .first-option,
+.settings__wrapper form fieldset label .first-option,
+.request form fieldset label .first-option {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba(113, 128, 150, 0.5);
 }
 
 .newOrder form fieldset .input-description,

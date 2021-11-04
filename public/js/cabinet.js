@@ -679,14 +679,6 @@ function requestForm() {
         focusInvalid: false,
         errorClass: "error",
         rules: {
-            theme: {
-                required: true,
-				minlength: 2
-            },
-            number: {
-                required: true,
-				minlength: 5
-            },
             phone: {
                 required: true
             },
@@ -703,10 +695,6 @@ function requestForm() {
             theme: {
                 required: "Це поле обов'язкове для заповнення",
 				minlength: "Введіть більше 2 символів"
-            },
-            number: {
-                required: "Це поле обов'язкове для заповнення",
-				minlength: "Введіть більше 5 символів"
             },
             phone: {
                 required: "Це поле обов'язкове для заповнення",
