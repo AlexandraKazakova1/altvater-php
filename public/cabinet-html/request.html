@@ -153,7 +153,7 @@
             <section class="request">
                 <form class="request__form" id="requestForm">
                     <fieldset>
-                        <div>
+                        <div class="label__wrap">
                             <label>
                                 <span class="input-description">Вибір тематики заявки:</span>
                                 <select class="custom-select" name="service">
@@ -198,7 +198,7 @@
                                 </span>
                             </label>
                         </div>
-                        <div>
+                        <div class="label__wrap">
                             <label>
                                 <span class="input-description">Заголовку звернення:</span>
                                 <input class="form-control" type="text" name="header" placeholder=" ">
@@ -220,6 +220,16 @@
                                 </span>
                             </label>
                         </div>
+                        <label class="label__file">
+                            <input class="form-control-file" type="file" accept=".pdf, .jpg" multiple>
+                            <div>
+                                <img src="../img/File-fill.svg" alt="">
+                                <span>
+                                    Прикріпити файл
+                                    <span class="descriotion">pdf, jpg</span>
+                                </span>
+                            </div>
+                        </label>
                         <div class="submit__wrap">
                             <button class="btn-submit" type="submit" name="add-request">Залишити заявку</button>
                         </div>

@@ -1488,7 +1488,7 @@ main {
                     flex-direction: row;
                     align-items: center;
                     position: absolute;
-                    top: 38px;
+                    top: 40px;
                     left: 16px;
                     font-style: normal;
                     font-weight: normal;
@@ -1659,14 +1659,67 @@ main {
                 display: flex;
                 flex-direction: row;
                 flex-wrap: wrap;
-                div {
+                .label__wrap {
                     display: flex;
                     flex-direction: column;
                     flex-wrap: nowrap;
                     align-items: center;
                     justify-content: flex-start;
+                    margin-right: 30px;
                     label {
                         width: 100%;
+                        margin-right: 0;
+                    }
+                }
+                .label__file {
+                    display: flex;
+                    flex-direction: column;
+                    min-width: 40%;
+                    margin-right: 0;
+                    div {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        padding: 12px 16px;
+                        background: #FFFFFF;
+                        border: 1px solid #CBD5E0;
+                        border-radius: 8px;
+                        width: 23.403vw;
+                        min-width: 280px;
+                        cursor: pointer;
+                        transition: all 0.3s;
+                        img {
+                            margin-right: 10px;
+                            width: 36px;
+                            height: 36px;
+                        }
+                    }
+                    div:hover {
+                        border: 1px solid #2F5E97;
+                        transition: all 0.3s;
+                    }
+                    span {
+                        color: #2F5E97;
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 16px;
+                        line-height: 24px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                    }
+                    .descriotion {
+                        color: rgba(113, 128, 150, 0.5);
+                    }
+                    .form-control-file {
+                        position: absolute;
+                        width: 1px;
+                        height: 1px;
+                        margin: -1px;
+                        border: 0;
+                        padding: 0;
+                        clip: rect(0 0 0 0);
+                        overflow: hidden;
                     }
                 }
                 .submit__wrap {
