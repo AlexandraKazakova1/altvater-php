@@ -21,29 +21,28 @@
 		</a>
 		
 		<section class="request">
-			<form class="request__form" id="request__form" action="POST">
+			<form class="request__form" id="requestForm">
 				<fieldset>
 					<div>
 						<label>
 							<span class="input-description">Вибір тематики заявки:</span>
-							<input class="form-control" type="text" name="theme" placeholder=" ">
-							<span class="input-placeholder">
-								<div>
-									<img src="/img/cabinet/text.svg">
-								</div>
-								Тематика заявки
-							</span>
+							<select class="custom-select" name="service">
+								<option data-id="0" class="first-option" disabled selected value hidden>Тематика заявки</option>
+								<option value="1">Тематика заявки1</option>
+								<option value="2">Тематика заявки2</option>
+								<option value="3">Тематика заявки3</option>
+							</select>
 						</label>
 						
 						<label>
 							<span class="input-description">Номер договору:</span>
-							<input class="form-control" type="number" name="number" placeholder=" ">
-							<span class="input-placeholder">
-								<div>
-									<img src="/img/cabinet/documents.svg">
-								</div>
-								Номер договору
-							</span>
+							<select class="custom-select" name="service">
+								<option data-id="0" class="first-option" disabled selected value hidden>Номер договору</option>
+								<option value="0">Без договору</option>
+								<option value="123">#13256</option>
+								<option value="1234">#23256</option>
+								<option value="12345">#17866</option>
+							</select>
 						</label>
 						
 						<label>
@@ -81,6 +80,18 @@
 							</span>
 						</label>
 					</div>
+					
+					<label class="label__file">
+						<input class="form-control-file" type="file" accept=".pdf, .jpg" multiple>
+						
+						<div>
+							<img src="/img/File-fill.svg" alt="">
+							<span>
+								Прикріпити файл
+								<span class="descriotion">pdf, jpg</span>
+							</span>
+						</div>
+					</label>
 					
 					<div class="submit__wrap">
 						<button class="btn-submit" type="submit" name="add-request">Залишити заявку</button>
