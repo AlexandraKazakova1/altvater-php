@@ -4588,6 +4588,13 @@ a.popup-text__link {
   margin-bottom: 30px;
 }
 
+.popup .popup__form .fieldset .btn-submit.disable {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  background: #858585;
+  border: 1px solid #858585;
+}
+
 .popup .popup__form .fieldset .btn-submit:focus,
 .popup .popup__form .fieldset .btn-submit:hover {
   background: #BF604D;

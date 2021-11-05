@@ -3452,6 +3452,11 @@ a.popup-text__link {
                 transition: all 0.3s;
                 margin-bottom: 30px;
             }
+            .btn-submit.disable {
+                transition: all 0.3s;
+                background: #858585;
+                border: 1px solid #858585;
+            }
             .btn-submit:focus,
             .btn-submit:hover {
                 background: #BF604D;
