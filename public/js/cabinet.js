@@ -616,7 +616,7 @@ function addAddress() {
 			if(!lock){
 				$.ajax({
 					type: "POST",
-					url: '/ajax/user/address',
+					url: '/ajax/cabinet/add-address',
                     method: "POST",
                     data: form.serialize(),
                     dataType: "json",
@@ -1063,9 +1063,9 @@ function orderServiceForm() {
 		submitHandler: function() {
 			if(!lock){
 				$.ajax({
-					type: "POST",
-					url: '/ajax/user/settings',
-                    method: "POST",
+					type: "GET",
+					url: '/ajax/cabinet/order-service',
+                    method: "GET",
                     data: form.serialize(),
                     dataType: "json",
                     beforeSend: function(request){

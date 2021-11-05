@@ -4588,7 +4588,7 @@ a.popup-text__link {
   margin-bottom: 30px;
 }
 
-.popup .popup__form .fieldset .btn-submit.disable {
+.popup .popup__form .fieldset .disable {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   background: #858585;
@@ -4626,6 +4626,11 @@ a.popup-text__link {
 }
 
 .popup .popup__form .fieldset .sendAgain {
+  color: #2F5E97;
+  text-decoration: underline;
+}
+
+.popup .popup__form .fieldset .sendAgain.disable {
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -4635,7 +4640,7 @@ a.popup-text__link {
   margin-bottom: 15px;
 }
 
-.popup .popup__form .fieldset .sendAgain span {
+.popup .popup__form .fieldset .sendAgain.disable span {
   color: #2F5E97;
   font-size: 13px;
 }
