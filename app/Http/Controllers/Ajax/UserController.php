@@ -565,14 +565,12 @@ class UserController extends Controller {
 				$post['verifCode'] = implode('', $post['verifCode']);
 			}
 			
-			print_r($post);
-			exit;
-			
 			$user = User::query()
 						->where('phone_token', '=', $post['token'])
 						//->where('phone_code', '=', $post['code'])
 						->first();
-			
+			print_r($user);
+			exit;
 			if($user){
 				if($user->phone_code == $post['verifCode']){
 					if(!isset($post['remember'])){
