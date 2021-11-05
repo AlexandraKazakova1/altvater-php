@@ -3452,7 +3452,7 @@ a.popup-text__link {
                 transition: all 0.3s;
                 margin-bottom: 30px;
             }
-            .btn-submit.disable {
+            .disable {
                 transition: all 0.3s;
                 background: #858585;
                 border: 1px solid #858585;
@@ -3481,6 +3481,10 @@ a.popup-text__link {
                 }
             }
             .sendAgain {
+                color: #2F5E97;
+                text-decoration: underline;
+            }
+            .sendAgain.disable {
                 font-style: normal;
                 font-weight: normal;
                 font-size: 12px;
