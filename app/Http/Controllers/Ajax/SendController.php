@@ -30,17 +30,17 @@ class SendController extends Controller {
 		$validator = Validator::make(
 			$post,
 			array(
-				'username'				=> 'required|min:2|max:50',
-				'useremail'				=> 'required|email',
-				'message'				=> 'max:500',
+				'name'				=> 'required|min:2|max:50',
+				'email'				=> 'required|email',
+				'message'			=> 'max:500',
 			),
 			array(
-				'username.required'		=> trans('ajax_validation.enter_your_name'),
-				'username.min'			=> trans('ajax_validation.min_length'),
-				'username.max'			=> trans('ajax_validation.max_length'),
+				'name.required'		=> trans('ajax_validation.enter_your_name'),
+				'name.min'			=> trans('ajax_validation.min_length'),
+				'name.max'			=> trans('ajax_validation.max_length'),
 				
-				'useremail.required'	=> trans('ajax_validation.email_required'),
-				'useremail.email'		=> trans('ajax_validation.email_invalid'),
+				'email.required'	=> trans('ajax_validation.email_required'),
+				'email.email'		=> trans('ajax_validation.email_invalid'),
 				
 				'message.required'		=> trans('ajax_validation.required'),
 				'message.min'			=> trans('ajax_validation.min_length'),
@@ -53,16 +53,16 @@ class SendController extends Controller {
 			
 			if(!$error){
 				$insert = Feedback::create([
-					'name'		=> $post['username'],
-					'email'		=> $post['useremail'],
+					'name'		=> $post['name'],
+					'email'		=> $post['email'],
 					'message'	=> $post['message']
 				]);
 				
 				try {
 					$this->sendEmail('feedback', null, [
 						'id'		=> $insert->id,
-						'name'		=> $post['username'],
-						'email'		=> $post['useremail'],
+						'name'		=> $post['name'],
+						'email'		=> $post['email'],
 						'message'	=> $post['message'],
 						'url'		=> url('/admin/feedback/'.$insert->id.'/edit')
 					]);
