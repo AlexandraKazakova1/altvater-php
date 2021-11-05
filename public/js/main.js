@@ -136,7 +136,7 @@ function callBackForm() {
             }
         },
         messages: {
-            username: {
+            name: {
                 required: "Введіть своє ім'я",
                 rangelength: "Введіть більше двох символів"
             },
