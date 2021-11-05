@@ -549,20 +549,23 @@ class UserController extends Controller {
 			$post,
 			array(
 				'token'					=> 'required|string|max:32|min:32',
-				'code'					=> 'required',
+				'verifCode'				=> 'required',
 			),
 			array(
 				'token.required'		=> trans('ajax_validation.phone_required'),
 				'token.min'				=> trans('ajax_validation.min_length'),
 				'token.max'				=> trans('ajax_validation.max_length'),
 				
-				'code.required'			=> trans('ajax_validation.required'),
+				'verifCode.required'	=> trans('ajax_validation.required'),
 			)
 		);
 		
+		print_r($post);
+		exit;
+		
 		if($validator->passes()){
-			if(is_array($post['code'])){
-				$post['code'] = implode('', $post['code']);
+			if(is_array($post['verifCode'])){
+				$post['verifCode'] = implode('', $post['verifCode']);
 			}
 			
 			$user = User::query()
@@ -571,7 +574,7 @@ class UserController extends Controller {
 						->first();
 			
 			if($user){
-				if($user->phone_code == $post['code']){
+				if($user->phone_code == $post['verifCode']){
 					if(!isset($post['remember'])){
 						$post['remember'] = '';
 					}
