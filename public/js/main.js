@@ -296,10 +296,11 @@ function logIn() {
 						lock = false;
                         btn.attr('disabled', false);
 
+                        responseMsg(form, response);
+
 						if(response.status){;
 							form.trigger('reset');
                             window.location.href = '/account';
-                            responseMsg(form, response);
 						}
 					},
 					error: function(err){
@@ -405,7 +406,7 @@ function createIndividual() {
 						
 						lock = false;
                         btn.attr('disabled', false);
-                        
+
                         responseMsg(form, response);
 						
 						if(response.status){
@@ -583,10 +584,11 @@ function createEntity() {
 						
 						lock = false;
                         btn.attr('disabled', false);
+                        
+                        responseMsg(form, response);
 						
 						if(response.status){
 							openActivationModal(response.payload);
-                            responseMsg(form, response);
 						}
 					},
 					error: function(err){
@@ -725,11 +727,12 @@ function passRecovery() {
 						
 						lock = false;
                         btn.attr('disabled', false);
+                        
+                        responseMsg(form, response);
 						
 						if(response.status){;
                             $('.modal').modal('hide');
                             $('#recovery-modal-2').modal('show');
-                            responseMsg(form, response);
 						}
 					},
 					error: function(err){
@@ -802,10 +805,11 @@ function passRecovery3() {
 						
 						lock = false;
                         btn.attr('disabled', false);
+                        
+                        responseMsg(form, response);
 						
 						if(response.status){;
 							form.trigger('reset');
-                            responseMsg(form, response);
 						}
 					},
 					error: function(err){
@@ -872,10 +876,11 @@ function passVerificationForm() {
 						
 						lock = false;
                         btn.attr('disabled', false);
+                        
+                        responseMsg(form, response);
 						
 						if(response.status){;
 							form.trigger('reset');
-                            responseMsg(form, response);
 						}
 					},
 					error: function(err){
