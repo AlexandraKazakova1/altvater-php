@@ -888,6 +888,7 @@ function passVerificationForm() {
 						
 						if(response.status){;
 							form.trigger('reset');
+                            window.location.href = '/account';
 						}
 					},
 					error: function(err){
