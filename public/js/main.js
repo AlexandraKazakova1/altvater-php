@@ -127,10 +127,6 @@ function callBackForm() {
                 required: true,
                 email: true
             },
-			// message: {
-			// 	minlength: 8,
-			// 	maxlength: 2000
-			// },
             rule: {
                 required: true
             }
@@ -144,10 +140,6 @@ function callBackForm() {
                 required: "Введіть свій e-mail!",
                 email: "Адреса має бути типу name@domain.com"
             },
-			// message: {
-			// 	minlength: "Введіть більше 8 символів",
-			// 	maxlength: "Введено більше 2000 символів"
-			// },
             rule: {
                 required: "Підтвердіть свою згоду"
             }
@@ -172,12 +164,11 @@ function callBackForm() {
 						
 						lock = false;
                         btn.attr('disabled', false);
-                        
+
                         responseMsg(form, response);
 
 						if(response.status){;
 							form.trigger('reset');
-                            window.location.href = '/account';
 						}
 					},
 					error: function(err){
