@@ -943,12 +943,12 @@ class UserController extends Controller {
 			$msg	= trans('ajax.success_add_address');
 			
 			$payload = [
-				"id"		: $record->id,
-				"name" 		: $record->name,
-				"addresses"	: $record->addresses,
-				"lat"		: 0,
-				"lng"		: 0,
-				"images"	: [],
+				"id"		=> $record->id,
+				"name" 		=> $record->name,
+				"addresses"	=> $record->addresses,
+				"lat"		=> 0,
+				"lng"		=> 0,
+				"images"	=> [],
 			];
 		}else{
 			$messages = $validator->messages();
