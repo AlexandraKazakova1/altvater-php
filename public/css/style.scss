@@ -2217,6 +2217,16 @@ label .error {
     }
 }
 
+.responseMsg {
+    padding-bottom: 10px;
+    text-align: center;
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 18px;
+    color: #2F5E97;
+}
+
 @media (max-width:1440px) {
     .response-wrapper {
         .response {
