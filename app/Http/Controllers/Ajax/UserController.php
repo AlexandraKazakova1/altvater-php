@@ -560,13 +560,13 @@ class UserController extends Controller {
 			)
 		);
 		
-		print_r($post);
-		exit;
-		
 		if($validator->passes()){
 			if(is_array($post['verifCode'])){
 				$post['verifCode'] = implode('', $post['verifCode']);
 			}
+			
+			print_r($post);
+			exit;
 			
 			$user = User::query()
 						->where('phone_token', '=', $post['token'])
