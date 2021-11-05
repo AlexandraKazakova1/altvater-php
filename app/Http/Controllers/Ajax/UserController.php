@@ -537,7 +537,7 @@ class UserController extends Controller {
 		], 200, [], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 	}
 	
-	function activation(Request $request){
+	function verification(Request $request){
 		$post = $request->all();
 		
 		$status = false;
