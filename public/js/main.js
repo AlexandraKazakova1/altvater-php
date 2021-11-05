@@ -405,10 +405,11 @@ function createIndividual() {
 						
 						lock = false;
                         btn.attr('disabled', false);
+                        
+                        responseMsg(form, response);
 						
 						if(response.status){
 							openActivationModal(response.payload);
-                            responseMsg(form, response);
                             $('.modal').modal('hide');
                             $('#verification-modal').modal('show');
 						}
