@@ -24,6 +24,8 @@ class UserController extends Controller {
 	public $_user	= [];
 	public $_id		= 0;
 	
+	public $_send_sms = false;
+	
 	function session(){
 		$this->_user = Auth::user();
 		
@@ -219,10 +221,10 @@ class UserController extends Controller {
 			if(!$error){
 				$email_token	= md5(time(). 'r' . $post['email']);
 				
-				if($post['phone'] == "380686781355"){
-					$phone_code		= 11111;
-				}else{
+				if($this->_send_sms){
 					$phone_code		= mt_rand(11111, 99999);
+				}else{
+					$phone_code		= 11111;
 				}
 				
 				$phone_token	= md5(time(). 'p' . $phone_code);
@@ -249,7 +251,7 @@ class UserController extends Controller {
 					)
 				);
 				
-				if($post['phone'] != "380686781355"){
+				if($this->_send_sms){
 					$sms = new smsc();
 					
 					$sms->config_user(env('SMSCRU_LOGIN'), env('SMSCRU_PASSWORD'));
@@ -435,8 +437,14 @@ class UserController extends Controller {
 				$post['extra_prone'] = preg_replace("/[^0-9]/", '', $post['extra_prone']);
 				
 				$email_token	= md5(time(). 'r' . $post['email']);
-				$phone_code		= mt_rand(11111, 99999);
-				$phone_token	= md5(time(). 'p' . $phone_code);
+				
+				if($this->_send_sms){
+					$phone_code		= mt_rand(11111, 99999);
+				}else{
+					$phone_code		= 11111;
+				}
+				
+				$phone_token	= md5(time(). '-' . $phone_code);
 				
 				$user = User::create([
 					'type'				=> $post['user-type'],
@@ -466,17 +474,21 @@ class UserController extends Controller {
 					)
 				);
 				
-				$sms = new smsc();
-				
-				$sms->config_user(env('SMSCRU_LOGIN'), env('SMSCRU_PASSWORD'));
-				
-				$result = $sms->send(
-					$post['phone'],
-					[
-						'code' => $phone_code
-					],
-					'reg'
-				);
+				if($this->_send_sms){
+					$sms = new smsc();
+					
+					$sms->config_user(env('SMSCRU_LOGIN'), env('SMSCRU_PASSWORD'));
+					
+					$result = $sms->send(
+						$post['phone'],
+						[
+							'code' => $phone_code
+						],
+						'reg'
+					);
+				}else{
+					$result = true;
+				}
 				
 				if(!$result){
 					return response()->json([
