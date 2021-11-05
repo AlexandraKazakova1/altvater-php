@@ -19,11 +19,11 @@
 							<p>На цей номер <span class="number"></span> відправлений SMS-код, введіть його в поле нижче:</p>
 							
 							<label class="verif-code">
-								<input class="form-control verifCode" type="text" name="verifCode" autocomplete="off" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder=" "  onfocus="this.value=''"/>
-								<input class="form-control verifCode" type="text" name="verifCode" autocomplete="off" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder=" "  onfocus="this.value=''"/>
-								<input class="form-control verifCode" type="text" name="verifCode" autocomplete="off" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder=" "  onfocus="this.value=''"/>
-								<input class="form-control verifCode" type="text" name="verifCode" autocomplete="off" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder=" "  onfocus="this.value=''"/>
-								<input class="form-control verifCode" type="text" name="verifCode" autocomplete="off" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder=" "  onfocus="this.value=''"/>
+								<input class="form-control verifCode" type="text" name="verifCode[0]" required autocomplete="off" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder=" "  onfocus="this.value=''"/>
+								<input class="form-control verifCode" type="text" name="verifCode[1]" required autocomplete="off" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder=" "  onfocus="this.value=''"/>
+								<input class="form-control verifCode" type="text" name="verifCode[2]" required autocomplete="off" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder=" "  onfocus="this.value=''"/>
+								<input class="form-control verifCode" type="text" name="verifCode[3]" required autocomplete="off" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder=" "  onfocus="this.value=''"/>
+								<input class="form-control verifCode" type="text" name="verifCode[4]" required autocomplete="off" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder=" "  onfocus="this.value=''"/>
 							</label>
 							
 							<a href="#" class="sendAgain">Відправити знову <span id="seconds"></span></a>
