@@ -145,12 +145,12 @@
 						<fieldset class="callback-fieldset">
 							<label>
 								<span>Ім'я </span>
-								<input class="form-control" type="text" id="username" name="username" placeholder="Ваше Ім'я">
+								<input class="form-control" type="text" id="username" name="name" placeholder="Ваше Ім'я">
 							</label>
 							
 							<label>
 								<span>Email</span>
-								<input class="form-control" type="email" id="useremail" name="useremail" placeholder="Ваш email">
+								<input class="form-control" type="email" id="useremail" name="email" placeholder="Ваш email">
 							</label>
 							
 							<label>
