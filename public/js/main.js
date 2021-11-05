@@ -156,7 +156,7 @@ function callBackForm() {
 			if(!lock){
 				$.ajax({
 					type: "POST",
-					url: '/ajax/user/callback',
+					url: '/ajax/callback',
                     method: "POST",
                     data: form.serialize(),
                     dataType: "json",
