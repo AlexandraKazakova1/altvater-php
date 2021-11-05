@@ -2058,9 +2058,12 @@ p a {
     text-decoration: none;    
     color: #00B7CE;
 }
-p img {
-    max-width: 60% !important;
-    margin: auto;
+div,
+p {
+    img {
+        max-width: 60% !important;
+        margin: auto;
+    }
 }
 .wrapper__gray {
     background: #EAE9E9;
@@ -3045,11 +3048,14 @@ label .error {
     }
     p a {
         word-wrap: break-word;
-    }   
-    p img {
-        max-width: 100% !important;
-        margin: auto;
-    }
+    } 
+    div,
+    p {
+        img {
+            max-width: 100% !important;
+            margin: auto;
+        }
+    }  
 }
 @media (max-width:580px) {
     .stat__wrapper {

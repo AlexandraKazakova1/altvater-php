@@ -2954,6 +2954,7 @@ p a {
   color: #00B7CE;
 }
 
+div img,
 p img {
   max-width: 60% !important;
   margin: auto;
@@ -4026,6 +4027,7 @@ label .error {
   p a {
     word-wrap: break-word;
   }
+  div img,
   p img {
     max-width: 100% !important;
     margin: auto;
