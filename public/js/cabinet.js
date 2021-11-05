@@ -1063,9 +1063,9 @@ function orderServiceForm() {
 		submitHandler: function() {
 			if(!lock){
 				$.ajax({
-					type: "GET",
+					type: "POST",
 					url: '/ajax/cabinet/order-service',
-                    method: "GET",
+                    method: "POST",
                     data: form.serialize(),
                     dataType: "json",
                     beforeSend: function(request){
