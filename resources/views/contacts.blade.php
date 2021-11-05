@@ -167,7 +167,7 @@
 							</label>
 						</fieldset>
 					</form>
-					<span id="answer-msg"></span>
+                        <p class="responseMsg"></p>
 				</div>
 			</div>
 		</section>
