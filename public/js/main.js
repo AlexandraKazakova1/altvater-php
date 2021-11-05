@@ -301,6 +301,13 @@ function logIn() {
 						if(response.status){;
 							form.trigger('reset');
                             window.location.href = '/account';
+						}else{
+							if(response.payload.sms){
+								openActivationModal(response.payload);
+								
+								$('.modal').modal('hide');
+								$('#verification-modal').modal('show');
+                            }
 						}
 					},
 					error: function(err){

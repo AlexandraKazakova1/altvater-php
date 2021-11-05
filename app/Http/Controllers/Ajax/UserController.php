@@ -46,7 +46,13 @@ class UserController extends Controller {
 		$status = false;
 		$errors = array();
 		$msg	= trans('ajax.failed_login');
-		$payload= [];
+		
+		$payload = [
+			'sms'			=> false,
+			'phone'			=> '',
+			'token'			=> '',
+			"phone_format"	=> ""
+		];
 		
 		$validator = Validator::make(
 			$post,
@@ -83,9 +89,11 @@ class UserController extends Controller {
 					$msg	= trans('ajax.user_not_active');
 					
 					$payload = [
-						'sms'	=> true,
-						'phone'	=> $user->phone,
-						'token'	=> $user->phone_token
+						'sms'			=> true,
+						'phone'			=> $user->phone,
+						"phone_format"	=> StringHelper::phone($user->phone, '[2] [(3)] 2-2-3'),
+						"email"			=> $user->email,
+						'token'			=> $user->phone_token
 					];
 				}
 			}
