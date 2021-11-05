@@ -38,8 +38,8 @@ Route::group(['namespace' => 'Ajax'], function(){
 		'uses' => 'UserController@registration'
 	]);
 	
-	Route::post('ajax/user/activation', [
-		'uses' => 'UserController@activation'
+	Route::post('ajax/user/verification', [
+		'uses' => 'UserController@verification'
 	]);
 	
 	Route::post('ajax/user/forgotten', [
