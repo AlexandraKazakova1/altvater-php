@@ -69,6 +69,10 @@ Route::group(['namespace' => 'Ajax'], function(){
 	Route::post('ajax/cabinet/remove-address', [
 		'uses' => 'AddressController@remove'
 	]);
+	
+	Route::post('ajax/user/address', [
+		'uses' => 'UserController@address'
+	]);
 });
 
 Route::get('news', [

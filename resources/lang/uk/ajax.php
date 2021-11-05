@@ -49,4 +49,7 @@ return [
 	'success_remove_address'			=> 'Адреса успішно видалена',
 	
 	'failed_send_sms'					=> 'Не вдалось відправити смс',
+	
+	'failed_add_address'				=> 'Не вдалось додати адресу',
+	'success_add_address'				=> 'Адреса успішно додана',
 ];

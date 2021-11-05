@@ -17,6 +17,7 @@ use App\Helpers\SMSClub;
 use App\Helpers\smsc;
 
 use App\Models\User;
+use App\Models\UserAddresses;
 
 class UserController extends Controller {
 	
@@ -875,6 +876,80 @@ class UserController extends Controller {
 				$status = true;
 				$msg	= trans('ajax.success_change_password');
 			}
+		}else{
+			$messages = $validator->messages();
+			
+			foreach($post as $k => $v){
+				$error = $messages->first($k);
+				
+				if($error){
+					$errors[$k] = $error;
+				}
+			}
+		}
+		
+		return response()->json([
+			'status' 	=> $status,
+			'message'	=> $msg,
+			'errors'	=> $errors,
+			'payload'	=> $payload
+		], 200, [], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+	}
+	
+	function address(Request $request){
+		$this->session();
+				
+		$status = false;
+		$errors = array();
+		$msg	= trans('ajax.failed_add_address');
+		$payload= [];
+		
+		if(!$this->_auth){
+			return response()->json([
+				'status' 	=> $status,
+				'message'	=> $msg,
+				'errors'	=> $errors,
+				'payload'	=> $payload
+			], 200, [], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+		}
+		
+		$post = $request->all();
+		
+		$validator = Validator::make(
+			$post,
+			array(
+				'placeName'					=> 'required|min:3|max:150',
+				'placeAddress'				=> 'required|min:3|max:200'
+			),
+			array(
+				'placeName.required'			=> trans('ajax_validation.required'),
+				'placeName.min'				=> trans('ajax_validation.min_length'),
+				'placeName.max'				=> trans('ajax_validation.max_length'),
+				
+				'placeAddress.required'		=> trans('ajax_validation.required'),
+				'placeAddress.min'			=> trans('ajax_validation.min_length'),
+				'placeAddress.max'			=> trans('ajax_validation.max_length'),
+			)
+		);
+		
+		if($validator->passes()){
+			$record = UserAddresses::create([
+				'client_id'	=> $this->_id,
+				'name'		=> $post['placeName'],
+				'address'	=> $post['placeAddress']
+			]);
+			
+			$status = true;
+			$msg	= trans('ajax.success_add_address');
+			
+			$payload = [
+				"id"		=> $record->id,
+				"name" 		=> $record->name,
+				"addresses"	=> $record->addresses,
+				"lat"		=> 0,
+				"lng"		=> 0,
+				"images"	=> [],
+			];
 		}else{
 			$messages = $validator->messages();
 			
