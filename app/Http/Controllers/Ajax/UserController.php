@@ -918,8 +918,8 @@ class UserController extends Controller {
 		$validator = Validator::make(
 			$post,
 			array(
-				'placeName'					=> 'required|min:6|max:150',
-				'placeAddress'				=> 'required|min:6|max:200'
+				'placeName'					=> 'required|min:3|max:150',
+				'placeAddress'				=> 'required|min:3|max:200'
 			),
 			array(
 				'placeName.required'			=> trans('ajax_validation.required'),
