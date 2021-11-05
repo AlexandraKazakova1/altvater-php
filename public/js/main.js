@@ -172,11 +172,11 @@ function callBackForm() {
 						
 						lock = false;
                         btn.attr('disabled', false);
+                        responseMsg(form, response);
 
 						if(response.status){;
 							form.trigger('reset');
                             window.location.href = '/account';
-                            responseMsg(form, response);
 						}
 					},
 					error: function(err){
