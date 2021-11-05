@@ -3497,6 +3497,9 @@ label .error {
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
   }
+  header .header-nav .burger-menu .menu__body .menu-nav__list .menu-nav__btn-group .btn-logIn {
+    background: transparent;
+  }
   header .header-nav .burger-menu .menu__body .menu-nav__list .menu-nav__btn-group .btn-logIn:hover {
     background: #F2664F;
     -webkit-transition: all 0.3s;

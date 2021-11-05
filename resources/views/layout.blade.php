@@ -123,8 +123,8 @@
 									@if($user)
 										<a href="/account" class="btn-header">Мій кабінет</a>
 									@else
-										<a href="/login" class="btn-logIn">Вхід</a>
-										<a href="/registration" class="btn-reg btn-red">Реєстрація</a>
+										<button type="button" class="btn-logIn" data-toggle="modal" data-target="#log__in-modal">Вхід</button>
+										<button type="button" class="btn-reg btn-red" data-toggle="modal" data-target="#create-modal">Реєстрація</button>
 									@endif
 								@endif
 							</div>
