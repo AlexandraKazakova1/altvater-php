@@ -854,16 +854,16 @@ function passVerificationForm() {
         focusCleanup: true,
         focusInvalid: false,
         errorClass: "error",
-        // rules: {
-        //     verifCode: {
-        //         required: true
-        //     }
-        // },
-        // messages: {
-        //     verifCode: {
-        //         required: 'Введите код'
-        //     }
-        // },
+        rules: {
+            verifCode: {
+                required: true
+            }
+        },
+        messages: {
+            verifCode: {
+                required: 'Введите код'
+            }
+        },
 		submitHandler: function() {
 			if(!lock){
 				$.ajax({
@@ -888,6 +888,7 @@ function passVerificationForm() {
 						
 						if(response.status){;
 							form.trigger('reset');
+                            window.location.href = '/account';
 						}
 					},
 					error: function(err){
