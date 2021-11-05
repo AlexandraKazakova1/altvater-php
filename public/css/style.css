@@ -1752,6 +1752,11 @@ footer .footer span {
   text-align: justify;
 }
 
+.osbb__wrapper .osbb div img {
+  max-width: 100% !important;
+  margin: auto;
+}
+
 .last-work__wrapper .last-work {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2954,7 +2959,6 @@ p a {
   color: #00B7CE;
 }
 
-div img,
 p img {
   max-width: 60% !important;
   margin: auto;
@@ -3870,6 +3874,10 @@ label .error {
     font-size: 14px;
     line-height: 28px;
   }
+  .osbb__wrapper .osbb div img {
+    max-width: 100% !important;
+    margin: auto;
+  }
   .infoList h2, .infoList h3, .infoList h4 {
     text-align: center;
     font-size: 30px;
@@ -4027,7 +4035,6 @@ label .error {
   p a {
     word-wrap: break-word;
   }
-  div img,
   p img {
     max-width: 100% !important;
     margin: auto;
