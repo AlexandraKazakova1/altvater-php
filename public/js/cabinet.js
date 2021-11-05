@@ -419,10 +419,11 @@ function contractIndividual() {
 						
 						lock = false;
                         btn.attr('disabled', false);
+                        
+                        responseMsg(form, response);
 
 						if(response.status){
 							form.trigger('reset');
-                            responseMsg(form, response);
 						}
 					},
 					error: function(err){
@@ -549,10 +550,11 @@ function contractEntity() {
 						
 						lock = false;
                         btn.attr('disabled', false);
+                        
+                        responseMsg(form, response);
 
 						if(response.status){
 							form.trigger('reset');
-                            responseMsg(form, response);
 						}
 					},
 					error: function(err){
@@ -630,10 +632,11 @@ function addAddress() {
 						
 						lock = false;
                         btn.attr('disabled', false);
+                        
+                        responseMsg(form, response);
 
 						if(response.status){
 							form.trigger('reset');
-                            responseMsg(form, response);
 						}
 					},
 					error: function(err){
@@ -726,10 +729,11 @@ function requestForm() {
 						
 						lock = false;
                         btn.attr('disabled', false);
+                        
+                        responseMsg(form, response);
 
 						if(response.status){
 							form.trigger('reset');
-                            responseMsg(form, response);
 						}
 					},
 					error: function(err){
@@ -909,10 +913,12 @@ function settingsForm() {
 						
 						lock = false;
                         btn.attr('disabled', false);
+                        
+                        responseMsg(form, response);
 
-						if(response.status){
-                            responseMsg(form, response);
-						}
+						// if(response.status){
+                        //     responseMsg(form, response);
+						// }
 					},
 					error: function(err){
 						console.log('error');
@@ -984,10 +990,12 @@ function changePasswordForm() {
 						
 						lock = false;
                         btn.attr('disabled', false);
+                        
+                        responseMsg(form, response);
 
 						if(response.status){
 							form.trigger('reset');
-                            responseMsg(form, response);
+                            // responseMsg(form, response);
 						}
 					},
 					error: function(err){
@@ -1072,10 +1080,12 @@ function orderServiceForm() {
 						
 						lock = false;
                         btn.attr('disabled', false);
+                        
+                        responseMsg(form, response);
 
 						if(response.status){
 							form.trigger('reset');
-                            responseMsg(form, response);
+                            // responseMsg(form, response);
 						}
 					},
 					error: function(err){
@@ -1159,10 +1169,12 @@ function newOrderForm() {
 						
 						lock = false;
                         btn.attr('disabled', false);
+                        
+                        responseMsg(form, response);
 
 						if(response.status){
 							form.trigger('reset');
-                            responseMsg(form, response);
+                            // responseMsg(form, response);
 						}
 					},
 					error: function(err){
