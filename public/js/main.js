@@ -172,6 +172,7 @@ function callBackForm() {
 						
 						lock = false;
                         btn.attr('disabled', false);
+                        
                         responseMsg(form, response);
 
 						if(response.status){;
