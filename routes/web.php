@@ -155,7 +155,7 @@ Route::get('account/logout', [
 ]);
 
 Route::get('reset/{code}', [
-	'uses' => 'AccountController@reset'
+	'uses' => 'PageController@index'
 ])->where('code', '[a-zA-Z_0-9\-]+');
 
 Route::get('/{uri}', [
