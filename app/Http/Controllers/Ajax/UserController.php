@@ -644,7 +644,7 @@ class UserController extends Controller {
 				
 				$user->update(['confirm_code'	=>  $code]);
 				
-				$this->send_email('reset-password',
+				$this->sendEmail('reset-password',
 					$post['email'],
 					array(
 						'email'	=> $post['email'],
