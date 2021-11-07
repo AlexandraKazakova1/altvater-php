@@ -164,12 +164,12 @@
 			</div>
 		</footer>
 		
-		@include('modals.login', ['user' => $user])
-		@include('modals.registration', ['user' => $user])
-		@include('modals.activation', ['user' => $user])
-		@include('modals.recovery', ['user' => $user])
-		@include('modals.new-password', ['user' => $user])
-		@include('modals.calc', ['tariff_category' => $tariff_category, 'calc_object' => $calc_object])
+		@include('modals.login'			, ['user' => $user])
+		@include('modals.registration'	, ['user' => $user])
+		@include('modals.activation'	, ['user' => $user])
+		@include('modals.recovery'		, ['user' => $user])
+		@include('modals.new-password'	, ['user' => $user, 'code' => $code])
+		@include('modals.calc'			, ['tariff_category' => $tariff_category, 'calc_object' => $calc_object])
 		
 		<div id="cookie_notification">
 			<p>{{trans('site.cookie.text')}}</p>

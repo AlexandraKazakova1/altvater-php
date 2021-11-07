@@ -1,4 +1,4 @@
-<div class="modal fade" id="recovery-modal-3" tabindex="-1" role="dialog">
+<div class="modal fade {{($code ? 'show' : '')}}" id="recovery-modal-3" tabindex="-1" role="dialog">
 	<div class="modal-dialog modal-md modal-dialog-centered" role="document">
 		<div class="modal-content">
 			<div class="pass__recovery-page popup">
@@ -12,10 +12,13 @@
 				
 				<div class="modal-body">
 					<form class="popup__form" id="pass__recovery-form3">
+						<input type="hidden" name="token" value="{{$code}}" >
+						
 						<fieldset class="fieldset">
 							<label>
 								<span class="input-description">Пароль:</span>
 								<input class="form-control password-2" type="password"  name="password" placeholder=" ">
+								
 								<span class="input-placeholder">
 									<div>
 										<img src="/img/cabinet/modal-icon/lock.svg">
@@ -27,6 +30,7 @@
 							<label>
 								<span class="input-description">Повторіть пароль:</span>
 								<input class="form-control" type="password"  name="confirm_password" placeholder=" ">
+								
 								<span class="input-placeholder">
 									<div>
 										<img src="/img/cabinet/modal-icon/lock.svg">

@@ -42,7 +42,7 @@ Route::group(['namespace' => 'Ajax'], function(){
 		'uses' => 'UserController@verification'
 	]);
 	
-	Route::post('ajax/user/forgotten', [
+	Route::post('ajax/user/recovery', [
 		'uses' => 'UserController@forgotten'
 	]);
 	
@@ -153,6 +153,10 @@ Route::get('account/logout', [
 	'as'    => 'logout',
 	'uses'  => 'AccountController@logout'
 ]);
+
+Route::get('reset/{code}', [
+	'uses' => 'AccountController@reset'
+])->where('code', '[a-zA-Z_0-9\-]+');
 
 Route::get('/{uri}', [
 	'uses' => 'PageController@once'

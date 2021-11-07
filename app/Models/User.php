@@ -42,7 +42,8 @@ class User extends Authenticatable	{
 		'index',
 		'company_name',
 		'ipn',
-		'uedrpou'
+		'uedrpou',
+		'confirm_code'
 	];
 	
 	/**

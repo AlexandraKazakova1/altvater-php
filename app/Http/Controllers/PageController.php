@@ -7,6 +7,7 @@ use App\Models\News;
 use App\Models\Services;
 use App\Models\FAQ;
 use App\Models\Reviews;
+use App\Models\User;
 
 use App\Helpers\MyBreadcrumbs;
 use App\Helpers\StringHelper;
@@ -25,7 +26,7 @@ class PageController extends MyController {
 		parent::__construct();
 	}
 	
-	public function index(){
+	public function index(Request $request){
 		$this->session();
 		
 		$page = (object)Pages::query()->where('slug', 'index')->first()->toArray();
@@ -53,6 +54,26 @@ class PageController extends MyController {
 			'faq'		=> FAQ::query()->where('public', 1)->orderBy('sort', 'desc')->select('title', 'text')->get(),
 			'detail'	=> $detail,
 		];
+		
+		$code = trim($request->route('code'));
+		
+		if($code){
+			if(strlen($code) != 32){
+				$code = '';
+			}
+		}
+		
+		if($code){
+			$user = User::query()
+							->where('confirm_code', '=', $code)
+							->first();
+			
+			if(!$user){
+				$code = '';
+			}
+		}
+		
+		$data['code'] = $code;
 		
 		return view(
 			'main',
