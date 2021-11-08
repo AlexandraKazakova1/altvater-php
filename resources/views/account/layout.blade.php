@@ -147,200 +147,202 @@
 			@yield('main')
 		</div>
 		
-		<div class="modal fade" id="create__contract-modal-1" tabindex="-1" role="dialog">
-			<div class="modal-dialog modal-md modal-dialog-centered" role="document">
-				<div class="modal-content">
-					<div class="create__contract-page popup">
-						<div class="modal-header">
-							<h2 class="popup__title">Новий договір</h2>
+		@if($user->type == 'individual')
+			<div class="modal fade" id="create__contract-modal-1" tabindex="-1" role="dialog">
+				<div class="modal-dialog modal-md modal-dialog-centered" role="document">
+					<div class="modal-content">
+						<div class="create__contract-page popup">
+							<div class="modal-header">
+								<h2 class="popup__title">Новий договір</h2>
+								
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<img src="/img/close.svg" alt="X">
+								</button>
+							</div>
 							
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								<img src="/img/close.svg" alt="X">
-							</button>
-						</div>
-						
-						<div class="modal-body">
-							<form class="popup__form" id="create__contract__individual">
-								<fieldset class="fieldset">
-									<label>
-										<span class="input-description">ПІБ:</span>
-										<input class="form-control" type="text" name="name" placeholder=" ">
-										<span class="input-placeholder">
-											<div>
-												<img src="/img/cabinet/modal-icon/profile.svg">
-											</div>
-											ПІБ
-										</span>
-									</label>
-									
-									<label>
-										<span class="input-description">Email:</span>
-										<input class="form-control" type="email" name="email" placeholder=" ">
-										<span class="input-placeholder">
-											<div>
-												<img src="/img/cabinet/modal-icon/email.svg">
-											</div>
-											Ваш Email
-										</span>
-									</label>
-									
-									<label>
-										<span class="input-description">Номер телефону:</span>
-										<input class="form-control" type="tel" name="phone" placeholder=" ">
-										<span class="input-placeholder">
-											<div>
-												<img src="/img/cabinet/modal-icon/phone.svg">
-											</div>
-											Номер телефону
-										</span>
-									</label>
-									
-									<label>
-										<span class="input-description">Адреса:</span>
-										<input class="form-control" type="text" name="address" placeholder=" ">
-										<span class="input-placeholder">
-											<div>
-												<img src="/img/cabinet/modal-icon/location.svg">
-											</div>
-											Адреса
-										</span>
-									</label>
-									
-									<label>
-										<span class="input-description">Індекс:</span>
-										<input class="form-control" type="text" name="index" placeholder=" ">
-										<span class="input-placeholder">
-											<div>
-												<img src="/img/cabinet/modal-icon/location.svg">
-											</div>
-											Індекс
-										</span>
-									</label>
-									
-									<button class="btn-submit" type="submit" name="reg">Новий договір</button>
-								</fieldset>
-							</form>
+							<div class="modal-body">
+								<form class="popup__form" id="create__contract__individual">
+									<fieldset class="fieldset">
+										<label>
+											<span class="input-description">ПІБ:</span>
+											<input class="form-control" type="text" name="name" placeholder=" ">
+											<span class="input-placeholder">
+												<div>
+													<img src="/img/cabinet/modal-icon/profile.svg">
+												</div>
+												ПІБ
+											</span>
+										</label>
+										
+										<label>
+											<span class="input-description">Email:</span>
+											<input class="form-control" type="email" name="email" placeholder=" ">
+											<span class="input-placeholder">
+												<div>
+													<img src="/img/cabinet/modal-icon/email.svg">
+												</div>
+												Ваш Email
+											</span>
+										</label>
+										
+										<label>
+											<span class="input-description">Номер телефону:</span>
+											<input class="form-control" type="tel" name="phone" placeholder=" ">
+											<span class="input-placeholder">
+												<div>
+													<img src="/img/cabinet/modal-icon/phone.svg">
+												</div>
+												Номер телефону
+											</span>
+										</label>
+										
+										<label>
+											<span class="input-description">Адреса:</span>
+											<input class="form-control" type="text" name="address" placeholder=" ">
+											<span class="input-placeholder">
+												<div>
+													<img src="/img/cabinet/modal-icon/location.svg">
+												</div>
+												Адреса
+											</span>
+										</label>
+										
+										<label>
+											<span class="input-description">Індекс:</span>
+											<input class="form-control" type="text" name="index" placeholder=" ">
+											<span class="input-placeholder">
+												<div>
+													<img src="/img/cabinet/modal-icon/location.svg">
+												</div>
+												Індекс
+											</span>
+										</label>
+										
+										<button class="btn-submit" type="submit" name="reg">Новий договір</button>
+									</fieldset>
+								</form>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		
-		<div class="modal fade" id="create__contract-modal-2" tabindex="-1" role="dialog">
-			<div class="modal-dialog modal-md modal-dialog-centered" role="document">
-				<div class="modal-content">
-					<div class="create__contract-page popup">
-						<div class="modal-header">
-							<h2 class="popup__title">Новий договір</h2>
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								<img src="/img/close.svg" alt="X">
-							</button>
-						</div>
-						
-						<div class="modal-body">
-							<form class="popup__form" id="create__contract-form__entity">
-								<fieldset class="fieldset">
-									<label>
-										<span class="input-description">Назва компанії:</span>
-										<input class="form-control" type="text" name="name" placeholder=" ">
-										<span class="input-placeholder">
-											<div>
-												<img src="/img/cabinet/modal-icon/profile.svg">
-											</div>
-											Назва компанії
-										</span>
-									</label>
-									
-									<label>
-										<span class="input-description">Контактна особа:</span>
-										<input class="form-control" type="text" name="contact" placeholder=" ">
-										<span class="input-placeholder">
-											<div>
-												<img src="/img/cabinet/modal-icon/profile.svg">
-											</div>
-											Контактна особа
-										</span>
-									</label>
-									
-									<label>
-										<span class="input-description">Юридична адреса:</span>
-										<input class="form-control" type="text" name="address" placeholder=" ">
-										<span class="input-placeholder">
-											<div>
-												<img src="/img/cabinet/modal-icon/location.svg">
-											</div>
-											Юридична адреса
-										</span>
-									</label>
-									
-									<label>
-										<span class="input-description">Email:</span>
-										<input class="form-control" type="email" name="email" placeholder=" ">
-										<span class="input-placeholder">
-											<div>
-												<img src="/img/cabinet/modal-icon/email.svg">
-											</div>
-											Ваш Email
-										</span>
-									</label>
-									
-									<label>
-										<span class="input-description">Номер телефону:</span>
-										<input class="form-control" type="tel" name="phone" placeholder=" ">
-										<span class="input-placeholder">
-											<div>
-												<img src="/img/cabinet/modal-icon/phone.svg">
-											</div>
-											Номер телефону
-										</span>
-									</label>
-									
-									<label>
-										<span class="input-description nr">Додатковий телефон:</span>
-										<input class="form-control" type="tel" name="extra_phone" placeholder=" ">
-										<span class="input-placeholder">
-											<div>
-												<img src="/img/cabinet/modal-icon/phone.svg">
-											</div>
-											Додатковий телефон
-										</span>
-									</label>
-									
-									<label>
-										<span class="input-description">ІПН:</span>
-										<input class="form-control" type="text" name="ipn" placeholder=" ">
-										<span class="input-placeholder">
-											ІПН
-										</span>
-									</label>
-									
-									<label>
-										<span class="input-description">ЄДРПОУ:</span>
-										<input class="form-control" type="text" name="edrpou" placeholder=" ">
-										<span class="input-placeholder">
-											ЄДРПОУ
-										</span>
-									</label>
-									
-									<label>
-										<span class="input-description">Поштовий індекс:</span>
-										<input class="form-control" type="text" name="index" placeholder=" ">
-										<span class="input-placeholder">
-											<div>
-												<img src="/img/cabinet/modal-icon/location.svg">
-											</div>
-											Поштовий індекс
-										</span>
-									</label>
-									
-									<button class="btn-submit" type="submit" name="reg">Новий договір</button>
-								</fieldset>
-							</form>
+		@else
+			<div class="modal fade" id="create__contract-modal-2" tabindex="-1" role="dialog">
+				<div class="modal-dialog modal-md modal-dialog-centered" role="document">
+					<div class="modal-content">
+						<div class="create__contract-page popup">
+							<div class="modal-header">
+								<h2 class="popup__title">Новий договір</h2>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<img src="/img/close.svg" alt="X">
+								</button>
+							</div>
+							
+							<div class="modal-body">
+								<form class="popup__form" id="create__contract-form__entity">
+									<fieldset class="fieldset">
+										<label>
+											<span class="input-description">Назва компанії:</span>
+											<input class="form-control" type="text" name="name" placeholder=" ">
+											<span class="input-placeholder">
+												<div>
+													<img src="/img/cabinet/modal-icon/profile.svg">
+												</div>
+												Назва компанії
+											</span>
+										</label>
+										
+										<label>
+											<span class="input-description">Контактна особа:</span>
+											<input class="form-control" type="text" name="contact" placeholder=" ">
+											<span class="input-placeholder">
+												<div>
+													<img src="/img/cabinet/modal-icon/profile.svg">
+												</div>
+												Контактна особа
+											</span>
+										</label>
+										
+										<label>
+											<span class="input-description">Юридична адреса:</span>
+											<input class="form-control" type="text" name="address" placeholder=" ">
+											<span class="input-placeholder">
+												<div>
+													<img src="/img/cabinet/modal-icon/location.svg">
+												</div>
+												Юридична адреса
+											</span>
+										</label>
+										
+										<label>
+											<span class="input-description">Email:</span>
+											<input class="form-control" type="email" name="email" placeholder=" ">
+											<span class="input-placeholder">
+												<div>
+													<img src="/img/cabinet/modal-icon/email.svg">
+												</div>
+												Ваш Email
+											</span>
+										</label>
+										
+										<label>
+											<span class="input-description">Номер телефону:</span>
+											<input class="form-control" type="tel" name="phone" placeholder=" ">
+											<span class="input-placeholder">
+												<div>
+													<img src="/img/cabinet/modal-icon/phone.svg">
+												</div>
+												Номер телефону
+											</span>
+										</label>
+										
+										<label>
+											<span class="input-description nr">Додатковий телефон:</span>
+											<input class="form-control" type="tel" name="extra_phone" placeholder=" ">
+											<span class="input-placeholder">
+												<div>
+													<img src="/img/cabinet/modal-icon/phone.svg">
+												</div>
+												Додатковий телефон
+											</span>
+										</label>
+										
+										<label>
+											<span class="input-description">ІПН:</span>
+											<input class="form-control" type="text" name="ipn" placeholder=" ">
+											<span class="input-placeholder">
+												ІПН
+											</span>
+										</label>
+										
+										<label>
+											<span class="input-description">ЄДРПОУ:</span>
+											<input class="form-control" type="text" name="uedrpou" placeholder=" ">
+											<span class="input-placeholder">
+												ЄДРПОУ
+											</span>
+										</label>
+										
+										<label>
+											<span class="input-description">Поштовий індекс:</span>
+											<input class="form-control" type="text" name="index" placeholder=" ">
+											<span class="input-placeholder">
+												<div>
+													<img src="/img/cabinet/modal-icon/location.svg">
+												</div>
+												Поштовий індекс
+											</span>
+										</label>
+										
+										<button class="btn-submit" type="submit" name="reg">Новий договір</button>
+									</fieldset>
+								</form>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		@endif
 		
 		<div class="modal fade" id="add__address-modal" tabindex="-1" role="dialog">
 			<div class="modal-dialog modal-md modal-dialog-centered" role="document">

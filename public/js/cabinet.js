@@ -233,7 +233,7 @@ function accountsActs() {
     } else if($('#actsToggle').hasClass('act')) {
         $('.accounts__content').fadeOut(200);
         $('.acts__content').fadeIn(200);
-    }
+    };
 
     $('#accountsToggle').click(function() {
         $(this).addClass('act');
@@ -241,6 +241,7 @@ function accountsActs() {
         $('.accounts__content').fadeIn(200);
         $('#actsToggle').removeClass('act');
     });
+    
     $('#actsToggle').click(function() {
         $(this).addClass('act');
         $('.accounts__content').fadeOut(200);
@@ -248,6 +249,7 @@ function accountsActs() {
         $('#accountsToggle').removeClass('act');
     });
 };
+
 function settingsPage() {
     if($('#general').hasClass('act')) {
         $('.security__content').fadeOut(1);
@@ -270,6 +272,7 @@ function settingsPage() {
         $('#general').removeClass('act');
     });
 };
+
 function ordersSelect() {
     if($('#all').hasClass('act')) {
         $('.orders__item').fadeIn(200);
@@ -326,7 +329,7 @@ function contractsArchive() {
     } else if($('#archiveToggle').hasClass('act')) {
         $('.contracts__content').fadeOut(200);
         $('.archive__content').fadeIn(200);
-    }
+    };
 
     $('#contractsToggle').click(function() {
         $(this).addClass('act');
@@ -482,7 +485,7 @@ function contractEntity() {
 				minlength: 12,
 				maxlength: 12
             },
-            edrpou: {
+            uedrpou: {
                 required: true,
 				minlength: 8,
 				maxlength: 8
@@ -520,7 +523,7 @@ function contractEntity() {
 				minlength: "Некоректні дані",
 				maxlength: "Некоректні дані"
             },
-            edrpou: {
+            uedrpou: {
                 required: "Це поле обов'язкове для заповнення",
 				minlength: "Некоректні дані",
 				maxlength: "Некоректні дані"
@@ -534,7 +537,7 @@ function contractEntity() {
 			if(!lock){
 				$.ajax({
 					type: "POST",
-					url: '/ajax/user/contractEntity',
+					url: '/ajax/cabinet/contracts/add',
                     method: "POST",
                     data: form.serialize(),
                     dataType: "json",
