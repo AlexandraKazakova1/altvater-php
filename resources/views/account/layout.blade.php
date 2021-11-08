@@ -8,7 +8,6 @@
 		
 		<meta name="csrf-token" content="{{ csrf_token() }}">
 		
-		<link rel="stylesheet" href="/css/dhtmlxscheduler_material.css">
 		<link rel="stylesheet" href="/css/select2.css">
 		<link rel="stylesheet" href="/css/bootstrap.min.css">
 		<link rel="stylesheet" href="/css/jquery.timepicker.css">
@@ -497,39 +496,18 @@
 			</div>
 		</div>
 		
+		<script src="https://maps.googleapis.com/maps/api/js?key={{$settings['google_api_key']}}&callback=initMap&v=weekly" async></script>
+		
 		<script src="/js/jquery.min.js"></script>
 		<script src="/js/select2.min.js"></script>
 		<script src="/js/chart.js"></script>
-		@if($page['uri'] == 'account/index')
-		<script src="/js/dhtmlxscheduler.js"></script>
-		<script src="/js/locale_ua.js"></script>
-		@endif
+		
 		<script src="/js/jquery.validate.min.js"></script>
 		<script src="/js/bootstrap.min.js"></script>
-		<script src="https://maps.googleapis.com/maps/api/js?key={{$settings['google_api_key']}}&callback=initMap&v=weekly" async></script>
+		
 		<script src="/js/jquery.timepicker.min.js"></script>
 		<script src="/js/formMask.js"></script>
 		<script src="/js/cabinet.js"></script>
 		
-		@if($page['uri'] == 'account/index')
-		<script type="text/javascript">
-			scheduler.init("scheduler__calendar");
-		</script>
-		
-		<script>
-			//The structure of the scheduler
-			scheduler.config.header = [
-				"day",
-				"week",
-				"month",
-				"date",
-				"prev",
-				"today",
-				"next"
-			];
-			scheduler.config.displayed_event_color="#DFEDF7";
-			scheduler.init('scheduler__calendar',new Date(2021,07,01),"month");
-		</script>
-		@endif
 	</body>
 </html>
