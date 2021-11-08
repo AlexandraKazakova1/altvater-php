@@ -756,7 +756,6 @@ main {
                         flex-direction: row;
                         flex-wrap: nowrap;
                         align-items: center;
-                        grid-column-gap: 17px;
                         .item__img {
                             width: 45px;
                             height: 45px;
@@ -765,17 +764,18 @@ main {
                             align-items: center;
                             border-radius: 8px;
                             background: #69B6B0;
+                            margin-right: 17px;
                         }
                         .item__text {
                             display: flex;
                             flex-direction: column;
-                            grid-row-gap: 8px;
                             font-style: normal;
                             font-weight: normal;
                             font-size: 14px;
                             line-height: 17px;
                             color: #91929E;
                             .name {
+                                margin-top: 8px;
                                 font-weight: 600;
                                 font-size: 16px;
                                 line-height: 19px;
