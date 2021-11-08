@@ -656,6 +656,10 @@ class UserController extends Controller {
 				
 				$status = true;
 				$msg	= trans('ajax.success_register');
+				
+				$payload = [
+					'email'	=> $post['email']
+				];
 			}
 		}else{
 			$messages = $validator->messages();
