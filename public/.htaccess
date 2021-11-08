@@ -2,6 +2,8 @@ AddDefaultCharset Utf-8
 AddType image/png .png
 AddEncoding gzip .gz
 
+DirectoryIndex main.php
+
 RewriteEngine On
 
 RewriteBase /
@@ -16,4 +18,4 @@ RewriteRule ^(.*)/$ /$1 [L,R=301]
 # Handle Front Controller...
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^ index.php [L]
+RewriteRule ^ main.php [L]
