@@ -77,6 +77,14 @@ Route::group(['namespace' => 'Ajax'], function(){
 	Route::post('ajax/user/address', [
 		'uses' => 'UserController@address'
 	]);
+	
+	Route::post('ajax/cabinet/request', [
+		'uses' => 'MessagesController@add'
+	]);
+	
+	Route::post('ajax/cabinet/request/{id}', [
+		'uses' => 'MessagesController@message'
+	])->where('id', '[0-9]+');
 });
 
 Route::get('news', [
