@@ -59,7 +59,7 @@ class UserController extends Controller {
 			$post,
 			array(
 				'email'					=> 'required|email|string|max:100|min:5',
-				'password'				=> 'required|min:6|max:12',
+				'password'				=> 'required|min:8|max:24',
 			),
 			array(
 				'email.required'		=> trans('ajax_validation.email_required'),
@@ -156,8 +156,8 @@ class UserController extends Controller {
 				
 				'email'					=> 'required|email|string|max:100|min:5',
 				
-				'password'				=> 'required|min:6|max:12',
-				'confirm_password'		=> 'required|min:6|max:12',
+				'password'				=> 'required|min:8|max:24',
+				'confirm_password'		=> 'required|min:8|max:24',
 			),
 			array(
 				'name.required'					=> trans('ajax_validation.enter_your_name'),
@@ -339,8 +339,8 @@ class UserController extends Controller {
 				
 				'email'					=> 'required|email|string|max:100|min:5',
 				
-				'password'				=> 'required|min:6|max:12',
-				'confirm_password'		=> 'required|min:6|max:12',
+				'password'				=> 'required|min:8|max:24',
+				'confirm_password'		=> 'required|min:8|max:24',
 				
 				'ipn'					=> 'required|min:10|max:10',
 				'uedrpou'				=> 'required|min:8|max:50',
@@ -644,7 +644,7 @@ class UserController extends Controller {
 				
 				$user->update(['confirm_code'	=>  $code]);
 				
-				$this->send_email('reset-password',
+				$this->sendEmail('reset-password',
 					$post['email'],
 					array(
 						'email'	=> $post['email'],
@@ -656,6 +656,83 @@ class UserController extends Controller {
 				
 				$status = true;
 				$msg	= trans('ajax.success_register');
+				
+				$payload = [
+					'email'	=> $post['email']
+				];
+			}
+		}else{
+			$messages = $validator->messages();
+			
+			foreach($post as $k => $v){
+				$error = $messages->first($k);
+				
+				if($error){
+					$errors[$k] = $error;
+				}
+			}
+		}
+		
+		return response()->json([
+			'status' 	=> $status,
+			'message'	=> $msg,
+			'errors'	=> $errors,
+			'payload'	=> $payload
+		], 200, [], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+	}
+	
+	function new_password(Request $request){
+		$status = false;
+		$errors = array();
+		$msg	= trans('ajax.failed_change_password');
+		$payload= [];
+		
+		$post = $request->all();
+		
+		$validator = Validator::make(
+			$post,
+			array(
+				'token'						=> 'required|min:32|max:32',
+				'password'					=> 'required|min:8|max:24',
+				'confirm_password'			=> 'required|min:8|max:24',
+			),
+			array(
+				'token.required'			=> trans('ajax_validation.required'),
+				'token.min'					=> trans('ajax_validation.min_length'),
+				'token.max'					=> trans('ajax_validation.max_length'),
+				
+				'password.required'			=> trans('ajax_validation.password_required'),
+				'password.min'				=> trans('ajax_validation.min_length'),
+				'password.max'				=> trans('ajax_validation.max_length'),
+				
+				'confirm_password.required'	=> trans('ajax_validation.password_required'),
+				'confirm_password.min'		=> trans('ajax_validation.min_length'),
+				'confirm_password.max'		=> trans('ajax_validation.max_length'),
+			)
+		);
+		
+		if($validator->passes()){
+			$user = User::query()
+						->where('confirm_code', '=', $post['token'])
+						->first();
+			
+			if($user){
+				if($post['password'] != $post['confirm_password']){
+					return response()->json([
+						'status' 	=> false,
+						'message'	=> trans('ajax.passwords_not_match'),
+						'errors'	=> [],
+						'payload'	=> []
+					], 200, [], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+				}
+				
+				$user->update([
+					'confirm_code' => null,
+					'password'		=> bcrypt($post['password'])
+				]);
+				
+				$status = true;
+				$msg	= trans('ajax.success_change_password');
 			}
 		}else{
 			$messages = $validator->messages();

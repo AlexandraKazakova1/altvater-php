@@ -6,64 +6,65 @@ $(document).ready (function() {
 			'X-CSRF-TOKEN': csrf,
 		}
 	});
-
-    slidersConfig();
-    faqSlide();
-    burgerMenu();
-    breadcrumbs();
-    callBackForm();
-    slideScroll();
-    modalFade();
-    logIn();
-    
-    createIndividual();
-    createEntity();
-    
-    passRecovery();
-    passRecovery3();
-    passVerificationForm();
-    checkCookies();
-    createModal();
-    servicesCalc();
-    scrollUp();
+	
+	slidersConfig();
+	faqSlide();
+	burgerMenu();
+	breadcrumbs();
+	callBackForm();
+	slideScroll();
+	modalFade();
+	logIn();
+	
+	createIndividual();
+	createEntity();
+	
+	passRecovery();
+	passRecovery3();
+	passVerificationForm();
+	checkCookies();
+	createModal();
+	servicesCalc();
+	scrollUp();
 });
 
 function scrollUp() {
-    $('.scrollup').click(function() {
-        $("html, body").animate({
-            scrollTop:0
-        },800);
-    })
-    $(window).scroll(function() {
-        if ($(this).scrollTop()>200) {
-            $('.scrollup').fadeIn();
-        }
-        else {
-            $('.scrollup').fadeOut();
-        }
-    });
-}
+	$('.scrollup').click(function() {
+		$("html, body").animate({
+			scrollTop:0
+		},800);
+	});
+	
+	$(window).scroll(function() {
+		if ($(this).scrollTop()>200) {
+			$('.scrollup').fadeIn();
+		}else{
+			$('.scrollup').fadeOut();
+		}
+	});
+};
 
 function slidersConfig() {
-    $('.response__slider').slick({
-        dots: false,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        responsive: [
-            {
-                breakpoint: 1439,
-                settings: {
-                    dots: true,
-                    arrows: false
-                }
-            }
-        ]
-    });
-    $('.last-work__slider').slick({
-        dots: false,
-        slidesToShow: 1,
-        slidesToScroll: 1
-    });
+	$('.response__slider').slick({
+		dots: false,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		responsive: [
+			{
+				breakpoint: 1439,
+				settings: {
+					dots: true,
+					arrows: false
+				}
+			}
+		]
+	});
+	
+	$('.last-work__slider').slick({
+		dots: false,
+		slidesToShow: 1,
+		slidesToScroll: 1
+	});
 };
 
 function faqSlide() {
@@ -75,17 +76,18 @@ function faqSlide() {
 };
  
 function burgerMenu() {
-    $('.menu__icon').click(function() {
-        $(this).toggleClass('close')
-        $(this).parent().children('.menu__body').slideToggle(300);
-    });
-    $(document).mouseup(function (e){
-        if (!$('.menu__body, .menu__icon').is(e.target) 
-        && $('.menu__body, .menu__icon').has(e.target).length === 0) {
-            $('.menu__body').slideUp(300);
-            $('.menu__icon').removeClass('close')
-        }
-    });
+	$('.menu__icon').click(function() {
+		$(this).toggleClass('close')
+		$(this).parent().children('.menu__body').slideToggle(300);
+	});
+	
+	$(document).mouseup(function (e){
+		if (!$('.menu__body, .menu__icon').is(e.target) 
+		&& $('.menu__body, .menu__icon').has(e.target).length === 0) {
+			$('.menu__body').slideUp(300);
+			$('.menu__icon').removeClass('close')
+		}
+	});
 };
 
 function breadcrumbs() {
@@ -234,374 +236,375 @@ function modalFade() {
 
 function logIn() {
 	var form = jQuery("#log__in-form");
-
-    if(!form.length){
+	
+	if(!form.length){
 		return false;
 	};
-
+	
 	var lock = false,
-    btn = form.find('button[type="submit"]');
-
-    form.validate({
-		onkeyup	: false,
-        focusCleanup: true,
-        focusInvalid: false,
-        errorClass: "error",
-        rules: {
-            email: {
-                required: true,
-                email: true
-            },
-            password: {
-                required: true,
-                rangelength: [8, 24]
-            }
-        },
-        messages: {
-            email: {
-                required: "Введіть свій e-mail!",
-                email: "Адреса має бути типу name@domain.com"
-            },
-            password: {
-                required: "Введіть пароль використовуючи A-Z a-z 0-9",
-                rangelength: "Введіть 8-24 символи"
-            }
-        },
-		submitHandler: function() {
+	btn = form.find('button[type="submit"]');
+	
+	form.validate({
+		onkeyup			: false,
+		focusCleanup	: true,
+		focusInvalid	: false,
+		errorClass		: "error",
+		rules			: {
+			email		: {
+				required	: true,
+				email		: true
+			},
+			password	: {
+				required	: true,
+				rangelength	: [8, 24]
+			}
+		},
+		messages		: {
+			email		: {
+				required	: "Введіть свій e-mail!",
+				email		: "Адреса має бути типу name@domain.com"
+			},
+			password	: {
+				required	: "Введіть пароль використовуючи A-Z a-z 0-9",
+				rangelength	: "Введіть 8-24 символи"
+			}
+		},
+		submitHandler	: function() {
 			if(!lock){
 				$.ajax({
-					type: "POST",
-					url: '/ajax/user/login',
-                    method: "POST",
-                    data: form.serialize(),
-                    dataType: "json",
-                    beforeSend: function(request){
-                        lock = true;
-                        
-                        btn.attr('disabled', true);
-                        form.find('label.error').text('').hide();
+					type		: "POST",
+					url			: '/ajax/user/login',
+					method		: "POST",
+					data		: form.serialize(),
+					dataType	: "json",
+					beforeSend	: function(request){
+						lock = true;
+						
+						btn.attr('disabled', true);
+						form.find('label.error').text('').hide();
 					},
-					success: function(response){
+					success		: function(response){
 						console.log('response:');
 						console.log(response);
 						
 						lock = false;
-                        btn.attr('disabled', false);
-
-                        responseMsg(form, response);
-
+						btn.attr('disabled', false);
+						
+						responseMsg(form, response);
+						
 						if(response.status){;
 							form.trigger('reset');
-                            window.location.href = '/account';
+							window.location.href = '/account';
 						}else{
 							if(response.payload.sms){
 								openActivationModal(response.payload);
 								
 								$('.modal').modal('hide');
 								$('#verification-modal').modal('show');
-                            }
+							}
 						}
 					},
-					error: function(err){
+					error		: function(err){
 						console.log('error');
 						lock = false;
-                        btn.attr('disabled', false);
-                        responseMsg(form, err);
-					}
-				});
-			};
-			return false;
-	    }
-    });
-};
-
-function createIndividual() {
-	var form = jQuery("#create-form__individual");
-
-    if(!form.length){
-		return false;
-	};
-
-	var lock = false,
-    btn = form.find('button[type="submit"]');
-
-    form.validate({
-		onkeyup			: false,
-        focusCleanup	: true,
-        focusInvalid	: false,
-        errorClass		: "error",
-        rules			: {
-            name			: {
-                required		: true,
-				minlength		: 2,
-				maxlength		: 100
-            },
-            phone			: {
-                required		: true,
-				minlength		: 12,
-				maxlength		: 13,
-            },
-            email			: {
-                required		: true,
-                email			: true
-            },
-            password		: {
-                required		: true,
-                rangelength		: [8, 24]
-            },
-            confirm_password: {
-                required		: true,
-                rangelength		: [8, 24],
-                equalTo			: "#password-individual"
-            },
-            agree			: {
-                required		: true
-            }
-        },
-        messages		: {
-            name			: {
-                required		: "Введіть Ім'я та Прізвище",
-				minlength		: "Введіть більше 2 символів",
-				maxlength		: "Можна ввести до 100 символів"
-            },
-            phone			: {
-                required		: "Введіть контактний телефон",
-				minlength		: "Введіть мінімум 12 символів",
-				maxlength		: "Можна ввести до 13 символів"
-            },
-            email			: {
-                required		: "Введіть e-mail!",
-                email			: "Адреса має бути типу name@domain.com"
-            },
-            password		: {
-                required		: "Введіть пароль використовуючи A-Z a-z 0-9",
-                rangelength		: "Введіть 8-24 символи"
-            },
-            confirm_password: {
-                required		: "Введіть пароль використовуючи A-Z a-z 0-9",
-                rangelength		: "Введіть 8-24 символи",
-                equalTo			: "Паролі не співпадають"
-            },
-            agree			: {
-                required		: 'Підтвердіть що ви даєте згоду'
-            }
-        },
-		submitHandler: function() { 
-			if(!lock){
-				$.ajax({
-					type: "POST",
-					url: '/ajax/user/registration',
-                    data: form.serialize(),
-                    dataType: "json",
-                    beforeSend: function(request){
-                        lock = true;
-                        
-                        btn.attr('disabled', true);
-                        form.find('label.error').text('').hide();
-					},
-					success: function(response){
-						console.log('response:');
-						console.log(response);
-						
-						lock = false;
-                        btn.attr('disabled', false);
-
-                        responseMsg(form, response);
-						
-						if(response.status){
-							openActivationModal(response.payload);
-                            $('.modal').modal('hide');
-                            $('#verification-modal').modal('show');
-						}
-					},
-					error: function(err){
-						console.log('error');
-						lock = false;
-                        btn.attr('disabled', false);
-
-                        responseMsg(form, err);
+						btn.attr('disabled', false);
+						responseMsg(form, err);
 					}
 				});
 			};
 			
 			return false;
-	    }
-    });
+		}
+	});
+};
+
+function createIndividual() {
+	var form = jQuery("#create-form__individual");
+	
+	if(!form.length){
+		return false;
+	};
+	
+	var lock = false,
+	btn = form.find('button[type="submit"]');
+	
+	form.validate({
+		onkeyup			: false,
+		focusCleanup	: true,
+		focusInvalid	: false,
+		errorClass		: "error",
+		rules			: {
+			name			: {
+				required		: true,
+				minlength		: 2,
+				maxlength		: 100
+			},
+			phone			: {
+				required		: true,
+				minlength		: 12,
+				maxlength		: 13,
+			},
+			email			: {
+				required		: true,
+				email			: true
+			},
+			password		: {
+				required		: true,
+				rangelength		: [8, 24]
+			},
+			confirm_password: {
+				required		: true,
+				rangelength		: [8, 24],
+				equalTo			: "#password-individual"
+			},
+			agree			: {
+				required		: true
+			}
+		},
+		messages		: {
+			name			: {
+				required		: "Введіть Ім'я та Прізвище",
+				minlength		: "Введіть більше 2 символів",
+				maxlength		: "Можна ввести до 100 символів"
+			},
+			phone			: {
+				required		: "Введіть контактний телефон",
+				minlength		: "Введіть мінімум 12 символів",
+				maxlength		: "Можна ввести до 13 символів"
+			},
+			email			: {
+				required		: "Введіть e-mail!",
+				email			: "Адреса має бути типу name@domain.com"
+			},
+			password		: {
+				required		: "Введіть пароль використовуючи A-Z a-z 0-9",
+				rangelength		: "Введіть 8-24 символи"
+			},
+			confirm_password: {
+				required		: "Введіть пароль використовуючи A-Z a-z 0-9",
+				rangelength		: "Введіть 8-24 символи",
+				equalTo			: "Паролі не співпадають"
+			},
+			agree			: {
+				required		: 'Підтвердіть що ви даєте згоду'
+			}
+		},
+		submitHandler	: function() { 
+			if(!lock){
+				$.ajax({
+					type		: "POST",
+					url			: '/ajax/user/registration',
+					data		: form.serialize(),
+					dataType	: "json",
+					beforeSend	: function(request){
+						lock = true;
+						
+						btn.attr('disabled', true);
+						form.find('label.error').text('').hide();
+					},
+					success		: function(response){
+						console.log('response:');
+						console.log(response);
+						
+						lock = false;
+						btn.attr('disabled', false);
+
+						responseMsg(form, response);
+						
+						if(response.status){
+							openActivationModal(response.payload);
+							$('.modal').modal('hide');
+							$('#verification-modal').modal('show');
+						}
+					},
+					error		: function(err){
+						console.log('error');
+						lock = false;
+						btn.attr('disabled', false);
+						
+						responseMsg(form, err);
+					}
+				});
+			};
+			
+			return false;
+		}
+	});
 };
 
 function createEntity() {
 	var form = jQuery("#create-form__entity");
 	
-    if(!form.length){
+	if(!form.length){
 		return false;
 	};
 	
 	var lock = false,
-    btn = form.find('button[type="submit"]');
+	btn = form.find('button[type="submit"]');
 	
-    form.validate({
+	form.validate({
 		onkeyup			: false,
-        focusCleanup	: true,
-        focusInvalid	: false,
-        errorClass		: "error",
-        rules			: {
-            company_name	: {
-                required		: true,
+		focusCleanup	: true,
+		focusInvalid	: false,
+		errorClass		: "error",
+		rules			: {
+			company_name	: {
+				required		: true,
 				minlength		: 2,
 				maxlength		: 100
-            },
-            name			: {
-                required		: true,
+			},
+			name			: {
+				required		: true,
 				minlength		: 2,
 				maxlength		: 100
-            },
-            addresses		: {
-                required		: true,
+			},
+			addresses		: {
+				required		: true,
 				minlength		: 5,
 				maxlength		: 100
-            },
-            phone			: {
-                required		: true,
+			},
+			phone			: {
+				required		: true,
 				minlength		: 12,
 				maxlength		: 13,
-            },
-            extra_prone		: {
-                required		: false,
+			},
+			extra_prone		: {
+				required		: false,
 				minlength		: 12,
 				maxlength		: 13,
-            },
-            email			: {
-                required		: true,
-                email			: true
-            },
-            password		: {
-                required		: true,
-                rangelength		: [8, 24]
-            },
-            confirm_password: {
-                required		: true,
-                rangelength		: [8, 24],
-                equalTo			: "#password-entity"
-            },
-            ipn				: {
-                required		: true,
+			},
+			email			: {
+				required		: true,
+				email			: true
+			},
+			password		: {
+				required		: true,
+				rangelength		: [8, 24]
+			},
+			confirm_password: {
+				required		: true,
+				rangelength		: [8, 24],
+				equalTo			: "#password-entity"
+			},
+			ipn				: {
+				required		: true,
 				minlength		: 10,
 				maxlength		: 10,
 				number			: true
-            },
-            uedrpou			: {
-                required		: true,
+			},
+			uedrpou			: {
+				required		: true,
 				minlength		: 8,
 				maxlength		: 50
-            },
-            index			: {
-                required		: true,
+			},
+			index			: {
+				required		: true,
 				minlength		: 6,
 				maxlength		: 10,
 				number			: true
-            },
-            agree			: {
-                required		: true
-            }
-        },
-        messages		: {
-            company_name	: {
-                required		: "Введіть назву",
+			},
+			agree			: {
+				required		: true
+			}
+		},
+		messages		: {
+			company_name	: {
+				required		: "Введіть назву",
 				minlength		: "Введіть більше 2 символів",
 				maxlength		: "Можна ввести до 100 символів"
-            },
-            name			: {
-                required		: "Введіть контактну особу",
+			},
+			name			: {
+				required		: "Введіть контактну особу",
 				minlength		: "Введіть більше 2 символів",
 				maxlength		: "Можна ввести до 100 символів"
-            },
-            addresses		: {
-                required		: "Введіть адресу",
+			},
+			addresses		: {
+				required		: "Введіть адресу",
 				minlength		: "Введіть більше 5 символів",
 				maxlength		: "Можна ввести до 100 символів"
-            },
-            phone			: {
-                required		: "Введіть контактний телефон",
+			},
+			phone			: {
+				required		: "Введіть контактний телефон",
 				minlength		: "Введіть мінімум 12 символів",
 				maxlength		: "Можна ввести до 13 символів"
-            },
-            extra_prone		: {
-                required		: "Введіть контактний телефон",
+			},
+			extra_prone		: {
+				required		: "Введіть контактний телефон",
 				minlength		: "Введіть мінімум 12 символів",
 				maxlength		: "Можна ввести до 13 символів"
-            },
-            email			: {
-                required		: "Введіть e-mail!",
-                email			: "Адреса має бути типу name@domain.com"
-            },
-            password		: {
-                required		: "Введіть пароль використовуючи A-Z a-z 0-9",
-                rangelength		: "Введіть 8-24 символи"
-            },
-            confirm_password: {
-                required		: "Введіть пароль використовуючи A-Z a-z 0-9",
-                rangelength		: "Введіть 8-24 символи",
-                equalTo			: "Паролі не співпадають"
-            },
-            ipn				: {
-                required		: "Введіть ІПН",
+			},
+			email			: {
+				required		: "Введіть e-mail!",
+				email			: "Адреса має бути типу name@domain.com"
+			},
+			password		: {
+				required		: "Введіть пароль використовуючи A-Z a-z 0-9",
+				rangelength		: "Введіть 8-24 символи"
+			},
+			confirm_password: {
+				required		: "Введіть пароль використовуючи A-Z a-z 0-9",
+				rangelength		: "Введіть 8-24 символи",
+				equalTo			: "Паролі не співпадають"
+			},
+			ipn				: {
+				required		: "Введіть ІПН",
 				minlength		: "Код має містити 10 цифр",
 				maxlength		: "Код має містити 10 цифр",
 				number			: "Код має містити 10 цифр"
-            },
-            uedrpou			: {
-                required		: "Введіть ЄДРПОУ",
+			},
+			uedrpou			: {
+				required		: "Введіть ЄДРПОУ",
 				minlength		: "Мінімальна довжина 8 символів",
 				maxlength		: "Максимальна довжина 50 символів"
-            },
-            ipn				: {
-                required		: "Введіть індекс",
+			},
+			ipn				: {
+				required		: "Введіть індекс",
 				minlength		: "Індекс має містити 5 цифр",
 				maxlength		: "Індекс має містити 5 цифр",
 				number			: "Індекс має містити 5 цифр"
-            },
-            agree			: {
-                required		: 'Підтвердіть що ви даєте згоду'
-            }
-        },
+			},
+			agree			: {
+				required		: 'Підтвердіть що ви даєте згоду'
+			}
+		},
 		submitHandler: function() { 
 			if(!lock){
 				$.ajax({
-					type: "POST",
-					url: '/ajax/user/registration',
-                    data: form.serialize(),
-                    dataType: "json",
-                    beforeSend: function(request){
-                        lock = true;
-                        
-                        btn.attr('disabled', true);
-                        form.find('label.error').text('').hide();
+					type		: "POST",
+					url			: '/ajax/user/registration',
+					data		: form.serialize(),
+					dataType	: "json",
+					beforeSend	: function(request){
+						lock = true;
+						
+						btn.attr('disabled', true);
+						form.find('label.error').text('').hide();
 					},
-					success: function(response){
+					success		: function(response){
 						console.log('response:');
 						console.log(response);
 						
 						lock = false;
-                        btn.attr('disabled', false);
-                        
-                        responseMsg(form, response);
+						btn.attr('disabled', false);
+						
+						responseMsg(form, response);
 						
 						if(response.status){
 							openActivationModal(response.payload);
 						}
 					},
-					error: function(err){
+					error		: function(err){
 						console.log('error');
 						lock = false;
-                        btn.attr('disabled', false);
-                        responseMsg(form, err);
+						btn.attr('disabled', false);
+						responseMsg(form, err);
 					}
 				});
 			};
 			
 			return false;
-	    }
-    });
+		}
+	});
 };
 
 var timerResend;
@@ -682,147 +685,151 @@ function startTimer(callback){
 
 function passRecovery() {
 	var form = jQuery("#pass__recovery-form");
-
-    if(!form.length){
+	
+	if(!form.length){
 		return false;
 	};
-
+	
 	var lock = false,
-    btn = form.find('button[type="submit"]');
-
-    form.validate({
-		onkeyup	: false,
-        focusCleanup: true,
-        focusInvalid: false,
-        errorClass: "error",
-        rules: {
-            email: {
-                required: true,
-                email: true
-            }
-        },
-        messages: {
-            email: {
-                required: "Введіть свій e-mail!",
-                email: "Адреса має бути типу name@domain.com"
-            }
-        },
-		submitHandler: function() {
+	btn = form.find('button[type="submit"]');
+	
+	form.validate({
+		onkeyup			: false,
+		focusCleanup	: true,
+		focusInvalid	: false,
+		errorClass		: "error",
+		rules			: {
+			email			: {
+				required		: true,
+				email			: true
+			}
+		},
+		messages		: {
+			email			: {
+				required		: "Введіть свій e-mail!",
+				email			: "Адреса має бути типу name@domain.com"
+			}
+		},
+		submitHandler	: function() {
 			if(!lock){
 				$.ajax({
-					type: "POST",
-					url: '/ajax/user/recovery',
-                    data: form.serialize(),
-                    dataType: "json",
-                    beforeSend: function(request){
-                        lock = true;
-                        
-                        btn.attr('disabled', true);
-                        form.find('label.error').text('').hide();
+					type		: "POST",
+					url			: '/ajax/user/recovery',
+					data		: form.serialize(),
+					dataType	: "json",
+					beforeSend	: function(request){
+						lock = true;
+						
+						btn.attr('disabled', true);
+						form.find('label.error').text('').hide();
 					},
-					success: function(response){
+					success		: function(response){
 						console.log('response:');
 						console.log(response);
 						
 						lock = false;
-                        btn.attr('disabled', false);
-                        
-                        responseMsg(form, response);
+						btn.attr('disabled', false);
+						
+						responseMsg(form, response);
 						
 						if(response.status){;
-                            $('.modal').modal('hide');
-                            $('#recovery-modal-2').modal('show');
+							$('.modal').modal('hide');
+							
+							$('#recovery-modal-2').find('.recovery-mail').text(response.payload.email);
+							$('#recovery-modal-2').modal('show');
 						}
 					},
-					error: function(err){
+					error		: function(err){
 						console.log('error');
+						
 						lock = false;
-                        btn.attr('disabled', false);
-                        responseMsg(form, err);
+						
+						btn.attr('disabled', false);
+						responseMsg(form, err);
 					}
 				});
 			};
 			
 			return false;
-	    }
-    });
+		}
+	});
 };
 
 function passRecovery3() {
 	var form = jQuery("#pass__recovery-form3");
-
-    if(!form.length){
+	
+	if(!form.length){
 		return false;
 	};
-
+	
 	var lock = false,
-    btn = form.find('button[type="submit"]');
-
-    form.validate({
-		onkeyup	: false,
-        focusCleanup: true,
-        focusInvalid: false,
-        errorClass: "error",
-        rules: {
-            userPassword: {
-                required: true,
-                rangelength: [8, 24]
-            },
-            userPasswordConfirm: {
-                required: true,
-                rangelength: [8, 24],
-                equalTo: ".password-2"
-            }
-        },
-        messages: {
-            userPassword: {
-                required: "Введіть пароль використовуючи A-Z a-z 0-9",
-                rangelength: "Введіть 8-24 символи"
-            },
-            userPasswordConfirm: {
-                required: "Введіть пароль використовуючи A-Z a-z 0-9",
-                rangelength: "Введіть 8-24 символи",
-                equalTo: "Паролі не співпадають"
-            }
-        },
-		submitHandler: function() {
+	btn = form.find('button[type="submit"]');
+	
+	form.validate({
+		onkeyup			: false,
+		focusCleanup	: true,
+		focusInvalid	: false,
+		errorClass		: "error",
+		rules			: {
+			password			: {
+				required			: true,
+				rangelength			: [8, 24]
+			},
+			confirm_password	: {
+				required			: true,
+				rangelength			: [8, 24],
+				equalTo				: ".password-2"
+			}
+		},
+		messages		: {
+			password			: {
+				required			: "Введіть пароль використовуючи A-Z a-z 0-9",
+				rangelength			: "Введіть 8-24 символи"
+			},
+			confirm_password	: {
+				required			: "Введіть пароль використовуючи A-Z a-z 0-9",
+				rangelength			: "Введіть 8-24 символи",
+				equalTo				: "Паролі не співпадають"
+			}
+		},
+		submitHandler	: function() {
 			if(!lock){
 				$.ajax({
-					type: "POST",
-					url: '/ajax/user/new-password',
-                    data: form.serialize(),
-                    dataType: "json",
-                    beforeSend: function(request){
-                        lock = true;
-                        
-                        btn.attr('disabled', true);
-                        form.find('label.error').text('').hide();
+					type		: "POST",
+					url			: '/ajax/user/new-password',
+					data		: form.serialize(),
+					dataType	: "json",
+					beforeSend	: function(request){
+						lock = true;
+						
+						btn.attr('disabled', true);
+						form.find('label.error').text('').hide();
 					},
-					success: function(response){
+					success		: function(response){
 						console.log('response:');
 						console.log(response);
 						
 						lock = false;
-                        btn.attr('disabled', false);
-                        
-                        responseMsg(form, response);
+						btn.attr('disabled', false);
+						
+						responseMsg(form, response);
 						
 						if(response.status){;
 							form.trigger('reset');
 						}
 					},
-					error: function(err){
+					error		: function(err){
 						console.log('error');
 						lock = false;
-                        btn.attr('disabled', false);
-                        responseMsg(form, err);
+						btn.attr('disabled', false);
+						responseMsg(form, err);
 					}
 				});
 			};
 			
 			return false;
-	    }
-    });
+		}
+	});
 };
 
 function passVerificationForm() {

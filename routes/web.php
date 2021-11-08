@@ -42,12 +42,16 @@ Route::group(['namespace' => 'Ajax'], function(){
 		'uses' => 'UserController@verification'
 	]);
 	
-	Route::post('ajax/user/forgotten', [
+	Route::post('ajax/user/recovery', [
 		'uses' => 'UserController@forgotten'
 	]);
 	
 	Route::post('ajax/user/settings', [
 		'uses' => 'UserController@settings'
+	]);
+	
+	Route::post('ajax/user/new-password', [
+		'uses' => 'UserController@new_password'
 	]);
 	
 	Route::post('ajax/user/change-password', [
@@ -73,6 +77,14 @@ Route::group(['namespace' => 'Ajax'], function(){
 	Route::post('ajax/user/address', [
 		'uses' => 'UserController@address'
 	]);
+	
+	Route::post('ajax/cabinet/request', [
+		'uses' => 'MessagesController@add'
+	]);
+	
+	Route::post('ajax/cabinet/request/{id}', [
+		'uses' => 'MessagesController@message'
+	])->where('id', '[0-9]+');
 });
 
 Route::get('news', [
@@ -153,6 +165,10 @@ Route::get('account/logout', [
 	'as'    => 'logout',
 	'uses'  => 'AccountController@logout'
 ]);
+
+Route::get('reset/{code}', [
+	'uses' => 'PageController@index'
+])->where('code', '[a-zA-Z_0-9\-]+');
 
 Route::get('/{uri}', [
 	'uses' => 'PageController@once'

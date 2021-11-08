@@ -40,6 +40,115 @@ class ContractsController extends Controller {
 	function add(Request $request){
 		$this->session();
 		
+		if($this->_user->type == 'individual'){
+			return $this->add_individual($request);
+		}
+		
+		return $this->add_entity($request);
+	}
+	
+	function add_individual(Request $request){
+		$this->session();
+		
+		$post = $request->all();
+		
+		$status = false;
+		$errors = array();
+		$msg	= trans('ajax.failed_add_contract');
+		$payload= [];
+		
+		if(!$this->_auth){
+			return response()->json([
+				'status' 	=> $status,
+				'message'	=> $msg,
+				'errors'	=> $errors,
+				'payload'	=> $payload
+			], 200, [], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+		}
+		
+		$validator = Validator::make(
+			$post,
+			array(
+				'name'					=> 'required|string|min:2|max:200',
+				'address'				=> 'required|string|min:2|max:150',
+				'email'					=> 'required|email',
+				'phone'					=> 'required|string|min:9|max:13',
+				'index'					=> 'required'
+			),
+			array(
+				'name.required'			=> trans('ajax_validation.required'),
+				'name.min'				=> trans('ajax_validation.min_length'),
+				'name.max'				=> trans('ajax_validation.max_length'),
+				
+				'contact.required'		=> trans('ajax_validation.required'),
+				'contact.min'			=> trans('ajax_validation.min_length'),
+				'contact.max'			=> trans('ajax_validation.max_length'),
+				
+				'address.required'		=> trans('ajax_validation.required'),
+				'address.min'			=> trans('ajax_validation.min_length'),
+				'address.max'			=> trans('ajax_validation.max_length'),
+				
+				'email.required'		=> trans('ajax_validation.required'),
+				'email.min'				=> trans('ajax_validation.min_length'),
+				'email.max'				=> trans('ajax_validation.max_length'),
+				'email.email'			=> trans('ajax_validation.email'),
+			)
+		);
+		
+		if($validator->passes()){
+			$error	= false;
+			
+			$post['phone']			= preg_replace("/[^0-9]/", '', $post['phone']);
+			$post['index']			= preg_replace("/[^0-9]/", '', $post['index']);
+			
+			//
+			
+			if(!$error){
+				$record = Contracts::create([
+					'client_id'			=> $this->_id,
+					'name'				=> $post['name'],
+					'email'				=> $post['email'],
+					'phone'				=> $post['phone'],
+					'index'				=> $post['index']
+				]);
+				
+				$status = true;
+				$msg	= trans('ajax.success_add_contract');
+				
+				$this->sendEmail(
+					'new-contract',
+					null,
+					array(
+						'name'	=> $this->_user->name,
+						'id'	=> $this->_id,
+						'url'	=> url('/admin/contracts/'.$record->id.'/edit')
+						
+					)
+				);
+			}
+		}else{
+			$messages = $validator->messages();
+			
+			foreach($post as $k => $v){
+				$error = $messages->first($k);
+				
+				if($error){
+					$errors[$k] = $error;
+				}
+			}
+		}
+		
+		return response()->json([
+			'status' 	=> $status,
+			'message'	=> $msg,
+			'errors'	=> $errors,
+			'payload'	=> $payload
+		], 200, [], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+	}
+	
+	function add_entity(Request $request){
+		$this->session();
+		
 		$post = $request->all();
 		
 		$status = false;
@@ -115,6 +224,17 @@ class ContractsController extends Controller {
 				
 				$status = true;
 				$msg	= trans('ajax.success_add_contract');
+				
+				$this->sendEmail(
+					'new-contract',
+					null,
+					array(
+						'name'	=> $this->_user->name,
+						'id'	=> $this->_id,
+						'url'	=> url('/admin/contracts/'.$record->id.'/edit')
+						
+					)
+				);
 			}
 		}else{
 			$messages = $validator->messages();
@@ -135,5 +255,4 @@ class ContractsController extends Controller {
 			'payload'	=> $payload
 		], 200, [], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 	}
-	
 }

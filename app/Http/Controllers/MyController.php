@@ -101,7 +101,8 @@ class MyController extends Controller {
 		View::share('tariff_category'		, TariffCategory::query()->orderBy('sort', 'asc')->get());
 		View::share('calc_object'			, CalcObject::query()->orderBy('sort', 'asc')->get());
 		
-		View::share('user'	, []);
+		View::share('user'					, []);
+		View::share('code'					, '');
 	}
 	
 	function session(){

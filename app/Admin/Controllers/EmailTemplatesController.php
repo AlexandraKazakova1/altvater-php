@@ -30,7 +30,7 @@ class EmailTemplatesController extends MyAdminController{
         $grid->column('id', __('ID'));
         
         $grid->column('name', __('admin.email.name'));
-        //$grid->column('slug', __('admin.email.slug'));
+        $grid->column('slug', __('admin.email.slug'));
         
         $grid->column('subject', __('admin.email.subject'));
         

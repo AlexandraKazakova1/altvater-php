@@ -26,7 +26,7 @@
 					<div>
 						<label>
 							<span class="input-description">Вибір тематики заявки:</span>
-							<select class="custom-select" name="service">
+							<select class="custom-select" name="theme">
 								<option data-id="0" class="first-option" disabled selected value hidden>Тематика заявки</option>
 								<option value="1">Тематика заявки1</option>
 								<option value="2">Тематика заявки2</option>
@@ -36,7 +36,7 @@
 						
 						<label>
 							<span class="input-description">Номер договору:</span>
-							<select class="custom-select" name="service">
+							<select class="custom-select" name="number">
 								<option data-id="0" class="first-option" disabled selected value hidden>Номер договору</option>
 								<option value="0">Без договору</option>
 								<option value="123">#13256</option>
@@ -82,7 +82,7 @@
 					</div>
 					
 					<label class="label__file">
-						<input class="form-control-file" type="file" accept=".pdf, .jpg" multiple>
+						<input class="form-control-file" type="file" accept=".pdf, .jpg">
 						
 						<div>
 							<img src="/img/File-fill.svg" alt="">
