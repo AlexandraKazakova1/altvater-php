@@ -622,14 +622,14 @@ function addAddress() {
 			
 			readers[i] = new FileReader();
 			
-			readers[i].onload = function() {
+			readers[i].onload = function(e) {
 				console.log('onload:');
-				console.log(reader.result);
+				console.log(e);
 			};
 			
-			readers[i].onerror = function() {
+			readers[i].onerror = function(e) {
 				console.log('onerror:');
-				console.log(reader.error);
+				console.log(e);
 			};
 			
 			readers[i].readAsText(file);
