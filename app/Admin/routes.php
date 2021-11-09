@@ -41,4 +41,6 @@ Route::group([
 	
 	$router->resource('calc-object'				, CalcObjectController::class);
 	$router->resource('tariff_category'			, TariffCategoryController::class);
+	
+	$router->resource('themes'					, ThemesController::class);
 });

@@ -486,4 +486,8 @@ return [
 		'addresses'				=> 'Адреса',
 		'comment'				=> 'Коментар',
 	],
+	
+	'themes'				=> [
+		'label'					=> 'Тема'
+	],
 ];
