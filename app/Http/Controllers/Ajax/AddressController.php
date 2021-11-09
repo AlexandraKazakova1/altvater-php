@@ -106,7 +106,7 @@ class AddressController extends Controller {
 				$record = UserAddresses::create([
 					'client_id'			=> $this->_id,
 					'name'				=> $post['name'],
-					'addresses'			=> implode(', ', $addresses)
+					'addresses'			=> implode(', ', $addresses),
 					'name'				=> $result->lat,
 					'name'				=> $result->lng
 				]);
