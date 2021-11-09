@@ -689,8 +689,8 @@ function addAddress() {
 		submitHandler	: function() {
 			if(!lock){
 				var form_data = {
-					name		: form.find('input[name="name"]'),
-					addresses	: form.find('input[name="addresses"]'),
+					name		: form.find('input[name="name"]').val(),
+					addresses	: form.find('input[name="addresses"]').val(),
 					images		: images
 				};
 				
