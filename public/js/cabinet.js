@@ -141,11 +141,12 @@ function modalFade() {
         var dataLat = $(this).getAttribute(data-lat);
         var dataLng = $(this).getAttribute(data-lng);
 
+        console.log(dataLat);
+        console.log(dataLng);
+
         var dataLat = (initMap);
         var dataLng = (initMap);
 
-        console.log(dataLat)
-        console.log(dataLng)
 
         $('#address__info-modal').modal('show');
 
@@ -180,7 +181,9 @@ function modalFade() {
 };
 
 function initMap() {
-    var place = { lat: dataLat, lng: dataLng };
+    console.log(dataLat);
+    console.log(dataLng);
+    var place = { lat: 1, lng: 1 };
     var map = new google.maps.Map(document.getElementById("map"), {
         zoom: 16,
         center: place,
