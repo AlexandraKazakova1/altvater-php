@@ -45,7 +45,7 @@ class AddressController extends Controller {
 		
 		$status = false;
 		$errors = array();
-		$msg	= trans('ajax.failed_add_contract');
+		$msg	= trans('ajax.failed_add_address');
 		$payload= [];
 		
 		if(!$this->_auth){
