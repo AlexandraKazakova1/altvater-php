@@ -139,14 +139,14 @@ function modalFade() {
     $('.btn-address__info').click(function() {
         $('.modal').modal('hide');
 
-        var dataLat = $(this).getAttribute(data-lat);
-        var dataLng = $(this).getAttribute(data-lng);
+        var dataLat = $(this).attr('data-lat');
+        var dataLng = $(this).attr('data-lng');
 
         // console.log(dataLat);
         // console.log(dataLng);
 
-        var dataLat = (initMap);
-        var dataLng = (initMap);
+        // var dataLat (initMap);
+        // var dataLng (initMap);
 
 
         $('#address__info-modal').modal('show');
