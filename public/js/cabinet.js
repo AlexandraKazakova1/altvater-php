@@ -28,6 +28,8 @@ $(document).ready (function() {
 	ordersSelect();
 	requestMsg();
 	menuToggle();
+
+    $('#addcontract').modal('show');
 });
 
 function menuToggle() {
