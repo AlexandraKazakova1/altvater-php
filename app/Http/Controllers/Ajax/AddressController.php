@@ -103,6 +103,12 @@ class AddressController extends Controller {
 			}
 			
 			if(!$error){
+				$images = $request->get('images');
+				print_r($images);
+				exit;
+			}
+			
+			if(!$error){
 				$record = UserAddresses::create([
 					'client_id'			=> $this->_id,
 					'name'				=> $post['name'],
