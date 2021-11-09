@@ -9,7 +9,7 @@ class GeocodeHelper extends Helper{
 	public $request_url         = "https://maps.google.com/maps/api/geocode/json?";
 	
 	public $sensor          	= "false";
-	public $language            = "en";
+	public $language            = "uk";
 	
 	public $status          	= false;
 	public $response            = false;
