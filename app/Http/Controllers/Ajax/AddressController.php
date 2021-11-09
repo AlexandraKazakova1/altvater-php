@@ -18,7 +18,7 @@ use App\Helpers\GeocodeHelper;
 
 use App\Models\User;
 use App\Models\UserAddresses;
-use App\Models\UserAddresses;
+use App\Models\UserAddressesImages;
 
 class AddressController extends Controller {
 	
