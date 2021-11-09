@@ -599,11 +599,27 @@ function addAddress() {
 		console.log(e);
 		
 		//return false;
+
+		var readers = [];
 		
 		for(var i = 0; i < this.files.length; i++){
 			var file = this.files[i];
 			
 			console.log(file);
+			
+			readers[i] = new FileReader();
+			
+			readers[i].onload = function() {
+				console.log('onload:');
+				console.log(reader.result);
+			};
+			
+			readers[i].onerror = function() {
+				console.log('onerror:');
+				console.log(reader.error);
+			};
+			
+			readers[i].readAsText(file);
 			
 			//added_file.append('<li>'+file.name+'</li>');
 			
