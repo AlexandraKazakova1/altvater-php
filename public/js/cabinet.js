@@ -688,9 +688,11 @@ function addAddress() {
 		},
 		submitHandler	: function() {
 			if(!lock){
-				var form_data = new FormData(form[0]);
-				
-				form_data.append('images', images);
+				var form_data = {
+					name		: form.find('input[name="name"]'),
+					addresses	: form.find('input[name="addresses"]'),
+					images		: images
+				};
 				
 				console.log('form_data:');
 				console.log(form_data);
@@ -699,7 +701,7 @@ function addAddress() {
 					type		: "POST",
 					url			: '/ajax/cabinet/add-address',
 					method		: "POST",
-					data		: form_data,
+					data		: JSON.stringify(form_data),
 					dataType	: "json",
 					beforeSend	: function(request){
 						lock = true;
