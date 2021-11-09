@@ -703,6 +703,7 @@ function addAddress() {
 					method		: "POST",
 					data		: JSON.stringify(form_data),
 					dataType	: "json",
+					contentType	: "application/json; charset=utf-8",
 					beforeSend	: function(request){
 						lock = true;
 						
