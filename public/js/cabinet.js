@@ -721,6 +721,9 @@ function addAddress() {
 						
 						if(response.status){
 							form.trigger('reset');
+							
+							images = [];
+							added_file.html('');
 						}
 					},
 					error		: function(err){
