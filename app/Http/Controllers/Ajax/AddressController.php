@@ -85,6 +85,17 @@ class AddressController extends Controller {
 				
 				$status = true;
 				$msg	= trans('ajax.success_add_address');
+				
+				$images = [];
+				
+				$payload= [
+					"id"		=> $record->id,
+					"name" 		=> $record->name,
+					"addresses"	=> $record->addresses,
+					"lat"		=> $record->lat,
+					"lng"		=> $record->lng,
+					"images"	=> $images
+				];
 			}
 		}else{
 			$messages = $validator->messages();
