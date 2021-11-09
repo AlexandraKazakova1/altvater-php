@@ -609,31 +609,32 @@ function addAddress() {
 	control_file.on('change', function(e){
 		e.preventDefault();
 		
-		console.log(e);
+		var file = e.target.files[0];
 		
-		return false;
+		console.log('file:');
+		console.log(file);
 		
-			var reader = new FileReader();
+		var reader = new FileReader();
+		
+		reader.onload = function(e) {
+			console.log('onload:');
+			console.log(e);
 			
-			reader.onload = function(e) {
-				console.log('onload:');
-				console.log(e);
-				
-				images[n] = b64EncodeUnicode(e.target.result);
-				
-				n++;
-			};
+			images[n] = b64EncodeUnicode(e.target.result);
 			
-			reader.onerror = function(e) {
-				console.log('onerror:');
-				console.log(e);
-			};
-			
-			reader.readAsText(file);
-			
-			//added_file.append('<li>'+file.name+'</li>');
-			
-			//images.append(name, blob, file.name);
+			n++;
+		};
+		
+		reader.onerror = function(e) {
+			console.log('onerror:');
+			console.log(e);
+		};
+		
+		reader.readAsText(file);
+		
+		//added_file.append('<li>'+file.name+'</li>');
+		
+		//images.append(name, blob, file.name);
 	});
 	
 	var lock = false,
