@@ -140,27 +140,6 @@ function modalFade() {
         $('#add__address-modal').modal('show');
     });
 
-    $('.btn-address__info').click(function() {
-        $('.modal').modal('hide');
-
-        var dataLat = $(this).attr('data-lat');
-        var dataLng = $(this).attr('data-lng');
-
-        console.log(dataLat);
-        console.log(dataLng);
-
-        gDataLat = dataLat;
-        gDataLng = dataLng;
-
-        // var dataLat (initMap);
-        // var dataLng (initMap);
-
-
-        $('#address__info-modal').modal('show');
-
-        initMap();
-    });
-
     // $('#orderService').modal('show');
     $('.order-btn').click(function() {
         $('.modal').modal('hide');
@@ -187,9 +166,32 @@ function modalFade() {
     closeBtn.click(function() {
         $(this).parents('.modal').modal('hide');
     });
+
+    $('.btn-address__info').click(function() {
+        $('.modal').modal('hide');
+
+        var dataLat = $(this).attr('data-lat');
+        var dataLng = $(this).attr('data-lng');
+
+        // console.log(dataLat);
+        // console.log(dataLng);
+
+        gDataLat = dataLat;
+        gDataLng = dataLng;
+
+        // var dataLat (initMap);
+        // var dataLng (initMap);
+
+
+        $('#address__info-modal').modal('show');
+
+        initMap();
+    });
 };
 
 function initMap() {
+    console.log(gDataLat);
+    console.log(gDataLng);
     var place = { lat: gDataLat, lng: gDataLng };
     var map = new google.maps.Map(document.getElementById("map"), {
         zoom: 16,
