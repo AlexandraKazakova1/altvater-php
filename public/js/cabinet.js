@@ -587,7 +587,7 @@ function addAddress() {
 	var added_file		= $('#addedFile');
 	var control_file	= $('#control-file');
 	
-	var form_data = new FormData(form);
+	var form_data = new FormData(form[0]);
 	
 	var images = [];
 	
