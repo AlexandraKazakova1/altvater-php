@@ -149,10 +149,10 @@ function modalFade() {
         $('.modal').modal('hide');
         $('#orderService').modal('show');
     });
-    // $('.pinned').click(function() {
-    //     $('.modal').modal('hide');
-    //     $('#create__contract-modal-2').modal('show');
-    // });
+    $('.pinned').click(function() {
+        $('.modal').modal('hide');
+        $('#create__contract-modal-2').modal('show');
+    });
     $('.orders__item').click(function() {
         $('.modal').modal('hide');
         $('#orderInfo').modal('show');
@@ -579,6 +579,7 @@ function addAddress() {
     form.find('input[type=file]').on('change', function() {
         for (var i = 0; i < this.files.length; i++) {
             console.log(this.files[i].name);
+            $('.addedFiles').text(this.files[i].name);
         }
     });
 
