@@ -601,7 +601,7 @@ function addAddress() {
 		//return false;
 		
 		for(var i = 0; i < this.files.length; i++){
-			var file = input.files[i];
+			var file = this.files[i];
 			
 			console.log(file);
 			
