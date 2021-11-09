@@ -634,7 +634,6 @@ function addAddress() {
 			//added_file.append('<li>'+file.name+'</li>');
 			
 			//images.append(name, blob, file.name);
-		}
 	});
 	
 	var lock = false,
