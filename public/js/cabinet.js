@@ -142,8 +142,8 @@ function modalFade() {
         var dataLat = $(this).attr('data-lat');
         var dataLng = $(this).attr('data-lng');
 
-        // console.log(dataLat);
-        // console.log(dataLng);
+        console.log(dataLat);
+        console.log(dataLng);
 
         // var dataLat (initMap);
         // var dataLng (initMap);
@@ -183,8 +183,6 @@ function modalFade() {
 };
 
 function initMap() {
-    console.log(dataLat);
-    console.log(dataLng);
     var place = { lat: 1, lng: 1 };
     var map = new google.maps.Map(document.getElementById("map"), {
         zoom: 16,
