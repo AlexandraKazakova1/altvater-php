@@ -86,15 +86,29 @@ class AddressController extends Controller {
 				
 				$result = $geo->query($post['addresses']);
 				
-				print_r($result);
-				exit;
+				if(!$result){
+					$error	= true;
+					$msg	= trans('ajax.failed_add_address');
+				}else{
+					$addresses = [];
+					
+					if($result->street){
+						$addresses[] = $result->street;
+					}
+					
+					if($result->house){
+						$addresses[] = $result->house;
+					}
+				}
 			}
 			
 			if(!$error){
 				$record = UserAddresses::create([
 					'client_id'			=> $this->_id,
 					'name'				=> $post['name'],
-					'addresses'			=> $post['addresses']
+					'address'			=> implode(', ', $addresses),
+					'lat'				=> $result->lat,
+					'lng'				=> $result->lng
 				]);
 				
 				$status = true;
@@ -105,7 +119,7 @@ class AddressController extends Controller {
 				$payload= [
 					"id"		=> $record->id,
 					"name" 		=> $record->name,
-					"addresses"	=> $record->addresses,
+					"addresses"	=> $record->address,
 					"lat"		=> $record->lat,
 					"lng"		=> $record->lng,
 					"images"	=> $images
