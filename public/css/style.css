@@ -3139,10 +3139,10 @@ label .error {
   padding-bottom: 10px;
   text-align: center;
   font-style: normal;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 600;
-  line-height: 18px;
-  color: #2F5E97;
+  line-height: 22px;
+  color: rgba(0, 0, 0, 0.8);
 }
 
 @media (max-width: 1440px) {

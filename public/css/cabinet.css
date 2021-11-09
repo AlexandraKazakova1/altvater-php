@@ -5941,6 +5941,16 @@ a.popup-text__link {
   color: rgba(113, 128, 150, 0.8);
 }
 
+.responseMsg {
+  padding-bottom: 10px;
+  text-align: center;
+  font-style: normal;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 22px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
 .modal-dialog {
   max-width: 440px;
 }
