@@ -626,7 +626,7 @@ function addAddress() {
 				console.log('onload:');
 				console.log(e.target);
 				
-				images[] = b64EncodeUnicode(e.target.result);
+				images[n] = b64EncodeUnicode(e.target.result);
 				
 				n++;
 			};
