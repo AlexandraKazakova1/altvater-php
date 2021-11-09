@@ -31,7 +31,7 @@
 								<ellipse cx="17.4999" cy="14.9467" rx="3.28262" ry="3.28262" stroke="#2F5E97" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 							</svg>
 							<div>
-								<span>Номер акаунту:</span>
+								<span>Номер облікового запису:</span>
 								<span class="owner-id">{{$user['id']}}</span>
 							</div>
 						</div>
