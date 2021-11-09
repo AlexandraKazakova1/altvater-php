@@ -26,6 +26,7 @@ $(document).ready (function() {
 	createModal();
 	servicesCalc();
 	scrollUp();
+	$('#recovery-modal-2').modal('show');
 });
 
 function scrollUp() {
