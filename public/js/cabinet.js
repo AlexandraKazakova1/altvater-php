@@ -135,14 +135,15 @@ function modalFade() {
         $('.modal').modal('hide');
         $('#add__address-modal').modal('show');
     });
+
     $('.btn-address__info').click(function() {
         $('.modal').modal('hide');
 
         var dataLat = $(this).getAttribute(data-lat);
         var dataLng = $(this).getAttribute(data-lng);
 
-        console.log(dataLat);
-        console.log(dataLng);
+        // console.log(dataLat);
+        // console.log(dataLng);
 
         var dataLat = (initMap);
         var dataLng = (initMap);
@@ -152,6 +153,7 @@ function modalFade() {
 
         initMap();
     });
+
     // $('#orderService').modal('show');
     $('.order-btn').click(function() {
         $('.modal').modal('hide');
