@@ -611,18 +611,11 @@ function addAddress() {
 		
 		console.log(e);
 		
-		//return false;
+		return false;
 		
-		var readers = [];
-		
-		for(var i = 0; i < this.files.length; i++){
-			var file = this.files[i];
+			var reader = new FileReader();
 			
-			console.log(file);
-			
-			readers[i] = new FileReader();
-			
-			readers[i].onload = function(e) {
+			reader.onload = function(e) {
 				console.log('onload:');
 				console.log(e);
 				
@@ -631,12 +624,12 @@ function addAddress() {
 				n++;
 			};
 			
-			readers[i].onerror = function(e) {
+			reader.onerror = function(e) {
 				console.log('onerror:');
 				console.log(e);
 			};
 			
-			readers[i].readAsText(file);
+			reader.readAsText(file);
 			
 			//added_file.append('<li>'+file.name+'</li>');
 			
