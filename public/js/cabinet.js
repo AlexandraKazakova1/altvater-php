@@ -650,6 +650,14 @@ function addAddress() {
 		//images.append(name, blob, file.name);
 	});
 	
+	added_file.on('click', 'button', function(e){
+		var current = $(this);
+		var n = current.attr('n');
+		
+		delete images[n];
+		added_file.find('li[data-n="'+n+'"]').remove();
+	});
+	
 	var lock = false,
 	btn = form.find('button[type="submit"]');
 	
