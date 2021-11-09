@@ -135,8 +135,18 @@ function modalFade() {
 
         var lat = $(this).getAttribute(data-lat);
         var lng = $(this).getAttribute(data-lng);
-
-        initMap();
+        
+        function initMap() {
+            var place = { lat: lat, lng: lng };
+            var map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 16,
+                center: place,
+            });
+            const marker = new google.maps.Marker({
+                position: place,
+                map: map,
+            });
+        };
         $('#address__info-modal').modal('show');
     });
     // $('#orderService').modal('show');
@@ -657,18 +667,6 @@ function addAddress() {
 			};
 			return false;
 	    }
-    });
-};
-
-function initMap() {
-    var place = { lat: lat, lng: lng };
-    var map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 16,
-        center: place,
-    });
-    const marker = new google.maps.Marker({
-        position: place,
-        map: map,
     });
 };
  
