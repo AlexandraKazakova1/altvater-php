@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 use App\Helpers\StringHelper;
+use App\Helpers\GeocodeHelper;
 
 use App\Models\User;
 use App\Models\UserAddresses;
@@ -75,6 +76,19 @@ class AddressController extends Controller {
 		
 		if($validator->passes()){
 			$error	= false;
+			
+			if(!$error){
+				$geo = new GeocodeHelper();
+				$geo->setKey(env('GEOCODE_KEY'));
+				$geo->address	= true;
+				$geo->street	= true;
+				$geo->house		= true;
+				
+				$result = $geo->query($post['addresses']);
+				
+				print_r($result);
+				exit;
+			}
 			
 			if(!$error){
 				$record = UserAddresses::create([
