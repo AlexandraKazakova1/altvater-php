@@ -612,7 +612,7 @@ function addAddress() {
 		console.log(e);
 		
 		//return false;
-
+		
 		var readers = [];
 		
 		for(var i = 0; i < this.files.length; i++){
@@ -624,7 +624,11 @@ function addAddress() {
 			
 			readers[i].onload = function(e) {
 				console.log('onload:');
-				console.log(b64EncodeUnicode(e.target.result));
+				console.log(e.target);
+				
+				images[] = b64EncodeUnicode(e.target.result);
+				
+				n++;
 			};
 			
 			readers[i].onerror = function(e) {
