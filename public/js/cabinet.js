@@ -624,7 +624,7 @@ function addAddress() {
 			
 			readers[i].onload = function(e) {
 				console.log('onload:');
-				console.log(e);
+				console.log(b64EncodeUnicode(e.target.result));
 			};
 			
 			readers[i].onerror = function(e) {
@@ -642,7 +642,7 @@ function addAddress() {
 	
 	var lock = false,
 	btn = form.find('button[type="submit"]');
-
+	
 	form.validate({
 		onkeyup			: false,
 		focusCleanup	: true,
@@ -707,7 +707,13 @@ function addAddress() {
 		}
 	});
 };
- 
+
+function b64EncodeUnicode(str) {
+	return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function toSolidBytes(match, p1) {
+		return String.fromCharCode('0x' + p1);
+	}));
+};
+
 function requestForm() {
 	var form = jQuery("#requestForm");
 
