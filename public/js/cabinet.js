@@ -110,6 +110,10 @@ function customSelect() {
 	});
 };
 
+
+var gDataLat = {};
+var gDataLng = {};
+
 function modalFade() {
     var closeBtn = $('.close')
 
@@ -144,6 +148,9 @@ function modalFade() {
 
         console.log(dataLat);
         console.log(dataLng);
+
+        gDataLat = dataLat;
+        gDataLng = dataLng;
 
         // var dataLat (initMap);
         // var dataLng (initMap);
@@ -183,7 +190,7 @@ function modalFade() {
 };
 
 function initMap() {
-    var place = { lat: 1, lng: 1 };
+    var place = { lat: gDataLat, lng: gDataLng };
     var map = new google.maps.Map(document.getElementById("map"), {
         zoom: 16,
         center: place,
