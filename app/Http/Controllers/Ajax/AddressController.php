@@ -107,8 +107,8 @@ class AddressController extends Controller {
 					'client_id'			=> $this->_id,
 					'name'				=> $post['name'],
 					'addresses'			=> implode(', ', $addresses),
-					'name'				=> $result->lat,
-					'name'				=> $result->lng
+					'lat'				=> $result->lat,
+					'lng'				=> $result->lng
 				]);
 				
 				$status = true;
