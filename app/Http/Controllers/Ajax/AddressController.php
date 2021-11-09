@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
 
 use App\Helpers\StringHelper;
 use App\Helpers\GeocodeHelper;
@@ -98,6 +99,30 @@ class AddressController extends Controller {
 					
 					if($result->house){
 						$addresses[] = $result->house;
+					}
+				}
+			}
+			
+			if(!$error){
+				$images = [];
+				
+				$tmp_images	= $request->get('images');
+				//$files		= $_FILES;
+				
+				print_r($tmp_images);
+				echo"\n";
+				print_r($request->file('images'));
+				exit;
+				
+				if($tmp_images && is_array($tmp_images)){
+					foreach($tmp_images as $item){
+						if(isset($item['name']) && isset($item['mime'])){
+							$item['mime'] = explode('/', $item['mime']);
+							
+							if($item['mime'][0] == 'image'){
+								
+							}
+						}
 					}
 				}
 			}
