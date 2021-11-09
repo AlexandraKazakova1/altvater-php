@@ -4261,6 +4261,20 @@ a.popup-text__link {
                 border: 1px solid #2F5E97;
                 transition: all 0.3s;
             }
+            .addedFile {
+                display: flex;
+                flex-direction: column;
+                white-space: pre-wrap;
+                word-break: break-all;
+                word-break: break-word;
+                hyphens: auto;
+                padding-bottom: 10px;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 20px;
+                color: rgba(113, 128, 150, 0.8);
+            }
         }
     }
 }
