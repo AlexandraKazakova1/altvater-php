@@ -133,11 +133,14 @@ function modalFade() {
     $('.btn-address__info').click(function() {
         $('.modal').modal('hide');
 
-        var lat = $(this).getAttribute(data-lat);
-        var lng = $(this).getAttribute(data-lng);
-        
+        var dataLat = $(this).getAttribute(data-lat);
+        var dataLng = $(this).getAttribute(data-lng);
+
+        console.log(dataLat)
+        console.log(dataLng)
+
         function initMap() {
-            var place = { lat: lat, lng: lng };
+            var place = { lat: dataLat, lng: dataLng };
             var map = new google.maps.Map(document.getElementById("map"), {
                 zoom: 16,
                 center: place,
