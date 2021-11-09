@@ -107,24 +107,24 @@ class AddressController extends Controller {
 				$images = [];
 				
 				$tmp_images	= $request->get('images');
-				//$files		= $_FILES;
-				
-				print_r($tmp_images);
-				echo"\n";
-				print_r($request->file('images'));
-				exit;
 				
 				if($tmp_images && is_array($tmp_images)){
 					foreach($tmp_images as $item){
-						if(isset($item['name']) && isset($item['mime'])){
+						if(isset($item['name']) && isset($item['mime']) && isset($item['data'])){
 							$item['mime'] = explode('/', $item['mime']);
 							
 							if($item['mime'][0] == 'image'){
-								
+								print_r($item['name'][0]);
+								echo"\n";
+								print_r($item['name'][0]);
+								echo"\n";
+								echo"\n";
 							}
 						}
 					}
 				}
+				
+				exit;
 			}
 			
 			if(!$error){
