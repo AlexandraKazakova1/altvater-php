@@ -576,10 +576,11 @@ function contractEntity() {
 function addAddress() {
 	var form = jQuery("#add__address-form");
 
-    form.find('input[type=file]').on('change', function() {
+    form.find('input[type=file]').on('change', function(e) {
+        e.preventDefault();
         for (var i = 0; i < this.files.length; i++) {
             console.log(this.files[i].name);
-            form.find('.addedFile').html('p').text(this.files[i].name);
+            form.find('.addedFile').html().text(this.files[i].name);
         }
     });
 
