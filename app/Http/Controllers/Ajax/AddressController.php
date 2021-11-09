@@ -85,7 +85,7 @@ class AddressController extends Controller {
 				$geo->house		= true;
 				
 				$result = $geo->query($post['addresses']);
-				
+				print_r($result);exit;
 				if(!$result){
 					$error	= true;
 					$msg	= trans('ajax.failed_add_address');
