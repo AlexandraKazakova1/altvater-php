@@ -16,7 +16,9 @@ class UserAddresses extends Model{
 	protected $fillable = [
 		'client_id',
 		'name',
-		'address'
+		'address',
+		'lat',
+		'lng'
 	];
 	
 	public function images(){
