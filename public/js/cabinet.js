@@ -624,7 +624,7 @@ function addAddress() {
 			
 			readers[i].onload = function(e) {
 				console.log('onload:');
-				console.log(e.target);
+				console.log(e);
 				
 				images[n] = b64EncodeUnicode(e.target.result);
 				
