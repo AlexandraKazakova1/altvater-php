@@ -979,11 +979,11 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  grid-row-gap: 30px;
 }
 
 .content__wrapper .addresses__wrapper .addresses .section__title {
   padding-bottom: 32px;
+  margin-bottom: 30px;
 }
 
 .content__wrapper .addresses__wrapper .addresses .addresses__list {
@@ -996,6 +996,7 @@ main {
           flex-direction: column;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
+  margin-bottom: 30px;
 }
 
 .content__wrapper .addresses__wrapper .addresses .addresses__list .list__item {

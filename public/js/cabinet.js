@@ -136,21 +136,15 @@ function modalFade() {
         var dataLat = $(this).getAttribute(data-lat);
         var dataLng = $(this).getAttribute(data-lng);
 
+        var dataLat = (initMap);
+        var dataLng = (initMap);
+
         console.log(dataLat)
         console.log(dataLng)
 
-        function initMap() {
-            var place = { lat: dataLat, lng: dataLng };
-            var map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 16,
-                center: place,
-            });
-            const marker = new google.maps.Marker({
-                position: place,
-                map: map,
-            });
-        };
         $('#address__info-modal').modal('show');
+
+        initMap();
     });
     // $('#orderService').modal('show');
     $('.order-btn').click(function() {
@@ -175,12 +169,22 @@ function modalFade() {
         $('#orderInfo').modal('show');
     });
 
-
-
     closeBtn.click(function() {
         $(this).parents('.modal').modal('hide');
     });
 };
+
+function initMap() {
+    var place = { lat: dataLat, lng: dataLng };
+    var map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 16,
+        center: place,
+    });
+    const marker = new google.maps.Marker({
+        position: place,
+        map: map,
+    });
+}; 
 
 function dragAndDrop() {
     var dropZone = $('.file-wrap-drop');

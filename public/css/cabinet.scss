@@ -724,14 +724,15 @@ main {
         .addresses {
             display: flex;
             flex-direction: column;
-            grid-row-gap: 30px;
             .section__title {
                 padding-bottom: 32px;
+                margin-bottom: 30px;
             }
             .addresses__list {
                 display: flex;
                 flex-direction: column;
                 flex-wrap: nowrap;
+                margin-bottom: 30px;
                 .list__item {
                     border-top: 1px dashed #CCD4DE;
                     border-bottom: 1px dashed #CCD4DE;
