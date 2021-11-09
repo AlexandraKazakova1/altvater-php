@@ -133,10 +133,23 @@ function modalFade() {
     $('.btn-address__info').click(function() {
         $('.modal').modal('hide');
 
-        var lat = $(this).getAttribute(data-lat);
-        var lng = $(this).getAttribute(data-lng);
+        var dataLat = $(this).getAttribute(data-lat);
+        var dataLng = $(this).getAttribute(data-lng);
 
-        initMap();
+        console.log(dataLat)
+        console.log(dataLng)
+
+        function initMap() {
+            var place = { lat: dataLat, lng: dataLng };
+            var map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 16,
+                center: place,
+            });
+            const marker = new google.maps.Marker({
+                position: place,
+                map: map,
+            });
+        };
         $('#address__info-modal').modal('show');
     });
     // $('#orderService').modal('show');
@@ -693,18 +706,6 @@ function addAddress() {
 			return false;
 		}
 	});
-};
-
-function initMap() {
-    var place = { lat: lat, lng: lng };
-    var map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 16,
-        center: place,
-    });
-    const marker = new google.maps.Marker({
-        position: place,
-        map: map,
-    });
 };
  
 function requestForm() {
