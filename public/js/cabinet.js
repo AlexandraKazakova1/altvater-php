@@ -580,7 +580,7 @@ function addAddress() {
         e.preventDefault();
         for (var i = 0; i < this.files.length; i++) {
             console.log(this.files[i].name);
-            form.find('.addedFile').append(this.files[i].name);
+            form.find('.addedFile').append(this.files[i].name + " ");
         }
     });
 
