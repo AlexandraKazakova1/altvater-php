@@ -360,7 +360,7 @@
 								<fieldset class="fieldset">
 									<label>
 										<span class="input-description">Назва:</span>
-										<input class="form-control" type="text" name="placeName" placeholder=" ">
+										<input class="form-control" type="text" name="name" placeholder=" ">
 										<span class="input-placeholder">
 											<div>
 												<img src="/img/cabinet/modal-icon/profile.svg">
@@ -371,7 +371,7 @@
 									
 									<label>
 										<span class="input-description">Адреса:</span>
-										<input class="form-control" type="text" name="placeAddress" placeholder=" ">
+										<input class="form-control" type="text" name="addresses" placeholder=" ">
 										<span class="input-placeholder">
 											<div>
 												<img src="/img/cabinet/modal-icon/location.svg">

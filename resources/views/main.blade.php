@@ -26,7 +26,8 @@
 							<!-- -->
 						@endforeach
 					</div>
-					<button class="calc-btn btn-red" data-toggle="modal" data-target="#servicesCalc">Розрахунок вартості наших послуг</button>
+					
+					<button class="calc-btn btn-red" style="display:none;" data-toggle="modal" data-target="#servicesCalc">Розрахунок вартості наших послуг</button>
 				</div>
 			</section>
 		@endif

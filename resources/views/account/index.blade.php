@@ -31,7 +31,7 @@
 								<ellipse cx="17.4999" cy="14.9467" rx="3.28262" ry="3.28262" stroke="#2F5E97" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 							</svg>
 							<div>
-								<span>Номер акаунту:</span>
+								<span>Номер облікового запису:</span>
 								<span class="owner-id">{{$user['id']}}</span>
 							</div>
 						</div>
@@ -80,7 +80,7 @@
 									</div>
 								</div>
 								
-								<button class="btn-more btn-address__info" data-id="{{$item->id}}" data-name="{{$item->name}}" data-address="{{$item->address}}" data-toggle="modal" data-target="#address__info-modal">
+								<button class="btn-more btn-address__info" data-id="{{$item->id}}" data-lat="{{$item->lat}}" data-lng="{{$item->lng}}" data-name="{{$item->name}}" data-address="{{$item->address}}" data-toggle="modal" data-target="#address__info-modal">
 									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path fill-rule="evenodd" clip-rule="evenodd" d="M17 12C17 13.1046 17.8954 14 19 14C20.1046 14 21 13.1046 21 12C21 10.8954 20.1046 10 19 10C17.8954 10 17 10.8954 17 12Z"/>
 										<path fill-rule="evenodd" clip-rule="evenodd" d="M10 12C10 13.1046 10.8954 14 12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12Z"/>
