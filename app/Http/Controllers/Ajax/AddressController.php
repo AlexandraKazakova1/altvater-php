@@ -111,7 +111,7 @@ class AddressController extends Controller {
 				
 				print_r($tmp_images);
 				echo"\n";
-				print_r($_FILES);
+				print_r($request->file('images'));
 				exit;
 				
 				if($tmp_images && is_array($tmp_images)){
