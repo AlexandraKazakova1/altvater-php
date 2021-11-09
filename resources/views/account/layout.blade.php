@@ -382,15 +382,18 @@
 									
 									<div>
 										<span class="input-description">Проблемні місця</span>
+										
 										<label class="file-wrap-drop">
-											<input class="form-control-file" type="file" name="problem-place" multiple>
+											<input class="form-control-file" id="control-file" type="file" name="problem-place" multiple>
+											
 											<span class="input-placeholder-file">
 												<img src="/img/File-fill.svg">
 												<p>Перемістіть сюди<br><span>або</span></p>
 												<span>Вибрати</span>
 											</span>
 										</label>
-										<div class="addedFile"></div>
+										
+										<ul class="addedFile" id="addedFile"></ul>
 									</div>
 									
 									<button class="btn-submit" type="submit" name="reg">Додати адресу</button>

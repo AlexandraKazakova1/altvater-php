@@ -113,10 +113,10 @@ class AddressController extends Controller {
 						if(isset($item['name']) && isset($item['mime']) && isset($item['data'])){
 							$item['mime'] = explode('/', $item['mime']);
 							
-							if($item['mime'][0] == 'image'){
-								print_r($item['name'][0]);
+							if($item['mime'] == 'image'){
+								print_r($item['name']);
 								echo"\n";
-								print_r($item['name'][0]);
+								print_r($item['name']);
 								echo"\n";
 								echo"\n";
 							}

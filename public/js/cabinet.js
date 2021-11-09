@@ -589,85 +589,104 @@ function contractEntity() {
 
 function addAddress() {
 	var form = jQuery("#add__address-form");
-
-    form.find('input[type=file]').on('change', function(e) {
-        e.preventDefault();
-        for (var i = 0; i < this.files.length; i++) {
-            console.log(this.files[i].name);
-            form.find('.addedFile').append(this.files[i].name + " ");
-        }
-    });
-
-    if(!form.length){
+	
+	if(!form.length){
 		return false;
 	};
-
+	
+	var added_file		= $('#addedFile');
+	var control_file	= $('#control-file');
+	
+	var form_data = new FormData(form[0]);
+	
+	var images = [];
+	
+	var n = 0;
+	
+	control_file.on('change', function(e){
+		e.preventDefault();
+		
+		console.log(e);
+		
+		//return false;
+		
+		for(var i = 0; i < this.files.length; i++){
+			var file = this.files[i];
+			
+			console.log(file);
+			
+			//added_file.append('<li>'+file.name+'</li>');
+			
+			//images.append(name, blob, file.name);
+		}
+	});
+	
 	var lock = false,
-    btn = form.find('button[type="submit"]');
+	btn = form.find('button[type="submit"]');
 
-    form.validate({
-		onkeyup	: false,
-        focusCleanup: true,
-        focusInvalid: false,
-        errorClass: "error",
-        rules: {
-            name: {
-                required: true,
-				minlength: 2
-            },
-            addresses: {
-                required: true,
-				minlength: 4
-            }
-        },
-        messages: {
-            name: {
-                required: "Введіть назву компанії",
-				minlength: "Некоректні дані"
-            },
-            addresses: {
-                required: "Введіть вашу адресу",
-				minlength: "Некоректні дані"
-            }
-        },
-		submitHandler: function() {
+	form.validate({
+		onkeyup			: false,
+		focusCleanup	: true,
+		focusInvalid	: false,
+		errorClass		: "error",
+		rules			: {
+			name			: {
+				required		: true,
+				minlength		: 2
+			},
+			addresses		: {
+				required		: true,
+				minlength		: 4
+			}
+		},
+		messages		: {
+			name			: {
+				required		: "Введіть назву компанії",
+				minlength		: "Некоректні дані"
+			},
+			addresses		: {
+				required		: "Введіть вашу адресу",
+				minlength		: "Некоректні дані"
+			}
+		},
+		submitHandler	: function() {
 			if(!lock){
 				$.ajax({
-					type: "POST",
-					url: '/ajax/cabinet/add-address',
-                    method: "POST",
-                    data: form.serialize(),
-                    dataType: "json",
-                    beforeSend: function(request){
-                        lock = true;
-                        
-                        btn.attr('disabled', true);
-                        form.find('label.error').text('').hide();
+					type		: "POST",
+					url			: '/ajax/cabinet/add-address',
+					method		: "POST",
+					data		: form_data,
+					dataType	: "json",
+					beforeSend	: function(request){
+						lock = true;
+						
+						btn.attr('disabled', true);
+						form.find('label.error').text('').hide();
 					},
-					success: function(response){
+					success		: function(response){
 						console.log('response:');
 						console.log(response);
 						
 						lock = false;
-                        btn.attr('disabled', false);
-                        
-                        responseMsg(form, response);
-
+						btn.attr('disabled', false);
+						
+						responseMsg(form, response);
+						
 						if(response.status){
 							form.trigger('reset');
 						}
 					},
-					error: function(err){
+					error		: function(err){
 						console.log('error');
 						lock = false;
-                        btn.attr('disabled', false);
-                        responseMsg(form, err);
+						btn.attr('disabled', false);
+						responseMsg(form, err);
 					}
 				});
 			};
 			return false;
-	    }
-    });
+		}
+	});
 };
  
 function requestForm() {
