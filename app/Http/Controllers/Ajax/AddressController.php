@@ -18,6 +18,7 @@ use App\Helpers\GeocodeHelper;
 
 use App\Models\User;
 use App\Models\UserAddresses;
+use App\Models\UserAddresses;
 
 class AddressController extends Controller {
 	
@@ -104,30 +105,28 @@ class AddressController extends Controller {
 			}
 			
 			if(!$error){
-				$images = [];
+				$images	= [];
+				$names	= [];
 				
 				$tmp_images	= $request->get('images');
 				
 				if($tmp_images && is_array($tmp_images)){
-					foreach($tmp_images as $item){
+					foreach($tmp_images as $i => $item){
 						if(isset($item['name']) && isset($item['mime']) && isset($item['data'])){
 							$item['mime'] = explode('/', $item['mime']);
 							
-							if($item['mime'] == 'image'){
-								print_r($item['name']);
-								echo"\n";
-								print_r($item['name']);
-								echo"\n";
-								echo"\n";
+							if($item['mime'][0] == 'image'){
+								$images[]	= base64_decode($item['data']);
+								$names[]	= md5(time().'-'.$i.'-'.$item['mime'][1]).'.'.$item['mime'][1];
 							}
 						}
 					}
 				}
-				
-				exit;
 			}
 			
 			if(!$error){
+				$urls = [];
+				
 				$record = UserAddresses::create([
 					'client_id'			=> $this->_id,
 					'name'				=> $post['name'],
@@ -136,10 +135,21 @@ class AddressController extends Controller {
 					'lng'				=> $result->lng
 				]);
 				
+				if($images){
+					foreach($images as $i => $item){
+						Storage::put('address-images/'.$names[$i], $fileContents);
+						
+						$urls[] = url('storage/address-images/'.$names[$i]);
+						
+						UserAddressesImages::create([
+							'address_id'	=> $record->id,
+							'file'			=> 'address-images/'.$names[$i]
+						]);
+					}
+				}
+				
 				$status = true;
 				$msg	= trans('ajax.success_add_address');
-				
-				$images = [];
 				
 				$payload= [
 					"id"		=> $record->id,
@@ -147,7 +157,7 @@ class AddressController extends Controller {
 					"addresses"	=> $record->address,
 					"lat"		=> $record->lat,
 					"lng"		=> $record->lng,
-					"images"	=> $images
+					"images"	=> $urls
 				];
 			}
 		}else{
