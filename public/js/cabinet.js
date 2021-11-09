@@ -600,8 +600,6 @@ function addAddress() {
 	var added_file		= $('#addedFile');
 	var control_file	= $('#control-file');
 	
-	var form_data = new FormData(form[0]);
-	
 	var images = [];
 	
 	var n = 0;
@@ -610,6 +608,11 @@ function addAddress() {
 		e.preventDefault();
 		
 		var file = e.target.files[0];
+		var mime = file.type.split('/');
+		
+		if(mime[0] != 'image'){
+			return false;
+		};
 		
 		console.log('file:');
 		console.log(file);
@@ -620,7 +623,13 @@ function addAddress() {
 			console.log('onload:');
 			console.log(e);
 			
-			images[n] = b64EncodeUnicode(e.target.result);
+			images[n] = {
+				'name'	: file.name,
+				'mime'	: file.type,
+				'data'	: b64EncodeUnicode(e.target.result)
+			};
+			
+			added_file.append('<li data-n="'+n+'"><span>'+file.name+'</span><button data-n="'+n+'" type="button"></button></li>');
 			
 			n++;
 		};
@@ -631,8 +640,6 @@ function addAddress() {
 		};
 		
 		reader.readAsText(file);
-		
-		//added_file.append('<li>'+file.name+'</li>');
 		
 		//images.append(name, blob, file.name);
 	});
@@ -667,6 +674,13 @@ function addAddress() {
 		},
 		submitHandler	: function() {
 			if(!lock){
+				var form_data = new FormData(form[0]);
+				
+				form_data.append('images', images);
+				
+				console.log('form_data:');
+				console.log(form_data);
+				
 				$.ajax({
 					type		: "POST",
 					url			: '/ajax/cabinet/add-address',
