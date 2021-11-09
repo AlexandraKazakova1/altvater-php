@@ -384,7 +384,7 @@
 										<span class="input-description">Проблемні місця</span>
 										
 										<label class="file-wrap-drop">
-											<input class="form-control-file" id="control-file" type="file" name="problem-place" multiple>
+											<input class="form-control-file" id="control-file" type="file" name="problem-place">
 											
 											<span class="input-placeholder-file">
 												<img src="/img/File-fill.svg">

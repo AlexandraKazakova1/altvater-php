@@ -1,108 +1,113 @@
 $(document).ready (function() {
 	var csrf = $('meta[name="csrf-token"]').attr('content');
-	
+
 	$.ajaxSetup({
 		headers: {
 			'X-CSRF-TOKEN': csrf,
 		}
 	});
 
-    calendar();
-    customSelect();
-    modalFade();
-    dragAndDrop();
-    accountsActs();
-    settingsPage();
-    contractIndividual();
-    contractEntity();
-    addAddress();
-    timepicker();
-    select2();
-    maskPhone();
-    orderServiceForm();
-    contractsArchive();
-    newOrderForm();
-    changePasswordForm();
-    settingsForm();
-    requestForm();
-    ordersSelect();
-    requestMsg();
-    menuToggle();
+	calendar();
+	customSelect();
+	modalFade();
+	//dragAndDrop();
+	accountsActs();
+	settingsPage();
+	contractIndividual();
+	contractEntity();
+	addAddress();
+	timepicker();
+	select2();
+	maskPhone();
+	orderServiceForm();
+	contractsArchive();
+	newOrderForm();
+	changePasswordForm();
+	settingsForm();
+	requestForm();
+	ordersSelect();
+	requestMsg();
+	menuToggle();
 });
 
 function menuToggle() {
-    $('.menu-icon').click(function() {
-        $('.sidebar__menu').toggleClass('act');
-    })
-    $(document).mouseup(function (e){
-        if (!$('.sidebar__menu, .menu__icon').is(e.target) 
-        && $('.sidebar__menu, .menu__icon').has(e.target).length === 0) {
-            $('.sidebar__menu').removeClass('act');
-        }
-    });
+	$('.menu-icon').click(function() {
+		$('.sidebar__menu').toggleClass('act');
+	});
+	
+	$(document).mouseup(function (e){
+		if (!$('.sidebar__menu, .menu__icon').is(e.target) 
+		&& $('.sidebar__menu, .menu__icon').has(e.target).length === 0) {
+			$('.sidebar__menu').removeClass('act');
+		}
+	});
 };
 
 function calendar() {
-    const labels = [
-        'Понеділок',
-        'Вівторок',
-        'Середа',
-        'Четвер',
-        "П'ятниця",
-        'Субота',
-        'Неділя',
-    ];
-    const data = {
-        labels: labels,
-        datasets: [{
-            backgroundColor: 'rgba(47, 94, 151, 0.2)',
-            borderColor: '#2F5E97',
-            fill: true,
-            cubicInterpolationMode: 'monotone',
-            tension: 0.4,
-            data: [60, 20, 100, 90, 200, 150, 195, 120],
-        }]
-    };
-    const config = {
-        type: 'line',
-        data: data,
-        options: {
-            radius: 0,
-            plugins: {
-                legend: {
-                    display: false,
-                }
-            },
-            responsive: true,
-            interaction: {
-                intersect: false,
-            },
-            scales: {
-                x: {
-                    display: false,
-                },
-                y: {
-                    display: false,
-                    suggestedMin: 0,
-                    suggestedMax: 200.20
-                }
-            }
-        },
-    };
-    var myChart = new Chart(
-        document.getElementById('myChart'),
-        config
-    );
+	const labels = [
+		'Понеділок',
+		'Вівторок',
+		'Середа',
+		'Четвер',
+		"П'ятниця",
+		'Субота',
+		'Неділя',
+	];
+	
+	const data = {
+		labels: labels,
+		datasets: [{
+			backgroundColor: 'rgba(47, 94, 151, 0.2)',
+			borderColor: '#2F5E97',
+			fill: true,
+			cubicInterpolationMode: 'monotone',
+			tension: 0.4,
+			data: [60, 20, 100, 90, 200, 150, 195, 120],
+		}]
+	};
+	
+	const config = {
+		type: 'line',
+		data: data,
+		options: {
+			radius: 0,
+			plugins: {
+				legend: {
+					display: false,
+				}
+			},
+			responsive: true,
+			interaction: {
+				intersect: false,
+			},
+			scales: {
+				x: {
+					display: false,
+				},
+				y: {
+					display: false,
+					suggestedMin: 0,
+					suggestedMax: 200.20
+				}
+			}
+		},
+	};
+	
+	var myChart = new Chart(
+		document.getElementById('myChart'),
+		config
+	);
 };
 
 function customSelect() {
-    $('.custom-select').select2({
-        minimumResultsForSearch: 1000 
-    });
-    $('.custom-select2').select2({
-        minimumResultsForSearch: 1000,
-        dropdownParent: $("#newOrder-form")
-    });
+	$('.custom-select').select2({
+		minimumResultsForSearch: 1000 
+	});
+	
+	$('.custom-select2').select2({
+		minimumResultsForSearch: 1000,
+		dropdownParent: $("#newOrder-form")
+	});
 };
 
 function modalFade() {
@@ -187,11 +192,12 @@ function initMap() {
 }; 
 
 function dragAndDrop() {
-    var dropZone = $('.file-wrap-drop');
-
+	var dropZone = $('.file-wrap-drop');
+	
 	$('.form-control-file').focus(function() {
 		$('label').addClass('focus');
 	})
+	
 	.focusout(function() {
 		$('label').removeClass('focus');
 	});
@@ -604,8 +610,6 @@ function addAddress() {
 	var added_file		= $('#addedFile');
 	var control_file	= $('#control-file');
 	
-	var form_data = new FormData(form[0]);
-	
 	var images = [];
 	
 	var n = 0;
@@ -613,24 +617,54 @@ function addAddress() {
 	control_file.on('change', function(e){
 		e.preventDefault();
 		
-		console.log(e);
+		var file = e.target.files[0];
+		var mime = file.type.split('/');
 		
-		//return false;
+		if(mime[0] != 'image'){
+			return false;
+		};
 		
-		for(var i = 0; i < this.files.length; i++){
-			var file = this.files[i];
+		console.log('file:');
+		console.log(file);
+		
+		var reader = new FileReader();
+		
+		reader.onload = function(e) {
+			console.log('onload:');
+			console.log(e);
 			
-			console.log(file);
+			images[n] = {
+				'name'	: file.name,
+				'mime'	: file.type,
+				'data'	: b64EncodeUnicode(e.target.result)
+			};
 			
-			//added_file.append('<li>'+file.name+'</li>');
+			added_file.append('<li data-n="'+n+'"><span>'+file.name+'</span><button data-n="'+n+'" type="button"></button></li>');
 			
-			//images.append(name, blob, file.name);
-		}
+			n++;
+		};
+		
+		reader.onerror = function(e) {
+			console.log('onerror:');
+			console.log(e);
+		};
+		
+		reader.readAsText(file);
+		
+		//images.append(name, blob, file.name);
+	});
+	
+	added_file.on('click', 'button', function(e){
+		var current = $(this);
+		var n = current.attr('n');
+		
+		delete images[n];
+		added_file.find('li[data-n="'+n+'"]').remove();
 	});
 	
 	var lock = false,
 	btn = form.find('button[type="submit"]');
-
+	
 	form.validate({
 		onkeyup			: false,
 		focusCleanup	: true,
@@ -658,12 +692,22 @@ function addAddress() {
 		},
 		submitHandler	: function() {
 			if(!lock){
+				var form_data = {
+					name		: form.find('input[name="name"]').val(),
+					addresses	: form.find('input[name="addresses"]').val(),
+					images		: images
+				};
+				
+				console.log('form_data:');
+				console.log(form_data);
+				
 				$.ajax({
 					type		: "POST",
 					url			: '/ajax/cabinet/add-address',
 					method		: "POST",
-					data		: form_data,
+					data		: JSON.stringify(form_data),
 					dataType	: "json",
+					contentType	: "application/json; charset=utf-8",
 					beforeSend	: function(request){
 						lock = true;
 						
@@ -681,6 +725,9 @@ function addAddress() {
 						
 						if(response.status){
 							form.trigger('reset');
+							
+							images = [];
+							added_file.html('');
 						}
 					},
 					error		: function(err){
@@ -695,7 +742,13 @@ function addAddress() {
 		}
 	});
 };
- 
+
+function b64EncodeUnicode(str) {
+	return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function toSolidBytes(match, p1) {
+		return String.fromCharCode('0x' + p1);
+	}));
+};
+
 function requestForm() {
 	var form = jQuery("#requestForm");
 
