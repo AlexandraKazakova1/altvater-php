@@ -137,7 +137,7 @@ class AddressController extends Controller {
 				
 				if($images){
 					foreach($images as $i => $item){
-						Storage::put('address-images/'.$names[$i], $fileContents);
+						Storage::put('address-images/'.$names[$i], $item);
 						
 						$urls[] = url('storage/address-images/'.$names[$i]);
 						
