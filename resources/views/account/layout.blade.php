@@ -390,6 +390,7 @@
 												<span>Вибрати</span>
 											</span>
 										</label>
+										<div class="addedFile"></div>
 									</div>
 									
 									<button class="btn-submit" type="submit" name="reg">Додати адресу</button>
