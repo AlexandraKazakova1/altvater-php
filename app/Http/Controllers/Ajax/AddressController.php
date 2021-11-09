@@ -109,7 +109,7 @@ class AddressController extends Controller {
 				$tmp_images	= $request->get('images');
 				//$files		= $_FILES;
 				
-				print_r($images);
+				print_r($tmp_images);
 				echo"\n";
 				print_r($_FILES);
 				exit;
