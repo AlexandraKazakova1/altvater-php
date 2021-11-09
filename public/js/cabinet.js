@@ -579,6 +579,7 @@ function addAddress() {
     form.find('input[type=file]').on('change', function() {
         for (var i = 0; i < this.files.length; i++) {
             console.log(this.files[i].name);
+            $('.addedFiles').text(this.files[i].name);
         }
     });
 
