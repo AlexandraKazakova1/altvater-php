@@ -5942,7 +5942,12 @@ a.popup-text__link {
 }
 
 .popup .popup__form .fieldset div .addedFile button {
-  background-image: url(../img/cabinet/status-icon/delete.svg);
+  height: 20px;
+  width: 20px;
+  background-image: url(../img/close-red.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .responseMsg {
