@@ -796,7 +796,7 @@ function myAddress() {
 		}
 	});
 	
-	info_modal.on('click', '.btn-address__info', function(){
+	addresses__list.on('click', '.btn-address__info', function(){
 		var current = $(this);
 		
 		$('.modal').modal('hide');
