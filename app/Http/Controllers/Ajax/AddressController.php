@@ -200,7 +200,14 @@ class AddressController extends Controller {
 		$id = (int)$request->get('id');
 		
 		if($id){
-			UserAddresses::query()->where('id', $id)->delete();
+			$check = UserAddresses::query()->where('id', $id)->where('client_id', $this->_id)->first();
+			
+			if($check){
+				UserAddresses::query()->where('id', $id)->delete();
+				
+				$msg	= trans('ajax.success_remove_address');
+				$status = true;
+			}
 		}
 		
 		return response()->json([
