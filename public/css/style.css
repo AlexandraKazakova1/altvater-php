@@ -2261,6 +2261,11 @@ footer .footer span {
   text-decoration: underline;
 }
 
+.contacts__wrapper .contacts .contacts__list .contacts__item img.qr {
+  width: 220px;
+  height: 220px;
+}
+
 .contacts__wrapper .contacts .callback {
   display: -webkit-box;
   display: -ms-flexbox;
