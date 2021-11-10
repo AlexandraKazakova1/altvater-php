@@ -806,8 +806,18 @@ function myAddress() {
 		var dataLat = $(this).attr('data-lat');
 		var dataLng = $(this).attr('data-lng');
 		
-		info_modal.find('.remove').attr('data-id', current.attr('data-id'));
+		var id = current.attr('data-id');
+		
+		info_modal.find('.remove').attr('data-id', id);
 		info_modal.find('.modal-body .address').text(current.attr('data-address'));
+		
+		var imgs = "";
+		
+		for(var i = 0; i < addresses_images[id].length; i++){
+			imgs += '<img src="'+addresses_images[id][i]+'" alt="" />';
+		};
+		
+		info_modal.find('.galery').html(imgs);
 		
 		info_modal.modal('show');
 		
