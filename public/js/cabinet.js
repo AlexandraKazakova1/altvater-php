@@ -764,7 +764,7 @@ function myAddress() {
 							modal.find('.responseMsg').text(response.message);
 							modal.modal('show');
 							
-							var el = addresses__list.find('.addresses__list[data-id="0"]').clone();
+							var el = addresses__list.find('.list__item[data-id="0"]').clone();
 							
 							el.attr('data-id', response.payload.id);
 							el.find('.item__text .name').text(response.payload.name);
