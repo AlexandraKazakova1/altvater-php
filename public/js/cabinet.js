@@ -775,6 +775,7 @@ function myAddress() {
 								'data-name'		: response.payload.name,
 								'data-address'	: response.payload.address
 							});
+							el.style('display', 'flex');
 							
 							addresses__list.append(el);
 						}else{

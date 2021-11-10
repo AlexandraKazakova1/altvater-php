@@ -64,7 +64,7 @@
 					
 					<ul class="addresses__list" id="addresses__list">
 						<!-- -->
-						<li class="list__item" data-id="0">
+						<li class="list__item" data-id="0" style="display:none;">
 							<div class="item__body">
 								<div class="item__img">
 									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
