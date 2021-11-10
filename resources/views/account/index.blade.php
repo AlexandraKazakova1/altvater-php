@@ -63,6 +63,9 @@
 					<h2 class="section__title">Адреси обслуговування:</h2>
 					
 					<ul class="addresses__list" id="addresses__list">
+						<script>
+							var addresses_images = [];
+						</script>
 						<!-- -->
 						<li class="list__item" data-id="0" style="display:none;">
 							<div class="item__body">
@@ -113,6 +116,9 @@
 										<path fill-rule="evenodd" clip-rule="evenodd" d="M3 12C3 13.1046 3.89543 14 5 14C6.10457 14 7 13.1046 7 12C7 10.8954 6.10457 10 5 10C3.89543 10 3 10.8954 3 12Z"/>
 									</svg>
 								</button>
+								<script>
+									addresses_images[{{$item->id}}] = JSON.parse("{{json_decode($item->images)}}");
+								</script>
 							</li>
 							<!-- -->
 						@endforeach
