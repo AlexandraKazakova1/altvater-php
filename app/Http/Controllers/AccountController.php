@@ -38,6 +38,18 @@ class AccountController extends MyController {
 			return redirect('/');
 		}
 		
+		$addresses = UserAddresses::query()->where('client_id', $this->_id)->orderBy('name', 'asc')->get();
+		
+		foreach($addresses as $i => $item){
+			$imgs = [];
+			
+			foreach($item->images as $img){
+				$imgs[] = url('storage/'.$img->file);
+			}
+			
+			$addresses[$i]->images = $imgs;
+		}
+		
 		return view(
 			'account/index',
 			[
@@ -53,7 +65,7 @@ class AccountController extends MyController {
 				'canonical'		=> '',
 				'data'			=> [],
 				'services'		=> OrdersServices::query()->orderBy('name', 'asc')->get(),
-				'addresses'		=> UserAddresses::query()->where('client_id', $this->_id)->orderBy('name', 'asc')->get(),
+				'addresses'		=> $addresses
 			]
 		);
 	}
