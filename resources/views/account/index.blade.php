@@ -60,7 +60,7 @@
 			
 			<aside class="addresses__wrapper">
 				<section class="addresses">
-					<h2 class="section__title">Адреси:</h2>
+					<h2 class="section__title">Адреси обслуговування:</h2>
 					
 					<ul class="addresses__list" id="addresses__list">
 						<!-- -->
@@ -118,7 +118,7 @@
 						@endforeach
 					</ul>
 					
-					<button class="btn-add__address add-address" data-toggle="modal" data-target="#add__address-modal">Додати адресу</button>
+					<button class="btn-add__address add-address" data-toggle="modal" data-target="#add__address-modal">Додати адресу обслуговування</button>
 				</section>
 			</aside>
 		</div>
