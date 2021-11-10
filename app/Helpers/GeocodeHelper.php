@@ -91,7 +91,7 @@ class GeocodeHelper extends Helper{
 		//$this->status = $this->response->results['status'];
 		
 		if(!empty($this->response)){
-			if(array_key_exists('status', $this->response) && $this->response->status == 'OK'){
+			if(isset($this->response->status) && $this->response->status == 'OK'){
 				$short = '';
 				
 				if($this->region_preference != null){
