@@ -24,7 +24,7 @@
 			<div class="selector">
 				<ul>
 					<li class="act" id="general">Загальна інформація</li>
-					<span id="security">Безпека</span>
+					<li id="security">Безпека</li>
 				</ul>
 			</div>
 			
