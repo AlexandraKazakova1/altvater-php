@@ -773,7 +773,7 @@ function myAddress() {
 								'data-lat'		: response.payload.lat,
 								'data-lng'		: response.payload.lng,
 								'data-name'		: response.payload.name,
-								'data-address'	: response.payload.address
+								'data-address'	: response.payload.addresses
 							});
 							el.css('display', 'flex');
 							
