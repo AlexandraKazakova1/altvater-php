@@ -1291,7 +1291,7 @@ function orderServiceForm() {
 						form.find('label.error').text('').hide();
 						form.find('.responseMsg').text('');
 						
-						modal.modal('hide');
+						//modal.modal('hide');
 					},
 					success: function(response){
 						console.log('response:');
@@ -1303,7 +1303,9 @@ function orderServiceForm() {
 						if(response.status){
 							form.trigger('reset');
 							
-							modal.find('.responseMsg').text(response.message);
+							form.parents('.modal').modal('hide');
+							
+							//modal.find('.responseMsg').text(response.message);
 							modal.modal('show');
 						}else{
 							responseMsg(form, response);
