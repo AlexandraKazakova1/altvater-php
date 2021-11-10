@@ -170,17 +170,6 @@ function modalFade() {
 	closeBtn.click(function() {
 		$(this).parents('.modal').modal('hide');
 	});
-	
-	$('.btn-address__info').click(function() {
-		$('.modal').modal('hide');
-		
-		var dataLat = $(this).attr('data-lat');
-		var dataLng = $(this).attr('data-lng');
-		
-		$('#address__info-modal').modal('show');
-		
-		initMap(dataLat, dataLng);
-	});
 };
 
 function initMap(lat, lng) {
@@ -705,6 +694,8 @@ function myAddress() {
 	
 	var addresses__list = $('#addresses__list');
 	
+	var info_modal = $('#address__info-modal');
+	
 	form.validate({
 		onkeyup			: false,
 		focusCleanup	: true,
@@ -802,6 +793,26 @@ function myAddress() {
 			};
 			return false;
 		}
+	});
+	
+	info_modal.on('click', '.btn-address__info', function(){
+		var current = $(this);
+		
+		$('.modal').modal('hide');
+		
+		var dataLat = $(this).attr('data-lat');
+		var dataLng = $(this).attr('data-lng');
+		
+		info_modal.find('.remove').attr('data-id', current.attr('data-id'));
+		info_modal.find('.modal-body .address').text(current.attr('data-address'));
+		
+		info_modal.modal('show');
+		
+		initMap(dataLat, dataLng);
+	});
+	
+	info_modal.on('click', 'button.remove', function(){
+		
 	});
 };
 

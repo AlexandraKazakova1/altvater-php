@@ -410,7 +410,7 @@
 				<div class="modal-content">
 					<div class="address__info-page popup">
 						<div class="modal-header">
-							<h2 class="popup__title">Додати адресу</h2>
+							<h2 class="popup__title">Моя адреса</h2>
 							
 							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 								<img src="/img/close.svg" alt="X">
@@ -419,19 +419,19 @@
 						
 						<div class="modal-body">
 							<span class="input-description">Адреса:</span>
-							<span class="address">вулиця Бакуліна, 4а, Харків, Харківська область, 61000</span>
+							<span class="address"></span>
 							
 							<map class="place-location" id="map" name="place-location"></map>
 							
 							<span class="input-description">Проблемні місця:</span>
 							
 							<div class="galery">
+								<!--
 								<img src="/img/problem1.png">
-								<img src="/img/problem2.png">
-								<img src="/img/problem3.png">
+								-->
 							</div>
 							
-							<button type="button" class="remove">Видалити адресу</button>
+							<button type="button" data-id="" class="remove">Видалити адресу</button>
 						</div>
 					</div>
 				</div>
