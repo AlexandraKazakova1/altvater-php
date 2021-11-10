@@ -184,14 +184,16 @@ function modalFade() {
 };
 
 function initMap(lat, lng) {
+	var place = new google.maps.LatLng(lat, lng);
+	
 	var map = new google.maps.Map(document.getElementById("map"), {
 		zoom	: 16,
-		center	: new google.maps.LatLng(lat, lng)
+		center	: place
 	});
 	
 	const marker = new google.maps.Marker({
 		position: place,
-		map		: map,
+		map		: map
 	});
 }; 
 
