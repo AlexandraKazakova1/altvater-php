@@ -3149,7 +3149,7 @@ main {
 }
 
 .orders__wrapper .orders__content .orders__list .orders__item.new .status::before {
-  content: url(../img/cabinet/status-icon/done.svg);
+  content: url(../img/cabinet/status-icon/new.svg);
 }
 
 .orders__wrapper .orders__content .orders__list .orders__item.new .status::after {
