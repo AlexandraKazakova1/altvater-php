@@ -836,7 +836,7 @@ function myAddress() {
 				if(response.status){
 					info_modal.modal('hide');
 					
-					addresses__list.find('.addresses__list[data-id="'+id+'"]').remove();
+					addresses__list.find('.list__item[data-id="'+id+'"]').remove();
 				}
 			},
 			error		: function(err){
