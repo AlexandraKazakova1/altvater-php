@@ -2112,11 +2112,22 @@ main {
                 }
                 .status::before {
                     content: url(../img/cabinet/status-icon/documents.svg);
-
                 }
                 .status::after {
                     content: 'Заплановано';
                     color: #E6AD74;
+                }
+            }
+            .orders__item.new {
+                .status {
+                    background: rgba(72, 152, 113, 0.05);
+                }
+                .status::before {
+                    content: url(../img/cabinet/status-icon/new.svg);
+                }
+                .status::after {
+                    content: 'Нова';
+                    color: #489871;
                 }
             }
             .orders__item:hover {
@@ -4276,7 +4287,13 @@ a.popup-text__link {
                 line-height: 20px;
                 color: rgba(113, 128, 150, 0.8);
                 button {
-                    background-image: url(../img/cabinet/status-icon/delete.svg);
+                    margin-left: 5px;
+                    height: 14px;
+                    width: 14px;
+                    background-image: url(../img/close-red.svg);
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
                 }
             }
         }

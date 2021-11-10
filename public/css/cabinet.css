@@ -3144,6 +3144,19 @@ main {
   color: #E6AD74;
 }
 
+.orders__wrapper .orders__content .orders__list .orders__item.new .status {
+  background: rgba(72, 152, 113, 0.05);
+}
+
+.orders__wrapper .orders__content .orders__list .orders__item.new .status::before {
+  content: url(../img/cabinet/status-icon/new.svg);
+}
+
+.orders__wrapper .orders__content .orders__list .orders__item.new .status::after {
+  content: 'Нова';
+  color: #489871;
+}
+
 .orders__wrapper .orders__content .orders__list .orders__item:hover {
   -webkit-box-shadow: 0px 0px 10px 10px rgba(181, 181, 190, 0.15);
           box-shadow: 0px 0px 10px 10px rgba(181, 181, 190, 0.15);
@@ -5942,7 +5955,13 @@ a.popup-text__link {
 }
 
 .popup .popup__form .fieldset div .addedFile button {
-  background-image: url(../img/cabinet/status-icon/delete.svg);
+  margin-left: 5px;
+  height: 14px;
+  width: 14px;
+  background-image: url(../img/close-red.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .responseMsg {

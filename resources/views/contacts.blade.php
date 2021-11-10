@@ -135,6 +135,9 @@
 						</li>
 						<!-- -->
 					@endif
+                    <li class="contacts__item">
+                        <img class="qr" src="../img/qr-viber-color-png.png" alt="">
+                    </li>
 				</ul>
 				
 				<div class="callback">
