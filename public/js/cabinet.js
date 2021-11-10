@@ -15,7 +15,7 @@ $(document).ready (function() {
 	settingsPage();
 	contractIndividual();
 	contractEntity();
-	addAddress();
+	myAddress();
 	timepicker();
 	select2();
 	maskPhone();
@@ -639,7 +639,7 @@ function contractEntity() {
 	});
 };
 
-function addAddress() {
+function myAddress() {
 	var form = jQuery("#add__address-form");
 	
 	if(!form.length){
