@@ -1,12 +1,12 @@
 $(document).ready (function() {
 	var csrf = $('meta[name="csrf-token"]').attr('content');
-
+	
 	$.ajaxSetup({
 		headers: {
 			'X-CSRF-TOKEN': csrf,
 		}
 	});
-
+	
 	calendar();
 	customSelect();
 	modalFade();
@@ -28,8 +28,8 @@ $(document).ready (function() {
 	ordersSelect();
 	requestMsg();
 	menuToggle();
-
-    $('#addcontract').modal('show');
+	
+	$('#addcontract').modal('show');
 });
 
 function menuToggle() {
@@ -1167,29 +1167,31 @@ function orderServiceForm() {
 	var lock = false,
 		btn = form.find('button[type="submit"]');
 	
+	var modal = $('#response');
+	
 	form.validate({
-		onkeyup	: false,
-		focusCleanup: true,
-		focusInvalid: false,
-		errorClass: "error",
-		rules: {
-			service: {
-				required: true
+		onkeyup			: false,
+		focusCleanup	: true,
+		focusInvalid	: false,
+		errorClass		: "error",
+		rules			: {
+			service			: {
+				required		: true
 			},
-			date: {
-				required: true
+			date			: {
+				required		: true
 			},
-			city: {
-				required: true
+			city			: {
+				required		: true
 			},
-			time: {
-				required: true
+			time			: {
+				required		: true
 			},
-			comment: {
-				required: true,
+			comment			: {
+				required		: true,
 			}
 		},
-		messages: {
+		messages		: {
 			service: {
 				required: "Це поле обов'язкове для заповнення",
 			},
@@ -1206,7 +1208,7 @@ function orderServiceForm() {
 				required: "Це поле обов'язкове для заповнення",
 			}
 		},
-		submitHandler: function() {
+		submitHandler	: function() {
 			if(!lock){
 				$.ajax({
 					type: "POST",
@@ -1218,7 +1220,9 @@ function orderServiceForm() {
 						lock = true;
 						
 						btn.attr('disabled', true);
+						
 						form.find('label.error').text('').hide();
+						form.find('.responseMsg').text('');
 					},
 					success: function(response){
 						console.log('response:');
@@ -1227,11 +1231,13 @@ function orderServiceForm() {
 						lock = false;
 						btn.attr('disabled', false);
 						
-						responseMsg(form, response);
-						
 						if(response.status){
 							form.trigger('reset');
-							// responseMsg(form, response);
+							
+							modal.find('.responseMsg').text(response.message);
+							modal.addClass('show');
+						}else{
+							responseMsg(form, response);
 						}
 					},
 					error: function(err){
