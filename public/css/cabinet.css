@@ -5942,6 +5942,7 @@ a.popup-text__link {
 }
 
 .popup .popup__form .fieldset div .addedFile button {
+  margin-left: 5px;
   height: 14px;
   width: 14px;
   background-image: url(../img/close-red.svg);
