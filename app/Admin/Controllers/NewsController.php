@@ -32,7 +32,7 @@ class NewsController extends MyAdminController {
 		$grid->column('id'				, __('ID'));
 		
 		$grid->column('created_at'		, __('admin.pages.created_at'));
-		$grid->column('updated_at'		, __('admin.pages.updated_at'));
+		//$grid->column('updated_at'		, __('admin.pages.updated_at'));
 		
 		$grid->column('public'			, __('admin.pages.public'))->display(function($public){
 			$public = (int)$public;
@@ -86,7 +86,7 @@ class NewsController extends MyAdminController {
 		$this->configure($form);
 		
 		$form->tab(__('admin.pages.page_info')		, function($form){
-			$form->datetime('updated_at', __('admin.pages.updated_at'))->default(date('Y-m-d H:i:s'));
+			$form->datetime('created_at', __('admin.pages.created_at'))->default(date('Y-m-d H:i:s'));
 			
 			$form->text('title'			, __('admin.pages.title'))->rules('required|min:3|max:150');
 			$form->text('slug'			, __('admin.pages.slug'))->rules('max:150');
