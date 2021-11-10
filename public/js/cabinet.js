@@ -447,7 +447,7 @@ function contractIndividual() {
 						form.find('label.error').text('').hide();
 						form.find('.responseMsg').text('');
 						
-						modal.removeClass('show');
+						modal.modal('hide');
 					},
 					success: function(response){
 						console.log('response:');
@@ -462,7 +462,7 @@ function contractIndividual() {
 							form.parents('.modal').removeClass('show');
 							
 							modal.find('.responseMsg').text(response.message);
-							modal.addClass('show');
+							modal.modal('show');
 						}else{
 							responseMsg(form, response);
 						}
@@ -605,7 +605,7 @@ function contractEntity() {
 							form.parents('.modal').removeClass('show');
 							
 							modal.find('.responseMsg').text(response.message);
-							modal.addClass('show');
+							modal.modal('show');
 						}else{
 							responseMsg(form, response);
 						}
@@ -943,7 +943,7 @@ function requestForm(){
 							added_file.html('');
 							
 							modal.find('.responseMsg').text(response.message);
-							modal.addClass('show');
+							modal.modal('show');
 						}else{
 							responseMsg(form, response);
 						}
@@ -1291,7 +1291,7 @@ function orderServiceForm() {
 						form.find('label.error').text('').hide();
 						form.find('.responseMsg').text('');
 						
-						modal.removeClass('show');
+						modal.modal('hide');
 					},
 					success: function(response){
 						console.log('response:');
@@ -1304,7 +1304,7 @@ function orderServiceForm() {
 							form.trigger('reset');
 							
 							modal.find('.responseMsg').text(response.message);
-							modal.addClass('show');
+							modal.modal('show');
 						}else{
 							responseMsg(form, response);
 						}
