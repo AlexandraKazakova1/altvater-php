@@ -473,7 +473,7 @@
 											<div>
 												<img src="/img/cabinet/modal-icon/house.svg">
 											</div>
-											Місто
+											Адреса
 										</span>
 									</label>
 									
