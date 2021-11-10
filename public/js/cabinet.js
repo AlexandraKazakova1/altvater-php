@@ -112,100 +112,92 @@ function customSelect() {
 	});
 };
 
-
-var gDataLat = {};
-var gDataLng = {};
-
 function modalFade() {
-    var closeBtn = $('.close')
-
-    $('.btn-logIn').click(function() {
-        $('.modal').modal('hide');
-        $('#log__in-modal').modal('show');
-    });
-    $('.btn-reg').click(function() {
-        $('.modal').modal('hide');
-        $('#create-modal').modal('show');
-    });
-
-    $('.btn-forgot').click(function() {
-        $('.modal').modal('hide');
-        $('#recovery-modal-1').modal('show');
-    });
-    $('.recovery-1').click(function() {
-        $('.modal').modal('hide');
-        $('#recovery-modal-2').modal('show');
-    });
-
-    $('.btn-add__address').click(function() {
-        $('.modal').modal('hide');
-        $('#add__address-modal').modal('show');
-    });
-
-    // $('#orderService').modal('show');
-    $('.order-btn').click(function() {
-        $('.modal').modal('hide');
-        $('#orderService').modal('show');
-    });
-    $('.add').click(function() {
-        $('.modal').modal('hide');
-        // $('#create__contract-modal-1').modal('show');
-        $('#create__contract-modal-2').modal('show');
-    });
-    $('.header .add').click(function() {
-        $('.modal').modal('hide');
-        $('#orderService').modal('show');
-    });
-    $('.pinned').click(function() {
-        $('.modal').modal('hide');
-        $('#create__contract-modal-2').modal('show');
-    });
-    $('.orders__item').click(function() {
-        $('.modal').modal('hide');
-        $('#orderInfo').modal('show');
-    });
-
-    closeBtn.click(function() {
-        $(this).parents('.modal').modal('hide');
-    });
-
-    $('.btn-address__info').click(function() {
-        $('.modal').modal('hide');
-
-        var dataLat = $(this).attr('data-lat');
-        var dataLng = $(this).attr('data-lng');
-
-        // console.log(dataLat);
-        // console.log(dataLng);
-
-        gDataLat = dataLat;
-        gDataLng = dataLng;
-
-        // var dataLat (initMap);
-        // var dataLng (initMap);
-
-
-        $('#address__info-modal').modal('show');
-
-        initMap();
-    });
+	var closeBtn = $('.close')
+	
+	$('.btn-logIn').click(function() {
+		$('.modal').modal('hide');
+		$('#log__in-modal').modal('show');
+	});
+	
+	$('.btn-reg').click(function() {
+		$('.modal').modal('hide');
+		$('#create-modal').modal('show');
+	});
+	
+	$('.btn-forgot').click(function() {
+		$('.modal').modal('hide');
+		$('#recovery-modal-1').modal('show');
+	});
+	
+	$('.recovery-1').click(function() {
+		$('.modal').modal('hide');
+		$('#recovery-modal-2').modal('show');
+	});
+	
+	$('.btn-add__address').click(function() {
+		$('.modal').modal('hide');
+		$('#add__address-modal').modal('show');
+	});
+	
+	// $('#orderService').modal('show');
+	$('.order-btn').click(function() {
+		$('.modal').modal('hide');
+		$('#orderService').modal('show');
+	});
+	
+	$('.add').click(function() {
+		$('.modal').modal('hide');
+		// $('#create__contract-modal-1').modal('show');
+		$('#create__contract-modal-2').modal('show');
+	});
+	
+	$('.header .add').click(function() {
+		$('.modal').modal('hide');
+		$('#orderService').modal('show');
+	});
+	
+	$('.pinned').click(function() {
+		$('.modal').modal('hide');
+		$('#create__contract-modal-2').modal('show');
+	});
+	
+	$('.orders__item').click(function() {
+		$('.modal').modal('hide');
+		$('#orderInfo').modal('show');
+	});
+	
+	closeBtn.click(function() {
+		$(this).parents('.modal').modal('hide');
+	});
+	
+	$('.btn-address__info').click(function() {
+		$('.modal').modal('hide');
+		
+		var dataLat = $(this).attr('data-lat');
+		var dataLng = $(this).attr('data-lng');
+		
+		$('#address__info-modal').modal('show');
+		
+		initMap(dataLat, dataLng);
+	});
 };
 
-function initMap() {
-    console.log(gDataLat);
-    console.log(gDataLng);
-    var place = { 
-        lat: number(gDataLat), 
-        lng: number(gDataLng) 
-    };
-    var map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 16,
-        center: place,
-    });
-    const marker = new google.maps.Marker({
-        position: place,
-        map: map,
-    });
+function initMap(lat, lng) {
+	var place = { 
+		lat: number(gDataLat), 
+		lng: number(gDataLng) 
+	};
+	
+	var map = new google.maps.Map(document.getElementById("map"), {
+		zoom: 16,
+		center: place,
+	});
+	
+	const marker = new google.maps.Marker({
+		position: place,
+		map		: map,
+	});
 }; 
 
 function dragAndDrop() {
@@ -218,8 +210,7 @@ function dragAndDrop() {
 	.focusout(function() {
 		$('label').removeClass('focus');
 	});
-
-
+	
 	dropZone.on('drag dragstart dragend dragover dragenter dragleave drop', function(){
 		return false;
 	});
@@ -271,204 +262,210 @@ function dragAndDrop() {
 };
 
 function accountsActs() {
-    if($('#accountsToggle').hasClass('act')) {
-        $('.acts__content').fadeOut(200);
-        $('.accounts__content').fadeIn(200);
-    } else if($('#actsToggle').hasClass('act')) {
-        $('.accounts__content').fadeOut(200);
-        $('.acts__content').fadeIn(200);
-    };
-
-    $('#accountsToggle').click(function() {
-        $(this).addClass('act');
-        $('.acts__content').fadeOut(200);
-        $('.accounts__content').fadeIn(200);
-        $('#actsToggle').removeClass('act');
-    });
-    
-    $('#actsToggle').click(function() {
-        $(this).addClass('act');
-        $('.accounts__content').fadeOut(200);
-        $('.acts__content').fadeIn(200);
-        $('#accountsToggle').removeClass('act');
-    });
+	if($('#accountsToggle').hasClass('act')) {
+		$('.acts__content').fadeOut(200);
+		$('.accounts__content').fadeIn(200);
+	} else if($('#actsToggle').hasClass('act')) {
+		$('.accounts__content').fadeOut(200);
+		$('.acts__content').fadeIn(200);
+	};
+	
+	$('#accountsToggle').click(function() {
+		$(this).addClass('act');
+		$('.acts__content').fadeOut(200);
+		$('.accounts__content').fadeIn(200);
+		$('#actsToggle').removeClass('act');
+	});
+	
+	$('#actsToggle').click(function() {
+		$(this).addClass('act');
+		$('.accounts__content').fadeOut(200);
+		$('.acts__content').fadeIn(200);
+		$('#accountsToggle').removeClass('act');
+	});
 };
 
 function settingsPage() {
-    if($('#general').hasClass('act')) {
-        $('.security__content').fadeOut(1);
-        $('.general__content').fadeIn(1);
-    } else if($('#security').hasClass('act')) {
-        $('.general__content').fadeOut(1);
-        $('.security__content').fadeIn(1);
-    }
-
-    $('#general').click(function() {
-        $(this).addClass('act');
-        $('.security__content').fadeOut(1);
-        $('.general__content').fadeIn(1);
-        $('#security').removeClass('act');
-    });
-    $('#security').click(function() {
-        $(this).addClass('act');
-        $('.general__content').fadeOut(1);
-        $('.security__content').fadeIn(1);
-        $('#general').removeClass('act');
-    });
+	if($('#general').hasClass('act')) {
+		$('.security__content').fadeOut(1);
+		$('.general__content').fadeIn(1);
+	} else if($('#security').hasClass('act')) {
+		$('.general__content').fadeOut(1);
+		$('.security__content').fadeIn(1);
+	};
+	
+	$('#general').click(function() {
+		$(this).addClass('act');
+		$('.security__content').fadeOut(1);
+		$('.general__content').fadeIn(1);
+		$('#security').removeClass('act');
+	});
+	
+	$('#security').click(function() {
+		$(this).addClass('act');
+		$('.general__content').fadeOut(1);
+		$('.security__content').fadeIn(1);
+		$('#general').removeClass('act');
+	});
 };
 
 function ordersSelect() {
-    if($('#all').hasClass('act')) {
-        $('.orders__item').fadeIn(200);
-    } else if($('#processed').hasClass('act')) {
-        $('.orders__item').fadeOut(1);
-        $('.processed').fadeIn(200);
-    } else if($('#performed').hasClass('act')) {
-        $('.orders__item').fadeOut(1);
-        $('.performed').fadeIn(200);
-    } else if($('#ready').hasClass('act')) {
-        $('.orders__item').fadeOut(1);
-        $('.ready').fadeIn(200);
-    } else if($('#planned').hasClass('act')) {
-        $('.orders__item').fadeOut(1);
-        $('.planned').fadeIn(200);
-    };
-
-    $('#all').click(function() {
-        $('.selector ul li').removeClass('act');
-        $(this).addClass('act');
-        $('.orders__item').fadeOut(1);
-        $('.orders__item').fadeIn(200);
-    });
-    $('#processed').click(function() {
-        $('.selector ul li').removeClass('act');
-        $(this).addClass('act');
-        $('.orders__item').fadeOut(1);
-        $('.processed').fadeIn(200);
-    });
-    $('#performed').click(function() {
-        $('.selector ul li').removeClass('act');
-        $(this).addClass('act');
-        $('.orders__item').fadeOut(1);
-        $('.performed').fadeIn(200);
-    });
-    $('#ready').click(function() {
-        $('.selector ul li').removeClass('act');
-        $(this).addClass('act');
-        $('.orders__item').fadeOut(1);
-        $('.ready').fadeIn(200);
-    });
-    $('#planned').click(function() {
-        $('.selector ul li').removeClass('act');
-        $(this).addClass('act');
-        $('.orders__item').fadeOut(1);
-        $('.planned').fadeIn(200);
-    });
+	if($('#all').hasClass('act')) {
+		$('.orders__item').fadeIn(200);
+	} else if($('#processed').hasClass('act')) {
+		$('.orders__item').fadeOut(1);
+		$('.processed').fadeIn(200);
+	} else if($('#performed').hasClass('act')) {
+		$('.orders__item').fadeOut(1);
+		$('.performed').fadeIn(200);
+	} else if($('#ready').hasClass('act')) {
+		$('.orders__item').fadeOut(1);
+		$('.ready').fadeIn(200);
+	} else if($('#planned').hasClass('act')) {
+		$('.orders__item').fadeOut(1);
+		$('.planned').fadeIn(200);
+	};
+	
+	$('#all').click(function() {
+		$('.selector ul li').removeClass('act');
+		$(this).addClass('act');
+		$('.orders__item').fadeOut(1);
+		$('.orders__item').fadeIn(200);
+	});
+	
+	$('#processed').click(function() {
+		$('.selector ul li').removeClass('act');
+		$(this).addClass('act');
+		$('.orders__item').fadeOut(1);
+		$('.processed').fadeIn(200);
+	});
+	
+	$('#performed').click(function() {
+		$('.selector ul li').removeClass('act');
+		$(this).addClass('act');
+		$('.orders__item').fadeOut(1);
+		$('.performed').fadeIn(200);
+	});
+	
+	$('#ready').click(function() {
+		$('.selector ul li').removeClass('act');
+		$(this).addClass('act');
+		$('.orders__item').fadeOut(1);
+		$('.ready').fadeIn(200);
+	});
+	
+	$('#planned').click(function() {
+		$('.selector ul li').removeClass('act');
+		$(this).addClass('act');
+		$('.orders__item').fadeOut(1);
+		$('.planned').fadeIn(200);
+	});
 };
 
 function contractsArchive() {
-    if($('#contractsToggle').hasClass('act')) {
-        $('.archive__content').fadeOut(200);
-        $('.contracts__content').fadeIn(200);
-    } else if($('#archiveToggle').hasClass('act')) {
-        $('.contracts__content').fadeOut(200);
-        $('.archive__content').fadeIn(200);
-    };
-
-    $('#contractsToggle').click(function() {
-        $(this).addClass('act');
-        $('.archive__content').fadeOut(200);
-        $('.contracts__content').fadeIn(200);
-        $('#archiveToggle').removeClass('act');
-    });
-    $('#archiveToggle').click(function() {
-        $(this).addClass('act');
-        $('.contracts__content').fadeOut(200);
-        $('.archive__content').fadeIn(200);
-        $('#contractsToggle').removeClass('act');
-    });
+	if($('#contractsToggle').hasClass('act')) {
+		$('.archive__content').fadeOut(200);
+		$('.contracts__content').fadeIn(200);
+	} else if($('#archiveToggle').hasClass('act')) {
+		$('.contracts__content').fadeOut(200);
+		$('.archive__content').fadeIn(200);
+	};
+	
+	$('#contractsToggle').click(function() {
+		$(this).addClass('act');
+		$('.archive__content').fadeOut(200);
+		$('.contracts__content').fadeIn(200);
+		$('#archiveToggle').removeClass('act');
+	});
+	
+	$('#archiveToggle').click(function() {
+		$(this).addClass('act');
+		$('.contracts__content').fadeOut(200);
+		$('.archive__content').fadeIn(200);
+		$('#contractsToggle').removeClass('act');
+	});
 };
 
 function contractIndividual() {
 	var form = jQuery("#create__contract__individual");
-
-    if(!form.length){
+	
+	if(!form.length){
 		return false;
 	};
-
+	
 	var lock = false,
-    btn = form.find('button[type="submit"]');
-
-    form.validate({
+		btn = form.find('button[type="submit"]');
+	
+	form.validate({
 		onkeyup	: false,
-        focusCleanup: true,
-        focusInvalid: false,
-        errorClass: "error",
-        rules: {
-            name: {
-                required: true,
+		focusCleanup: true,
+		focusInvalid: false,
+		errorClass: "error",
+		rules: {
+			name: {
+				required: true,
 				minlength: 8
-            },
-            email: {
-                required: true,
-                email: true
-            },
-            phone: {
-                required: true,
-            },
-            address: {
-                required: true,
+			},
+			email: {
+				required: true,
+				email: true
+			},
+			phone: {
+				required: true,
+			},
+			address: {
+				required: true,
 				minlength: 10
-            },
-            index: {
-                required: true,
+			},
+			index: {
+				required: true,
 				minlength: 5
-            }
-        },
-        messages: {
-            name: {
-                required: "Введіть ваше ПІБ",
+			}
+		},
+		messages: {
+			name: {
+				required: "Введіть ваше ПІБ",
 				minlength: "Некоректні дані"
-            },
-            email: {
-                required: "Введіть свій e-mail!",
-                email: "Адреса має бути типу name@domain.com"
-            },
-            phone: {
-                required: "Введіть ваш номер телефону",
-            },
-            address: {
-                required: "Введіть вашу адресу",
+			},
+			email: {
+				required: "Введіть свій e-mail!",
+				email: "Адреса має бути типу name@domain.com"
+			},
+			phone: {
+				required: "Введіть ваш номер телефону",
+			},
+			address: {
+				required: "Введіть вашу адресу",
 				minlength: "Некоректні дані"
-            },
-            index: {
-                required: "Введіть ваш поштовий індекс",
+			},
+			index: {
+				required: "Введіть ваш поштовий індекс",
 				minlength: "Некоректні дані"
-            }
-        },
+			}
+		},
 		submitHandler: function() {
 			if(!lock){               
 				$.ajax({
 					type: "POST",
 					url: '/ajax/cabinet/contracts/add',
-                    method: "POST",
-                    data: form.serialize(),
-                    dataType: "json",
-                    beforeSend: function(request){
-                        lock = true;
-                        
-                        btn.attr('disabled', true);
-                        form.find('label.error').text('').hide();
+					method: "POST",
+					data: form.serialize(),
+					dataType: "json",
+					beforeSend: function(request){
+						lock = true;
+						
+						btn.attr('disabled', true);
+						form.find('label.error').text('').hide();
 					},
 					success: function(response){
 						console.log('response:');
 						console.log(response);
 						
 						lock = false;
-                        btn.attr('disabled', false);
-                        
-                        responseMsg(form, response);
-
+						btn.attr('disabled', false);
+						
+						responseMsg(form, response);
+						
 						if(response.status){
 							form.trigger('reset');
 						}
@@ -476,130 +473,130 @@ function contractIndividual() {
 					error: function(err){
 						console.log('error');
 						lock = false;
-                        btn.attr('disabled', false);
-                        responseMsg(form, err);
+						btn.attr('disabled', false);
+						responseMsg(form, err);
 					}
 				});
 			};
 			return false;
-	    }
-    });
+		}
+	});
 };
 
 function contractEntity() {
 	var form = jQuery("#create__contract-form__entity");
-
-    if(!form.length){
+	
+	if(!form.length){
 		return false;
 	};
-
+	
 	var lock = false,
-    btn = form.find('button[type="submit"]');
-
-    form.validate({
+		btn = form.find('button[type="submit"]');
+	
+	form.validate({
 		onkeyup	: false,
-        focusCleanup: true,
-        focusInvalid: false,
-        errorClass: "error",
-        rules: {
-            name: {
-                required: true,
+		focusCleanup: true,
+		focusInvalid: false,
+		errorClass: "error",
+		rules: {
+			name: {
+				required: true,
 				minlength: 8
-            },
-            contact: {
-                required: true,
+			},
+			contact: {
+				required: true,
 				minlength: 2
-            },
-            address: {
-                required: true,
+			},
+			address: {
+				required: true,
 				minlength: 10
-            },
-            email: {
-                required: true,
-                email: true
-            },
-            phone: {
-                required: true,
-            },
-            extra_phone: {
-                required: false,
-            },
-            ipn: {
-                required: true,
+			},
+			email: {
+				required: true,
+				email: true
+			},
+			phone: {
+				required: true,
+			},
+			extra_phone: {
+				required: false,
+			},
+			ipn: {
+				required: true,
 				minlength: 12,
 				maxlength: 12
-            },
-            uedrpou: {
-                required: true,
+			},
+			uedrpou: {
+				required: true,
 				minlength: 8,
 				maxlength: 8
-            },
-            index: {
-                required: true,
+			},
+			index: {
+				required: true,
 				minlength: 5
-            }
-        },
-        messages: {
-            name: {
-                required: "Введіть назву компанії",
+			}
+		},
+		messages: {
+			name: {
+				required: "Введіть назву компанії",
 				minlength: "Некоректні дані"
-            },
-            contact: {
-                required: "Введіть ПІБ контактної особи",
+			},
+			contact: {
+				required: "Введіть ПІБ контактної особи",
 				minlength: "Некоректні дані"
-            },
-            address: {
-                required: "Введіть вашу юридичну адресу",
+			},
+			address: {
+				required: "Введіть вашу юридичну адресу",
 				minlength: "Некоректні дані"
-            },
-            email: {
-                required: "Введіть e-mail!",
-                email: "Адреса має бути типу name@domain.com"
-            },
-            phone: {
-                required: "Введіть номер телефону"
-            },
-            extra_phone: {
-                required: "Введіть додатковий номер телефону"
-            },
-            ipn: {
-                required: "Це поле обов'язкове для заповнення",
+			},
+			email: {
+				required: "Введіть e-mail!",
+				email: "Адреса має бути типу name@domain.com"
+			},
+			phone: {
+				required: "Введіть номер телефону"
+			},
+			extra_phone: {
+				required: "Введіть додатковий номер телефону"
+			},
+			ipn: {
+				required: "Це поле обов'язкове для заповнення",
 				minlength: "Некоректні дані",
 				maxlength: "Некоректні дані"
-            },
-            uedrpou: {
-                required: "Це поле обов'язкове для заповнення",
+			},
+			uedrpou: {
+				required: "Це поле обов'язкове для заповнення",
 				minlength: "Некоректні дані",
 				maxlength: "Некоректні дані"
-            },
-            index: {
-                required: "Введіть ваш поштовий індекс",
+			},
+			index: {
+				required: "Введіть ваш поштовий індекс",
 				minlength: "Некоректні дані"
-            }
-        },
+			}
+		},
 		submitHandler: function() {
 			if(!lock){
 				$.ajax({
 					type: "POST",
 					url: '/ajax/cabinet/contracts/add',
-                    method: "POST",
-                    data: form.serialize(),
-                    dataType: "json",
-                    beforeSend: function(request){
-                        lock = true;
-                        
-                        btn.attr('disabled', true);
-                        form.find('label.error').text('').hide();
+					method: "POST",
+					data: form.serialize(),
+					dataType: "json",
+					beforeSend: function(request){
+						lock = true;
+						
+						btn.attr('disabled', true);
+						form.find('label.error').text('').hide();
 					},
 					success: function(response){
 						console.log('response:');
 						console.log(response);
 						
 						lock = false;
-                        btn.attr('disabled', false);
-                        
-                        responseMsg(form, response);
-
+						btn.attr('disabled', false);
+						
+						responseMsg(form, response);
+						
 						if(response.status){
 							form.trigger('reset');
 						}
@@ -607,14 +604,14 @@ function contractEntity() {
 					error: function(err){
 						console.log('error');
 						lock = false;
-                        btn.attr('disabled', false);
-                        responseMsg(form, err);
+						btn.attr('disabled', false);
+						responseMsg(form, err);
 					}
 				});
 			};
 			return false;
-	    }
-    });
+		}
+	});
 };
 
 function addAddress() {

@@ -502,7 +502,7 @@
 			</div>
 		</div>
 		
-		<script src="https://maps.googleapis.com/maps/api/js?key={{$settings['google_api_key']}}&callback=initMap&v=weekly" async></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key={{$settings['google_api_key']}}&v=weekly" async></script>
 		
 		<script src="/js/jquery.min.js"></script>
 		<script src="/js/select2.min.js"></script>
