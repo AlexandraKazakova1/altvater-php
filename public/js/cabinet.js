@@ -812,7 +812,35 @@ function myAddress() {
 	});
 	
 	info_modal.on('click', 'button.remove', function(){
+		var current = $(this);
 		
+		var id = current.attr('data-id');
+		
+		$.ajax({
+			type		: "POST",
+			url			: '/ajax/cabinet/remove-address',
+			method		: "POST",
+			data		: JSON.stringify({
+				id	: id
+			}),
+			dataType	: "json",
+			contentType	: "application/json; charset=utf-8",
+			beforeSend	: function(request){
+				
+			},
+			success		: function(response){
+				console.log('response:');
+				console.log(response);
+				
+				if(response.status){
+					$('.modal').modal('hide');
+					addresses__list.find('.addresses__list[data-id="'+id+'"]').remove();
+				}
+			},
+			error		: function(err){
+				console.log('error');
+			}
+		});
 	});
 };
 
