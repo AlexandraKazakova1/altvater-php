@@ -502,6 +502,24 @@
 			</div>
 		</div>
 		
+		<div class="modal fade" id="response" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-md modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="pass__recovery-page popup">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<img src="/img/close.svg" alt="X">
+							</button>
+						</div>
+						
+						<div class="modal-body">
+							<span class="responseMsg"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
 		<script src="https://maps.googleapis.com/maps/api/js?key={{$settings['google_api_key']}}&v=weekly" async></script>
 		
 		<script src="/js/jquery.min.js"></script>

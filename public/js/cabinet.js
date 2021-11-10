@@ -396,6 +396,8 @@ function contractIndividual() {
 	var lock = false,
 		btn = form.find('button[type="submit"]');
 	
+	var modal = $('#response');
+	
 	form.validate({
 		onkeyup	: false,
 		focusCleanup: true,
@@ -455,7 +457,9 @@ function contractIndividual() {
 						lock = true;
 						
 						btn.attr('disabled', true);
+						
 						form.find('label.error').text('').hide();
+						form.find('.responseMsg').text('');
 					},
 					success: function(response){
 						console.log('response:');
@@ -464,16 +468,24 @@ function contractIndividual() {
 						lock = false;
 						btn.attr('disabled', false);
 						
-						responseMsg(form, response);
-						
 						if(response.status){
 							form.trigger('reset');
+							
+							form.parents('.modal').removeClass('show');
+							
+							modal.find('.responseMsg').text(response.message);
+							modal.addClass('show');
+						}else{
+							responseMsg(form, response);
 						}
 					},
 					error: function(err){
 						console.log('error');
+						console.log(err);
+						
 						lock = false;
 						btn.attr('disabled', false);
+						
 						responseMsg(form, err);
 					}
 				});
@@ -492,6 +504,8 @@ function contractEntity() {
 	
 	var lock = false,
 		btn = form.find('button[type="submit"]');
+	
+	var modal = $('#response');
 	
 	form.validate({
 		onkeyup	: false,
@@ -586,7 +600,9 @@ function contractEntity() {
 						lock = true;
 						
 						btn.attr('disabled', true);
+						
 						form.find('label.error').text('').hide();
+						form.find('.responseMsg').text('');
 					},
 					success: function(response){
 						console.log('response:');
@@ -595,16 +611,23 @@ function contractEntity() {
 						lock = false;
 						btn.attr('disabled', false);
 						
-						responseMsg(form, response);
-						
 						if(response.status){
 							form.trigger('reset');
+							
+							form.parents('.modal').removeClass('show');
+							
+							modal.find('.responseMsg').text(response.message);
+							modal.addClass('show');
+						}else{
+							responseMsg(form, response);
 						}
 					},
 					error: function(err){
 						console.log('error');
+						
 						lock = false;
 						btn.attr('disabled', false);
+						
 						responseMsg(form, err);
 					}
 				});
@@ -677,7 +700,9 @@ function addAddress() {
 	});
 	
 	var lock = false,
-	btn = form.find('button[type="submit"]');
+		btn = form.find('button[type="submit"]');
+	
+	var modal = $('#response');
 	
 	form.validate({
 		onkeyup			: false,
@@ -727,6 +752,8 @@ function addAddress() {
 						
 						btn.attr('disabled', true);
 						form.find('label.error').text('').hide();
+						
+						form.find('.responseMsg').text('');
 					},
 					success		: function(response){
 						console.log('response:');
@@ -735,19 +762,26 @@ function addAddress() {
 						lock = false;
 						btn.attr('disabled', false);
 						
-						responseMsg(form, response);
-						
 						if(response.status){
 							form.trigger('reset');
 							
 							images = [];
 							added_file.html('');
+							
+							form.parents('.modal').removeClass('show');
+							
+							modal.find('.responseMsg').text(response.message);
+							modal.addClass('show');
+						}else{
+							responseMsg(form, response);
 						}
 					},
 					error		: function(err){
 						console.log('error');
+						
 						lock = false;
 						btn.attr('disabled', false);
+						
 						responseMsg(form, err);
 					}
 				});
@@ -765,87 +799,99 @@ function b64EncodeUnicode(str) {
 
 function requestForm() {
 	var form = jQuery("#requestForm");
-
-    if(!form.length){
+	
+	if(!form.length){
 		return false;
 	};
-
+	
 	var lock = false,
-    btn = form.find('button[type="submit"]');
-
-    form.validate({
+		btn = form.find('button[type="submit"]');
+	
+	var modal = $('#response');
+	
+	form.validate({
 		onkeyup	: false,
-        focusCleanup: true,
-        focusInvalid: false,
-        errorClass: "error",
-        rules: {
-            phone: {
-                required: true
-            },
-            header: {
-                required: true,
+		focusCleanup: true,
+		focusInvalid: false,
+		errorClass: "error",
+		rules: {
+			phone: {
+				required: true
+			},
+			header: {
+				required: true,
 				minlength: 2
-            },
-            text: {
-                required: true,
+			},
+			text: {
+				required: true,
 				maxlength: 1000
-            }
-        },
-        messages: {
-            theme: {
-                required: "Це поле обов'язкове для заповнення",
+			}
+		},
+		messages: {
+			theme: {
+				required: "Це поле обов'язкове для заповнення",
 				minlength: "Введіть більше 2 символів"
-            },
-            phone: {
-                required: "Це поле обов'язкове для заповнення",
-            },
-            header: {
-                required: "Це поле обов'язкове для заповнення",
+			},
+			phone: {
+				required: "Це поле обов'язкове для заповнення",
+			},
+			header: {
+				required: "Це поле обов'язкове для заповнення",
 				minlength: "Введіть більше 2 символів"
-            },
-            text: {
-                required: "Це поле обов'язкове для заповнення",
+			},
+			text: {
+				required: "Це поле обов'язкове для заповнення",
 				maxlength: "Введіть не більше 1000 символів"
-            }
-        },
+			}
+		},
 		submitHandler: function() {
 			if(!lock){
 				$.ajax({
 					type: "POST",
 					url: '/ajax/cabinet/request',
-                    method: "POST",
-                    data: form.serialize(),
-                    dataType: "json",
-                    beforeSend: function(request){
-                        lock = true;
-                        
-                        btn.attr('disabled', true);
-                        form.find('label.error').text('').hide();
+					method: "POST",
+					data: form.serialize(),
+					dataType: "json",
+					beforeSend: function(request){
+						lock = true;
+						
+						btn.attr('disabled', true);
+						form.find('label.error').text('').hide();
+						
+						form.find('.responseMsg').text('');
 					},
 					success: function(response){
 						console.log('response:');
 						console.log(response);
 						
 						lock = false;
-                        btn.attr('disabled', false);
-                        
-                        responseMsg(form, response);
-
+						btn.attr('disabled', false);
+						
 						if(response.status){
 							form.trigger('reset');
+							
+							images = [];
+							added_file.html('');
+							
+							modal.find('.responseMsg').text(response.message);
+							modal.addClass('show');
+						}else{
+							responseMsg(form, response);
 						}
 					},
 					error: function(err){
 						console.log('error');
+						
 						lock = false;
-                        btn.attr('disabled', false);
-                        responseMsg(form, err);
+						btn.attr('disabled', false);
+						
+						responseMsg(form, err);
 					}
 				});
 			};
 			return false;
-	    }
-    });
+		}
+	});
 };
 
 // function msgRequestForm() {
@@ -918,375 +964,377 @@ function requestForm() {
 
 function settingsForm() {
 	var form = jQuery("#settingsForm");
-
-    if(!form.length){
+	
+	if(!form.length){
 		return false;
 	};
-
+	
 	var lock = false,
-    btn = form.find('button[type="submit"]');
-
-    form.validate({
+		btn = form.find('button[type="submit"]');
+	
+	form.validate({
 		onkeyup	: false,
-        focusCleanup: true,
-        focusInvalid: false,
-        errorClass: "error",
-        rules: {
-            name: {
-                required: true,
+		focusCleanup: true,
+		focusInvalid: false,
+		errorClass: "error",
+		rules: {
+			name: {
+				required: true,
 				minlength: 2
-            },
-            surname: {
-                required: true,
+			},
+			surname: {
+				required: true,
 				minlength: 2
-            },
-            middlename: {
-                required: true,
+			},
+			middlename: {
+				required: true,
 				minlength: 2
-            },
-            email: {
-                required: true,
-                email: true
-            },
-            phone: {
-                required: true,
-            },
-            extra_phone: {
-                required: false,
-            },
-            addresses: {
-                required: true,
+			},
+			email: {
+				required: true,
+				email: true
+			},
+			phone: {
+				required: true,
+			},
+			extra_phone: {
+				required: false,
+			},
+			addresses: {
+				required: true,
 				minlength: 8
-            },
-            index: {
-                required: true,
+			},
+			index: {
+				required: true,
 				minlength: 5
-            }
-        },
-        messages: {
-            name: {
-                required: "Це поле обов'язкове для заповнення",
+			}
+		},
+		messages: {
+			name: {
+				required: "Це поле обов'язкове для заповнення",
 				minlength: "Введіть більше 2 символів"
-            },
-            surname: {
-                required: "Це поле обов'язкове для заповнення",
+			},
+			surname: {
+				required: "Це поле обов'язкове для заповнення",
 				minlength: "Введіть більше 2 символів"
-            },
-            middlename: {
-                required: "Це поле обов'язкове для заповнення",
+			},
+			middlename: {
+				required: "Це поле обов'язкове для заповнення",
 				minlength: "Введіть більше 2 символів"
-            },
-            email: {
-                required: "Введіть свій e-mail!",
-                email: "Адреса має бути типу name@domain.com"
-            },
-            phone: {
-                required: "Це поле обов'язкове для заповнення",
-            },
-            address: {
-                required: "Це поле обов'язкове для заповнення",
+			},
+			email: {
+				required: "Введіть свій e-mail!",
+				email: "Адреса має бути типу name@domain.com"
+			},
+			phone: {
+				required: "Це поле обов'язкове для заповнення",
+			},
+			address: {
+				required: "Це поле обов'язкове для заповнення",
 				minlength: "Введіть не менше 8 символів"
-            },
-            index: {
-                required: "Це поле обов'язкове для заповнення",
+			},
+			index: {
+				required: "Це поле обов'язкове для заповнення",
 				minlength: "Введіть не менше 5 символів"
-            }
-        },
+			}
+		},
 		submitHandler: function() {
 			if(!lock){
 				$.ajax({
 					type: "POST",
 					url: '/ajax/user/settings',
-                    method: "POST",
-                    data: form.serialize(),
-                    dataType: "json",
-                    beforeSend: function(request){
-                        lock = true;
-                        
-                        btn.attr('disabled', true);
-                        form.find('label.error').text('').hide();
+					method: "POST",
+					data: form.serialize(),
+					dataType: "json",
+					beforeSend: function(request){
+						lock = true;
+						
+						btn.attr('disabled', true);
+						form.find('label.error').text('').hide();
 					},
 					success: function(response){
 						console.log('response:');
 						console.log(response);
 						
 						lock = false;
-                        btn.attr('disabled', false);
-                        
-                        responseMsg(form, response);
-
+						btn.attr('disabled', false);
+						
+						responseMsg(form, response);
+						
 						// if(response.status){
-                        //     responseMsg(form, response);
+						//     responseMsg(form, response);
 						// }
 					},
 					error: function(err){
 						console.log('error');
 						lock = false;
-                        btn.attr('disabled', false);
-                        responseMsg(form, err);
+						btn.attr('disabled', false);
+						responseMsg(form, err);
 					}
 				});
 			};
 			return false;
-	    }
-    });
+		}
+	});
 };
+
 function changePasswordForm() {
 	var form = jQuery("#changePasswordForm");
-
-    if(!form.length){
+	
+	if(!form.length){
 		return false;
 	};
-
+	
 	var lock = false,
-    btn = form.find('button[type="submit"]');
-
-    form.validate({
+		btn = form.find('button[type="submit"]');
+	
+	form.validate({
 		onkeyup	: false,
-        focusCleanup: true,
-        focusInvalid: false,
-        errorClass: "error",
-        rules: {
-            password: {
-                required: true
-            },
-            new_password: {
-                required: true
-            },
-            confirm_password: {
-                required: true,
-                equalTo: "new_password"
-            }
-        },
-        messages: {
-            password: {
-                required: "Це поле обов'язкове для заповнення"
-            },
-            new_password: {
-                required: "Це поле обов'язкове для заповнення"
-            },
-            confirm_password: {
-                required: "Це поле обов'язкове для заповнення"
-            }
-        },
+		focusCleanup: true,
+		focusInvalid: false,
+		errorClass: "error",
+		rules: {
+			password: {
+				required: true
+			},
+			new_password: {
+				required: true
+			},
+			confirm_password: {
+				required: true,
+				equalTo: "new_password"
+			}
+		},
+		messages: {
+			password: {
+				required: "Це поле обов'язкове для заповнення"
+			},
+			new_password: {
+				required: "Це поле обов'язкове для заповнення"
+			},
+			confirm_password: {
+				required: "Це поле обов'язкове для заповнення"
+			}
+		},
 		submitHandler: function() {
 			if(!lock){
 				$.ajax({
 					type: "POST",
 					url: ' /ajax/user/change-password',
-                    method: "POST",
-                    data: form.serialize(),
-                    dataType: "json",
-                    beforeSend: function(request){
-                        lock = true;
-                        
-                        btn.attr('disabled', true);
-                        form.find('label.error').text('').hide();
+					method: "POST",
+					data: form.serialize(),
+					dataType: "json",
+					beforeSend: function(request){
+						lock = true;
+						
+						btn.attr('disabled', true);
+						form.find('label.error').text('').hide();
 					},
 					success: function(response){
 						console.log('response:');
 						console.log(response);
 						
 						lock = false;
-                        btn.attr('disabled', false);
-                        
-                        responseMsg(form, response);
-
+						btn.attr('disabled', false);
+						
+						responseMsg(form, response);
+						
 						if(response.status){
 							form.trigger('reset');
-                            // responseMsg(form, response);
+							// responseMsg(form, response);
 						}
 					},
 					error: function(err){
 						console.log('error');
 						lock = false;
-                        btn.attr('disabled', false);
-                        responseMsg(form, err);
+						btn.attr('disabled', false);
+						responseMsg(form, err);
 					}
 				});
 			};
 			return false;
-	    }
-    });
+		}
+	});
 };
 
 function orderServiceForm() {
 	var form = jQuery("#orderService-form");
-
-    if(!form.length){
+	
+	if(!form.length){
 		return false;
 	};
-
+	
 	var lock = false,
-    btn = form.find('button[type="submit"]');
-
-    form.validate({
+		btn = form.find('button[type="submit"]');
+	
+	form.validate({
 		onkeyup	: false,
-        focusCleanup: true,
-        focusInvalid: false,
-        errorClass: "error",
-        rules: {
-            service: {
-                required: true
-            },
-            date: {
-                required: true
-            },
-            city: {
-                required: true
-            },
-            time: {
-                required: true
-            },
-            comment: {
-                required: true,
-            }
-        },
-        messages: {
-            service: {
-                required: "Це поле обов'язкове для заповнення",
-            },
-            date: {
-                required: "Це поле обов'язкове для заповнення",
-            },
-            city: {
-                required: "Це поле обов'язкове для заповнення",
-            },
-            time: {
-                required: "Це поле обов'язкове для заповнення",
-            },
-            comment: {
-                required: "Це поле обов'язкове для заповнення",
-            }
-        },
+		focusCleanup: true,
+		focusInvalid: false,
+		errorClass: "error",
+		rules: {
+			service: {
+				required: true
+			},
+			date: {
+				required: true
+			},
+			city: {
+				required: true
+			},
+			time: {
+				required: true
+			},
+			comment: {
+				required: true,
+			}
+		},
+		messages: {
+			service: {
+				required: "Це поле обов'язкове для заповнення",
+			},
+			date: {
+				required: "Це поле обов'язкове для заповнення",
+			},
+			city: {
+				required: "Це поле обов'язкове для заповнення",
+			},
+			time: {
+				required: "Це поле обов'язкове для заповнення",
+			},
+			comment: {
+				required: "Це поле обов'язкове для заповнення",
+			}
+		},
 		submitHandler: function() {
 			if(!lock){
 				$.ajax({
 					type: "POST",
 					url: '/ajax/cabinet/order-service',
-                    method: "POST",
-                    data: form.serialize(),
-                    dataType: "json",
-                    beforeSend: function(request){
-                        lock = true;
-                        
-                        btn.attr('disabled', true);
-                        form.find('label.error').text('').hide();
+					method: "POST",
+					data: form.serialize(),
+					dataType: "json",
+					beforeSend: function(request){
+						lock = true;
+						
+						btn.attr('disabled', true);
+						form.find('label.error').text('').hide();
 					},
 					success: function(response){
 						console.log('response:');
 						console.log(response);
 						
 						lock = false;
-                        btn.attr('disabled', false);
-                        
-                        responseMsg(form, response);
-
+						btn.attr('disabled', false);
+						
+						responseMsg(form, response);
+						
 						if(response.status){
 							form.trigger('reset');
-                            // responseMsg(form, response);
+							// responseMsg(form, response);
 						}
 					},
 					error: function(err){
 						console.log('error');
 						lock = false;
-                        btn.attr('disabled', false);
-                        responseMsg(form, err);
+						btn.attr('disabled', false);
+						responseMsg(form, err);
 					}
 				});
 			};
 			return false;
-	    }
-    });
+		}
+	});
 };
+
 function newOrderForm() {
 	var form = jQuery("#newOrder-form");
-
-    if(!form.length){
+	
+	if(!form.length){
 		return false;
 	};
-
+	
 	var lock = false,
-    btn = form.find('button[type="submit"]');
-
-    form.validate({
+		btn = form.find('button[type="submit"]');
+	
+	form.validate({
 		onkeyup	: false,
-        focusCleanup: true,
-        focusInvalid: false,
-        errorClass: "error",
-        rules: {
-            service: {
-                required: true
-            },
-            date: {
-                required: true
-            },
-            city: {
-                required: true
-            },
-            time: {
-                required: true
-            },
-            comment: {
-                required: true,
-            }
-        },
-        messages: {
-            service: {
-                required: "Це поле обов'язкове для заповнення",
-            },
-            date: {
-                required: "Це поле обов'язкове для заповнення",
-            },
-            city: {
-                required: "Це поле обов'язкове для заповнення",
-            },
-            time: {
-                required: "Це поле обов'язкове для заповнення",
-            },
-            comment: {
-                required: "Це поле обов'язкове для заповнення",
-            }
-        },
+		focusCleanup: true,
+		focusInvalid: false,
+		errorClass: "error",
+		rules: {
+			service: {
+				required: true
+			},
+			date: {
+				required: true
+			},
+			city: {
+				required: true
+			},
+			time: {
+				required: true
+			},
+			comment: {
+				required: true,
+			}
+		},
+		messages: {
+			service: {
+				required: "Це поле обов'язкове для заповнення",
+			},
+			date: {
+				required: "Це поле обов'язкове для заповнення",
+			},
+			city: {
+				required: "Це поле обов'язкове для заповнення",
+			},
+			time: {
+				required: "Це поле обов'язкове для заповнення",
+			},
+			comment: {
+				required: "Це поле обов'язкове для заповнення",
+			}
+		},
 		submitHandler: function() {
 			if(!lock){
 				$.ajax({
 					type: "POST",
 					url: '/ajax/cabinet/order-service',
-                    method: "POST",
-                    data: form.serialize(),
-                    dataType: "json",
-                    beforeSend: function(request){
-                        lock = true;
-                        
-                        btn.attr('disabled', true);
-                        form.find('label.error').text('').hide();
+					method: "POST",
+					data: form.serialize(),
+					dataType: "json",
+					beforeSend: function(request){
+						lock = true;
+						
+						btn.attr('disabled', true);
+						form.find('label.error').text('').hide();
 					},
 					success: function(response){
 						console.log('response:');
 						console.log(response);
 						
 						lock = false;
-                        btn.attr('disabled', false);
-                        
-                        responseMsg(form, response);
-
+						btn.attr('disabled', false);
+						
+						responseMsg(form, response);
+						
 						if(response.status){
 							form.trigger('reset');
-                            // responseMsg(form, response);
+							// responseMsg(form, response);
 						}
 					},
 					error: function(err){
 						console.log('error');
 						lock = false;
-                        btn.attr('disabled', false);
-                        responseMsg(form, err);
+						btn.attr('disabled', false);
+						responseMsg(form, err);
 					}
 				});
 			};
 			return false;
-	    }
-    });
+		}
+	});
 };
 
 function timepicker() {
@@ -1388,5 +1436,5 @@ function requestMsg() {
 };
 
 function responseMsg(form, response) {
-    form.find('.responseMsg').text(response.message)
+    form.find('.responseMsg').text(response.message);
 };
