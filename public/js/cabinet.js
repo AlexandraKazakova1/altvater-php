@@ -185,13 +185,13 @@ function modalFade() {
 
 function initMap(lat, lng) {
 	var place = { 
-		lat: number(gDataLat), 
-		lng: number(gDataLng) 
+		lat: lat, 
+		lng: lng
 	};
 	
 	var map = new google.maps.Map(document.getElementById("map"), {
-		zoom: 16,
-		center: place,
+		zoom	: 16,
+		center	: place,
 	});
 	
 	const marker = new google.maps.Marker({
