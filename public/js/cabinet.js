@@ -778,6 +778,8 @@ function myAddress() {
 							el.css('display', 'flex');
 							
 							addresses__list.append(el);
+							
+							addresses_images[response.payload.id] = response.payload.images;
 						}else{
 							responseMsg(form, response);
 						}
@@ -837,6 +839,8 @@ function myAddress() {
 					info_modal.modal('hide');
 					
 					addresses__list.find('.list__item[data-id="'+id+'"]').remove();
+					
+					delete addresses_images[id];
 				}
 			},
 			error		: function(err){
