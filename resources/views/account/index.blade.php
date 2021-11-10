@@ -117,7 +117,7 @@
 									</svg>
 								</button>
 								<script>
-									addresses_images[{{$item->id}}] = JSON.parse("{!!json_decode($item->images)!!}");
+									addresses_images[{{$item->id}}] = JSON.parse("{!!json_encode($item->images)!!}");
 								</script>
 							</li>
 							<!-- -->
