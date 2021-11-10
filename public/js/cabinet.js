@@ -460,6 +460,8 @@ function contractIndividual() {
 						
 						form.find('label.error').text('').hide();
 						form.find('.responseMsg').text('');
+						
+						modal.removeClass('show');
 					},
 					success: function(response){
 						console.log('response:');
@@ -704,6 +706,8 @@ function addAddress() {
 	
 	var modal = $('#response');
 	
+	var addresses__list = $('#addresses__list');
+	
 	form.validate({
 		onkeyup			: false,
 		focusCleanup	: true,
@@ -737,9 +741,6 @@ function addAddress() {
 					images		: images
 				};
 				
-				console.log('form_data:');
-				console.log(form_data);
-				
 				$.ajax({
 					type		: "POST",
 					url			: '/ajax/cabinet/add-address',
@@ -754,6 +755,8 @@ function addAddress() {
 						form.find('label.error').text('').hide();
 						
 						form.find('.responseMsg').text('');
+						
+						modal.removeClass('show');
 					},
 					success		: function(response){
 						console.log('response:');
@@ -772,6 +775,20 @@ function addAddress() {
 							
 							modal.find('.responseMsg').text(response.message);
 							modal.addClass('show');
+							
+							var el = addresses__list.find('.addresses__list[data-id="0"]').clone();
+							
+							el.attr('data-id', response.payload.id);
+							el.find('.item__text .name').text(response.payload.name);
+							el.find('.btn-more').attr({
+								'data-id'		: response.payload.id,
+								'data-lat'		: response.payload.lat,
+								'data-lng'		: response.payload.lng,
+								'data-name'		: response.payload.name,
+								'data-address'	: response.payload.address
+							});
+							
+							addresses__list.append(el);
 						}else{
 							responseMsg(form, response);
 						}
@@ -791,13 +808,13 @@ function addAddress() {
 	});
 };
 
-function b64EncodeUnicode(str) {
+function b64EncodeUnicode(str){
 	return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function toSolidBytes(match, p1) {
 		return String.fromCharCode('0x' + p1);
 	}));
 };
 
-function requestForm() {
+function requestForm(){
 	var form = jQuery("#requestForm");
 	
 	if(!form.length){
@@ -894,73 +911,71 @@ function requestForm() {
 	});
 };
 
-// function msgRequestForm() {
-// 	var form = jQuery("#msgRequestForm");
-
-//     if(!form.length){
-// 		return false;
-// 	};
-
-// 	var lock = false,
-//     btn = form.find('button[type="submit"]');
-
-//     form.validate({
-// 		onkeyup	: false,
-//         focusCleanup: true,
-//         focusInvalid: false,
-//         errorClass: "error",
-//         rules: {
-//             text: {
-//                 required: true,
-// 				maxlength: 1000
-//             }
-//         },
-//         messages: {
-//             text: {
-//                 required: "Це поле обов'язкове для заповнення",
-// 				maxlength: "Введіть не більше 1000 символів"
-//             }
-//         },
-// 		submitHandler: function() {
-// 			if(!lock){
-// 				$.ajax({
-// 					type: "POST",
-// 					url: '/ajax/cabinet/request/:id',
-//                     method: "POST",
-//                     data: form.serialize(),
-//                     dataType: "json",
-//                     beforeSend: function(request){
-//                         lock = true;
-                        
-//                         btn.attr('disabled', true);
-//                         form.find('label.error').text('').hide();
-// 					},
-// 					success: function(response){
-// 						console.log('response:');
-// 						console.log(response);
+function msgRequestForm(){
+	var form = jQuery("#msgRequestForm");
+	
+	if(!form.length){
+		return false;
+	};
+	
+	var lock = false,
+		btn = form.find('button[type="submit"]');
+	
+	form.validate({
+		onkeyup	: false,
+		focusCleanup: true,
+		focusInvalid: false,
+		errorClass: "error",
+		rules: {
+			text: {
+				required: true,
+				maxlength: 1000
+			}
+		},
+		messages: {
+			text: {
+				required: "Це поле обов'язкове для заповнення",
+				maxlength: "Введіть не більше 1000 символів"
+			}
+		},
+		submitHandler: function() {
+			if(!lock){
+				$.ajax({
+					type: "POST",
+					url: '/ajax/cabinet/request/:id',
+					method: "POST",
+					data: form.serialize(),
+					dataType: "json",
+					beforeSend: function(request){
+						lock = true;
 						
-// 						lock = false;
-//                         btn.attr('disabled', false);
-
-// 						if(response.status){
-// 							form.trigger('reset');
-//                             responseMsg();
-// 						}
-// 					},
-// 					error: function(err){
-// 						console.log('error');
-// 						lock = false;
-//                         btn.attr('disabled', false);
-// 						if(response.status){
-//                             responseMsg();
-// 						}
-// 					}
-// 				});
-// 			};
-// 			return false;
-// 	    }
-//     });
-// };
+						btn.attr('disabled', true);
+						form.find('label.error').text('').hide();
+					},
+					success: function(response){
+						console.log('response:');
+						console.log(response);
+						
+						lock = false;
+						btn.attr('disabled', false);
+						
+						if(response.status){
+							form.trigger('reset');
+						}
+					},
+					error: function(err){
+						console.log('error');
+						
+						lock = false;
+						btn.attr('disabled', false);
+					}
+				});
+			};
+			
+			return false;
+		}
+	});
+};
 
 function settingsForm() {
 	var form = jQuery("#settingsForm");
@@ -1223,6 +1238,8 @@ function orderServiceForm() {
 						
 						form.find('label.error').text('').hide();
 						form.find('.responseMsg').text('');
+						
+						modal.removeClass('show');
 					},
 					success: function(response){
 						console.log('response:');
@@ -1242,8 +1259,10 @@ function orderServiceForm() {
 					},
 					error: function(err){
 						console.log('error');
+						
 						lock = false;
 						btn.attr('disabled', false);
+						
 						responseMsg(form, err);
 					}
 				});
@@ -1358,9 +1377,9 @@ function timepicker() {
 };
 
 function select2() {
-    $('.custom-select').select2({
-        minimumResultsForSearch: -1
-    });
+	$('.custom-select').select2({
+		minimumResultsForSearch: -1
+	});
 };
 
 function maskPhone() {
@@ -1375,70 +1394,70 @@ function maskPhone() {
 
 function requestMsg() {
 	var form = jQuery("#msgRequestForm");
-
-    if(!form.length){
+	
+	if(!form.length){
 		return false;
 	};
-
+	
 	var lock = false,
-    btn = form.find('button[type="submit"]');
-
-    form.validate({
+	btn = form.find('button[type="submit"]');
+	
+	form.validate({
 		onkeyup	: false,
-        focusCleanup: true,
-        focusInvalid: false,
-        errorClass: "error",
-        rules: {
-            text: {
-                required: true,
+		focusCleanup: true,
+		focusInvalid: false,
+		errorClass: "error",
+		rules: {
+			text: {
+				required: true,
 				minlength: 1,
 				maxlength: 2500
-            }
-        },
-        messages: {
-            text: {
-                required: 'Введіть повідомлення',
+			}
+		},
+		messages: {
+			text: {
+				required: 'Введіть повідомлення',
 				minlength: 'Поле не може бути пустиим',
 				maxlength: 'Максимальна кількість символів 2500'
-            }
-        },
+			}
+		},
 		submitHandler: function() {
 			if(!lock){
 				$.ajax({
 					type: "POST",
 					url: '/ajax/cabinet/request/:id',
-                    method: "POST",
-                    data: form.serialize(),
-                    dataType: "json",
-                    beforeSend: function(request){
-                        lock = true;
-                        
-                        btn.attr('disabled', true);
-                        form.find('label.error').text('').hide();
+					method: "POST",
+					data: form.serialize(),
+					dataType: "json",
+					beforeSend: function(request){
+						lock = true;
+						
+						btn.attr('disabled', true);
+						form.find('label.error').text('').hide();
 					},
 					success: function(response){
 						console.log('response:');
 						console.log(response);
 						
 						lock = false;
-                        btn.attr('disabled', false);
-
+						btn.attr('disabled', false);
+						
 						if(response.status){
 							form.trigger('reset');
-                            responseMsg(form, response);
+							responseMsg(form, response);
 						}
 					},
 					error: function(err){
 						console.log('error');
 						lock = false;
-                        btn.attr('disabled', false);
-                        responseMsg(form, err);
+						btn.attr('disabled', false);
+						responseMsg(form, err);
 					}
 				});
 			};
 			return false;
-	    }
-    });
+		}
+	});
 };
 
 function responseMsg(form, response) {
