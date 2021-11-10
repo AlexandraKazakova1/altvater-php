@@ -24,7 +24,7 @@
 					</svg>
 				</button>
 				
-				<a class="header__logo" href="/account">
+				<a class="header__logo" href="/">
 					<img src="/img/cabinet/logo_Veolia_vektor.svg">
 				</a>
 				
