@@ -5941,6 +5941,10 @@ a.popup-text__link {
   color: rgba(113, 128, 150, 0.8);
 }
 
+.popup .popup__form .fieldset div .addedFile button {
+  background-image: url(../img/cabinet/status-icon/delete.svg);
+}
+
 .responseMsg {
   padding-bottom: 10px;
   text-align: center;
