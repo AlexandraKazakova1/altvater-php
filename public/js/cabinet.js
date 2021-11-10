@@ -744,7 +744,7 @@ function myAddress() {
 						
 						form.find('.responseMsg').text('');
 						
-						modal.removeClass('show');
+						//modal.modal('hide');
 					},
 					success		: function(response){
 						console.log('response:');
@@ -759,10 +759,10 @@ function myAddress() {
 							images = [];
 							added_file.html('');
 							
-							form.parents('.modal').removeClass('show');
+							form.parents('.modal').modal('hide');
 							
 							modal.find('.responseMsg').text(response.message);
-							modal.addClass('show');
+							modal.modal('show');
 							
 							var el = addresses__list.find('.addresses__list[data-id="0"]').clone();
 							
@@ -834,7 +834,8 @@ function myAddress() {
 				console.log(response);
 				
 				if(response.status){
-					$('.modal').modal('hide');
+					info_modal.modal('hide');
+					
 					addresses__list.find('.addresses__list[data-id="'+id+'"]').remove();
 				}
 			},

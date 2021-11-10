@@ -132,7 +132,7 @@ class PagesController extends MyAdminController {
 				$form->switch('meta_public'		, __('admin.pages.meta_public'));
 				
 				$form->text('meta_header'		, __('admin.pages.meta_header'))->rules('max:250');
-				$form->textarea('meta_text'		, __('admin.pages.meta_text'))->rules('max:1500');
+				$form->textarea('meta_text'		, __('admin.pages.meta_text'))->rules('max:5000');
 				
 				$form->image('meta_image'		, __('admin.pages.meta_image'))->help('1168x542px')->removable()->move('pages-images')->uniqueName();
 			});
