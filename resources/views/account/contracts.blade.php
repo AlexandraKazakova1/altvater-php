@@ -70,7 +70,7 @@
 					</div>
 				</div>
 				
-				<div class="contracts__list" id="active-contracts" data-limit="{{$limit}}" data-count="{{$count}}">
+				<div class="contracts__list" id="active-contracts" data-limit="{{$limit}}" data-count="{{$count}}" data-show="{{count($contracts['active'])}}">
 					@include('account.components.active_contracts', ['contracts' => $contracts['active']])
 					
 					<button style="{{($count > count($contracts['active']) ? '' : 'display:none;')}}" class="more">Показати всі</button>
@@ -92,7 +92,7 @@
 					</div>
 				</div>
 				
-				<div class="contracts__list" id="archive-contracts" data-limit="{{$limit}}" data-count="{{$count_archive}}">
+				<div class="contracts__list" id="archive-contracts" data-limit="{{$limit}}" data-count="{{$count_archive}}" data-show="{{count($contracts['archive'])}}">
 					@include('account.components.archive_contracts', ['contracts' => $contracts['archive']])
 					
 					<button style="{{($count_archive > count($contracts['archive']) ? '' : 'display:none;')}}" class="more">Показати всі</button>

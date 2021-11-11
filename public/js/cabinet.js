@@ -646,25 +646,41 @@ function contracts(){
 	sort_active_contracts.on('change', function(){
 		var value = $(this).val();
 		
-		loadContracts('active', value, active_contracts.attr('data-limit'), active_contracts);
+		loadContracts('active', value, 0, active_contracts.attr('data-limit'), active_contracts);
 	});
 	
 	sort_archive_contracts.on('change', function(){
 		var value = $(this).val();
 		
-		console.log(value);
+		loadContracts('archive', value, 0, archive_contracts.attr('data-limit'), archive_contracts);
+	});
+	
+	var more_active		= active_contracts.find('button.more');
+	var more_archive	= archive_contracts.find('button.more');
+	
+	more_active.on('click', function(){
+		var value = sort_active_contracts.val();
+		var count = active_contracts.find('.contract__item').length;
 		
-		loadContracts('archive', value, archive_contracts.attr('data-limit'), archive_contracts);
+		loadContracts('active', value, count, active_contracts.attr('data-limit'), active_contracts);
+	});
+	
+	more_archive.on('click', function(){
+		var value = sort_archive_contracts.val();
+		var count = archive_contracts.find('.contract__item').length;
+		
+		loadContracts('archive', value, count, archive_contracts.attr('data-limit'), archive_contracts);
 	});
 };
 
-function loadContracts(type, sort, limit, container){
+function loadContracts(type, sort, offset, limit, container){
 	$.ajax({
 		type		: "GET",
 		url			: '/ajax/cabinet/contracts/'+type,
 		method		: "POST",
 		data		: JSON.stringify({
 			sort		: sort,
+			offset		: offset,
 			limit		: limit
 		}),
 		dataType	: "json",
@@ -672,6 +688,10 @@ function loadContracts(type, sort, limit, container){
 		beforeSend	: function(request){
 			container.find('.contract__item').remove();
 			container.find('button.more').hide();
+			
+			if(offset < 1){
+				container.attr('data-show', 0);
+			}
 		},
 		success		: function(response){
 			console.log('response:');
@@ -680,8 +700,16 @@ function loadContracts(type, sort, limit, container){
 			if(response.status){
 				container.find('button.more').before(response.payload.html);
 				
-				if(response.payload.count > 4){
-					container.find('button.more').show();
+				if(offset < 1){
+					if(response.payload.count > 4){
+						container.find('button.more').show();
+					}
+				}else{
+					var count = container.find('.contract__item').length;
+					
+					if(count == response.payload.count){
+						container.find('button.more').hide();
+					}
 				}
 			}
 		},

@@ -261,8 +261,16 @@ class ContractsController extends Controller {
 			
 			$payload['count'] = Contracts::query()->where('client_id', $this->_id)->whereRaw(DB::raw('(`archive` IS NULL OR `archive` = 0)'))->count();
 			
-			$offset = 0;
+			$offset = (int)$this->get('offset');
 			$limit	= 4;
+			
+			if($offset < 0){
+				$offset = 0;
+			}else{
+				if($offset > $payload['count']){
+					$offset = $payload['count'];
+				}
+			}
 			
 			if($type == "active"){
 				$data = Contracts::query()

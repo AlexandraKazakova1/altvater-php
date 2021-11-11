@@ -66,7 +66,7 @@ Route::group(['namespace' => 'Ajax'], function(){
 		'uses' => 'ContractsController@add'
 	]);
 	
-	Route::post('ajax/cabinet/contracts/{type}', [
+	Route::get('ajax/cabinet/contracts/{type}', [
 		'uses' => 'ContractsController@contracts_list'
 	])->where(['type' => '[a-z]+']);
 	
