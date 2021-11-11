@@ -374,4 +374,32 @@ class AccountController extends MyController {
 		
 		return redirect('/');
 	}
+	
+	public function confirm(Request $request){
+		$code = trim($request->route('code'));
+		
+		if($code){
+			if(strlen($code) != 32){
+				$code = '';
+			}
+		}
+		
+		if($code){
+			$user = User::query()
+							->where('email_token', '=', $code)
+							->first();
+			
+			if(!$user){
+				$code = '';
+			}else{
+				$user->update(['email_token' => null, 'verify_email' => 1]);
+				
+				Auth::login($user);
+				
+				return redirect('/account');
+			}
+		}
+		
+		return redirect('/');
+	}
 }

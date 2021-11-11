@@ -197,6 +197,10 @@ Route::get('account/logout', [
 	'uses'  => 'AccountController@logout'
 ]);
 
+Route::get('confirm/{code}', [
+	'uses' => 'AccountController@confirm'
+])->where('code', '[a-zA-Z_0-9\-]+');
+
 Route::get('reset/{code}', [
 	'uses' => 'PageController@index'
 ])->where('code', '[a-zA-Z_0-9\-]+');
