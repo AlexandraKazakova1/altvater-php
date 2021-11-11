@@ -1623,26 +1623,33 @@ function changePasswordForm(){
 		focusInvalid: false,
 		errorClass: "error",
 		rules: {
-			password: {
-				required: true
+			password		: {
+				required		: true,
+				rangelength		: [8, 24]
 			},
-			new_password: {
-				required: true
+			new_password	: {
+				required		: true,
+				rangelength		: [8, 24]
 			},
 			confirm_password: {
-				required: true,
-				equalTo: "new_password"
+				required		: true,
+				rangelength		: [8, 24],
+				equalTo			: "new_password"
 			}
 		},
 		messages: {
 			password: {
-				required: "Це поле обов'язкове для заповнення"
+				required: "Це поле обов'язкове для заповнення",
+				rangelength	: "Введіть 8-24 символи"
 			},
 			new_password: {
-				required: "Це поле обов'язкове для заповнення"
+				required: "Це поле обов'язкове для заповнення",
+				rangelength	: "Введіть 8-24 символи"
 			},
 			confirm_password: {
-				required: "Це поле обов'язкове для заповнення"
+				required	: "Це поле обов'язкове для заповнення",
+				equalTo		: "Паролі не співпадають",
+				rangelength	: "Введіть 8-24 символи"
 			}
 		},
 		submitHandler: function() {
