@@ -724,7 +724,6 @@ function loadContracts(type, sort, offset, limit, container){
 	$.ajax({
 		type		: "GET",
 		url			: '/ajax/cabinet/contracts/'+type,
-		method		: "POST",
 		data		: JSON.stringify({
 			sort		: sort,
 			offset		: offset,
