@@ -17,8 +17,8 @@ class Dialogues extends Model{
 		'created_at',
 		'updated_at',
 		'client_id',
-		'theme',
-		'number',
+		'theme_id',
+		'contract_id',
 		'phone',
 		'header'
 	];

@@ -249,3 +249,24 @@
 		</div>
 	</div>
 </div>
+
+<div class="modal fade" id="status-reg-modal" tabindex="-1" role="dialog">
+	<div class="modal-dialog modal-md modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="pass__recovery-page popup">
+				<div class="modal-header">
+					<img src="/img/recovery-mail.svg">
+					<h2 class="popup__title">Перевірте пошту</h2>
+					
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<img src="/img/close.svg" alt="X">
+					</button>
+				</div>
+				
+				<div class="modal-body">
+					<p class="recovery-mail-msg">На цей E-mail <span class="recovery-mail"></span> відправлено лист з подальшими інструкціями по активації</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

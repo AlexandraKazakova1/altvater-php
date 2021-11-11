@@ -415,8 +415,8 @@ function createIndividual() {
 							
 							$('.modal').modal('hide');
 							
-							$('#recovery-modal-2').find('.recovery-mail').text(response.payload.email);
-							$('#recovery-modal-2').modal('show');
+							$('#status-reg-modal').find('.recovery-mail').text(response.payload.email);
+							$('#status-reg-modal').modal('show');
 						}else{
 							responseMsg(form, response);
 						}
@@ -598,8 +598,8 @@ function createEntity() {
 							
 							$('.modal').modal('hide');
 							
-							$('#recovery-modal-2').find('.recovery-mail').text(response.payload.email);
-							$('#recovery-modal-2').modal('show');
+							$('#status-reg-modal').find('.recovery-mail').text(response.payload.email);
+							$('#status-reg-modal').modal('show');
 						}else{
 							responseMsg(form, response);
 						}
