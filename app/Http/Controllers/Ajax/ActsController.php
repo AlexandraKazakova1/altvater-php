@@ -87,6 +87,7 @@ class ActsController extends Controller {
 		$payload['html'] = view(
 								'account.components.acts',
 								[
+									'string'=> new StringHelper,
 									'acts'	=> $data
 								]
 							)

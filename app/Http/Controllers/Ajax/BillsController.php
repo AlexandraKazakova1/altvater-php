@@ -87,6 +87,7 @@ class BillsController extends Controller {
 		$payload['html'] = view(
 								'account.components.bills',
 								[
+									'string'=> new StringHelper,
 									'bills'	=> $data
 								]
 							)
