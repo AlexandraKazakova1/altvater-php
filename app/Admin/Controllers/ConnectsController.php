@@ -38,7 +38,7 @@ class ConnectsController extends MyAdminController {
 		
 		$grid->column('created_at'			, __('admin.connects.created_at'));
 		
-		$grid->column('confirm'				, __('admin.connects.confirm'))->display(function($paid){
+		$grid->column('confirm'				, __('admin.connects.confirm'))->display(function($confirm){
 			$confirm = (int)$confirm;
 			
 			return $confirm > 0 ? '<i class="fa fa-check" style="color:green;" aria-hidden="true"></i>' : '<i class="fa fa-times" style="color:red;" aria-hidden="true"></i>';
