@@ -922,7 +922,7 @@ function bills(){
 	more_bills.on('click', function(){
 		var value = sort_bills.val();
 		
-		var count = bills_list.find('.contract__item').length;
+		var count = bills_list.find('.accounts__item').length;
 		
 		loadBills(value, count, bills_list.attr('data-limit'), bills_list);
 	});
@@ -930,7 +930,7 @@ function bills(){
 	more_acts.on('click', function(){
 		var value = sort_acts.val();
 		
-		var count = acts_list.find('.contract__item').length;
+		var count = acts_list.find('.accounts__item').length;
 		
 		loadActs(value, count, acts_list.attr('data-limit'), acts_list);
 	});
@@ -950,7 +950,7 @@ function loadBills(sort, offset, limit, container){
 			container.find('button.more').hide();
 			
 			if(offset < 1){
-				container.find('.contract__item').remove();
+				container.find('.accounts__item').remove();
 				
 				container.attr('data-show', 0);
 				
@@ -969,7 +969,7 @@ function loadBills(sort, offset, limit, container){
 						container.find('button.more').show();
 					}
 				}else{
-					var count = container.find('.contract__item').length;
+					var count = container.find('.accounts__item').length;
 					
 					if(count == response.payload.count){
 						container.find('button.more').hide();
@@ -999,7 +999,7 @@ function loadActs(sort, offset, limit, container){
 			container.find('button.more').hide();
 			
 			if(offset < 1){
-				container.find('.contract__item').remove();
+				container.find('.accounts__item').remove();
 				container.attr('data-show', 0);
 				
 				$('#count_acts').text(0);
@@ -1017,7 +1017,7 @@ function loadActs(sort, offset, limit, container){
 						container.find('button.more').show();
 					}
 				}else{
-					var count = container.find('.contract__item').length;
+					var count = container.find('.accounts__item').length;
 					
 					if(count == response.payload.count){
 						container.find('button.more').hide();
