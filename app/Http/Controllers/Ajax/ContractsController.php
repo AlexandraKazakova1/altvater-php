@@ -403,10 +403,11 @@ class ContractsController extends Controller {
 					}
 					
 					$connect = Connects::create([
-						'client_id'	=> $this->_id,
-						'number'	=> $post['number'],
-						'name'		=> $post['name'],
-						'edrpou'	=> null,
+						'client_id'		=> $this->_id,
+						'contract_id'	=> $record->id,
+						'number'		=> $post['number'],
+						'name'			=> $post['name'],
+						'edrpou'		=> null,
 					]);
 					
 					//$record->update(['client_id' => $this->_id]);
@@ -418,10 +419,11 @@ class ContractsController extends Controller {
 						
 						if(!$counterparty){
 							$connect = Connects::create([
-								'client_id'	=> $this->_id,
-								'number'	=> $post['number'],
-								'name'		=> null,
-								'edrpou'	=> $post['edrpou'],
+								'client_id'		=> $this->_id,
+								'contract_id'	=> $record->id,
+								'number'		=> $post['number'],
+								'name'			=> null,
+								'edrpou'		=> $post['edrpou'],
 							]);
 						}else{
 							$check = Contracts::query()->where('id', $record->id)->where('client_id', $counterparty->id)->first();
@@ -435,10 +437,11 @@ class ContractsController extends Controller {
 								], 200, [], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 							}else{
 								$connect = Connects::create([
-									'client_id'	=> $this->_id,
-									'number'	=> $post['number'],
-									'name'		=> null,
-									'edrpou'	=> $post['edrpou'],
+									'client_id'		=> $this->_id,
+									'contract_id'	=> $record->id,
+									'number'		=> $post['number'],
+									'name'			=> null,
+									'edrpou'		=> $post['edrpou'],
 								]);
 							}
 						}
