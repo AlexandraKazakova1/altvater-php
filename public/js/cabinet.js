@@ -35,7 +35,6 @@ $(document).ready (function() {
 	requestMsg();
 	menuToggle();
 	
-	orders();
 	ordersSelect();
 	orderServiceForm();
 	newOrderForm();
