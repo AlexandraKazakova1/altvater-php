@@ -1767,7 +1767,7 @@ function orderServiceForm(){
 							
 							form.parents('.modal').modal('hide');
 							
-							//modal.find('.responseMsg').text(response.message);
+							modal.find('.responseMsg').text(response.message);
 							modal.modal('show');
 							
 							loadOrders();
@@ -1864,8 +1864,12 @@ function newOrderForm(){
 						
 						if(response.status){
 							form.trigger('reset');
-							// responseMsg(form, response);
-
+							
+							form.parents('.modal').modal('hide');
+							
+							modal.find('.responseMsg').text(response.message);
+							modal.modal('show');
+							
 							loadOrders();
 						}
 					},
