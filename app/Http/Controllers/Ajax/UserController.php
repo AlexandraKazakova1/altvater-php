@@ -239,7 +239,7 @@ class UserController extends Controller {
 				$phone_token	= md5(time(). 'p' . $phone_code);
 				
 				$user = User::create([
-					'type'				=> $post['user-type'],
+					'type'				=> 'individual',
 					'name'				=> $post['name'],
 					'email'				=> $post['email'],
 					'phone'				=> $post['phone'],
@@ -458,7 +458,7 @@ class UserController extends Controller {
 				$phone_token	= md5(time(). '-' . $phone_code);
 				
 				$user = User::create([
-					'type'				=> $post['user-type'],
+					'type'				=> 'legal-entity',
 					'company_name'		=> $post['company_name'],
 					'name'				=> $post['name'],
 					'addresses'			=> $post['addresses'],
