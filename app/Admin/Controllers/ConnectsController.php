@@ -120,7 +120,7 @@ class ConnectsController extends MyAdminController {
 		
 		// callback before save
 		$form->saving(function (Form $form) use ($record) {
-			print_r($form);
+			print_r($form->confirm);
 			exit;
 		});
 		
