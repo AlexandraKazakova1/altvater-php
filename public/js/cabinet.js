@@ -902,7 +902,7 @@ function bills(){
 	var acts_list	= $('#acts-list');
 	
 	var sort_bills	= $('#sort-bills');
-	var sort_acts	= $('#acts-list');
+	var sort_acts	= $('#sort-acts');
 	
 	sort_bills.on('change', function(){
 		var value = $(this).val();
