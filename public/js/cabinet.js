@@ -646,13 +646,45 @@ function contracts(){
 	sort_active_contracts.on('change', function(){
 		var value = $(this).val();
 		
-		console.log(value);
+		loadContracts('active', value, 4, sort_active_contracts);
 	});
 	
 	sort_archive_contracts.on('change', function(){
 		var value = $(this).val();
 		
 		console.log(value);
+		
+		loadContracts('archive', value, 4, sort_active_contracts);
+	});
+};
+
+function loadContracts(type, sort, limit, container){
+	$.ajax({
+		type		: "GET",
+		url			: '/ajax/cabinet/contracts/'+type,
+		method		: "POST",
+		data		: JSON.stringify({
+			sort		: value,
+			limit		: limit
+		}),
+		dataType	: "json",
+		contentType	: "application/json; charset=utf-8",
+		beforeSend	: function(request){
+			
+		},
+		success		: function(response){
+			console.log('response:');
+			//console.log(response);
+			
+			if(response.status){
+				container.find('.contract__item').remove();
+				container.find('button.more').hide();
+				container.find('button.more').before(response.payload);
+			}
+		},
+		error		: function(err){
+			console.log('error');
+		}
 	});
 };
 
