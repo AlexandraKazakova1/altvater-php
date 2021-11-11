@@ -97,7 +97,7 @@
 							</span>
 						</label>
 						
-						@if($user['company_name'] == '')
+						@if($user['company_name'] == 'legal-entity')
 							<label>
 								<span class="input-description notCheck">Назва компанії:<b> ?</b></span>
 								<input class="form-control" type="text" name="company_name" readonly value="{{$user['company_name']}}" placeholder=" ">
