@@ -55,6 +55,16 @@ class ConnectsController extends MyAdminController {
 			return '-';
 		});
 		
+		$grid->column('contract_id'			, __('admin.connects.contract'))->display(function(){
+			$contract = $this->contract;
+			
+			if($contract){
+				return '<a href="/admin/contracts/'.$contract->id.'/edit">ID: '.$contract->id.'</a>';
+			}
+			
+			return '-';
+		});
+		
 		$grid->column('number'				, __('admin.connects.number'));
 		$grid->column('name'				, __('admin.connects.name'));
 		$grid->column('edrpou'				, __('admin.connects.edrpou'));
@@ -141,6 +151,8 @@ class ConnectsController extends MyAdminController {
 				}else{
 					$record->update(['client_id' => $form->client_id]);
 				}
+				
+				$form->contract_id = $record->id;
 			}
 		});
 		

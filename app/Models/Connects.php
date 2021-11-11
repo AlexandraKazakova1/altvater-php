@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use DB;
 
 use App\Models\User;
+use App\Models\Connects;
 
 class Connects extends Model{
 	
@@ -26,5 +27,9 @@ class Connects extends Model{
 	
 	public function client(){
 		return $this->belongsTo(User::class, 'client_id');
+	}
+	
+	public function contract(){
+		return $this->belongsTo(Connects::class, 'contract_id');
 	}
 }
