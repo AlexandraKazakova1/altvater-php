@@ -26,10 +26,6 @@ $(document).ready (function() {
 	createModal();
 	servicesCalc();
 	scrollUp();
-	
-	$('#to_help').on('click', function(e){
-		window.location = '/account/messages';
-	});
 });
 
 function scrollUp() {

@@ -7,7 +7,7 @@ $(document).ready (function() {
 		}
 	});
 	
-	calendar();
+	//calendar();
 	customSelect();
 	modalFade();
 	//dragAndDrop();
@@ -29,7 +29,11 @@ $(document).ready (function() {
 	requestMsg();
 	menuToggle();
 	
-	$('#addcontract').modal('show');
+	//$('#addcontract').modal('show');
+	
+	$('#to_help').on('click', function(e){
+		window.location = '/account/messages';
+	});
 });
 
 function menuToggle() {
