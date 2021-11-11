@@ -23,7 +23,7 @@
 		
 		<section class="openAccounts">
 			<div class="contract__info">
-				<button>
+				<button type="botton" id="to_help">
 					<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M10.3242 9.68579C10.5612 8.66424 11.4917 7.95594 12.5395 7.99942C13.7121 7.93447 14.7174 8.82806 14.7904 10.0003C14.7904 11.5048 12.6395 12.0011 12.6395 13.0015" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 						<path d="M12.7659 15.7543C12.7658 15.8233 12.7098 15.8792 12.6408 15.8792C12.5718 15.8791 12.5158 15.8232 12.5158 15.7542C12.5158 15.6851 12.5717 15.6292 12.6407 15.6291C12.6739 15.629 12.7058 15.6422 12.7293 15.6657C12.7527 15.6892 12.7659 15.7211 12.7659 15.7543" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
