@@ -47,7 +47,7 @@
 						</label>
 						
 						<label>
-							<span class="input-description">Телефон:</span>
+							<span class="input-description notCheck">Телефон:</span>
 							<input class="form-control" type="tel" name="phone" placeholder=" ">
 							<span class="input-placeholder">
 								<div>
