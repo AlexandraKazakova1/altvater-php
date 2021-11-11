@@ -1379,6 +1379,8 @@ main {
   margin-left: 0;
   margin-top: 0;
   top: 30%;
+  border: 0;
+  outline: 0;
 }
 
 .accountsActs__wrapper .acts__content .filters .filters__list span .select2-selection--single .select2-selection__arrow b::after,
@@ -2891,6 +2893,8 @@ main {
   margin-left: 0;
   margin-top: 0;
   top: 30%;
+  border: 0;
+  outline: 0;
 }
 
 .orders__wrapper .orders__content .filters .filters__list span .select2-selection--single .select2-selection__arrow b::after {
@@ -3440,6 +3444,8 @@ main {
   margin-left: 0;
   margin-top: 0;
   top: 30%;
+  border: 0;
+  outline: 0;
 }
 
 .contracts__wrapper .archive__content .filters .filters__list span .select2-selection--single .select2-selection__arrow b::after,
@@ -3887,6 +3893,8 @@ main {
   margin-left: 0;
   margin-top: 0;
   top: 30%;
+  border: 0;
+  outline: 0;
 }
 
 .request__page .messages__wrapper .messages__content .filters .filters__list span .select2-selection--single .select2-selection__arrow b::after {
