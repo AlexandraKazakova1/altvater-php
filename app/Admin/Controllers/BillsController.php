@@ -114,7 +114,7 @@ class BillsController extends MyAdminController {
 		
 		$form->text('name'			, __('admin.bills.name'))->rules('max:100');
 		
-		$form->text('number'		, __('admin.bills.number'))->rules('max:15');
+		$form->text('number'		, __('admin.bills.number'))->rules('max:30');
 		$form->text('amount'		, __('admin.bills.amount'))->rules('max:15');
 		
 		$form->switch('paid'		, __('admin.bills.paid'));
@@ -123,10 +123,8 @@ class BillsController extends MyAdminController {
 		
 		// callback before save
 		$form->saving(function (Form $form){
-			$form->number		= trim($form->number);
 			$form->amount		= trim($form->amount);
 			
-			$form->number		= preg_replace("/[^0-9]/", '', $form->number);
 			$form->amount		= preg_replace("/[^0-9\.,]/", '', $form->amount);
 		});
 		

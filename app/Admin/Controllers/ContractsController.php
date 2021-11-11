@@ -90,7 +90,7 @@ class ContractsController extends MyAdminController {
 		
 		$this->configure($form);
 		
-		$id = $this->_id;
+		$id = (int)request()->segment(3);
 		
 		$form->text('number'		, __('admin.contracts.number'))->rules('max:30');
 		

@@ -112,7 +112,7 @@ class ActsController extends MyAdminController {
 		
 		$form->text('name'			, __('admin.acts.name'))->rules('max:100');
 		
-		$form->text('number'		, __('admin.acts.number'))->rules('max:15');
+		$form->text('number'		, __('admin.acts.number'))->rules('max:30');
 		
 		$form->radio('status'		, __('admin.acts.status.label'))
 									->options([
@@ -126,9 +126,6 @@ class ActsController extends MyAdminController {
 		
 		// callback before save
 		$form->saving(function (Form $form){
-			$form->number		= trim($form->number);
-			
-			$form->number		= preg_replace("/[^0-9]/", '', $form->number);
 		});
 		
 		$form->saved(function(Form $form){

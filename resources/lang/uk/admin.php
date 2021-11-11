@@ -491,4 +491,15 @@ return [
 	'themes'				=> [
 		'label'					=> 'Тема'
 	],
+	
+	'connects'				=> [
+		'created_at'			=> 'Створено',
+		'updated_at'			=> 'Оновлено',
+		
+		'client'				=> 'Клієнт',
+		'number'				=> 'Номер договору',
+		'name'					=> 'ПІБ',
+		'edrpou'				=> 'ЄДРПОУ',
+		'confirm'				=> 'Підтверджено',
+	],
 ];
