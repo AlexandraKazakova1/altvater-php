@@ -833,6 +833,12 @@ function contracts(){
 		//$('#create__contract-modal-1').modal('show');
 		//$('#create__contract-modal-2').modal('show');
 	});
+	
+	$('#pinned_contract').click(function() {
+		$('.modal').modal('hide');
+		
+		$('#addcontract').modal('show');
+	});
 };
 
 function loadContracts(type, sort, offset, limit, container){
