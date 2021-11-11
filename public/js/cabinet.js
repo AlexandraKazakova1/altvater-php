@@ -1146,7 +1146,8 @@ function myAddress(){
 		var n = current.attr('n');
 		
 		delete images[n];
-		added_file.find('li[data-n="'+n+'"]').remove();
+		
+		$("#add__address-modal").find('li[data-n="'+n+'"]').remove();
 	});
 	
 	var lock = false,
