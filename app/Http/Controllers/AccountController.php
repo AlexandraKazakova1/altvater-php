@@ -174,6 +174,72 @@ class AccountController extends MyController {
 		);
 	}
 	
+	public function bill(Request $request){
+		$this->session();
+		
+		if(!$this->_auth){
+			return redirect('/');
+		}
+		
+		$id = $request->route('id');
+		
+		$bill = Bills::query()->where('client_id', $this->_id)->where('id', $id)->first();
+		
+		if(!$bill){
+			return redirect('/account/bills');
+		}
+		
+		return view(
+			'account/bill',
+			[
+				'page'			=> array(
+					'title'			=> trans('site.cabinet.bills.title').' - №'.$bill->number,
+					'keywords'		=> '',
+					'description'	=> '',
+					'uri'			=> 'account/bills/'.$bill->id,
+					'og_image'		=> '',
+				),
+				'headerClass'	=> '',
+				'robots'		=> '',
+				'canonical'		=> '',
+				'bill'			=> $bill
+			]
+		);
+	}
+	
+	public function act(Request $request){
+		$this->session();
+		
+		if(!$this->_auth){
+			return redirect('/');
+		}
+		
+		$id = $request->route('id');
+		
+		$act = Acts::query()->where('client_id', $this->_id)->where('id', $id)->first();
+		
+		if(!$act){
+			return redirect('/account/bills');
+		}
+		
+		return view(
+			'account/act',
+			[
+				'page'			=> array(
+					'title'			=> trans('site.cabinet.acts.title').' - №'.$act->number,
+					'keywords'		=> '',
+					'description'	=> '',
+					'uri'			=> 'account/bills/act/'.$act->id,
+					'og_image'		=> '',
+				),
+				'headerClass'	=> '',
+				'robots'		=> '',
+				'canonical'		=> '',
+				'act'			=> $act
+			]
+		);
+	}
+	
 	public function messages(){
 		$this->session();
 		

@@ -20,21 +20,25 @@ $(document).ready (function() {
 	connect_contract();
 	
 	bills();
-	orders();
 	
 	myAddress();
 	timepicker();
 	select2();
 	maskPhone();
-	orderServiceForm();
+	
 	contractsArchive();
-	newOrderForm();
+	
 	changePasswordForm();
 	settingsForm();
 	requestForm();
-	ordersSelect();
+	
 	requestMsg();
 	menuToggle();
+	
+	orders();
+	ordersSelect();
+	orderServiceForm();
+	newOrderForm();
 	
 	//$('#addcontract').modal('show');
 	
