@@ -20,6 +20,7 @@ $(document).ready (function() {
 	connect_contract();
 	
 	bills();
+	orders();
 	
 	myAddress();
 	timepicker();
@@ -351,6 +352,8 @@ function ordersSelect(){
 		$('.planned').fadeIn(200);
 	});
 };
+
+//
 
 function contractsArchive(){
 	if($('#contractsToggle').hasClass('act')) {
@@ -763,6 +766,8 @@ function connect_contract(){
 	});
 };
 
+//
+
 function contracts(){
 	var page = $('#contracts');
 	
@@ -890,6 +895,8 @@ function loadContracts(type, sort, offset, limit, container){
 		}
 	});
 };
+
+//
 
 function bills(){
 	var page = $('#bills');
@@ -1032,6 +1039,50 @@ function loadActs(sort, offset, limit, container){
 		}
 	});
 };
+
+//
+
+function loadOrders(){
+	var page = $('#orders__list');
+	
+	if(!page.length){
+		return false;
+	};
+	
+	$.ajax({
+		type		: "GET",
+		url			: '/ajax/cabinet/orders',
+		data		: {},
+		dataType	: "json",
+		beforeSend	: function(request){
+			container.html('');
+			
+			$('#count_orders').text(0);
+			
+			$('.selector ul li').removeClass('act');
+			
+			$('#all').addClass('act');
+			
+			$('.orders__item').fadeOut(1);
+			$('.orders__item').fadeIn(200);
+		},
+		success		: function(response){
+			console.log('response:');
+			//console.log(response);
+			
+			if(response.status){
+				container.html(response.payload.html);
+				
+				$('#count_orders').text(response.payload.count);
+			}
+		},
+		error		: function(err){
+			console.log('error');
+		}
+	});
+};
+
+//
 
 function myAddress(){
 	var form = jQuery("#add__address-form");
@@ -1715,6 +1766,8 @@ function orderServiceForm(){
 							
 							//modal.find('.responseMsg').text(response.message);
 							modal.modal('show');
+							
+							loadOrders();
 						}else{
 							responseMsg(form, response);
 						}
@@ -1809,6 +1862,8 @@ function newOrderForm(){
 						if(response.status){
 							form.trigger('reset');
 							// responseMsg(form, response);
+
+							loadOrders();
 						}
 					},
 					error: function(err){

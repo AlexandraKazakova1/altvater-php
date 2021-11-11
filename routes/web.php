@@ -82,6 +82,10 @@ Route::group(['namespace' => 'Ajax'], function(){
 		'uses' => 'ActsController@index'
 	]);
 	
+	Route::get('ajax/cabinet/orders', [
+		'uses' => 'OrdersController@index'
+	]);
+	
 	Route::post('ajax/cabinet/add-address', [
 		'uses' => 'AddressController@add'
 	]);

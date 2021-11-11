@@ -148,4 +148,43 @@ class OrdersController extends Controller {
 		], 200, [], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 	}
 	
+	function index(Request $request){
+		$this->session();
+		
+		if(!$this->_auth){
+			return response()->json([
+				'status' 	=> $status,
+				'message'	=> $msg,
+				'errors'	=> $errors,
+				'payload'	=> $payload
+			], 200, [], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+		}
+		
+		$status = true;
+		$errors = array();
+		$msg	= '';
+		$payload= [
+			'html'	=> '',
+			'count'	=> Orders::query()->where('client_id', $this->_id)->count()
+		];
+		
+		$data = Orders::query()->where('client_id', $this->_id)->orderBy('created_at', 'desc')->get();
+		
+		$payload['html'] = view(
+								'account.components.orders',
+								[
+									'string'	=> new StringHelper,
+									'count'		=> $payload['count'],
+									'data'		=> $data
+								]
+							)
+							->render();
+		
+		return response()->json([
+			'status' 	=> $status,
+			'message'	=> $msg,
+			'errors'	=> $errors,
+			'payload'	=> $payload
+		], 200, [], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+	}
 }
