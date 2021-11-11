@@ -106,7 +106,7 @@ class ClientsController extends MyAdminController {
 			$form->text('phone'				, __('admin.clients.phone'))->rules('required|min:12|max:12');
 			$form->switch('verify_phone'	, __('admin.clients.verify_phone'));
 			
-			$form->text('extra_phone'		, __('admin.clients.extra_phone'))->rules('min:12|max:12');
+			$form->text('extra_phone'		, __('admin.clients.extra_phone'))->rules('max:12');
 			
 			$form->switch('blocked'			, __('admin.clients.blocked'));
 			
