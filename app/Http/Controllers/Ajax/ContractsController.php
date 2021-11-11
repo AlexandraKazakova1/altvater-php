@@ -337,7 +337,7 @@ class ContractsController extends Controller {
 		], 200, [], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 	}
 	
-	function connect_contract(){
+	function connect_contract(Request $request){
 		$this->session();
 		
 		if(!$this->_auth){
