@@ -106,7 +106,7 @@ class ActsController extends MyAdminController {
 			$users[$item->id] = '#'.$item->id.' - '.$item->surname.' '.$item->name;
 		}
 		
-		$form->select('client_id'	, __('admin.acts.client'))->options($users);
+		$form->select('client_id'	, __('admin.acts.client'))->options($users)->rules('required');
 		
 		$form->date('date'			, __('admin.acts.date'));
 		
@@ -120,12 +120,16 @@ class ActsController extends MyAdminController {
 										'2'	=> __('admin.acts.status.2'),
 										'3'	=> __('admin.acts.status.3'),
 										'4'	=> __('admin.acts.status.4')
-									]);
+									])->rules('required');
 		
-		$form->file('file'			, __('admin.acts.doc'))->help('PDF')->removable()->move('acts')->uniqueName();
+		$form->file('file'			, __('admin.acts.doc'))->help('PDF')->removable()->move('acts')->uniqueName()->rules('required');
+		$form->hidden('file_name');
 		
 		// callback before save
 		$form->saving(function (Form $form){
+			if(!empty($_FILES['file']['name'])){
+				$form->file_name = $_FILES['file']['name'];
+			}
 		});
 		
 		$form->saved(function(Form $form){

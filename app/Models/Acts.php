@@ -21,6 +21,7 @@ class Acts extends Model{
 		'number',
 		'status',
 		'file',
+		'file_name',
 		'name'
 	];
 	

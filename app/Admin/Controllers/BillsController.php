@@ -108,7 +108,7 @@ class BillsController extends MyAdminController {
 			$users[$item->id] = '#'.$item->id.' - '.$item->surname.' '.$item->name;
 		}
 		
-		$form->select('client_id'	, __('admin.bills.client'))->options($users);
+		$form->select('client_id'	, __('admin.bills.client'))->options($users)->rules('required');
 		
 		$form->date('date'			, __('admin.bills.date'));
 		
@@ -119,13 +119,18 @@ class BillsController extends MyAdminController {
 		
 		$form->switch('paid'		, __('admin.bills.paid'));
 		
-		$form->file('file'			, __('admin.bills.doc'))->help('PDF')->removable()->move('bills')->uniqueName();
+		$form->file('file'			, __('admin.bills.doc'))->help('PDF')->removable()->move('bills')->uniqueName()->rules('required');
+		$form->hidden('file_name');
 		
 		// callback before save
 		$form->saving(function (Form $form){
 			$form->amount		= trim($form->amount);
 			
 			$form->amount		= preg_replace("/[^0-9\.,]/", '', $form->amount);
+			
+			if(!empty($_FILES['file']['name'])){
+				$form->file_name = $_FILES['file']['name'];
+			}
 		});
 		
 		$form->saved(function(Form $form){

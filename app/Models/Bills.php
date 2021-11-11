@@ -21,7 +21,9 @@ class Bills extends Model{
 		'number',
 		'amount',
 		'paid',
-		'name'
+		'name',
+		'file',
+		'file_name'
 	];
 	
 	public function client(){
