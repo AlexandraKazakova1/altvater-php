@@ -1143,14 +1143,11 @@ function myAddress(){
 	
 	form.on('click', 'button.remove-img', function(e){
 		var current = $(this);
-		var n = current.attr('n');
+		var n = current.attr('data-n');
 		
-		console.log(current);
-		console.log(form.find('li[data-n="'+n+'"]'));
+		current.parent().remove();
 		
 		delete images[n];
-		
-		form.find('li[data-n="'+n+'"]').remove();
 	});
 	
 	var lock = false,
