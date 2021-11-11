@@ -72,11 +72,12 @@ function slidersConfig() {
 };
 
 function faqSlide() {
-    $('.reply').slideToggle();
-    $('.question').click(function() {
-        $(this).toggleClass('active');
-        $(this).parent().children('.reply').slideToggle(300);
-    });
+	$('.reply').slideToggle();
+	
+	$('.question').click(function() {
+		$(this).toggleClass('active');
+		$(this).parent().children('.reply').slideToggle(300);
+	});
 };
  
 function burgerMenu() {
@@ -95,84 +96,84 @@ function burgerMenu() {
 };
 
 function breadcrumbs() {
-    $('.breadcrumbs__toggle').click(function() {
-        // $('.dropdown__list').slideUp(300);
-        $(this).toggleClass('act');
-        $(this).parent().children('.dropdown__list').slideToggle(300);
-    });
-    $(document).mouseup(function (e){
-        if (!$('.dropdown__list').is(e.target) 
-        && $('.dropdown__list').has(e.target).length === 0) {
-            $('.dropdown__list').slideUp(300);
-            $('.breadcrumbs__toggle').removeClass('act')
-        } 
-    });
+	$('.breadcrumbs__toggle').click(function() {
+		// $('.dropdown__list').slideUp(300);
+		$(this).toggleClass('act');
+		$(this).parent().children('.dropdown__list').slideToggle(300);
+	});
+	
+	$(document).mouseup(function (e){
+		if (!$('.dropdown__list').is(e.target) && $('.dropdown__list').has(e.target).length === 0) {
+			$('.dropdown__list').slideUp(300);
+			$('.breadcrumbs__toggle').removeClass('act')
+		} 
+	});
 };
 
 function callBackForm() {
 	var form = jQuery("#callback-form");
-
-    if(!form.length){
+	
+	if(!form.length){
 		return false;
 	};
-
+	
 	var lock = false,
-    btn = form.find('button[type="submit"]');
-
-    form.validate({
-		onkeyup	: false,
-        focusCleanup: true,
-        focusInvalid: false,
-        errorClass: "error",
-        rules: {
-            name: {
-                required: true,
-                rangelength: [2, 100]
-            },
-            email: {
-                required: true,
-                email: true
-            },
-            rule: {
-                required: true
-            }
-        },
-        messages: {
-            name: {
-                required: "Введіть своє ім'я",
-                rangelength: "Введіть більше двох символів"
-            },
-            email: {
-                required: "Введіть свій e-mail!",
-                email: "Адреса має бути типу name@domain.com"
-            },
-            rule: {
-                required: "Підтвердіть свою згоду"
-            }
-        },
-		submitHandler: function() {
+		btn = form.find('button[type="submit"]');
+	
+	form.validate({
+		onkeyup			: false,
+		focusCleanup	: true,
+		focusInvalid	: false,
+		errorClass		: "error",
+		rules			: {
+			name			: {
+				required		: true,
+				rangelength		: [2, 100]
+			},
+			email			: {
+				required		: true,
+				email			: true
+			},
+			rule			: {
+				required		: true
+			}
+		},
+		messages		: {
+			name				: {
+				required			: "Введіть своє ім'я",
+				rangelength			: "Введіть більше двох символів"
+			},
+			email				: {
+				required			: "Введіть свій e-mail!",
+				email				: "Адреса має бути типу name@domain.com"
+			},
+			rule				: {
+				required			: "Підтвердіть свою згоду"
+			}
+		},
+		submitHandler	: function() {
 			if(!lock){
 				$.ajax({
 					type: "POST",
 					url: '/ajax/callback',
-                    method: "POST",
-                    data: form.serialize(),
-                    dataType: "json",
-                    beforeSend: function(request){
-                        lock = true;
-                        
-                        btn.attr('disabled', true);
-                        form.find('label.error').text('').hide();
+					method: "POST",
+					data: form.serialize(),
+					dataType: "json",
+					beforeSend: function(request){
+						lock = true;
+						
+						btn.attr('disabled', true);
+						form.find('label.error').text('').hide();
 					},
 					success: function(response){
 						console.log('response:');
 						console.log(response);
 						
 						lock = false;
-                        btn.attr('disabled', false);
-
-                        responseMsg(form, response);
-
+						btn.attr('disabled', false);
+						
+						responseMsg(form, response);
+						
 						if(response.status){;
 							form.trigger('reset');
 						}
@@ -180,14 +181,14 @@ function callBackForm() {
 					error: function(err){
 						console.log('error');
 						lock = false;
-                        btn.attr('disabled', false);
-                        responseMsg(form, err);
+						btn.attr('disabled', false);
+						responseMsg(form, err);
 					}
 				});
 			};
 			return false;
-	    }
-    });
+		}
+	});
 };
 
 function slideScroll() {
@@ -203,39 +204,36 @@ function slideScroll() {
 };
 
 function modalFade() {
-    var closeBtn = $('.close')
-
-    $('.btn-logIn').click(function() {
-        $('.modal').modal('hide');
-        $('#log__in-modal').modal('show');
-    });
-    $('.btn-reg').click(function() {
-        $('.modal').modal('hide');
-        $('#create-modal').modal('show');
-    });
-
-    $('.btn-forgot').click(function() {
-        $('.modal').modal('hide');
-        $('#recovery-modal-1').modal('show');
-    });
-    // $('.recovery-1').click(function() {
-    //     $('.modal').modal('hide');
-    //     $('#recovery-modal-2').modal('show');
-    // });
-    $('#calculator').click(function() {
-        $('.modal').modal('hide');
-        $('#servicesCalc').modal('show');
-    });
-    $('.calc-btn').click(function() {
-        $('.modal').modal('hide');
-        $('#servicesCalc').modal('show');
-    });
-    
-
-
-    closeBtn.click(function() {
-        $(this).parents('.modal').modal('hide');
-    });
+	var closeBtn = $('.close')
+	
+	$('.btn-logIn').click(function() {
+		$('.modal').modal('hide');
+		$('#log__in-modal').modal('show');
+	});
+	
+	$('.btn-reg').click(function() {
+		$('.modal').modal('hide');
+		$('#create-modal').modal('show');
+	});
+	
+	$('.btn-forgot').click(function() {
+		$('.modal').modal('hide');
+		$('#recovery-modal-1').modal('show');
+	});
+	
+	$('#calculator').click(function() {
+		$('.modal').modal('hide');
+		$('#servicesCalc').modal('show');
+	});
+	
+	$('.calc-btn').click(function() {
+		$('.modal').modal('hide');
+		$('#servicesCalc').modal('show');
+	});
+	
+	closeBtn.click(function() {
+		$(this).parents('.modal').modal('hide');
+	});
 };
 
 function logIn() {
@@ -837,112 +835,106 @@ function passRecovery3() {
 };
 
 function passVerificationForm() {
-    $(".verifCode").keyup(function () {
-        if (this.value.length == this.maxLength) {
-            $(this).next('.verifCode').focus();
-        }
-    });
-
 	var form = jQuery("#pass__verification-form");
-
-    if(!form.length){
+	
+	if(!form.length){
 		return false;
 	};
-
+	
+	$(".verifCode").keyup(function () {
+		if (this.value.length == this.maxLength) {
+			$(this).next('.verifCode').focus();
+		}
+	});
+	
 	var lock = false,
-    btn = form.find('button[type="submit"]');
-
-    form.validate({
-		onkeyup	: false,
-        focusCleanup: true,
-        focusInvalid: false,
-        errorClass: "error",
-        rules: {
-            verifCode: {
-                required: true
-            }
-        },
-        messages: {
-            verifCode: {
-                required: 'Введите код'
-            }
-        },
-		submitHandler: function() {
+		btn = form.find('button[type="submit"]');
+	
+	form.validate({
+		onkeyup			: false,
+		focusCleanup	: true,
+		focusInvalid	: false,
+		errorClass		: "error",
+		rules			: {
+		},
+		messages		: {
+		},
+		submitHandler	: function() {
 			if(!lock){
 				$.ajax({
-					type: "POST",
-					url: '/ajax/user/verification',
-                    data: form.serialize(),
-                    dataType: "json",
-                    beforeSend: function(request){
-                        lock = true;
-                        
-                        btn.attr('disabled', true);
-                        form.find('label.error').text('').hide();
+					type		: "POST",
+					url			: '/ajax/user/verification',
+					data		: form.serialize(),
+					dataType	: "json",
+					beforeSend	: function(request){
+						lock = true;
+						
+						btn.attr('disabled', true);
+						form.find('label.error').text('').hide();
 					},
-					success: function(response){
+					success		: function(response){
 						console.log('response:');
 						console.log(response);
 						
 						lock = false;
-                        btn.attr('disabled', false);
-                        
-                        responseMsg(form, response);
+						btn.attr('disabled', false);
+						
+						responseMsg(form, response);
 						
 						if(response.status){;
 							form.trigger('reset');
-                            window.location.href = '/account';
+							window.location.href = '/account';
 						}
 					},
-					error: function(err){
+					error		: function(err){
 						console.log('error');
 						lock = false;
-                        btn.attr('disabled', false);
-                        responseMsg(form, err);
+						btn.attr('disabled', false);
+						responseMsg(form, err);
 					}
 				});
 			};
 			
 			return false;
-	    }
-    });
+		}
+	});
 };
 
 function responseMsg(form, response) {
-    form.find('.responseMsg').text(response.message)
+	form.find('.responseMsg').text(response.message)
 };
 
 function checkCookies() {
-    let cookieDate = localStorage.getItem('cookieDate');
-    let cookieNotification = document.getElementById('cookie_notification');
-    let cookieBtn = cookieNotification.querySelector('.cookie_accept');
-
-    // Если записи про кукисы нет или она просрочена на 1 год, то показываем информацию про кукисы
-    if( !cookieDate || (+cookieDate + 31536000000) < Date.now() ){
-        cookieNotification.classList.add('show');
-    }
-
-    // При клике на кнопку, в локальное хранилище записывается текущая дата в системе UNIX
-    cookieBtn.addEventListener('click', function(){
-        localStorage.setItem( 'cookieDate', Date.now() );
-        cookieNotification.classList.remove('show');
-    })
-}
+	let cookieDate = localStorage.getItem('cookieDate');
+	let cookieNotification = document.getElementById('cookie_notification');
+	let cookieBtn = cookieNotification.querySelector('.cookie_accept');
+	
+	// Если записи про кукисы нет или она просрочена на 1 год, то показываем информацию про кукисы
+	if( !cookieDate || (+cookieDate + 31536000000) < Date.now() ){
+		cookieNotification.classList.add('show');
+	};
+	
+	// При клике на кнопку, в локальное хранилище записывается текущая дата в системе UNIX
+	cookieBtn.addEventListener('click', function(){
+		localStorage.setItem( 'cookieDate', Date.now() );
+		cookieNotification.classList.remove('show');
+	});
+};
 
 function createModal() {
-    $('.btn-individual').click(function() {
-        $('.btn-entity').removeClass('act');
-        $('#create-form__entity').removeClass('act');
-        $('.btn-individual').addClass('act');
-        $('#create-form__individual').addClass('act');
-    });
-    
-    $('.btn-entity').click(function() {
-        $('.btn-individual').removeClass('act');
-        $('#create-form__individual').removeClass('act');
-        $('.btn-entity').addClass('act');
-        $('#create-form__entity').addClass('act');
-    });
+	$('.btn-individual').click(function() {
+		$('.btn-entity').removeClass('act');
+		$('#create-form__entity').removeClass('act');
+		$('.btn-individual').addClass('act');
+		$('#create-form__individual').addClass('act');
+	});
+	
+	$('.btn-entity').click(function() {
+		$('.btn-individual').removeClass('act');
+		$('#create-form__individual').removeClass('act');
+		$('.btn-entity').addClass('act');
+		$('#create-form__entity').addClass('act');
+	});
 };
 
 // function calcPopup() {
