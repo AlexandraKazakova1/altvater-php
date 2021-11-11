@@ -400,20 +400,25 @@ function contractIndividual(){
 			},
 			phone			: {
 				required		: true,
+				minlength		: 9,
+				maxlength		: 13
 			},
-			address			: {
+			addresses		: {
 				required		: true,
-				minlength		: 10
+				minlength		: 10,
+				maxlength		: 150
 			},
 			index			: {
 				required		: true,
-				minlength		: 5
+				minlength		: 5,
+				maxlength		: 4
 			}
 		},
 		messages		: {
 			name			: {
 				required		: "Введіть ваше ПІБ",
-				minlength		: "Некоректні дані"
+				minlength		: "Некоректні дані",
+				maxlength		: "Некоректні дані"
 			},
 			email			: {
 				required		: "Введіть свій e-mail!",
@@ -422,13 +427,15 @@ function contractIndividual(){
 			phone			: {
 				required		: "Введіть ваш номер телефону",
 			},
-			address			: {
+			addresses		: {
 				required		: "Введіть вашу адресу",
-				minlength		: "Некоректні дані"
+				minlength		: "Некоректні дані",
+				maxlength		: "Некоректні дані"
 			},
 			index			: {
 				required		: "Введіть ваш поштовий індекс",
-				minlength		: "Некоректні дані"
+				minlength		: "Некоректні дані",
+				maxlength		: "Некоректні дані"
 			}
 		},
 		submitHandler	: function() {
@@ -498,95 +505,104 @@ function contractEntity(){
 	var modal = $('#response');
 	
 	form.validate({
-		onkeyup	: false,
-		focusCleanup: true,
-		focusInvalid: false,
-		errorClass: "error",
-		rules: {
-			name: {
-				required: true,
-				minlength: 8
+		onkeyup			: false,
+		focusCleanup	: true,
+		focusInvalid	: false,
+		errorClass		: "error",
+		rules			: {
+			name			: {
+				required		: true,
+				minlength		: 2,
+				maxlength		: 100
 			},
-			contact: {
-				required: true,
-				minlength: 2
+			contact			: {
+				required		: true,
+				minlength		: 2
 			},
-			address: {
-				required: true,
-				minlength: 10
+			addresses		: {
+				required		: true,
+				minlength		: 10
 			},
-			email: {
-				required: true,
-				email: true
+			email			: {
+				required		: true,
+				email			: true
 			},
-			phone: {
-				required: true,
+			phone			: {
+				required		: true,
+				minlength		: 9,
+				maxlength		: 13
 			},
-			extra_phone: {
-				required: false,
+			extra_phone		: {
+				required		: false,
 			},
-			ipn: {
-				required: true,
-				minlength: 12,
-				maxlength: 12
+			ipn				: {
+				required		: true,
+				minlength		: 5,
+				maxlength		: 8
 			},
-			uedrpou: {
-				required: true,
-				minlength: 8,
-				maxlength: 8
+			edrpou			: {
+				required		: true,
+				minlength		: 8,
+				maxlength		: 12
 			},
-			index: {
-				required: true,
-				minlength: 5
+			index			: {
+				required		: true,
+				minlength		: 5,
+				maxlength		: 5
 			}
 		},
-		messages: {
-			name: {
-				required: "Введіть назву компанії",
-				minlength: "Некоректні дані"
+		messages		: {
+			company_name	: {
+				required		: "Введіть назву компанії",
+				minlength		: "Некоректні дані",
+				maxlength		: "Некоректні дані"
 			},
-			contact: {
-				required: "Введіть ПІБ контактної особи",
-				minlength: "Некоректні дані"
+			name			: {
+				required		: "Введіть ПІБ контактної особи",
+				minlength		: "Некоректні дані",
+				maxlength		: "Некоректні дані"
 			},
-			address: {
-				required: "Введіть вашу юридичну адресу",
-				minlength: "Некоректні дані"
+			addresses		: {
+				required		: "Введіть вашу юридичну адресу",
+				minlength		: "Некоректні дані",
+				maxlength		: "Некоректні дані"
 			},
-			email: {
-				required: "Введіть e-mail!",
-				email: "Адреса має бути типу name@domain.com"
+			email			: {
+				required		: "Введіть e-mail!",
+				email			: "Адреса має бути типу name@domain.com"
 			},
-			phone: {
-				required: "Введіть номер телефону"
+			phone			: {
+				required		: "Введіть номер телефону",
+				minlength		: "Некоректні дані",
+				maxlength		: "Некоректні дані"
 			},
-			extra_phone: {
-				required: "Введіть додатковий номер телефону"
+			extra_phone		: {
+				required		: "Введіть додатковий номер телефону"
 			},
-			ipn: {
-				required: "Це поле обов'язкове для заповнення",
-				minlength: "Некоректні дані",
-				maxlength: "Некоректні дані"
+			ipn				: {
+				required		: "Це поле обов'язкове для заповнення",
+				minlength		: "Некоректні дані",
+				maxlength		: "Некоректні дані"
 			},
-			uedrpou: {
-				required: "Це поле обов'язкове для заповнення",
-				minlength: "Некоректні дані",
-				maxlength: "Некоректні дані"
+			edrpou			: {
+				required		: "Це поле обов'язкове для заповнення",
+				minlength		: "Некоректні дані",
+				maxlength		: "Некоректні дані"
 			},
-			index: {
-				required: "Введіть ваш поштовий індекс",
-				minlength: "Некоректні дані"
+			index			: {
+				required		: "Введіть ваш поштовий індекс",
+				minlength		: "Некоректні дані"
 			}
 		},
-		submitHandler: function() {
+		submitHandler	: function() {
 			if(!lock){
 				$.ajax({
-					type: "POST",
-					url: '/ajax/cabinet/contracts/add',
-					method: "POST",
-					data: form.serialize(),
-					dataType: "json",
-					beforeSend: function(request){
+					type		: "POST",
+					url			: '/ajax/cabinet/contracts/add',
+					method		: "POST",
+					data		: form.serialize(),
+					dataType	: "json",
+					beforeSend	: function(request){
 						lock = true;
 						
 						btn.attr('disabled', true);
@@ -594,7 +610,7 @@ function contractEntity(){
 						form.find('label.error').text('').hide();
 						form.find('.responseMsg').text('');
 					},
-					success: function(response){
+					success		: function(response){
 						console.log('response:');
 						console.log(response);
 						
@@ -614,7 +630,7 @@ function contractEntity(){
 							responseMsg(form, response);
 						}
 					},
-					error: function(err){
+					error		: function(err){
 						console.log('error');
 						
 						lock = false;

@@ -67,8 +67,8 @@ class ContractsController extends Controller {
 		$validator = Validator::make(
 			$post,
 			array(
-				'name'					=> 'required|string|min:2|max:200',
-				'address'				=> 'required|string|min:2|max:150',
+				'name'					=> 'required|string|min:2|max:100',
+				'addresses'				=> 'required|string|min:2|max:150',
 				'email'					=> 'required|email',
 				'phone'					=> 'required|string|min:9|max:13',
 				'index'					=> 'required'
@@ -82,9 +82,9 @@ class ContractsController extends Controller {
 				'contact.min'			=> trans('ajax_validation.min_length'),
 				'contact.max'			=> trans('ajax_validation.max_length'),
 				
-				'address.required'		=> trans('ajax_validation.required'),
-				'address.min'			=> trans('ajax_validation.min_length'),
-				'address.max'			=> trans('ajax_validation.max_length'),
+				'addresses.required'		=> trans('ajax_validation.required'),
+				'addresses.min'			=> trans('ajax_validation.min_length'),
+				'addresses.max'			=> trans('ajax_validation.max_length'),
 				
 				'email.required'		=> trans('ajax_validation.required'),
 				'email.min'				=> trans('ajax_validation.min_length'),
@@ -107,6 +107,7 @@ class ContractsController extends Controller {
 					'name'				=> $post['name'],
 					'email'				=> $post['email'],
 					'phone'				=> $post['phone'],
+					'address'			=> $post['addresses'],
 					'index'				=> $post['index']
 				]);
 				
@@ -155,24 +156,24 @@ class ContractsController extends Controller {
 		$validator = Validator::make(
 			$post,
 			array(
-				'name'					=> 'required|string|min:2|max:200',
-				'contact'				=> 'required|string|min:2|max:100',
-				'address'				=> 'required|string|min:2|max:150',
+				'company_name'			=> 'required|string|min:2|max:100',
+				'name'					=> 'required|string|min:2|max:100',
+				'addresses'				=> 'required|string|min:2|max:150',
 				'email'					=> 'required|email',
 				'phone'					=> 'required|string|min:9|max:13',
-				'extra_phone'			=> 'max:13',
+				'extra_phone'			=> 'min:9|max:13',
 				'index'					=> 'required',
 				'ipn'					=> 'required',
 				'edrpou'				=> 'required',
 			),
 			array(
+				'company_name.required'	=> trans('ajax_validation.required'),
+				'company_name.min'		=> trans('ajax_validation.min_length'),
+				'company_name.max'		=> trans('ajax_validation.max_length'),
+				
 				'name.required'			=> trans('ajax_validation.required'),
 				'name.min'				=> trans('ajax_validation.min_length'),
 				'name.max'				=> trans('ajax_validation.max_length'),
-				
-				'contact.required'		=> trans('ajax_validation.required'),
-				'contact.min'			=> trans('ajax_validation.min_length'),
-				'contact.max'			=> trans('ajax_validation.max_length'),
 				
 				'address.required'		=> trans('ajax_validation.required'),
 				'address.min'			=> trans('ajax_validation.min_length'),
@@ -182,6 +183,26 @@ class ContractsController extends Controller {
 				'email.min'				=> trans('ajax_validation.min_length'),
 				'email.max'				=> trans('ajax_validation.max_length'),
 				'email.email'			=> trans('ajax_validation.email'),
+				
+				'phone.required'		=> trans('ajax_validation.required'),
+				'phone.min'				=> trans('ajax_validation.min_length'),
+				'phone.max'				=> trans('ajax_validation.max_length'),
+				
+				'extra_phone.required'	=> trans('ajax_validation.required'),
+				'extra_phone.min'		=> trans('ajax_validation.min_length'),
+				'extra_phone.max'		=> trans('ajax_validation.max_length'),
+				
+				'index.required'		=> trans('ajax_validation.required'),
+				'index.min'				=> trans('ajax_validation.min_length'),
+				'index.max'				=> trans('ajax_validation.max_length'),
+				
+				'ipn.required'			=> trans('ajax_validation.required'),
+				'ipn.min'				=> trans('ajax_validation.min_length'),
+				'ipn.max'				=> trans('ajax_validation.max_length'),
+				
+				'edrpou.required'		=> trans('ajax_validation.required'),
+				'edrpou.min'			=> trans('ajax_validation.min_length'),
+				'edrpou.max'			=> trans('ajax_validation.max_length'),
 			)
 		);
 		
@@ -199,8 +220,8 @@ class ContractsController extends Controller {
 			if(!$error){
 				$record = Contracts::create([
 					'client_id'			=> $this->_id,
-					'name'				=> $post['name'],
-					'contact'			=> $post['contact'],
+					'name'				=> $post['company_name'],
+					'contact'			=> $post['name'],
 					'email'				=> $post['email'],
 					'phone'				=> $post['phone'],
 					'extra_phone'		=> $post['extra_phone'],
