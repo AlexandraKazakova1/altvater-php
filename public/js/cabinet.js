@@ -1111,15 +1111,9 @@ function myAddress(){
 			return false;
 		};
 		
-		console.log('file:');
-		console.log(file);
-		
 		var reader = new FileReader();
 		
 		reader.onload = function(e) {
-			console.log('onload:');
-			console.log(e);
-			
 			let encoded = e.target.result.toString().replace(/^data:(.*,)?/, '');
 			
 			if((encoded.length % 4) > 0){

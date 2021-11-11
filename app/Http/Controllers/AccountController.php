@@ -268,7 +268,7 @@ class AccountController extends MyController {
 				'data'			=> Dialogues::query()->where('client_id', $this->_id)->orderBy('created_at', 'desc')->get(),
 				'services'		=> OrdersServices::query()->orderBy('name', 'asc')->get(),
 				'themes'		=> Themes::query()->orderBy('label', 'asc')->get(),
-				'contracts'		=> Contracts::query()->where('client_id', $this->_id)->orderBy('created_at', 'desc')->select('id', 'number')->get()
+				'contracts'		=> Contracts::query()->where('client_id', $this->_id)->whereRaw(DB::raw('number IS NOT NULL'))->orderBy('created_at', 'desc')->select('id', 'number')->get()
 			]
 		);
 	}
