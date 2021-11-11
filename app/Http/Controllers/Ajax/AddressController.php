@@ -116,9 +116,9 @@ class AddressController extends Controller {
 							$item['mime'] = explode('/', $item['mime']);
 							
 							if($item['mime'][0] == 'image'){
-								$item['data']	 = explode('base64', $item['data']);
+								//$item['data']	 = explode('base64', $item['data']);
 								
-								$images[]	= base64_decode($item['data'][1]);
+								$images[]	= base64_decode($item['data']);
 								$names[]	= md5(time().'-'.$i.'-'.$item['mime'][1]).'.'.$item['mime'][1];
 							}
 						}
