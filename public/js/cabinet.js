@@ -1088,7 +1088,7 @@ function loadOrders(){
 //
 
 function myAddress(){
-	var form = jQuery("#add__address-form");
+	var form = $("#add__address-form");
 	
 	if(!form.length){
 		return false;
@@ -1286,7 +1286,7 @@ function myAddress(){
 		initMap(dataLat, dataLng);
 	});
 	
-	info_modal.on('click', 'button.remove', function(){
+	$("#add__address-modal").on('click', 'button.remove', function(){
 		var current = $(this);
 		
 		var id = current.attr('data-id');
