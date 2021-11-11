@@ -411,7 +411,7 @@ function contractIndividual(){
 			index			: {
 				required		: true,
 				minlength		: 5,
-				maxlength		: 4
+				maxlength		: 6
 			}
 		},
 		messages		: {
@@ -543,12 +543,12 @@ function contractEntity(){
 			edrpou			: {
 				required		: true,
 				minlength		: 8,
-				maxlength		: 12
+				maxlength		: 50
 			},
 			index			: {
 				required		: true,
 				minlength		: 5,
-				maxlength		: 5
+				maxlength		: 6
 			}
 		},
 		messages		: {
@@ -591,7 +591,8 @@ function contractEntity(){
 			},
 			index			: {
 				required		: "Введіть ваш поштовий індекс",
-				minlength		: "Некоректні дані"
+				minlength		: "Некоректні дані",
+				maxlength		: "Некоректні дані"
 			}
 		},
 		submitHandler	: function() {
