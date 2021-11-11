@@ -486,7 +486,7 @@ function createEntity() {
 			},
 			ipn				: {
 				required		: true,
-				minlength		: 5,
+				minlength		: 6,
 				maxlength		: 10,
 				number			: true
 			},
@@ -546,9 +546,9 @@ function createEntity() {
 			},
 			ipn				: {
 				required		: "Введіть ІПН",
-				minlength		: "Код має містити 10 цифр",
-				maxlength		: "Код має містити 10 цифр",
-				number			: "Код має містити 10 цифр"
+				minlength		: "Код вказано не корректно",
+				maxlength		: "Код вказано не корректно",
+				number			: "Код вказано не корректно",
 			},
 			uedrpou			: {
 				required		: "Введіть ЄДРПОУ",
