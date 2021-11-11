@@ -14,6 +14,8 @@ use App\Models\Dialogues;
 use App\Models\Messages;
 use App\Models\Themes;
 
+use App\Models\User;
+
 use App\Helpers\MyBreadcrumbs;
 use App\Helpers\StringHelper;
 use App\Helpers\ImageHelper;
