@@ -727,7 +727,9 @@ function loadContracts(type, sort, offset, limit, container){
 					if(count == response.payload.count){
 						container.find('button.more').hide();
 					}
-				}
+				};
+				
+				$('#count_'+type).text(response.payload.count);
 			}
 		},
 		error		: function(err){

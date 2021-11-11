@@ -58,7 +58,7 @@
 			<div class="contracts__content">
 				<div class="filters">
 					<div>
-						Кількість договорів: <span class="counter">{{$count}}</span>
+						Кількість договорів: <span class="counter" id="count_active">{{$count}}</span>
 					</div>
 					
 					<div class="filters__list">
@@ -80,7 +80,7 @@
 			<div class="archive__content">
 				<div class="filters">
 					<div>
-						Кількість договорів: <span class="counter">{{$count_archive}}</span>
+						Кількість договорів: <span class="counter" id="count_archive">{{$count_archive}}</span>
 					</div>
 					
 					<div class="filters__list">
