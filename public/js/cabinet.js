@@ -1141,9 +1141,12 @@ function myAddress(){
 		//images.append(name, blob, file.name);
 	});
 	
-	form.on('click', 'button.remove-img', function(){
+	form.on('click', 'button.remove-img', function(e){
 		var current = $(this);
 		var n = current.attr('n');
+		
+		console.log(current);
+		console.log(form.find('li[data-n="'+n+'"]'));
 		
 		delete images[n];
 		
