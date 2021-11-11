@@ -1461,8 +1461,8 @@ function requestForm(){
 	control_file.on('change', function(e){
 		e.preventDefault();
 		
-		var file = e.target.files[0];
-		var mime = file.type.split('/');
+		var current_file = e.target.files[0];
+		var mime = current_file.type.split('/');
 		
 		if(mime[0] != 'image' && mime[0] != 'application'){
 			return false;
@@ -1478,12 +1478,12 @@ function requestForm(){
 			};
 			
 			file = {
-				'name'	: file.name,
-				'mime'	: file.type,
+				'name'	: current_file.name,
+				'mime'	: current_file.type,
 				'data'	: encoded
 			};
 			
-			added_file.append('<li><span>'+file.name+'</span><button class="remove-img" type="button"></button></li>');
+			added_file.append('<li><span>'+current_file.name+'</span><button class="remove-img" type="button"></button></li>');
 		};
 		
 		reader.onerror = function(e) {
@@ -1491,7 +1491,7 @@ function requestForm(){
 			console.log(e);
 		};
 		
-		reader.readAsDataURL(file);
+		reader.readAsDataURL(current_file);
 	});
 	
 	form.on('click', 'button.remove-img', function(e){
