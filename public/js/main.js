@@ -486,7 +486,7 @@ function createEntity() {
 			},
 			ipn				: {
 				required		: true,
-				minlength		: 10,
+				minlength		: 5,
 				maxlength		: 10,
 				number			: true
 			},
@@ -497,8 +497,8 @@ function createEntity() {
 			},
 			index			: {
 				required		: true,
-				minlength		: 6,
-				maxlength		: 10,
+				minlength		: 5,
+				maxlength		: 6,
 				number			: true
 			},
 			agree			: {
@@ -555,7 +555,7 @@ function createEntity() {
 				minlength		: "Мінімальна довжина 8 символів",
 				maxlength		: "Максимальна довжина 50 символів"
 			},
-			ipn				: {
+			index			: {
 				required		: "Введіть індекс",
 				minlength		: "Індекс має містити 5 цифр",
 				maxlength		: "Індекс має містити 5 цифр",
