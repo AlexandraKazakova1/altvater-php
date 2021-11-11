@@ -38,7 +38,7 @@
 					</div>
 				</section>
 				
-				<section class="volume__wrapper">
+				<section class="volume__wrapper" style="display:none;">
 					<div class="title__wrapper with-select">
 						<h2 class="section__title">Об'єми відходів</h2>
 						
