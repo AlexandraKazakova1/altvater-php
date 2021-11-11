@@ -1126,7 +1126,7 @@ function myAddress(){
 				'data'	: b64EncodeUnicode(e.target.result)
 			};
 			
-			added_file.append('<li data-n="'+n+'"><span>'+file.name+'</span><button data-n="'+n+'" type="button"></button></li>');
+			added_file.append('<li data-n="'+n+'"><span>'+file.name+'</span><button class="remove" data-n="'+n+'" type="button"></button></li>');
 			
 			n++;
 		};
