@@ -344,7 +344,7 @@ class UserController extends Controller {
 				'password'				=> 'required|min:8|max:24',
 				'confirm_password'		=> 'required|min:8|max:24',
 				
-				'ipn'					=> 'required|min:5|max:12',
+				'ipn'					=> 'required|min:10|max:12',
 				'uedrpou'				=> 'required|min:8|max:50',
 				'index'					=> 'required|min:5|max:6',
 			),

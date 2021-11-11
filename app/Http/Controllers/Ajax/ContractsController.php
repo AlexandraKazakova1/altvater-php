@@ -164,7 +164,7 @@ class ContractsController extends Controller {
 				'phone'					=> 'required|string|min:9|max:13',
 				'extra_phone'			=> 'min:9|max:13',
 				'index'					=> 'required|min:5|max:6',
-				'ipn'					=> 'required|min:5|max:12',
+				'ipn'					=> 'required|min:10|max:12',
 				'edrpou'				=> 'required',
 			),
 			array(
