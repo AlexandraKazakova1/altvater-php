@@ -724,13 +724,12 @@ function loadContracts(type, sort, offset, limit, container){
 	$.ajax({
 		type		: "GET",
 		url			: '/ajax/cabinet/contracts/'+type,
-		data		: JSON.stringify({
+		data		: {
 			sort		: sort,
 			offset		: offset,
 			limit		: limit
-		}),
+		},
 		dataType	: "json",
-		contentType	: "application/json; charset=utf-8",
 		beforeSend	: function(request){
 			container.find('.contract__item').remove();
 			container.find('button.more').hide();
