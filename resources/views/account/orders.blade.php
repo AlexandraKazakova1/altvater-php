@@ -88,8 +88,8 @@
 					<li id="all" data-type="all" class="act">Всі замовлення</li>
 					<li id="processed" data-type="processed" >В обробці</li>
 					<li id="performed" data-type="performed" >Виконуються</li>
-					<li data-type="ready" >Готові</li>
-					<li data-type="planned" >Заплановано</li>
+					<li id="ready" data-type="ready" >Готові</li>
+					<li id="planned" data-type="planned" >Заплановано</li>
 				</ul>
 			</div>
 			
