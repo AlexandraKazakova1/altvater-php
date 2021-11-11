@@ -406,13 +406,19 @@ function createIndividual() {
 						
 						lock = false;
 						btn.attr('disabled', false);
-
-						responseMsg(form, response);
 						
 						if(response.status){
-							openActivationModal(response.payload);
+							form.trigger('reset');
+							
+							//$('#verification-modal').modal('show');
+							//openActivationModal(response.payload);
+							
 							$('.modal').modal('hide');
-							$('#verification-modal').modal('show');
+							
+							$('#recovery-modal-2').find('.recovery-mail').text(response.payload.email);
+							$('#recovery-modal-2').modal('show');
+						}else{
+							responseMsg(form, response);
 						}
 					},
 					error		: function(err){
@@ -585,12 +591,17 @@ function createEntity() {
 						lock = false;
 						btn.attr('disabled', false);
 						
-						responseMsg(form, response);
-						
 						if(response.status){
 							form.trigger('reset');
 							
-							openActivationModal(response.payload);
+							//openActivationModal(response.payload);
+							
+							$('.modal').modal('hide');
+							
+							$('#recovery-modal-2').find('.recovery-mail').text(response.payload.email);
+							$('#recovery-modal-2').modal('show');
+						}else{
+							responseMsg(form, response);
 						}
 					},
 					error		: function(err){
