@@ -4,6 +4,7 @@ namespace App\Admin\Controllers;
 
 use App\Models\Connects;
 use App\Models\User;
+use App\Models\Contracts;
 
 use App\Admin\Controllers\MyAdminController;
 
@@ -108,7 +109,7 @@ class ConnectsController extends MyAdminController {
 			$users[$item->id] = '#'.$item->id.' - '.$item->surname.' '.$item->name;
 		}
 		
-		$form->select('client_id'	, __('admin.connects.client'))->options($users);
+		$form->select('client_id'	, __('admin.connects.client'))->options($users)->rules('required');
 		
 		$form->text('number'		, __('admin.connects.number'))->rules('max:30');
 		$form->text('name'			, __('admin.connects.name'))->rules('max:100');
@@ -120,10 +121,27 @@ class ConnectsController extends MyAdminController {
 			$form->hidden('confirm');
 		}
 		
+		$form->hidden('contract_id');
+		
 		// callback before save
 		$form->saving(function (Form $form) use ($record) {
-			print_r($form->confirm);
-			exit;
+			if($form->confirm == 'on' && !$record->confirm){
+				// contract_id
+				
+				$record = Contracts::query()->where('number', $form->number)->first();
+				
+				if(!$record){
+					$record = Contracts::create([
+						'client_id'	=> $form->client_id,
+						'name'		=> $form->name,
+						'contact'	=> $form->name,
+						'number'	=> $form->number,
+						'edrpou'	=> $form->edrpou
+					]);
+				}else{
+					$record->update(['client_id' => $form->client_id]);
+				}
+			}
 		});
 		
 		$form->saved(function(Form $form){

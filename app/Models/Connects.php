@@ -20,7 +20,8 @@ class Connects extends Model{
 		'number',
 		'name',
 		'edrpou',
-		'confirm'
+		'confirm',
+		'contract_id'
 	];
 	
 	public function client(){
