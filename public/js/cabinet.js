@@ -646,7 +646,7 @@ function contracts(){
 	sort_active_contracts.on('change', function(){
 		var value = $(this).val();
 		
-		loadContracts('active', value, active_contracts.attr('data-limit'), sort_active_contracts);
+		loadContracts('active', value, active_contracts.attr('data-limit'), active_contracts);
 	});
 	
 	sort_archive_contracts.on('change', function(){
@@ -654,7 +654,7 @@ function contracts(){
 		
 		console.log(value);
 		
-		loadContracts('archive', value, sort_archive_contracts.attr('data-limit'), sort_active_contracts);
+		loadContracts('archive', value, archive_contracts.attr('data-limit'), archive_contracts);
 	});
 };
 

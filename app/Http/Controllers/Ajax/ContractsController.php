@@ -257,6 +257,8 @@ class ContractsController extends Controller {
 		$type = $request->route('type');
 		
 		if($type == "active" || $type == "archive"){
+			$status = true;
+			
 			$payload['count'] = Contracts::query()->where('client_id', $this->_id)->whereRaw(DB::raw('(`archive` IS NULL OR `archive` = 0)'))->count();
 			
 			$offset = 0;
