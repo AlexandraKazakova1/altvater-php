@@ -75,11 +75,11 @@ Route::group(['namespace' => 'Ajax'], function(){
 	])->where(['type' => '[a-z]+']);
 	
 	Route::get('ajax/cabinet/bills', [
-		'uses' => 'ContractsController@bills_list'
+		'uses' => 'BillsController@index'
 	]);
 	
 	Route::get('ajax/cabinet/acts', [
-		'uses' => 'ContractsController@acts_list'
+		'uses' => 'ActsController@index'
 	]);
 	
 	Route::post('ajax/cabinet/add-address', [

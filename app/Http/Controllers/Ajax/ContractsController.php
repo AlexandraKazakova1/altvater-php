@@ -278,55 +278,79 @@ class ContractsController extends Controller {
 		
 		$type = $request->route('type');
 		
-		if($type == "active" || $type == "archive"){
-			$status = true;
-			
-			$payload['count'] = Contracts::query()->where('client_id', $this->_id)->whereRaw(DB::raw('(`archive` IS NULL OR `archive` = 0)'))->count();
-			
-			$offset = (int)$request->get('offset');
-			$limit	= 4;
-			
-			if($offset < 0){
-				$offset = 0;
-			}else{
-				if($offset > $payload['count']){
-					$offset = $payload['count'];
-				}
+		if($type != "active" && $type != "archive"){
+			return response()->json([
+				'status' 	=> $status,
+				'message'	=> $msg,
+				'errors'	=> $errors,
+				'payload'	=> $payload
+			], 200, [], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+		}
+		
+		$sort = $request->get('sort');
+		
+		if($sort != "date" && $sort != "number"){
+			return response()->json([
+				'status' 	=> $status,
+				'message'	=> $msg,
+				'errors'	=> $errors,
+				'payload'	=> $payload
+			], 200, [], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+		}
+		
+		$column = 'created_at';
+		
+		if($sort == "number"){
+			$column = 'number';
+		}
+		
+		$status = true;
+		
+		$payload['count'] = Contracts::query()->where('client_id', $this->_id)->whereRaw(DB::raw('(`archive` IS NULL OR `archive` = 0)'))->count();
+		
+		$offset = (int)$request->get('offset');
+		$limit	= 4;
+		
+		if($offset < 0){
+			$offset = 0;
+		}else{
+			if($offset > $payload['count']){
+				$offset = $payload['count'];
 			}
+		}
+		
+		if($type == "active"){
+			$data = Contracts::query()
+							->where('client_id', $this->_id)
+							->whereRaw(DB::raw('(`archive` IS NULL OR `archive` = 0)'))
+							->skip($offset)
+							->take($limit)
+							->orderBy($column, 'desc')
+							->get();
 			
-			if($type == "active"){
-				$data = Contracts::query()
-								->where('client_id', $this->_id)
-								->whereRaw(DB::raw('(`archive` IS NULL OR `archive` = 0)'))
-								->skip($offset)
-								->take($limit)
-								->orderBy('created_at', 'desc')
-								->get();
-				
-				$payload['html'] = view(
-										'account.components.active_contracts',
-										[
-											'contracts'	=> $data
-										]
-									)
-									->render();
-			}else{
-				$data = Contracts::query()
-								->where('client_id', $this->_id)
-								->where('archive', 1)
-								->skip($offset)
-								->take($limit)
-								->orderBy('created_at', 'desc')
-								->get();
-				
-				$payload['html'] = view(
-										'account.components.archive_contracts',
-										[
-											'contracts'	=> $data
-										]
-									)
-									->render();
-			}
+			$payload['html'] = view(
+									'account.components.active_contracts',
+									[
+										'contracts'	=> $data
+									]
+								)
+								->render();
+		}else{
+			$data = Contracts::query()
+							->where('client_id', $this->_id)
+							->where('archive', 1)
+							->skip($offset)
+							->take($limit)
+							->orderBy($column, 'desc')
+							->get();
+			
+			$payload['html'] = view(
+									'account.components.archive_contracts',
+									[
+										'contracts'	=> $data
+									]
+								)
+								->render();
 		}
 		
 		return response()->json([

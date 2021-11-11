@@ -859,6 +859,7 @@ function loadContracts(type, sort, offset, limit, container){
 			
 			if(offset < 1){
 				container.attr('data-show', 0);
+				$('#count_'+type).text(0);
 			}
 		},
 		success		: function(response){
@@ -917,7 +918,7 @@ function bills(){
 	var more_bills		= bills_list.find('button.more');
 	var more_acts		= acts_list.find('button.more');
 	
-	more_active.on('click', function(){
+	more_bills.on('click', function(){
 		var value = sort_bills.val();
 		
 		var count = bills_list.find('.contract__item').length;
@@ -925,12 +926,106 @@ function bills(){
 		loadBills(value, count, bills_list.attr('data-limit'), bills_list);
 	});
 	
-	more_archive.on('click', function(){
-		var value = sort_archive_contracts.val();
+	more_acts.on('click', function(){
+		var value = sort_acts.val();
 		
 		var count = acts_list.find('.contract__item').length;
 		
 		loadActs(value, count, acts_list.attr('data-limit'), acts_list);
+	});
+};
+
+function loadBills(sort, offset, limit, container){
+	$.ajax({
+		type		: "GET",
+		url			: '/ajax/cabinet/bills',
+		data		: {
+			sort		: sort,
+			offset		: offset,
+			limit		: limit
+		},
+		dataType	: "json",
+		beforeSend	: function(request){
+			container.find('.contract__item').remove();
+			container.find('button.more').hide();
+			
+			if(offset < 1){
+				container.attr('data-show', 0);
+				$('#count_bills').text(0);
+			}
+		},
+		success		: function(response){
+			console.log('response:');
+			//console.log(response);
+			
+			if(response.status){
+				container.find('button.more').before(response.payload.html);
+				
+				if(offset < 1){
+					if(response.payload.count > 4){
+						container.find('button.more').show();
+					}
+				}else{
+					var count = container.find('.contract__item').length;
+					
+					if(count == response.payload.count){
+						container.find('button.more').hide();
+					}
+				};
+				
+				$('#count_bills').text(response.payload.count);
+			}
+		},
+		error		: function(err){
+			console.log('error');
+		}
+	});
+};
+
+function loadActs(sort, offset, limit, container){
+	$.ajax({
+		type		: "GET",
+		url			: '/ajax/cabinet/acts',
+		data		: {
+			sort		: sort,
+			offset		: offset,
+			limit		: limit
+		},
+		dataType	: "json",
+		beforeSend	: function(request){
+			container.find('.contract__item').remove();
+			container.find('button.more').hide();
+			
+			if(offset < 1){
+				container.attr('data-show', 0);
+				$('#count_acts').text(0);
+			}
+		},
+		success		: function(response){
+			console.log('response:');
+			//console.log(response);
+			
+			if(response.status){
+				container.find('button.more').before(response.payload.html);
+				
+				if(offset < 1){
+					if(response.payload.count > 4){
+						container.find('button.more').show();
+					}
+				}else{
+					var count = container.find('.contract__item').length;
+					
+					if(count == response.payload.count){
+						container.find('button.more').hide();
+					}
+				};
+				
+				$('#count_acts').text(response.payload.count);
+			}
+		},
+		error		: function(err){
+			console.log('error');
+		}
 	});
 };
 
