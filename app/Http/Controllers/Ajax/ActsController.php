@@ -87,7 +87,7 @@ class ActsController extends Controller {
 		$payload['html'] = view(
 								'account.components.acts',
 								[
-									'contracts'	=> $data
+									'acts'	=> $data
 								]
 							)
 							->render();

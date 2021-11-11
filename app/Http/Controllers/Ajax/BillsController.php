@@ -87,7 +87,7 @@ class BillsController extends Controller {
 		$payload['html'] = view(
 								'account.components.bills',
 								[
-									'contracts'	=> $data
+									'bills'	=> $data
 								]
 							)
 							->render();
