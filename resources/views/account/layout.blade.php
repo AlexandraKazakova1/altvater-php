@@ -55,7 +55,7 @@
 						
 						<div class="profile__info">
 							<div class="user__name"><span class="name">{{$user['name']}}</span> <span class="surname">{{$user['surname']}}</span></div>
-							<span class="position">{{$user['position']}}</span>
+							<span class="position">{{$user['company_name']}}</span>
 						</div>
 					</div>
 				</div>
