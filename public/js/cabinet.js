@@ -43,7 +43,7 @@ $(document).ready (function() {
 	//$('#addcontract').modal('show');
 	
 	$('#to_help').on('click', function(e){
-		window.location = '/account/messages';
+		window.location.href = '/account/messages';
 	});
 });
 
