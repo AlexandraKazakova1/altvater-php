@@ -82,17 +82,21 @@
 						</label>
 					</div>
 					
-					<label class="label__file">
-						<input class="form-control-file" type="file" accept=".pdf, .jpg">
+					<div>
+						<label class="label__file">
+							<input class="form-control-file" type="file" accept=".pdf, .jpg">
+							
+							<div>
+								<img src="/img/File-fill.svg" alt="">
+								<span>
+									Прикріпити файл
+									<span class="descriotion">pdf, jpg</span>
+								</span>
+							</div>
+						</label>
 						
-						<div>
-							<img src="/img/File-fill.svg" alt="">
-							<span>
-								Прикріпити файл
-								<span class="descriotion">pdf, jpg</span>
-							</span>
-						</div>
-					</label>
+						<ul class="addedFile" id="addedFile"></ul>
+					</div>
 					
 					<div class="submit__wrap">
 						<button class="btn-submit" type="submit" name="add-request">Залишити заявку</button>
