@@ -335,7 +335,7 @@ class UserController extends Controller {
 				'addresses'				=> 'required|string|min:2|max:150',
 				
 				'phone'					=> 'required|string|min:11|max:17',
-				'extra_prone'			=> 'min:11|max:17',
+				'extra_prone'			=> 'max:17',
 				
 				'email'					=> 'required|email|string|max:100|min:5',
 				
