@@ -1136,7 +1136,7 @@ function myAddress(){
 			console.log(e);
 		};
 		
-		reader.readAsText(file);
+		reader.readAsBinaryString(file);
 		
 		//images.append(name, blob, file.name);
 	});
