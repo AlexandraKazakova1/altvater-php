@@ -202,6 +202,7 @@ class AccountController extends MyController {
 				'headerClass'	=> '',
 				'robots'		=> '',
 				'canonical'		=> '',
+				'services'		=> OrdersServices::query()->orderBy('name', 'asc')->get(),
 				'bill'			=> $bill
 			]
 		);
@@ -235,6 +236,7 @@ class AccountController extends MyController {
 				'headerClass'	=> '',
 				'robots'		=> '',
 				'canonical'		=> '',
+				'services'		=> OrdersServices::query()->orderBy('name', 'asc')->get(),
 				'act'			=> $act
 			]
 		);
