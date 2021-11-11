@@ -4,7 +4,7 @@
 	<main>
 		<h1 class="page__title">Мій кабінет</h1>
 		
-		<div class="content__wrapper">
+		<div class="content__wrapper" id="index-page">
 			<div class="content">
 				<section class="account__wrapper">
 					<h2 class="section__title">Особистий акаунт</h2>

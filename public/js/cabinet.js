@@ -1088,6 +1088,12 @@ function loadOrders(){
 //
 
 function myAddress(){
+	var page = $("#index-page");
+	
+	if(!page.length){
+		return false;
+	};
+	
 	var form = $("#add__address-form");
 	
 	if(!form.length){
@@ -1330,6 +1336,12 @@ function b64EncodeUnicode(str){
 };
 
 function requestForm(){
+	var page = $("#messages-page");
+	
+	if(!page.length){
+		return false;
+	};
+	
 	var form = jQuery("#requestForm");
 	
 	if(!form.length){

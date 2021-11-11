@@ -20,7 +20,7 @@
 			<span>Назад</span>
 		</a>
 		
-		<section class="request">
+		<section class="request" id="messages-page">
 			<form class="request__form" id="requestForm">
 				<fieldset>
 					<div>
