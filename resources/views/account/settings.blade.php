@@ -132,7 +132,7 @@
 					<fieldset>
 						<label>
 							<span class="input-description">Новий пароль:</span>
-							<input class="form-control" type="password" name="new_password" placeholder=" ">
+							<input class="form-control" type="password" id="new_password" name="new_password" placeholder=" ">
 							<span class="input-placeholder">
 								<div>
 									<img src="/img/cabinet/modal-icon/lock.svg">

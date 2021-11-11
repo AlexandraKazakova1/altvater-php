@@ -1634,7 +1634,7 @@ function changePasswordForm(){
 			confirm_password: {
 				required		: true,
 				rangelength		: [8, 24],
-				equalTo			: "new_password"
+				equalTo			: "#new_password"
 			}
 		},
 		messages: {
