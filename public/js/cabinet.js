@@ -1502,86 +1502,96 @@ function settingsForm(){
 		btn = form.find('button[type="submit"]');
 	
 	form.validate({
-		onkeyup	: false,
-		focusCleanup: true,
-		focusInvalid: false,
-		errorClass: "error",
-		rules: {
-			name: {
-				required: true,
-				minlength: 2
+		onkeyup			: false,
+		focusCleanup	: true,
+		focusInvalid	: false,
+		errorClass		: "error",
+		rules			: {
+			name			: {
+				required		: true,
+				minlength		: 2,
+				maxlength		: 100
 			},
-			surname: {
-				required: true,
-				minlength: 2
+			surname			: {
+				required		: true,
+				minlength		: 2,
+				maxlength		: 50
 			},
-			middlename: {
-				required: true,
-				minlength: 2
+			middlename		: {
+				required		: true,
+				minlength		: 2,
+				maxlength		: 50
 			},
-			email: {
-				required: true,
-				email: true
+			extra_phone		: {
+				required		: false,
+				minlength		: 10,
+				maxlength		: 13,
 			},
-			phone: {
-				required: true,
+			address			: {
+				required		: true,
+				minlength		: 8,
+				maxlength		: 150
 			},
-			extra_phone: {
-				required: false,
-			},
-			addresses: {
-				required: true,
-				minlength: 8
-			},
-			index: {
-				required: true,
-				minlength: 5
+			index			: {
+				required		: true,
+				minlength		: 5,
+				maxlength		: 6
 			}
 		},
-		messages: {
-			name: {
-				required: "Це поле обов'язкове для заповнення",
-				minlength: "Введіть більше 2 символів"
+		messages		: {
+			name			: {
+				required		: "Це поле обов'язкове для заповнення",
+				minlength		: "Введіть мінімум 2 символи",
+				maxlength		: "Введіть максимум 100 символи"
 			},
-			surname: {
-				required: "Це поле обов'язкове для заповнення",
-				minlength: "Введіть більше 2 символів"
+			surname			: {
+				required		: "Це поле обов'язкове для заповнення",
+				minlength		: "Введіть мінімум 2 символи",
+				maxlength		: "Введіть максимум 100 символи"
 			},
-			middlename: {
-				required: "Це поле обов'язкове для заповнення",
-				minlength: "Введіть більше 2 символів"
+			middlename		: {
+				required		: "Це поле обов'язкове для заповнення",
+				minlength		: "Введіть мінімум 2 символи",
+				maxlength		: "Введіть максимум 100 символи"
 			},
-			email: {
-				required: "Введіть свій e-mail!",
-				email: "Адреса має бути типу name@domain.com"
+			email			: {
+				required		: "Введіть свій e-mail!",
+				email			: "Адреса має бути типу name@domain.com"
 			},
-			phone: {
-				required: "Це поле обов'язкове для заповнення",
+			phone			: {
+				required		: "Це поле обов'язкове для заповнення",
 			},
-			address: {
-				required: "Це поле обов'язкове для заповнення",
-				minlength: "Введіть не менше 8 символів"
+			extra_phone		: {
+				required		: "Це поле обов'язкове для заповнення",
+				minlength		: "Введіть мінімум 10 символів",
+				maxlength		: "Введіть максимум 13 символів"
 			},
-			index: {
-				required: "Це поле обов'язкове для заповнення",
-				minlength: "Введіть не менше 5 символів"
+			address			: {
+				required		: "Це поле обов'язкове для заповнення",
+				minlength		: "Введіть не менше 8 символів",
+				maxlength		: "Введіть максимум 150 символів"
+			},
+			index			: {
+				required		: "Це поле обов'язкове для заповнення",
+				minlength		: "Введіть не менше 5 символів",
+				maxlength		: "Введіть не більше 6 символів"
 			}
 		},
-		submitHandler: function() {
+		submitHandler	: function() {
 			if(!lock){
 				$.ajax({
-					type: "POST",
-					url: '/ajax/user/settings',
-					method: "POST",
-					data: form.serialize(),
-					dataType: "json",
-					beforeSend: function(request){
+					type		: "POST",
+					url			: '/ajax/user/settings',
+					method		: "POST",
+					data		: form.serialize(),
+					dataType	: "json",
+					beforeSend	: function(request){
 						lock = true;
 						
 						btn.attr('disabled', true);
 						form.find('label.error').text('').hide();
 					},
-					success: function(response){
+					success		: function(response){
 						console.log('response:');
 						console.log(response);
 						
@@ -1594,10 +1604,12 @@ function settingsForm(){
 						//     responseMsg(form, response);
 						// }
 					},
-					error: function(err){
+					error		: function(err){
 						console.log('error');
+						
 						lock = false;
 						btn.attr('disabled', false);
+						
 						responseMsg(form, err);
 					}
 				});

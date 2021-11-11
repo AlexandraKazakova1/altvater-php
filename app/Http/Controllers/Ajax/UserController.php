@@ -778,14 +778,14 @@ class UserController extends Controller {
 		$validator = Validator::make(
 			$post,
 			array(
-				'name'					=> 'required|string|min:2|max:50',
-				'surname'				=> 'required|string|min:2|max:50',
-				'middlename'			=> 'required|string|min:2|max:50',
+				'name'					=> 'required|string|min:2|max:100',
+				'surname'				=> 'max:50',
+				'middlename'			=> 'max:50',
 				
 				//'email'					=> 'required|email',
 				
 				//'phone'					=> 'required|string|min:12|max:13',
-				'extra_phone'			=> 'min:12|max:13',
+				'extra_phone'			=> 'max:13',
 				
 				'address'				=> 'string|max:150',
 				
@@ -827,7 +827,9 @@ class UserController extends Controller {
 			if(false){
 				$post['phone'] = preg_replace("/[^0-9]/", '', $post['phone']);
 				
-				if(strlen($post['phone']) != 12){
+				$len = strlen($post['phone']);
+				
+				if($len < 9 || $len > 12){
 					$error = true;
 					
 					$msg = trans('ajax_validation.phone_invalid');
@@ -837,7 +839,9 @@ class UserController extends Controller {
 			$post['extra_phone'] = preg_replace("/[^0-9]/", '', $post['extra_phone']);
 			
 			if($post['extra_phone']){
-				if(strlen($post['extra_phone']) != 12){
+				$len = strlen($post['extra_phone']);
+				
+				if($len < 9 || $len > 12){
 					$error = true;
 					
 					$msg = trans('ajax_validation.phone_invalid');

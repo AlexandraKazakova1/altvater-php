@@ -93,9 +93,44 @@
 								<div>
 									<img src="/img/cabinet/modal-icon/phone-2.svg">
 								</div>
-								Ваш телефон
+								Додатковий телефон
 							</span>
 						</label>
+						
+						@if($user['company_name'] == '')
+							<label>
+								<span class="input-description notCheck">Назва компанії:<b> ?</b></span>
+								<input class="form-control" type="text" name="company_name" readonly value="{{$user['company_name']}}" placeholder=" ">
+								<span class="input-placeholder">
+									<div>
+										<img src="/img/cabinet/modal-icon/profile.svg">
+									</div>
+									Назва компанії
+								</span>
+							</label>
+							
+							<label>
+								<span class="input-description notCheck">ІПН:<b> ?</b></span>
+								<input class="form-control" type="text" name="ipn" readonly value="{{$user['ipn']}}" placeholder=" ">
+								<span class="input-placeholder">
+									<div>
+										<img src="/img/cabinet/modal-icon/profile.svg">
+									</div>
+									ІПН
+								</span>
+							</label>
+							
+							<label>
+								<span class="input-description notCheck">ЄДРПОУ:<b> ?</b></span>
+								<input class="form-control" type="text" name="uedrpou" readonly value="{{$user['uedrpou']}}" placeholder=" ">
+								<span class="input-placeholder">
+									<div>
+										<img src="/img/cabinet/modal-icon/profile.svg">
+									</div>
+									ЄДРПОУ
+								</span>
+							</label>
+						@endif
 						
 						<label>
 							<span class="input-description notCheck">Адреса:</span>
