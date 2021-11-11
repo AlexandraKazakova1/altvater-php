@@ -7,7 +7,7 @@ use DB;
 
 use App\Models\User;
 
-class Connects extends Model{
+class Bills extends Model{
 	
 	protected $table	= 'bills';
 	
