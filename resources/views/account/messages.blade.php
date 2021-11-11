@@ -84,7 +84,7 @@
 					
 					<div>
 						<label class="label__file">
-							<input class="form-control-file" type="file" accept=".pdf, .jpg">
+							<input class="form-control-file" id="control-file" type="file" accept=".pdf, .jpg">
 							
 							<div>
 								<img src="/img/File-fill.svg" alt="">

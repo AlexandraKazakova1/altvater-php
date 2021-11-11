@@ -1341,25 +1341,35 @@ function requestForm(){
 	
 	var modal = $('#response');
 	
+	var added_file		= $('#addedFile');
+	
+	var file = null;
+	
 	form.validate({
-		onkeyup	: false,
-		focusCleanup: true,
-		focusInvalid: false,
-		errorClass: "error",
-		rules: {
-			phone: {
-				required: true
+		onkeyup			: false,
+		focusCleanup	: true,
+		focusInvalid	: false,
+		errorClass		: "error",
+		rules			: {
+			header		: {
+				required	: true,
+				minlength	: 2
 			},
-			header: {
-				required: true,
-				minlength: 2
+			phone		: {
+				required	: false,
+				minlength	: 13,
+				maxlength	: 13,
 			},
-			text: {
-				required: true,
-				maxlength: 1000
+			header		: {
+				required	: true,
+				minlength	: 2
+			},
+			text		: {
+				required	: true,
+				maxlength	: 1000
 			}
 		},
-		messages: {
+		messages		: {
 			theme: {
 				required: "Це поле обов'язкове для заповнення",
 				minlength: "Введіть більше 2 символів"
@@ -1376,15 +1386,25 @@ function requestForm(){
 				maxlength: "Введіть не більше 1000 символів"
 			}
 		},
-		submitHandler: function() {
+		submitHandler	: function() {
 			if(!lock){
+				var form_data = {
+					theme		: form.find('input[name="theme"]').val(),
+					number		: form.find('input[name="number"]').val(),
+					phone		: form.find('input[name="phone"]').val(),
+					header		: form.find('input[name="header"]').val(),
+					text		: form.find('textarea[name="text"]').val(),
+					file		: file
+				};
+				
 				$.ajax({
-					type: "POST",
-					url: '/ajax/cabinet/request',
-					method: "POST",
-					data: form.serialize(),
-					dataType: "json",
-					beforeSend: function(request){
+					type		: "POST",
+					method		: "POST",
+					url			: '/ajax/cabinet/request',
+					data		: JSON.stringify(form_data),
+					dataType	: "json",
+					contentType	: "application/json; charset=utf-8",
+					beforeSend	: function(request){
 						lock = true;
 						
 						btn.attr('disabled', true);
@@ -1392,7 +1412,7 @@ function requestForm(){
 						
 						form.find('.responseMsg').text('');
 					},
-					success: function(response){
+					success		: function(response){
 						console.log('response:');
 						console.log(response);
 						
@@ -1402,7 +1422,6 @@ function requestForm(){
 						if(response.status){
 							form.trigger('reset');
 							
-							images = [];
 							added_file.html('');
 							
 							modal.find('.responseMsg').text(response.message);
@@ -1423,6 +1442,55 @@ function requestForm(){
 			};
 			return false;
 		}
+	});
+	
+	var control_file	= $('#control-file');
+	
+	control_file.on('change', function(e){
+		e.preventDefault();
+		
+		console.log(e.target.files);
+		return false;
+		
+		var file = e.target.files[0];
+		var mime = file.type.split('/');
+		
+		if(mime[0] != 'image'){
+			return false;
+		};
+		
+		var reader = new FileReader();
+		
+		reader.onload = function(e) {
+			let encoded = e.target.result.toString().replace(/^data:(.*,)?/, '');
+			
+			if((encoded.length % 4) > 0){
+				encoded += '='.repeat(4 - (encoded.length % 4));
+			};
+			
+			file = {
+				'name'	: file.name,
+				'mime'	: file.type,
+				'data'	: encoded
+			};
+			
+			added_file.append('<li><span>'+file.name+'</span><button class="remove-img" type="button"></button></li>');
+		};
+		
+		reader.onerror = function(e) {
+			console.log('onerror:');
+			console.log(e);
+		};
+		
+		reader.readAsDataURL(file);
+	});
+	
+	form.on('click', 'button.remove-img', function(e){
+		var current = $(this);
+		
+		current.parent().remove();
+		
+		file = null;
 	});
 };
 
