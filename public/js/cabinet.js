@@ -19,6 +19,8 @@ $(document).ready (function() {
 	contractEntity();
 	connect_contract();
 	
+	bills();
+	
 	myAddress();
 	timepicker();
 	select2();
@@ -884,6 +886,51 @@ function loadContracts(type, sort, offset, limit, container){
 		error		: function(err){
 			console.log('error');
 		}
+	});
+};
+
+function bills(){
+	var page = $('#bills');
+	
+	if(!page.length){
+		return false;
+	};
+	
+	var bills_list	= $('#bills-list');
+	var acts_list	= $('#acts-list');
+	
+	var sort_bills	= $('#sort-bills');
+	var sort_acts	= $('#acts-list');
+	
+	sort_bills.on('change', function(){
+		var value = $(this).val();
+		
+		loadBills(value, 0, bills_list.attr('data-limit'), bills_list);
+	});
+	
+	sort_acts.on('change', function(){
+		var value = $(this).val();
+		
+		loadActs(value, 0, acts_list.attr('data-limit'), acts_list);
+	});
+	
+	var more_bills		= bills_list.find('button.more');
+	var more_acts		= acts_list.find('button.more');
+	
+	more_active.on('click', function(){
+		var value = sort_bills.val();
+		
+		var count = bills_list.find('.contract__item').length;
+		
+		loadBills(value, count, bills_list.attr('data-limit'), bills_list);
+	});
+	
+	more_archive.on('click', function(){
+		var value = sort_archive_contracts.val();
+		
+		var count = acts_list.find('.contract__item').length;
+		
+		loadActs(value, count, acts_list.attr('data-limit'), acts_list);
 	});
 };
 

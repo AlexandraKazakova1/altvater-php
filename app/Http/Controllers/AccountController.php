@@ -145,6 +145,8 @@ class AccountController extends MyController {
 			return redirect('/');
 		}
 		
+		$limit = 4;
+		
 		return view(
 			'account/bills',
 			[
@@ -163,8 +165,8 @@ class AccountController extends MyController {
 					'acts'			=> Acts::query()->where('client_id', $this->_id)->count(),
 				],
 				'data'			=> [
-					'bills'			=> Bills::query()->where('client_id', $this->_id)->orderBy('created_at', 'desc')->get(),
-					'acts'			=> Acts::query()->where('client_id', $this->_id)->orderBy('created_at', 'desc')->get()
+					'bills'			=> Bills::query()->where('client_id', $this->_id)->skip(0)->take($limit)->orderBy('created_at', 'desc')->get(),
+					'acts'			=> Acts::query()->where('client_id', $this->_id)->skip(0)->take($limit)->orderBy('created_at', 'desc')->get()
 				],
 				'services'		=> OrdersServices::query()->orderBy('name', 'asc')->get(),
 			]

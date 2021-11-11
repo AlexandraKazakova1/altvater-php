@@ -74,6 +74,14 @@ Route::group(['namespace' => 'Ajax'], function(){
 		'uses' => 'ContractsController@contracts_list'
 	])->where(['type' => '[a-z]+']);
 	
+	Route::get('ajax/cabinet/bills', [
+		'uses' => 'ContractsController@bills_list'
+	]);
+	
+	Route::get('ajax/cabinet/acts', [
+		'uses' => 'ContractsController@acts_list'
+	]);
+	
 	Route::post('ajax/cabinet/add-address', [
 		'uses' => 'AddressController@add'
 	]);
@@ -148,6 +156,17 @@ Route::get('account/bills', [
 	'as'    => 'bills',
 	'uses'  => 'AccountController@bills'
 ]);
+
+Route::get('account/bills/{id}', [
+	'as'    => 'bill',
+	'uses'  => 'AccountController@bill'
+])->where('id', '[0-9]+');
+
+Route::get('account/bills/act/{id}', [
+	'as'    => 'act',
+	'uses'  => 'AccountController@act'
+])->where('id', '[0-9]+');
+
 
 Route::get('account/messages', [
 	'as'    => 'messages',
