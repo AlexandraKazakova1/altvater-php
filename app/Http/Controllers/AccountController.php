@@ -160,6 +160,7 @@ class AccountController extends MyController {
 				'headerClass'	=> '',
 				'robots'		=> '',
 				'canonical'		=> '',
+				'limit'			=> $limit,
 				'count'			=> [
 					'bills'			=> Bills::query()->where('client_id', $this->_id)->count(),
 					'acts'			=> Acts::query()->where('client_id', $this->_id)->count(),
