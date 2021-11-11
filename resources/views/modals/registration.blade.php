@@ -154,7 +154,7 @@
 							</label>
 							
 							<label>
-								<span class="input-description nr">Додатковий телефон:</span>
+								<span class="input-description nr notCheck">Додатковий телефон:</span>
 								<input class="form-control" type="tel" name="extra_prone" placeholder=" ">
 								<span class="input-placeholder">
 									<div>
