@@ -854,11 +854,12 @@ function loadContracts(type, sort, offset, limit, container){
 		},
 		dataType	: "json",
 		beforeSend	: function(request){
-			container.find('.contract__item').remove();
 			container.find('button.more').hide();
 			
 			if(offset < 1){
+				container.find('.contract__item').remove();
 				container.attr('data-show', 0);
+				
 				$('#count_'+type).text(0);
 			}
 		},
@@ -946,11 +947,13 @@ function loadBills(sort, offset, limit, container){
 		},
 		dataType	: "json",
 		beforeSend	: function(request){
-			container.find('.contract__item').remove();
 			container.find('button.more').hide();
 			
 			if(offset < 1){
+				container.find('.contract__item').remove();
+				
 				container.attr('data-show', 0);
+				
 				$('#count_bills').text(0);
 			}
 		},
@@ -993,11 +996,12 @@ function loadActs(sort, offset, limit, container){
 		},
 		dataType	: "json",
 		beforeSend	: function(request){
-			container.find('.contract__item').remove();
 			container.find('button.more').hide();
 			
 			if(offset < 1){
+				container.find('.contract__item').remove();
 				container.attr('data-show', 0);
+				
 				$('#count_acts').text(0);
 			}
 		},
