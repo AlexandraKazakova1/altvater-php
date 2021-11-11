@@ -1126,7 +1126,7 @@ function myAddress(){
 				'data'	: b64EncodeUnicode(e.target.result)
 			};
 			
-			added_file.append('<li data-n="'+n+'"><span>'+file.name+'</span><button class="remove" data-n="'+n+'" type="button"></button></li>');
+			added_file.append('<li data-n="'+n+'"><span>'+file.name+'</span><button class="remove-img" data-n="'+n+'" type="button"></button></li>');
 			
 			n++;
 		};
@@ -1141,7 +1141,7 @@ function myAddress(){
 		//images.append(name, blob, file.name);
 	});
 	
-	added_file.on('click', 'button', function(e){
+	$("#add__address-modal").on('click', 'button.remove-img', function(){
 		var current = $(this);
 		var n = current.attr('n');
 		
@@ -1286,7 +1286,7 @@ function myAddress(){
 		initMap(dataLat, dataLng);
 	});
 	
-	$("#add__address-modal").on('click', 'button.remove', function(){
+	info_modal.on('click', 'button.remove', function(){
 		var current = $(this);
 		
 		var id = current.attr('data-id');
@@ -1294,7 +1294,6 @@ function myAddress(){
 		$.ajax({
 			type		: "POST",
 			url			: '/ajax/cabinet/remove-address',
-			method		: "POST",
 			data		: JSON.stringify({
 				id	: id
 			}),
