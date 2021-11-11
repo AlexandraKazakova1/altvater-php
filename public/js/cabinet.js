@@ -1058,7 +1058,7 @@ function loadOrders(){
 		data		: {},
 		dataType	: "json",
 		beforeSend	: function(request){
-			container.html('');
+			page.html('');
 			
 			$('#count_orders').text(0);
 			
@@ -1074,7 +1074,7 @@ function loadOrders(){
 			//console.log(response);
 			
 			if(response.status){
-				container.html(response.payload.html);
+				page.html(response.payload.html);
 				
 				$('#count_orders').text(response.payload.count);
 			}
