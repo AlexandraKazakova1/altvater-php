@@ -1461,13 +1461,10 @@ function requestForm(){
 	control_file.on('change', function(e){
 		e.preventDefault();
 		
-		console.log(e.target.files);
-		return false;
-		
 		var file = e.target.files[0];
 		var mime = file.type.split('/');
 		
-		if(mime[0] != 'image'){
+		if(mime[0] != 'image' && mime[0] != 'application'){
 			return false;
 		};
 		
