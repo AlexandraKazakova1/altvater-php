@@ -123,7 +123,7 @@ class ClientsController extends MyAdminController {
 			$form->text('addresses'			, __('admin.clients.address'))->rules('max:150');
 			$form->text('index'				, __('admin.clients.index'))->rules('max:10');
 			
-			$form->text('ipn'				, __('admin.clients.ipn'))->rules('max:10');
+			$form->text('ipn'				, __('admin.clients.ipn'))->rules('max:15');
 			$form->text('uedrpou'			, __('admin.clients.uedrpou'))->rules('max:50');
 		});
 		

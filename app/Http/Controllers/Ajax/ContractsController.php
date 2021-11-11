@@ -163,8 +163,8 @@ class ContractsController extends Controller {
 				'email'					=> 'required|email',
 				'phone'					=> 'required|string|min:9|max:13',
 				'extra_phone'			=> 'min:9|max:13',
-				'index'					=> 'required',
-				'ipn'					=> 'required',
+				'index'					=> 'required|min:5|max:6',
+				'ipn'					=> 'required|min:5|max:12',
 				'edrpou'				=> 'required',
 			),
 			array(

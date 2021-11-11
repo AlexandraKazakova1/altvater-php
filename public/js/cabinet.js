@@ -550,7 +550,7 @@ function contractEntity(){
 			ipn				: {
 				required		: true,
 				minlength		: 5,
-				maxlength		: 8
+				maxlength		: 12
 			},
 			edrpou			: {
 				required		: true,
