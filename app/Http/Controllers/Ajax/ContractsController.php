@@ -16,6 +16,7 @@ use App\Helpers\StringHelper;
 
 use App\Models\User;
 use App\Models\Contracts;
+use App\Models\Connects;
 
 class ContractsController extends Controller {
 	
@@ -325,6 +326,156 @@ class ContractsController extends Controller {
 										]
 									)
 									->render();
+			}
+		}
+		
+		return response()->json([
+			'status' 	=> $status,
+			'message'	=> $msg,
+			'errors'	=> $errors,
+			'payload'	=> $payload
+		], 200, [], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+	}
+	
+	function connect_contract(){
+		$this->session();
+		
+		if(!$this->_auth){
+			return response()->json([
+				'status' 	=> $status,
+				'message'	=> $msg,
+				'errors'	=> $errors,
+				'payload'	=> $payload
+			], 200, [], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+		}
+		
+		$post = $request->all();
+		
+		$status = false;
+		$errors = array();
+		$msg	= trans('ajax.failed_connect_contract');
+		$payload= [];
+		
+		if($this->_user->type == 'individual'){
+			$rules = array(
+				'name'					=> 'required|string|min:2|max:100',
+				'number'				=> 'required|max:15'
+			);
+		}else{
+			$rules = array(
+				'edrpou'				=> 'required|string|min:8|max:50',
+				'number'				=> 'required|max:15'
+			);
+		}
+		
+		$validator = Validator::make(
+			$post,
+			$rules,
+			array(
+				'name.required'			=> trans('ajax_validation.required'),
+				'name.min'				=> trans('ajax_validation.min_length'),
+				'name.max'				=> trans('ajax_validation.max_length'),
+				
+				'edrpou.required'		=> trans('ajax_validation.required'),
+				'edrpou.min'			=> trans('ajax_validation.min_length'),
+				'edrpou.max'			=> trans('ajax_validation.max_length'),
+				
+				'number.required'		=> trans('ajax_validation.required'),
+				'number.min'			=> trans('ajax_validation.min_length'),
+				'number.max'			=> trans('ajax_validation.max_length'),
+			)
+		);
+		
+		if($validator->passes()){
+			$error	= false;
+			
+			if(!$error){
+				if($this->_user->type == 'individual'){
+					$record = Contracts::query()->where('number', $post['number'])->first();
+					
+					if(!$record){
+						return response()->json([
+							'status' 	=> false,
+							'message'	=> trans('ajax.contract_not_found'),
+							'errors'	=> [],
+							'payload'	=> []
+						], 200, [], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+					}
+					
+					$connect = Connects::create([
+						'client_id'	=> $this->_id,
+						'number'	=> $post['number'],
+						'name'		=> $post['name'],
+						'edrpou'	=> null,
+					]);
+					
+					//$record->update(['client_id' => $this->_id]);
+				}else{
+					$record = Contracts::query()->where('number', $post['number'])->first();
+					
+					if($record){
+						$counterparty = User::query()->where('uedrpou', $post['edrpou'])->first();
+						
+						if(!$counterparty){
+							$connect = Connects::create([
+								'client_id'	=> $this->_id,
+								'number'	=> $post['number'],
+								'name'		=> null,
+								'edrpou'	=> $post['edrpou'],
+							]);
+						}else{
+							$check = Contracts::query()->where('id', $record->id)->where('client_id', $counterparty->id)->first();
+							
+							if(!$check){
+								return response()->json([
+									'status' 	=> false,
+									'message'	=> trans('ajax.data_do_not_match'),
+									'errors'	=> [],
+									'payload'	=> []
+								], 200, [], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+							}else{
+								$connect = Connects::create([
+									'client_id'	=> $this->_id,
+									'number'	=> $post['number'],
+									'name'		=> null,
+									'edrpou'	=> $post['edrpou'],
+								]);
+							}
+						}
+					}else{
+						$connect = Connects::create([
+							'client_id'	=> $this->_id,
+							'number'	=> $post['number'],
+							'name'		=> null,
+							'edrpou'	=> $post['edrpou'],
+						]);
+					}
+				}
+				
+				$status = true;
+				$msg	= trans('ajax.success_connect_contract');
+				
+				$this->sendEmail(
+					'connect-contract',
+					null,
+					array(
+						'name'		=> $this->_user->name,
+						'number'	=> $post['number'],
+						'id'		=> $this->_id,
+						'url'		=> url('/admin/connects/'.$connect->id.'/edit')
+						
+					)
+				);
+			}
+		}else{
+			$messages = $validator->messages();
+			
+			foreach($post as $k => $v){
+				$error = $messages->first($k);
+				
+				if($error){
+					$errors[$k] = $error;
+				}
 			}
 		}
 		

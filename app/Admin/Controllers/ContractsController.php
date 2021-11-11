@@ -92,7 +92,9 @@ class ContractsController extends MyAdminController {
 		
 		$id = $this->_id;
 		
-		$form->text('name'			, __('admin.contracts.name'))->rules('required|min:2|max:200');
+		$form->text('number'		, __('admin.contracts.number'))->rules('max:30');
+		
+		$form->text('name'			, __('admin.contracts.name'))->rules('max:100');
 		$form->text('contact'		, __('admin.contracts.contact'))->rules('max:100');
 		
 		$form->text('phone'			, __('admin.contracts.phone'))->rules('min:9|max:30');
@@ -100,7 +102,7 @@ class ContractsController extends MyAdminController {
 		
 		$form->email('email'		, __('admin.contracts.email'))->rules('max:50');
 		
-		$form->text('address'		, __('admin.contracts.address'))->rules('required|max:150');
+		$form->text('address'		, __('admin.contracts.address'))->rules('max:150');
 		
 		$form->text('index'			, __('admin.contracts.index'))->rules('max:6');
 		$form->text('ipn'			, __('admin.contracts.ipn'))->rules('max:15');

@@ -9,19 +9,18 @@ use App\Models\User;
 
 class Connects extends Model{
 	
-	protected $table	= 'bills';
+	protected $table	= 'connects';
 	
 	public $timestamps	= false;
 	
 	protected $fillable = [
 		'created_at',
 		'updated_at',
-		'date',
 		'client_id',
 		'number',
-		'amount',
-		'paid',
-		'name'
+		'name',
+		'edrpou',
+		'confirm'
 	];
 	
 	public function client(){

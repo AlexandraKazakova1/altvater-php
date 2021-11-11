@@ -344,6 +344,63 @@
 			</div>
 		@endif
 		
+		<div class="modal fade" id="addcontract" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-md modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="orderService popup">
+						<div class="modal-header">
+							<h2 class="popup__title">Приєднати договір</h2>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<img src="/img/close.svg" alt="X">
+							</button>
+						</div>
+						
+						<div class="modal-body">
+							<form class="popup__form" id="addcontract-form" data-type="{{$user->type}}">
+								<fieldset class="fieldset">
+									@if($user->type == 'individual')
+										<label>
+											<span class="input-description">ПІБ:</span>
+											<input class="form-control" type="text" name="name" placeholder=" ">
+											<span class="input-placeholder">
+												<div>
+													<img src="/img/cabinet/modal-icon/profile.svg">
+												</div>
+												ПІБ підписанта
+											</span>
+										</label>
+									@else
+										<label>
+											<span class="input-description">ЄДРПОУ:</span>
+											<input class="form-control" type="text" name="edrpou" placeholder=" ">
+											<span class="input-placeholder">
+												ЄДРПОУ
+											</span>
+										</label>
+									@endif
+									
+									<label>
+										<span class="input-description">Номер договору:</span>
+										<input class="form-control" type="text" name="number" placeholder=" " autocomplete="off" maxlength="5" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder=" ">
+										<span class="input-placeholder">
+											<div>
+												<img src="/img/cabinet/documents.svg">
+											</div>
+											Номер договору
+										</span>
+									</label>
+									
+									<button class="btn-submit" type="submit" name="reg">Приєднати договір</button>
+								</fieldset>
+								
+								<p class="responseMsg"></p>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
 		<div class="modal fade" id="add__address-modal" tabindex="-1" role="dialog">
 			<div class="modal-dialog modal-md modal-dialog-centered" role="document">
 				<div class="modal-content">

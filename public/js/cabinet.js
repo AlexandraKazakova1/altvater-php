@@ -13,8 +13,12 @@ $(document).ready (function() {
 	//dragAndDrop();
 	accountsActs();
 	settingsPage();
+	
+	contracts();
 	contractIndividual();
 	contractEntity();
+	connect_contract();
+	
 	myAddress();
 	timepicker();
 	select2();
@@ -28,7 +32,6 @@ $(document).ready (function() {
 	ordersSelect();
 	requestMsg();
 	menuToggle();
-	contracts();
 	
 	//$('#addcontract').modal('show');
 	
@@ -627,6 +630,118 @@ function contractEntity(){
 							modal.modal('show');
 							
 							$('#active-contracts').trigger('reload');
+						}else{
+							responseMsg(form, response);
+						}
+					},
+					error		: function(err){
+						console.log('error');
+						
+						lock = false;
+						btn.attr('disabled', false);
+						
+						responseMsg(form, err);
+					}
+				});
+			};
+			return false;
+		}
+	});
+};
+
+function connect_contract(){
+	var form = jQuery("#addcontract-form");
+	
+	if(!form.length){
+		return false;
+	};
+	
+	var lock = false,
+		btn = form.find('button[type="submit"]');
+	
+	var modal = $('#response');
+		
+	if(form.attr('data-type') == 'individual'){
+		var rules = {
+			name			: {
+				required		: true,
+				minlength		: 2,
+				maxlength		: 100
+			},
+			number			: {
+				required		: true,
+				minlength		: 2,
+				maxlength		: 30
+			}
+		};
+	}else{
+		var rules = {
+			edrpou			: {
+				required		: true,
+				minlength		: 8,
+				maxlength		: 30
+			},
+			number			: {
+				required		: true,
+				minlength		: 2,
+				maxlength		: 30
+			}
+		};
+	};
+	
+	form.validate({
+		onkeyup			: false,
+		focusCleanup	: true,
+		focusInvalid	: false,
+		errorClass		: "error",
+		rules			: rules,
+		messages		: {
+			name			: {
+				required		: "Введіть ПІБ контактної особи",
+				minlength		: "Некоректні дані",
+				maxlength		: "Некоректні дані"
+			},
+			edrpou			: {
+				required		: "Це поле обов'язкове для заповнення",
+				minlength		: "Некоректні дані",
+				maxlength		: "Некоректні дані"
+			},
+			number			: {
+				required		: "Введіть номер договору",
+				minlength		: "Некоректні дані",
+				maxlength		: "Некоректні дані"
+			}
+		},
+		submitHandler	: function() {
+			if(!lock){
+				$.ajax({
+					type		: "POST",
+					url			: '/ajax/cabinet/contracts/connect',
+					method		: "POST",
+					data		: form.serialize(),
+					dataType	: "json",
+					beforeSend	: function(request){
+						lock = true;
+						
+						btn.attr('disabled', true);
+						
+						form.find('label.error').text('').hide();
+						form.find('.responseMsg').text('');
+					},
+					success		: function(response){
+						console.log('response:');
+						console.log(response);
+						
+						lock = false;
+						btn.attr('disabled', false);
+						
+						if(response.status){
+							form.trigger('reset');
+							
+							form.parents('.modal').removeClass('show');
+							
+							modal.find('.responseMsg').text(response.message);
+							modal.modal('show');
 						}else{
 							responseMsg(form, response);
 						}
