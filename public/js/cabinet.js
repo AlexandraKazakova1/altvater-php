@@ -1141,13 +1141,13 @@ function myAddress(){
 		//images.append(name, blob, file.name);
 	});
 	
-	$("#add__address-modal").on('click', 'button.remove-img', function(){
+	form.on('click', 'button.remove-img', function(){
 		var current = $(this);
 		var n = current.attr('n');
 		
 		delete images[n];
 		
-		$("#add__address-modal").find('li[data-n="'+n+'"]').remove();
+		form.find('li[data-n="'+n+'"]').remove();
 	});
 	
 	var lock = false,
