@@ -588,6 +588,8 @@ function createEntity() {
 						responseMsg(form, response);
 						
 						if(response.status){
+							form.trigger('reset');
+							
 							openActivationModal(response.payload);
 						}
 					},
@@ -621,13 +623,13 @@ function openActivationModal(data){
 	
 	sendAgain.on('click', function(e){
 		e.preventDefault();		
-        
-        // деактивація кнопки
+		
+		// деактивація кнопки
 		form.$('.sendAgain').addClass('disable')
 		
 		startTimer(() => {
-            // активація кнопки
-            form.$('.sendAgain').removeClass('disable')
+			// активація кнопки
+			form.$('.sendAgain').removeClass('disable')
 		});
 		
 		var token = input_token.val();
@@ -639,7 +641,7 @@ function openActivationModal(data){
 	
 	startTimer(() => {
 		// активація кнопки
-        form.$('.sendAgain').removeClass('disable')
+		form.$('.sendAgain').removeClass('disable')
 	});
 };
 
