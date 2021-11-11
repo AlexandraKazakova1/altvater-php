@@ -664,7 +664,7 @@ function loadContracts(type, sort, limit, container){
 		url			: '/ajax/cabinet/contracts/'+type,
 		method		: "POST",
 		data		: JSON.stringify({
-			sort		: value,
+			sort		: sort,
 			limit		: limit
 		}),
 		dataType	: "json",
