@@ -344,7 +344,7 @@ class UserController extends Controller {
 				
 				'ipn'					=> 'required|min:6|max:10',
 				'uedrpou'				=> 'required|min:8|max:50',
-				'index'					=> 'required|min:6|max:10',
+				'index'					=> 'required|min:5|max:6',
 			),
 			array(
 				'company_name.required'			=> trans('ajax_validation.enter_name_company'),
