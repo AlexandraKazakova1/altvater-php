@@ -151,12 +151,6 @@ function modalFade(){
 		$('#orderService').modal('show');
 	});
 	
-	$('.add').click(function() {
-		$('.modal').modal('hide');
-		// $('#create__contract-modal-1').modal('show');
-		$('#create__contract-modal-2').modal('show');
-	});
-	
 	$('.header .add').click(function() {
 		$('.modal').modal('hide');
 		$('#orderService').modal('show');
@@ -687,6 +681,25 @@ function contracts(){
 		
 		sort_active_contracts.val('date');
 		sort_active_contracts.trigger('change');
+	});
+	
+	$('#add_contract').click(function() {
+		$('.modal').modal('hide');
+		
+		var m = $('#create__contract-modal-1');
+		
+		if(m.length > 0){
+			m.modal('show');
+		}else{
+			m = $('#create__contract-modal-2');
+			
+			if(m.length > 0){
+				m.modal('show');
+			}
+		};
+		
+		//$('#create__contract-modal-1').modal('show');
+		//$('#create__contract-modal-2').modal('show');
 	});
 };
 
