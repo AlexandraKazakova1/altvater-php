@@ -1120,10 +1120,17 @@ function myAddress(){
 			console.log('onload:');
 			console.log(e);
 			
+			let encoded = e.target.result.toString().replace(/^data:(.*,)?/, '');
+			
+			if((encoded.length % 4) > 0){
+				encoded += '='.repeat(4 - (encoded.length % 4));
+			};
+			
 			images[n] = {
 				'name'	: file.name,
 				'mime'	: file.type,
-				'data'	: b64EncodeUnicode(e.target.result)
+				'data'	: encoded
+				//'data'	: b64EncodeUnicode(e.target.result)
 			};
 			
 			added_file.append('<li data-n="'+n+'"><span>'+file.name+'</span><button class="remove-img" data-n="'+n+'" type="button"></button></li>');
@@ -1136,7 +1143,7 @@ function myAddress(){
 			console.log(e);
 		};
 		
-		reader.readAsBinaryString(file);
+		reader.readAsDataURL(file);
 		
 		//images.append(name, blob, file.name);
 	});
