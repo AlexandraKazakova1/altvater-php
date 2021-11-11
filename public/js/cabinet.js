@@ -1457,29 +1457,29 @@ function requestMsg() {
 		return false;
 	};
 	
-	var lock = false,
-	btn = form.find('button[type="submit"]');
+	var lock	= false,
+		btn		= form.find('button[type="submit"]');
 	
 	form.validate({
-		onkeyup	: false,
-		focusCleanup: true,
-		focusInvalid: false,
-		errorClass: "error",
-		rules: {
-			text: {
-				required: true,
-				minlength: 1,
-				maxlength: 2500
+		onkeyup			: false,
+		focusCleanup	: true,
+		focusInvalid	: false,
+		errorClass		: "error",
+		rules			: {
+			text			: {
+				required		: true,
+				minlength		: 1,
+				maxlength		: 2500
 			}
 		},
-		messages: {
-			text: {
-				required: 'Введіть повідомлення',
-				minlength: 'Поле не може бути пустиим',
-				maxlength: 'Максимальна кількість символів 2500'
+		messages		: {
+			text			: {
+				required		: 'Введіть повідомлення',
+				minlength		: 'Поле не може бути пустиим',
+				maxlength		: 'Максимальна кількість символів 2500'
 			}
 		},
-		submitHandler: function() {
+		submitHandler	: function() {
 			if(!lock){
 				$.ajax({
 					type: "POST",
@@ -1519,5 +1519,5 @@ function requestMsg() {
 };
 
 function responseMsg(form, response) {
-    form.find('.responseMsg').text(response.message);
+	form.find('.responseMsg').text(response.message);
 };
