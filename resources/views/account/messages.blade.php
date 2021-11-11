@@ -84,13 +84,13 @@
 					
 					<div>
 						<label class="label__file">
-							<input class="form-control-file" id="control-file" type="file" accept=".pdf, .jpg">
+							<input class="form-control-file" id="control-file" type="file" accept=".pdf, .jpg, .jpeg, .png">
 							
 							<div>
 								<img src="/img/File-fill.svg" alt="">
 								<span>
 									Прикріпити файл
-									<span class="descriotion">pdf, jpg</span>
+									<span class="descriotion">PDF, JPEG</span>
 								</span>
 							</div>
 						</label>
