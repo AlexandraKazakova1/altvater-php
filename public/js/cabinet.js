@@ -390,61 +390,62 @@ function contractIndividual(){
 	var modal = $('#response');
 	
 	form.validate({
-		onkeyup	: false,
-		focusCleanup: true,
-		focusInvalid: false,
-		errorClass: "error",
-		rules: {
-			name: {
-				required: true,
-				minlength: 8
+		onkeyup			: false,
+		focusCleanup	: true,
+		focusInvalid	: false,
+		errorClass		: "error",
+		rules			: {
+			name			: {
+				required		: true,
+				minlength		: 2,
+				maxlength		: 100
 			},
-			email: {
-				required: true,
-				email: true
+			email			: {
+				required		: true,
+				email			: true
 			},
-			phone: {
-				required: true,
+			phone			: {
+				required		: true,
 			},
-			address: {
-				required: true,
-				minlength: 10
+			address			: {
+				required		: true,
+				minlength		: 10
 			},
-			index: {
-				required: true,
-				minlength: 5
+			index			: {
+				required		: true,
+				minlength		: 5
 			}
 		},
-		messages: {
-			name: {
-				required: "Введіть ваше ПІБ",
-				minlength: "Некоректні дані"
+		messages		: {
+			name			: {
+				required		: "Введіть ваше ПІБ",
+				minlength		: "Некоректні дані"
 			},
-			email: {
-				required: "Введіть свій e-mail!",
-				email: "Адреса має бути типу name@domain.com"
+			email			: {
+				required		: "Введіть свій e-mail!",
+				email			: "Адреса має бути типу name@domain.com"
 			},
-			phone: {
-				required: "Введіть ваш номер телефону",
+			phone			: {
+				required		: "Введіть ваш номер телефону",
 			},
-			address: {
-				required: "Введіть вашу адресу",
-				minlength: "Некоректні дані"
+			address			: {
+				required		: "Введіть вашу адресу",
+				minlength		: "Некоректні дані"
 			},
-			index: {
-				required: "Введіть ваш поштовий індекс",
-				minlength: "Некоректні дані"
+			index			: {
+				required		: "Введіть ваш поштовий індекс",
+				minlength		: "Некоректні дані"
 			}
 		},
-		submitHandler: function() {
+		submitHandler	: function() {
 			if(!lock){               
 				$.ajax({
-					type: "POST",
-					url: '/ajax/cabinet/contracts/add',
-					method: "POST",
-					data: form.serialize(),
-					dataType: "json",
-					beforeSend: function(request){
+					type		: "POST",
+					url			: '/ajax/cabinet/contracts/add',
+					method		: "POST",
+					data		: form.serialize(),
+					dataType	: "json",
+					beforeSend	: function(request){
 						lock = true;
 						
 						btn.attr('disabled', true);
@@ -454,7 +455,7 @@ function contractIndividual(){
 						
 						modal.modal('hide');
 					},
-					success: function(response){
+					success		: function(response){
 						console.log('response:');
 						console.log(response);
 						
@@ -468,11 +469,13 @@ function contractIndividual(){
 							
 							modal.find('.responseMsg').text(response.message);
 							modal.modal('show');
+							
+							$('#active-contracts').trigger('reload');
 						}else{
 							responseMsg(form, response);
 						}
 					},
-					error: function(err){
+					error		: function(err){
 						console.log('error');
 						console.log(err);
 						
@@ -611,6 +614,8 @@ function contractEntity(){
 							
 							modal.find('.responseMsg').text(response.message);
 							modal.modal('show');
+							
+							$('#active-contracts').trigger('reload');
 						}else{
 							responseMsg(form, response);
 						}
@@ -670,6 +675,18 @@ function contracts(){
 		var count = archive_contracts.find('.contract__item').length;
 		
 		loadContracts('archive', value, count, archive_contracts.attr('data-limit'), archive_contracts);
+	});
+	
+	active_contracts.on('reload', function(){
+		$('#contractsToggle').addClass('act');
+		
+		$('.archive__content').fadeOut(200);
+		$('.contracts__content').fadeIn(200);
+		
+		$('#archiveToggle').removeClass('act');
+		
+		sort_active_contracts.val('date');
+		sort_active_contracts.trigger('change');
 	});
 };
 
