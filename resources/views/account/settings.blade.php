@@ -131,17 +131,6 @@
 				<form action="POST" id="changePasswordForm">
 					<fieldset>
 						<label>
-							<span class="input-description">Старий пароль:</span>
-							<input class="form-control" type="password" name="password" placeholder=" ">
-							<span class="input-placeholder">
-								<div>
-									<img src="/img/cabinet/modal-icon/lock.svg">
-								</div>
-								Введіть пароль
-							</span>
-						</label>
-						
-						<label>
 							<span class="input-description">Новий пароль:</span>
 							<input class="form-control" type="password" name="new_password" placeholder=" ">
 							<span class="input-placeholder">
@@ -149,6 +138,17 @@
 									<img src="/img/cabinet/modal-icon/lock.svg">
 								</div>
 								Введіть новий пароль
+							</span>
+						</label>
+						
+						<label>
+							<span class="input-description">Старий пароль:</span>
+							<input class="form-control" type="password" name="password" placeholder=" ">
+							<span class="input-placeholder">
+								<div>
+									<img src="/img/cabinet/modal-icon/lock.svg">
+								</div>
+								Введіть пароль
 							</span>
 						</label>
 						
