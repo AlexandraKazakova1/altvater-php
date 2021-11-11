@@ -40,23 +40,6 @@ class ContractsController extends Controller {
 	function add(Request $request){
 		$this->session();
 		
-		if($this->_user->type == 'individual'){
-			return $this->add_individual($request);
-		}
-		
-		return $this->add_entity($request);
-	}
-	
-	function add_individual(Request $request){
-		$this->session();
-		
-		$post = $request->all();
-		
-		$status = false;
-		$errors = array();
-		$msg	= trans('ajax.failed_add_contract');
-		$payload= [];
-		
 		if(!$this->_auth){
 			return response()->json([
 				'status' 	=> $status,
@@ -65,6 +48,21 @@ class ContractsController extends Controller {
 				'payload'	=> $payload
 			], 200, [], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 		}
+		
+		if($this->_user->type == 'individual'){
+			return $this->add_individual($request);
+		}
+		
+		return $this->add_entity($request);
+	}
+	
+	function add_individual(Request $request){
+		$post = $request->all();
+		
+		$status = false;
+		$errors = array();
+		$msg	= trans('ajax.failed_add_contract');
+		$payload= [];
 		
 		$validator = Validator::make(
 			$post,
@@ -147,23 +145,12 @@ class ContractsController extends Controller {
 	}
 	
 	function add_entity(Request $request){
-		$this->session();
-		
 		$post = $request->all();
 		
 		$status = false;
 		$errors = array();
 		$msg	= trans('ajax.failed_add_contract');
 		$payload= [];
-		
-		if(!$this->_auth){
-			return response()->json([
-				'status' 	=> $status,
-				'message'	=> $msg,
-				'errors'	=> $errors,
-				'payload'	=> $payload
-			], 200, [], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
-		}
 		
 		$validator = Validator::make(
 			$post,
@@ -245,6 +232,68 @@ class ContractsController extends Controller {
 				if($error){
 					$errors[$k] = $error;
 				}
+			}
+		}
+		
+		return response()->json([
+			'status' 	=> $status,
+			'message'	=> $msg,
+			'errors'	=> $errors,
+			'payload'	=> $payload
+		], 200, [], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+	}
+	
+	function contracts_list(Request $request){
+		$this->session();
+		
+		$status = false;
+		$errors = array();
+		$msg	= '';
+		$payload= [
+			'html'	=> '',
+			'count'	=> 0
+		];
+		
+		$type = $request->route('type');
+		
+		if($type == "active" || $type == "archive"){
+			$payload['count'] = Contracts::query()->where('client_id', $this->_id)->whereRaw(DB::raw('(`archive` IS NULL OR `archive` = 0)'))->count();
+			
+			$offset = 0;
+			$limit	= 4;
+			
+			if($type == "active"){
+				$data = Contracts::query()
+								->where('client_id', $this->_id)
+								->whereRaw(DB::raw('(`archive` IS NULL OR `archive` = 0)'))
+								->skip($offset)
+								->take($limit)
+								->orderBy('created_at', 'desc')
+								->get();
+				
+				$payload['html'] = view(
+										'account.components.active_contracts',
+										[
+											'contracts'	=> $data
+										]
+									)
+									->render();
+			}else{
+				$data = Contracts::query()
+								->where('client_id', $this->_id)
+								->where('archive', 1)
+								->skip($offset)
+								->take($limit)
+								->orderBy('created_at', 'desc')
+								->get();
+				
+				$payload['html'] = view(
+										'account.components.archive_contracts',
+										[
+											'contracts'	=> $data
+										]
+									)
+									->render();
 			}
 		}
 		

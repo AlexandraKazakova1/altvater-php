@@ -77,6 +77,8 @@ class AccountController extends MyController {
 			return redirect('/');
 		}
 		
+		$limit = 4;
+		
 		return view(
 			'account/contracts',
 			[
@@ -90,11 +92,12 @@ class AccountController extends MyController {
 				'headerClass'	=> '',
 				'robots'		=> '',
 				'canonical'		=> '',
+				'limit'			=> $limit,
 				'count'			=> Contracts::query()->where('client_id', $this->_id)->whereRaw(DB::raw('(`archive` IS NULL OR `archive` = 0)'))->count(),
 				'count_archive'	=> Contracts::query()->where('client_id', $this->_id)->where('archive', 1)->count(),
 				'contracts'		=> [
-					'active'		=> Contracts::query()->where('client_id', $this->_id)->whereRaw(DB::raw('(`archive` IS NULL OR `archive` = 0)'))->orderBy('created_at', 'desc')->get(),
-					'archive'		=> Contracts::query()->where('client_id', $this->_id)->where('archive', 1)->orderBy('created_at', 'desc')->get(),
+					'active'		=> Contracts::query()->where('client_id', $this->_id)->whereRaw(DB::raw('(`archive` IS NULL OR `archive` = 0)'))->skip(0)->take($limit)->orderBy('created_at', 'desc')->get(),
+					'archive'		=> Contracts::query()->where('client_id', $this->_id)->where('archive', 1)->skip(0)->take($limit)->orderBy('created_at', 'desc')->get(),
 				],
 				'services'		=> OrdersServices::query()->orderBy('name', 'asc')->get(),
 			]

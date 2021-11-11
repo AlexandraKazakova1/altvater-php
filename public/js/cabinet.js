@@ -646,7 +646,7 @@ function contracts(){
 	sort_active_contracts.on('change', function(){
 		var value = $(this).val();
 		
-		loadContracts('active', value, 4, sort_active_contracts);
+		loadContracts('active', value, active_contracts.attr('data-limit'), sort_active_contracts);
 	});
 	
 	sort_archive_contracts.on('change', function(){
@@ -654,7 +654,7 @@ function contracts(){
 		
 		console.log(value);
 		
-		loadContracts('archive', value, 4, sort_active_contracts);
+		loadContracts('archive', value, sort_archive_contracts.attr('data-limit'), sort_active_contracts);
 	});
 };
 
@@ -670,16 +670,19 @@ function loadContracts(type, sort, limit, container){
 		dataType	: "json",
 		contentType	: "application/json; charset=utf-8",
 		beforeSend	: function(request){
-			
+			container.find('.contract__item').remove();
+			container.find('button.more').hide();
 		},
 		success		: function(response){
 			console.log('response:');
 			//console.log(response);
 			
 			if(response.status){
-				container.find('.contract__item').remove();
-				container.find('button.more').hide();
-				container.find('button.more').before(response.payload);
+				container.find('button.more').before(response.payload.html);
+				
+				if(response.payload.count > 4){
+					container.find('button.more').show();
+				}
 			}
 		},
 		error		: function(err){
