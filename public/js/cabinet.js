@@ -930,7 +930,7 @@ function bills(){
 	more_acts.on('click', function(){
 		var value = sort_acts.val();
 		
-		var count = acts_list.find('.accounts__item').length;
+		var count = acts_list.find('.acts__item').length;
 		
 		loadActs(value, count, acts_list.attr('data-limit'), acts_list);
 	});
@@ -999,7 +999,7 @@ function loadActs(sort, offset, limit, container){
 			container.find('button.more').hide();
 			
 			if(offset < 1){
-				container.find('.accounts__item').remove();
+				container.find('.acts__item').remove();
 				container.attr('data-show', 0);
 				
 				$('#count_acts').text(0);
@@ -1017,7 +1017,7 @@ function loadActs(sort, offset, limit, container){
 						container.find('button.more').show();
 					}
 				}else{
-					var count = container.find('.accounts__item').length;
+					var count = container.find('.acts__item').length;
 					
 					if(count == response.payload.count){
 						container.find('button.more').hide();
