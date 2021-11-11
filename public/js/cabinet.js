@@ -477,7 +477,6 @@ function contractIndividual(){
 						if(response.status){
 							form.trigger('reset');
 							
-							// form.parents('.modal').removeClass('show');
 							form.parents('.modal').modal('hide');
 							
 							modal.find('.responseMsg').text(response.message);
@@ -633,7 +632,6 @@ function contractEntity(){
 						if(response.status){
 							form.trigger('reset');
 							
-							// form.parents('.modal').removeClass('show');
 							form.parents('.modal').modal('hide');
 							
 							modal.find('.responseMsg').text(response.message);
@@ -748,7 +746,7 @@ function connect_contract(){
 						if(response.status){
 							form.trigger('reset');
 							
-							form.parents('.modal').removeClass('show');
+							form.parents('.modal').modal('hide');
 							
 							modal.find('.responseMsg').text(response.message);
 							modal.modal('show');
