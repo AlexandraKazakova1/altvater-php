@@ -116,6 +116,8 @@ class ConnectsController extends MyAdminController {
 		
 		if(!$record->confirm){
 			$form->switch('confirm'		, __('admin.connects.confirm'));
+		}else{
+			$form->hidden('confirm');
 		}
 		
 		// callback before save
