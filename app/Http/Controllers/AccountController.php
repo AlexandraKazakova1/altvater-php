@@ -12,6 +12,7 @@ use App\Models\UserAddresses;
 
 use App\Models\Dialogues;
 use App\Models\Messages;
+use App\Models\Themes;
 
 use App\Helpers\MyBreadcrumbs;
 use App\Helpers\StringHelper;
@@ -264,6 +265,8 @@ class AccountController extends MyController {
 				'canonical'		=> '',
 				'data'			=> Dialogues::query()->where('client_id', $this->_id)->orderBy('created_at', 'desc')->get(),
 				'services'		=> OrdersServices::query()->orderBy('name', 'asc')->get(),
+				'themes'		=> Themes::query()->orderBy('name', 'asc')->get(),
+				'contracts'		=> Contracts::query()->where('client_id', $this->_id)->orderBy('created_at', 'desc')->select('id', 'number')->get()
 			]
 		);
 	}
@@ -302,7 +305,7 @@ class AccountController extends MyController {
 				'canonical'		=> '',
 				'dialog'		=> $dialog,
 				'messages'		=> $messages,
-				'services'		=> OrdersServices::query()->orderBy('name', 'asc')->get(),
+				'services'		=> OrdersServices::query()->orderBy('name', 'asc')->get()
 			]
 		);
 	}

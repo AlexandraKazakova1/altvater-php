@@ -274,6 +274,8 @@ class UserController extends Controller {
 					);
 				}else{
 					$result = true;
+					
+					$user->update(['verify_phone' => true]);
 				}
 				
 				if(!$result){
