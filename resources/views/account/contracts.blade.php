@@ -47,7 +47,7 @@
 			<img src="/img/cabinet/noContracts.png">
 		</section>
 		
-		<section class="contracts__wrapper" style="{{(($count > 0 || $count_archive > 0) ? '' : 'display:none;')}}">
+		<section class="contracts__wrapper" id="contracts" style="{{(($count > 0 || $count_archive > 0) ? '' : 'display:none;')}}">
 			<div class="selector">
 				<ul>
 					<li data-archive="0" data-count="{{$count}}" class="act" id="contractsToggle">Документи</li>
@@ -63,14 +63,14 @@
 					
 					<div class="filters__list">
 						<p>Сортування:</p>
-						<select class="custom-select" name="contracts__filter">
+						<select class="custom-select" id="sort-active-contracts" name="contracts__filter">
 							<option value="date">Дата</option>
 							<option value="number">Номер</option>
 						</select>
 					</div>
 				</div>
 				
-				<div class="contracts__list">
+				<div class="contracts__list" id="active-contracts">
 					@foreach($contracts['active'] as $item)
 						<!-- -->
 						<div class="contract__item" data-archive="{{(int)($item->archive)}}">
@@ -130,14 +130,14 @@
 					
 					<div class="filters__list">
 						<p>Сортування:</p>
-						<select class="custom-select" name="contracts__filter">
+						<select class="custom-select" id="sort-archive-contracts" name="contracts__filter">
 							<option value="date">Дата</option>
 							<option value="number">Номер</option>
 						</select>
 					</div>
 				</div>
 				
-				<div class="contracts__list">
+				<div class="contracts__list" id="archive-contracts">
 					@foreach($contracts['archive'] as $item)
 						<!-- -->
 						<div class="contract__item" data-archive="{{(int)($item->archive)}}">

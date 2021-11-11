@@ -28,6 +28,7 @@ $(document).ready (function() {
 	ordersSelect();
 	requestMsg();
 	menuToggle();
+	contracts();
 	
 	//$('#addcontract').modal('show');
 	
@@ -36,7 +37,7 @@ $(document).ready (function() {
 	});
 });
 
-function menuToggle() {
+function menuToggle(){
 	$('.menu-icon').click(function() {
 		$('.sidebar__menu').toggleClass('act');
 	});
@@ -49,7 +50,7 @@ function menuToggle() {
 	});
 };
 
-function calendar() {
+function calendar(){
 	const labels = [
 		'Понеділок',
 		'Вівторок',
@@ -105,7 +106,7 @@ function calendar() {
 	);
 };
 
-function customSelect() {
+function customSelect(){
 	$('.custom-select').select2({
 		minimumResultsForSearch: 1000 
 	});
@@ -116,7 +117,7 @@ function customSelect() {
 	});
 };
 
-function modalFade() {
+function modalFade(){
 	var closeBtn = $('.close')
 	
 	$('.btn-logIn').click(function() {
@@ -176,7 +177,7 @@ function modalFade() {
 	});
 };
 
-function initMap(lat, lng) {
+function initMap(lat, lng){
 	var place = new google.maps.LatLng(lat, lng);
 	
 	var map = new google.maps.Map(document.getElementById("map"), {
@@ -190,7 +191,7 @@ function initMap(lat, lng) {
 	});
 }; 
 
-function dragAndDrop() {
+function dragAndDrop(){
 	var dropZone = $('.file-wrap-drop');
 	
 	$('.form-control-file').focus(function() {
@@ -251,7 +252,7 @@ function dragAndDrop() {
 	}
 };
 
-function accountsActs() {
+function accountsActs(){
 	if($('#accountsToggle').hasClass('act')) {
 		$('.acts__content').fadeOut(200);
 		$('.accounts__content').fadeIn(200);
@@ -275,7 +276,7 @@ function accountsActs() {
 	});
 };
 
-function settingsPage() {
+function settingsPage(){
 	if($('#general').hasClass('act')) {
 		$('.security__content').fadeOut(1);
 		$('.general__content').fadeIn(1);
@@ -299,7 +300,7 @@ function settingsPage() {
 	});
 };
 
-function ordersSelect() {
+function ordersSelect(){
 	if($('#all').hasClass('act')) {
 		$('.orders__item').fadeIn(200);
 	} else if($('#processed').hasClass('act')) {
@@ -352,7 +353,7 @@ function ordersSelect() {
 	});
 };
 
-function contractsArchive() {
+function contractsArchive(){
 	if($('#contractsToggle').hasClass('act')) {
 		$('.archive__content').fadeOut(200);
 		$('.contracts__content').fadeIn(200);
@@ -376,7 +377,7 @@ function contractsArchive() {
 	});
 };
 
-function contractIndividual() {
+function contractIndividual(){
 	var form = jQuery("#create__contract__individual");
 	
 	if(!form.length){
@@ -487,7 +488,7 @@ function contractIndividual() {
 	});
 };
 
-function contractEntity() {
+function contractEntity(){
 	var form = jQuery("#create__contract-form__entity");
 	
 	if(!form.length){
@@ -629,7 +630,33 @@ function contractEntity() {
 	});
 };
 
-function myAddress() {
+function contracts(){
+	var page = $('#contracts');
+	
+	if(!page.length){
+		return false;
+	};
+	
+	var active_contracts	= $('#active-contracts');
+	var archive_contracts	= $('#archive-contracts');
+	
+	var sort_active_contracts	= $('#sort-active-contracts');
+	var sort_archive_contracts	= $('#sort-archive-contracts');
+	
+	sort_active_contracts.on('change', function(){
+		var value = $(this).val();
+		
+		console.log(value);
+	});
+	
+	sort_archive_contracts.on('change', function(){
+		var value = $(this).val();
+		
+		console.log(value);
+	});
+};
+
+function myAddress(){
 	var form = jQuery("#add__address-form");
 	
 	if(!form.length){
@@ -1033,7 +1060,7 @@ function msgRequestForm(){
 	});
 };
 
-function settingsForm() {
+function settingsForm(){
 	var form = jQuery("#settingsForm");
 	
 	if(!form.length){
@@ -1149,7 +1176,7 @@ function settingsForm() {
 	});
 };
 
-function changePasswordForm() {
+function changePasswordForm(){
 	var form = jQuery("#changePasswordForm");
 	
 	if(!form.length){
@@ -1228,7 +1255,7 @@ function changePasswordForm() {
 	});
 };
 
-function orderServiceForm() {
+function orderServiceForm(){
 	var form = jQuery("#orderService-form");
 	
 	if(!form.length){
@@ -1330,7 +1357,7 @@ function orderServiceForm() {
 	});
 };
 
-function newOrderForm() {
+function newOrderForm(){
 	var form = jQuery("#newOrder-form");
 	
 	if(!form.length){
@@ -1420,7 +1447,7 @@ function newOrderForm() {
 	});
 };
 
-function timepicker() {
+function timepicker(){
     $('.timepicker').timepicker({
         timeFormat: 'HH:mm',
         interval: 60,
@@ -1434,13 +1461,13 @@ function timepicker() {
     });
 };
 
-function select2() {
+function select2(){
 	$('.custom-select').select2({
 		minimumResultsForSearch: -1
 	});
 };
 
-function maskPhone() {
+function maskPhone(){
 	var el = $('input[type="tel"]');
 	
 	if(!el.length){
@@ -1450,7 +1477,7 @@ function maskPhone() {
 	el.mask('+380999999999');
 };
 
-function requestMsg() {
+function requestMsg(){
 	var form = jQuery("#msgRequestForm");
 	
 	if(!form.length){
@@ -1518,6 +1545,6 @@ function requestMsg() {
 	});
 };
 
-function responseMsg(form, response) {
+function responseMsg(form, response){
 	form.find('.responseMsg').text(response.message);
 };
