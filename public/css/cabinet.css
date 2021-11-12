@@ -5475,6 +5475,38 @@ a.popup-text__link {
   top: 101%;
 }
 
+.popup .popup__form .fieldset .addedFile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  white-space: pre-wrap;
+  word-break: break-all;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  padding-bottom: 10px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  color: rgba(113, 128, 150, 0.8);
+}
+
+.popup .popup__form .fieldset .addedFile button {
+  margin-left: 5px;
+  height: 14px;
+  width: 14px;
+  background-image: url(../img/close-red.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .popup .or__text {
   position: relative;
   font-style: normal;
@@ -5938,38 +5970,6 @@ a.popup-text__link {
   border: 1px solid #2F5E97;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-}
-
-.popup .popup__form .fieldset div .addedFile {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  white-space: pre-wrap;
-  word-break: break-all;
-  word-break: break-word;
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
-  padding-bottom: 10px;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 20px;
-  color: rgba(113, 128, 150, 0.8);
-}
-
-.popup .popup__form .fieldset div .addedFile button {
-  margin-left: 5px;
-  height: 14px;
-  width: 14px;
-  background-image: url(../img/close-red.svg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .responseMsg {
