@@ -21,6 +21,8 @@ use App\Helpers\StringHelper;
 
 use DB;
 
+use Illuminate\Support\Facades\Auth;
+
 class ChatsController extends MyAdminController {
 	
 	/**
@@ -157,8 +159,8 @@ class ChatsController extends MyAdminController {
 			$form->file('file'			, __('admin.chats.file'))->help('PDF, JPEG')->removable()->move('chats')->uniqueName();
 		});
 		
-		$form->tab(__('admin.chats.messages')		, function($form) use ($id) {
-			$form->hasMany('messages', '', function($form){
+		$form->tab(__('admin.chats.messages')		, function($form) use ($id, $users) {
+			$form->hasMany('messages', '', function($form) use ($id, $users){
 				$form->hidden('dialogue_id');
 				$form->hidden('admin_id');
 				
@@ -172,6 +174,18 @@ class ChatsController extends MyAdminController {
 		
 		// callback before save
 		$form->saving(function (Form $form){
+			$form->answer = trim($form->answer);
+			
+			if($form->answer){
+				Messages::create([
+					"client_id"		=> null,
+					"admin_id"		=> Auth::guard('admin')->user()->id,
+					"dialogue_id"	=> $form->model()->id,
+					"text"			=> $form->answer
+				]);
+				
+				$form->answer = null;
+			}
 		});
 		
 		$form->saved(function(Form $form){
