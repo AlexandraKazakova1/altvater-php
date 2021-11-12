@@ -112,50 +112,58 @@ class ChatsController extends MyAdminController {
 		
 		$this->configure($form);
 		
-		$id = $this->_id;
+		$id = (int)request()->segment(3);
 		
-		//
+		$form->tab(__('admin.chats.info')		, function($form) use ($id) {
+			$users = [];
+			
+			$tmp = User::query()->get();
+			
+			foreach($tmp as $item){
+				$users[$item->id] = '#'.$item->id.' - '.$item->surname.' '.$item->name;
+			}
+			
+			$form->select('client_id'	, __('admin.chats.client'))->options($users)->rules('required');
+			
+			//
+			
+			$themes = [];
+			
+			$tmp = Themes::query()->get();
+			
+			foreach($tmp as $item){
+				$themes[$item->id] = $item->label;
+			}
+			
+			$form->select('theme_id'	, __('admin.chats.theme'))->options($themes)->rules('required');
+			
+			//
+			
+			$contracts = [];
+			
+			$tmp = Contracts::query()->get();
+			
+			foreach($tmp as $item){
+				$contracts[$item->id] = $item->number;
+			}
+			
+			$form->select('contract_id'	, __('admin.chats.contract'))->options($contracts);
+			
+			//
+			
+			$form->text('header'		, __('admin.chats.header'))->rules('max:150|required');
+			$form->text('phone'			, __('admin.chats.phone'))->rules('max:15');
+			
+			$form->file('file'			, __('admin.chats.file'))->help('PDF, JPEG')->removable()->move('chats')->uniqueName();
+		});
 		
-		$users = [];
-		
-		$tmp = User::query()->get();
-		
-		foreach($tmp as $item){
-			$users[$item->id] = '#'.$item->id.' - '.$item->surname.' '.$item->name;
-		}
-		
-		$form->select('client_id'	, __('admin.chats.client'))->options($users)->rules('required');
-		
-		//
-		
-		$themes = [];
-		
-		$tmp = Themes::query()->get();
-		
-		foreach($tmp as $item){
-			$themes[$item->id] = $item->label;
-		}
-		
-		$form->select('theme_id'	, __('admin.chats.theme'))->options($themes)->rules('required');
-		
-		//
-		
-		$contracts = [];
-		
-		$tmp = Contracts::query()->get();
-		
-		foreach($tmp as $item){
-			$contracts[$item->id] = $item->number;
-		}
-		
-		$form->select('contract_id'	, __('admin.chats.contract'))->options($contracts);
-		
-		//
-		
-		$form->text('header'		, __('admin.chats.header'))->rules('max:150|required');
-		$form->text('phone'			, __('admin.chats.phone'))->rules('max:15');
-		
-		$form->file('file'			, __('admin.chats.file'))->help('PDF, JPEG')->removable()->move('chats')->uniqueName();
+		$form->tab(__('admin.chats.messages')		, function($form) use ($id) {
+			$form->hasMany('messages', '', function($form){
+				$form->textarea('text'		, __('admin.chats.message'))->rules('readonly');
+			});
+			
+			$form->textarea('answer'		, __('admin.chats.answer'))->rules('max:1000');
+		});
 		
 		// callback before save
 		$form->saving(function (Form $form){

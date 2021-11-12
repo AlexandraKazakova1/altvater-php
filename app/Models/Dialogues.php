@@ -24,7 +24,8 @@ class Dialogues extends Model{
 		'contract_id',
 		'phone',
 		'header',
-		'file'
+		'file',
+		'answer'
 	];
 	
 	public function client(){
@@ -40,6 +41,6 @@ class Dialogues extends Model{
 	}
 	
 	public function messages(){
-		return $this->hasMany(Messages::class, 'dialogue_id');
+		return $this->hasMany(Messages::class, 'dialogue_id')->orderBy('created_at', 'asc');
 	}
 }
