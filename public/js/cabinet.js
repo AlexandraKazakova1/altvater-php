@@ -1439,11 +1439,11 @@ function requestForm(){
 						if(response.status){
 							form.trigger('reset');
 							
-							added_file.html('');
+							//added_file.html('');
 							
-							modal.find('.responseMsg').text(response.message);
-							modal.modal('show');
-
+							//modal.find('.responseMsg').text(response.message);
+							//modal.modal('show');
+							
 							window.location.href = '/account/messages/'+response.payload.id;
 						}else{
 							responseMsg(form, response);
