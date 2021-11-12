@@ -247,6 +247,7 @@ class UserController extends Controller {
 					'email_token'		=> $email_token,
 					'phone_code'		=> $phone_code,
 					'phone_token'		=> $phone_token,
+					'verify_phone'		=> $this->_send_sms ? null : 1
 				]);
 				
 				$this->sendEmail(
@@ -472,6 +473,7 @@ class UserController extends Controller {
 					'email_token'		=> $email_token,
 					'phone_code'		=> $phone_code,
 					'phone_token'		=> $phone_token,
+					'verify_phone'		=> $this->_send_sms ? null : 1
 				]);
 				
 				$this->sendEmail(
