@@ -186,6 +186,8 @@ class ChatsController extends MyAdminController {
 					"text"			=> $form->answer
 				]);
 				
+				$time = date('H:i');
+				
 				$form->answer		= null;
 				$form->updated_at	= date('Y-m-d').' '.$time.':00';
 			}
