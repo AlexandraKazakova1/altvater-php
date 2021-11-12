@@ -38,7 +38,7 @@
 					<input type="hidden" name="id" value="{{$dialog->id}}" />
 					<fieldset>
 						<label>
-							<input type="text" placeholder="Повідомлення">
+							<input type="text" name="text" placeholder="Повідомлення">
 						</label>
 						
 						<button type="submit">
