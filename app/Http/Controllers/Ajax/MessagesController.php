@@ -108,7 +108,7 @@ class MessagesController extends Controller {
 			}
 			
 			if($contract_id > 0){
-				$contract = Themes::query()->where('id', $contract_id)->first();
+				$contract = Contracts::query()->where('id', $contract_id)->first();
 				
 				if(!$contract){
 					$error	= true;
