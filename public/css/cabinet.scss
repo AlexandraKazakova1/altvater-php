@@ -1439,6 +1439,8 @@ main {
                 flex-direction: column;
                 margin-bottom: 24px;
                 margin-right: 25px;
+                width: 23.403vw;
+                min-width: 280px;
                 .input-description::after {
                     content: '*';
                     color: rgba(218, 20, 20, 0.8);
@@ -3486,12 +3488,13 @@ main {
                         max-width: 100%;
                         width: 100%;
                         label {
-                            width: 100%;
+                            min-width: 100%;
+                            width: 100% !important;
                             margin-right: 0;
                             .select2-container,
                             input,
                             textarea {
-                                width: 100%;
+                                width: 100% !important;
                             }
                             .select2-container {
                                 .selection {

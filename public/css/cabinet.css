@@ -2165,6 +2165,8 @@ main {
           flex-direction: column;
   margin-bottom: 24px;
   margin-right: 25px;
+  width: 23.403vw;
+  min-width: 280px;
 }
 
 .newOrder form fieldset label .input-description::after,
@@ -4945,7 +4947,8 @@ main {
   }
   .settings__wrapper .request .request__form fieldset div label,
   .request__page .request .request__form fieldset div label {
-    width: 100%;
+    min-width: 100%;
+    width: 100% !important;
     margin-right: 0;
   }
   .settings__wrapper .request .request__form fieldset div label .select2-container,
@@ -4954,7 +4957,7 @@ main {
   .request__page .request .request__form fieldset div label .select2-container,
   .request__page .request .request__form fieldset div label input,
   .request__page .request .request__form fieldset div label textarea {
-    width: 100%;
+    width: 100% !important;
   }
   .settings__wrapper .request .request__form fieldset div label .select2-container .selection,
   .request__page .request .request__form fieldset div label .select2-container .selection {
