@@ -119,7 +119,7 @@
 							
 							<div class="title">
 								Тема:
-								<span>{{$item->theme}}</span>
+								<span>{{$item->theme->label}}</span>
 							</div>
 							
 							<div class="date">
