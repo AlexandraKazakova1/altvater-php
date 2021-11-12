@@ -145,7 +145,7 @@ class ChatsController extends MyAdminController {
 		$tmp = Contracts::query()->get();
 		
 		foreach($tmp as $item){
-			$contracts[$item->id] = $item->label;
+			$contracts[$item->id] = $item->number;
 		}
 		
 		$form->select('contract_id'	, __('admin.chats.contract'))->options($contracts);
