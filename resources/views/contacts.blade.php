@@ -28,7 +28,5 @@
 				</ul>
 			</div>
 		</section>
-		
-		@include('components.contacts', ['contacts' => $contacts, 'settings' => $settings])
 	</main>
 @stop
