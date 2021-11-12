@@ -157,6 +157,8 @@ class ChatsController extends MyAdminController {
 			$form->text('phone'			, __('admin.chats.phone'))->rules('max:15');
 			
 			$form->file('file'			, __('admin.chats.file'))->help('PDF, JPEG')->removable()->move('chats')->uniqueName();
+			
+			$form->hidden('updated_at');
 		});
 		
 		$form->tab(__('admin.chats.messages')		, function($form) use ($id, $users) {
@@ -184,7 +186,8 @@ class ChatsController extends MyAdminController {
 					"text"			=> $form->answer
 				]);
 				
-				$form->answer = null;
+				$form->answer		= null;
+				$form->updated_at	= date('Y-m-d').' '.$time.':00';
 			}
 		});
 		

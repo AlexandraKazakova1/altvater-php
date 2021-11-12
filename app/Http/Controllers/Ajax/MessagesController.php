@@ -240,6 +240,8 @@ class MessagesController extends Controller {
 				$date = date('d/m/Y');
 				$time = date('H:i');
 				
+				$dialog->update(['updated_at' => date('Y-m-d').' '.$time.':00']);
+				
 				$this->sendEmail(
 					'new-message',
 					null,
