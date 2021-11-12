@@ -27,7 +27,6 @@
 						<label>
 							<span class="input-description">Вибір тематики заявки:</span>
 							<select class="custom-select" name="theme">
-								<option data-id="0" class="first-option" disabled selected value hidden>Тематика заявки</option>
 								@foreach($themes as $item)
 									<option value="{{$item->id}}">{{$item->label}}</option>
 								@endforeach
@@ -35,10 +34,9 @@
 						</label>
 						
 						<label>
-							<span class="input-description">Номер договору:</span>
+							<span class="input-description notCheck">Номер договору:</span>
 							<select class="custom-select" name="number">
-								<option data-id="0" class="first-option" disabled selected value hidden>Номер договору</option>
-								<option value="0">Без договору</option>
+								<option value="0" class="first-option" selected>Без договору</option>
 								
 								@foreach($contracts as $item)
 									<option value="{{$item->id}}">#{{$item->number}}</option>

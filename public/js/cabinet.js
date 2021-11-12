@@ -30,9 +30,10 @@ $(document).ready (function() {
 	
 	changePasswordForm();
 	settingsForm();
-	requestForm();
 	
-	requestMsg();
+	requestForm();
+	newMessage();
+	
 	menuToggle();
 	
 	ordersSelect();
@@ -1363,46 +1364,50 @@ function requestForm(){
 		focusInvalid	: false,
 		errorClass		: "error",
 		rules			: {
-			header		: {
-				required	: true,
-				minlength	: 2
+			theme			: {
+				required		: true,
 			},
-			phone		: {
-				required	: false,
-				minlength	: 13,
-				maxlength	: 13,
+			phone			: {
+				required		: false,
+				minlength		: 13,
+				maxlength		: 13,
 			},
-			header		: {
-				required	: true,
-				minlength	: 2
+			header			: {
+				required		: true,
+				minlength		: 2,
+				maxlength		: 150
 			},
-			text		: {
-				required	: true,
-				maxlength	: 1000
+			text			: {
+				required		: true,
+				minlength		: 5,
+				maxlength		: 1000
 			}
 		},
 		messages		: {
-			theme: {
-				required: "Це поле обов'язкове для заповнення",
-				minlength: "Введіть більше 2 символів"
+			theme			: {
+				required		: "Оберіть тему звернення"
 			},
-			phone: {
-				required: "Це поле обов'язкове для заповнення",
+			phone			: {
+				required	: "Це поле обов'язкове для заповнення",
+				minlength	: "Номер вказано некоректно",
+				maxlength	: "Номер вказано некоректно"
 			},
-			header: {
-				required: "Це поле обов'язкове для заповнення",
-				minlength: "Введіть більше 2 символів"
+			header			: {
+				required		: "Це поле обов'язкове для заповнення",
+				minlength		: "Введіть більше 2 символів",
+				maxlength		: "Введіть не більше 150 символів"
 			},
-			text: {
-				required: "Це поле обов'язкове для заповнення",
-				maxlength: "Введіть не більше 1000 символів"
+			text			: {
+				required		: "Це поле обов'язкове для заповнення",
+				minlength		: "Введіть більше 5 символів",
+				maxlength		: "Введіть не більше 1000 символів"
 			}
 		},
 		submitHandler	: function() {
 			if(!lock){
 				var form_data = {
-					theme		: form.find('input[name="theme"]').val(),
-					number		: form.find('input[name="number"]').val(),
+					theme		: form.find('select[name="theme"]').val(),
+					number		: form.find('select[name="number"]').val(),
 					phone		: form.find('input[name="phone"]').val(),
 					header		: form.find('input[name="header"]').val(),
 					text		: form.find('textarea[name="text"]').val(),
@@ -1434,10 +1439,12 @@ function requestForm(){
 						if(response.status){
 							form.trigger('reset');
 							
-							added_file.html('');
+							//added_file.html('');
 							
-							modal.find('.responseMsg').text(response.message);
-							modal.modal('show');
+							//modal.find('.responseMsg').text(response.message);
+							//modal.modal('show');
+							
+							window.location.href = '/account/messages/'+response.payload.id;
 						}else{
 							responseMsg(form, response);
 						}
@@ -1503,48 +1510,50 @@ function requestForm(){
 	});
 };
 
-function msgRequestForm(){
-	var form = jQuery("#msgRequestForm");
+function newMessage(){
+	var form = jQuery("#message_form");
 	
 	if(!form.length){
 		return false;
 	};
 	
-	var lock = false,
-		btn = form.find('button[type="submit"]');
+	var lock	= false,
+		btn		= form.find('button[type="submit"]');
 	
 	form.validate({
-		onkeyup	: false,
-		focusCleanup: true,
-		focusInvalid: false,
-		errorClass: "error",
-		rules: {
-			text: {
-				required: true,
-				maxlength: 1000
+		onkeyup			: false,
+		focusCleanup	: true,
+		focusInvalid	: false,
+		errorClass		: "error",
+		rules			: {
+			text			: {
+				required		: true,
+				minlength		: 1,
+				maxlength		: 2500
 			}
 		},
-		messages: {
-			text: {
-				required: "Це поле обов'язкове для заповнення",
-				maxlength: "Введіть не більше 1000 символів"
+		messages		: {
+			text			: {
+				required		: 'Введіть повідомлення',
+				minlength		: 'Поле не може бути пустиим',
+				maxlength		: 'Максимальна кількість символів 2500'
 			}
 		},
-		submitHandler: function() {
+		submitHandler	: function() {
 			if(!lock){
 				$.ajax({
-					type: "POST",
-					url: '/ajax/cabinet/request/:id',
-					method: "POST",
-					data: form.serialize(),
-					dataType: "json",
-					beforeSend: function(request){
+					type		: "POST",
+					url			: '/ajax/cabinet/request/:id',
+					method		: "POST",
+					data		: form.serialize(),
+					dataType	: "json",
+					beforeSend	: function(request){
 						lock = true;
 						
 						btn.attr('disabled', true);
 						form.find('label.error').text('').hide();
 					},
-					success: function(response){
+					success		: function(response){
 						console.log('response:');
 						console.log(response);
 						
@@ -1553,17 +1562,17 @@ function msgRequestForm(){
 						
 						if(response.status){
 							form.trigger('reset');
+							responseMsg(form, response);
 						}
 					},
-					error: function(err){
+					error		: function(err){
 						console.log('error');
-						
 						lock = false;
 						btn.attr('disabled', false);
+						responseMsg(form, err);
 					}
 				});
 			};
-			
 			return false;
 		}
 	});
@@ -2045,18 +2054,18 @@ function requestMsg(){
 		submitHandler	: function() {
 			if(!lock){
 				$.ajax({
-					type: "POST",
-					url: '/ajax/cabinet/request/:id',
-					method: "POST",
-					data: form.serialize(),
-					dataType: "json",
-					beforeSend: function(request){
+					type		: "POST",
+					url			: '/ajax/cabinet/request/:id',
+					method		: "POST",
+					data		: form.serialize(),
+					dataType	: "json",
+					beforeSend	: function(request){
 						lock = true;
 						
 						btn.attr('disabled', true);
 						form.find('label.error').text('').hide();
 					},
-					success: function(response){
+					success		: function(response){
 						console.log('response:');
 						console.log(response);
 						
@@ -2068,7 +2077,7 @@ function requestMsg(){
 							responseMsg(form, response);
 						}
 					},
-					error: function(err){
+					error		: function(err){
 						console.log('error');
 						lock = false;
 						btn.attr('disabled', false);

@@ -101,6 +101,15 @@
 						</a>
 					</li>
 					<li class="menu__item">
+						<a href="/account/orders">
+							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M15.8355 17.5029H4.16394C3.24309 17.5029 2.49658 16.7564 2.49658 15.8355V8.3324C2.49658 7.41154 3.24309 6.66504 4.16394 6.66504H15.8355C16.7563 6.66504 17.5028 7.41154 17.5028 8.3324V15.8355C17.5028 16.7564 16.7563 17.5029 15.8355 17.5029Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+								<path d="M13.3345 17.5031V4.99793C13.3345 4.07707 12.588 3.33057 11.6671 3.33057H8.3324C7.41154 3.33057 6.66504 4.07707 6.66504 4.99793V17.5031" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+							Мої замовлення
+						</a>
+					</li>
+					<li class="menu__item">
 						<a href="/account/messages">
 							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path fill-rule="evenodd" clip-rule="evenodd" d="M12.8119 10.5982L16.5669 8.05234C17.151 7.65734 17.5002 6.99817 17.5002 6.29317V6.29317C17.5002 5.11817 16.5485 4.1665 15.3744 4.1665H4.63853C3.46436 4.1665 2.5127 5.11817 2.5127 6.29234V6.29234C2.5127 6.99734 2.86186 7.6565 3.44603 8.05234L7.20103 10.5982C8.8952 11.7465 11.1177 11.7465 12.8119 10.5982V10.5982Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -108,15 +117,6 @@
 							</svg>
 							Повідомлення
 							<span class="counter" style="display:none;">6</span>
-						</a>
-					</li>
-					<li class="menu__item">
-						<a href="/account/orders">
-							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path fill-rule="evenodd" clip-rule="evenodd" d="M15.8355 17.5029H4.16394C3.24309 17.5029 2.49658 16.7564 2.49658 15.8355V8.3324C2.49658 7.41154 3.24309 6.66504 4.16394 6.66504H15.8355C16.7563 6.66504 17.5028 7.41154 17.5028 8.3324V15.8355C17.5028 16.7564 16.7563 17.5029 15.8355 17.5029Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-								<path d="M13.3345 17.5031V4.99793C13.3345 4.07707 12.588 3.33057 11.6671 3.33057H8.3324C7.41154 3.33057 6.66504 4.07707 6.66504 4.99793V17.5031" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-							</svg>
-							Мої замовлення
 						</a>
 					</li>
 					<li class="menu__item">
@@ -140,7 +140,7 @@
 							<rect width="16" height="16"/>
 						</g>
 					</svg>
-					Вийти з аккаунту
+					Вийти з системи
 				</a>
 			</aside>
 			
