@@ -166,11 +166,6 @@ function modalFade(){
 		$('#orderService').modal('show');
 	});
 	
-	$('.pinned').click(function() {
-		$('.modal').modal('hide');
-		$('#create__contract-modal-2').modal('show');
-	});
-	
 	$('.orders__item').click(function() {
 		$('.modal').modal('hide');
 		$('#orderInfo').modal('show');
