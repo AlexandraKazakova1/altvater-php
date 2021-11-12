@@ -3319,6 +3319,7 @@ main {
                     justify-content: center;
                     align-items: center;
                     div {
+                        max-width: 280px;
                         label {
                             margin-right: 0;
                         }
@@ -3482,6 +3483,7 @@ main {
                     justify-content: center;
                     align-items: center;
                     div {
+                        max-width: 100%;
                         width: 100%;
                         label {
                             width: 100%;
@@ -3493,9 +3495,9 @@ main {
                             }
                             .select2-container {
                                 .selection {
-                                    width: 100%;
+                                    width: 100% !important;
                                     .select2-selection {
-                                        width: 100%;
+                                        width: 100% !important;
                                     }
                                 }
                             }

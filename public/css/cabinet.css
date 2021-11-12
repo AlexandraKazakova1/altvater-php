@@ -4769,6 +4769,10 @@ main {
         -ms-flex-align: center;
             align-items: center;
   }
+  .settings__wrapper .request .request__form fieldset div,
+  .request__page .request .request__form fieldset div {
+    max-width: 280px;
+  }
   .settings__wrapper .request .request__form fieldset div label,
   .request__page .request .request__form fieldset div label {
     margin-right: 0;
@@ -4936,6 +4940,7 @@ main {
   }
   .settings__wrapper .request .request__form fieldset div,
   .request__page .request .request__form fieldset div {
+    max-width: 100%;
     width: 100%;
   }
   .settings__wrapper .request .request__form fieldset div label,
@@ -4953,11 +4958,11 @@ main {
   }
   .settings__wrapper .request .request__form fieldset div label .select2-container .selection,
   .request__page .request .request__form fieldset div label .select2-container .selection {
-    width: 100%;
+    width: 100% !important;
   }
   .settings__wrapper .request .request__form fieldset div label .select2-container .selection .select2-selection,
   .request__page .request .request__form fieldset div label .select2-container .selection .select2-selection {
-    width: 100%;
+    width: 100% !important;
   }
   .settings__wrapper .request .request__form fieldset .submit__wrap .btn-submit,
   .request__page .request .request__form fieldset .submit__wrap .btn-submit {
