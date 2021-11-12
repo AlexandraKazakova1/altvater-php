@@ -102,9 +102,9 @@ Route::group(['namespace' => 'Ajax'], function(){
 		'uses' => 'MessagesController@add'
 	]);
 	
-	Route::post('ajax/cabinet/request/{id}', [
+	Route::post('ajax/cabinet/request/message', [
 		'uses' => 'MessagesController@message'
-	])->where('id', '[0-9]+');
+	]);
 });
 
 Route::get('news', [

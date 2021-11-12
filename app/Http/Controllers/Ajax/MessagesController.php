@@ -206,7 +206,7 @@ class MessagesController extends Controller {
 		
 		$status = false;
 		$errors = array();
-		$msg	= trans('ajax.failed_remove_address');
+		$msg	= trans('ajax.failed_send_message');
 		$payload= [];
 		
 		if(!$this->_auth){
@@ -218,21 +218,54 @@ class MessagesController extends Controller {
 			], 200, [], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 		}
 		
-		$id = (int)$request->route('id');
+		$id = (int)$request->get('id');
 		
-		$status		= true;
-		$msg		= '';
-		$payload	= [
-			"author"	=> [
-				"id"		=> 1,
-				"name"		=> "Ivan",
-			],
-			"created"	=> [
-				"date"		=> "25/07/2020",
-				"time"		=> "16:53",
-			],
-			"text"		=> "text text text text text text"
-		];
+		if($id){
+			$dialog = Dialogues::query()
+								->where([
+									"client_id"		=> $this->_id,
+									"id"			=> $id
+								])
+								->first();
+			
+			if($dialog){
+				$text = $request->get('text');
+				
+				$message = Messages::create([
+					"client_id"		=> $this->_id,
+					"dialogue_id"	=> $dialog->id,
+					"text"			=> $text
+				]);
+				
+				$date = date('d/m/Y');
+				$time = date('H:i');
+				
+				$this->sendEmail(
+					'new-message',
+					null,
+					array(
+						'name'	=> $this->_user->name,
+						'id'	=> $this->_user->id,
+						'url'	=> url('/admin/chats/'.$record->id.'/edit'),
+						'text'	=> $text
+					)
+				);
+				
+				$status		= true;
+				$msg		= '';
+				$payload	= [
+					"author"	=> [
+						"id"		=> $this->_user->id,
+						"name"		=> $this->_user->name
+					],
+					"created"	=> [
+						"date"		=> $date,
+						"time"		=> $time
+					],
+					"text"		=> $text
+				];
+			}
+		}
 		
 		return response()->json([
 			'status' 	=> $status,

@@ -21,7 +21,7 @@
 		</a>
 		
 		<section class="message__wrapper">
-			<div class="msg__field">
+			<div class="msg__field" id="messages_list">
 				@foreach($messages as $item)
 					@php $time = explode(' ', $item->created_at); @endphp
 					<!-- -->

@@ -1520,6 +1520,8 @@ function newMessage(){
 	var lock	= false,
 		btn		= form.find('button[type="submit"]');
 	
+	var messages_list = $('#messages_list');
+	
 	form.validate({
 		onkeyup			: false,
 		focusCleanup	: true,
@@ -1528,22 +1530,22 @@ function newMessage(){
 		rules			: {
 			text			: {
 				required		: true,
-				minlength		: 1,
-				maxlength		: 2500
+				minlength		: 2,
+				maxlength		: 1000
 			}
 		},
 		messages		: {
 			text			: {
 				required		: 'Введіть повідомлення',
-				minlength		: 'Поле не може бути пустиим',
-				maxlength		: 'Максимальна кількість символів 2500'
+				minlength		: "Введіть більше 5 символів",
+				maxlength		: "Введіть не більше 1000 символів"
 			}
 		},
 		submitHandler	: function() {
 			if(!lock){
 				$.ajax({
 					type		: "POST",
-					url			: '/ajax/cabinet/request/:id',
+					url			: '/ajax/cabinet/request/message',
 					method		: "POST",
 					data		: form.serialize(),
 					dataType	: "json",
@@ -1562,6 +1564,18 @@ function newMessage(){
 						
 						if(response.status){
 							form.trigger('reset');
+							
+							var html = '';
+							
+							html += '<div class="user">';
+								html += '<span class="name">'+response.payload.author.name+'<span class="time">'+response.payload.created.time+'</span></span>';
+								html += '<p>'+response.payload.text+'</p>';
+							html += '</div>';
+							
+							messages_list.append(html);
+							
+							//responseMsg(form, response);
+						}else{
 							responseMsg(form, response);
 						}
 					},
