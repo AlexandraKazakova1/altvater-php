@@ -159,7 +159,7 @@ class ChatsController extends MyAdminController {
 		
 		$form->tab(__('admin.chats.messages')		, function($form) use ($id) {
 			$form->hasMany('messages', '', function($form){
-				$form->textarea('text'		, __('admin.chats.message'))->rules('readonly');
+				$form->textarea('text'		, __('admin.chats.message'))->readonly();
 			});
 			
 			$form->textarea('answer'		, __('admin.chats.answer'))->rules('max:1000');
