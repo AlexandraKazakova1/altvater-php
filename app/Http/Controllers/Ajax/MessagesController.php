@@ -15,6 +15,10 @@ use Illuminate\Support\Facades\Validator;
 use App\Helpers\StringHelper;
 
 use App\Models\User;
+use App\Models\Themes;
+use App\Models\Dialogues;
+use App\Models\Messages;
+use App\Models\Contracts;
 
 class MessagesController extends Controller {
 	
@@ -43,7 +47,7 @@ class MessagesController extends Controller {
 		
 		$status = false;
 		$errors = array();
-		$msg	= trans('ajax.failed_add_contract');
+		$msg	= trans('ajax.failed_create_request');
 		$payload= [];
 		
 		if(!$this->_auth){
@@ -55,13 +59,122 @@ class MessagesController extends Controller {
 			], 200, [], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 		}
 		
-		$status		= true;
-		$msg		= '';
-		$payload	= [
-			"id"		=> 1,
-			"theme"		=> "test test",
-			"date"		=> "24.10.2021"
-		];
+		$post = $request->all();
+		
+		$validator = Validator::make(
+			$post,
+			array(
+				'theme'				=> 'required',
+				'header'			=> 'required|min:2|max:150',
+				'phone'				=> 'max:13',
+				'text'				=> 'required|min:5|max:1000',
+			),
+			array(
+				'theme.required'	=> trans('ajax_validation.required'),
+				
+				'header.required'	=> trans('ajax_validation.required'),
+				'header.min'		=> trans('ajax_validation.min_length'),
+				'header.max'		=> trans('ajax_validation.max_length'),
+				
+				'phone.required'	=> trans('ajax_validation.required'),
+				'phone.min'			=> trans('ajax_validation.min_length'),
+				'phone.max'			=> trans('ajax_validation.max_length'),
+				
+				'text.required'		=> trans('ajax_validation.required'),
+				'text.min'			=> trans('ajax_validation.min_length'),
+				'text.max'			=> trans('ajax_validation.max_length'),
+			)
+		);
+		
+		if($validator->passes()){
+			$error = false;
+			
+			$theme_id		= (int)$this->request('theme');
+			$contract_id	= (int)$this->request('number');
+			
+			if(!$theme_id){
+				$error	= true;
+				$msg	= trans('ajax.select_theme');
+			}
+			
+			if(!$error){
+				$theme = Themes::query()->where('id', $theme_id)->first();
+				
+				if(!$theme){
+					$error	= true;
+					$msg	= trans('ajax.select_theme');
+				}
+			}
+			
+			if($contract_id > 0){
+				$contract = Themes::query()->where('id', $contract_id)->first();
+				
+				if(!$contract){
+					$error	= true;
+				}
+			}else{
+				$contract_id = null;
+			}
+			
+			if(!$error){
+				$post['phone'] = preg_replace("/[^0-9]/", '', $post['phone']);
+				
+				if($post['phone']){
+					if(strlen($post['phone']) != 12){
+						$error = true;
+						
+						$msg = trans('ajax_validation.phone_invalid');
+					}
+				}
+			}
+			
+			if(!$error){
+				$file = null;
+				
+				$record = Dialogues::create([
+					"client_id"		=> $this->_id,
+					"theme_id"		=> $theme_id,
+					"contract_id"	=> $contract_id,
+					"phone"			=> $post['phone'],
+					"header"		=> $post['header'],
+					"file"			=> $file
+				]);
+				
+				$message = Messages::create([
+					"client_id"		=> $this->_id,
+					"dialogue_id"	=> $record->id,
+					"text"			=> $post['text']
+				]);
+				
+				$this->sendEmail(
+					'new-appeal',
+					null,
+					array(
+						'name'	=> $this->_user->name,
+						'id'	=> $this->_user->id,
+						'url'	=> url('/admin/chats/'.$record->id.'/edit')
+					)
+				);
+				
+				$status		= true;
+				$msg		= '';
+				$payload	= [
+					"id"		=> $record->id,
+					"theme"		=> $theme->label,
+					"date"		=> date('Y-m-d')
+				];
+			}
+		}else{
+			$messages = $validator->messages();
+			
+			foreach($post as $k => $v){
+				$error = $messages->first($k);
+				
+				if($error){
+					$errors[$k] = $error;
+				}
+			}
+		}
 		
 		return response()->json([
 			'status' 	=> $status,
