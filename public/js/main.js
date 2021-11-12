@@ -124,21 +124,20 @@ function callBackForm() {
 		rules			: {
 			name			: {
 				required		: true,
-				rangelength		: [2, 100]
+				minlength		: 2,
+				maxlength		: 100
 			},
 			phone			: {
 				required		: true,
 				minlength		: 12,
 				maxlength		: 13,
-			},
-			rule			: {
-				required		: true
 			}
 		},
 		messages		: {
-			name				: {
-				required			: "Введіть своє ім'я",
-				rangelength			: "Введіть більше двох символів"
+			name			: {
+				required		: "Введіть Ім'я",
+				minlength		: "Введіть більше 2 символів",
+				maxlength		: "Можна ввести до 100 символів"
 			},
 			phone			: {
 				required		: "Введіть контактний телефон",
