@@ -126,9 +126,10 @@ function callBackForm() {
 				required		: true,
 				rangelength		: [2, 100]
 			},
-			email			: {
+			phone			: {
 				required		: true,
-				email			: true
+				minlength		: 12,
+				maxlength		: 13,
 			},
 			rule			: {
 				required		: true
@@ -139,9 +140,10 @@ function callBackForm() {
 				required			: "Введіть своє ім'я",
 				rangelength			: "Введіть більше двох символів"
 			},
-			email				: {
-				required			: "Введіть свій e-mail!",
-				email				: "Адреса має бути типу name@domain.com"
+			phone			: {
+				required		: "Введіть контактний телефон",
+				minlength		: "Введіть мінімум 12 символів",
+				maxlength		: "Можна ввести до 13 символів"
 			},
 			rule				: {
 				required			: "Підтвердіть свою згоду"
