@@ -246,7 +246,7 @@ class MessagesController extends Controller {
 					array(
 						'name'	=> $this->_user->name,
 						'id'	=> $this->_user->id,
-						'url'	=> url('/admin/chats/'.$record->id.'/edit'),
+						'url'	=> url('/admin/chats/'.$dialog->id.'/edit'),
 						'text'	=> $text
 					)
 				);
