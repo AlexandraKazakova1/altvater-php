@@ -114,15 +114,15 @@ class ChatsController extends MyAdminController {
 		
 		$id = (int)request()->segment(3);
 		
-		$form->tab(__('admin.chats.info')		, function($form) use ($id) {
-			$users = [];
-			
-			$tmp = User::query()->get();
-			
-			foreach($tmp as $item){
-				$users[$item->id] = '#'.$item->id.' - '.$item->surname.' '.$item->name;
-			}
-			
+		$users = [];
+		
+		$tmp = User::query()->get();
+		
+		foreach($tmp as $item){
+			$users[$item->id] = '#'.$item->id.' - '.$item->surname.' '.$item->name;
+		}
+		
+		$form->tab(__('admin.chats.info')		, function($form) use ($id, $users) {
 			$form->select('client_id'	, __('admin.chats.client'))->options($users)->rules('required');
 			
 			//
@@ -159,6 +159,11 @@ class ChatsController extends MyAdminController {
 		
 		$form->tab(__('admin.chats.messages')		, function($form) use ($id) {
 			$form->hasMany('messages', '', function($form){
+				$form->hidden('dialogue_id');
+				$form->hidden('admin_id');
+				
+				$form->select('client_id'	, __('admin.chats.author'))->options($users)->readonly();
+				
 				$form->textarea('text'		, __('admin.chats.message'))->readonly();
 			});
 			
