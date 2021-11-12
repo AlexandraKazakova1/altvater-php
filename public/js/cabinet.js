@@ -1920,6 +1920,8 @@ function newOrderForm(){
 	var lock = false,
 		btn = form.find('button[type="submit"]');
 	
+	var modal = $('#response');
+	
 	form.validate({
 		onkeyup	: false,
 		focusCleanup: true,
