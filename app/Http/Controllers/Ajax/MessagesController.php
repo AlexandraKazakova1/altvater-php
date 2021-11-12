@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
 
 use App\Helpers\StringHelper;
 
@@ -131,13 +132,29 @@ class MessagesController extends Controller {
 			if(!$error){
 				$file = null;
 				
+				$tmp_file	= $request->get('file');
+				
+				if($tmp_file){
+					if(isset($tmp_file['name']) && isset($tmp_file['mime']) && isset($tmp_file['data'])){
+						$tmp_file['mime'] = explode('/', $tmp_file['mime']);
+						
+						if($tmp_file['mime'][0] == 'image' || $tmp_file['mime'][0] == 'application'){
+							$file	= md5(time().'-'.$tmp_file['mime'][1]).'.'.$tmp_file['mime'][1];
+							
+							Storage::put('chats/'.$file, base64_decode($tmp_file['data']));
+						}
+					}
+				}
+			}
+			
+			if(!$error){
 				$record = Dialogues::create([
 					"client_id"		=> $this->_id,
 					"theme_id"		=> $theme_id,
 					"contract_id"	=> $contract_id,
 					"phone"			=> $post['phone'],
 					"header"		=> $post['header'],
-					"file"			=> $file
+					"file"			=> $file ? 'chats/'.$file : null
 				]);
 				
 				$message = Messages::create([
