@@ -27,7 +27,6 @@
 						<label>
 							<span class="input-description">Вибір тематики заявки:</span>
 							<select class="custom-select" name="theme">
-								<option data-id="0" class="first-option" disabled selected value hidden>Тематика заявки</option>
 								@foreach($themes as $item)
 									<option value="{{$item->id}}">{{$item->label}}</option>
 								@endforeach
