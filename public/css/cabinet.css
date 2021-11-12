@@ -2496,6 +2496,70 @@ main {
   padding-left: 0;
 }
 
+.newOrder form fieldset .addedFile,
+.settings__wrapper form fieldset .addedFile,
+.request form fieldset .addedFile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  white-space: pre-wrap;
+  word-break: break-all;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  padding-bottom: 10px;
+}
+
+.newOrder form fieldset .addedFile span,
+.settings__wrapper form fieldset .addedFile span,
+.request form fieldset .addedFile span {
+  white-space: pre-wrap;
+  word-break: break-all;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  color: #2F5E97;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.newOrder form fieldset .addedFile li,
+.settings__wrapper form fieldset .addedFile li,
+.request form fieldset .addedFile li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.newOrder form fieldset .addedFile button,
+.settings__wrapper form fieldset .addedFile button,
+.request form fieldset .addedFile button {
+  margin-left: 5px;
+  height: 14px;
+  width: 14px;
+  background-image: url(../img/close-red.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .request__page .request {
   padding: 34px 0;
   border-top: 1px solid #DDE6EE;
@@ -5475,38 +5539,6 @@ a.popup-text__link {
   top: 101%;
 }
 
-.popup .popup__form .fieldset .addedFile {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  white-space: pre-wrap;
-  word-break: break-all;
-  word-break: break-word;
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
-  padding-bottom: 10px;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 20px;
-  color: rgba(113, 128, 150, 0.8);
-}
-
-.popup .popup__form .fieldset .addedFile button {
-  margin-left: 5px;
-  height: 14px;
-  width: 14px;
-  background-image: url(../img/close-red.svg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 .popup .or__text {
   position: relative;
   font-style: normal;
@@ -5970,6 +6002,38 @@ a.popup-text__link {
   border: 1px solid #2F5E97;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+}
+
+.popup .popup__form .fieldset div .addedFile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  white-space: pre-wrap;
+  word-break: break-all;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  padding-bottom: 10px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  color: rgba(113, 128, 150, 0.8);
+}
+
+.popup .popup__form .fieldset div .addedFile button {
+  margin-left: 5px;
+  height: 14px;
+  width: 14px;
+  background-image: url(../img/close-red.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .responseMsg {

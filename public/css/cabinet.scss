@@ -1639,6 +1639,41 @@ main {
             .select2-container .select2-selection--single .select2-selection__rendered {
                 padding-left: 0;
             }
+            .addedFile {
+                display: flex;
+                flex-direction: column;
+                white-space: pre-wrap;
+                word-break: break-all;
+                word-break: break-word;
+                hyphens: auto;
+                padding-bottom: 10px;
+                span {
+                    white-space: pre-wrap;
+                    word-break: break-all;
+                    word-break: break-word;
+                    hyphens: auto;
+                    color: #2F5E97;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 16px;
+                    line-height: 24px;
+                }
+                li {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    flex-wrap: nowrap;
+                }
+                button {
+                    margin-left: 5px;
+                    height: 14px;
+                    width: 14px;
+                    background-image: url(../img/close-red.svg);
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+            }
         }
     }
 }
@@ -3931,29 +3966,6 @@ a.popup-text__link {
                 line-height: 14px;
                 top: 101%;
             }
-            .addedFile {
-                display: flex;
-                flex-direction: column;
-                white-space: pre-wrap;
-                word-break: break-all;
-                word-break: break-word;
-                hyphens: auto;
-                padding-bottom: 10px;
-                font-style: normal;
-                font-weight: normal;
-                font-size: 14px;
-                line-height: 20px;
-                color: rgba(113, 128, 150, 0.8);
-                button {
-                    margin-left: 5px;
-                    height: 14px;
-                    width: 14px;
-                    background-image: url(../img/close-red.svg);
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                }
-            }
         }
     }
     .or__text {
@@ -4303,6 +4315,29 @@ a.popup-text__link {
             .file-wrap-drop:hover {
                 border: 1px solid #2F5E97;
                 transition: all 0.3s;
+            }
+            .addedFile {
+                display: flex;
+                flex-direction: column;
+                white-space: pre-wrap;
+                word-break: break-all;
+                word-break: break-word;
+                hyphens: auto;
+                padding-bottom: 10px;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 20px;
+                color: rgba(113, 128, 150, 0.8);
+                button {
+                    margin-left: 5px;
+                    height: 14px;
+                    width: 14px;
+                    background-image: url(../img/close-red.svg);
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
             }
         }
     }
