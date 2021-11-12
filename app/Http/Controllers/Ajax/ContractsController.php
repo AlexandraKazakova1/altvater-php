@@ -98,7 +98,7 @@ class ContractsController extends Controller {
 			$error	= false;
 			
 			$post['phone']			= preg_replace("/[^0-9]/", '', $post['phone']);
-			$post['index']			= preg_replace("/[^0-9]/", '', $post['index']);
+		//	$post['index']			= preg_replace("/[^0-9]/", '', $post['index']);
 			
 			//
 			
@@ -212,7 +212,7 @@ class ContractsController extends Controller {
 			
 			$post['phone']			= preg_replace("/[^0-9]/", '', $post['phone']);
 			$post['extra_phone']	= preg_replace("/[^0-9]/", '', $post['extra_phone']);
-			$post['index']			= preg_replace("/[^0-9]/", '', $post['index']);
+			//$post['index']			= preg_replace("/[^0-9]/", '', $post['index']);
 			$post['ipn']			= preg_replace("/[^0-9]/", '', $post['ipn']);
 			$post['edrpou']			= preg_replace("/[^0-9]/", '', $post['edrpou']);
 			

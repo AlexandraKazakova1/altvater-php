@@ -124,7 +124,7 @@ class ContractsController extends MyAdminController {
 			$form->phone		= preg_replace("/[^0-9]/", '', $form->phone);
 			$form->extra_phone	= preg_replace("/[^0-9]/", '', $form->extra_phone);
 			
-			$form->index		= preg_replace("/[^0-9]/", '', $form->index);
+			//$form->index		= preg_replace("/[^0-9]/", '', $form->index);
 			$form->ipn			= preg_replace("/[^0-9]/", '', $form->ipn);
 			$form->edrpou		= preg_replace("/[^0-9]/", '', $form->edrpou);
 			
