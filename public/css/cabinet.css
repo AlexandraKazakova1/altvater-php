@@ -4940,6 +4940,15 @@ main {
         -ms-flex-align: center;
             align-items: center;
   }
+  .settings__wrapper .request .request__form fieldset .addedFile,
+  .request__page .request .request__form fieldset .addedFile {
+    width: 100%;
+  }
+  .settings__wrapper .request .request__form fieldset .label__file div,
+  .request__page .request .request__form fieldset .label__file div {
+    max-width: 100%;
+    width: 100%;
+  }
   .settings__wrapper .request .request__form fieldset div,
   .request__page .request .request__form fieldset div {
     max-width: 100%;
@@ -4969,6 +4978,7 @@ main {
   }
   .settings__wrapper .request .request__form fieldset .submit__wrap .btn-submit,
   .request__page .request .request__form fieldset .submit__wrap .btn-submit {
+    width: 100%;
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
