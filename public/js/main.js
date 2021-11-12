@@ -131,6 +131,9 @@ function callBackForm() {
 				required		: true,
 				minlength		: 12,
 				maxlength		: 13,
+			},
+			rule				: {
+				required			: true
 			}
 		},
 		messages		: {
