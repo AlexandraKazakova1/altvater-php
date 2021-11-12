@@ -3484,6 +3484,15 @@ main {
                     flex-wrap: nowrap;
                     justify-content: center;
                     align-items: center;
+                    .addedFile {
+                        width: 100%;
+                    }
+                    .label__file {
+                        div {
+                            max-width: 100%;
+                            width: 100%;
+                        }
+                    }
                     div {
                         max-width: 100%;
                         width: 100%;
@@ -3508,6 +3517,7 @@ main {
                     }
                     .submit__wrap {
                         .btn-submit {
+                            width: 100%;
                             align-self: center;
                         }
                     }
