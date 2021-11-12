@@ -13,7 +13,7 @@
 			</div>
 		</section>
 		
-		<h1 class="page__title">{{$dialog->theme}}</h1>
+		<h1 class="page__title">{{$dialog->theme->label}}</h1>
 		
 		<a class="back-link" href="/account">
 			<img src="/img/cabinet/arrow-red.svg">
