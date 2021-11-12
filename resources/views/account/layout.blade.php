@@ -381,7 +381,7 @@
 									
 									<label>
 										<span class="input-description">Номер договору:</span>
-										<input class="form-control" type="text" name="number" placeholder=" " autocomplete="off" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder=" ">
+										<input class="form-control" type="text" name="number" placeholder=" " autocomplete="off" placeholder=" ">
 										<span class="input-placeholder">
 											<div>
 												<img src="/img/cabinet/documents.svg">
