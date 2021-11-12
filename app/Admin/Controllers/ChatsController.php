@@ -164,7 +164,7 @@ class ChatsController extends MyAdminController {
 				$form->hidden('dialogue_id');
 				$form->hidden('admin_id');
 				
-				$form->select('client_id'	, __('admin.chats.author'))->options($users)->readonly();
+				$form->select('client_id'	, __('admin.chats.client'))->options($users)->readonly();
 				
 				$form->textarea('text'		, __('admin.chats.message'))->readonly();
 			});
