@@ -13,6 +13,7 @@ use App\Models\FooterMenu;
 use App\Models\Pages;
 use App\Models\News;
 use App\Models\Services;
+use App\Models\Contacts;
 
 use App\Models\TariffCategory;
 use App\Models\CalcObject;
@@ -103,6 +104,8 @@ class MyController extends Controller {
 		
 		View::share('user'					, []);
 		View::share('code'					, '');
+		
+		View::share('contacts'				, Contacts::getData());
 	}
 	
 	function session(){

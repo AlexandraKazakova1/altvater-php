@@ -150,6 +150,8 @@
 		
 		@yield('content')
 		
+		@include('components.contacts', ['contacts' => $contacts, 'settings' => $settings])
+		
 		<footer>
 			<div class="footer container">
 				<div class="link__group">

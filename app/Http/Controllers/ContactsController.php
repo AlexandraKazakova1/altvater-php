@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pages;
-use App\Models\Contacts;
 
 use App\Helpers\MyBreadcrumbs;
 use App\Helpers\StringHelper;
@@ -38,8 +37,7 @@ class ContactsController extends MyController {
 			'headerClass'	=> 'background-2',
 			'robots'		=> $page->robots,
 			'canonical'		=> $page->canonical,
-			'data'			=> $page,
-			'contacts'		=> Contacts::getData(),
+			'data'			=> $page
 		];
 		
 		return view(
