@@ -548,8 +548,8 @@ function contractEntity(){
 			},
 			ipn				: {
 				required		: true,
-				minlength		: 5,
-				maxlength		: 8
+				minlength		: 10,
+				maxlength		: 12
 			},
 			edrpou			: {
 				required		: true,
@@ -1088,7 +1088,13 @@ function loadOrders(){
 //
 
 function myAddress(){
-	var form = jQuery("#add__address-form");
+	var page = $("#index-page");
+	
+	if(!page.length){
+		return false;
+	};
+	
+	var form = $("#add__address-form");
 	
 	if(!form.length){
 		return false;
@@ -1111,22 +1117,23 @@ function myAddress(){
 			return false;
 		};
 		
-		console.log('file:');
-		console.log(file);
-		
 		var reader = new FileReader();
 		
 		reader.onload = function(e) {
-			console.log('onload:');
-			console.log(e);
+			let encoded = e.target.result.toString().replace(/^data:(.*,)?/, '');
+			
+			if((encoded.length % 4) > 0){
+				encoded += '='.repeat(4 - (encoded.length % 4));
+			};
 			
 			images[n] = {
 				'name'	: file.name,
 				'mime'	: file.type,
-				'data'	: b64EncodeUnicode(e.target.result)
+				'data'	: encoded
+				//'data'	: b64EncodeUnicode(e.target.result)
 			};
 			
-			added_file.append('<li data-n="'+n+'"><span>'+file.name+'</span><button data-n="'+n+'" type="button"></button></li>');
+			added_file.append('<li data-n="'+n+'"><span>'+file.name+'</span><button class="remove-img" data-n="'+n+'" type="button"></button></li>');
 			
 			n++;
 		};
@@ -1136,17 +1143,18 @@ function myAddress(){
 			console.log(e);
 		};
 		
-		reader.readAsText(file);
+		reader.readAsDataURL(file);
 		
 		//images.append(name, blob, file.name);
 	});
 	
-	added_file.on('click', 'button', function(e){
+	form.on('click', 'button.remove-img', function(e){
 		var current = $(this);
-		var n = current.attr('n');
+		var n = current.attr('data-n');
+		
+		current.parent().remove();
 		
 		delete images[n];
-		added_file.find('li[data-n="'+n+'"]').remove();
 	});
 	
 	var lock = false,
@@ -1294,7 +1302,6 @@ function myAddress(){
 		$.ajax({
 			type		: "POST",
 			url			: '/ajax/cabinet/remove-address',
-			method		: "POST",
 			data		: JSON.stringify({
 				id	: id
 			}),
@@ -1329,6 +1336,12 @@ function b64EncodeUnicode(str){
 };
 
 function requestForm(){
+	var page = $("#messages-page");
+	
+	if(!page.length){
+		return false;
+	};
+	
 	var form = jQuery("#requestForm");
 	
 	if(!form.length){
@@ -1340,25 +1353,35 @@ function requestForm(){
 	
 	var modal = $('#response');
 	
+	var added_file		= $('#addedFile');
+	
+	var file = null;
+	
 	form.validate({
-		onkeyup	: false,
-		focusCleanup: true,
-		focusInvalid: false,
-		errorClass: "error",
-		rules: {
-			phone: {
-				required: true
+		onkeyup			: false,
+		focusCleanup	: true,
+		focusInvalid	: false,
+		errorClass		: "error",
+		rules			: {
+			header		: {
+				required	: true,
+				minlength	: 2
 			},
-			header: {
-				required: true,
-				minlength: 2
+			phone		: {
+				required	: false,
+				minlength	: 13,
+				maxlength	: 13,
 			},
-			text: {
-				required: true,
-				maxlength: 1000
+			header		: {
+				required	: true,
+				minlength	: 2
+			},
+			text		: {
+				required	: true,
+				maxlength	: 1000
 			}
 		},
-		messages: {
+		messages		: {
 			theme: {
 				required: "Це поле обов'язкове для заповнення",
 				minlength: "Введіть більше 2 символів"
@@ -1375,15 +1398,25 @@ function requestForm(){
 				maxlength: "Введіть не більше 1000 символів"
 			}
 		},
-		submitHandler: function() {
+		submitHandler	: function() {
 			if(!lock){
+				var form_data = {
+					theme		: form.find('input[name="theme"]').val(),
+					number		: form.find('input[name="number"]').val(),
+					phone		: form.find('input[name="phone"]').val(),
+					header		: form.find('input[name="header"]').val(),
+					text		: form.find('textarea[name="text"]').val(),
+					file		: file
+				};
+				
 				$.ajax({
-					type: "POST",
-					url: '/ajax/cabinet/request',
-					method: "POST",
-					data: form.serialize(),
-					dataType: "json",
-					beforeSend: function(request){
+					type		: "POST",
+					method		: "POST",
+					url			: '/ajax/cabinet/request',
+					data		: JSON.stringify(form_data),
+					dataType	: "json",
+					contentType	: "application/json; charset=utf-8",
+					beforeSend	: function(request){
 						lock = true;
 						
 						btn.attr('disabled', true);
@@ -1391,7 +1424,7 @@ function requestForm(){
 						
 						form.find('.responseMsg').text('');
 					},
-					success: function(response){
+					success		: function(response){
 						console.log('response:');
 						console.log(response);
 						
@@ -1401,7 +1434,6 @@ function requestForm(){
 						if(response.status){
 							form.trigger('reset');
 							
-							images = [];
 							added_file.html('');
 							
 							modal.find('.responseMsg').text(response.message);
@@ -1422,6 +1454,52 @@ function requestForm(){
 			};
 			return false;
 		}
+	});
+	
+	var control_file	= $('#control-file');
+	
+	control_file.on('change', function(e){
+		e.preventDefault();
+		
+		var current_file = e.target.files[0];
+		var mime = current_file.type.split('/');
+		
+		if(mime[0] != 'image' && mime[0] != 'application'){
+			return false;
+		};
+		
+		var reader = new FileReader();
+		
+		reader.onload = function(e) {
+			let encoded = e.target.result.toString().replace(/^data:(.*,)?/, '');
+			
+			if((encoded.length % 4) > 0){
+				encoded += '='.repeat(4 - (encoded.length % 4));
+			};
+			
+			file = {
+				'name'	: current_file.name,
+				'mime'	: current_file.type,
+				'data'	: encoded
+			};
+			
+			added_file.append('<li><span>'+current_file.name+'</span><button class="remove-img" type="button"></button></li>');
+		};
+		
+		reader.onerror = function(e) {
+			console.log('onerror:');
+			console.log(e);
+		};
+		
+		reader.readAsDataURL(current_file);
+	});
+	
+	form.on('click', 'button.remove-img', function(e){
+		var current = $(this);
+		
+		current.parent().remove();
+		
+		file = null;
 	});
 };
 
@@ -1502,86 +1580,96 @@ function settingsForm(){
 		btn = form.find('button[type="submit"]');
 	
 	form.validate({
-		onkeyup	: false,
-		focusCleanup: true,
-		focusInvalid: false,
-		errorClass: "error",
-		rules: {
-			name: {
-				required: true,
-				minlength: 2
+		onkeyup			: false,
+		focusCleanup	: true,
+		focusInvalid	: false,
+		errorClass		: "error",
+		rules			: {
+			name			: {
+				required		: true,
+				minlength		: 2,
+				maxlength		: 100
 			},
-			surname: {
-				required: true,
-				minlength: 2
+			surname			: {
+				required		: true,
+				minlength		: 2,
+				maxlength		: 50
 			},
-			middlename: {
-				required: true,
-				minlength: 2
+			middlename		: {
+				required		: true,
+				minlength		: 2,
+				maxlength		: 50
 			},
-			email: {
-				required: true,
-				email: true
+			extra_phone		: {
+				required		: false,
+				minlength		: 10,
+				maxlength		: 13,
 			},
-			phone: {
-				required: true,
+			address			: {
+				required		: true,
+				minlength		: 8,
+				maxlength		: 150
 			},
-			extra_phone: {
-				required: false,
-			},
-			addresses: {
-				required: true,
-				minlength: 8
-			},
-			index: {
-				required: true,
-				minlength: 5
+			index			: {
+				required		: true,
+				minlength		: 5,
+				maxlength		: 6
 			}
 		},
-		messages: {
-			name: {
-				required: "Це поле обов'язкове для заповнення",
-				minlength: "Введіть більше 2 символів"
+		messages		: {
+			name			: {
+				required		: "Це поле обов'язкове для заповнення",
+				minlength		: "Введіть мінімум 2 символи",
+				maxlength		: "Введіть максимум 100 символи"
 			},
-			surname: {
-				required: "Це поле обов'язкове для заповнення",
-				minlength: "Введіть більше 2 символів"
+			surname			: {
+				required		: "Це поле обов'язкове для заповнення",
+				minlength		: "Введіть мінімум 2 символи",
+				maxlength		: "Введіть максимум 100 символи"
 			},
-			middlename: {
-				required: "Це поле обов'язкове для заповнення",
-				minlength: "Введіть більше 2 символів"
+			middlename		: {
+				required		: "Це поле обов'язкове для заповнення",
+				minlength		: "Введіть мінімум 2 символи",
+				maxlength		: "Введіть максимум 100 символи"
 			},
-			email: {
-				required: "Введіть свій e-mail!",
-				email: "Адреса має бути типу name@domain.com"
+			email			: {
+				required		: "Введіть свій e-mail!",
+				email			: "Адреса має бути типу name@domain.com"
 			},
-			phone: {
-				required: "Це поле обов'язкове для заповнення",
+			phone			: {
+				required		: "Це поле обов'язкове для заповнення",
 			},
-			address: {
-				required: "Це поле обов'язкове для заповнення",
-				minlength: "Введіть не менше 8 символів"
+			extra_phone		: {
+				required		: "Це поле обов'язкове для заповнення",
+				minlength		: "Введіть мінімум 10 символів",
+				maxlength		: "Введіть максимум 13 символів"
 			},
-			index: {
-				required: "Це поле обов'язкове для заповнення",
-				minlength: "Введіть не менше 5 символів"
+			address			: {
+				required		: "Це поле обов'язкове для заповнення",
+				minlength		: "Введіть не менше 8 символів",
+				maxlength		: "Введіть максимум 150 символів"
+			},
+			index			: {
+				required		: "Це поле обов'язкове для заповнення",
+				minlength		: "Введіть не менше 5 символів",
+				maxlength		: "Введіть не більше 6 символів"
 			}
 		},
-		submitHandler: function() {
+		submitHandler	: function() {
 			if(!lock){
 				$.ajax({
-					type: "POST",
-					url: '/ajax/user/settings',
-					method: "POST",
-					data: form.serialize(),
-					dataType: "json",
-					beforeSend: function(request){
+					type		: "POST",
+					url			: '/ajax/user/settings',
+					method		: "POST",
+					data		: form.serialize(),
+					dataType	: "json",
+					beforeSend	: function(request){
 						lock = true;
 						
 						btn.attr('disabled', true);
 						form.find('label.error').text('').hide();
 					},
-					success: function(response){
+					success		: function(response){
 						console.log('response:');
 						console.log(response);
 						
@@ -1594,10 +1682,12 @@ function settingsForm(){
 						//     responseMsg(form, response);
 						// }
 					},
-					error: function(err){
+					error		: function(err){
 						console.log('error');
+						
 						lock = false;
 						btn.attr('disabled', false);
+						
 						responseMsg(form, err);
 					}
 				});
@@ -1623,26 +1713,33 @@ function changePasswordForm(){
 		focusInvalid: false,
 		errorClass: "error",
 		rules: {
-			password: {
-				required: true
+			password		: {
+				required		: true,
+				rangelength		: [8, 24]
 			},
-			new_password: {
-				required: true
+			new_password	: {
+				required		: true,
+				rangelength		: [8, 24]
 			},
 			confirm_password: {
-				required: true,
-				equalTo: "new_password"
+				required		: true,
+				rangelength		: [8, 24],
+				equalTo			: "#new_password"
 			}
 		},
 		messages: {
 			password: {
-				required: "Це поле обов'язкове для заповнення"
+				required: "Це поле обов'язкове для заповнення",
+				rangelength	: "Введіть 8-24 символи"
 			},
 			new_password: {
-				required: "Це поле обов'язкове для заповнення"
+				required: "Це поле обов'язкове для заповнення",
+				rangelength	: "Введіть 8-24 символи"
 			},
 			confirm_password: {
-				required: "Це поле обов'язкове для заповнення"
+				required	: "Це поле обов'язкове для заповнення",
+				equalTo		: "Паролі не співпадають",
+				rangelength	: "Введіть 8-24 символи"
 			}
 		},
 		submitHandler: function() {

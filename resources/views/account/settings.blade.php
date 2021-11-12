@@ -93,9 +93,44 @@
 								<div>
 									<img src="/img/cabinet/modal-icon/phone-2.svg">
 								</div>
-								Ваш телефон
+								Додатковий телефон
 							</span>
 						</label>
+						
+						@if($user['type'] == 'legal-entity')
+							<label>
+								<span class="input-description notCheck">Назва компанії:<b> ?</b></span>
+								<input class="form-control" type="text" name="company_name" readonly value="{{$user['company_name']}}" placeholder=" ">
+								<span class="input-placeholder">
+									<div>
+										<img src="/img/cabinet/modal-icon/profile.svg">
+									</div>
+									Назва компанії
+								</span>
+							</label>
+							
+							<label>
+								<span class="input-description notCheck">ІПН:<b> ?</b></span>
+								<input class="form-control" type="text" name="ipn" readonly value="{{$user['ipn']}}" placeholder=" ">
+								<span class="input-placeholder">
+									<div>
+										<img src="/img/cabinet/modal-icon/profile.svg">
+									</div>
+									ІПН
+								</span>
+							</label>
+							
+							<label>
+								<span class="input-description notCheck">ЄДРПОУ:<b> ?</b></span>
+								<input class="form-control" type="text" name="uedrpou" readonly value="{{$user['uedrpou']}}" placeholder=" ">
+								<span class="input-placeholder">
+									<div>
+										<img src="/img/cabinet/modal-icon/profile.svg">
+									</div>
+									ЄДРПОУ
+								</span>
+							</label>
+						@endif
 						
 						<label>
 							<span class="input-description notCheck">Адреса:</span>
@@ -131,6 +166,17 @@
 				<form action="POST" id="changePasswordForm">
 					<fieldset>
 						<label>
+							<span class="input-description">Новий пароль:</span>
+							<input class="form-control" type="password" id="new_password" name="new_password" placeholder=" ">
+							<span class="input-placeholder">
+								<div>
+									<img src="/img/cabinet/modal-icon/lock.svg">
+								</div>
+								Введіть новий пароль
+							</span>
+						</label>
+						
+						<label>
 							<span class="input-description">Старий пароль:</span>
 							<input class="form-control" type="password" name="password" placeholder=" ">
 							<span class="input-placeholder">
@@ -138,17 +184,6 @@
 									<img src="/img/cabinet/modal-icon/lock.svg">
 								</div>
 								Введіть пароль
-							</span>
-						</label>
-						
-						<label>
-							<span class="input-description">Новий пароль:</span>
-							<input class="form-control" type="password" name="new_password" placeholder=" ">
-							<span class="input-placeholder">
-								<div>
-									<img src="/img/cabinet/modal-icon/lock.svg">
-								</div>
-								Введіть новий пароль
 							</span>
 						</label>
 						

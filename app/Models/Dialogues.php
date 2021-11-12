@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 use DB;
 
 use App\Models\Messages;
+use App\Models\User;
+use App\Models\Themes;
+use App\Models\Contracts;
 
 class Dialogues extends Model{
 	
@@ -20,8 +23,21 @@ class Dialogues extends Model{
 		'theme_id',
 		'contract_id',
 		'phone',
-		'header'
+		'header',
+		'file'
 	];
+	
+	public function client(){
+		return $this->belongsTo(User::class, 'client_id');
+	}
+	
+	public function theme(){
+		return $this->belongsTo(Themes::class, 'theme_id');
+	}
+	
+	public function contract(){
+		return $this->belongsTo(Contracts::class, 'contract_id');
+	}
 	
 	public function messages(){
 		return $this->hasMany(Messages::class, 'dialogue_id');

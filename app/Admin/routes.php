@@ -45,4 +45,6 @@ Route::group([
 	$router->resource('themes'					, ThemesController::class);
 	
 	$router->resource('connects'				, ConnectsController::class);
+	
+	$router->resource('chats'					, ChatsController::class);
 });

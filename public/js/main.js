@@ -492,8 +492,8 @@ function createEntity() {
 			},
 			ipn				: {
 				required		: true,
-				minlength		: 6,
-				maxlength		: 10,
+				minlength		: 10,
+				maxlength		: 12,
 				number			: true
 			},
 			uedrpou			: {
