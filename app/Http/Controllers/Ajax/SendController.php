@@ -31,7 +31,8 @@ class SendController extends Controller {
 			$post,
 			array(
 				'name'				=> 'required|min:2|max:50',
-				'email'				=> 'required|email',
+				'phone'				=> 'required|min:12|max:13',
+				//'email'				=> 'required|email',
 				'message'			=> 'max:500',
 			),
 			array(
@@ -45,6 +46,10 @@ class SendController extends Controller {
 				'message.required'		=> trans('ajax_validation.required'),
 				'message.min'			=> trans('ajax_validation.min_length'),
 				'message.max'			=> trans('ajax_validation.max_length'),
+				
+				'phone.required'		=> trans('ajax_validation.required'),
+				'phone.min'			=> trans('ajax_validation.min_length'),
+				'phone.max'			=> trans('ajax_validation.max_length'),
 			)
 		);
 		
@@ -52,9 +57,12 @@ class SendController extends Controller {
 			$error = false;
 			
 			if(!$error){
+				$post['phone'] = preg_replace("/[^0-9]/", '', $post['phone']);
+				
 				$insert = Feedback::create([
 					'name'		=> $post['name'],
-					'email'		=> $post['email'],
+					//'email'		=> $post['email'],
+					'phone'		=> $post['phone'],
 					'message'	=> $post['message']
 				]);
 				
@@ -62,7 +70,8 @@ class SendController extends Controller {
 					$this->sendEmail('feedback', null, [
 						'id'		=> $insert->id,
 						'name'		=> $post['name'],
-						'email'		=> $post['email'],
+						'email'		=> $insert->email,
+						'email'		=> $insert->phone,
 						'message'	=> $post['message'],
 						'url'		=> url('/admin/feedback/'.$insert->id.'/edit')
 					]);

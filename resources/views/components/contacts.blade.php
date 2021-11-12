@@ -121,8 +121,8 @@
 					</label>
 					
 					<label>
-						<span>Email</span>
-						<input class="form-control" type="email" id="useremail" name="email" placeholder="Ваш email">
+						<span>Телефон</span>
+						<input class="form-control" type="tel" id="userphone" name="phone" placeholder="Ваш телефон">
 					</label>
 					
 					<label>
@@ -139,8 +139,11 @@
 					</label>
 				</fieldset>
 			</form>
-				<p class="responseMsg"></p>
+			
+			<p class="responseMsg"></p>
 		</div>
+		
+		<a name="callback"></a>
 	</div>
 </section>
 
