@@ -90,8 +90,8 @@ class MessagesController extends Controller {
 		if($validator->passes()){
 			$error = false;
 			
-			$theme_id		= (int)$this->request('theme');
-			$contract_id	= (int)$this->request('number');
+			$theme_id		= (int)$request->request('theme');
+			$contract_id	= (int)$request->request('number');
 			
 			if(!$theme_id){
 				$error	= true;
