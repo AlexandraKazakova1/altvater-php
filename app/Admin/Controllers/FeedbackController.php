@@ -38,7 +38,7 @@ class FeedbackController extends MyAdminController {
 		$grid->column('created_at'		, __('admin.feedback.created_at'));
 		
 		$grid->column('name'			, __('admin.feedback.name'));
-		$grid->column('email'			, __('admin.feedback.email'));
+		$grid->column('phone'			, __('admin.feedback.phone'));
 		$grid->column('messasge'		, __('admin.feedback.messasge'));
 		
 		$model = $grid->model();
@@ -81,7 +81,7 @@ class FeedbackController extends MyAdminController {
 		$id = $this->_id;
 		
 		$form->text('name'			, __('admin.feedback.name'))->rules('required|min:2|max:150');
-		$form->email('email'		, __('admin.feedback.email'))->rules('required|min:2|max:150');
+		$form->text('phone'			, __('admin.feedback.phone'))->rules('required|min:12|max:13');
 		
 		$form->textarea('messasge'	, __('admin.feedback.messasge'));
 		

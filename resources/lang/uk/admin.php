@@ -411,6 +411,7 @@ return [
 		'created_at'			=> 'Створено',
 		'updated_at'			=> 'Оновлено',
 		'name'					=> 'Клієнт',
+		'phone'					=> 'Телефон',
 		'email'					=> 'E-mail',
 		'messasge'				=> 'Повідомлення'
 	],
