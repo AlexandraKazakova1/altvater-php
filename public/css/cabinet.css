@@ -2513,6 +2513,8 @@ main {
       -ms-hyphens: auto;
           hyphens: auto;
   padding-bottom: 10px;
+  width: 23.403vw;
+  min-width: 280px;
 }
 
 .newOrder form fieldset .addedFile span,
@@ -4941,10 +4943,20 @@ main {
     width: 100%;
     margin-right: 0;
   }
+  .settings__wrapper .request .request__form fieldset div label .select2-container,
   .settings__wrapper .request .request__form fieldset div label input,
   .settings__wrapper .request .request__form fieldset div label textarea,
+  .request__page .request .request__form fieldset div label .select2-container,
   .request__page .request .request__form fieldset div label input,
   .request__page .request .request__form fieldset div label textarea {
+    width: 100%;
+  }
+  .settings__wrapper .request .request__form fieldset div label .select2-container .selection,
+  .request__page .request .request__form fieldset div label .select2-container .selection {
+    width: 100%;
+  }
+  .settings__wrapper .request .request__form fieldset div label .select2-container .selection .select2-selection,
+  .request__page .request .request__form fieldset div label .select2-container .selection .select2-selection {
     width: 100%;
   }
   .settings__wrapper .request .request__form fieldset .submit__wrap .btn-submit,

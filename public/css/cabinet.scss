@@ -1647,6 +1647,8 @@ main {
                 word-break: break-word;
                 hyphens: auto;
                 padding-bottom: 10px;
+                width: 23.403vw;
+                min-width: 280px;
                 span {
                     white-space: pre-wrap;
                     word-break: break-all;
@@ -3484,9 +3486,18 @@ main {
                         label {
                             width: 100%;
                             margin-right: 0;
+                            .select2-container,
                             input,
                             textarea {
                                 width: 100%;
+                            }
+                            .select2-container {
+                                .selection {
+                                    width: 100%;
+                                    .select2-selection {
+                                        width: 100%;
+                                    }
+                                }
                             }
                         }
                     }
