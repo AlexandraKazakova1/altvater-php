@@ -150,7 +150,9 @@
 		
 		@yield('content')
 		
-		@include('components.contacts', ['contacts' => $contacts, 'settings' => $settings])
+		@if($page['uri'] == 'index' || $page['uri'] == 'contacts')
+			@include('components.contacts', ['contacts' => $contacts, 'settings' => $settings])
+		@endif
 		
 		<footer>
 			<div class="footer container">
