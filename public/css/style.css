@@ -1952,6 +1952,10 @@ footer .footer span {
 }
 
 .thesis__wrapper .thesis .thesis__img img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: auto;
   border-radius: 0px 44.625px;
 }
 

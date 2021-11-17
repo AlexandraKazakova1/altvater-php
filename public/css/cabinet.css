@@ -3225,7 +3225,7 @@ main {
 }
 
 .orders__wrapper .orders__content .orders__list .orders__item.new .status::after {
-  content: 'Нова';
+  content: 'Нове';
   color: #489871;
 }
 
