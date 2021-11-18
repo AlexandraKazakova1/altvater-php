@@ -3641,6 +3641,211 @@ a.popup-text__link {
         transition: all 0.3s;
     }
 }
+.orderService__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 70px;
+}
+.orderService__form {
+    max-width: 550px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    fieldset {
+        padding: 0;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        label {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            margin-bottom: 34px;
+            span {
+                font-style: normal;
+                font-weight: normal;
+                font-size: 12px;
+                line-height: 16px;
+                color: #2C2C2C;
+                letter-spacing: 1.1px;
+                margin-bottom: 10px;
+            }
+            textarea {
+                resize: none;
+            }
+            .error {
+                font-style: normal;
+                font-weight: normal;
+                font-size: 12px;
+                line-height: 16px;
+                letter-spacing: 1.1px;
+                color: #F2664F;
+            }
+            .select2 {
+                margin-bottom: 0;
+            }
+            .select2-container .select2-selection--single {
+                height: auto;
+            }
+            .select2-selection__arrow,
+            .select2-selection,
+            .select2-selection__rendered {
+                margin-bottom: 0;
+            }
+            .select2-container--default .select2-selection--single .select2-selection__arrow {
+                top: 12px;
+            }
+            .select2-selection__rendered {
+                font-style: normal;
+                font-weight: normal;
+                font-size: 16px;
+                line-height: 26px;
+                color: #57585A;
+                padding-left: 0 !important;
+            }
+            .select2-selection,
+            select,
+            input,
+            textarea {
+                font-style: normal;
+                font-weight: normal;
+                font-size: 16px;
+                line-height: 26px;
+                color: #57585A;
+                border: none;
+                outline: none;
+                box-shadow: none;
+                padding: 8px 0;
+                transition: all 0.3s;
+                border-bottom: 3px solid rgba(189, 200, 214, 0.3);
+            }
+            .form-control.error,
+            textarea.error {
+                border-bottom: 3px solid #F2664F;
+            }
+            .select2-selection:hover,
+            .select2-selection:focus,
+            select:focus,
+            select:hover,
+            textarea:focus,
+            textarea:hover,
+            input:focus,
+            input:hover {
+                transition: all 0.3s;
+                border-bottom: 3px solid #00B7CE;
+            }
+            input::placeholder,
+            textarea::placeholder {
+                font-style: normal;
+                font-weight: normal;
+                font-size: 16px;
+                line-height: 26px;
+                color: rgba(87, 88, 90, 0.3);
+            }
+            .checkbox-text {
+                font-style: normal;
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 21px;
+                color: #57585A;
+                white-space: pre-wrap;
+            }
+        }
+        .checkbox__label {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            cursor: pointer;
+            position: relative;
+            .input-checkbox {
+                position: absolute;
+                width: 1px;
+                height: 1px;
+                margin: -1px;
+                border: 0;
+                padding: 0;
+                clip: rect(0 0 0 0);
+                overflow: hidden;
+            }
+            .custom-checkbox {
+                width: 35px;
+                position: relative;
+                margin-right: 13px;
+            }
+            .custom-checkbox::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 23px;
+                height: 23px;
+                border: 1px solid rgba(44, 44, 44, 0.3);
+                border-radius: 2px;
+                transition: all 0.3s;
+            }
+            .custom-checkbox::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 24px;
+                height: 24px;
+                background: url(../img/contact-icons/tick-checkbox.svg);
+                opacity: 0;
+                transition: all 0.3s;
+            }
+            .input-checkbox:checked ~ .custom-checkbox::before {
+                width: 24px;
+                height: 24px;
+                background: #00B7CE;
+                border: none;
+                transition: all 0.3s;
+            }
+            .input-checkbox:checked ~ .custom-checkbox::after {
+                opacity: 1;
+                transition: all 0.3s;
+            }
+            .input-checkbox.error ~ .custom-checkbox::before {
+                border: 1px solid #F2664F;
+            }
+            .error {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                bottom: -18px;
+            }
+        }
+        .btn-submit {
+            font-style: normal;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 19px;
+            text-align: center;
+            color: #FFFFFF;
+            padding: 16px;
+            background: #F2664F;
+            border-radius: 30px;
+            transition: all 0.3s;
+            margin-bottom: 34px;
+        }
+        .btn-submit:hover {
+            transition: all 0.3s;
+            background: #1EBCD4;
+        }
+    }
+}
+.select2-dropdown {
+    border: none;
+    box-shadow: 0px 6px 8px 5px rgba(0, 0, 0, 0.15);
+}
 
 // Доповнення будстрапа
 .modal-dialog {

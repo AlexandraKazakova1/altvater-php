@@ -7,6 +7,7 @@ $(document).ready (function() {
 		}
 	});
 	
+	select2();
 	slidersConfig();
 	faqSlide();
 	burgerMenu();
@@ -27,6 +28,12 @@ $(document).ready (function() {
 	servicesCalc();
 	scrollUp();
 });
+
+function select2(){
+	$('.custom-select2').select2({
+		minimumResultsForSearch: -1
+	});
+};
 
 function scrollUp() {
 	$('.scrollup').click(function() {

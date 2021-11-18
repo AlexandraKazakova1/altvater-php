@@ -4837,6 +4837,311 @@ a.popup-text__link {
   transition: all 0.3s;
 }
 
+.orderService__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin-top: 70px;
+}
+
+.orderService__form {
+  max-width: 550px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.orderService__form fieldset {
+  padding: 0;
+  border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.orderService__form fieldset label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  margin-bottom: 34px;
+}
+
+.orderService__form fieldset label span {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  color: #2C2C2C;
+  letter-spacing: 1.1px;
+  margin-bottom: 10px;
+}
+
+.orderService__form fieldset label textarea {
+  resize: none;
+}
+
+.orderService__form fieldset label .error {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 1.1px;
+  color: #F2664F;
+}
+
+.orderService__form fieldset label .select2 {
+  margin-bottom: 0;
+}
+
+.orderService__form fieldset label .select2-container .select2-selection--single {
+  height: auto;
+}
+
+.orderService__form fieldset label .select2-selection__arrow,
+.orderService__form fieldset label .select2-selection,
+.orderService__form fieldset label .select2-selection__rendered {
+  margin-bottom: 0;
+}
+
+.orderService__form fieldset label .select2-container--default .select2-selection--single .select2-selection__arrow {
+  top: 12px;
+}
+
+.orderService__form fieldset label .select2-selection__rendered {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 26px;
+  color: #57585A;
+  padding-left: 0 !important;
+}
+
+.orderService__form fieldset label .select2-selection,
+.orderService__form fieldset label select,
+.orderService__form fieldset label input,
+.orderService__form fieldset label textarea {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 26px;
+  color: #57585A;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  padding: 8px 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border-bottom: 3px solid rgba(189, 200, 214, 0.3);
+}
+
+.orderService__form fieldset label .form-control.error,
+.orderService__form fieldset label textarea.error {
+  border-bottom: 3px solid #F2664F;
+}
+
+.orderService__form fieldset label .select2-selection:hover,
+.orderService__form fieldset label .select2-selection:focus,
+.orderService__form fieldset label select:focus,
+.orderService__form fieldset label select:hover,
+.orderService__form fieldset label textarea:focus,
+.orderService__form fieldset label textarea:hover,
+.orderService__form fieldset label input:focus,
+.orderService__form fieldset label input:hover {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border-bottom: 3px solid #00B7CE;
+}
+
+.orderService__form fieldset label input::-webkit-input-placeholder,
+.orderService__form fieldset label textarea::-webkit-input-placeholder {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 26px;
+  color: rgba(87, 88, 90, 0.3);
+}
+
+.orderService__form fieldset label input:-ms-input-placeholder,
+.orderService__form fieldset label textarea:-ms-input-placeholder {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 26px;
+  color: rgba(87, 88, 90, 0.3);
+}
+
+.orderService__form fieldset label input::-ms-input-placeholder,
+.orderService__form fieldset label textarea::-ms-input-placeholder {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 26px;
+  color: rgba(87, 88, 90, 0.3);
+}
+
+.orderService__form fieldset label input::placeholder,
+.orderService__form fieldset label textarea::placeholder {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 26px;
+  color: rgba(87, 88, 90, 0.3);
+}
+
+.orderService__form fieldset label .checkbox-text {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px;
+  color: #57585A;
+  white-space: pre-wrap;
+}
+
+.orderService__form fieldset .checkbox__label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  cursor: pointer;
+  position: relative;
+}
+
+.orderService__form fieldset .checkbox__label .input-checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.orderService__form fieldset .checkbox__label .custom-checkbox {
+  width: 35px;
+  position: relative;
+  margin-right: 13px;
+}
+
+.orderService__form fieldset .checkbox__label .custom-checkbox::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 23px;
+  height: 23px;
+  border: 1px solid rgba(44, 44, 44, 0.3);
+  border-radius: 2px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.orderService__form fieldset .checkbox__label .custom-checkbox::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  background: url(../img/contact-icons/tick-checkbox.svg);
+  opacity: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.orderService__form fieldset .checkbox__label .input-checkbox:checked ~ .custom-checkbox::before {
+  width: 24px;
+  height: 24px;
+  background: #00B7CE;
+  border: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.orderService__form fieldset .checkbox__label .input-checkbox:checked ~ .custom-checkbox::after {
+  opacity: 1;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.orderService__form fieldset .checkbox__label .input-checkbox.error ~ .custom-checkbox::before {
+  border: 1px solid #F2664F;
+}
+
+.orderService__form fieldset .checkbox__label .error {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  bottom: -18px;
+}
+
+.orderService__form fieldset .btn-submit {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: #FFFFFF;
+  padding: 16px;
+  background: #F2664F;
+  border-radius: 30px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  margin-bottom: 34px;
+}
+
+.orderService__form fieldset .btn-submit:hover {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  background: #1EBCD4;
+}
+
+.select2-dropdown {
+  border: none;
+  -webkit-box-shadow: 0px 6px 8px 5px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 6px 8px 5px rgba(0, 0, 0, 0.15);
+}
+
 .modal-dialog {
   max-width: 440px;
 }
