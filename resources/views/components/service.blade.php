@@ -1,4 +1,4 @@
-<section class="orderService__wrapper">
+<section class="orderService__wrapper" style="display:none;">
 	<form class="orderService__form conteiner">
 		<h2 class="popup__title">Замовити послугу</h2
 		
