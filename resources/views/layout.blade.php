@@ -154,6 +154,14 @@
 			@include('components.contacts', ['contacts' => $contacts, 'settings' => $settings])
 		@endif
 		
+		@if($settings['map_url'])
+			<section class="map__wrapper">
+				<div class="map">
+					<iframe src="{!!$settings['map_url']!!}" width="100%" height="530px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+				</div>
+			</section>
+		@endif
+		
 		<footer>
 			<div class="footer container">
 				<div class="link__group">
