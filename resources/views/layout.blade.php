@@ -150,7 +150,7 @@
 		
 		@yield('content')
 		
-		@if($page['uri'] == 'index' || $page['uri'] == 'contacts')
+		@if($page['uri'] == 'contacts')
 			@include('components.contacts', ['contacts' => $contacts, 'settings' => $settings])
 		@endif
 		
