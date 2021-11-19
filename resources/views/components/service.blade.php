@@ -36,4 +36,5 @@
 			</label>
 		</fieldset>
 	</form>
+	<p class="responseMsg"></p>
 </section>
