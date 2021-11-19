@@ -1,4 +1,4 @@
-<section class="orderService__wrapper" style="display:none;">
+<section class="orderService__wrapper">
 	<form class="orderService__form conteiner">
 		<h2 class="popup__title">Замовити послугу</h2
 		
@@ -8,8 +8,6 @@
 				<select class="custom-select2" name="service">
 					<option data-id="0" class="first-option" disabled selected value hidden>Обрати послугу</option>
 					<option value="Послуга-1">Послуга-1</option>
-					<option value="Послуга-2">Послуга-2</option>
-					<option value="Послуга-3">Послуга-3</option>
 				</select>
 			</label>
 			
