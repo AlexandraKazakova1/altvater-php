@@ -65,7 +65,8 @@ class ServicesController extends MyController {
 		
 		$page->text = str_replace(
 			'{form}',
-			view('components.service', ['data' => $page])->render(),
+			'',
+			//view('components.service', ['data' => $page])->render(),
 			$page->text
 		);
 		
