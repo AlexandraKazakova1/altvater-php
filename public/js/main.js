@@ -991,7 +991,7 @@ function serviceForm(){
 	};
 	
 	forms.each(function(){
-		erviceFormValidation($(this));
+		serviceFormValidation($(this));
 	});
 };
 
