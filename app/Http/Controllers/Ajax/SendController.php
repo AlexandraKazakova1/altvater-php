@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
 use App\Models\Feedback;
+use App\Models\Services;
 
 use App\Helpers\StringHelper;
 use App\Helpers\ImageHelper;
@@ -80,6 +81,90 @@ class SendController extends Controller {
 				
 				$status = true;
 				$msg	= trans('ajax.success_send_feedback');
+			}
+		}else{
+			$messages = $validator->messages();
+			
+			foreach($post as $k => $v){
+				$error = $messages->first($k);
+				
+				if($error){
+					$errors[$k] = $error;
+				}
+			}
+		}
+		
+		return array(
+			'status'    => $status,
+			'msg'       => $msg,
+			'errors'    => $errors
+		);
+	}
+	
+	function service(Request $request){
+		$status = false;
+		$errors = array();
+		$msg	= trans('ajax.failed_service');
+		
+		$post = $request->all();
+		
+		$validator = Validator::make(
+			$post,
+			array(
+				'service_id'		=> 'required',
+				'name'				=> 'required|min:2|max:50',
+				'phone'				=> 'required|min:12|max:13',
+				'message'			=> 'max:500',
+			),
+			array(
+				'service_id.required'	=> trans('ajax_validation.required'),
+				
+				'name.required'			=> trans('ajax_validation.required'),
+				'name.min'				=> trans('ajax_validation.min_length'),
+				'name.max'				=> trans('ajax_validation.max_length'),
+				
+				'phone.required'		=> trans('ajax_validation.required'),
+				'phone.min'				=> trans('ajax_validation.min_length'),
+				'phone.max'				=> trans('ajax_validation.max_length'),
+				
+				'message.required'		=> trans('ajax_validation.required'),
+				'message.min'			=> trans('ajax_validation.min_length'),
+				'message.max'			=> trans('ajax_validation.max_length')
+			)
+		);
+		
+		if($validator->passes()){
+			$error = false;
+			
+			if(!$error){
+				$service_id	= (int)$request->get('service_id');
+				
+				if(!$service_id){
+					$error = true;
+				}else{
+					$service = Services::query()->where('id', $service_id)->first();
+					
+					if(!$service){
+						$error = true;
+					}
+				}
+			}
+			
+			if(!$error){
+				$post['phone'] = preg_replace("/[^0-9]/", '', $post['phone']);
+				
+				try {
+					$this->sendEmail('service', null, [
+						'service'	=> $service->title,
+						'name'		=> $post['name'],
+						'phone'		=> $post['phone'],
+						'message'	=> $post['message']
+					]);
+					
+					$status = true;
+					$msg	= trans('ajax.success_service');
+				} catch (Exception $e) {
+				}
 			}
 		}else{
 			$messages = $validator->messages();

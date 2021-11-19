@@ -30,6 +30,10 @@ Route::group(['namespace' => 'Ajax'], function(){
 		'uses' => 'SendController@contact'
 	]);
 	
+	Route::post('ajax/service', [
+		'uses' => 'SendController@service'
+	]);
+	
 	Route::post('ajax/user/login', [
 		'uses' => 'UserController@login'
 	]);

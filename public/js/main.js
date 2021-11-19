@@ -27,6 +27,8 @@ $(document).ready (function() {
 	createModal();
 	servicesCalc();
 	scrollUp();
+
+	serviceForm();
 });
 
 function select2(){
@@ -978,5 +980,97 @@ function servicesCalc() {
 		var current = $(e.target);
 		
 		console.log('current:', current);
+	});
+};
+
+function serviceForm(){
+	var forms = jQuery(".orderService__form");
+	
+	if(!forms.length){
+		return false;
+	};
+	
+	forms.each(function(){
+		erviceFormValidation($(this));
+	});
+};
+
+function serviceFormValidation(form){
+	var lock = false,
+		btn = form.find('button[type="submit"]');
+	
+	form.validate({
+		onkeyup			: false,
+		focusCleanup	: true,
+		focusInvalid	: false,
+		errorClass		: "error",
+		rules			: {
+			name			: {
+				required		: true,
+				minlength		: 2,
+				maxlength		: 100
+			},
+			phone			: {
+				required		: true,
+				minlength		: 12,
+				maxlength		: 13,
+			},
+			massage			: {
+				required		: false,
+				maxlength		: 500,
+			},
+		},
+		messages		: {
+			name			: {
+				required		: "Введіть контактну особу",
+				minlength		: "Введіть більше 2 символів",
+				maxlength		: "Можна ввести до 100 символів"
+			},
+			phone			: {
+				required		: "Введіть контактний телефон",
+				minlength		: "Введіть мінімум 12 символів",
+				maxlength		: "Можна ввести до 13 символів"
+			},
+			massage			: {
+				maxlength		: "Можна ввести до 500 символів"
+			},
+		},
+		submitHandler: function() { 
+			if(!lock){
+				$.ajax({
+					type		: "POST",
+					url			: '/ajax/service',
+					data		: form.serialize(),
+					dataType	: "json",
+					beforeSend	: function(request){
+						lock = true;
+						
+						btn.attr('disabled', true);
+						form.find('label.error').text('').hide();
+					},
+					success		: function(response){
+						console.log('response:');
+						console.log(response);
+						
+						lock = false;
+						btn.attr('disabled', false);
+						
+						responseMsg(form, response);
+						
+						if(response.status){;
+							form.trigger('reset');
+						}
+					},
+					error		: function(err){
+						console.log('error');
+						lock = false;
+						btn.attr('disabled', false);
+						responseMsg(form, err);
+					}
+				});
+			};
+			
+			return false;
+		}
 	});
 };

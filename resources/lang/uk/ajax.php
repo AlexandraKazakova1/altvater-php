@@ -60,4 +60,7 @@ return [
 	'failed_create_request'				=> 'Не вдалось створити звернення',
 	'select_theme'						=> 'Виберіть тему',
 	'failed_send_message'				=> 'Не вдалось відправити повідомлення',
+	
+	'failed_service'					=> 'Не вдалось замовити послугу',
+	'success_service'					=> 'Послугу успішно замовлено',
 ];
