@@ -1014,8 +1014,8 @@ function serviceFormValidation(form){
 			},
 			phone			: {
 				required		: true,
-				minlength		: 12,
-				maxlength		: 13,
+				minlength		: 18,
+				maxlength		: 18,
 			},
 			massage			: {
 				required		: false,
