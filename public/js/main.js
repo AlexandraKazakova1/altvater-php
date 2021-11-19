@@ -1019,6 +1019,9 @@ function serviceFormValidation(form){
 				required		: false,
 				maxlength		: 500,
 			},
+			rule			: {
+				required		: true
+			}
 		},
 		messages		: {
 			name			: {
@@ -1034,6 +1037,9 @@ function serviceFormValidation(form){
 			massage			: {
 				maxlength		: "Можна ввести до 500 символів"
 			},
+			rule			: {
+				required		: "Підтвердіть свою згоду"
+			}
 		},
 		submitHandler: function() { 
 			if(!lock){
