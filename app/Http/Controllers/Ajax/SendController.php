@@ -114,7 +114,7 @@ class SendController extends Controller {
 				'service_id'		=> 'required',
 				'name'				=> 'required|min:2|max:100',
 				'phone'				=> 'required|min:19|max:19',
-				'message'			=> 'max:500',
+				'massage'			=> 'max:500',
 			),
 			array(
 				'service_id.required'	=> trans('ajax_validation.required'),
@@ -158,7 +158,7 @@ class SendController extends Controller {
 						'service'	=> $service->title,
 						'name'		=> $post['name'],
 						'phone'		=> $post['phone'],
-						'message'	=> $post['message']
+						'message'	=> $post['massage']
 					]);
 					
 					$status = true;
