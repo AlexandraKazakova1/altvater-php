@@ -63,6 +63,12 @@ class ServicesController extends MyController {
 			$detail = (object)$detail->toArray();
 		}
 		
+		$page->text = str_replace(
+			'{form}',
+			view('components.service', ['data' => $page])->render(),
+			$page->text
+		);
+		
 		$data = [
 			'page'			=> array(
 				'title'			=> $page->title,

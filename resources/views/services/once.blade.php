@@ -56,6 +56,8 @@
 			</div>
 		</section>
 		
+		@include('components.service', ['data' => $data])
+		
 		@if(count($images))
 			<section class="last-work__wrapper">
 				<div class="last-work container">
