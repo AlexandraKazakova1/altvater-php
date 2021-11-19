@@ -14,23 +14,23 @@
 			
 			<label>
 				<span>Телефон</span>
-				<input class="form-control" type="tel" id="userphone" name="phone" placeholder="Ваш телефон">
+				<input class="form-control" type="tel" name="phone" placeholder="Ваш телефон">
 			</label>
 			
 			<label>
 				<span>Ім'я </span>
-				<input class="form-control" type="text" id="username" name="name" placeholder="ПІБ">
+				<input class="form-control" type="text" name="name" placeholder="ПІБ">
 			</label>
 			
 			<label>
 				<span>Повідомлення</span>
-				<textarea placeholder="Ваше повідомлення" id="massage" name="massage"></textarea>
+				<textarea placeholder="Ваше повідомлення" name="massage"></textarea>
 			</label>
 			
 			<button class="btn-submit" type="submit" name="submit">Залишити заявку</button>
 			
 			<label class="checkbox__label">
-				<input class="input-checkbox" type="checkbox" id="rule" name="rule">
+				<input class="input-checkbox" type="checkbox" name="rule">
 				<span class="custom-checkbox"></span>
 				<span class="checkbox-text">Підтверджуючи замовлення, я приймаю умови угоди користувача</span>
 			</label>
