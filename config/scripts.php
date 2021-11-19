@@ -14,6 +14,7 @@
 					'jquery.validate.min.js',
 					'bootstrap.min.js',
 					'select2.min.js',
+					'formMask.js',
 					'main.js'
 				)
 			)
