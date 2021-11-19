@@ -1066,7 +1066,7 @@ function serviceFormValidation(form){
 						lock = false;
 						btn.attr('disabled', false);
 						
-						form.parent().find('.responseMsg').text(response.message);
+						form.parent().find('.responseMsg').text(response.msg);
 						
 						if(response.status){;
 							form.trigger('reset');
