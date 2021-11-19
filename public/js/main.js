@@ -1054,7 +1054,10 @@ function serviceFormValidation(form){
 						lock = true;
 						
 						btn.attr('disabled', true);
+						
 						form.find('label.error').text('').hide();
+						
+						form.parent().find('.responseMsg').text('');
 					},
 					success		: function(response){
 						console.log('response:');
@@ -1063,7 +1066,7 @@ function serviceFormValidation(form){
 						lock = false;
 						btn.attr('disabled', false);
 						
-						responseMsg(form, response);
+						form.parent().find('.responseMsg').text(response.message);
 						
 						if(response.status){;
 							form.trigger('reset');
@@ -1071,9 +1074,11 @@ function serviceFormValidation(form){
 					},
 					error		: function(err){
 						console.log('error');
+						
 						lock = false;
 						btn.attr('disabled', false);
-						responseMsg(form, err);
+						
+						form.parent().find('.responseMsg').text('Сталась помилка');
 					}
 				});
 			};
