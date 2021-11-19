@@ -113,7 +113,7 @@ class SendController extends Controller {
 			array(
 				'service_id'		=> 'required',
 				'name'				=> 'required|min:2|max:100',
-				'phone'				=> 'required|min:18|max:18',
+				'phone'				=> 'required|min:19|max:19',
 				'message'			=> 'max:500',
 			),
 			array(

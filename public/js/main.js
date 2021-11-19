@@ -999,7 +999,7 @@ function serviceFormValidation(form){
 	var lock = false,
 		btn = form.find('button[type="submit"]');
 	
-	form.find('input[type="tel"]').mask('+38(099)-99-99-999');
+	form.find('input[type="tel"]').mask('+38 (099) 99 99 999');
 	
 	form.validate({
 		onkeyup			: false,
@@ -1014,8 +1014,8 @@ function serviceFormValidation(form){
 			},
 			phone			: {
 				required		: true,
-				minlength		: 18,
-				maxlength		: 18,
+				minlength		: 19,
+				maxlength		: 19,
 			},
 			massage			: {
 				required		: false,
