@@ -27,8 +27,13 @@ $(document).ready (function() {
 	createModal();
 	servicesCalc();
 	scrollUp();
-
+	
 	serviceForm();
+	
+	$('body').on('click', '.show_order_form', function(e){
+		e.preventDefault();
+		$(this).parent().removeClass('hidden_section');
+	});
 });
 
 function select2(){

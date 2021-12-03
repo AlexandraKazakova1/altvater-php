@@ -18,3 +18,29 @@
 .modal.show {
 	display: block;
 }
+
+.orderService__wrapper.hidden_section {
+	margin-top: 0;
+}
+
+.orderService__wrapper .header-banner__link {
+	text-decoration: none;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    padding: 18px 26px;
+    border-radius: 99px;
+    margin-top: 28px;
+    color: #E5E5E5;
+    text-align: center;
+    display: none;
+}
+
+.orderService__wrapper.hidden_section .header-banner__link {
+    display: flex;
+}
+
+.orderService__wrapper.hidden_section .orderService__form {
+	display: none;
+}
