@@ -34,6 +34,8 @@ class BasController extends Controller {
 			$payload['name'] = $name;
 		}
 		
+		file_put_contents('/home/rh422094/altvater.kyiv.ua/www/storage/tmp/'.time(), print_r($request->all(), true));
+		
 		return array(
 			'status'	=> $status,
 			'msg'		=> $msg,
