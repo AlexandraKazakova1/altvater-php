@@ -38,11 +38,16 @@ class bas extends Command {
 	 * @return mixed
 	 */
 	public function handle(){
-		$conn_id = ftp_connect(env('FTP_IP'));
+		$conn_id = ftp_ssl_connect(env('FTP_IP'));
+		
+		if (!$conn_id) {
+			echo "Не удалось установить соединение с FTP-сервером!\n";
+			return false;
+		}
 		
 		$login_result = ftp_login($conn_id, env('FTP_LOGIN'), env('FTP_PASS'));
 		
-		if ((!$conn_id) || (!$login_result)) {
+		if (!$login_result) {
 			echo "Не удалось установить соединение с FTP-сервером!\n";
 			return false;
 		}
