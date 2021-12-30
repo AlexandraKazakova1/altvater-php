@@ -63,6 +63,13 @@ class bas extends Command {
 			return false;
 		}
 		
+		$mode = ftp_pasv($conn_id, TRUE);
+		
+		if (!$mode) {
+			echo "Не удалось установить режим работы с FTP-сервером!\n";
+			return false;
+		}
+		
 		$ftp_rawlist = ftp_nlist($conn_id, env('FTP_DIR'));
 		
 		ftp_close($conn_id);
