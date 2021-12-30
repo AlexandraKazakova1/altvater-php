@@ -46,12 +46,6 @@ class bas extends Command {
 		echo $ip_server;
 		echo "\n";
 		echo "\n";
-		
-		$ip			= $_SERVER['REMOTE_ADDR'];
-		
-		echo "REMOTE_ADDR:\n";
-		echo $ip;
-		echo "\n";
 	}
 	
 	function ftp(){
