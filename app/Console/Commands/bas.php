@@ -63,7 +63,7 @@ class bas extends Command {
 			return false;
 		}
 		
-		$ftp_rawlist = ftp_rawlist($conn_id, env('FTP_DIR'));
+		$ftp_rawlist = ftp_nlist($conn_id, env('FTP_DIR'));
 		
 		ftp_close($conn_id);
 		
