@@ -84,12 +84,16 @@ class bas extends Command {
 			$ftp_rawlist = [];
 		}
 		
+		$success = false;
+		
 		foreach ($ftp_rawlist as $item) {
 			if($item != "." && $item != ".."){
 				$item = explode('/', $item)[1];
 				
 				if($name == $item){
 					if(ftp_fget($conn_id, $handle, env('FTP_DIR').'/'.$item, FTP_ASCII, 0)){
+						$success = true;
+						
 						echo "Произведена запись в $name\n";
 					}
 					
@@ -100,9 +104,36 @@ class bas extends Command {
 		
 		fclose($handle);
 		
+		if(!$success){
+			if(file_exists($dir.'/'.$name)){
+				unlink($dir.'/'.$name);
+			}
+		}else{
+			$this->download($conn_id, $ftp_rawlist, $dir.'/'.$name);
+		}
+		
 		//
 		
 		ftp_close($conn_id);
+	}
+	
+	function download($conn_id, $ftp_rawlist, $file){
+		$data = file_get_contents($file);
+		$data = json_decode($data, true);
+		
+		if($data){
+			foreach($data as $item){
+				$url = trim($item['url'], '/');
+				$url = explode('/', $url)[1];
+				
+				echo $url;
+				echo "\n";
+			}
+			
+			return true;
+		}
+		
+		return false;
 	}
 	
 	/**
