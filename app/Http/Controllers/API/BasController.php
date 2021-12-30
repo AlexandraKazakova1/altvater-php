@@ -115,11 +115,9 @@ class BasController extends Controller {
 		$out = [];
 		
 		if($data){
-			echo"<pre>";
-			print_r($data);
-			exit;
-			
-			foreach($data as $item){
+			if(isset($data['сid'])){
+				$item = $data['сid'];
+				
 				$item['url'] = trim($item['url'], '/');
 				$item['url'] = explode('/', $item['url'])[1];
 				
@@ -131,6 +129,23 @@ class BasController extends Controller {
 							$item['dir'] = $dir;
 							
 							$out[] = $item;
+						}
+					}
+				}
+			}else{
+				foreach($data as $item){
+					$item['url'] = trim($item['url'], '/');
+					$item['url'] = explode('/', $item['url'])[1];
+					
+					if(in_array($item['url'], $files)){
+						if($item['сid']){
+							$handle = fopen($dir.'/'.$item['url'], 'w');
+							
+							if (ftp_fget($conn_id, $handle, env('FTP_DIR').'/'.$item['url'], FTP_ASCII, 0)) {
+								$item['dir'] = $dir;
+								
+								$out[] = $item;
+							}
 						}
 					}
 				}
