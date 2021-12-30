@@ -133,17 +133,19 @@ class bas extends Command {
 		
 		if($data){
 			foreach($data as $item){
-				$file_name = trim($item['url'], '/');
-				$file_name = explode('/', $file_name)[1];
+				$item['url'] = trim($item['url'], '/');
+				$item['url'] = explode('/', $item['url'])[1];
 				
-				if(in_array($file_name, $files)){
-					echo $file_name;
+				if(in_array($item['url'], $files)){
+					echo $item['url'];
 					echo "\n";
 					
-					$handle = fopen($dir.'/'.$file_name, 'w');
-					
-					if (ftp_fget($conn_id, $handle, env('FTP_DIR').'/'.$file_name, FTP_ASCII, 0)) {
-						$out[] = $file_name;
+					if($item['сid']){
+						$handle = fopen($dir.'/'.$item['url'], 'w');
+						
+						if (ftp_fget($conn_id, $handle, env('FTP_DIR').'/'.$item['url'], FTP_ASCII, 0)) {
+							$out[] = $item;
+						}
 					}
 				}
 			}
