@@ -157,7 +157,7 @@ class BasController extends Controller {
 						$user = User::query()->where('uedrpou', $item['id'])->orWhere('ipn', $item['id'])->first();
 						
 						if($user){
-							if($item['dt'] == 2){ // рахунок
+							if($item['dt'] == 2){
 								$record = Bills::query()->where('client_id', $user->id)->where('number', $item['nm'])->first();
 								
 								if(!$record){
@@ -187,7 +187,7 @@ class BasController extends Controller {
 									
 									copy($item['dir'].'/'.$item['url'], $dir.'/bills/'.$item['url']);
 								}
-							if($item['dt'] == 1){ // акт
+							}elseif($item['dt'] == 1){
 								$record = Acts::query()->where('client_id', $user->id)->where('number', $item['nm'])->first();
 								
 								if(!$record){
