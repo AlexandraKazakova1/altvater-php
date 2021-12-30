@@ -118,7 +118,7 @@ class bas extends Command {
 	 * @return mixed
 	 */
 	public function handle(){
-		$this->ip();
-		//$this->ftp();
+		//$this->ip();
+		$this->ftp();
 	}
 }
