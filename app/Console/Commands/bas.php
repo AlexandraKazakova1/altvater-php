@@ -44,7 +44,7 @@ class bas extends Command {
 		
 		if ((!$conn_id) || (!$login_result)) {
 			echo "Не удалось установить соединение с FTP-сервером!\n";
-			retrun false;
+			return false;
 		}
 		
 		$buff = ftp_rawlist($conn_id, '.');
