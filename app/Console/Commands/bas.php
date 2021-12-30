@@ -35,17 +35,7 @@ class bas extends Command {
 	function ip(){
 		$host		= \gethostname();
 		
-		echo "host:\n";
-		echo $host;
-		echo "\n";
-		echo "\n";
-		
-		$ip_server	= \gethostbyname($host);
-		
-		echo "Server IP Address is:\n";
-		echo $ip_server;
-		echo "\n";
-		echo "\n";
+		return \gethostbyname($host);
 	}
 	
 	function ftp(){
@@ -75,43 +65,14 @@ class bas extends Command {
 		ftp_close($conn_id);
 		
 		foreach ($ftp_rawlist as $item) {
-			echo "item:\n";
-			print_r($item);
-			echo "\n";
+			if($item != "." && $item != ".."){
+				$item = explode('/', $item)[1];
+				
+				echo "item:\n";
+				print_r($item);
+				echo "\n";
+			}
 		}
-	}
-	
-	function sftp(){
-		$conn_id = ssh2_connect(env('FTP_IP'), 22);
-		
-		echo "conn_id:\n";
-		print_r($conn_id);
-		echo "\n";
-		
-		if (!$conn_id) {
-			echo "Не удалось установить соединение с сервером!\n";
-			return false;
-		}
-		
-		$login_result = ssh2_auth_password($conn_id, env('FTP_LOGIN'), env('FTP_PASS'));
-		
-		echo "login_result:\n";
-		print_r($login_result);
-		echo "\n";
-		
-		if (!$login_result) {
-			echo "Не удалось пройти авторизацию на сервере!\n";
-			return false;
-		}
-		
-		$sftp = ssh2_sftp($conn_id);
-		
-		if (!$sftp) {
-			echo "Could not initialize SFTP subsystem.\n";
-			return false;
-		}
-		
-		//fclose($stream);
 	}
 	
 	/**
