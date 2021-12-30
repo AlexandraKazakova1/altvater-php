@@ -115,6 +115,10 @@ class BasController extends Controller {
 		$out = [];
 		
 		if($data){
+			echo"<pre>";
+			print_r($data);
+			exit;
+			
 			foreach($data as $item){
 				$item['url'] = trim($item['url'], '/');
 				$item['url'] = explode('/', $item['url'])[1];
