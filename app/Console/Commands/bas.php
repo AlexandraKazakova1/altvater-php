@@ -32,6 +32,20 @@ class bas extends Command {
 		parent::__construct();
 	}
 	
+	function ip(){
+		$ip_server	= $_SERVER['SERVER_ADDR'];
+		$ip			= $_SERVER['REMOTE_ADDR'];
+		
+		echo "Server IP Address is:\n";
+		echo $ip_server;
+		echo "\n";
+		echo "\n";
+		
+		echo "REMOTE_ADDR:\n";
+		echo $ip;
+		echo "\n";
+	}
+	
 	function ftp(){
 		$conn_id = ftp_connect(env('FTP_IP'));
 		
@@ -102,6 +116,7 @@ class bas extends Command {
 	 * @return mixed
 	 */
 	public function handle(){
-		$this->ftp();
+		$this->ip();
+		//$this->ftp();
 	}
 }
