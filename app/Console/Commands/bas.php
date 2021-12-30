@@ -113,7 +113,11 @@ class bas extends Command {
 				unlink($dir.'/'.$name);
 			}
 		}else{
-			$this->download($conn_id, $files, $dir.'/'.$name);
+			$docs = $this->download($conn_id, $files, $dir.'/'.$name, $dir);
+			
+			echo "\n";
+			print_r($docs);
+			echo "\n";
 		}
 		
 		//
@@ -121,9 +125,11 @@ class bas extends Command {
 		ftp_close($conn_id);
 	}
 	
-	function download($conn_id, $files, $file){
+	function download($conn_id, $files, $file, $dir){
 		$data = file_get_contents($file);
 		$data = json_decode($data, true);
+		
+		$out = [];
 		
 		if($data){
 			foreach($data as $item){
@@ -133,13 +139,17 @@ class bas extends Command {
 				if(in_array($file_name, $files)){
 					echo $file_name;
 					echo "\n";
+					
+					$handle = fopen($dir.'/'.$file_name, 'w');
+					
+					if (ftp_fget($conn_id, $handle, env('FTP_DIR').'/'.$file_name, FTP_ASCII, 0)) {
+						$out[] = $file_name;
+					}
 				}
 			}
-			
-			return true;
 		}
 		
-		return false;
+		return $out;
 	}
 	
 	/**
