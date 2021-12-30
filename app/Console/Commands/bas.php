@@ -123,11 +123,13 @@ class bas extends Command {
 		
 		if($data){
 			foreach($data as $item){
-				$url = trim($item['url'], '/');
-				$url = explode('/', $url)[1];
+				$file_name = trim($item['url'], '/');
+				$file_name = explode('/', $file_name)[1];
 				
-				echo $url;
-				echo "\n";
+				if(in_array($file_name, $ftp_rawlist)){
+					echo $url;
+					echo "\n";
+				}
 			}
 			
 			return true;
