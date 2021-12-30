@@ -40,12 +40,20 @@ class bas extends Command {
 	public function handle(){
 		$conn_id = ftp_ssl_connect(env('FTP_IP'));
 		
+		echo "conn_id:\n";
+		print_r($conn_id);
+		echo "\n";
+		
 		if (!$conn_id) {
 			echo "Не удалось установить соединение с FTP-сервером!\n";
 			return false;
 		}
 		
 		$login_result = ftp_login($conn_id, env('FTP_LOGIN'), env('FTP_PASS'));
+		
+		echo "login_result:\n";
+		print_r($login_result);
+		echo "\n";
 		
 		if (!$login_result) {
 			echo "Не удалось установить соединение с FTP-сервером!\n";
