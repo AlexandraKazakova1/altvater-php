@@ -32,12 +32,7 @@ class bas extends Command {
 		parent::__construct();
 	}
 	
-	/**
-	 * Execute the console command.
-	 *
-	 * @return mixed
-	 */
-	public function handle(){
+	function ftp(){
 		$conn_id = ftp_ssl_connect(env('FTP_IP'));
 		
 		echo "conn_id:\n";
@@ -66,5 +61,47 @@ class bas extends Command {
 		
 		print_r($buff);
 		echo "\n";
+	}
+	
+	function sftp(){
+		$conn_id = ssh2_connect(env('FTP_IP'), 22);
+		
+		echo "conn_id:\n";
+		print_r($conn_id);
+		echo "\n";
+		
+		if (!$conn_id) {
+			echo "Не удалось установить соединение с сервером!\n";
+			return false;
+		}
+		
+		$login_result = ssh2_auth_password($conn_id, env('FTP_LOGIN'), env('FTP_PASS'));
+		
+		echo "login_result:\n";
+		print_r($login_result);
+		echo "\n";
+		
+		if (!$login_result) {
+			echo "Не удалось пройти авторизацию на сервере!\n";
+			return false;
+		}
+		
+		$sftp = ssh2_sftp($conn_id);
+		
+		if (!$sftp) {
+			echo "Could not initialize SFTP subsystem.\n";
+			return false;
+		}
+		
+		//fclose($stream);
+	}
+	
+	/**
+	 * Execute the console command.
+	 *
+	 * @return mixed
+	 */
+	public function handle(){
+		$this->sftp();
 	}
 }
