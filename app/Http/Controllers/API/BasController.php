@@ -123,13 +123,15 @@ class BasController extends Controller {
 				
 				if(in_array($item['url'], $files)){
 					if($item['сid']){
-						$handle = fopen($dir.'/'.$item['url'], 'w');
+						$handle = fopen($dir.'/'.$item['url'], 'w+');
 						
-						if (ftp_fget($conn_id, $handle, env('FTP_DIR').'/'.$item['url'], FTP_ASCII, 0)) {
+						if (ftp_fget($conn_id, $handle, env('FTP_DIR').'/'.$item['url'], FTP_BINARY, 0)) {
 							$item['dir'] = $dir;
 							
 							$out[] = $item;
 						}
+						
+						fclose($handle);
 					}
 				}
 			}else{
@@ -139,13 +141,15 @@ class BasController extends Controller {
 					
 					if(in_array($item['url'], $files)){
 						if($item['сid']){
-							$handle = fopen($dir.'/'.$item['url'], 'w');
+							$handle = fopen($dir.'/'.$item['url'], 'w+');
 							
-							if (ftp_fget($conn_id, $handle, env('FTP_DIR').'/'.$item['url'], FTP_ASCII, 0)) {
+							if (ftp_fget($conn_id, $handle, env('FTP_DIR').'/'.$item['url'], FTP_BINARY, 0)) {
 								$item['dir'] = $dir;
 								
 								$out[] = $item;
 							}
+							
+							fclose($handle);
 						}
 					}
 				}
