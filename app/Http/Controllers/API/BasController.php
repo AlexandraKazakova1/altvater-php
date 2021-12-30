@@ -171,6 +171,10 @@ class BasController extends Controller {
 			if($result){
 				$dir = '/home/rh422094/altvater.kyiv.ua/www/storage/app/admin';
 				
+				echo"<pre>";
+				print_r($result);
+				exit;
+				
 				foreach($result as $item){
 					if($item['id']){
 						$user = User::query()->where('uedrpou', $item['id'])->orWhere('ipn', $item['id'])->first();
