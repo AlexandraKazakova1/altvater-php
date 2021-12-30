@@ -131,7 +131,7 @@ class bas extends Command {
 				$file_name = explode('/', $file_name)[1];
 				
 				if(in_array($file_name, $files)){
-					echo $url;
+					echo $file_name;
 					echo "\n";
 				}
 			}
