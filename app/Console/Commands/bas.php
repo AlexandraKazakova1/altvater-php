@@ -86,9 +86,13 @@ class bas extends Command {
 		
 		$success = false;
 		
+		$files = [];
+		
 		foreach ($ftp_rawlist as $item) {
 			if($item != "." && $item != ".."){
 				$item = explode('/', $item)[1];
+				
+				$files[] = $item;
 				
 				if($name == $item){
 					if(ftp_fget($conn_id, $handle, env('FTP_DIR').'/'.$item, FTP_ASCII, 0)){
@@ -109,7 +113,7 @@ class bas extends Command {
 				unlink($dir.'/'.$name);
 			}
 		}else{
-			$this->download($conn_id, $ftp_rawlist, $dir.'/'.$name);
+			$this->download($conn_id, $files, $dir.'/'.$name);
 		}
 		
 		//
@@ -117,7 +121,7 @@ class bas extends Command {
 		ftp_close($conn_id);
 	}
 	
-	function download($conn_id, $ftp_rawlist, $file){
+	function download($conn_id, $files, $file){
 		$data = file_get_contents($file);
 		$data = json_decode($data, true);
 		
@@ -126,7 +130,7 @@ class bas extends Command {
 				$file_name = trim($item['url'], '/');
 				$file_name = explode('/', $file_name)[1];
 				
-				if(in_array($file_name, $ftp_rawlist)){
+				if(in_array($file_name, $files)){
 					echo $url;
 					echo "\n";
 				}
