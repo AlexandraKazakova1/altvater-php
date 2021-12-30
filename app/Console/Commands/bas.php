@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\DB;
 
 use App\Helpers\StringHelper;
 
+define('FILES_PATH', '/home/rh422094/altvater.kyiv.ua/www/storage/files');
+
 class bas extends Command {
 	
 	/**
@@ -62,17 +64,45 @@ class bas extends Command {
 		
 		$ftp_rawlist = ftp_nlist($conn_id, env('FTP_DIR'));
 		
-		ftp_close($conn_id);
+		//
+		
+		if(!is_dir(FILES_PATH)){
+			mkdir(FILES_PATH);
+		}
+		
+		$time = time();
+		
+		$dir = FILES_PATH.'/'.$time;
+		
+		mkdir($dir);
+		
+		$name = "post20211224115257.json";
+		
+		$handle = fopen($dir.'/'.$name, 'w');
+		
+		if(!$ftp_rawlist){
+			$ftp_rawlist = [];
+		}
 		
 		foreach ($ftp_rawlist as $item) {
 			if($item != "." && $item != ".."){
 				$item = explode('/', $item)[1];
 				
-				echo "item:\n";
-				print_r($item);
-				echo "\n";
+				if($name == $item){
+					if(ftp_fget($conn_id, $handle, env('FTP_DIR').'/'.$item, FTP_ASCII, 0)){
+						echo "Произведена запись в $name\n";
+					}
+					
+					break;
+				}
 			}
 		}
+		
+		fclose($handle);
+		
+		//
+		
+		ftp_close($conn_id);
 	}
 	
 	/**
