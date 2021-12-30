@@ -116,7 +116,7 @@ class BasController extends Controller {
 		
 		if($data){
 			if(isset($data['сid'])){
-				$item = $data['сid'];
+				$item = $data;
 				
 				$item['url'] = trim($item['url'], '/');
 				$item['url'] = explode('/', $item['url'])[1];
