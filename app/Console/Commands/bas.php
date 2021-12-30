@@ -33,7 +33,7 @@ class bas extends Command {
 	}
 	
 	function ftp(){
-		$conn_id = ftp_ssl_connect(env('FTP_IP'));
+		$conn_id = ftp_connect(env('FTP_IP'));
 		
 		echo "conn_id:\n";
 		print_r($conn_id);
@@ -102,6 +102,6 @@ class bas extends Command {
 	 * @return mixed
 	 */
 	public function handle(){
-		$this->sftp();
+		$this->ftp();
 	}
 }
