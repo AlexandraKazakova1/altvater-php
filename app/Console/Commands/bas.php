@@ -137,9 +137,6 @@ class bas extends Command {
 				$item['url'] = explode('/', $item['url'])[1];
 				
 				if(in_array($item['url'], $files)){
-					echo $item['url'];
-					echo "\n";
-					
 					if($item['сid']){
 						$handle = fopen($dir.'/'.$item['url'], 'w');
 						
