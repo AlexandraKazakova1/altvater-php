@@ -1,7 +1,7 @@
 @php $status = ["1"=>"signed","2"=>"notSigned","3"=>"read","4"=>"notRead"]; @endphp
 @foreach($acts as $item)
 	<!-- -->
-	<div class="accountsActs__item acts__item {{$status[$item->status]}}">
+	<div class="accountsActs__item acts__item {{(isset($item->status) ? $status[$item->status] : '')}}">
 		<span>
 			<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<path fill-rule="evenodd" clip-rule="evenodd" d="M17 12C17 13.1046 17.8954 14 19 14C20.1046 14 21 13.1046 21 12C21 10.8954 20.1046 10 19 10C17.8954 10 17 10.8954 17 12Z"/>
