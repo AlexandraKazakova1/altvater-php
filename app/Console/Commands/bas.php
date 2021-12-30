@@ -33,13 +33,21 @@ class bas extends Command {
 	}
 	
 	function ip(){
-		$ip_server	= $_SERVER['SERVER_ADDR'];
-		$ip			= $_SERVER['REMOTE_ADDR'];
+		$host		= \gethostname();
+		
+		echo "host:\n";
+		echo $host;
+		echo "\n";
+		echo "\n";
+		
+		$ip_server	= \gethostbyname($host);
 		
 		echo "Server IP Address is:\n";
 		echo $ip_server;
 		echo "\n";
 		echo "\n";
+		
+		$ip			= $_SERVER['REMOTE_ADDR'];
 		
 		echo "REMOTE_ADDR:\n";
 		echo $ip;
