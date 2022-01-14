@@ -114,7 +114,7 @@ class ClientsController extends MyAdminController {
 						->options([
 							null			=> '-',
 							'individual'	=> __('admin.clients.type.individual'),
-							'legal-entit'	=> __('admin.clients.type.legal-entit')
+							'legal-entity'	=> __('admin.clients.type.legal-entit')
 						]);
 			
 			$form->password('password'		, __('admin.clients.password'));
