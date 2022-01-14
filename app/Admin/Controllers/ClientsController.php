@@ -117,7 +117,9 @@ class ClientsController extends MyAdminController {
 							'legal-entity'	=> __('admin.clients.type.legal-entit')
 						]);
 			
-			$form->password('password'		, __('admin.clients.password'));
+			$form->text('password'			, __('admin.clients.password'));
+			
+			//$form->text('password'		, __('admin.clients.password'));
 			
 			$form->text('position'			, __('admin.clients.position'))->rules('max:50');
 			$form->text('addresses'			, __('admin.clients.address'))->rules('max:150');
