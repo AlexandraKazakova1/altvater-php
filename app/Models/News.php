@@ -125,7 +125,7 @@ class News extends Model {
 	static function getAll(){
 		$tmp = DB::table('news')
 					->where('public', 1)
-					->orderBy('views', 'desc')
+					->orderBy('created_at', 'desc')
 					->select('created_at', 'slug', 'title', 'image')
 					->get();
 		

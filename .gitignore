@@ -21,5 +21,8 @@ yarn-error.log
 /composer.lock
 /public/.well-known/
 /storage/logs/bot.log
+/storage/files/
+/storage/tmp/
 
 /public/robots.txt
+/public/sitemap.xml
