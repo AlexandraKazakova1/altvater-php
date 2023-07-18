@@ -31,7 +31,11 @@
 							@if($item->label)
 								<span>{{$item->label}}</span>
 							@endif
-							<a href="tel:+{{$item->value}}" {!!($item->label ? 'style="margin-bottom:10px;"':'')!!}>+{{$string->call('phone', [$item->value, '[2] [(3)] 3-2-2'])}}</a>
+							@if("0800" === substr($item->value, 0, 4))
+								<a href="tel:{{$item->value}}">0800 {{substr($item->value, 4, 3)}} {{substr($item->value, 7, 3)}}</a>
+							@else
+								<a href="tel:+{{$item->value}}" {!!($item->label ? 'style="margin-bottom:10px;"':'')!!}>+{{$string->call('phone', [$item->value, '[2] [(3)] 3-2-2'])}}</a>
+							@endif
 						@endforeach
 					</div>
 				</li>
