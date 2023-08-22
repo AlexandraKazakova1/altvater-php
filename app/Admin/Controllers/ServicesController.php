@@ -102,7 +102,7 @@ class ServicesController extends MyAdminController {
 		
 		$form->tab(__('admin.pages.page_seo')		, function($form){
 			$form->text('keywords'		, __('admin.pages.meta_keywords'))->rules('max:150');
-			$form->text('description'	, __('admin.pages.meta_description'))->rules('max:150');
+			$form->text('description'	, __('admin.pages.meta_description'))->rules('max:192');
 			
 			$form->text('canonical'		, __('admin.pages.canonical'))->rules('max:150');
 			
