@@ -110,15 +110,15 @@
 					@endforeach
 				</ul>
 
-				<div class="header-nav__btn-group">
-					@if($settings['header_btn'])
-						@if($user)
-							<a href="/account" class="btn-header">Особистий кабінет</a>
-						@else
-							<button type="button" class="btn-logIn" data-toggle="modal" data-target="#log__in-modal">Вхід</button>
-							<button type="button" class="btn-reg btn-red" data-toggle="modal" data-target="#create-modal">Реєстрація</button>
-						@endif
-					@endif
+				<div class="header-nav__btn-group" style="width:200px">
+{{--					@if($settings['header_btn'])--}}
+{{--						@if($user)--}}
+{{--							<a href="/account" class="btn-header">Особистий кабінет</a>--}}
+{{--						@else--}}
+{{--							<button type="button" class="btn-logIn" data-toggle="modal" data-target="#log__in-modal">Вхід</button>--}}
+{{--							<button type="button" class="btn-reg btn-red" data-toggle="modal" data-target="#create-modal">Реєстрація</button>--}}
+{{--						@endif--}}
+{{--					@endif--}}
 				</div>
 
 				<div class="burger-menu">
@@ -137,16 +137,16 @@
 								<!-- -->
 							@endforeach
 
-							<div class="menu-nav__btn-group">
-								@if($settings['header_btn'])
-									@if($user)
-										<a href="/account" class="btn-header">Особистий кабінет</a>
-									@else
-										<button type="button" class="btn-logIn" data-toggle="modal" data-target="#log__in-modal">Вхід</button>
-										<button type="button" class="btn-reg btn-red" data-toggle="modal" data-target="#create-modal">Реєстрація</button>
-									@endif
-								@endif
-							</div>
+{{--							<div class="menu-nav__btn-group">--}}
+{{--								@if($settings['header_btn'])--}}
+{{--									@if($user)--}}
+{{--										<a href="/account" class="btn-header">Особистий кабінет</a>--}}
+{{--									@else--}}
+{{--										<button type="button" class="btn-logIn" data-toggle="modal" data-target="#log__in-modal">Вхід</button>--}}
+{{--										<button type="button" class="btn-reg btn-red" data-toggle="modal" data-target="#create-modal">Реєстрація</button>--}}
+{{--									@endif--}}
+{{--								@endif--}}
+{{--							</div>--}}
 						</ul>
 					</div>
 				</div>
