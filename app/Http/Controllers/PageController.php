@@ -94,7 +94,7 @@ class PageController extends MyController {
 
 		$view = 'page';
 
-		if(in_array($page->id, array(10, 11, 12))){
+		if(in_array($page->id, array(10, 11, 12, 13))){
 			$view = 'info';
 		}
 
