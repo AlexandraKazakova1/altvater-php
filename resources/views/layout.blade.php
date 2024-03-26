@@ -252,5 +252,13 @@
 				var sn = d.getElementsByTagName(s)[0]; sn.parentNode.insertBefore(gcw, sn);
 			})(document, window, 'script');
 		</script>
-	</body>
+
+        <!-- KeyCRM online chat widget begin -->
+        <script type="text/javascript">
+            (function(w,d,t,u,c){
+                var s=d.createElement(t),j=d.getElementsByTagName(t)[0];s.src=u;s["async"]=true;s.defer=true;s.onload=function(){KeyCRM.render(c);};j.parentNode.insertBefore(s,j)
+            })(window, document, "script","https://chat.key.live/bundles/widget.min.js",{token:"22dc2c1e-24ee-4d51-94d0-185904bf89a4"});
+        </script>
+        <!-- KeyCRM online chat widget end -->
+    </body>
 </html>
