@@ -7,7 +7,7 @@
 					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path fill-rule="evenodd" clip-rule="evenodd" d="M13.5904 22.2957C16.1746 20.1791 21 15.4917 21 10C21 5.02944 16.9706 1 12 1C7.02944 1 3 5.02944 3 10C3 15.4917 7.82537 20.1791 10.4096 22.2957C11.3466 23.0631 12.6534 23.0631 13.5904 22.2957ZM12 12C13.6569 12 15 10.6569 15 9C15 7.34315 13.6569 6 12 6C10.3431 6 9 7.34315 9 9C9 10.6569 10.3431 12 12 12Z" fill="#00B7CE"/>
 					</svg>
-					
+
 					<div class="item__body">
 						<span class="subTitle21">Адреса:</span>
 						@foreach($contacts['address'] as $item)
@@ -76,7 +76,7 @@
 				<li class="contacts__item">
 					<div class="item__body bot__group">
 						<span class="subTitle21">Наші боти:</span>
-						
+
 						@if($contacts['viber'])
 							@foreach($contacts['viber'] as $item)
 								<a href="viber://pa?chatURI={{$item}}" class="bot__link">
@@ -92,7 +92,7 @@
 								</a>
 							@endforeach
 						@endif
-						
+
 						@if($contacts['telegram'])
 							@foreach($contacts['telegram'] as $item)
 								<a href="https://t.me/{{$item}}" class="bot__link">
@@ -112,30 +112,30 @@
 				<img class="qr" src="/img/qr-viber-color-png.png" alt="">
 			</li>
 		</ul>
-		
+
 		<div class="callback">
 			<div class="callback__title">Залишіть заявку</div>
 			<div class="callback__description">Якщо хочете дізнатися про всі можливості сервісу або задати питання, заповніть, будь-ласка, форму</div>
-			
+
 			<form class="callback__form" id="callback-form" action="/ajax/callback" method="POST">
 				<fieldset class="callback-fieldset">
 					<label>
 						<span>Ім'я </span>
 						<input class="form-control" type="text" id="username" name="name" placeholder="Ваше Ім'я">
 					</label>
-					
+
 					<label>
 						<span>Телефон</span>
-						<input class="form-control" type="tel" id="userphone" name="phone" placeholder="Ваш телефон">
+						<input class="form-control" type="tel" id="userphone" name="phone" placeholder="Ваш телефон" required>
 					</label>
-					
+
 					<label>
 						<span>Повідомлення</span>
 						<textarea name="message" placeholder="Ваше Повідомлення "></textarea>
 					</label>
-					
+
 					<button class="btn-submit" type="submit" name="comment">Залишити заявку</button>
-					
+
 					<label class="checkbox__label">
 						<input class="input-checkbox" type="checkbox" id="rule" name="rule">
 						<span class="custom-checkbox"></span>
@@ -143,10 +143,10 @@
 					</label>
 				</fieldset>
 			</form>
-			
+
 			<p class="responseMsg"></p>
 		</div>
-		
+
 		<a name="callback"></a>
 	</div>
 </section>

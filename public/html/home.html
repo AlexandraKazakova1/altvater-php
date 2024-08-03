@@ -177,7 +177,7 @@
                     </label>
                     <label>
                         <span>Телефон</span>
-                        <input class="form-control" type="tel" id="userphone" name="phone" placeholder="Ваш телефон">
+                        <input class="form-control" type="tel" id="userphone" name="phone" placeholder="Ваш телефон" required>
                     </label>
                     <label>
                         <span>Ім'я </span>
@@ -410,7 +410,7 @@
                     </label>
                     <label>
                         <span>Телефон</span>
-                        <input class="form-control" type="tel" id="userphone" name="phone" placeholder="Ваш телефон">
+                        <input class="form-control" type="tel" id="userphone" name="phone" placeholder="Ваш телефон" required>
                     </label>
                     <label>
                         <span>Повідомлення</span>
@@ -482,7 +482,7 @@
                             </label>
                             <label>
                                 <span>Телефон</span>
-                                <input class="form-control" type="tel" id="userphone" name="phone" placeholder="Ваш телефон">
+                                <input class="form-control" type="tel" id="userphone" name="phone" placeholder="Ваш телефон" required>
                             </label>
                             <label>
                                 <span>Повідомлення</span>
@@ -515,7 +515,7 @@
             <span>Copyright © 2021 Veolia. All rights reserved</span>
         </div>
     </footer>
-    
+
     <div class="modal fade" id="log__in-modal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-md modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -609,7 +609,7 @@
 									Ім'я і Прізвище
 								</span>
 							</label>
-							
+
 							<label>
 								<span class="input-description">Номер телефону:</span>
 								<input class="form-control" type="tel" name="phone" placeholder=" ">
@@ -620,7 +620,7 @@
 									Номер телефону
 								</span>
 							</label>
-							
+
 							<label>
 								<span class="input-description">Email:</span>
 								<input class="form-control" type="email" name="email" placeholder=" ">
@@ -631,7 +631,7 @@
 									Ваш Email
 								</span>
 							</label>
-							
+
 							<label>
 								<span class="input-description">Пароль:</span>
 								<input class="form-control password" type="password"  name="password" placeholder=" ">
@@ -642,7 +642,7 @@
 									Введіть пароль
 								</span>
 							</label>
-							
+
 							<label>
 								<span class="input-description">Повторіть пароль:</span>
 								<input class="form-control" type="password"  name="confirm_password" placeholder=" ">
@@ -653,7 +653,7 @@
 									Повторіть пароль
 								</span>
 							</label>
-							
+
 							<div class="user-agree">
 								<label class="checkbox__label">
 									<input class="input-checkbox" type="checkbox" name="agree">
@@ -912,7 +912,7 @@
                                     <input class="form-control verifCode" type="text" name="code" autocomplete="off" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder=" "  onfocus="this.value=''"/>
                                     <input class="form-control verifCode" type="text" name="code" autocomplete="off" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder=" "  onfocus="this.value=''"/>
                                     <input class="form-control verifCode" type="text" name="code" autocomplete="off" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder=" "  onfocus="this.value=''"/>
-                                </label>          
+                                </label>
                                 <a href="#" class="sendAgain">Відправити знову <span>(09: 16с)</span></a>
                                 <button class="btn-submit" type="submit" name="logIn">Вхід</button>
                             </fieldset>
