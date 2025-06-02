@@ -1,1049 +1,2227 @@
 <!DOCTYPE html>
 <html lang="ua">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Veolia</title>
-    <link rel="stylesheet" href="../css/slick.css">
-    <link rel="stylesheet" href="../css/slick-theme.css">
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/select2.css">
-    <link rel="stylesheet" href="../css/style.css">
-</head>
-<body>
-    <header>
-        <nav class="header-nav container">
-            <a href="#" class="header-nav__logo">
-                <img src="../img/logo.png" alt="Veolia">
-            </a>
-            <ul class="header-nav__list">
-                <li class="header-nav__list__item">
-                    <a href="../html/home.html">Головна</a>
-                </li>
-                <li class="header-nav__list__item">
-                    <a class="scroll" href="#our-services">Послуги</a>
-                </li>
-                <li class="header-nav__list__item">
-                    <a href="../html/about.html">Про компанію</a>
-                </li>
-                <li class="header-nav__list__item">
-                    <a href="../html/news.html">Новини</a>
-                </li>
-                <li class="header-nav__list__item">
-                    <a href="../html/contact.html">Контакти</a>
-                </li>
-            </ul>
-            <div class="header-nav__btn-group">
-                <button type="button" class="btn-logIn" data-toggle="modal" data-target="#log__in-modal">
-                    Вхід
-                </button>
-                <button type="button" class="btn-reg btn-red" data-toggle="modal" data-target="#create-modal">
-                    Реєстрація
-                </button>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Veolia</title>
+        <link rel="stylesheet" href="../css/slick.css" />
+        <link rel="stylesheet" href="../css/slick-theme.css" />
+        <link rel="stylesheet" href="../css/bootstrap.min.css" />
+        <link rel="stylesheet" href="../css/select2.css" />
+        <link rel="stylesheet" href="../css/style.css" />
+    </head>
+    <body>
+        <header>
+            <nav class="header-nav container">
+                <a href="#" class="header-nav__logo">
+                    <img src="../img/logo-new.png" alt="Veolia" />
+                </a>
+                <ul class="header-nav__list">
+                    <li class="header-nav__list__item">
+                        <a href="../html/home.html">Головна</a>
+                    </li>
+                    <li class="header-nav__list__item">
+                        <a class="scroll" href="#our-services">Послуги</a>
+                    </li>
+                    <li class="header-nav__list__item">
+                        <a href="../html/about.html">Про компанію</a>
+                    </li>
+                    <li class="header-nav__list__item">
+                        <a href="../html/news.html">Новини</a>
+                    </li>
+                    <li class="header-nav__list__item">
+                        <a href="../html/contact.html">Контакти</a>
+                    </li>
+                </ul>
+                <div class="header-nav__btn-group">
+                    <button
+                        type="button"
+                        class="btn-logIn"
+                        data-toggle="modal"
+                        data-target="#log__in-modal"
+                    >
+                        Вхід
+                    </button>
+                    <button
+                        type="button"
+                        class="btn-reg btn-red"
+                        data-toggle="modal"
+                        data-target="#create-modal"
+                    >
+                        Реєстрація
+                    </button>
+                </div>
+                <div class="burger-menu">
+                    <span class="menu__icon"></span>
+                    <div class="menu__body">
+                        <a href="#" class="header-nav__logo">
+                            <img src="../img/logo-new.png" alt="Veolia" />
+                        </a>
+                        <ul class="menu-nav__list">
+                            <li class="menu-nav__list__item">
+                                <a href="#">Головна</a>
+                            </li>
+                            <li class="menu-nav__list__item">
+                                <a href="#">Послуги</a>
+                            </li>
+                            <li class="menu-nav__list__item">
+                                <a href="#">Про компанію</a>
+                            </li>
+                            <li class="menu-nav__list__item">
+                                <a href="#">Новини</a>
+                            </li>
+                            <li class="menu-nav__list__item">
+                                <a href="#">Контакти</a>
+                            </li>
+                            <div class="menu-nav__btn-group">
+                                <button
+                                    type="button"
+                                    class="btn-logIn"
+                                    data-toggle="modal"
+                                    data-target="#log__in-modal"
+                                >
+                                    Вхід
+                                </button>
+                                <button
+                                    type="button"
+                                    class="btn-reg btn-red"
+                                    data-toggle="modal"
+                                    data-target="#create-modal"
+                                >
+                                    Реєстрація
+                                </button>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="header-banner container">
+                <h1>
+                    ТОВ "Альтфатер Київ"<br />представляє собою сучасну компанію
+                </h1>
+                <p>Ваш надійний партнер у сфері поводження з відходами!</p>
+                <a href="#" class="btn-red"> Отримати консультацію </a>
             </div>
-            <div class="burger-menu">
-                <span class="menu__icon"></span>
-                <div class="menu__body">
-                    <a href="#" class="header-nav__logo">
-                        <img src="../img/logo.png" alt="Veolia">
-                    </a>
-                    <ul class="menu-nav__list">
-                        <li class="menu-nav__list__item">
-                            <a href="#">Головна</a>
-                        </li>
-                        <li class="menu-nav__list__item">
-                            <a href="#">Послуги</a>
-                        </li>
-                        <li class="menu-nav__list__item">
-                            <a href="#">Про компанію</a>
-                        </li>
-                        <li class="menu-nav__list__item">
-                            <a href="#">Новини</a>
-                        </li>
-                        <li class="menu-nav__list__item">
-                            <a href="#">Контакти</a>
-                        </li>
-                        <div class="menu-nav__btn-group">
-                            <button type="button" class="btn-logIn" data-toggle="modal" data-target="#log__in-modal">
-                                Вхід
-                            </button>
-                            <button type="button" class="btn-reg btn-red" data-toggle="modal" data-target="#create-modal">
-                                Реєстрація
-                            </button>
+        </header>
+        <main class="main-page">
+            <section class="services-wrapper" id="our-services">
+                <div class="services container">
+                    <h2 class="section-title">Наші послуги</h2>
+                    <div class="services__list">
+                        <div class="services__item">
+                            <a class="services__photo-link" href="#"
+                                ><img
+                                    class="services__photo"
+                                    src="../img/services1.png"
+                                    alt="services"
+                            /></a>
+                            <span class="services__text"
+                                >Вивіз твердих<br />побутових відходів</span
+                            >
+                            <a class="services__link" href="#">
+                                <svg
+                                    width="29"
+                                    height="29"
+                                    viewBox="0 0 29 29"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M23.8643 14.1685L5.73926 14.1685"
+                                        stroke="white"
+                                        stroke-width="1.8125"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                    <path
+                                        d="M16.5537 6.88903L23.8641 14.168L16.5537 21.4482"
+                                        stroke="white"
+                                        stroke-width="1.8125"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
+                                <span>Детальніше</span>
+                            </a>
                         </div>
+                        <div class="services__item">
+                            <a class="services__photo-link" href="#"
+                                ><img
+                                    class="services__photo"
+                                    src="../img/services2.png"
+                                    alt="services"
+                            /></a>
+                            <span class="services__text"
+                                >Вивезення побутових<br />відходів та
+                                сміття</span
+                            >
+                            <a class="services__link" href="#">
+                                <svg
+                                    width="29"
+                                    height="29"
+                                    viewBox="0 0 29 29"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M23.8643 14.1685L5.73926 14.1685"
+                                        stroke="white"
+                                        stroke-width="1.8125"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                    <path
+                                        d="M16.5537 6.88903L23.8641 14.168L16.5537 21.4482"
+                                        stroke="white"
+                                        stroke-width="1.8125"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
+                                <span>Детальніше</span>
+                            </a>
+                        </div>
+                        <div class="services__item">
+                            <a class="services__photo-link" href="#"
+                                ><img
+                                    class="services__photo"
+                                    src="../img/services3.png"
+                                    alt="services"
+                            /></a>
+                            <span class="services__text"
+                                >Вивіз будівельного<br />сміття</span
+                            >
+                            <a class="services__link" href="#">
+                                <svg
+                                    width="29"
+                                    height="29"
+                                    viewBox="0 0 29 29"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M23.8643 14.1685L5.73926 14.1685"
+                                        stroke="white"
+                                        stroke-width="1.8125"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                    <path
+                                        d="M16.5537 6.88903L23.8641 14.168L16.5537 21.4482"
+                                        stroke="white"
+                                        stroke-width="1.8125"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
+                                <span>Детальніше</span>
+                            </a>
+                        </div>
+                        <div class="services__item">
+                            <a class="services__photo-link" href="#"
+                                ><img
+                                    class="services__photo"
+                                    src="../img/services4.png"
+                                    alt="services"
+                            /></a>
+                            <span class="services__text"
+                                >Вивіз старих меблів</span
+                            >
+                            <a class="services__link" href="#">
+                                <svg
+                                    width="29"
+                                    height="29"
+                                    viewBox="0 0 29 29"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M23.8643 14.1685L5.73926 14.1685"
+                                        stroke="white"
+                                        stroke-width="1.8125"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                    <path
+                                        d="M16.5537 6.88903L23.8641 14.168L16.5537 21.4482"
+                                        stroke="white"
+                                        stroke-width="1.8125"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
+                                <span>Детальніше</span>
+                            </a>
+                        </div>
+                        <div class="services__item">
+                            <a class="services__photo-link" href="#"
+                                ><img
+                                    class="services__photo"
+                                    src="../img/services5.png"
+                                    alt="services"
+                            /></a>
+                            <span class="services__text"
+                                >Утилізація відходів</span
+                            >
+                            <a class="services__link" href="#">
+                                <svg
+                                    width="29"
+                                    height="29"
+                                    viewBox="0 0 29 29"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M23.8643 14.1685L5.73926 14.1685"
+                                        stroke="white"
+                                        stroke-width="1.8125"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                    <path
+                                        d="M16.5537 6.88903L23.8641 14.168L16.5537 21.4482"
+                                        stroke="white"
+                                        stroke-width="1.8125"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
+                                <span>Детальніше</span>
+                            </a>
+                        </div>
+                        <div class="services__item">
+                            <a class="services__photo-link" href="#"
+                                ><img
+                                    class="services__photo"
+                                    src="../img/services6.png"
+                                    alt="services"
+                            /></a>
+                            <span class="services__text">Вивіз землі</span>
+                            <a class="services__link" href="#">
+                                <svg
+                                    width="29"
+                                    height="29"
+                                    viewBox="0 0 29 29"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M23.8643 14.1685L5.73926 14.1685"
+                                        stroke="white"
+                                        stroke-width="1.8125"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                    <path
+                                        d="M16.5537 6.88903L23.8641 14.168L16.5537 21.4482"
+                                        stroke="white"
+                                        stroke-width="1.8125"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
+                                <span>Детальніше</span>
+                            </a>
+                        </div>
+                    </div>
+                    <button
+                        class="calc-btn btn-red"
+                        data-toggle="modal"
+                        data-target="#servicesCalc"
+                    >
+                        Розрахунок вартості наших послуг
+                    </button>
+                </div>
+            </section>
+            <section class="orderService__wrapper">
+                <form class="orderService__form">
+                    <h2 class="popup__title">Замовити послугу</h2>
+                    <fieldset class="callback-fieldset">
+                        <label>
+                            <span class="input-description"
+                                >Оберіть послугу:</span
+                            >
+                            <select class="custom-select2" name="service">
+                                <option
+                                    data-id="0"
+                                    class="first-option"
+                                    disabled
+                                    selected
+                                    value
+                                    hidden
+                                >
+                                    Обрати послугу
+                                </option>
+                                <option value="Послуга-1">Послуга-1</option>
+                                <option value="Послуга-2">Послуга-2</option>
+                                <option value="Послуга-3">Послуга-3</option>
+                            </select>
+                        </label>
+                        <label>
+                            <span>Телефон</span>
+                            <input
+                                class="form-control"
+                                type="tel"
+                                id="userphone"
+                                name="phone"
+                                placeholder="Ваш телефон"
+                                required
+                            />
+                        </label>
+                        <label>
+                            <span>Ім'я </span>
+                            <input
+                                class="form-control"
+                                type="text"
+                                id="username"
+                                name="name"
+                                placeholder="ПІБ"
+                            />
+                        </label>
+                        <label>
+                            <span>Повідомлення</span>
+                            <textarea
+                                placeholder="Ваше повідомлення"
+                                id="massage"
+                                name="massage"
+                            ></textarea>
+                        </label>
+                        <button class="btn-submit" type="submit" name="submit">
+                            Залишити заявку
+                        </button>
+                        <label class="checkbox__label">
+                            <input
+                                class="input-checkbox"
+                                type="checkbox"
+                                id="rule"
+                                name="rule"
+                            />
+                            <span class="custom-checkbox"></span>
+                            <span class="checkbox-text"
+                                >Підтверджуючи замовлення, я приймаю умови угоди
+                                користувача</span
+                            >
+                        </label>
+                    </fieldset>
+                </form>
+            </section>
+            <section class="about-wrapper">
+                <div class="about container">
+                    <h2 class="section-title">Про нашу компанію</h2>
+                    <div class="about-content">
+                        <div class="description-group">
+                            <p class="text">
+                                ТОВ «Альтфатер Київ» входить в групу Веолія, яка
+                                протягом багатьох років працює в багатьох
+                                країнах світу в сфері очищення стічних вод,
+                                поводження з відходами тощо. Якісний вивіз
+                                сміття можна замовити максимально швидко і
+                                просто, якщо звернутися до перевірених
+                                професіоналів.<br />Маючи більш ніж 20-ти річний
+                                досвід роботи у галузі поводження з відходами в
+                                Україні, ми пропонуємо найбільш оптимальні
+                                рішення щодо ефективного використання ресурсів,
+                                їх збереження та відновлення, сприяючи таким
+                                чином розвитку циркулярної економіки.
+                            </p>
+                            <p class="text">
+                                Мета Veolia була розроблена завдяки тривалому
+                                процесу роботи та безпрецедентному
+                                співробітництву, в якому брали участь органи
+                                управління компанією, співробітники, Комітет
+                                критичних друзів (зовнішні експерти), клієнти,
+                                панелі людей тощо.<br />Мета Veolia була
+                                прийнята її Радою директорів та представлена
+                                ​​на щорічних зборах акціонерів 18 квітня 2019
+                                року.
+                            </p>
+                        </div>
+                        <div class="goal">
+                            <h3 class="goal__title subTitle21">
+                                Мета Веолії - це не просто гасло, воно виражене
+                                у повному тексті
+                            </h3>
+                            <p class="goal__text">
+                                Мета Veolia - сприяти людському прогресу, твердо
+                                дотримуючись цілей сталого розвитку, визначених
+                                ООН для досягнення кращого та більш сталого
+                                майбутнього для всіх. Саме з цією метою Veolia
+                                ставить перед собою завдання «ресурси світу» за
+                                допомогою свого бізнесу з питань екологічних
+                                послуг.
+                            </p>
+                        </div>
+                        <div class="our-photo">
+                            <img src="../img/aboutBanner.png" alt="Veolia" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="news-wrapper">
+                <div class="news container">
+                    <h2 class="section-title">Новини нашої компанії</h2>
+                    <ul class="news__list">
+                        <li class="news__item">
+                            <a class="news__photo-link" href="#"
+                                ><img
+                                    class="news__photo"
+                                    src="../img/news1.png"
+                                    alt="news"
+                            /></a>
+                            <div class="news__text">
+                                <span class="news__date">14 Апреля,2021</span>
+                                <span
+                                    >Там буде зелена зона для відпочинку..</span
+                                >
+                            </div>
+                            <a class="news__link" href="#">
+                                <svg
+                                    width="29"
+                                    height="29"
+                                    viewBox="0 0 29 29"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M23.8643 14.1685L5.73926 14.1685"
+                                        stroke="#2C2C2C"
+                                        stroke-width="1.8125"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                    <path
+                                        d="M16.5537 6.88903L23.8641 14.168L16.5537 21.4482"
+                                        stroke="#2C2C2C"
+                                        stroke-width="1.8125"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
+                                <span>Детальніше</span>
+                            </a>
+                        </li>
+                        <li class="news__item">
+                            <a class="news__photo-link" href="#"
+                                ><img
+                                    class="news__photo"
+                                    src="../img/news2.png"
+                                    alt="news"
+                            /></a>
+                            <div class="news__text">
+                                <span class="news__date">14 Апреля,2021</span>
+                                <span
+                                    >Там буде зелена зона для відпочинку..</span
+                                >
+                            </div>
+                            <a class="news__link" href="#">
+                                <svg
+                                    width="29"
+                                    height="29"
+                                    viewBox="0 0 29 29"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M23.8643 14.1685L5.73926 14.1685"
+                                        stroke="#2C2C2C"
+                                        stroke-width="1.8125"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                    <path
+                                        d="M16.5537 6.88903L23.8641 14.168L16.5537 21.4482"
+                                        stroke="#2C2C2C"
+                                        stroke-width="1.8125"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
+                                <span>Детальніше</span>
+                            </a>
+                        </li>
+                        <li class="news__item">
+                            <a class="news__photo-link" href="#"
+                                ><img
+                                    class="news__photo"
+                                    src="../img/news3.png"
+                                    alt="news"
+                            /></a>
+                            <div class="news__text">
+                                <span class="news__date">14 Апреля,2021</span>
+                                <span
+                                    >Там буде зелена зона для відпочинку..</span
+                                >
+                            </div>
+                            <a class="news__link" href="#">
+                                <svg
+                                    width="29"
+                                    height="29"
+                                    viewBox="0 0 29 29"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M23.8643 14.1685L5.73926 14.1685"
+                                        stroke="#2C2C2C"
+                                        stroke-width="1.8125"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                    <path
+                                        d="M16.5537 6.88903L23.8641 14.168L16.5537 21.4482"
+                                        stroke="#2C2C2C"
+                                        stroke-width="1.8125"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
+                                <span>Детальніше</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
-            </div>
-        </nav>
-        <div class="header-banner container">
-            <h1>
-                ТОВ "Альтфатер Київ"<br>представляє собою сучасну компанію
-            </h1>
-            <p>
-                Ваш надійний партнер у сфері поводження з відходами!
-            </p>
-            <a href="#" class="btn-red">
-                Отримати консультацію
-            </a>
-        </div>
-    </header>
-    <main class="main-page">
-        <section class="services-wrapper" id="our-services">
-            <div class="services container">
-                <h2 class="section-title">Наші послуги</h2>
-                <div class="services__list">
-                    <div class="services__item">
-                        <a class="services__photo-link" href="#"><img class="services__photo" src="../img/services1.png" alt="services"></a>
-                        <span class="services__text">Вивіз твердих<br>побутових відходів</span>
-                        <a class="services__link" href="#">
-                            <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M23.8643 14.1685L5.73926 14.1685" stroke="white" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M16.5537 6.88903L23.8641 14.168L16.5537 21.4482" stroke="white" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <span>Детальніше</span>
-                        </a>
-                    </div>
-                    <div class="services__item">
-                        <a class="services__photo-link" href="#"><img class="services__photo" src="../img/services2.png" alt="services"></a>
-                        <span class="services__text">Вивезення побутових<br>відходів та сміття</span>
-                        <a class="services__link" href="#">
-                            <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M23.8643 14.1685L5.73926 14.1685" stroke="white" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M16.5537 6.88903L23.8641 14.168L16.5537 21.4482" stroke="white" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <span>Детальніше</span>
-                        </a>
-                    </div>
-                    <div class="services__item">
-                        <a class="services__photo-link" href="#"><img class="services__photo" src="../img/services3.png" alt="services"></a>
-                        <span class="services__text">Вивіз будівельного<br>сміття</span>
-                        <a class="services__link" href="#">
-                            <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M23.8643 14.1685L5.73926 14.1685" stroke="white" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M16.5537 6.88903L23.8641 14.168L16.5537 21.4482" stroke="white" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <span>Детальніше</span>
-                        </a>
-                    </div>
-                    <div class="services__item">
-                        <a class="services__photo-link" href="#"><img class="services__photo" src="../img/services4.png" alt="services"></a>
-                        <span class="services__text">Вивіз старих меблів</span>
-                        <a class="services__link" href="#">
-                            <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M23.8643 14.1685L5.73926 14.1685" stroke="white" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M16.5537 6.88903L23.8641 14.168L16.5537 21.4482" stroke="white" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <span>Детальніше</span>
-                        </a>
-                    </div>
-                    <div class="services__item">
-                        <a class="services__photo-link" href="#"><img class="services__photo" src="../img/services5.png" alt="services"></a>
-                        <span class="services__text">Утилізація відходів</span>
-                        <a class="services__link" href="#">
-                            <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M23.8643 14.1685L5.73926 14.1685" stroke="white" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M16.5537 6.88903L23.8641 14.168L16.5537 21.4482" stroke="white" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <span>Детальніше</span>
-                        </a>
-                    </div>
-                    <div class="services__item">
-                        <a class="services__photo-link" href="#"><img class="services__photo" src="../img/services6.png" alt="services"></a>
-                        <span class="services__text">Вивіз землі</span>
-                        <a class="services__link" href="#">
-                            <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M23.8643 14.1685L5.73926 14.1685" stroke="white" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M16.5537 6.88903L23.8641 14.168L16.5537 21.4482" stroke="white" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <span>Детальніше</span>
-                        </a>
-                    </div>
-                </div>
-                <button class="calc-btn btn-red" data-toggle="modal" data-target="#servicesCalc">Розрахунок вартості наших послуг</button>
-            </div>
-        </section>
-        <section class="orderService__wrapper">
-            <form class="orderService__form">
-                <h2 class="popup__title">Замовити послугу</h2>
-                <fieldset class="callback-fieldset">
-                    <label>
-                        <span class="input-description">Оберіть послугу:</span>
-                        <select class="custom-select2" name="service">
-                            <option data-id="0" class="first-option" disabled selected value hidden>Обрати послугу</option>
-                            <option value="Послуга-1">Послуга-1</option>
-                            <option value="Послуга-2">Послуга-2</option>
-                            <option value="Послуга-3">Послуга-3</option>
-                        </select>
-                    </label>
-                    <label>
-                        <span>Телефон</span>
-                        <input class="form-control" type="tel" id="userphone" name="phone" placeholder="Ваш телефон" required>
-                    </label>
-                    <label>
-                        <span>Ім'я </span>
-                        <input class="form-control" type="text" id="username" name="name" placeholder="ПІБ">
-                    </label>
-                    <label>
-                        <span>Повідомлення</span>
-                        <textarea placeholder="Ваше повідомлення" id="massage" name="massage"></textarea>
-                    </label>
-                    <button class="btn-submit" type="submit" name="submit">Залишити заявку</button>
-                    <label class="checkbox__label">
-                        <input class="input-checkbox" type="checkbox" id="rule" name="rule">
-                        <span class="custom-checkbox"></span>
-                        <span class="checkbox-text">Підтверджуючи замовлення, я приймаю умови угоди користувача</span>
-                    </label>
-                </fieldset>
-            </form>
-        </section>
-        <section class="about-wrapper">
-            <div class="about container">
-                <h2 class="section-title">Про нашу компанію</h2>
-                <div class="about-content">
-                    <div class="description-group">
-                        <p class="text">ТОВ «Альтфатер Київ» входить в групу Веолія, яка протягом багатьох років працює в багатьох країнах світу в сфері очищення стічних вод, поводження з відходами тощо. Якісний вивіз сміття можна замовити максимально швидко і просто, якщо звернутися до перевірених професіоналів.<br>Маючи більш ніж 20-ти річний досвід роботи у галузі поводження з відходами в Україні, ми пропонуємо найбільш оптимальні рішення щодо ефективного використання ресурсів, їх збереження та відновлення, сприяючи таким чином розвитку циркулярної економіки.</p>
-                        <p class="text">Мета Veolia була розроблена завдяки тривалому процесу роботи та безпрецедентному співробітництву, в якому брали участь органи управління компанією, співробітники, Комітет критичних друзів (зовнішні експерти), клієнти, панелі людей тощо.<br>Мета Veolia була прийнята її Радою директорів та представлена ​​на щорічних зборах акціонерів 18 квітня 2019 року.</p>
-                    </div>
-                    <div class="goal">
-                        <h3 class="goal__title subTitle21">Мета Веолії - це не просто гасло, воно виражене у повному тексті</h3>
-                        <p class="goal__text">Мета Veolia - сприяти людському прогресу, твердо дотримуючись цілей сталого розвитку, визначених ООН для досягнення кращого та більш сталого майбутнього для всіх. Саме з цією метою Veolia ставить перед собою завдання «ресурси світу» за допомогою свого бізнесу з питань екологічних послуг.</p>
-                    </div>
-                    <div class="our-photo"><img src="../img/aboutBanner.png" alt="Veolia"></div>
-                </div>
-            </div>
-        </section>
-        <section class="news-wrapper">
-            <div class="news container">
-                <h2 class="section-title">Новини нашої компанії</h2>
-                <ul class="news__list">
-                    <li class="news__item">
-                        <a class="news__photo-link" href="#"><img class="news__photo" src="../img/news1.png" alt="news"></a>
-                        <div class="news__text">
-                            <span class="news__date">14 Апреля,2021</span>
-                            <span>Там буде зелена зона для відпочинку..</span>
-                        </div>
-                        <a class="news__link" href="#">
-                            <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M23.8643 14.1685L5.73926 14.1685" stroke="#2C2C2C" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M16.5537 6.88903L23.8641 14.168L16.5537 21.4482" stroke="#2C2C2C" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <span>Детальніше</span>
-                        </a>
-                    </li>
-                    <li class="news__item">
-                        <a class="news__photo-link" href="#"><img class="news__photo" src="../img/news2.png" alt="news"></a>
-                        <div class="news__text">
-                            <span class="news__date">14 Апреля,2021</span>
-                            <span>Там буде зелена зона для відпочинку..</span>
-                        </div>
-                        <a class="news__link" href="#">
-                            <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M23.8643 14.1685L5.73926 14.1685" stroke="#2C2C2C" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M16.5537 6.88903L23.8641 14.168L16.5537 21.4482" stroke="#2C2C2C" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <span>Детальніше</span>
-                        </a>
-                    </li>
-                    <li class="news__item">
-                        <a class="news__photo-link" href="#"><img class="news__photo" src="../img/news3.png" alt="news"></a>
-                        <div class="news__text">
-                            <span class="news__date">14 Апреля,2021</span>
-                            <span>Там буде зелена зона для відпочинку..</span>
-                        </div>
-                        <a class="news__link" href="#">
-                            <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M23.8643 14.1685L5.73926 14.1685" stroke="#2C2C2C" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M16.5537 6.88903L23.8641 14.168L16.5537 21.4482" stroke="#2C2C2C" stroke-width="1.8125" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <span>Детальніше</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </section>
-        <section class="response-wrapper">
-            <div class="response container">
-                <h2 class="section-title">Відгуки наших клієнтів</h2>
-                <div class="response__slider slider">
-                    <div class="slider__item">
-                        <div class="response__photo"><img src="../img/slick/Rectangle1.png"></div>
-                        <div class="response__body">
-                            <div class="quotes">
-                                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <g opacity="0.2" clip-path="url(#clip0)">
-                                        <path d="M0 32V59.4286H27.4286V32H9.14292C9.14292 21.9175 17.3461 13.7143 27.4286 13.7143V4.57142C12.3036 4.57142 0 16.875 0 32Z" fill="#7ABCCE"/>
-                                        <path d="M64.0009 13.7143V4.57142C48.8758 4.57142 36.5723 16.875 36.5723 32V59.4286H64.0009V32H45.7152C45.7152 21.9175 53.9184 13.7143 64.0009 13.7143Z" fill="#7ABCCE"/>
-                                    </g>
-                                </svg>
+            </section>
+            <section class="response-wrapper">
+                <div class="response container">
+                    <h2 class="section-title">Відгуки наших клієнтів</h2>
+                    <div class="response__slider slider">
+                        <div class="slider__item">
+                            <div class="response__photo">
+                                <img src="../img/slick/Rectangle1.png" />
                             </div>
-                            <p class="response__text">Хороші молоді хлопці. Ціна була прийнятна. Домовився з адміністратором порталу про прийняття замовлення без передоплати, чим дуже допоміг мені. (Не було під рукою карти) Водій приїхав точно до терміну, навіть трохи раніше. Як і обіцяв з вантажником. Сам так же допомагав вантажити. Обсяг був пристойний. Все дуже культурно і професійно. Дуже задоволений їх роботою. Обов'язково в разі потреби звернуся до них.</p>
-                            <span class="responser__name">ПРИВАТНЕ АКЦІОНЕРНЕ ТОВАРИСТВО<br>«ГОТЕЛЬ «ПРЕМ’ЄР ПАЛАЦ»</span>
-                        </div>
-                    </div>
-                    <div class="slider__item">
-                        <div class="response__photo"><img src="../img/slick/Rectangle1.png"></div>
-                        <div class="response__body">
-                            <div class="quotes">
-                                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <g opacity="0.2" clip-path="url(#clip0)">
-                                        <path d="M0 32V59.4286H27.4286V32H9.14292C9.14292 21.9175 17.3461 13.7143 27.4286 13.7143V4.57142C12.3036 4.57142 0 16.875 0 32Z" fill="#7ABCCE"/>
-                                        <path d="M64.0009 13.7143V4.57142C48.8758 4.57142 36.5723 16.875 36.5723 32V59.4286H64.0009V32H45.7152C45.7152 21.9175 53.9184 13.7143 64.0009 13.7143Z" fill="#7ABCCE"/>
-                                    </g>
-                                </svg>
+                            <div class="response__body">
+                                <div class="quotes">
+                                    <svg
+                                        width="64"
+                                        height="64"
+                                        viewBox="0 0 64 64"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <g
+                                            opacity="0.2"
+                                            clip-path="url(#clip0)"
+                                        >
+                                            <path
+                                                d="M0 32V59.4286H27.4286V32H9.14292C9.14292 21.9175 17.3461 13.7143 27.4286 13.7143V4.57142C12.3036 4.57142 0 16.875 0 32Z"
+                                                fill="#7ABCCE"
+                                            />
+                                            <path
+                                                d="M64.0009 13.7143V4.57142C48.8758 4.57142 36.5723 16.875 36.5723 32V59.4286H64.0009V32H45.7152C45.7152 21.9175 53.9184 13.7143 64.0009 13.7143Z"
+                                                fill="#7ABCCE"
+                                            />
+                                        </g>
+                                    </svg>
+                                </div>
+                                <p class="response__text">
+                                    Хороші молоді хлопці. Ціна була прийнятна.
+                                    Домовився з адміністратором порталу про
+                                    прийняття замовлення без передоплати, чим
+                                    дуже допоміг мені. (Не було під рукою карти)
+                                    Водій приїхав точно до терміну, навіть трохи
+                                    раніше. Як і обіцяв з вантажником. Сам так
+                                    же допомагав вантажити. Обсяг був
+                                    пристойний. Все дуже культурно і професійно.
+                                    Дуже задоволений їх роботою. Обов'язково в
+                                    разі потреби звернуся до них.
+                                </p>
+                                <span class="responser__name"
+                                    >ПРИВАТНЕ АКЦІОНЕРНЕ ТОВАРИСТВО<br />«ГОТЕЛЬ
+                                    «ПРЕМ’ЄР ПАЛАЦ»</span
+                                >
                             </div>
-                            <p class="response__text">Хороші молоді хлопці. Ціна була прийнятна. Домовився з адміністратором порталу про прийняття замовлення без передоплати, чим дуже допоміг мені. (Не було під рукою карти) Водій приїхав точно до терміну, навіть трохи раніше. Як і обіцяв з вантажником. Сам так же допомагав вантажити. Обсяг був пристойний. Все дуже культурно і професійно. Дуже задоволений їх роботою. Обов'язково в разі потреби звернуся до них.</p>
-                            <span class="responser__name">ПРИВАТНЕ АКЦІОНЕРНЕ ТОВАРИСТВО<br>«ГОТЕЛЬ «ПРЕМ’ЄР ПАЛАЦ»</span>
                         </div>
-                    </div>
-                    <div class="slider__item">
-                        <div class="response__photo"><img src="../img/slick/Rectangle1.png"></div>
-                        <div class="response__body">
-                            <div class="quotes">
-                                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <g opacity="0.2" clip-path="url(#clip0)">
-                                        <path d="M0 32V59.4286H27.4286V32H9.14292C9.14292 21.9175 17.3461 13.7143 27.4286 13.7143V4.57142C12.3036 4.57142 0 16.875 0 32Z" fill="#7ABCCE"/>
-                                        <path d="M64.0009 13.7143V4.57142C48.8758 4.57142 36.5723 16.875 36.5723 32V59.4286H64.0009V32H45.7152C45.7152 21.9175 53.9184 13.7143 64.0009 13.7143Z" fill="#7ABCCE"/>
-                                    </g>
-                                </svg>
+                        <div class="slider__item">
+                            <div class="response__photo">
+                                <img src="../img/slick/Rectangle1.png" />
                             </div>
-                            <p class="response__text">Хороші молоді хлопці. Ціна була прийнятна. Домовився з адміністратором порталу про прийняття замовлення без передоплати, чим дуже допоміг мені. (Не було під рукою карти) Водій приїхав точно до терміну, навіть трохи раніше. Як і обіцяв з вантажником. Сам так же допомагав вантажити. Обсяг був пристойний. Все дуже культурно і професійно. Дуже задоволений їх роботою. Обов'язково в разі потреби звернуся до них.</p>
-                            <span class="responser__name">ПРИВАТНЕ АКЦІОНЕРНЕ ТОВАРИСТВО<br>«ГОТЕЛЬ «ПРЕМ’ЄР ПАЛАЦ»</span>
+                            <div class="response__body">
+                                <div class="quotes">
+                                    <svg
+                                        width="64"
+                                        height="64"
+                                        viewBox="0 0 64 64"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <g
+                                            opacity="0.2"
+                                            clip-path="url(#clip0)"
+                                        >
+                                            <path
+                                                d="M0 32V59.4286H27.4286V32H9.14292C9.14292 21.9175 17.3461 13.7143 27.4286 13.7143V4.57142C12.3036 4.57142 0 16.875 0 32Z"
+                                                fill="#7ABCCE"
+                                            />
+                                            <path
+                                                d="M64.0009 13.7143V4.57142C48.8758 4.57142 36.5723 16.875 36.5723 32V59.4286H64.0009V32H45.7152C45.7152 21.9175 53.9184 13.7143 64.0009 13.7143Z"
+                                                fill="#7ABCCE"
+                                            />
+                                        </g>
+                                    </svg>
+                                </div>
+                                <p class="response__text">
+                                    Хороші молоді хлопці. Ціна була прийнятна.
+                                    Домовився з адміністратором порталу про
+                                    прийняття замовлення без передоплати, чим
+                                    дуже допоміг мені. (Не було під рукою карти)
+                                    Водій приїхав точно до терміну, навіть трохи
+                                    раніше. Як і обіцяв з вантажником. Сам так
+                                    же допомагав вантажити. Обсяг був
+                                    пристойний. Все дуже культурно і професійно.
+                                    Дуже задоволений їх роботою. Обов'язково в
+                                    разі потреби звернуся до них.
+                                </p>
+                                <span class="responser__name"
+                                    >ПРИВАТНЕ АКЦІОНЕРНЕ ТОВАРИСТВО<br />«ГОТЕЛЬ
+                                    «ПРЕМ’ЄР ПАЛАЦ»</span
+                                >
+                            </div>
                         </div>
-                    </div>
-                    <div class="slider__item">
-                        <div class="response__photo"><img src="../img/slick/Rectangle1.png"></div>
-                        <div class="response__body">
-                            <div class="quotes">
-                                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <g opacity="0.2" clip-path="url(#clip0)">
-                                        <path d="M0 32V59.4286H27.4286V32H9.14292C9.14292 21.9175 17.3461 13.7143 27.4286 13.7143V4.57142C12.3036 4.57142 0 16.875 0 32Z" fill="#7ABCCE"/>
-                                        <path d="M64.0009 13.7143V4.57142C48.8758 4.57142 36.5723 16.875 36.5723 32V59.4286H64.0009V32H45.7152C45.7152 21.9175 53.9184 13.7143 64.0009 13.7143Z" fill="#7ABCCE"/>
-                                    </g>
-                                </svg>
+                        <div class="slider__item">
+                            <div class="response__photo">
+                                <img src="../img/slick/Rectangle1.png" />
                             </div>
-                            <p class="response__text">Хороші молоді хлопці. Ціна була прийнятна. Домовився з адміністратором порталу про прийняття замовлення без передоплати, чим дуже допоміг мені. (Не було під рукою карти) Водій приїхав точно до терміну, навіть трохи раніше. Як і обіцяв з вантажником. Сам так же допомагав вантажити. Обсяг був пристойний. Все дуже культурно і професійно. Дуже задоволений їх роботою. Обов'язково в разі потреби звернуся до них.</p>
-                            <span class="responser__name">ПРИВАТНЕ АКЦІОНЕРНЕ ТОВАРИСТВО<br>«ГОТЕЛЬ «ПРЕМ’ЄР ПАЛАЦ»</span>
+                            <div class="response__body">
+                                <div class="quotes">
+                                    <svg
+                                        width="64"
+                                        height="64"
+                                        viewBox="0 0 64 64"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <g
+                                            opacity="0.2"
+                                            clip-path="url(#clip0)"
+                                        >
+                                            <path
+                                                d="M0 32V59.4286H27.4286V32H9.14292C9.14292 21.9175 17.3461 13.7143 27.4286 13.7143V4.57142C12.3036 4.57142 0 16.875 0 32Z"
+                                                fill="#7ABCCE"
+                                            />
+                                            <path
+                                                d="M64.0009 13.7143V4.57142C48.8758 4.57142 36.5723 16.875 36.5723 32V59.4286H64.0009V32H45.7152C45.7152 21.9175 53.9184 13.7143 64.0009 13.7143Z"
+                                                fill="#7ABCCE"
+                                            />
+                                        </g>
+                                    </svg>
+                                </div>
+                                <p class="response__text">
+                                    Хороші молоді хлопці. Ціна була прийнятна.
+                                    Домовився з адміністратором порталу про
+                                    прийняття замовлення без передоплати, чим
+                                    дуже допоміг мені. (Не було під рукою карти)
+                                    Водій приїхав точно до терміну, навіть трохи
+                                    раніше. Як і обіцяв з вантажником. Сам так
+                                    же допомагав вантажити. Обсяг був
+                                    пристойний. Все дуже культурно і професійно.
+                                    Дуже задоволений їх роботою. Обов'язково в
+                                    разі потреби звернуся до них.
+                                </p>
+                                <span class="responser__name"
+                                    >ПРИВАТНЕ АКЦІОНЕРНЕ ТОВАРИСТВО<br />«ГОТЕЛЬ
+                                    «ПРЕМ’ЄР ПАЛАЦ»</span
+                                >
+                            </div>
+                        </div>
+                        <div class="slider__item">
+                            <div class="response__photo">
+                                <img src="../img/slick/Rectangle1.png" />
+                            </div>
+                            <div class="response__body">
+                                <div class="quotes">
+                                    <svg
+                                        width="64"
+                                        height="64"
+                                        viewBox="0 0 64 64"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <g
+                                            opacity="0.2"
+                                            clip-path="url(#clip0)"
+                                        >
+                                            <path
+                                                d="M0 32V59.4286H27.4286V32H9.14292C9.14292 21.9175 17.3461 13.7143 27.4286 13.7143V4.57142C12.3036 4.57142 0 16.875 0 32Z"
+                                                fill="#7ABCCE"
+                                            />
+                                            <path
+                                                d="M64.0009 13.7143V4.57142C48.8758 4.57142 36.5723 16.875 36.5723 32V59.4286H64.0009V32H45.7152C45.7152 21.9175 53.9184 13.7143 64.0009 13.7143Z"
+                                                fill="#7ABCCE"
+                                            />
+                                        </g>
+                                    </svg>
+                                </div>
+                                <p class="response__text">
+                                    Хороші молоді хлопці. Ціна була прийнятна.
+                                    Домовився з адміністратором порталу про
+                                    прийняття замовлення без передоплати, чим
+                                    дуже допоміг мені. (Не було під рукою карти)
+                                    Водій приїхав точно до терміну, навіть трохи
+                                    раніше. Як і обіцяв з вантажником. Сам так
+                                    же допомагав вантажити. Обсяг був
+                                    пристойний. Все дуже культурно і професійно.
+                                    Дуже задоволений їх роботою. Обов'язково в
+                                    разі потреби звернуся до них.
+                                </p>
+                                <span class="responser__name"
+                                    >ПРИВАТНЕ АКЦІОНЕРНЕ ТОВАРИСТВО<br />«ГОТЕЛЬ
+                                    «ПРЕМ’ЄР ПАЛАЦ»</span
+                                >
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section class="detail__wrapper">
-            <div class="detail container">
-                <h2 class="section-title">Детально про компанію</h2>
-                <div class="detail__text">
-                    <p>Вивіз ТПВ в Києві повинен відбувається в регулярному порядку. Щодня кількість відходів від людського існування, а також промислової діяльності тільки зростає, завдаючи масу незручностей москвичам. Несвоєчасне прибирання територій призведе до тотального забруднення, перетворенню місцевості в справжню звалище. Для приватних осіб, керівників підприємств затримка зі збором, сортуванням, вивезенням сміття обернеться серйозними витратами на покриття штрафів від міської адміністрації.</p>
-                    <p>Щоб уникнути санкцій і забути про проблеми зі сміттям, пропонуємо підписати договір з нашою сміттєзбірною компанії.</p>
-                    <p>У приватному секторі для збору і подальшого вивезення ТПВ встановлюють на попередньо розчищеної території спеціальні контейнери. Частота спустошення сміттєзбірників і перевезення побутових відходів до місць утилізації обговорюється в індивідуальному порядку. Такий же принцип роботи пропонується і для юридичних осіб - вивезення ТПВ з майданчика замовника здійснюється з будь-якого району міста за узгодженим графіком.</p>
-                    <p>Для збору, вивезення твердих відходів в Московській області і столиці застосовані металеві контейнери різної місткості. Вони універсальні, придатні для установки на територіях промислових комплексах, у дворах житлових багатоповерхових будинків, приватному секторі. Використовуються для накопичення органічного та неорганічного сміття.</p>
-                    <p>Установка контейнера - ефективний спосіб боротьби зі смітниками в невстановлених місцях. Наявність сміттєвих ємностей на майданчиках, до яких забезпечено проїзд і прохід, дозволяє організувати населення, попереджуючи забруднення навколишньої місцевості. Приблизний розрахунок вартості вивезення побутових відходів можна зробити самостійно, вивчивши таблицю щільності матеріалів.</p>
+            </section>
+            <section class="detail__wrapper">
+                <div class="detail container">
+                    <h2 class="section-title">Детально про компанію</h2>
+                    <div class="detail__text">
+                        <p>
+                            Вивіз ТПВ в Києві повинен відбувається в регулярному
+                            порядку. Щодня кількість відходів від людського
+                            існування, а також промислової діяльності тільки
+                            зростає, завдаючи масу незручностей москвичам.
+                            Несвоєчасне прибирання територій призведе до
+                            тотального забруднення, перетворенню місцевості в
+                            справжню звалище. Для приватних осіб, керівників
+                            підприємств затримка зі збором, сортуванням,
+                            вивезенням сміття обернеться серйозними витратами на
+                            покриття штрафів від міської адміністрації.
+                        </p>
+                        <p>
+                            Щоб уникнути санкцій і забути про проблеми зі
+                            сміттям, пропонуємо підписати договір з нашою
+                            сміттєзбірною компанії.
+                        </p>
+                        <p>
+                            У приватному секторі для збору і подальшого
+                            вивезення ТПВ встановлюють на попередньо розчищеної
+                            території спеціальні контейнери. Частота спустошення
+                            сміттєзбірників і перевезення побутових відходів до
+                            місць утилізації обговорюється в індивідуальному
+                            порядку. Такий же принцип роботи пропонується і для
+                            юридичних осіб - вивезення ТПВ з майданчика
+                            замовника здійснюється з будь-якого району міста за
+                            узгодженим графіком.
+                        </p>
+                        <p>
+                            Для збору, вивезення твердих відходів в Московській
+                            області і столиці застосовані металеві контейнери
+                            різної місткості. Вони універсальні, придатні для
+                            установки на територіях промислових комплексах, у
+                            дворах житлових багатоповерхових будинків,
+                            приватному секторі. Використовуються для накопичення
+                            органічного та неорганічного сміття.
+                        </p>
+                        <p>
+                            Установка контейнера - ефективний спосіб боротьби зі
+                            смітниками в невстановлених місцях. Наявність
+                            сміттєвих ємностей на майданчиках, до яких
+                            забезпечено проїзд і прохід, дозволяє організувати
+                            населення, попереджуючи забруднення навколишньої
+                            місцевості. Приблизний розрахунок вартості вивезення
+                            побутових відходів можна зробити самостійно,
+                            вивчивши таблицю щільності матеріалів.
+                        </p>
+                    </div>
                 </div>
-            </div>
-        </section>
-        <section class="faq__wrapper">
-            <div class="faq container">
-                <h2 class="section-title">Відповіді на запитання</h2>
-                <ul class="faq__question__list">
-                    <li class="faq__question">
-                        <span class="question">
-                            Які документи потрібні для укладання договору з КП «Київкомунсервіс»?
-                            <span class="arrow">
-                                <svg width="21" height="13" viewBox="0 0 21 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M10.5007 11.0832L9.79354 11.7903C10.1841 12.1808 10.8172 12.1808 11.2078 11.7903L10.5007 11.0832ZM20.3744 2.62361C20.7649 2.23309 20.7649 1.59992 20.3744 1.2094C19.9839 0.818873 19.3507 0.818873 18.9602 1.2094L20.3744 2.62361ZM0.626878 2.62361L9.79354 11.7903L11.2078 10.3761L2.04109 1.2094L0.626878 2.62361ZM11.2078 11.7903L20.3744 2.62361L18.9602 1.2094L9.79354 10.3761L11.2078 11.7903Z"/>
-                                </svg>
+            </section>
+            <section class="faq__wrapper">
+                <div class="faq container">
+                    <h2 class="section-title">Відповіді на запитання</h2>
+                    <ul class="faq__question__list">
+                        <li class="faq__question">
+                            <span class="question">
+                                Які документи потрібні для укладання договору з
+                                КП «Київкомунсервіс»?
+                                <span class="arrow">
+                                    <svg
+                                        width="21"
+                                        height="13"
+                                        viewBox="0 0 21 13"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M10.5007 11.0832L9.79354 11.7903C10.1841 12.1808 10.8172 12.1808 11.2078 11.7903L10.5007 11.0832ZM20.3744 2.62361C20.7649 2.23309 20.7649 1.59992 20.3744 1.2094C19.9839 0.818873 19.3507 0.818873 18.9602 1.2094L20.3744 2.62361ZM0.626878 2.62361L9.79354 11.7903L11.2078 10.3761L2.04109 1.2094L0.626878 2.62361ZM11.2078 11.7903L20.3744 2.62361L18.9602 1.2094L9.79354 10.3761L11.2078 11.7903Z"
+                                        />
+                                    </svg>
+                                </span>
                             </span>
-                        </span>
-                        <span class="reply">У зв’язку з визначенням окремою комунальною послугою - послуги з вивезення побутових відходів, починаючи з 1 липня 2018 року КП «Київкомунсервіс» надає вищезазначену послугу на території міста Києва.</span>
-                    </li>
-                    <li class="faq__question">
-                        <span class="question">
-                            Як ліквідувати заборгованість? (вважаю заборгованість неіснуючою)
-                            <span class="arrow">
-                                <svg width="21" height="13" viewBox="0 0 21 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M10.5007 11.0832L9.79354 11.7903C10.1841 12.1808 10.8172 12.1808 11.2078 11.7903L10.5007 11.0832ZM20.3744 2.62361C20.7649 2.23309 20.7649 1.59992 20.3744 1.2094C19.9839 0.818873 19.3507 0.818873 18.9602 1.2094L20.3744 2.62361ZM0.626878 2.62361L9.79354 11.7903L11.2078 10.3761L2.04109 1.2094L0.626878 2.62361ZM11.2078 11.7903L20.3744 2.62361L18.9602 1.2094L9.79354 10.3761L11.2078 11.7903Z"/>
-                                </svg>
+                            <span class="reply"
+                                >У зв’язку з визначенням окремою комунальною
+                                послугою - послуги з вивезення побутових
+                                відходів, починаючи з 1 липня 2018 року КП
+                                «Київкомунсервіс» надає вищезазначену послугу на
+                                території міста Києва.</span
+                            >
+                        </li>
+                        <li class="faq__question">
+                            <span class="question">
+                                Як ліквідувати заборгованість? (вважаю
+                                заборгованість неіснуючою)
+                                <span class="arrow">
+                                    <svg
+                                        width="21"
+                                        height="13"
+                                        viewBox="0 0 21 13"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M10.5007 11.0832L9.79354 11.7903C10.1841 12.1808 10.8172 12.1808 11.2078 11.7903L10.5007 11.0832ZM20.3744 2.62361C20.7649 2.23309 20.7649 1.59992 20.3744 1.2094C19.9839 0.818873 19.3507 0.818873 18.9602 1.2094L20.3744 2.62361ZM0.626878 2.62361L9.79354 11.7903L11.2078 10.3761L2.04109 1.2094L0.626878 2.62361ZM11.2078 11.7903L20.3744 2.62361L18.9602 1.2094L9.79354 10.3761L11.2078 11.7903Z"
+                                        />
+                                    </svg>
+                                </span>
                             </span>
-                        </span>
-                        <span class="reply">У зв’язку з визначенням окремою комунальною послугою - послуги з вивезення побутових відходів, починаючи з 1 липня 2018 року КП «Київкомунсервіс» надає вищезазначену послугу на території міста Києва.</span>
-                    </li>
-                    <li class="faq__question">
-                        <span class="question">
-                            Як сплатити за вивезення побутових відходів без черги?
-                            <span class="arrow">
-                                <svg width="21" height="13" viewBox="0 0 21 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M10.5007 11.0832L9.79354 11.7903C10.1841 12.1808 10.8172 12.1808 11.2078 11.7903L10.5007 11.0832ZM20.3744 2.62361C20.7649 2.23309 20.7649 1.59992 20.3744 1.2094C19.9839 0.818873 19.3507 0.818873 18.9602 1.2094L20.3744 2.62361ZM0.626878 2.62361L9.79354 11.7903L11.2078 10.3761L2.04109 1.2094L0.626878 2.62361ZM11.2078 11.7903L20.3744 2.62361L18.9602 1.2094L9.79354 10.3761L11.2078 11.7903Z"/>
-                                </svg>
+                            <span class="reply"
+                                >У зв’язку з визначенням окремою комунальною
+                                послугою - послуги з вивезення побутових
+                                відходів, починаючи з 1 липня 2018 року КП
+                                «Київкомунсервіс» надає вищезазначену послугу на
+                                території міста Києва.</span
+                            >
+                        </li>
+                        <li class="faq__question">
+                            <span class="question">
+                                Як сплатити за вивезення побутових відходів без
+                                черги?
+                                <span class="arrow">
+                                    <svg
+                                        width="21"
+                                        height="13"
+                                        viewBox="0 0 21 13"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M10.5007 11.0832L9.79354 11.7903C10.1841 12.1808 10.8172 12.1808 11.2078 11.7903L10.5007 11.0832ZM20.3744 2.62361C20.7649 2.23309 20.7649 1.59992 20.3744 1.2094C19.9839 0.818873 19.3507 0.818873 18.9602 1.2094L20.3744 2.62361ZM0.626878 2.62361L9.79354 11.7903L11.2078 10.3761L2.04109 1.2094L0.626878 2.62361ZM11.2078 11.7903L20.3744 2.62361L18.9602 1.2094L9.79354 10.3761L11.2078 11.7903Z"
+                                        />
+                                    </svg>
+                                </span>
                             </span>
-                        </span>
-                        <span class="reply">У зв’язку з визначенням окремою комунальною послугою - послуги з вивезення побутових відходів, починаючи з 1 липня 2018 року КП «Київкомунсервіс» надає вищезазначену послугу на території міста Києва.</span>
-                    </li>
-                    <li class="faq__question">
-                        <span class="question">
-                            Де можна укласти договір на вивезення побутових відходів?
-                            <span class="arrow">
-                                <svg width="21" height="13" viewBox="0 0 21 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M10.5007 11.0832L9.79354 11.7903C10.1841 12.1808 10.8172 12.1808 11.2078 11.7903L10.5007 11.0832ZM20.3744 2.62361C20.7649 2.23309 20.7649 1.59992 20.3744 1.2094C19.9839 0.818873 19.3507 0.818873 18.9602 1.2094L20.3744 2.62361ZM0.626878 2.62361L9.79354 11.7903L11.2078 10.3761L2.04109 1.2094L0.626878 2.62361ZM11.2078 11.7903L20.3744 2.62361L18.9602 1.2094L9.79354 10.3761L11.2078 11.7903Z"/>
-                                </svg>
+                            <span class="reply"
+                                >У зв’язку з визначенням окремою комунальною
+                                послугою - послуги з вивезення побутових
+                                відходів, починаючи з 1 липня 2018 року КП
+                                «Київкомунсервіс» надає вищезазначену послугу на
+                                території міста Києва.</span
+                            >
+                        </li>
+                        <li class="faq__question">
+                            <span class="question">
+                                Де можна укласти договір на вивезення побутових
+                                відходів?
+                                <span class="arrow">
+                                    <svg
+                                        width="21"
+                                        height="13"
+                                        viewBox="0 0 21 13"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M10.5007 11.0832L9.79354 11.7903C10.1841 12.1808 10.8172 12.1808 11.2078 11.7903L10.5007 11.0832ZM20.3744 2.62361C20.7649 2.23309 20.7649 1.59992 20.3744 1.2094C19.9839 0.818873 19.3507 0.818873 18.9602 1.2094L20.3744 2.62361ZM0.626878 2.62361L9.79354 11.7903L11.2078 10.3761L2.04109 1.2094L0.626878 2.62361ZM11.2078 11.7903L20.3744 2.62361L18.9602 1.2094L9.79354 10.3761L11.2078 11.7903Z"
+                                        />
+                                    </svg>
+                                </span>
                             </span>
-                        </span>
-                        <span class="reply">У зв’язку з визначенням окремою комунальною послугою - послуги з вивезення побутових відходів, починаючи з 1 липня 2018 року КП «Київкомунсервіс» надає вищезазначену послугу на території міста Києва.</span>
-                    </li>
-                </ul>
-            </div>
-        </section>
-        <section class="orderService__wrapper">
-            <form class="orderService__form conteiner">
-                <h2 class="popup__title">Замовити послугу</h2>
-                <fieldset>
-                    <label>
-                        <span class="input-description">Оберіть послугу:</span>
-                        <select class="custom-select2" name="service">
-                            <option data-id="0" class="first-option" disabled selected value hidden>Обрати послугу</option>
-                            <option value="Послуга-1">Послуга-1</option>
-                            <option value="Послуга-2">Послуга-2</option>
-                            <option value="Послуга-3">Послуга-3</option>
-                        </select>
-                    </label>
-                    <label>
-                        <span>Ім'я </span>
-                        <input class="form-control" type="text" id="username" name="name" placeholder="Ваше Ім'я">
-                    </label>
-                    <label>
-                        <span>Телефон</span>
-                        <input class="form-control" type="tel" id="userphone" name="phone" placeholder="Ваш телефон" required>
-                    </label>
-                    <label>
-                        <span>Повідомлення</span>
-                        <textarea placeholder="Ваше Повідомлення" id="massage" name="massage"></textarea>
-                    </label>
-                    <button class="btn-submit" type="submit" name="submit">Залишити заявку</button>
-                    <label class="checkbox__label">
-                        <input class="input-checkbox" type="checkbox" id="rule" name="rule">
-                        <span class="custom-checkbox"></span>
-                        <span class="checkbox-text">Підтверджуючи замовлення, я приймаю умови угоди користувача</span>
-                    </label>
-                </fieldset>
-            </form>
-        </section>
-        <section class="contacts__wrapper">
-            <div class="contacts container">
-                <ul class="contacts__list">
-                    <li class="contacts__item">
-                        <img src="../img/contact-icons/mapMarker.svg" alt="">
-                        <div class="item__body">
-                            <span class="subTitle21">Адреса:</span>
-                            <span>03151, м. Київ, пр-кт<br>Повітрофлотський, 72</span>
-                        </div>
-                    </li>
-                    <li class="contacts__item">
-                        <img src="../img/contact-icons/phone.svg" alt="">
-                        <div class="item__body tel-button">
-                            <span class="subTitle21">Тел/Факс:</span>
-                            <a href="#">+38 (044) 334-44-31</a>
-                        </div>
-                    </li>
-                    <li class="contacts__item">
-                        <img src="../img/contact-icons/mail.svg" alt="">
-                        <div class="item__body">
-                            <span class="subTitle21">Email:</span>
-                            <a href="#">ua.kyiv.all.groups@veolia.com</a>
-                        </div>
-                    </li>
-                    <li class="contacts__item">
-                        <img src="../img/contact-icons/clock.svg" alt="">
-                        <div class="item__body">
-                            <span class="subTitle21">Графік роботи:</span>
-                            <span>Понеділок - П’ятниця</span>
-                            <span>08:30-17:00</span>
-                        </div>
-                    </li>
-                    <li class="contacts__item">
-                        <div class="item__body bot__group">
-                            <span class="subTitle21">Наші боти:</span>
-                            <a href="#" class="bot__link">
-                                <img src="../img/contact-icons/viber.svg" alt="">
-                                <span style="color: #7D3DAF;">Вайбер</span>
-                            </a>
-                            <a href="#" class="bot__link">
-                                <img src="../img/contact-icons/telegram.svg" alt="">
-                                <span style="color: #039BE5;">Телеграм</span>
-                            </a>
-                        </div>
-                    </li>
-                </ul>
-                <div class="callback">
-                    <div class="callback__title">Залишіть заявку.</div>
-                    <div class="callback__description">Якщо хочете дізнатися про всі можливості сервісу або задати питання, заповніть, будь-ласка, форму</div>
-                    <form class="callback__form" id="callback-form">
-                        <fieldset class="callback-fieldset">
-                            <label>
-                                <span>Ім'я </span>
-                                <input class="form-control" type="text" id="username" name="name" placeholder="Ваше Ім'я">
-                            </label>
-                            <label>
-                                <span>Телефон</span>
-                                <input class="form-control" type="tel" id="userphone" name="phone" placeholder="Ваш телефон" required>
-                            </label>
-                            <label>
-                                <span>Повідомлення</span>
-                                <textarea placeholder="Ваше Повідомлення" id="massage" name="massage"></textarea>
-                            </label>
-                            <button class="btn-submit" type="submit" name="submit">Залишити заявку</button>
-                            <label class="checkbox__label">
-                                <input class="input-checkbox" type="checkbox" id="rule" name="rule">
-                                <span class="custom-checkbox"></span>
-                                <span class="checkbox-text">Підтверджуючи замовлення, я приймаю умови угоди користувача</span>
-                            </label>
-                        </fieldset>
-                    </form>
-                    <span id="answer-msg"></span>
+                            <span class="reply"
+                                >У зв’язку з визначенням окремою комунальною
+                                послугою - послуги з вивезення побутових
+                                відходів, починаючи з 1 липня 2018 року КП
+                                «Київкомунсервіс» надає вищезазначену послугу на
+                                території міста Києва.</span
+                            >
+                        </li>
+                    </ul>
                 </div>
-            </div>
-        </section>
-        <section class="map__wrapper">
-            <div class="map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10168.797923267814!2d30.4431578!3d50.4187549!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd527faa7946b8ac!2z0KLQntCSICLQkNC70YzRgtGE0LDRgtC10YAg0JrQuNGX0LIi!5e0!3m2!1suk!2sua!4v1635346210129!5m2!1suk!2sua" width="100%" height="530px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <div class="footer container">
-            <div class="link__group">
-                <a href="#">Terms & Conditions</a>
-                <a href="#">Privacy Policy</a>
-            </div>
-            <span>Copyright © 2021 Veolia. All rights reserved</span>
-        </div>
-    </footer>
-
-    <div class="modal fade" id="log__in-modal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-md modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="log__in-page popup">
-                    <div class="modal-header">
-                        <h2 class="popup__title">Вхід до<br>особистого кабінету</h2>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <img src="../img/close.svg" alt="X">
+            </section>
+            <section class="orderService__wrapper">
+                <form class="orderService__form conteiner">
+                    <h2 class="popup__title">Замовити послугу</h2>
+                    <fieldset>
+                        <label>
+                            <span class="input-description"
+                                >Оберіть послугу:</span
+                            >
+                            <select class="custom-select2" name="service">
+                                <option
+                                    data-id="0"
+                                    class="first-option"
+                                    disabled
+                                    selected
+                                    value
+                                    hidden
+                                >
+                                    Обрати послугу
+                                </option>
+                                <option value="Послуга-1">Послуга-1</option>
+                                <option value="Послуга-2">Послуга-2</option>
+                                <option value="Послуга-3">Послуга-3</option>
+                            </select>
+                        </label>
+                        <label>
+                            <span>Ім'я </span>
+                            <input
+                                class="form-control"
+                                type="text"
+                                id="username"
+                                name="name"
+                                placeholder="Ваше Ім'я"
+                            />
+                        </label>
+                        <label>
+                            <span>Телефон</span>
+                            <input
+                                class="form-control"
+                                type="tel"
+                                id="userphone"
+                                name="phone"
+                                placeholder="Ваш телефон"
+                                required
+                            />
+                        </label>
+                        <label>
+                            <span>Повідомлення</span>
+                            <textarea
+                                placeholder="Ваше Повідомлення"
+                                id="massage"
+                                name="massage"
+                            ></textarea>
+                        </label>
+                        <button class="btn-submit" type="submit" name="submit">
+                            Залишити заявку
                         </button>
+                        <label class="checkbox__label">
+                            <input
+                                class="input-checkbox"
+                                type="checkbox"
+                                id="rule"
+                                name="rule"
+                            />
+                            <span class="custom-checkbox"></span>
+                            <span class="checkbox-text"
+                                >Підтверджуючи замовлення, я приймаю умови угоди
+                                користувача</span
+                            >
+                        </label>
+                    </fieldset>
+                </form>
+            </section>
+            <section class="contacts__wrapper">
+                <div class="contacts container">
+                    <ul class="contacts__list">
+                        <li class="contacts__item">
+                            <img
+                                src="../img/contact-icons/mapMarker.svg"
+                                alt=""
+                            />
+                            <div class="item__body">
+                                <span class="subTitle21">Адреса:</span>
+                                <span
+                                    >03151, м. Київ, пр-кт<br />Повітрофлотський,
+                                    72</span
+                                >
+                            </div>
+                        </li>
+                        <li class="contacts__item">
+                            <img src="../img/contact-icons/phone.svg" alt="" />
+                            <div class="item__body tel-button">
+                                <span class="subTitle21">Тел/Факс:</span>
+                                <a href="#">+38 (044) 334-44-31</a>
+                            </div>
+                        </li>
+                        <li class="contacts__item">
+                            <img src="../img/contact-icons/mail.svg" alt="" />
+                            <div class="item__body">
+                                <span class="subTitle21">Email:</span>
+                                <a href="#">ua.kyiv.all.groups@veolia.com</a>
+                            </div>
+                        </li>
+                        <li class="contacts__item">
+                            <img src="../img/contact-icons/clock.svg" alt="" />
+                            <div class="item__body">
+                                <span class="subTitle21">Графік роботи:</span>
+                                <span>Понеділок - П’ятниця</span>
+                                <span>08:30-17:00</span>
+                            </div>
+                        </li>
+                        <li class="contacts__item">
+                            <div class="item__body bot__group">
+                                <span class="subTitle21">Наші боти:</span>
+                                <a href="#" class="bot__link">
+                                    <img
+                                        src="../img/contact-icons/viber.svg"
+                                        alt=""
+                                    />
+                                    <span style="color: #7d3daf">Вайбер</span>
+                                </a>
+                                <a href="#" class="bot__link">
+                                    <img
+                                        src="../img/contact-icons/telegram.svg"
+                                        alt=""
+                                    />
+                                    <span style="color: #039be5">Телеграм</span>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="callback">
+                        <div class="callback__title">Залишіть заявку.</div>
+                        <div class="callback__description">
+                            Якщо хочете дізнатися про всі можливості сервісу або
+                            задати питання, заповніть, будь-ласка, форму
+                        </div>
+                        <form class="callback__form" id="callback-form">
+                            <fieldset class="callback-fieldset">
+                                <label>
+                                    <span>Ім'я </span>
+                                    <input
+                                        class="form-control"
+                                        type="text"
+                                        id="username"
+                                        name="name"
+                                        placeholder="Ваше Ім'я"
+                                    />
+                                </label>
+                                <label>
+                                    <span>Телефон</span>
+                                    <input
+                                        class="form-control"
+                                        type="tel"
+                                        id="userphone"
+                                        name="phone"
+                                        placeholder="Ваш телефон"
+                                        required
+                                    />
+                                </label>
+                                <label>
+                                    <span>Повідомлення</span>
+                                    <textarea
+                                        placeholder="Ваше Повідомлення"
+                                        id="massage"
+                                        name="massage"
+                                    ></textarea>
+                                </label>
+                                <button
+                                    class="btn-submit"
+                                    type="submit"
+                                    name="submit"
+                                >
+                                    Залишити заявку
+                                </button>
+                                <label class="checkbox__label">
+                                    <input
+                                        class="input-checkbox"
+                                        type="checkbox"
+                                        id="rule"
+                                        name="rule"
+                                    />
+                                    <span class="custom-checkbox"></span>
+                                    <span class="checkbox-text"
+                                        >Підтверджуючи замовлення, я приймаю
+                                        умови угоди користувача</span
+                                    >
+                                </label>
+                            </fieldset>
+                        </form>
+                        <span id="answer-msg"></span>
                     </div>
-                    <div class="modal-body">
-                        <form class="popup__form" id="log__in-form">
-                            <fieldset class="fieldset">
-                                <label>
-                                    <span class="input-description">Email:</span>
-                                    <input class="form-control" type="email" name="email" placeholder=" ">
-                                    <span class="input-placeholder">
-                                        <div>
-                                            <img src="../img/cabinet/modal-icon/email.svg">
-                                        </div>
-                                        Ваш Email
-                                    </span>
-                                </label>
-                                <label>
-                                    <span class="input-description">Пароль:</span>
-                                    <input class="form-control" type="password"  name="password" placeholder=" ">
-                                    <span class="input-placeholder">
-                                        <div>
-                                            <img src="../img/cabinet/modal-icon/lock.svg">
-                                        </div>
-                                        Введіть пароль
-                                    </span>
-                                </label>
-                                <div class="convenience">
-                                    <label class="checkbox__label">
-                                        <input class="input-checkbox" type="checkbox" id="remember-me" name="remember">
-                                        <span class="custom-checkbox"></span>
-                                        <span class="checkbox-text">Запам'ятати мене</span>
+                </div>
+            </section>
+            <section class="map__wrapper">
+                <div class="map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10168.797923267814!2d30.4431578!3d50.4187549!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd527faa7946b8ac!2z0KLQntCSICLQkNC70YzRgtGE0LDRgtC10YAg0JrQuNGX0LIi!5e0!3m2!1suk!2sua!4v1635346210129!5m2!1suk!2sua"
+                        width="100%"
+                        height="530px"
+                        style="border: 0"
+                        allowfullscreen=""
+                        loading="lazy"
+                    ></iframe>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="footer container">
+                <div class="link__group">
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+                <span>Copyright © 2021 Veolia. All rights reserved</span>
+            </div>
+        </footer>
+
+        <div
+            class="modal fade"
+            id="log__in-modal"
+            tabindex="-1"
+            role="dialog"
+            aria-hidden="true"
+        >
+            <div
+                class="modal-dialog modal-md modal-dialog-centered"
+                role="document"
+            >
+                <div class="modal-content">
+                    <div class="log__in-page popup">
+                        <div class="modal-header">
+                            <h2 class="popup__title">
+                                Вхід до<br />особистого кабінету
+                            </h2>
+                            <button
+                                type="button"
+                                class="close"
+                                data-dismiss="modal"
+                                aria-label="Close"
+                            >
+                                <img src="../img/close.svg" alt="X" />
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="popup__form" id="log__in-form">
+                                <fieldset class="fieldset">
+                                    <label>
+                                        <span class="input-description"
+                                            >Email:</span
+                                        >
+                                        <input
+                                            class="form-control"
+                                            type="email"
+                                            name="email"
+                                            placeholder=" "
+                                        />
+                                        <span class="input-placeholder">
+                                            <div>
+                                                <img
+                                                    src="../img/cabinet/modal-icon/email.svg"
+                                                />
+                                            </div>
+                                            Ваш Email
+                                        </span>
                                     </label>
-                                    <button class="btn-forgot forgot__password__link popup-text__link" type="button" data-toggle="modal" data-target="#recovery-modal">Забули пароль?</button>
-                                </div>
-                                <button class="btn-submit" type="submit" name="logIn">Вхід</button>
-                            </fieldset>
-                        <p class="responseMsg"></p>
-                        </form>
-                        <div class="or__text">
-                            <span>або продовжити</span>
+                                    <label>
+                                        <span class="input-description"
+                                            >Пароль:</span
+                                        >
+                                        <input
+                                            class="form-control"
+                                            type="password"
+                                            name="password"
+                                            placeholder=" "
+                                        />
+                                        <span class="input-placeholder">
+                                            <div>
+                                                <img
+                                                    src="../img/cabinet/modal-icon/lock.svg"
+                                                />
+                                            </div>
+                                            Введіть пароль
+                                        </span>
+                                    </label>
+                                    <div class="convenience">
+                                        <label class="checkbox__label">
+                                            <input
+                                                class="input-checkbox"
+                                                type="checkbox"
+                                                id="remember-me"
+                                                name="remember"
+                                            />
+                                            <span
+                                                class="custom-checkbox"
+                                            ></span>
+                                            <span class="checkbox-text"
+                                                >Запам'ятати мене</span
+                                            >
+                                        </label>
+                                        <button
+                                            class="btn-forgot forgot__password__link popup-text__link"
+                                            type="button"
+                                            data-toggle="modal"
+                                            data-target="#recovery-modal"
+                                        >
+                                            Забули пароль?
+                                        </button>
+                                    </div>
+                                    <button
+                                        class="btn-submit"
+                                        type="submit"
+                                        name="logIn"
+                                    >
+                                        Вхід
+                                    </button>
+                                </fieldset>
+                                <p class="responseMsg"></p>
+                            </form>
+                            <div class="or__text">
+                                <span>або продовжити</span>
+                            </div>
+                            <div class="log__with">
+                                <a href="#">
+                                    <img
+                                        src="../img/cabinet/modal-icon/google.svg"
+                                        alt="G"
+                                    />
+                                </a>
+                                <a href="#">
+                                    <img
+                                        src="../img/cabinet/modal-icon/facebook.svg"
+                                        alt="f"
+                                    />
+                                </a>
+                            </div>
+                            <span class="popup__question"
+                                >Немає акаунту?
+                                <button
+                                    type="button"
+                                    class="btn-reg popup__question__link popup-text__link"
+                                    data-toggle="modal"
+                                    data-target="#create-modal"
+                                >
+                                    Створити акаунт
+                                </button></span
+                            >
                         </div>
-                        <div class="log__with">
-                            <a href="#">
-                                <img src="../img/cabinet/modal-icon/google.svg" alt="G">
-                            </a>
-                            <a href="#">
-                                <img src="../img/cabinet/modal-icon/facebook.svg" alt="f">
-                            </a>
-                        </div>
-                        <span class="popup__question">Немає акаунту? <button type="button" class="btn-reg popup__question__link popup-text__link" data-toggle="modal" data-target="#create-modal">Створити акаунт</button></span>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="modal fade" id="create-modal" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-md modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="create-page popup">
-                    <div class="modal-header">
-                        <h2 class="popup__title">Створити Акаунт</h2>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <img src="../img/close.svg" alt="X">
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="radio__select">
-                            <button class="btn-individual act">
-                                <span>Фізична особа</span>
+        <div class="modal fade" id="create-modal" tabindex="-1" role="dialog">
+            <div
+                class="modal-dialog modal-md modal-dialog-centered"
+                role="document"
+            >
+                <div class="modal-content">
+                    <div class="create-page popup">
+                        <div class="modal-header">
+                            <h2 class="popup__title">Створити Акаунт</h2>
+                            <button
+                                type="button"
+                                class="close"
+                                data-dismiss="modal"
+                                aria-label="Close"
+                            >
+                                <img src="../img/close.svg" alt="X" />
                             </button>
-                            <button class="btn-entity">
-                                <span>Юридична особа</span>
+                        </div>
+                        <div class="modal-body">
+                            <div class="radio__select">
+                                <button class="btn-individual act">
+                                    <span>Фізична особа</span>
+                                </button>
+                                <button class="btn-entity">
+                                    <span>Юридична особа</span>
+                                </button>
+                            </div>
+                            <form
+                                class="popup__form act"
+                                id="create-form__individual"
+                            >
+                                <fieldset class="fieldset">
+                                    <label>
+                                        <span class="input-description"
+                                            >Ім'я і Прізвище:</span
+                                        >
+                                        <input
+                                            class="form-control"
+                                            type="text"
+                                            name="name"
+                                            placeholder=" "
+                                        />
+                                        <span class="input-placeholder">
+                                            <div>
+                                                <img
+                                                    src="../img/cabinet/modal-icon/profile.svg"
+                                                />
+                                            </div>
+                                            Ім'я і Прізвище
+                                        </span>
+                                    </label>
+
+                                    <label>
+                                        <span class="input-description"
+                                            >Номер телефону:</span
+                                        >
+                                        <input
+                                            class="form-control"
+                                            type="tel"
+                                            name="phone"
+                                            placeholder=" "
+                                        />
+                                        <span class="input-placeholder">
+                                            <div>
+                                                <img
+                                                    src="../img/cabinet/modal-icon/phone.svg"
+                                                />
+                                            </div>
+                                            Номер телефону
+                                        </span>
+                                    </label>
+
+                                    <label>
+                                        <span class="input-description"
+                                            >Email:</span
+                                        >
+                                        <input
+                                            class="form-control"
+                                            type="email"
+                                            name="email"
+                                            placeholder=" "
+                                        />
+                                        <span class="input-placeholder">
+                                            <div>
+                                                <img
+                                                    src="../img/cabinet/modal-icon/email.svg"
+                                                />
+                                            </div>
+                                            Ваш Email
+                                        </span>
+                                    </label>
+
+                                    <label>
+                                        <span class="input-description"
+                                            >Пароль:</span
+                                        >
+                                        <input
+                                            class="form-control password"
+                                            type="password"
+                                            name="password"
+                                            placeholder=" "
+                                        />
+                                        <span class="input-placeholder">
+                                            <div>
+                                                <img
+                                                    src="../img/cabinet/modal-icon/lock.svg"
+                                                />
+                                            </div>
+                                            Введіть пароль
+                                        </span>
+                                    </label>
+
+                                    <label>
+                                        <span class="input-description"
+                                            >Повторіть пароль:</span
+                                        >
+                                        <input
+                                            class="form-control"
+                                            type="password"
+                                            name="confirm_password"
+                                            placeholder=" "
+                                        />
+                                        <span class="input-placeholder">
+                                            <div>
+                                                <img
+                                                    src="../img/cabinet/modal-icon/lock.svg"
+                                                />
+                                            </div>
+                                            Повторіть пароль
+                                        </span>
+                                    </label>
+
+                                    <div class="user-agree">
+                                        <label class="checkbox__label">
+                                            <input
+                                                class="input-checkbox"
+                                                type="checkbox"
+                                                name="agree"
+                                            />
+                                            <span
+                                                class="custom-checkbox"
+                                            ></span>
+                                            <span class="checkbox-text"
+                                                >Я даю згоду на обробку
+                                                <a href="/terms" target="_blank"
+                                                    >особистих даних</a
+                                                ></span
+                                            >
+                                        </label>
+                                    </div>
+                                    <div class="recaptcha">
+                                        <img
+                                            src="../img/cabinet/zaglushka-3.png"
+                                            alt=""
+                                        />
+                                    </div>
+                                    <button
+                                        class="btn-submit"
+                                        type="submit"
+                                        name="reg"
+                                    >
+                                        Створити акаунт
+                                    </button>
+                                </fieldset>
+                                <p class="responseMsg"></p>
+                            </form>
+                            <form class="popup__form" id="create-form__entity">
+                                <fieldset class="fieldset">
+                                    <label>
+                                        <span class="input-description"
+                                            >Назва компанії:</span
+                                        >
+                                        <input
+                                            class="form-control"
+                                            type="text"
+                                            name="userName"
+                                            placeholder=" "
+                                        />
+                                        <span class="input-placeholder">
+                                            <div>
+                                                <img
+                                                    src="../img/cabinet/modal-icon/profile.svg"
+                                                />
+                                            </div>
+                                            Назва компанії
+                                        </span>
+                                    </label>
+                                    <label>
+                                        <span class="input-description"
+                                            >Контактна особа:</span
+                                        >
+                                        <input
+                                            class="form-control"
+                                            type="text"
+                                            name="userContactName"
+                                            placeholder=" "
+                                        />
+                                        <span class="input-placeholder">
+                                            <div>
+                                                <img
+                                                    src="../img/cabinet/modal-icon/profile.svg"
+                                                />
+                                            </div>
+                                            Контактна особа
+                                        </span>
+                                    </label>
+                                    <label>
+                                        <span class="input-description"
+                                            >Юридична адреса:</span
+                                        >
+                                        <input
+                                            class="form-control"
+                                            type="text"
+                                            name="userEntityAddress"
+                                            placeholder=" "
+                                        />
+                                        <span class="input-placeholder">
+                                            <div>
+                                                <img
+                                                    src="../img/cabinet/modal-icon/location.svg"
+                                                />
+                                            </div>
+                                            Юридична адреса
+                                        </span>
+                                    </label>
+                                    <label>
+                                        <span class="input-description"
+                                            >Email:</span
+                                        >
+                                        <input
+                                            class="form-control"
+                                            type="email"
+                                            name="email"
+                                            placeholder=" "
+                                        />
+                                        <span class="input-placeholder">
+                                            <div>
+                                                <img
+                                                    src="../img/cabinet/modal-icon/email.svg"
+                                                />
+                                            </div>
+                                            Ваш Email
+                                        </span>
+                                    </label>
+                                    <label>
+                                        <span class="input-description"
+                                            >Номер телефону:</span
+                                        >
+                                        <input
+                                            class="form-control"
+                                            type="tel"
+                                            name="userTel"
+                                            placeholder=" "
+                                        />
+                                        <span class="input-placeholder">
+                                            <div>
+                                                <img
+                                                    src="../img/cabinet/modal-icon/phone.svg"
+                                                />
+                                            </div>
+                                            Номер телефону
+                                        </span>
+                                    </label>
+                                    <label>
+                                        <span class="input-description nr"
+                                            >Додатковий телефон:</span
+                                        >
+                                        <input
+                                            class="form-control"
+                                            type="tel"
+                                            name="userAddTel"
+                                            placeholder=" "
+                                        />
+                                        <span class="input-placeholder">
+                                            <div>
+                                                <img
+                                                    src="../img/cabinet/modal-icon/phone.svg"
+                                                />
+                                            </div>
+                                            Додатковий телефон
+                                        </span>
+                                    </label>
+                                    <label>
+                                        <span class="input-description"
+                                            >ІПН:</span
+                                        >
+                                        <input
+                                            class="form-control"
+                                            type="text"
+                                            name="ipn"
+                                            placeholder=" "
+                                        />
+                                        <span class="input-placeholder">
+                                            ІПН
+                                        </span>
+                                    </label>
+                                    <label>
+                                        <span class="input-description"
+                                            >ЄДРПОУ:</span
+                                        >
+                                        <input
+                                            class="form-control"
+                                            type="text"
+                                            name="uedrpou"
+                                            placeholder=" "
+                                        />
+                                        <span class="input-placeholder">
+                                            ЄДРПОУ
+                                        </span>
+                                    </label>
+                                    <label>
+                                        <span class="input-description"
+                                            >Поштовий індекс:</span
+                                        >
+                                        <input
+                                            class="form-control"
+                                            type="text"
+                                            name="postIndex"
+                                            autocomplete="off"
+                                            maxlength="5"
+                                            oninput="this.value=this.value.replace(/[^0-9]/g,'');"
+                                            placeholder=" "
+                                        />
+                                        <span class="input-placeholder">
+                                            <div>
+                                                <img
+                                                    src="../img/cabinet/modal-icon/location.svg"
+                                                />
+                                            </div>
+                                            Поштовий індекс
+                                        </span>
+                                    </label>
+                                    <label>
+                                        <span class="input-description"
+                                            >Пароль:</span
+                                        >
+                                        <input
+                                            class="form-control password"
+                                            type="password"
+                                            name="userPassword"
+                                            placeholder=" "
+                                        />
+                                        <span class="input-placeholder">
+                                            <div>
+                                                <img
+                                                    src="../img/cabinet/modal-icon/lock.svg"
+                                                />
+                                            </div>
+                                            Введіть пароль
+                                        </span>
+                                    </label>
+                                    <label>
+                                        <span class="input-description"
+                                            >Повторіть пароль:</span
+                                        >
+                                        <input
+                                            class="form-control"
+                                            type="password"
+                                            name="userPasswordConfirm"
+                                            placeholder=" "
+                                        />
+                                        <span class="input-placeholder">
+                                            <div>
+                                                <img
+                                                    src="../img/cabinet/modal-icon/lock.svg"
+                                                />
+                                            </div>
+                                            Повторіть пароль
+                                        </span>
+                                    </label>
+                                    <div class="recaptcha">
+                                        <img
+                                            src="../img/cabinet/zaglushka-3.png"
+                                            alt=""
+                                        />
+                                    </div>
+                                    <button
+                                        class="btn-submit"
+                                        type="submit"
+                                        name="reg"
+                                    >
+                                        Створити акаунт
+                                    </button>
+                                </fieldset>
+                                <p class="responseMsg"></p>
+                            </form>
+                            <span class="popup__question"
+                                >У вас є акаунт?
+                                <button
+                                    type="button"
+                                    class="popup-text__link btn-logIn"
+                                    data-toggle="modal"
+                                    data-target="#log__in-modal"
+                                >
+                                    Зайти в особистий кабінет
+                                </button></span
+                            >
+                            <div class="or__text">
+                                <span>або продовжити</span>
+                            </div>
+                            <div class="log__with">
+                                <a href="#">
+                                    <img
+                                        src="../img/cabinet/modal-icon/google.svg"
+                                        alt="G"
+                                    />
+                                </a>
+                                <a href="#">
+                                    <img
+                                        src="../img/cabinet/modal-icon/facebook.svg"
+                                        alt="f"
+                                    />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div
+            class="modal fade"
+            id="recovery-modal-1"
+            tabindex="-1"
+            role="dialog"
+        >
+            <div
+                class="modal-dialog modal-md modal-dialog-centered"
+                role="document"
+            >
+                <div class="modal-content">
+                    <div class="pass__recovery-page popup">
+                        <div class="modal-header">
+                            <h2 class="popup__title">Відновити пароль</h2>
+                            <button
+                                type="button"
+                                class="close"
+                                data-dismiss="modal"
+                                aria-label="Close"
+                            >
+                                <img src="../img/close.svg" alt="X" />
                             </button>
                         </div>
-                        <form class="popup__form act" id="create-form__individual">
-                            <fieldset class="fieldset">
-							<label>
-								<span class="input-description">Ім'я і Прізвище:</span>
-								<input class="form-control" type="text" name="name" placeholder=" ">
-								<span class="input-placeholder">
-									<div>
-										<img src="../img/cabinet/modal-icon/profile.svg">
-									</div>
-									Ім'я і Прізвище
-								</span>
-							</label>
-
-							<label>
-								<span class="input-description">Номер телефону:</span>
-								<input class="form-control" type="tel" name="phone" placeholder=" ">
-								<span class="input-placeholder">
-									<div>
-										<img src="../img/cabinet/modal-icon/phone.svg">
-									</div>
-									Номер телефону
-								</span>
-							</label>
-
-							<label>
-								<span class="input-description">Email:</span>
-								<input class="form-control" type="email" name="email" placeholder=" ">
-								<span class="input-placeholder">
-									<div>
-										<img src="../img/cabinet/modal-icon/email.svg">
-									</div>
-									Ваш Email
-								</span>
-							</label>
-
-							<label>
-								<span class="input-description">Пароль:</span>
-								<input class="form-control password" type="password"  name="password" placeholder=" ">
-								<span class="input-placeholder">
-									<div>
-										<img src="../img/cabinet/modal-icon/lock.svg">
-									</div>
-									Введіть пароль
-								</span>
-							</label>
-
-							<label>
-								<span class="input-description">Повторіть пароль:</span>
-								<input class="form-control" type="password"  name="confirm_password" placeholder=" ">
-								<span class="input-placeholder">
-									<div>
-										<img src="../img/cabinet/modal-icon/lock.svg">
-									</div>
-									Повторіть пароль
-								</span>
-							</label>
-
-							<div class="user-agree">
-								<label class="checkbox__label">
-									<input class="input-checkbox" type="checkbox" name="agree">
-									<span class="custom-checkbox"></span>
-									<span class="checkbox-text">Я даю згоду на обробку <a href="/terms" target="_blank">особистих даних</a></span>
-								</label>
-							</div>
-                                <div class="recaptcha">
-                                    <img src="../img/cabinet/zaglushka-3.png" alt="">
-                                </div>
-                                <button class="btn-submit" type="submit" name="reg">Створити акаунт</button>
-                            </fieldset>
-                        <p class="responseMsg"></p>
-                        </form>
-                        <form class="popup__form" id="create-form__entity">
-                            <fieldset class="fieldset">
-                                <label>
-                                    <span class="input-description">Назва компанії:</span>
-                                    <input class="form-control" type="text" name="userName" placeholder=" ">
-                                    <span class="input-placeholder">
-                                        <div>
-                                            <img src="../img/cabinet/modal-icon/profile.svg">
-                                        </div>
-                                        Назва компанії
-                                    </span>
-                                </label>
-                                <label>
-                                    <span class="input-description">Контактна особа:</span>
-                                    <input class="form-control" type="text" name="userContactName" placeholder=" ">
-                                    <span class="input-placeholder">
-                                        <div>
-                                            <img src="../img/cabinet/modal-icon/profile.svg">
-                                        </div>
-                                        Контактна особа
-                                    </span>
-                                </label>
-                                <label>
-                                    <span class="input-description">Юридична адреса:</span>
-                                    <input class="form-control" type="text" name="userEntityAddress" placeholder=" ">
-                                    <span class="input-placeholder">
-                                        <div>
-                                            <img src="../img/cabinet/modal-icon/location.svg">
-                                        </div>
-                                        Юридична адреса
-                                    </span>
-                                </label>
-                                <label>
-                                    <span class="input-description">Email:</span>
-                                    <input class="form-control" type="email" name="email" placeholder=" ">
-                                    <span class="input-placeholder">
-                                        <div>
-                                            <img src="../img/cabinet/modal-icon/email.svg">
-                                        </div>
-                                        Ваш Email
-                                    </span>
-                                </label>
-                                <label>
-                                    <span class="input-description">Номер телефону:</span>
-                                    <input class="form-control" type="tel" name="userTel" placeholder=" ">
-                                    <span class="input-placeholder">
-                                        <div>
-                                            <img src="../img/cabinet/modal-icon/phone.svg">
-                                        </div>
-                                        Номер телефону
-                                    </span>
-                                </label>
-                                <label>
-                                    <span class="input-description nr">Додатковий телефон:</span>
-                                    <input class="form-control" type="tel" name="userAddTel" placeholder=" ">
-                                    <span class="input-placeholder">
-                                        <div>
-                                            <img src="../img/cabinet/modal-icon/phone.svg">
-                                        </div>
-                                        Додатковий телефон
-                                    </span>
-                                </label>
-                                <label>
-                                    <span class="input-description">ІПН:</span>
-                                    <input class="form-control" type="text" name="ipn" placeholder=" ">
-                                    <span class="input-placeholder">
-                                        ІПН
-                                    </span>
-                                </label>
-                                <label>
-                                    <span class="input-description">ЄДРПОУ:</span>
-                                    <input class="form-control" type="text" name="uedrpou" placeholder=" ">
-                                    <span class="input-placeholder">
-                                        ЄДРПОУ
-                                    </span>
-                                </label>
-                                <label>
-                                    <span class="input-description">Поштовий індекс:</span>
-                                    <input class="form-control" type="text" name="postIndex" autocomplete="off" maxlength="5" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder=" ">
-                                    <span class="input-placeholder">
-                                        <div>
-                                            <img src="../img/cabinet/modal-icon/location.svg">
-                                        </div>
-                                        Поштовий індекс
-                                    </span>
-                                </label>
-                                <label>
-                                    <span class="input-description">Пароль:</span>
-                                    <input class="form-control password" type="password"  name="userPassword" placeholder=" ">
-                                    <span class="input-placeholder">
-                                        <div>
-                                            <img src="../img/cabinet/modal-icon/lock.svg">
-                                        </div>
-                                        Введіть пароль
-                                    </span>
-                                </label>
-                                <label>
-                                    <span class="input-description">Повторіть пароль:</span>
-                                    <input class="form-control" type="password"  name="userPasswordConfirm" placeholder=" ">
-                                    <span class="input-placeholder">
-                                        <div>
-                                            <img src="../img/cabinet/modal-icon/lock.svg">
-                                        </div>
-                                        Повторіть пароль
-                                    </span>
-                                </label>
-                                <div class="recaptcha">
-                                    <img src="../img/cabinet/zaglushka-3.png" alt="">
-                                </div>
-                                <button class="btn-submit" type="submit" name="reg">Створити акаунт</button>
-                            </fieldset>
-                        <p class="responseMsg"></p>
-                        </form>
-                        <span class="popup__question">У вас є акаунт? <button type="button" class="popup-text__link btn-logIn" data-toggle="modal" data-target="#log__in-modal">Зайти в особистий кабінет</button></span>
-                        <div class="or__text">
-                            <span>або продовжити</span>
-                        </div>
-                        <div class="log__with">
-                            <a href="#">
-                                <img src="../img/cabinet/modal-icon/google.svg" alt="G">
-                            </a>
-                            <a href="#">
-                                <img src="../img/cabinet/modal-icon/facebook.svg" alt="f">
-                            </a>
+                        <div class="modal-body">
+                            <form class="popup__form" id="pass__recovery-form">
+                                <fieldset class="fieldset">
+                                    <p>
+                                        Укажіть електронну адресу, на яку був
+                                        створений акаунт.
+                                    </p>
+                                    <label>
+                                        <span class="input-description"
+                                            >Email:</span
+                                        >
+                                        <input
+                                            class="form-control"
+                                            type="email"
+                                            name="email"
+                                            placeholder=" "
+                                        />
+                                        <span class="input-placeholder">
+                                            <div>
+                                                <img
+                                                    src="../img/cabinet/modal-icon/email.svg"
+                                                />
+                                            </div>
+                                            Ваш Email
+                                        </span>
+                                    </label>
+                                    <button
+                                        class="btn-submit"
+                                        type="submit"
+                                        name="step-1"
+                                    >
+                                        Відновити пароль
+                                    </button>
+                                </fieldset>
+                                <p class="responseMsg"></p>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="modal fade" id="recovery-modal-1" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-md modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="pass__recovery-page popup">
-                    <div class="modal-header">
-                        <h2 class="popup__title">Відновити пароль</h2>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <img src="../img/close.svg" alt="X">
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form class="popup__form" id="pass__recovery-form">
-                            <fieldset class="fieldset">
-                                <p>Укажіть електронну адресу, на яку був створений акаунт.</p>
-                                <label>
-                                    <span class="input-description">Email:</span>
-                                    <input class="form-control" type="email" name="email" placeholder=" ">
-                                    <span class="input-placeholder">
-                                        <div>
-                                            <img src="../img/cabinet/modal-icon/email.svg">
-                                        </div>
-                                        Ваш Email
-                                    </span>
-                                </label>
-                                <button class="btn-submit" type="submit" name="step-1">Відновити пароль</button>
-                            </fieldset>
-                            <p class="responseMsg"></p>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="recovery-modal-2" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-md modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="pass__recovery-page popup">
-                    <div class="modal-header">
-                        <img src="../img/recovery-mail.svg">
-                        <h2 class="popup__title">Перевірте пошту</h2>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <img src="../img/close.svg" alt="X">
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <p class="recovery-mail-msg">На цей E-mail <span class="recovery-mail">bortnovskiv@ukr.net</span> буде відправлено лист з подальшими інструкціями по відновленню пароля</p>
+        <div
+            class="modal fade"
+            id="recovery-modal-2"
+            tabindex="-1"
+            role="dialog"
+        >
+            <div
+                class="modal-dialog modal-md modal-dialog-centered"
+                role="document"
+            >
+                <div class="modal-content">
+                    <div class="pass__recovery-page popup">
+                        <div class="modal-header">
+                            <img src="../img/recovery-mail.svg" />
+                            <h2 class="popup__title">Перевірте пошту</h2>
+                            <button
+                                type="button"
+                                class="close"
+                                data-dismiss="modal"
+                                aria-label="Close"
+                            >
+                                <img src="../img/close.svg" alt="X" />
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p class="recovery-mail-msg">
+                                На цей E-mail
+                                <span class="recovery-mail"
+                                    >bortnovskiv@ukr.net</span
+                                >
+                                буде відправлено лист з подальшими інструкціями
+                                по відновленню пароля
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="modal fade" id="recovery-modal-3" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-md modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="pass__recovery-page popup">
-                    <div class="modal-header">
-                        <h2 class="popup__title">Введіть новий пароль</h2>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <img src="../img/close.svg" alt="X">
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form class="popup__form" id="pass__recovery-form3">
-                            <fieldset class="fieldset">
-                                <label>
-                                    <span class="input-description">Пароль:</span>
-                                    <input class="form-control password-2" type="password"  name="password" placeholder=" ">
-                                    <span class="input-placeholder">
-                                        <div>
-                                            <img src="../img/cabinet/modal-icon/lock.svg">
-                                        </div>
-                                        Введіть пароль
-                                    </span>
-                                </label>
-                                <label>
-                                    <span class="input-description">Повторіть пароль:</span>
-                                    <input class="form-control" type="password"  name="confirm_password" placeholder=" ">
-                                    <span class="input-placeholder">
-                                        <div>
-                                            <img src="../img/cabinet/modal-icon/lock.svg">
-                                        </div>
-                                        Повторіть пароль
-                                    </span>
-                                </label>
-                                <button class="btn-submit" type="submit" name="logIn">Вхід</button>
-                            </fieldset>
-                        <p class="responseMsg"></p>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="verification-modal" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-md modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="pass__verification-page popup">
-                    <div class="modal-header">
-                        <img src="../img/verif.svg">
-                        <h2 class="popup__title">Підтвердити номер телефону</h2>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <img src="../img/close.svg" alt="X">
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form class="popup__form" id="pass__verification-form">
-                            <fieldset class="fieldset">
-                                <p>На цей номер <span class="number">+38(098) 34-43-895</span> відправлений SMS-код, введіть його в поле нижче:</p>
-                                <label class="verif-code">
-                                    <input class="form-control verifCode" type="text" name="code" autocomplete="off" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder=" "  onfocus="this.value=''"/>
-                                    <input class="form-control verifCode" type="text" name="code" autocomplete="off" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder=" "  onfocus="this.value=''"/>
-                                    <input class="form-control verifCode" type="text" name="code" autocomplete="off" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder=" "  onfocus="this.value=''"/>
-                                    <input class="form-control verifCode" type="text" name="code" autocomplete="off" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder=" "  onfocus="this.value=''"/>
-                                    <input class="form-control verifCode" type="text" name="code" autocomplete="off" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder=" "  onfocus="this.value=''"/>
-                                </label>
-                                <a href="#" class="sendAgain">Відправити знову <span>(09: 16с)</span></a>
-                                <button class="btn-submit" type="submit" name="logIn">Вхід</button>
-                            </fieldset>
-                        <p class="responseMsg"></p>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="cookie_notification">
-        <p>Для улучшения работы сайта и его взаимодействия с пользователями мы используем файлы cookie. Продолжая работу с сайтом, Вы разрешаете использование cookie-файлов. Вы всегда можете отключить файлы cookie в настройках Вашего браузера.</p>
-        <button class="button cookie_accept">Принять</button>
-    </div>
-    <div class="scrollup">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3.73324 11.2L8.31244 6.62081L12.8916 11.2L14.3999 9.69175L8.31244 3.60428L2.22497 9.69175L3.73324 11.2Z"/>
-        </svg>
-    </div>
-    <div class="modal fade" id="servicesCalc" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-md modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="servicesCalc-page popup">
-                    <div class="modal-header">
-                        <h2 class="popup__title">Для розрахунку заповніть поля</h2>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <img src="../img/close.svg" alt="X">
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form class="popup__form" id="servicesCalc-form">
-                            <fieldset class="fieldset">
-                                <Label class="select">
-                                    <span class="input-description">Об'єкт утворення ТПВ</span>
-                                    <select class="select2">
-                                        <option>Багатоквартирні будинки</option>
-                                        <option>Приватний будинок</option>
-                                        <option>Офіс</option>
-                                        <option>Промислове підприємство</option>
-                                    </select>
-                                </label>
-                                <Label>
-                                    <span class="input-description">Кількість людей</span>
-                                    <input class="form-control" type="text" autocomplete="off" oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder=" "/>
-                                </Label>
-                                <Label class="select">
-                                    <span class="input-description">Категорія тарифу</span>
-                                    <select class="select2">
-                                        <option>Населення</option>
-                                        <option>Комерція</option>
-                                    </select>
-                                </Label>
-                                <Label class="select">
-                                    <span class="input-description">Об'єм контейнера, м<sup>3</sup></span>
-                                    <select class="select2">
-                                        <option>1,1</option>
-                                        <option>2,2</option>
-                                        <option>4,1</option>
-                                    </select>
-                                </Label>
-                                <Label class="select">
-                                    <span class="input-description">Бажана періодичність вивезень, разів на тиждень</span>
-                                    <select class="select2">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                        <option>6</option>
-                                        <option>7</option>
-                                    </select>
-                                </Label>
-                                <Label class="readonly">
-                                    <span class="input-description">Норма, м<sup>3</sup>/рік на одиницю розрахунку</span>
-                                    <input class="form-control" type="text" readonly/>
-                                </Label>
-                                <Label class="readonly">
-                                    <span class="input-description">&#8776; тонн/рік (для декларації, від 50т)</span>
-                                    <input class="form-control" type="text" readonly/>
-                                </Label>
-                                <Label class="readonly">
-                                    <span class="input-description">Тариф, грн/1 м<sup>3</sup> з ПДВ</span>
-                                    <input class="form-control" type="text" readonly/>
-                                </Label>
-                                <Label class="readonly">
-                                    <span class="input-description">Рекомендована мінімальна кількість вивезень на тиждень &#8776;</span>
-                                    <input class="form-control" type="text" readonly style="font-weight: bold;"/>
-                                </Label>
-                                <Label class="readonly">
-                                    <span class="input-description">*Вартість послуг за місяць, грн. з ПДВ &#8776;</span>
-                                    <input class="form-control" type="text" readonly style="font-weight: bold;"/>
-                                </Label>
-                                <Label class="readonly">
-                                    <span class="input-description">**Потреба в контейнерах, шт.</span>
-                                    <input class="form-control" type="text" readonly style="font-weight: bold;"/>
-                                </Label>
-                                <p>*Остаточну вартість та умови визначає менеджер при оформленні!</p>
-                                <a class="btn-red" href="#">Оформити заявку</a>
-                            </fieldset>
-                        <p class="responseMsg"></p>
-                        </form>
+        <div
+            class="modal fade"
+            id="recovery-modal-3"
+            tabindex="-1"
+            role="dialog"
+        >
+            <div
+                class="modal-dialog modal-md modal-dialog-centered"
+                role="document"
+            >
+                <div class="modal-content">
+                    <div class="pass__recovery-page popup">
+                        <div class="modal-header">
+                            <h2 class="popup__title">Введіть новий пароль</h2>
+                            <button
+                                type="button"
+                                class="close"
+                                data-dismiss="modal"
+                                aria-label="Close"
+                            >
+                                <img src="../img/close.svg" alt="X" />
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="popup__form" id="pass__recovery-form3">
+                                <fieldset class="fieldset">
+                                    <label>
+                                        <span class="input-description"
+                                            >Пароль:</span
+                                        >
+                                        <input
+                                            class="form-control password-2"
+                                            type="password"
+                                            name="password"
+                                            placeholder=" "
+                                        />
+                                        <span class="input-placeholder">
+                                            <div>
+                                                <img
+                                                    src="../img/cabinet/modal-icon/lock.svg"
+                                                />
+                                            </div>
+                                            Введіть пароль
+                                        </span>
+                                    </label>
+                                    <label>
+                                        <span class="input-description"
+                                            >Повторіть пароль:</span
+                                        >
+                                        <input
+                                            class="form-control"
+                                            type="password"
+                                            name="confirm_password"
+                                            placeholder=" "
+                                        />
+                                        <span class="input-placeholder">
+                                            <div>
+                                                <img
+                                                    src="../img/cabinet/modal-icon/lock.svg"
+                                                />
+                                            </div>
+                                            Повторіть пароль
+                                        </span>
+                                    </label>
+                                    <button
+                                        class="btn-submit"
+                                        type="submit"
+                                        name="logIn"
+                                    >
+                                        Вхід
+                                    </button>
+                                </fieldset>
+                                <p class="responseMsg"></p>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+        <div
+            class="modal fade"
+            id="verification-modal"
+            tabindex="-1"
+            role="dialog"
+        >
+            <div
+                class="modal-dialog modal-md modal-dialog-centered"
+                role="document"
+            >
+                <div class="modal-content">
+                    <div class="pass__verification-page popup">
+                        <div class="modal-header">
+                            <img src="../img/verif.svg" />
+                            <h2 class="popup__title">
+                                Підтвердити номер телефону
+                            </h2>
+                            <button
+                                type="button"
+                                class="close"
+                                data-dismiss="modal"
+                                aria-label="Close"
+                            >
+                                <img src="../img/close.svg" alt="X" />
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form
+                                class="popup__form"
+                                id="pass__verification-form"
+                            >
+                                <fieldset class="fieldset">
+                                    <p>
+                                        На цей номер
+                                        <span class="number"
+                                            >+38(098) 34-43-895</span
+                                        >
+                                        відправлений SMS-код, введіть його в
+                                        поле нижче:
+                                    </p>
+                                    <label class="verif-code">
+                                        <input
+                                            class="form-control verifCode"
+                                            type="text"
+                                            name="code"
+                                            autocomplete="off"
+                                            maxlength="1"
+                                            oninput="this.value=this.value.replace(/[^0-9]/g,'');"
+                                            placeholder=" "
+                                            onfocus="this.value=''"
+                                        />
+                                        <input
+                                            class="form-control verifCode"
+                                            type="text"
+                                            name="code"
+                                            autocomplete="off"
+                                            maxlength="1"
+                                            oninput="this.value=this.value.replace(/[^0-9]/g,'');"
+                                            placeholder=" "
+                                            onfocus="this.value=''"
+                                        />
+                                        <input
+                                            class="form-control verifCode"
+                                            type="text"
+                                            name="code"
+                                            autocomplete="off"
+                                            maxlength="1"
+                                            oninput="this.value=this.value.replace(/[^0-9]/g,'');"
+                                            placeholder=" "
+                                            onfocus="this.value=''"
+                                        />
+                                        <input
+                                            class="form-control verifCode"
+                                            type="text"
+                                            name="code"
+                                            autocomplete="off"
+                                            maxlength="1"
+                                            oninput="this.value=this.value.replace(/[^0-9]/g,'');"
+                                            placeholder=" "
+                                            onfocus="this.value=''"
+                                        />
+                                        <input
+                                            class="form-control verifCode"
+                                            type="text"
+                                            name="code"
+                                            autocomplete="off"
+                                            maxlength="1"
+                                            oninput="this.value=this.value.replace(/[^0-9]/g,'');"
+                                            placeholder=" "
+                                            onfocus="this.value=''"
+                                        />
+                                    </label>
+                                    <a href="#" class="sendAgain"
+                                        >Відправити знову
+                                        <span>(09: 16с)</span></a
+                                    >
+                                    <button
+                                        class="btn-submit"
+                                        type="submit"
+                                        name="logIn"
+                                    >
+                                        Вхід
+                                    </button>
+                                </fieldset>
+                                <p class="responseMsg"></p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="cookie_notification">
+            <p>
+                Для улучшения работы сайта и его взаимодействия с пользователями
+                мы используем файлы cookie. Продолжая работу с сайтом, Вы
+                разрешаете использование cookie-файлов. Вы всегда можете
+                отключить файлы cookie в настройках Вашего браузера.
+            </p>
+            <button class="button cookie_accept">Принять</button>
+        </div>
+        <div class="scrollup">
+            <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    d="M3.73324 11.2L8.31244 6.62081L12.8916 11.2L14.3999 9.69175L8.31244 3.60428L2.22497 9.69175L3.73324 11.2Z"
+                />
+            </svg>
+        </div>
+        <div class="modal fade" id="servicesCalc" tabindex="-1" role="dialog">
+            <div
+                class="modal-dialog modal-md modal-dialog-centered"
+                role="document"
+            >
+                <div class="modal-content">
+                    <div class="servicesCalc-page popup">
+                        <div class="modal-header">
+                            <h2 class="popup__title">
+                                Для розрахунку заповніть поля
+                            </h2>
+                            <button
+                                type="button"
+                                class="close"
+                                data-dismiss="modal"
+                                aria-label="Close"
+                            >
+                                <img src="../img/close.svg" alt="X" />
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="popup__form" id="servicesCalc-form">
+                                <fieldset class="fieldset">
+                                    <label class="select">
+                                        <span class="input-description"
+                                            >Об'єкт утворення ТПВ</span
+                                        >
+                                        <select class="select2">
+                                            <option>
+                                                Багатоквартирні будинки
+                                            </option>
+                                            <option>Приватний будинок</option>
+                                            <option>Офіс</option>
+                                            <option>
+                                                Промислове підприємство
+                                            </option>
+                                        </select>
+                                    </label>
+                                    <label>
+                                        <span class="input-description"
+                                            >Кількість людей</span
+                                        >
+                                        <input
+                                            class="form-control"
+                                            type="text"
+                                            autocomplete="off"
+                                            oninput="this.value=this.value.replace(/[^0-9]/g,'');"
+                                            placeholder=" "
+                                        />
+                                    </label>
+                                    <label class="select">
+                                        <span class="input-description"
+                                            >Категорія тарифу</span
+                                        >
+                                        <select class="select2">
+                                            <option>Населення</option>
+                                            <option>Комерція</option>
+                                        </select>
+                                    </label>
+                                    <label class="select">
+                                        <span class="input-description"
+                                            >Об'єм контейнера, м<sup
+                                                >3</sup
+                                            ></span
+                                        >
+                                        <select class="select2">
+                                            <option>1,1</option>
+                                            <option>2,2</option>
+                                            <option>4,1</option>
+                                        </select>
+                                    </label>
+                                    <label class="select">
+                                        <span class="input-description"
+                                            >Бажана періодичність вивезень,
+                                            разів на тиждень</span
+                                        >
+                                        <select class="select2">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                        </select>
+                                    </label>
+                                    <label class="readonly">
+                                        <span class="input-description"
+                                            >Норма, м<sup>3</sup>/рік на одиницю
+                                            розрахунку</span
+                                        >
+                                        <input
+                                            class="form-control"
+                                            type="text"
+                                            readonly
+                                        />
+                                    </label>
+                                    <label class="readonly">
+                                        <span class="input-description"
+                                            >&#8776; тонн/рік (для декларації,
+                                            від 50т)</span
+                                        >
+                                        <input
+                                            class="form-control"
+                                            type="text"
+                                            readonly
+                                        />
+                                    </label>
+                                    <label class="readonly">
+                                        <span class="input-description"
+                                            >Тариф, грн/1 м<sup>3</sup> з
+                                            ПДВ</span
+                                        >
+                                        <input
+                                            class="form-control"
+                                            type="text"
+                                            readonly
+                                        />
+                                    </label>
+                                    <label class="readonly">
+                                        <span class="input-description"
+                                            >Рекомендована мінімальна кількість
+                                            вивезень на тиждень &#8776;</span
+                                        >
+                                        <input
+                                            class="form-control"
+                                            type="text"
+                                            readonly
+                                            style="font-weight: bold"
+                                        />
+                                    </label>
+                                    <label class="readonly">
+                                        <span class="input-description"
+                                            >*Вартість послуг за місяць, грн. з
+                                            ПДВ &#8776;</span
+                                        >
+                                        <input
+                                            class="form-control"
+                                            type="text"
+                                            readonly
+                                            style="font-weight: bold"
+                                        />
+                                    </label>
+                                    <label class="readonly">
+                                        <span class="input-description"
+                                            >**Потреба в контейнерах, шт.</span
+                                        >
+                                        <input
+                                            class="form-control"
+                                            type="text"
+                                            readonly
+                                            style="font-weight: bold"
+                                        />
+                                    </label>
+                                    <p>
+                                        *Остаточну вартість та умови визначає
+                                        менеджер при оформленні!
+                                    </p>
+                                    <a class="btn-red" href="#"
+                                        >Оформити заявку</a
+                                    >
+                                </fieldset>
+                                <p class="responseMsg"></p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <div class="modal fade" id="response" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-md modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="pass__recovery-page popup">
-                    <div class="modal-header">
-                        <img src="../img/recovery-mail.svg">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <img src="../img/close.svg" alt="X">
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <span class="responseMsg"></span>
+        <div class="modal fade" id="response" tabindex="-1" role="dialog">
+            <div
+                class="modal-dialog modal-md modal-dialog-centered"
+                role="document"
+            >
+                <div class="modal-content">
+                    <div class="pass__recovery-page popup">
+                        <div class="modal-header">
+                            <img src="../img/recovery-mail.svg" />
+                            <button
+                                type="button"
+                                class="close"
+                                data-dismiss="modal"
+                                aria-label="Close"
+                            >
+                                <img src="../img/close.svg" alt="X" />
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <span class="responseMsg"></span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <script src="../js/jquery.min.js"></script>
-    <script src="../js/jquery.validate.min.js"></script>
-    <script src="../js/slick.min.js"></script>
-    <script src="../js/jquery.validate.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/select2.min.js"></script>
-    <script src="../js/main.js"></script>
-</body>
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/jquery.validate.min.js"></script>
+        <script src="../js/slick.min.js"></script>
+        <script src="../js/jquery.validate.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/select2.min.js"></script>
+        <script src="../js/main.js"></script>
+    </body>
 </html>

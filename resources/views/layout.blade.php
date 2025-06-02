@@ -106,7 +106,7 @@
 		<header class="{{$headerClass}}">
 			<nav class="header-nav container">
 				<a href="/" class="header-nav__logo">
-					<img src="/img/logo.png" alt="Veolia">
+					<img src="{{ asset('img/logo-new.png') }}" alt="Veolia">
 				</a>
 
 				<ul class="header-nav__list">
@@ -134,7 +134,7 @@
 					<span class="menu__icon"></span>
 					<div class="menu__body">
 						<a href="/" class="header-nav__logo">
-							<img src="/img/logo.png" alt="Veolia">
+							<img src="{{ asset('img/logo-new.png') }}" alt="Veolia">
 						</a>
 
 						<ul class="menu-nav__list">
