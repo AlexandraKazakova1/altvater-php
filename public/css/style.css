@@ -15,6 +15,8 @@ h1,
 h2,
 h3,
 h4,
+h5,
+h6,
 p,
 ul[class],
 ol[class],
@@ -242,20 +244,39 @@ section .detail__text {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
+    text-decoration: none;
+}
+section .detail__text a {
+    line-height: inherit !important;
+    vertical-align: baseline;
 }
 
 section .detail__text p {
     color: #2c2c2c;
     font-style: normal;
     font-weight: normal;
-    font-size: 14px;
-    line-height: 30px;
+    /* font-size: 14px;
+    line-height: 30px; */
     opacity: 0.7;
     /* margin-bottom: 30px; */
+    text-decoration: none;
 }
-
-section .detail__text :last-child {
-    margin-bottom: 0px;
+section .detail__text h4 {
+    margin: 0;
+    text-decoration: none;
+}
+section .detail__text ul {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+section .detail__text img {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    display: block;
+    margin: auto;
+    /* object-fit: contain; */
 }
 
 .container {
@@ -1190,6 +1211,7 @@ header.small {
     line-height: 50px;
     color: #2c2c2c;
     margin-bottom: 50px;
+    margin-top: 50px;
 }
 
 .news-wrapper .news .news__list {
@@ -1208,7 +1230,7 @@ header.small {
     justify-content: space-evenly;
     -webkit-box-align: center;
     -ms-flex-align: center;
-    align-items: center;
+    align-items: stretch;
 }
 
 .news-wrapper .news .news__list .news__item {
@@ -1220,7 +1242,7 @@ header.small {
     display: flex;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
-    justify-content: center;
+    justify-content: space-between;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
@@ -1591,8 +1613,7 @@ header.small {
 }
 
 .detail__wrapper .detail {
-    padding-top: 60px;
-    padding-bottom: 68px;
+    padding: 40px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1614,7 +1635,7 @@ header.small {
     font-size: 35px;
     line-height: 50px;
     color: #2c2c2c;
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
 }
 
 .detail__wrapper .detail .detail__text {
@@ -1634,8 +1655,8 @@ header.small {
     font-size: 14px;
     line-height: 30px;
     opacity: 0.7;
-    margin-bottom: 30px;
-    text-align: justify;
+    /* margin-bottom: 30px; */
+    /* text-align: justify; */
 }
 
 .detail__wrapper .detail .detail__text :last-child {
@@ -3377,8 +3398,9 @@ label .error {
 }
 
 .infoList-wrapper {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding: 40px;
+    /* padding-top: 50px;
+    padding-bottom: 50px; */
 }
 
 .infoList-wrapper .infoList {
@@ -3393,13 +3415,17 @@ label .error {
     flex-wrap: nowrap;
 }
 
+.infoList-wrapper .infoList img {
+    margin-top: 40px;
+}
+
 .infoList-wrapper .infoList h3 {
     font-style: normal;
     font-weight: 600;
     font-size: 21px;
     line-height: 30px;
     color: #2c2c2c;
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
 }
 
 .infoList-wrapper .infoList blockquote {
@@ -3411,7 +3437,7 @@ label .error {
     font-size: 16px;
     line-height: 26px;
     color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
 }
 
 .infoList-wrapper .infoList blockquote::after {
@@ -3441,7 +3467,7 @@ label .error {
     font-size: 16px;
     line-height: 30px;
     color: rgba(87, 88, 90, 0.8);
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
 }
 
 .infoList-wrapper .infoList a,
@@ -3498,8 +3524,8 @@ label .error {
 
 @media (max-width: 1280px) {
     .container {
-        max-width: 100%;
-        width: 100%;
+        max-width: 980px;
+        /* width: 100%; */
         padding-left: 20px;
         padding-right: 20px;
     }
@@ -3553,6 +3579,17 @@ label .error {
 }
 
 @media (max-width: 1024px) {
+    .detail__wrapper .detail {
+        /* padding: 40px; */
+    }
+    section .detail__text img {
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+        display: block;
+        /* margin: 0 auto 1rem; */
+        /* object-fit: contain; */
+    }
     header .header-nav {
         -ms-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -3925,6 +3962,20 @@ label .error {
 }
 
 @media (max-width: 768px) {
+    /* .detail__wrapper {
+        max-width: 70%;
+        margin: auto;
+    } */
+
+    .detail__text iframe {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        border: 0;
+        display: block;
+    }
+
     .services-wrapper .services {
         margin-top: 60px;
     }
@@ -4194,21 +4245,23 @@ label .error {
         line-height: 25px;
         text-align: center;
     }
-    .detail__wrapper .detail {
-        padding-top: 20px;
+    /* .detail__wrapper .detail {
         padding-bottom: 50px;
-    }
+    } */
     .detail__wrapper .detail h2 {
-        text-align: center;
+        /* text-align: center; */
         font-size: 30px;
         line-height: 40px;
-        margin-bottom: 20px;
+        /* margin-bottom: 20px; */
     }
     .detail__wrapper .detail .detail__text p {
         font-size: 12px;
         line-height: 25px;
-        text-align: center;
+        /* text-align: center; */
         margin-bottom: 15px;
+    }
+    section .detail__text img {
+        max-width: 450px;
     }
     .faq__wrapper .faq {
         padding-top: 50px;
@@ -4516,12 +4569,17 @@ label .error {
         word-wrap: break-word;
     }
     p img {
-        max-width: 100% !important;
-        margin: auto;
+        /* max-width: 100% !important;
+        margin: auto; */
     }
 }
 
 @media (max-width: 580px) {
+    /* .detail__wrapper {
+        max-width: 480px;
+        margin: auto;
+    } */
+
     .about-wrapper .about-content {
         padding: 20px;
     }
@@ -4609,6 +4667,11 @@ label .error {
 }
 
 @media (max-width: 480px) {
+    /* .detail__wrapper {
+        max-width: 90%;
+        margin: auto;
+    } */
+
     footer .footer .link__group a {
         font-size: 8px;
         line-height: 10px;
