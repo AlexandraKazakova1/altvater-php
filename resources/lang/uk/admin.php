@@ -99,28 +99,28 @@ return [
 		'filter_placeholder'=> 'Фільтр',
 	],
 	'grid_items_selected'    => '{n} елементів вибрано',
-	
+
 	'menu_titles'            => [],
 	'prev'                   => 'Попередня',
 	'next'                   => 'Наступна',
-	
+
 	'public'				=> 'Опубліковано',
-	
+
 	'filter-all'			=> 'Всі',
 	'no'					=> 'Ні',
 	'yes'					=> 'Так',
-	
+
 	'clients'				=> [
 		'created_at'			=> 'Створено',
 		'updated_at'			=> 'Оновлено',
-		
+
 		'name'					=> 'Ім\'я/Назва',
 		'surname'				=> 'Прізвище',
 		'patronymic'			=> 'По-батькові',
-		
+
 		'phone'					=> 'Телефон',
 		'extra_phone'			=> 'Додатковий телефон',
-		
+
 		'email'					=> 'Email',
 		'address'				=> 'Адреса',
 		'username'				=> 'Логін',
@@ -128,41 +128,41 @@ return [
 		'birthday'				=> 'Дата народження',
 		'code'					=> 'Кодове слово',
 		'number'				=> '№ картки',
-		
+
 		'verify_email'			=> 'Email підтверджено',
 		'verify_phone'			=> 'Телефон підтверджено',
-		
+
 		'type'					=> [
 			'label'					=> 'Тип',
 			'individual'			=> 'Фізична особа',
 			'legal-entit'			=> 'Юридична особа'
 		],
-		
+
 		'password'				=> 'Пароль',
-		
+
 		'position'				=> 'Посада',
 		'index'					=> 'Індекс',
-		
+
 		'info'					=> 'Основна інформація',
 		'addresses'				=> 'Адреси',
-		
+
 		'ipn'					=> 'ІПН',
 		'uedrpou'				=> 'ЄДРПОУ',
-		
+
 		'company_name'			=> 'Назва компанії',
 	],
-	
+
 	'addresses'				=> [
 		'name'					=> 'Назва',
 		'address'				=> 'Адреса',
 		'image'					=> 'Зображення',
 		'images'				=> 'Проблемні місця',
 	],
-	
+
 	'violation'				=> [
 		'created_at'			=> 'Створено',
 		'updated_at'			=> 'Оновлено',
-		
+
 		'name'					=> 'ЄДРПОУ/назва',
 		'address'				=> 'Адреса обслуговування',
 		'phone'					=> 'Телефон',
@@ -170,18 +170,18 @@ return [
 		'client'				=> 'Клієнт',
 		'image'					=> 'Фото',
 		'type'					=> 'Тип відходів',
-		
+
 		'info'					=> 'Основна інформація',
 		'photos'				=> 'Фото',
-		
+
 		'type_household'		=> 'Побутові',
 		'type_separate'			=> 'Роздільно зібрані',
 	],
-	
+
 	'applications'			=> [
 		'created_at'			=> 'Створено',
 		'updated_at'			=> 'Оновлено',
-		
+
 		'name'					=> 'ЄДРПОУ/назва',
 		'address'				=> 'Адреса обслуговування',
 		'phone'					=> 'Телефон',
@@ -189,28 +189,28 @@ return [
 		'client'				=> 'Клієнт',
 		'image'					=> 'Фото',
 		'type'					=> 'Тип відходів',
-		
+
 		'info'					=> 'Основна інформація',
 		'photos'				=> 'Фото',
-		
+
 		'type_household'		=> 'Побутові',
 		'type_separate'			=> 'Роздільно зібрані',
 		'type_construction'		=> 'Будівельні/вел.габ. (контейнер)',
-		
+
 		'service'				=> 'Послуга',
-		
+
 		'service_install'		=> 'Встановити',
 		'service_replace'		=> 'Замінити',
 		'service_withdraw'		=> 'Зняти',
-		
+
 		'volume'				=> 'Об\'єм контейнера',
 	],
-	
+
 	'contracts'				=> [
 		'created_at'			=> 'Створено',
 		'updated_at'			=> 'Оновлено',
 		'date'					=> 'Дата підписання',
-		
+
 		'name'					=> 'ПІБ/Назва компанії',
 		'contact'				=> 'Контактна особа',
 		'address'				=> 'Адреса обслуговування/Юридична адреса',
@@ -226,25 +226,25 @@ return [
 		'archive'				=> 'Архів',
 		'number'				=> 'Номер договору',
 	],
-	
+
 	'contents'				=> [
 		'created_at'			=> 'Створено',
 		'updated_at'			=> 'Оновлено',
-		
+
 		'title'					=> 'Заголовок',
 		'text'					=> 'Текст',
 	],
-	
+
 	'packages'				=> [
 		'created_at'			=> 'Створено',
 		'updated_at'			=> 'Оновлено',
-		
+
 		'name'					=> 'Назва',
 		'price'					=> 'Ціна',
 		'public'				=> 'Опубліковано',
 		'sort'					=> 'Порядковий номер',
 	],
-	
+
 	'email'               	=> [
 		'name'					=> 'Назва',
 		'slug'					=> 'slug',
@@ -256,26 +256,26 @@ return [
 		'emails'				=> 'Email отримувачів',
 		'through-whom'			=> 'через кому',
 	],
-	
+
 	'payments'				=> [
 		'created_at'			=> 'Створено',
 		'updated_at'			=> 'Оновлено',
-		
+
 		'name'					=> 'ЄДРПОУ/Назва/ПІБ',
 		'address'				=> 'Адреса обслуговування',
 		'phone'					=> 'Телефон',
 		'email'					=> 'Email',
 		'client'				=> 'Клієнт',
-		
+
 		'type'					=> 'Суб\'єкт права',
 		'type_physical'			=> 'Фізична особа',
 		'type_juridical'		=> 'Юридична особа',
-		
+
 		'package'				=> 'Пакет',
 		'count_packages'		=> 'Кількість пакетів',
 		'amount'				=> 'Сумма'
 	],
-	
+
 	'reviews'				=> [
 		'created_at'			=> 'Створено',
 		'updated_at'			=> 'Оновлено',
@@ -284,11 +284,11 @@ return [
 		'client'				=> 'Клієнт',
 		'text'					=> 'Текст',
 	],
-	
+
 	'sale_containers'		=> [
 		'created_at'			=> 'Створено',
 		'updated_at'			=> 'Оновлено',
-		
+
 		'phone'					=> 'Телефон',
 		'email'					=> 'Email',
 		'name'					=> 'Покупець',
@@ -301,11 +301,11 @@ return [
 		'green'					=> 'Зелений',
 		'blue'					=> 'Синій',
 	],
-	
+
 	'purchase'				=> [
 		'created_at'			=> 'Створено',
 		'updated_at'			=> 'Оновлено',
-		
+
 		'phone'					=> 'Телефон',
 		'email'					=> 'Email',
 		'name'					=> 'Покупець',
@@ -319,11 +319,11 @@ return [
 		'metal'					=> 'Метал',
 		'glass'					=> 'Скло',
 	],
-	
+
 	'ip-list'				=> [
 		'ip'					=> 'IP',
 	],
-	
+
 	'faq'					=> [
 		'created_at'			=> 'Створено',
 		'updated_at'			=> 'Оновлено',
@@ -332,7 +332,7 @@ return [
 		'title'					=> 'Заголовок',
 		'text'					=> 'Текст',
 	],
-	
+
 	'site-menu'				=> [
 		'created_at'			=> 'Створено',
 		'updated_at'			=> 'Оновлено',
@@ -342,7 +342,7 @@ return [
 		'url'					=> 'URL',
 		'class'					=> 'CSS клас',
 	],
-	
+
 	'pages'					=> [
 		'page_info'				=> 'Основна інформація',
 		'page_seo'				=> 'SEO',
@@ -350,7 +350,7 @@ return [
 		'recent_works'			=> 'Останні виконані роботи',
 		'page_header'			=> 'Шапка',
 		'page_about'			=> 'Про нашу компанію',
-		
+
 		'created_at'			=> 'Створено',
 		'updated_at'			=> 'Оновлено',
 		'public'				=> 'Опубліковано',
@@ -360,6 +360,7 @@ return [
 		'meta_keywords'			=> 'META ключові слова',
 		'meta_description'		=> 'META опис',
 		'canonical'				=> 'Canonical',
+        'schema'                => 'Мікророзмітка',
 		'robots'				=> [
 			'type'					=> 'Індексація',
 			'index'					=> 'Індексувати',
@@ -371,12 +372,12 @@ return [
 		'alt'					=> 'ALT',
 		'text'					=> 'Текст',
 		'slider_label'			=> 'Підпис під слайдером',
-		
+
 		'show_btn'				=> 'Показувати кнопку',
 		'btn_label'				=> 'Текст кнопки',
 		'btn_url'				=> 'Адреса кнопки',
 		'btn_class'				=> 'CSS клас кнопки',
-		
+
 		'about_header'			=> 'Заголовок',
 		'about_left'			=> 'Лівий блок',
 		'about_right'			=> 'Правий блок',
@@ -384,17 +385,17 @@ return [
 		'meta_header'			=> 'Заголовок блоку мети',
 		'meta_text'				=> 'Текст блоку мети',
 		'meta_image'			=> 'Зображення блоку мети',
-		
+
 		'first_block'			=> 'Перший блок',
 		'second_block'			=> 'Другий блок',
 		'third_block'			=> 'Третій блок',
-		
+
 		'indicators'			=> 'Показники',
 		'branches'				=> 'Філіалів',
 		'orders'				=> 'Замовлень',
 		'employees'				=> 'Працівників',
 		'hours'					=> 'Годин',
-		
+
 		'contacts'				=> 'Контакти',
 		'type'					=> 'Тип',
 		'address'				=> 'Адреса',
@@ -406,7 +407,7 @@ return [
 		'value'					=> 'Значення',
 		'label'					=> 'Підпис',
 	],
-	
+
 	'feedback'				=> [
 		'created_at'			=> 'Створено',
 		'updated_at'			=> 'Оновлено',
@@ -415,7 +416,7 @@ return [
 		'email'					=> 'E-mail',
 		'messasge'				=> 'Повідомлення'
 	],
-	
+
 	'bills'					=> [
 		'created_at'			=> 'Створено',
 		'updated_at'			=> 'Оновлено',
@@ -428,7 +429,7 @@ return [
 		'doc'					=> 'Документ',
 		'name'					=> 'Кому виставлений'
 	],
-	
+
 	'acts'					=> [
 		'created_at'			=> 'Створено',
 		'updated_at'			=> 'Оновлено',
@@ -445,13 +446,13 @@ return [
 			'4'						=> 'Не прочитано',
 		]
 	],
-	
+
 	'orders_services'		=> [
 		'active'				=> 'Опубліковано',
 		'sort'					=> 'Порядок',
 		'name'					=> 'Назва'
 	],
-	
+
 	'calc-object'			=> [
 		'active'				=> 'Опубліковано',
 		'sort'					=> 'Порядок',
@@ -459,23 +460,23 @@ return [
 		'label'					=> 'Одиниці вимірювання',
 		'value'					=> 'Значення'
 	],
-	
+
 	'tariff_category'		=> [
 		'active'				=> 'Опубліковано',
 		'sort'					=> 'Порядок',
 		'name'					=> 'Назва',
 		'value'					=> 'Значення'
 	],
-	
+
 	'orders'				=> [
 		'created_at'			=> 'Створено',
 		'updated_at'			=> 'Оновлено',
-		
+
 		'service'				=> 'Послуга',
 		'client'				=> 'Клієнт',
 		'status'				=> [
 			'label'					=> 'Статус',
-			
+
 			'new'					=> 'Нове',
 			'processed'				=> 'В обробці',
 			'performed'				=> 'Виконуються',
@@ -488,15 +489,15 @@ return [
 		'addresses'				=> 'Адреса',
 		'comment'				=> 'Коментар',
 	],
-	
+
 	'themes'				=> [
 		'label'					=> 'Тема'
 	],
-	
+
 	'connects'				=> [
 		'created_at'			=> 'Створено',
 		'updated_at'			=> 'Оновлено',
-		
+
 		'client'				=> 'Клієнт',
 		'number'				=> 'Номер договору',
 		'name'					=> 'ПІБ',
@@ -504,11 +505,11 @@ return [
 		'confirm'				=> 'Підтверджено',
 		'contract'				=> 'Договір',
 	],
-	
+
 	'chats'					=> [
 		'created_at'			=> 'Створено',
 		'updated_at'			=> 'Оновлено',
-		
+
 		'client'				=> 'Клієнт',
 		'number'				=> 'Номер договору',
 		'theme'					=> 'Тема',
@@ -516,7 +517,7 @@ return [
 		'header'				=> 'Заголовок',
 		'phone'					=> 'Телефон',
 		'file'					=> 'Додаток',
-		
+
 		'info'					=> 'Основна інформація',
 		'messages'				=> 'Діалог',
 		'message'				=> 'Повідомлення',

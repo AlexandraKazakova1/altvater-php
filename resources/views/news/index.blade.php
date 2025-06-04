@@ -55,7 +55,7 @@
 									<span class="news__title">{{$item->title}}</span>
 									
 									<div class="pubdate">
-										<span>{{$last->date->d}} {{trans('site.months')[$last->date->m]}}</span>                        
+										<span>{{$item->date->d}} {{trans('site.months')[$item->date->m]}}</span>                        
 									</div>
 								</a>
 							</li>

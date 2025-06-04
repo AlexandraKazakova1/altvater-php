@@ -12,6 +12,8 @@ define('LOGS_PATH', ROOT.'/../storage/logs');
 define('STOR_PATH', ROOT.'/../storage');
 define('CACHE_PATH', ROOT.'/../storage/tmp');
 
+define('FILES_PATH', ROOT.'../storage/files');
+
 /*
 |--------------------------------------------------------------------------
 | Check If The Application Is Under Maintenance

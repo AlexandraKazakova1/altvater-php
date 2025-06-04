@@ -44,3 +44,10 @@
 .orderService__wrapper.hidden_section .orderService__form {
 	display: none;
 }
+
+.pryvatnyy-sektor-menu-item {
+    border: 1px solid #BFBEBE;
+    border-radius: 4px;
+    margin: 0 !important;
+    padding: 0 20px !important;
+}

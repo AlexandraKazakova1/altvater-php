@@ -114,10 +114,12 @@ class ClientsController extends MyAdminController {
 						->options([
 							null			=> '-',
 							'individual'	=> __('admin.clients.type.individual'),
-							'legal-entit'	=> __('admin.clients.type.legal-entit')
+							'legal-entity'	=> __('admin.clients.type.legal-entit')
 						]);
 			
-			$form->password('password'		, __('admin.clients.password'));
+			$form->text('password'			, __('admin.clients.password'));
+			
+			//$form->text('password'		, __('admin.clients.password'));
 			
 			$form->text('position'			, __('admin.clients.position'))->rules('max:50');
 			$form->text('addresses'			, __('admin.clients.address'))->rules('max:150');

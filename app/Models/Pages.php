@@ -8,11 +8,11 @@ use DB;
 use App\Models\Contacts;
 
 class Pages extends Model {
-	
+
 	protected $table	= 'pages';
-	
+
 	public $timestamps	= false;
-	
+
 	protected $fillable = [
 		'created_at',
 		'updated_at',
@@ -21,6 +21,7 @@ class Pages extends Model {
 		'title',
 		'keywords',
 		'description',
+        'schema',
 		'robots',
 		'canonical',
 		'header',
@@ -50,7 +51,7 @@ class Pages extends Model {
 		'employees',
 		'hours'
 	];
-	
+
 	public function contacts(){
 		return $this->hasMany(Contacts::class, 'page_id');
 	}

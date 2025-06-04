@@ -26,7 +26,7 @@
 		
 		<div class="cost">
 			Вартість:
-			<span>{{number_format($item->amount, 2, '.', ' ')}}</span>
+			<span>{{($item->amount ? number_format($item->amount, 2, '.', ' ') : '0')}}</span>
 		</div>
 		
 		<div class="status"></div>

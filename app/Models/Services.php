@@ -8,11 +8,11 @@ use DB;
 use App\Models\ServicesImages;
 
 class Services extends Model {
-	
+
 	protected $table	= 'services';
-	
+
 	public $timestamps	= false;
-	
+
 	protected $fillable = [
 		'created_at',
 		'updated_at',
@@ -21,6 +21,7 @@ class Services extends Model {
 		'title',
 		'keywords',
 		'description',
+        'schema',
 		'robots',
 		'canonical',
 		'header',
@@ -29,7 +30,7 @@ class Services extends Model {
 		'text',
 		'sort'
 	];
-	
+
 	public function images(){
 		return $this->hasMany(ServicesImages::class, 'service_id');
 	}

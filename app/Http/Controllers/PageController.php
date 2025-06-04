@@ -21,22 +21,22 @@ use DB;
 use Illuminate\Support\Facades\View;
 
 class PageController extends MyController {
-	
+
 	public function __construct(){
 		parent::__construct();
 	}
-	
+
 	public function index(Request $request){
 		$this->session();
-		
+
 		$page = (object)Pages::query()->where('slug', 'index')->first()->toArray();
-		
+
 		$detail = Pages::query()->where('id', 2)->where('public', 1)->select('header', 'text')->first();
-		
+
 		if($detail){
 			$detail = (object)$detail->toArray();
 		}
-		
+
 		$data = [
 			'page'		=> array(
 				'title'			=> $page->title,
@@ -54,50 +54,50 @@ class PageController extends MyController {
 			'faq'		=> FAQ::query()->where('public', 1)->orderBy('sort', 'desc')->select('title', 'text')->get(),
 			'detail'	=> $detail,
 		];
-		
+
 		$code = trim($request->route('code'));
-		
+
 		if($code){
 			if(strlen($code) != 32){
 				$code = '';
 			}
 		}
-		
+
 		if($code){
 			$user = User::query()
 							->where('confirm_code', '=', $code)
 							->first();
-			
+
 			if(!$user){
 				$code = '';
 			}
 		}
-		
+
 		$data['code'] = $code;
-		
+
 		return view(
 			'main',
 			$data
 		);
 	}
-	
+
 	public function once(Request $request){
 		$this->session();
-		
+
 		$uri = $request->route('uri');
-		
+
 		$page = Pages::query()->where('slug', $uri)->where('public', 1)->first();
-		
+
 		if(!$page){
 			return abort(404);
 		}
-		
+
 		$view = 'page';
-		
-		if($page->id == 10){
+
+		if(in_array($page->id, array(10, 11, 12, 13))){
 			$view = 'info';
 		}
-		
+
 		return view(
 			$view,
 			[
