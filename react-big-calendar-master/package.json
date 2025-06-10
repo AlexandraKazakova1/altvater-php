@@ -136,7 +136,7 @@
     "dom-helpers": "^5.1.0",
     "invariant": "^2.2.4",
     "lodash": "^4.17.11",
-    "lodash-es": "^4.17.11",
+    "lodash-es": "^4.17.21",
     "memoize-one": "^5.1.1",
     "prop-types": "^15.7.2",
     "react-overlays": "^4.1.1",
