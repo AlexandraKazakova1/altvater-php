@@ -130,7 +130,7 @@
     "webpack-dev-server": "^3.1.10"
   },
   "dependencies": {
-    "@babel/runtime": "^7.1.5",
+    "@babel/runtime": "^7.27.1",
     "clsx": "^1.0.4",
     "date-arithmetic": "^4.1.0",
     "dom-helpers": "^5.1.0",
